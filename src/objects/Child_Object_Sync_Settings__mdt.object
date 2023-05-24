@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Settings for child object records to be sent along with parent object in payload</description>
+    <fields>
+        <fullName>Object_API_Name__c</fullName>
+        <description>API Name of the child object</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Object API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Object_Settings__c</fullName>
+        <description>Reference of parent object&apos;s sync settings</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Parent Object Settings</label>
+        <referenceTo>Sync_Settings__mdt</referenceTo>
+        <relationshipLabel>Child Object Sync Settings</relationshipLabel>
+        <relationshipName>Child_Object_Sync_Settings</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship_Field__c</fullName>
+        <description>API name of the relationship field with parent</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Relationship Field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Child Object Sync Settings</label>
+    <pluralLabel>Child Object Sync Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,40 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader"
+                access="global" controller="Plative_DatalinkTokenUtility" description="Plative_UpdateTokenLtng">
+     
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="displaySpinner" type="boolean" default="false"/>
+    <aura:attribute name="maxToken" type="Integer" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div id="mainDiv" class="slds-is-relative">
+        <aura:if isTrue="{!v.displaySpinner}">
+            <lightning:spinner size="medium" alternativeText="Loading" variant="brand"/>
+        </aura:if>
+        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                      largeDeviceSize="12">
+        <div class="slds-border_bottom slds-m-bottom_medium">
+            <p class="slds-p-around_medium slds-text-heading_large slds-align_absolute-center">Update Max Token</p>
+        </div>
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem class="slds-p-around_x-small" size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                      largeDeviceSize="12">
+            <lightning:input type="number" name="maxToken" label="Max Token" value="{!v.maxToken}" required="true" />            
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem class="slds-p-around_x-small" size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                      largeDeviceSize="12">
+            
+            <lightning:layoutItem class="slds-p-around_x-small" size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                      largeDeviceSize="12">
+                    <lightning:button variant="brand" class="slds-float_right slds-m-left_xx-small" label="Update Tokens"
+                                      title="Update Tokens" onclick="{! c.updateMaxTokenC }"/>
+                    <lightning:button label="Cancel" class="slds-float_right" title="Cancel"
+                                      onclick="{! c.closeQuickAction }"/>
+                </lightning:layoutItem>
+        </lightning:layoutItem>
+        
+        
+    </div>
+    
+</aura:component>

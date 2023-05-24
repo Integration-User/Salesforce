@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Terms__c</field>
+        <field>Account</field>
+        <field>Amount</field>
+        <field>Company_Type_Opp__c</field>
+        <field>Length_of_Contract__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Opportunity.Terms__c</field>
+                <operation>notEqual</operation>
+                <value>Net 30</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.RecordType</field>
+                <operation>equals</operation>
+                <value>Sales Opportunity</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Approve Net Terms</label>
+        <name>Approve_Net_Terms</name>
+    </approvalStep>
+    <description>Anything other than a Contract Term of Net 30, should be sent through this approval process</description>
+    <emailTemplate>Approval_Email_Templates/Net_Terms_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Opportunity.Terms__c</field>
+            <operation>notEqual</operation>
+            <value>Net 30</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordType</field>
+            <operation>equals</operation>
+            <value>Sales Opportunity</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approval_Status_to_Approved_Terms</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Terms_Request_Approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Approval_Status_to_Rejected_Terms</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Terms_Request_Rejected</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Net Terms Approval Process</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>2</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

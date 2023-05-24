@@ -1,0 +1,11 @@
+<!--
+* Company     : Plative
+* Description : Delete record message popup
+* [20.Mar.2020] Anisa - Code Creation 
+-->
+<aura:component >
+    <aura:attribute name="sobjectLabel" type="String" required="true"/>
+	<div class="slds-align_absolute-center">
+		Are you sure you want to delete this {!v.sobjectLabel}?
+    </div>
+</aura:component>

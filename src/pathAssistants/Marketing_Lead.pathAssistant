@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Marketing Lead</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>LeadSource</fieldNames>
+        <fieldNames>Reason_Disqualified__c</fieldNames>
+        <fieldNames>Company_Type_new__c</fieldNames>
+        <info>&lt;p&gt;&lt;b&gt;If your lead has neither the interest nor the authority to purchase from you, mark the lead Unqualified. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Don’t waste time on unqualified leads.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Learn about the lead source before you spend time selling them a product they&amp;#39;re not ready for.&lt;/li&gt;&lt;li&gt;Understand your lead&amp;#39;s level of decision making authority and solution requirements.&lt;/li&gt;&lt;li&gt;Determine whether your lead is likely to buy from you.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Disqualified</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Company_Type_new__c</fieldNames>
+        <fieldNames>LeadSource</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;SS 1: a company shows up through MQL&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Decide if you will accept the lead &amp;amp; move to SS 2 for outreach, or reject the lead because you don’t see them as a qualified GSA prospect. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;SS 1’s are to be accepted/rejected within two days.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Learn about and contact your new lead quickly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Use Salesforce leads to separate prospects from the Salesforce contacts you’ve already sold to.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Respond to your lead within five minutes to increase your chances of converting the lead record to an opportunity. &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Visit your lead’s website to learn about your lead’s business and industry.&lt;/li&gt;&lt;li&gt;Find your lead on social networks to determine how to best engage and connect.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Open</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Company_Type_new__c</fieldNames>
+        <fieldNames>LeadSource</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-size: 13px;&quot;&gt;Congratulations! &lt;/b&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Now it’s time to convert the lead record to an opportunity. Then, continue the qualification process with your new contact.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Sales_Qualified</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Marketing</recordTypeName>
+</PathAssistant>

@@ -1,0 +1,46 @@
+<!--
+* Company     : Plative
+* Description : Custom lightning component to display tasks and events 
+*				related list list
+* [20.Mar.2020] Anisa - Code Creation 
+-->
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" 
+                controller="Plative_TaskRelatedListController">
+	<aura:attribute type="Task[]" name="taskList"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="columnsWithActions" type="List" access="private"/>
+	<aura:attribute name="sobjectLabel" type="String" access="private" default="Activity"/>   
+    <aura:attribute name="sobjectLabelPlural" type="String" access="private" default="Activity History"/> 
+	<aura:attribute name="numberOfRecordsForTitle" type="String" access="private"/>  
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="String" default="asc"/>   
+	<lightning:overlayLibrary aura:id="overlayLib"/>
+ 
+	<lightning:quickActionAPI aura:id="quickActionAPI" />
+	
+   <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <div class="c-container" style="position:relative" >
+        <aura:if isTrue="{!v.displaySpinner}">
+        	<lightning:spinner class="" variant="brand" size="medium"/>
+        </aura:if>
+         <lightning:card class="slds-card_boundary" iconName="standard:custom">
+            <aura:set attribute="actions">
+				<lightning:button title="Refresh" onclick="{!c.refresh}" iconName="utility:refresh" />
+            </aura:set>   
+            <aura:set attribute="title">
+                <b>{!(v.sobjectLabelPlural) +' (' + (v.numberOfRecordsForTitle) + ')' + if(not(empty(v.additionalTitle)),' - ' + v.additionalTitle,'')}</b>
+            </aura:set>    
+                <p class="slds-p-horizontal_small">                  
+    				<lightning:datatable data="{! v.taskList }"
+                         columns="{! v.columnsWithActions }"
+                         keyField="id"
+                         hideCheckboxColumn="true"
+						 onrowaction="{! c.handleRowAction }"
+						 showRowNumberColumn="true"
+						 sortedBy="{!v.sortedBy}"
+                         sortedDirection="{!v.sortedDirection}"
+                         onsort="{!c.updateColumnSorting}"/>                 
+                </p>       
+        </lightning:card>
+    </div>
+</aura:component>

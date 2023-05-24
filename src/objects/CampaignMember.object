@@ -1,0 +1,2688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ConvertLead</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ConvertLead</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ConvertLead</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CreateOpportunity</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CreateOpportunity</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CreateOpportunity</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AccountId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Priority__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Account_Priority__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Priority</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Account_Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attended_Archive__c</fullName>
+        <description>Y or N, whether this attendee viewed the archived portion of this event.</description>
+        <externalId>false</externalId>
+        <label>Attended Archive</label>
+        <length>1</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attended_Live__c</fullName>
+        <description>Y or N, whether this attendee viewed the live event.</description>
+        <externalId>false</externalId>
+        <label>Attended Live</label>
+        <length>1</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Member_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(LEFT($Api.Partner_Server_URL_260, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_260))+ Id, &quot;Member Record&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Member Link</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Member_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign Member Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Campaign_Members</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Member_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( NOT( ISBLANK( ContactId ) ), Contact.Account_Type__c ,&quot;Prospect&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Member Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City</fullName>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>131072</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CompanyOrAccount</fullName>
+    </fields>
+    <fields>
+        <fullName>Company_Segment__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Contact.Company_Segment__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company Segment</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Contact.Contact_Status__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Status</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country</fullName>
+    </fields>
+    <fields>
+        <fullName>Created_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>DoNotCall</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>Email_Address__c</fullName>
+        <description>The email address for this attendee.</description>
+        <externalId>false</externalId>
+        <label>Email Address</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Engagement_Score__c</fullName>
+        <description>This is a number between 0 and 10.0 measuring how engaged a user was based on activity during the webcast.</description>
+        <externalId>false</externalId>
+        <label>Engagement Score</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Escalate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The Account Manager should first follow up with the NPS survey responder and attempt to resolve themselves. This box should only be checked if there is high priority attention and escalation required for the respondent.
+By checking this box, you are sending an email to Commercial Leaders to help you resolve, which will include your call notes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This box should only be checked if there is high priority attention and escalation required for the respondent.
+By checking this box, you are sending an email to Commercial Leaders to help you resolve, which will include your call notes.</inlineHelpText>
+        <label>Escalate (only check after initial FU)</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_ID__c</fullName>
+        <description>unique event identifier</description>
+        <externalId>false</externalId>
+        <label>Event ID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Title__c</fullName>
+        <description>The main tagline or title for the event. Typically under 100 characters.</description>
+        <externalId>false</externalId>
+        <label>Event Title</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Event_User_ID__c</fullName>
+        <description>The ON24-generated unique identified for a particular registrant. Anyone who registers successfully gets a new eventuserid. A user who registers typically gets an event cookie that prevents him from re-registering from the same machine, avoiding duplicates.</description>
+        <externalId>false</externalId>
+        <label>Event User ID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstName</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstRespondedDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Full_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>FirstName&amp;&quot; &quot;&amp;LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Full Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSU_Survey_Amount_Learned__c</fullName>
+        <description>How much did you learn from this session (1 being very little and 5 being very much)?</description>
+        <externalId>false</externalId>
+        <label>GSU Survey: Amount Learned</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSU_Survey_Elaborate_on_missed_content__c</fullName>
+        <description>Please elaborate on your answer to whether or not we missed covering anything.</description>
+        <externalId>false</externalId>
+        <label>GSU Survey: Elaborate on Missed Content</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>GSU_Survey_Missed_Content__c</fullName>
+        <description>Was there anything we missed that you were hoping we would cover in the session?</description>
+        <externalId>false</externalId>
+        <label>GSU Survey: Missed Content</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfFax</fullName>
+    </fields>
+    <fields>
+        <fullName>HasResponded</fullName>
+    </fields>
+    <fields>
+        <fullName>Hold_for_Advisory_Follow_Up__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hold for Advisory Follow Up</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LastName</fullName>
+    </fields>
+    <fields>
+        <fullName>Last_Activity_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(isblank(Lead.LastActivityDate), Contact.LastActivityDate,Lead.LastActivityDate)</formula>
+        <label>Last Activity Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Activity__c</fullName>
+        <description>Last activity date of this contact or lead in a campaign</description>
+        <externalId>false</externalId>
+        <formula>if(isblank(Lead.LastActivityDate), Contact.LastActivityDate,Lead.LastActivityDate)</formula>
+        <label>Last Activity</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Archive_Activity__c</fullName>
+        <description>The date/time this attendee was last known to have an open event console during the archived event. e.g., Mon, 30 Mar 2009 12:27 PDT</description>
+        <externalId>false</externalId>
+        <label>Last Archive Activity</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Live_Activity__c</fullName>
+        <description>The date/time this attendee was last known to have an open event console during this live event. e.g., Mon, 30 Mar 2009 12:27 PDT</description>
+        <externalId>false</externalId>
+        <label>Last Live Activity</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LeadId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Source__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Contact.LeadSource)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Source</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_Status_Reason__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If the member is not a fit, you will be required to provide information for how/when can we turn this prospect into a client.</inlineHelpText>
+        <label>Member Status Reason</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MobilePhone</fullName>
+    </fields>
+    <fields>
+        <fullName>My_Campaign_Members__c</fullName>
+        <description>Used to run reports on my campaign members</description>
+        <externalId>false</externalId>
+        <formula>OR(
+$User.Id = Contact.Owner.Id ,
+$User.Id = Lead.Owner:User.Id )</formula>
+        <label>My Campaign Members</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NPS_Call_Notes__c</fullName>
+        <description>Please enter notes from your NPS survey response call.</description>
+        <externalId>false</externalId>
+        <label>NPS Call Notes</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NPS_Feedback_Category__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Product feedback  - E.g. Green Street doesn’t have a wide enough coverage universe; E.g. I am receiving too many emails
+Customer service feedback – E.g. I tried to get in touch with my account manager numerous times but couldn’t
+Website feedback – i.e. Website is too difficult to navigate
+Cost feedback – i.e. Green Street is too expensive
+Brand awareness feedback – i.e. I don’t even know what Green Street is</inlineHelpText>
+        <label>NPS Feedback Category</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product Feedback</fullName>
+                    <default>false</default>
+                    <label>Product Feedback</label>
+                </value>
+                <value>
+                    <fullName>Customer Service Feedback</fullName>
+                    <default>false</default>
+                    <label>Customer Service Feedback</label>
+                </value>
+                <value>
+                    <fullName>Website Feedback</fullName>
+                    <default>false</default>
+                    <label>Website Feedback</label>
+                </value>
+                <value>
+                    <fullName>Cost Feedback</fullName>
+                    <default>false</default>
+                    <label>Cost Feedback</label>
+                </value>
+                <value>
+                    <fullName>Brand Awareness Feedback</fullName>
+                    <default>false</default>
+                    <label>Brand Awareness Feedback</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>News_Email_Distribution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>News Email Distribution Approved</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Onboarding_Additional_Training_Status__c</fullName>
+        <description>If additional training is requested, monitor status of scheduling and completing that training here.</description>
+        <externalId>false</externalId>
+        <label>Onboarding: Additional Training Status</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Scheduling Training</fullName>
+                    <default>false</default>
+                    <label>Scheduling Training</label>
+                </value>
+                <value>
+                    <fullName>Training Completed</fullName>
+                    <default>false</default>
+                    <label>Training Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Onboarding_Rate_knowledge_of_CRE__c</fullName>
+        <description>Survey answer collected after Onboarding 101 session from Customer Success</description>
+        <externalId>false</externalId>
+        <label>Onboarding: Rate knowledge of CRE</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Beginner</fullName>
+                    <default>false</default>
+                    <label>Beginner</label>
+                </value>
+                <value>
+                    <fullName>Intermediate</fullName>
+                    <default>false</default>
+                    <label>Intermediate</label>
+                </value>
+                <value>
+                    <fullName>Advanced</fullName>
+                    <default>false</default>
+                    <label>Advanced</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Onboarding_Request_Additional_Training__c</fullName>
+        <description>Survey data collected after Onboarding 101 session with Customer Success</description>
+        <externalId>false</externalId>
+        <label>Onboarding: Request Additional Training</label>
+        <required>false</required>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes, please reach out to schedule additional training</fullName>
+                    <default>false</default>
+                    <label>Yes, please reach out to schedule additional training</label>
+                </value>
+                <value>
+                    <fullName>No, not at this time</fullName>
+                    <default>false</default>
+                    <label>No, not at this time</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Owner_Role__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(AND(ISBLANK(Lead.Owner:Queue.QueueName),ISBLANK(Lead.Owner:User.UserRole.Name)), Contact.Account.Owner.UserRole.Name,
+If(AND(ISBLANK(Contact.Account.Owner.UserRole.Name),ISBLANK(Lead.Owner:User.UserRole.Name)), Lead.Owner:Queue.QueueName, 
+If(AND(ISBLANK(Lead.Owner:Queue.QueueName),ISBLANK(Contact.Account.Owner.UserRole.Name)), Lead.Owner:User.UserRole.Name, &quot;&quot;)))</formula>
+        <label>Owner Role</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Poll_Answer_1__c</fullName>
+        <description>User-submitted answer to the poll.</description>
+        <externalId>false</externalId>
+        <label>Poll Answer 1</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Poll_Answer_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Poll Answer 3</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Poll_Question_1__c</fullName>
+        <description>Client-determined poll question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Poll Question 1</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Poll_Question_2__c</fullName>
+        <description>Client-determined poll question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Poll Question 2</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Poll_Question_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Poll Question 3</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Poll_answer_2__c</fullName>
+        <description>User-submitted answer to the poll.</description>
+        <externalId>false</externalId>
+        <label>Poll answer 2</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Polls_Answered__c</fullName>
+        <description>The number of polls the user responded to</description>
+        <externalId>false</externalId>
+        <label>Polls Answered</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PostalCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Questions_Asked__c</fullName>
+        <description>The number of questions the user asked</description>
+        <externalId>false</externalId>
+        <label>Questions Asked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Questions_Followed_Up_On__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Please use this checkbox to confirm when you&apos;ve followed up on questions asked during our events.</description>
+        <externalId>false</externalId>
+        <label>Questions Followed Up On</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Disqualified__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Disqualified</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bad_Timing</fullName>
+                    <default>false</default>
+                    <label>Bad Timing</label>
+                </value>
+                <value>
+                    <fullName>Cost to value not there</fullName>
+                    <default>false</default>
+                    <label>Cost to value not there</label>
+                </value>
+                <value>
+                    <fullName>No budget</fullName>
+                    <default>false</default>
+                    <label>No budget</label>
+                </value>
+                <value>
+                    <fullName>Coverage</fullName>
+                    <default>false</default>
+                    <label>Coverage</label>
+                </value>
+                <value>
+                    <fullName>Nice to have</fullName>
+                    <default>false</default>
+                    <label>Nice to have</label>
+                </value>
+                <value>
+                    <fullName>Current Client</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Current Client</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Research_Email_Distribution_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Research Email Distribution Approved</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Resource_10_Viewed__c</fullName>
+        <description>Name of 10th resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 10 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resource_1_Viewed__c</fullName>
+        <description>Name of 1st resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 1 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resource_2_Viewed__c</fullName>
+        <description>Name of 2nd resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 2 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resource_3_Viewed__c</fullName>
+        <description>Name of 3rd resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 3 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resource_4_Viewed__c</fullName>
+        <description>Name of 4th resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 4 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resource_5_Viewed__c</fullName>
+        <description>Name of 5th resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 5 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resource_6_Viewed__c</fullName>
+        <description>Name of 6th resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 6 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resource_7_Viewed__c</fullName>
+        <description>Name of 7th resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 7 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resource_8_Viewed__c</fullName>
+        <description>Name of 8th resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 8 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resource_9_Viewed__c</fullName>
+        <description>Name of 9th resource viewed in the Resource Widget</description>
+        <externalId>false</externalId>
+        <label>Resource 9 Viewed</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sales_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Campaign_Members1</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Salutation</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Slide_Request__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>To be checked off when the slide request has been followed up on.</inlineHelpText>
+        <label>Slide Follow Up</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status_Notes__c</fullName>
+        <description>Please enter any additional notes or context on campaign member&apos;s status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter any additional notes or context on campaign member&apos;s status (i.e. This member was &quot;Access Denied&quot; because...&quot;</inlineHelpText>
+        <label>Status Notes</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Street</fullName>
+    </fields>
+    <fields>
+        <fullName>Survey_Answer_1__c</fullName>
+        <description>User-submitted answer to the survey question.</description>
+        <externalId>false</externalId>
+        <label>Survey Answer 1</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Answer_2__c</fullName>
+        <description>User-submitted answer to the survey question.</description>
+        <externalId>false</externalId>
+        <label>Survey Answer 2</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Answer_3__c</fullName>
+        <description>User-submitted answer to the survey question.</description>
+        <externalId>false</externalId>
+        <label>Survey Answer 3</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Answer_4__c</fullName>
+        <description>User-submitted answer to the survey question.</description>
+        <externalId>false</externalId>
+        <label>Survey Answer 4</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Answer_5__c</fullName>
+        <description>User-submitted answer to the survey question.</description>
+        <externalId>false</externalId>
+        <label>Survey Answer 5</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Answer_6__c</fullName>
+        <description>User-submitted answer to the survey question.</description>
+        <externalId>false</externalId>
+        <label>Survey Answer 6</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Answer_7__c</fullName>
+        <description>User-submitted answer to the survey question.</description>
+        <externalId>false</externalId>
+        <label>Survey Answer 7</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Answer_8__c</fullName>
+        <description>User-submitted answer to the survey question.</description>
+        <externalId>false</externalId>
+        <label>Survey Answer 8</label>
+        <length>1500</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Question_1__c</fullName>
+        <description>Client-determined survey question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Survey Question 1</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Question_2__c</fullName>
+        <description>Client-determined survey question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Survey Question 2</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Question_3__c</fullName>
+        <description>Client-determined survey question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Survey Question 3</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Question_4__c</fullName>
+        <description>Client-determined survey question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Survey Question 4</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Question_5__c</fullName>
+        <description>Client-determined survey question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Survey Question 5</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Question_6__c</fullName>
+        <description>Client-determined survey question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Survey Question 6</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Question_7__c</fullName>
+        <description>Client-determined survey question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Survey Question 7</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Question_8__c</fullName>
+        <description>Client-determined survey question asked to the audience.</description>
+        <externalId>false</externalId>
+        <label>Survey Question 8</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Surveys_Answered__c</fullName>
+        <description>The number of surveys the user responded to</description>
+        <externalId>false</externalId>
+        <label>Surveys Answered</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+    </fields>
+    <fields>
+        <fullName>User_Answer_1__c</fullName>
+        <description>Presenter response to user submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Answer 1</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Answer_2__c</fullName>
+        <description>Presenter response to user submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Answer 2</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Answer_3__c</fullName>
+        <description>Presenter response to user submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Answer 3</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Answer_4__c</fullName>
+        <description>Presenter response to user submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Answer 4</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Answer_5__c</fullName>
+        <description>Presenter response to user submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Answer 5</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Profile_URL__c</fullName>
+        <description>A unique webpage that displays  lifetime activity of an ON24 webinar/video attendee, including their engagement score, total viewing time, resources downloaded, and questions asked. Information is collected from webinars, videos, and documents.</description>
+        <externalId>false</externalId>
+        <label>User Profile URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>User_Question_1__c</fullName>
+        <description>User submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Question 1</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Question_2__c</fullName>
+        <description>User submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Question 2</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Question_3__c</fullName>
+        <description>User submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Question 3</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Question_4__c</fullName>
+        <description>User submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Question 4</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Question_5__c</fullName>
+        <description>User submitted question through Q&amp;A widget</description>
+        <externalId>false</externalId>
+        <label>User Question 5</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Questions_Answers__c</fullName>
+        <description>This tag lists the questions asked by the user and answers from presenters</description>
+        <externalId>false</externalId>
+        <label>User Questions &amp; Answers</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Questions__c</fullName>
+        <description>This tag lists the questions asked by the user.</description>
+        <externalId>false</externalId>
+        <label>User Questions</label>
+        <length>3600</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Webinar_Answers_to_Follow_Up_With__c</fullName>
+        <description>Unanswered questions asked during the event have been answered by Research or Customer Success and the answer will be housed here. Please us this answer to follow up with this person.</description>
+        <externalId>false</externalId>
+        <label>Webinar Answers to Follow Up With</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Webinar_Attendance_Duration__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Attendance Duration</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_BMID__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar BMID</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Engagement_Duration__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Engagement Duration</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Entered_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Entered Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Exited_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Exited Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Handouts_Downloaded__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Handouts Downloaded</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Webinar_Number_of_Chats__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Number of Chats</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Number_of_Polls__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Number of Polls</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Number_of_Q_As__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Number of Q&amp;As</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Personalized_Conference_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Personalized Conference URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Polls_Answered__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Polls Answered</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Webinar_Q_A_Questions__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Q&amp;A Questions</label>
+        <length>131072</length>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Webinar_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Start Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Survey_Demo_Request__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Survey: Demo Request</label>
+        <required>false</required>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>U.S. REIT Research</fullName>
+                    <default>false</default>
+                    <label>U.S. REIT Research</label>
+                </value>
+                <value>
+                    <fullName>Pan-European REIT Research</fullName>
+                    <default>false</default>
+                    <label>Pan-European REIT Research</label>
+                </value>
+                <value>
+                    <fullName>U.S. Real Estate Analytics</fullName>
+                    <default>false</default>
+                    <label>U.S. Real Estate Analytics</label>
+                </value>
+                <value>
+                    <fullName>Pan-European Real Estate Analytics</fullName>
+                    <default>false</default>
+                    <label>Pan-European Real Estate Analytics</label>
+                </value>
+                <value>
+                    <fullName>U.S. News</fullName>
+                    <default>false</default>
+                    <label>U.S. News</label>
+                </value>
+                <value>
+                    <fullName>Pan-European React News</fullName>
+                    <default>false</default>
+                    <label>Pan-European React News</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Webinar_Survey_Improvements_Suggestions__c</fullName>
+        <description>Please share any suggestions to make these webinars better.</description>
+        <externalId>false</externalId>
+        <label>Webinar Survey: Improvement Suggestions</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Webinar_Survey_Please_rate_your_overall__c</fullName>
+        <description>Please rate your overall satisfaction with today&apos;s event. Scale of 1-5</description>
+        <externalId>false</externalId>
+        <label>Webinar Survey: Overall Satisfaction</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Webinar_WebinarSurvey_Topics_of_Interest__c</fullName>
+        <description>Please share any topics you would be interested in for future webinars.</description>
+        <externalId>false</externalId>
+        <label>Webinar Survey: Topics of Interest</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Webinar_name__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar name</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <recordTypes>
+        <fullName>Email_Campaign_Member</fullName>
+        <active>true</active>
+        <label>Email Campaign Member</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Event_Campaign_Member</fullName>
+        <active>true</active>
+        <label>Event Campaign Member</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>General</fullName>
+        <active>true</active>
+        <label>General</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Net_Promoter_Score_Responder</fullName>
+        <active>true</active>
+        <label>Net Promoter Score Responder</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Net_Promoter_Score_Responder_No_Follow_Up</fullName>
+        <active>true</active>
+        <label>Net Promoter Score Responder No Follow Up</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>News_Subscription</fullName>
+        <active>true</active>
+        <label>News Subscription</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Onboarding</fullName>
+        <active>true</active>
+        <description>Onboarding campaign member</description>
+        <label>Onboarding</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Target_List</fullName>
+        <active>true</active>
+        <label>Target List</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>User_Usage</fullName>
+        <active>true</active>
+        <label>User/Usage</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Webinar_Campaign_Member</fullName>
+        <active>true</active>
+        <description>All Webinar Campaign Member Data</description>
+        <label>Webinar Campaign Member</label>
+        <picklistValues>
+            <picklist>GSU_Survey_Missed_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NPS_Feedback_Category__c</picklist>
+            <values>
+                <fullName>Brand Awareness Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Additional_Training_Status__c</picklist>
+            <values>
+                <fullName>Scheduling Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Rate_knowledge_of_CRE__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Request_Additional_Training__c</picklist>
+            <values>
+                <fullName>No%2C not at this time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C please reach out to schedule additional training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>Bad_Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost to value not there</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nice to have</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No budget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Webinar_Survey_Demo_Request__c</picklist>
+            <values>
+                <fullName>Pan-European REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <sharingModel>ControlledByCampaign</sharingModel>
+    <validationRules>
+        <fullName>Escalation_Not_Valid_Yet</fullName>
+        <active>true</active>
+        <description>This box should only be checked if the AM has already completed the initial follow up and attempted to resolve themselves, and there is high priority attention and escalation required for the respondent. Status cannot be Incoming: No Outreach.</description>
+        <errorConditionFormula>AND(
+  ISCHANGED(Escalate__c),
+  ISBLANK( NPS_Call_Notes__c))</errorConditionFormula>
+        <errorDisplayField>Escalate__c</errorDisplayField>
+        <errorMessage>This box should only be checked if you have already completed the initial follow up, attempted to resolve yourself, and there is high priority escalation required. You must change the Status to Attempting Follow Up and add relevant call notes first.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Target_List_Require_Member_Status_Reason</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+Campaign.RecordType.Name=&quot;Target List&quot;,
+ISBLANK(Member_Status_Reason__c),
+OR(
+ISPICKVAL(Status,&quot;Engaged But No Budget&quot;),
+ISPICKVAL(Status,&quot;Engaged But Not The Right Timing&quot;),
+ISPICKVAL(Status,&quot;Engaged But Product Is Not A Fit&quot;)))</errorConditionFormula>
+        <errorDisplayField>Member_Status_Reason__c</errorDisplayField>
+        <errorMessage>If the target list member is determined not to be a prospect, Member Status Reason is required.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SKU identification according to product combinations.</description>
+    <fields>
+        <fullName>IsForTesting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is for testing</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ProductCombination__c</fullName>
+        <description>Combination of product codes associated with an SKU, separated by &quot;;&quot;.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Combination of product codes associated with an SKU, separated by &quot;;&quot;.</inlineHelpText>
+        <label>Product Combination</label>
+        <required>true</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SKU__c</fullName>
+        <description>SKU to which the customer&apos;s product combination corresponds.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>SKU to which the customer&apos;s product combination corresponds.</inlineHelpText>
+        <label>SKU</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>EU_Combo</fullName>
+                    <default>false</default>
+                    <label>EU Combo</label>
+                </value>
+                <value>
+                    <fullName>EU_Market</fullName>
+                    <default>false</default>
+                    <label>EU Market</label>
+                </value>
+                <value>
+                    <fullName>EU_Reit</fullName>
+                    <default>false</default>
+                    <label>EU Reit</label>
+                </value>
+                <value>
+                    <fullName>FullPlatform</fullName>
+                    <default>false</default>
+                    <label>Full Platform</label>
+                </value>
+                <value>
+                    <fullName>MarketCombo</fullName>
+                    <default>false</default>
+                    <label>Market Combo</label>
+                </value>
+                <value>
+                    <fullName>News1</fullName>
+                    <default>false</default>
+                    <label>News 1</label>
+                </value>
+                <value>
+                    <fullName>News2</fullName>
+                    <default>false</default>
+                    <label>News 2</label>
+                </value>
+                <value>
+                    <fullName>News3</fullName>
+                    <default>false</default>
+                    <label>News 3</label>
+                </value>
+                <value>
+                    <fullName>ReactOnly</fullName>
+                    <default>false</default>
+                    <label>React Only</label>
+                </value>
+                <value>
+                    <fullName>REIT_Combo</fullName>
+                    <default>false</default>
+                    <label>REIT Combo</label>
+                </value>
+                <value>
+                    <fullName>US_Combo</fullName>
+                    <default>false</default>
+                    <label>US Combo</label>
+                </value>
+                <value>
+                    <fullName>US_Market</fullName>
+                    <default>false</default>
+                    <label>US Market</label>
+                </value>
+                <value>
+                    <fullName>US_PortfolioTools</fullName>
+                    <default>false</default>
+                    <label>US PortfolioTools</label>
+                </value>
+                <value>
+                    <fullName>US_Reit</fullName>
+                    <default>false</default>
+                    <label>US Reit</label>
+                </value>
+                <value>
+                    <fullName>Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>REIT_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>REIT + Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>Combo_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>Combo +  Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>REIT_Combo_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>REIT Combo +  Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>Market + Detailed NAV</fullName>
+                    <default>false</default>
+                    <label>Market + Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>EU_Combo_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>EU Combo +  Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>EU_REIT_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>EU REIT +  Detailed NAV</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>DDS - SKU Combination</label>
+    <listViews>
+        <fullName>AllSKU</fullName>
+        <columns>MasterLabel</columns>
+        <columns>SKU__c</columns>
+        <columns>ProductCombination__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsForTesting__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All SKU</label>
+    </listViews>
+    <pluralLabel>DDS - SKU Combinations</pluralLabel>
+    <validationRules>
+        <fullName>Product_Combination_Format</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT( 
+OR( 
+ISBLANK( ProductCombination__c ),REGEX(ProductCombination__c,
+&quot;(DDS[0-9];)*&quot;))
+)</errorConditionFormula>
+        <errorMessage>The format of the combination products must be. : {DDS}Id ; separating by &quot;;&quot; . EX : DDS1;</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

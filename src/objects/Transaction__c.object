@@ -1,0 +1,1718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Transaction_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Transaction_Record_Page1</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>Custom_Transaction_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Custom_Transaction_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Transaction_Type__c</fields>
+        <fields>Status__c</fields>
+        <fields>Outreach_Status__c</fields>
+        <fields>Days_Overdue__c</fields>
+        <label>Custom Transaction Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Remaining__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account__r.BillingStreet)), Account__r.BillingStreet + BR(), NULL) +
+IF(NOT(ISBLANK(Account__r.BillingCity)), Account__r.BillingCity + BR(), NULL) +
+IF(NOT(ISBLANK(Account__r.BillingState)), Account__r.BillingState, NULL) +
+IF(NOT(ISBLANK(Account__r.BillingPostalCode)), &quot;, &quot; + Account__r.BillingPostalCode + BR(), NULL) +
+IF(NOT(ISBLANK(Account__r.BillingCountry)), Account__r.BillingCountry, NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billing Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Invoices</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Close_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Days_Overdue__c</fullName>
+        <externalId>false</externalId>
+        <formula>If (
+ ISBLANK(Payment_Received_Date__c), 
+TODAY()- Invoice_Due_Date__c, 
+Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Overdue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Set up by integration to NetSuite</inlineHelpText>
+        <label>Department</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Asset Management</fullName>
+                    <default>false</default>
+                    <label>Asset Management</label>
+                </value>
+                <value>
+                    <fullName>Atlas</fullName>
+                    <default>false</default>
+                    <label>Atlas</label>
+                </value>
+                <value>
+                    <fullName>Commercial Operations</fullName>
+                    <default>false</default>
+                    <label>Commercial Operations</label>
+                </value>
+                <value>
+                    <fullName>Contract Account Management</fullName>
+                    <default>false</default>
+                    <label>Contract Account Management</label>
+                </value>
+                <value>
+                    <fullName>Corporate</fullName>
+                    <default>false</default>
+                    <label>Corporate</label>
+                </value>
+                <value>
+                    <fullName>Equity Account Management</fullName>
+                    <default>false</default>
+                    <label>Equity Account Management</label>
+                </value>
+                <value>
+                    <fullName>Euro Real Estate Analytics</fullName>
+                    <default>false</default>
+                    <label>Euro Real Estate Analytics</label>
+                </value>
+                <value>
+                    <fullName>Advisory</fullName>
+                    <default>false</default>
+                    <label>Advisory</label>
+                </value>
+                <value>
+                    <fullName>HSP AB Alert</fullName>
+                    <default>false</default>
+                    <label>HSP AB Alert</label>
+                </value>
+                <value>
+                    <fullName>HSP Account Management</fullName>
+                    <default>false</default>
+                    <label>HSP Account Management</label>
+                </value>
+                <value>
+                    <fullName>HSP Advertising</fullName>
+                    <default>false</default>
+                    <label>HSP Advertising</label>
+                </value>
+                <value>
+                    <fullName>HSP CM Alert</fullName>
+                    <default>false</default>
+                    <label>HSP CM Alert</label>
+                </value>
+                <value>
+                    <fullName>HSP Corporate</fullName>
+                    <default>false</default>
+                    <label>HSP Corporate</label>
+                </value>
+                <value>
+                    <fullName>HSP Corporate : HSP Administrative</fullName>
+                    <default>false</default>
+                    <label>HSP Corporate : HSP Administrative</label>
+                </value>
+                <value>
+                    <fullName>HSP Corporate : HSP Databases</fullName>
+                    <default>false</default>
+                    <label>HSP Corporate : HSP Databases</label>
+                </value>
+                <value>
+                    <fullName>HSP Corporate : HSP Executive</fullName>
+                    <default>false</default>
+                    <label>HSP Corporate : HSP Executive</label>
+                </value>
+                <value>
+                    <fullName>HSP Corporate : HSP Finance</fullName>
+                    <default>false</default>
+                    <label>HSP Corporate : HSP Finance</label>
+                </value>
+                <value>
+                    <fullName>HSP HF Alert</fullName>
+                    <default>false</default>
+                    <label>HSP HF Alert</label>
+                </value>
+                <value>
+                    <fullName>HSP Journalists</fullName>
+                    <default>false</default>
+                    <label>HSP Journalists</label>
+                </value>
+                <value>
+                    <fullName>HSP Marketing</fullName>
+                    <default>false</default>
+                    <label>HSP Marketing</label>
+                </value>
+                <value>
+                    <fullName>HSP News Production</fullName>
+                    <default>false</default>
+                    <label>HSP News Production</label>
+                </value>
+                <value>
+                    <fullName>HSP RE Alert</fullName>
+                    <default>false</default>
+                    <label>HSP RE Alert</label>
+                </value>
+                <value>
+                    <fullName>Loan Analytics</fullName>
+                    <default>false</default>
+                    <label>Loan Analytics</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>New Sales</fullName>
+                    <default>false</default>
+                    <label>New Sales</label>
+                </value>
+                <value>
+                    <fullName>Product Management</fullName>
+                    <default>false</default>
+                    <label>Product Management</label>
+                </value>
+                <value>
+                    <fullName>Quant</fullName>
+                    <default>false</default>
+                    <label>Quant</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Analytics</fullName>
+                    <default>false</default>
+                    <label>Real Estate Analytics</label>
+                </value>
+                <value>
+                    <fullName>REIT Research</fullName>
+                    <default>false</default>
+                    <label>REIT Research</label>
+                </value>
+                <value>
+                    <fullName>Trading</fullName>
+                    <default>false</default>
+                    <label>Trading</label>
+                </value>
+                <value>
+                    <fullName>Trading - UK Disc Ops</fullName>
+                    <default>false</default>
+                    <label>Trading - UK Disc Ops</label>
+                </value>
+                <value>
+                    <fullName>Transaction Database</fullName>
+                    <default>false</default>
+                    <label>Transaction Database</label>
+                </value>
+                <value>
+                    <fullName>UK Allocation</fullName>
+                    <default>false</default>
+                    <label>UK Allocation</label>
+                </value>
+                <value>
+                    <fullName>US Allocation</fullName>
+                    <default>false</default>
+                    <label>US Allocation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Exclude_Collection__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Exclude Collection</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>NetSuite Internal ID</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Fifth_Notice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Fifth Notice</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>First_Notice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>First Notice</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Fourth_Notice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Fourth Notice</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GSA_Relationship_Transaction__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Account__r.Type)</formula>
+        <label>GSA Relationship</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Invoice Owner</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.FirstName</field>
+                <operation>equals</operation>
+                <value>Abby</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Invoice__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Invoice</label>
+        <referenceTo>Transaction__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Invoice</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Net_Terms__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT ( Opportunity__r.Terms__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Terms</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>Invoices</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Outreach_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Outreach Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+                <value>
+                    <fullName>1st Follow Up</fullName>
+                    <default>false</default>
+                    <label>1st Follow Up</label>
+                </value>
+                <value>
+                    <fullName>2nd Follow Up</fullName>
+                    <default>false</default>
+                    <label>2nd Follow Up</label>
+                </value>
+                <value>
+                    <fullName>Final Notice</fullName>
+                    <default>false</default>
+                    <label>Final Notice</label>
+                </value>
+                <value>
+                    <fullName>Perpetual Non-Payment</fullName>
+                    <default>false</default>
+                    <label>Perpetual Non-Payment</label>
+                </value>
+                <value>
+                    <fullName>First Notice</fullName>
+                    <default>false</default>
+                    <label>First Notice</label>
+                </value>
+                <value>
+                    <fullName>Second Notice</fullName>
+                    <default>false</default>
+                    <label>Second Notice</label>
+                </value>
+                <value>
+                    <fullName>Third Notice</fullName>
+                    <default>false</default>
+                    <label>Third Notice</label>
+                </value>
+                <value>
+                    <fullName>Fourth Notice</fullName>
+                    <default>false</default>
+                    <label>Fourth Notice</label>
+                </value>
+                <value>
+                    <fullName>Fifth notice</fullName>
+                    <default>false</default>
+                    <label>Fifth notice</label>
+                </value>
+                <value>
+                    <fullName>Sixth Notice</fullName>
+                    <default>false</default>
+                    <label>Sixth Notice</label>
+                </value>
+                <value>
+                    <fullName>Seventh Notice</fullName>
+                    <default>false</default>
+                    <label>Seventh Notice</label>
+                </value>
+                <value>
+                    <fullName>Exclude Collection</fullName>
+                    <default>false</default>
+                    <label>Exclude Collection</label>
+                </value>
+                <value>
+                    <fullName>Confirmed Receipt</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Confirmed Receipt</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Payment_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be updated when Status is changed to Paid In Full</inlineHelpText>
+        <label>Payment Received Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SO_Prepared_By__c</fullName>
+        <externalId>false</externalId>
+        <label>SO Prepared By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Second_Notice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Second Notice</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Seventh_Notice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Seventh Notice</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sixth_Notice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sixth Notice</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>NetSuite transaction status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set up by integration</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Paid In Full</fullName>
+                    <default>false</default>
+                    <label>Paid In Full</label>
+                </value>
+                <value>
+                    <fullName>Pending Approval</fullName>
+                    <default>false</default>
+                    <label>Pending Approval</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Voided</fullName>
+                    <default>false</default>
+                    <label>Voided</label>
+                </value>
+                <value>
+                    <fullName>Deposited</fullName>
+                    <default>false</default>
+                    <label>Deposited</label>
+                </value>
+                <value>
+                    <fullName>Not Deposited</fullName>
+                    <default>false</default>
+                    <label>Not Deposited</label>
+                </value>
+                <value>
+                    <fullName>Unapproved Payment</fullName>
+                    <default>false</default>
+                    <label>Unapproved Payment</label>
+                </value>
+                <value>
+                    <fullName>Fully Applied</fullName>
+                    <default>false</default>
+                    <label>Fully Applied</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Third_Notice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Third Notice</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Transaction_Type__c</fullName>
+        <description>Transaction type from NetSuite</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set by integration script</inlineHelpText>
+        <label>Transaction Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Invoice</fullName>
+                    <default>false</default>
+                    <label>Invoice</label>
+                </value>
+                <value>
+                    <fullName>Credit Memo</fullName>
+                    <default>false</default>
+                    <label>Credit Memo</label>
+                </value>
+                <value>
+                    <fullName>Customer Payment</fullName>
+                    <default>false</default>
+                    <label>Customer Payment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Subscription Year</inlineHelpText>
+        <label>Year</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Transaction</label>
+    <listViews>
+        <fullName>Advisory_Invoices_Overdue</fullName>
+        <columns>NAME</columns>
+        <columns>Transaction_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Billing_Contact__c</columns>
+        <columns>Days_Overdue__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Days_Overdue__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Advisory_Transactions</value>
+        </filters>
+        <label>Advisory Invoices Overdue</label>
+        <sharedTo>
+            <group>Advisory</group>
+            <role>Finance</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Final_Notice</fullName>
+        <columns>SO_Prepared_By__c</columns>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Invoice_Due_Date__c</columns>
+        <columns>Days_Overdue__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Days_Overdue__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>60</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Standard_Transaction</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>Outreach_Status__c</field>
+            <operation>equals</operation>
+            <value>Sent,1st Follow Up,2nd Follow Up</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>A</value>
+        </filters>
+        <filters>
+            <field>Days_Overdue__c</field>
+            <operation>lessThan</operation>
+            <value>90</value>
+        </filters>
+        <label>Final Notice</label>
+        <sharedTo>
+            <role>Commercial_Operations</role>
+            <role>Finance</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>New_Advertising_Invoices</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>SO_Prepared_By__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Transaction_Type__c</field>
+            <operation>equals</operation>
+            <value>Invoice</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Advisory_Transactions</value>
+        </filters>
+        <filters>
+            <field>Outreach_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Sent,1st Follow Up,2nd Follow Up,Final Notice,Perpetual Non-Payment,First Notice,Second Notice,Third Notice,Fourth Notice,Fifth notice,Sixth Notice,Seventh Notice,Exclude Collection</value>
+        </filters>
+        <filters>
+            <field>SO_Prepared_By__c</field>
+            <operation>notContain</operation>
+            <value>Ally</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>A</value>
+        </filters>
+        <label>New Advertising Invoices</label>
+        <sharedTo>
+            <role>Commercial_Operations</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>New_Advisory_Invoices</fullName>
+        <columns>NAME</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Transaction_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Billing_Contact__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Outreach_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Sent,1st Follow Up,2nd Follow Up,Final Notice,Perpetual Non-Payment</value>
+        </filters>
+        <filters>
+            <field>Transaction_Type__c</field>
+            <operation>equals</operation>
+            <value>Invoice</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Advisory_Transactions</value>
+        </filters>
+        <label>New Advisory Invoices</label>
+        <sharedTo>
+            <role>Advisory</role>
+            <role>Finance</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>New_Invoices_to_Send</fullName>
+        <columns>Account__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Transaction_Type__c</field>
+            <operation>equals</operation>
+            <value>Invoice</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Standard_Transaction</value>
+        </filters>
+        <filters>
+            <field>Invoice_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>6/28/2020</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>a</value>
+        </filters>
+        <filters>
+            <field>SO_Prepared_By__c</field>
+            <operation>notContain</operation>
+            <value>Pat</value>
+        </filters>
+        <filters>
+            <field>Outreach_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Sent,1st Follow Up,2nd Follow Up,Final Notice,Perpetual Non-Payment</value>
+        </filters>
+        <label>New Subscription Invoices</label>
+    </listViews>
+    <listViews>
+        <fullName>Outstading_Sage_QuickFill_Invoices</fullName>
+        <columns>SO_Prepared_By__c</columns>
+        <columns>Account__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Days_Overdue__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Transaction_Type__c</field>
+            <operation>equals</operation>
+            <value>Invoice</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Standard_Transaction</value>
+        </filters>
+        <filters>
+            <field>SO_Prepared_By__c</field>
+            <operation>equals</operation>
+            <value>sage/ quickfill</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>A</value>
+        </filters>
+        <label>Outstanding HSP Invoices</label>
+        <sharedTo>
+            <role>Administrative</role>
+            <role>Commercial_Operations</role>
+            <role>Finance</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Perpetual_Non_Payment</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Invoice_Due_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_Overdue__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Days_Overdue__c</field>
+            <operation>greaterThan</operation>
+            <value>90</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Standard_Transaction</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>A</value>
+        </filters>
+        <label>Perpetual Non- Payment</label>
+        <sharedTo>
+            <role>Commercial_Operations</role>
+            <role>Finance</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Subscription_Invoices_Overdue</fullName>
+        <columns>SO_Prepared_By__c</columns>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Invoice_Due_Date__c</columns>
+        <columns>Days_Overdue__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Days_Overdue__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Standard_Transaction</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>Outreach_Status__c</field>
+            <operation>equals</operation>
+            <value>Sent,Confirmed Receipt</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>A</value>
+        </filters>
+        <filters>
+            <field>Days_Overdue__c</field>
+            <operation>lessThan</operation>
+            <value>31</value>
+        </filters>
+        <label>1st Follow-Up</label>
+        <sharedTo>
+            <role>Commercial_Operations</role>
+            <role>Finance</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Transactions_Overdue</fullName>
+        <columns>SO_Prepared_By__c</columns>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Invoice_Due_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_Overdue__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Days_Overdue__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Standard_Transaction</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>Outreach_Status__c</field>
+            <operation>equals</operation>
+            <value>Sent,1st Follow Up,2nd Follow Up,Final Notice,Perpetual Non-Payment,Confirmed Receipt</value>
+        </filters>
+        <label>Subscription Invoices Overdue</label>
+        <sharedTo>
+            <role>Administrative</role>
+            <role>BDR_Manager</role>
+            <role>Commercial_Operations</role>
+            <role>Finance</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X2nd_Follow_Up</fullName>
+        <columns>SO_Prepared_By__c</columns>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Invoice_Due_Date__c</columns>
+        <columns>Days_Overdue__c</columns>
+        <columns>Outreach_Status__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Days_Overdue__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>31</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Transaction__c.Standard_Transaction</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>A</value>
+        </filters>
+        <filters>
+            <field>Days_Overdue__c</field>
+            <operation>lessThan</operation>
+            <value>60</value>
+        </filters>
+        <label>2nd Follow-Up</label>
+        <sharedTo>
+            <role>Commercial_Operations</role>
+            <role>Finance</role>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Transaction Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Transactions</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Advisory_Transactions</fullName>
+        <active>true</active>
+        <label>Advisory Transactions</label>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Advisory</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>HSP AB Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Account Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP CM Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate %3A HSP Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate %3A HSP Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate %3A HSP Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate %3A HSP Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP HF Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Journalists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP News Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP RE Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trading - UK Disc Ops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Allocation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Outreach_Status__c</picklist>
+            <values>
+                <fullName>1st Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2nd Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Perpetual Non-Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Deposited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fully Applied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Deposited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid In Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unapproved Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Transaction_Type__c</picklist>
+            <values>
+                <fullName>Credit Memo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invoice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard_Transaction</fullName>
+        <active>true</active>
+        <label>Standard Transaction</label>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>Asset Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Operations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Account Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Equity Account Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Euro Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP AB Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Account Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP CM Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate %3A HSP Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate %3A HSP Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate %3A HSP Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Corporate %3A HSP Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP HF Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Journalists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP News Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HSP RE Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trading - UK Disc Ops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Allocation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Outreach_Status__c</picklist>
+            <values>
+                <fullName>1st Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2nd Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclude Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fifth notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fourth Notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seventh Notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sixth Notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Notice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Deposited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fully Applied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Deposited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid In Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unapproved Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Transaction_Type__c</picklist>
+            <values>
+                <fullName>Credit Memo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invoice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Days_Overdue__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Price increase on products in the corresponding renewal year.</description>
+    <fields>
+        <fullName>EffectiveYear__c</fullName>
+        <description>Year in which the increase will be applied.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Year in which the increase will be applied.</inlineHelpText>
+        <label>Effective Year</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsForTesting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is for testing</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SKU__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>SKU</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>EU_Combo</fullName>
+                    <default>true</default>
+                    <label>EU Combo</label>
+                </value>
+                <value>
+                    <fullName>EU_Market</fullName>
+                    <default>false</default>
+                    <label>EU Market</label>
+                </value>
+                <value>
+                    <fullName>EU_Reit</fullName>
+                    <default>false</default>
+                    <label>EU Reit</label>
+                </value>
+                <value>
+                    <fullName>FullPlatform</fullName>
+                    <default>false</default>
+                    <label>Full Platform</label>
+                </value>
+                <value>
+                    <fullName>MarketCombo</fullName>
+                    <default>false</default>
+                    <label>Market Combo</label>
+                </value>
+                <value>
+                    <fullName>News1</fullName>
+                    <default>false</default>
+                    <label>News 1</label>
+                </value>
+                <value>
+                    <fullName>News2</fullName>
+                    <default>false</default>
+                    <label>News 2</label>
+                </value>
+                <value>
+                    <fullName>News3</fullName>
+                    <default>false</default>
+                    <label>News 3</label>
+                </value>
+                <value>
+                    <fullName>ReactOnly</fullName>
+                    <default>false</default>
+                    <label>React Only</label>
+                </value>
+                <value>
+                    <fullName>REIT_Combo</fullName>
+                    <default>false</default>
+                    <label>REIT Combo</label>
+                </value>
+                <value>
+                    <fullName>US_Combo</fullName>
+                    <default>false</default>
+                    <label>US Combo</label>
+                </value>
+                <value>
+                    <fullName>US_Market</fullName>
+                    <default>false</default>
+                    <label>US Market</label>
+                </value>
+                <value>
+                    <fullName>US_PortfolioTools</fullName>
+                    <default>false</default>
+                    <label>US PortfolioTools</label>
+                </value>
+                <value>
+                    <fullName>US_Reit</fullName>
+                    <default>false</default>
+                    <label>US Reit</label>
+                </value>
+                <value>
+                    <fullName>Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>REIT_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>REIT + Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>Combo_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>Combo +  Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>REIT_Combo_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>REIT Combo +  Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>Market + Detailed NAV</fullName>
+                    <default>false</default>
+                    <label>Market + Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>EU Combo +  Detailed NAV</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>EU Combo +  Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>EU REIT +  Detailed NAV</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>EU REIT +  Detailed NAV</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SalesType__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Sales Type</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Segment__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Segment</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AdvisorsOthers</fullName>
+                    <default>true</default>
+                    <label>Advisors &amp; Others</label>
+                </value>
+                <value>
+                    <fullName>Brokers</fullName>
+                    <default>false</default>
+                    <label>Brokers</label>
+                </value>
+                <value>
+                    <fullName>PERE_Companies</fullName>
+                    <default>false</default>
+                    <label>PE/RE Companies</label>
+                </value>
+                <value>
+                    <fullName>PensionsEndowmentsInsuranceCompanies</fullName>
+                    <default>false</default>
+                    <label>Pensions, Endowments, Insurance Companies</label>
+                </value>
+                <value>
+                    <fullName>PublicEquityInvestors</fullName>
+                    <default>false</default>
+                    <label>Public Equity Investors</label>
+                </value>
+                <value>
+                    <fullName>CommercialBanks</fullName>
+                    <default>false</default>
+                    <label>Commercial Banks</label>
+                </value>
+                <value>
+                    <fullName>InvestmentBanks</fullName>
+                    <default>false</default>
+                    <label>Investment Banks</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>YoY_Rate__c</fullName>
+        <description>The percentage increase for a specific segment and year.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The percentage increase for a specific segment and year.</inlineHelpText>
+        <label>YoY Rate</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <label>DDS - YoY Segmentation</label>
+    <listViews>
+        <fullName>Admin</fullName>
+        <columns>EffectiveYear__c</columns>
+        <columns>Segment__c</columns>
+        <columns>SKU__c</columns>
+        <columns>YoY_Rate__c</columns>
+        <columns>SalesType__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsForTesting__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Admin</label>
+    </listViews>
+    <listViews>
+        <fullName>X2023_YoY</fullName>
+        <columns>EffectiveYear__c</columns>
+        <columns>YoY_Rate__c</columns>
+        <columns>Segment__c</columns>
+        <columns>SKU__c</columns>
+        <columns>SalesType__c</columns>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsForTesting__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>EffectiveYear__c</field>
+            <operation>equals</operation>
+            <value>2023</value>
+        </filters>
+        <label>2023 YoY</label>
+    </listViews>
+    <pluralLabel>DDS - YoY Segmentations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

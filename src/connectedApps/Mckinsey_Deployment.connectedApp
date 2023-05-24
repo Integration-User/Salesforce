@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>riglesias@greenstreet.com</contactEmail>
+    <label>Mckinsey Deployment</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:1717/OauthRedirect.</callbackUrl>
+        <certificate>MIIDTDCCAjQCCQCQrqo78uHs9TANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJFUzEPMA0GA1UECAwGTWFkcmlkMQ8wDQYDVQQHDAZNYWRyaWQxETAPBgNVBAoMCE1ja2luc2V5MREwDwYDVQQLDAhNY2tpbnNleTERMA8GA1UEAwwITWNraW5zZXkwHhcNMjMwMTI2MTgwNDEwWhcNMjQwMTI2MTgwNDEwWjBoMQswCQYDVQQGEwJFUzEPMA0GA1UECAwGTWFkcmlkMQ8wDQYDVQQHDAZNYWRyaWQxETAPBgNVBAoMCE1ja2luc2V5MREwDwYDVQQLDAhNY2tpbnNleTERMA8GA1UEAwwITWNraW5zZXkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDQr/xnsN247F8bCJdxZYSiqf/ZWPu6bAkbXxkYjhY52L0WbHlX9veWAJrGiXUiAMtMLQvSOyL5EM6UHvhV/7e9/1gfz8woaypso7KwjrsPRWrbUmhpVxuOIhZNQVJevmSIbc04JgDiXeyd1zrnaKgcCNAW0OhtTbplrDookKHsDvq8+k5IJDAYb3kLjovL55rZCWo7xwWS/w+55Mowq5pb69ldTAjEuixaEFAKd0PWEYs4UVOoW6H6dLEqmQ6lBSwokPjfZtC53aK5s9l0ypKbXrqWMqHfDgfKpZ83x5Qr6N0jArauUO2dL7ox5HxwUWc84Gy0keOtoxIGmdKjs5ixAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAHDOr5dLc7nd4VzzArU99byJWOghw+wkJSyeod+L4j5GCBLiFlJhwagbFk08QV5yrVYhtopyshvF+cXPZSOJ5H2JAsL2ZIDMvECVrec6aVV/sI5i9DPk29yfphHeQuL6gSIjgMPwf3KL0fwnh854dmC84spe/LXCN9vw4VsWSlLZKYN7c81y6pjfaTACCJzYo5f0w51SOJ3pKcIhOrXvnjpRoCJrXIzslHLn0eClCQz5Tvu67gx1KGpO6aQKoi3ZmIjH4mx+r3NbHfpLrNrnHJ26Z469D3PGLou1+OhqdVVU0eZG1JzAvVdnccgNa08XZm1mRm7A3JvvuQhdSEXF1Xs=</certificate>
+        <consumerKey>3MVG9zlTNB8o8BA2CfUrLuva7AF8T3C_EfTCJbwJlUpfNoJM61KTcXJhtoJqGdLvl5t3EBoyOmHo2VgYUS_gl</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>specific_inactivity:90:DAYS</refreshTokenPolicy>
+    </oauthPolicy>
+    <permissionSetName>API Enabled</permissionSetName>
+    <profileName>System Admin - Integrations</profileName>
+    <sessionPolicy>
+        <sessionTimeout>15</sessionTimeout>
+    </sessionPolicy>
+</ConnectedApp>

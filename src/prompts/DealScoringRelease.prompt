@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Deal Scoring Release</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;We have officially released Green Street&apos;s Dynamic Deal Scoring Model. We hope this tool helps each of you hit your goals for 2023 and beyond! There are many changes that come along with this new tool, so please see below for ways you can learn more and get help!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please review the &lt;a href=&quot;https://greenstreetadvisors.my.salesforce.com/sfc/p/f4000003AzjR/a/5G000001WJET/WKAxOaefdQpFTaI.tuFgmzM4QppyFDvLUDsSCcTIMzQ&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Release Notes &lt;/a&gt;to ensure you are equipped with knowledge of the most recent workflow enhancements.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;All training resources can be found here:&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://greenst.sharepoint.com/:f:/r/sites/Commercial/Shared%20Documents/All%20Sales%20Team%20Library/Commercial%20Enablement/2023%20Dynamic%20Deal%20Scoring%20Tool%20Materials?csf=1&amp;amp;web=1&amp;amp;e=9rc8Hq&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;2023 Dynamic Deal Scoring Tool Materials&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Y&apos;all are Rockstar&apos;s. Happy Selling! :)&lt;/p&gt;</body>
+        <customApplication>Green_Street_Advisors</customApplication>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>It&apos;s Launch Day!</header>
+        <isPublished>true</isPublished>
+        <masterLabel>Deal Scoring Release</masterLabel>
+        <publishedDate>2023-02-05</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2023-02-05</startDate>
+        <targetPageKey1>Opportunity</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <themeColor>Theme4</themeColor>
+        <themeSaturation>Light</themeSaturation>
+        <timesToDisplay>1</timesToDisplay>
+        <title>The Deal Scoring Model is here!</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_gsa sales user</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_system administrator kh</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

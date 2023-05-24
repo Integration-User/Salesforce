@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Coefficients associated with each predictor involved in the specific formula of the regression model by type of sale.</description>
+    <fields>
+        <fullName>Coefficient__c</fullName>
+        <description>Coefficient value.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Coefficient value.</inlineHelpText>
+        <label>Coefficient</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>16</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsForTesting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is for testing</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PredictorName__c</fullName>
+        <description>Name of the predictor involved in the formula.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Name of the predictor involved in the formula.</inlineHelpText>
+        <label>Predictor Name</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Analyst_Hours</fullName>
+                    <default>true</default>
+                    <label>Analyst_Hours</label>
+                </value>
+                <value>
+                    <fullName>Customer_Tenure</fullName>
+                    <default>false</default>
+                    <label>Customer_Tenure</label>
+                </value>
+                <value>
+                    <fullName>Log_AUM</fullName>
+                    <default>false</default>
+                    <label>Log_AUM</label>
+                </value>
+                <value>
+                    <fullName>Log_Users</fullName>
+                    <default>false</default>
+                    <label>Log_Users</label>
+                </value>
+                <value>
+                    <fullName>Segment</fullName>
+                    <default>false</default>
+                    <label>Segment</label>
+                </value>
+                <value>
+                    <fullName>SKU</fullName>
+                    <default>false</default>
+                    <label>SKU</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PredictorValue__c</fullName>
+        <description>Value of predictor according to regression model that applies.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Value of predictor according to regression model that applies.</inlineHelpText>
+        <label>Predictor Value</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AdvisorsOthers</fullName>
+                    <default>false</default>
+                    <label>Advisors &amp; Others</label>
+                </value>
+                <value>
+                    <fullName>Brokers</fullName>
+                    <default>false</default>
+                    <label>Brokers</label>
+                </value>
+                <value>
+                    <fullName>EU_Combo</fullName>
+                    <default>false</default>
+                    <label>EU Combo</label>
+                </value>
+                <value>
+                    <fullName>EU_Market</fullName>
+                    <default>false</default>
+                    <label>EU Market</label>
+                </value>
+                <value>
+                    <fullName>EU_Reit</fullName>
+                    <default>false</default>
+                    <label>EU Reit</label>
+                </value>
+                <value>
+                    <fullName>FullPlatform</fullName>
+                    <default>false</default>
+                    <label>Full Platform</label>
+                </value>
+                <value>
+                    <fullName>MarketCombo</fullName>
+                    <default>false</default>
+                    <label>Market Combo</label>
+                </value>
+                <value>
+                    <fullName>News1</fullName>
+                    <default>false</default>
+                    <label>News 1</label>
+                </value>
+                <value>
+                    <fullName>News2</fullName>
+                    <default>false</default>
+                    <label>News 2</label>
+                </value>
+                <value>
+                    <fullName>News3</fullName>
+                    <default>false</default>
+                    <label>News 3</label>
+                </value>
+                <value>
+                    <fullName>PERE_Companies</fullName>
+                    <default>false</default>
+                    <label>PE/RE Companies</label>
+                </value>
+                <value>
+                    <fullName>PensionsEndowmentsInsuranceCompanies</fullName>
+                    <default>false</default>
+                    <label>Pensions, Endowments, Insurance Companies</label>
+                </value>
+                <value>
+                    <fullName>PublicEquityInvestors</fullName>
+                    <default>false</default>
+                    <label>Public Equity Investors</label>
+                </value>
+                <value>
+                    <fullName>ReactOnly</fullName>
+                    <default>false</default>
+                    <label>React Only</label>
+                </value>
+                <value>
+                    <fullName>REIT_Combo</fullName>
+                    <default>false</default>
+                    <label>REIT Combo</label>
+                </value>
+                <value>
+                    <fullName>US_Combo</fullName>
+                    <default>false</default>
+                    <label>US Combo</label>
+                </value>
+                <value>
+                    <fullName>US_Market</fullName>
+                    <default>false</default>
+                    <label>US Market</label>
+                </value>
+                <value>
+                    <fullName>US_PortfolioTools</fullName>
+                    <default>false</default>
+                    <label>US Portfolio Tools</label>
+                </value>
+                <value>
+                    <fullName>US_Reit</fullName>
+                    <default>false</default>
+                    <label>US Reit</label>
+                </value>
+                <value>
+                    <fullName>React</fullName>
+                    <default>false</default>
+                    <label>React</label>
+                </value>
+                <value>
+                    <fullName>InvestmentBanks</fullName>
+                    <default>false</default>
+                    <label>Investment Banks</label>
+                </value>
+                <value>
+                    <fullName>CommercialBanks</fullName>
+                    <default>false</default>
+                    <label>Commercial Banks</label>
+                </value>
+                <value>
+                    <fullName>Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>REIT_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>REIT + Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>Combo_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>Combo +  Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>REIT_Combo_Detailed_NAV</fullName>
+                    <default>false</default>
+                    <label>REIT Combo +  Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>Market + Detailed NAV</fullName>
+                    <default>false</default>
+                    <label>Market + Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>EU Combo +  Detailed NAV</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>EU Combo +  Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>EU REIT +  Detailed NAV</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>EU REIT +  Detailed NAV</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SalesType__c</fullName>
+        <description>Type of model applied by each coefficient.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Type of model applied by each coefficient.</inlineHelpText>
+        <label>Sales Type</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>WithAUM__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Need to check for coefficients that apply to renovations that include AUM.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Need to check for coefficients that apply to renovations that include AUM.</inlineHelpText>
+        <label>With AUM</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>DDS - Formula Predictor</label>
+    <listViews>
+        <fullName>New_Model</fullName>
+        <columns>MasterLabel</columns>
+        <columns>PredictorName__c</columns>
+        <columns>PredictorValue__c</columns>
+        <columns>Coefficient__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsForTesting__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>SalesType__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>New Model</label>
+    </listViews>
+    <listViews>
+        <fullName>RenewalWithoutAUM</fullName>
+        <columns>PredictorName__c</columns>
+        <columns>MasterLabel</columns>
+        <columns>PredictorValue__c</columns>
+        <columns>Coefficient__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SalesType__c</field>
+            <operation>equals</operation>
+            <value>Renewal</value>
+        </filters>
+        <filters>
+            <field>WithAUM__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>IsForTesting__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Renewal Without AUM</label>
+    </listViews>
+    <listViews>
+        <fullName>Renewal_With_AUM</fullName>
+        <columns>PredictorName__c</columns>
+        <columns>MasterLabel</columns>
+        <columns>PredictorValue__c</columns>
+        <columns>Coefficient__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsForTesting__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>SalesType__c</field>
+            <operation>equals</operation>
+            <value>Renewal</value>
+        </filters>
+        <filters>
+            <field>WithAUM__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Renewal With AUM</label>
+    </listViews>
+    <pluralLabel>DDS - Formula Predictors</pluralLabel>
+    <validationRules>
+        <fullName>PredictorValueMandatory</fullName>
+        <active>true</active>
+        <description>If the name of the predictor is SKU or Segment it must have a predictor value.</description>
+        <errorConditionFormula>AND(
+OR(
+ ISPICKVAL(PredictorName__c , &quot;SKU&quot;),
+ ISPICKVAL(PredictorName__c , &quot;Segment&quot;) 
+),
+ISBLANK(TEXT(PredictorValue__c) ) 
+)</errorConditionFormula>
+        <errorMessage>If the name of the predictor is SKU or Segment it must have a predictor value.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

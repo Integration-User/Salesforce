@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MLPredictionDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aiApplicationDeveloperName>Attrition</aiApplicationDeveloperName>
+    <description>Attrition</description>
+    <developerName>mlpd_0Pp5G000000sXtRSAU_v8</developerName>
+    <masterLabel>mlpd_0Pp5G000000sXtRSAU_v8</masterLabel>
+    <negativeExpression>
+        <filterName>d6da6b03-c82f-4479-83d7-4b70f7bde9fb</filterName>
+        <lhFilter>
+            <filterName>fd36c993-970c-4a84-b4c2-51f84dfa9e43</filterName>
+            <lhPredictionField>Opportunity.StageName</lhPredictionField>
+            <operation>Equals</operation>
+            <rhType>String</rhType>
+            <rhValue>Closed Won</rhValue>
+        </lhFilter>
+        <operation>And</operation>
+        <rhFilter>
+            <filterName>f576c115-bdfd-4c80-a1bd-5e52c48a5863</filterName>
+            <lhPredictionField>Opportunity.Sales_Type__c</lhPredictionField>
+            <operation>Equals</operation>
+            <rhType>String</rhType>
+            <rhValue>Renewal</rhValue>
+        </rhFilter>
+    </negativeExpression>
+    <positiveExpression>
+        <filterName>28ecc625-1e52-4fef-9596-286456f3cbb9</filterName>
+        <lhFilter>
+            <filterName>54e4f200-b2f8-4019-a2fa-cb356d4b7bbb</filterName>
+            <lhPredictionField>Opportunity.StageName</lhPredictionField>
+            <operation>Equals</operation>
+            <rhType>String</rhType>
+            <rhValue>Closed Lost</rhValue>
+        </lhFilter>
+        <operation>And</operation>
+        <rhFilter>
+            <filterName>3b2ae803-c271-407a-bbb3-84d1a6f0750e</filterName>
+            <lhPredictionField>Opportunity.Sales_Type__c</lhPredictionField>
+            <operation>Equals</operation>
+            <rhType>String</rhType>
+            <rhValue>Renewal</rhValue>
+        </rhFilter>
+    </positiveExpression>
+    <pushbackField>Opportunity.Attrition_Risk__c</pushbackField>
+    <status>Disabled</status>
+    <type>BinaryClassification</type>
+</MLPredictionDefinition>

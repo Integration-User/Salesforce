@@ -1,0 +1,36 @@
+<!--
+  @description       : HTML for ddsCalculateScoreButton.
+  @author            : Raúl Iglesias
+  @group             : 
+  @last modified on  : 12-14-2022
+  @last modified by  : Raúl Iglesias
+-->
+<template>
+  <template if:false={showSpinner}>
+    <div class="slds-grid slds-gutters_xxx-small slds-float_right">
+      <div class="slds-col slds-p-right_xxx-small">
+        <lightning-button
+          label={label}
+          title={label}
+          onclick={handleClick}
+          variant="brand"
+          icon-name="utility:loop">
+        </lightning-button>
+      </div>
+      <template if:false={hiddenApprovalButton}>
+        <div class="slds-col slds-p-right_xxx-small">
+            <lightning-button
+              label={approvalLabel}
+              title={approvalLabel}
+              onclick={handleClickApprovalButton}
+              variant="brand"
+              icon-name="utility:approval">
+          </lightning-button>
+        </div>
+      </template>
+    </div>
+  </template>
+  <div if:true={showSpinner} class="slds-is-relative" style="height:3rem">
+    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+  </div>    
+</template>

@@ -1,0 +1,64 @@
+<aura:component
+        implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+        access="global" controller="Plative_GSAWebCalloutActionCtrl">
+    <aura:attribute name="sObjectApiName" type="String"/>
+    <aura:attribute name="actionType" type="String"/>
+    <aura:attribute name="status" type="String"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="displayPrimaryModal" type="Boolean" default="true"/>
+    <aura:attribute name="displaySpinner" type="boolean" default="false"/>
+    <aura:attribute name="displayActivateDeactivateView" type="boolean" default="false"/>
+    <aura:attribute name="displayResetView" type="boolean" default="false"/>
+
+    <div id="mainDiv" class="slds-is-relative">
+        <aura:if isTrue="{!v.displaySpinner}">
+            <lightning:spinner size="medium" alternativeText="Loading" variant="brand"/>
+        </aura:if>
+
+        <!-- Display Activate/Deactivate view for Acocunt/Contact-->
+        <aura:if isTrue="{!v.displayActivateDeactivateView}">
+            <div class="slds-border_bottom slds-m-bottom_medium">
+                <p class="slds-p-around_medium slds-text-heading_large slds-align_absolute-center">{!v.actionType == 'activate' ? 'Activate ' + v.sObjectApiName : 'Deactivate ' + v.sObjectApiName}</p>
+            </div>
+            <lightning:layout class="slds-is-relative" multipleRows="true" horizontalAlign="spread">
+                <lightning:layoutItem padding="around-small" size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                      largeDeviceSize="12">
+                    <p class="slds-text-heading_medium">Are you sure you want
+                        to {!v.actionType == 'activate' ? 'Activate ' + v.sObjectApiName : 'Deactivate ' + v.sObjectApiName}
+                        ?</p>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small" size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                      largeDeviceSize="12">
+                    <lightning:button variant="brand" class="slds-float_right slds-m-left_xx-small" label="Yes"
+                                      title="Yes" onclick="{! c.makeCalloutC }"/>
+                    <lightning:button label="Cancel" class="slds-float_right" title="Cancel"
+                                      onclick="{! c.closeQuickAction }"/>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:if>
+
+        <!-- Display Reset GSA Password view for Contact-->
+        <aura:if isTrue="{!v.displayResetView}">
+            <div class="slds-border_bottom slds-m-bottom_medium">
+                <p class="slds-p-around_medium slds-text-heading_large slds-align_absolute-center">Reset GSA
+                    Password</p>
+            </div>
+            <lightning:layout class="slds-is-relative" multipleRows="true" horizontalAlign="spread">
+                <lightning:layoutItem padding="around-small" size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                      largeDeviceSize="12">
+                    <p class="slds-text-heading_medium">Are you sure you want to reset GSA Platform Password for this
+                        contact?</p>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small" size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                      largeDeviceSize="12">
+                    <lightning:button variant="brand" class="slds-float_right slds-m-left_xx-small" label="Yes"
+                                      title="Yes" onclick="{! c.makeCalloutC }"/>
+                    <lightning:button label="Cancel" class="slds-float_right" title="Cancel"
+                                      onclick="{! c.closeQuickAction }"/>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:if>
+
+    </div>
+</aura:component>

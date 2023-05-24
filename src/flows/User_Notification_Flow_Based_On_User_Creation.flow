@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Platform_Email_Alert</name>
+        <label>Platform Email Alert</label>
+        <locationX>528</locationX>
+        <locationY>1031</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>List_Of_User_License</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>PlatformEmailTemplate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.User_License_Update_Emails</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>SenderEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>REMINDER : Salesforce Platform User Licenses</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Salesforce_Email_Update</name>
+        <label>Salesforce Email Update</label>
+        <locationX>264</locationX>
+        <locationY>1031</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>List_Of_User_License</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>SalesforceEmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.User_License_Update_Emails</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>SenderEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>REMINDER : Salesforce User Licenses</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>PlatformLicenseAssignment</name>
+        <label>PlatformLicenseAssignment</label>
+        <locationX>528</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>totalPlatformLicenses</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>List_Of_User_License.TotalLicenses</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>usedPlatformLicense</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>List_Of_User_License.UsedLicenses</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Used_License</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SalesforceLicenseAssignment</name>
+        <label>SalesforceLicenseAssignment</label>
+        <locationX>264</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>usedSalesforceLicenses</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>List_Of_User_License.UsedLicenses</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>totalSalesforceLicenses</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>List_Of_User_License.TotalLicenses</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Used_License</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Used_License</name>
+        <label>Check Used License</label>
+        <locationX>528</locationX>
+        <locationY>911</locationY>
+        <defaultConnector>
+            <targetReference>List_Of_User_License</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Used_Salesforce_License_Condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>List_Of_User_License.TotalLicenses</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>usedSalesforceLicenses</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>List_Of_User_License.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>SalesforceLicenseName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Salesforce_Email_Update</targetReference>
+            </connector>
+            <label>Check Used Salesforce License Condition</label>
+        </rules>
+        <rules>
+            <name>Check_Used_Platform_License_Condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>List_Of_User_License.TotalLicenses</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>usedPlatformLicense</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>List_Of_User_License.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>PlatformLicenseName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Platform_Email_Alert</targetReference>
+            </connector>
+            <label>Check Used Platform License Condition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>License_Value_Assignment_Decision</name>
+        <label>License Value Assignment Decision</label>
+        <locationX>528</locationX>
+        <locationY>575</locationY>
+        <defaultConnector>
+            <targetReference>Check_Used_License</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Salesforce_License</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>List_Of_User_License.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>SalesforceLicenseName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SalesforceLicenseAssignment</targetReference>
+            </connector>
+            <label>Is Salesforce License</label>
+        </rules>
+        <rules>
+            <name>Is_Platform_License</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>List_Of_User_License.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>PlatformLicenseName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>PlatformLicenseAssignment</targetReference>
+            </connector>
+            <label>Is Platform License</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>remainingPlatformLicenses</name>
+        <dataType>Number</dataType>
+        <expression>{!totalPlatformLicenses} - {!usedPlatformLicense} + 3</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>remainingSalesforceLicenses</name>
+        <dataType>Number</dataType>
+        <expression>{!totalSalesforceLicenses} - {!usedSalesforceLicenses} + 3</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>User Notification Flow Based On User Creation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>User Notification Flow Based On User Creation</label>
+    <loops>
+        <name>List_Of_User_License</name>
+        <label>List Of User License</label>
+        <locationX>176</locationX>
+        <locationY>455</locationY>
+        <collectionReference>Get_User_Licenses</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>License_Value_Assignment_Decision</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_User_Licenses</name>
+        <label>Get User Licenses</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>List_Of_User_License</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SalesforceLicenseName</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>PlatformLicenseName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>UserLicense</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_User_Licenses</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsActive</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>User</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>PlatformEmailTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi Team,
+
+Looks Like your Salesforce Platform User Licenses is running out: 
+
+License Name - {!PlatformLicenseName}
+Total Licenses - {!totalPlatformLicenses}
+Used Licenses - {!List_Of_User_License.UsedLicenses}
+
+Licenses Remaining - {!remainingPlatformLicenses}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SalesforceEmailBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi Team,
+
+Looks Like your Salesforce User Licenses is running out:
+
+License Name - {!SalesforceLicenseName}
+Total Licenses - {!totalSalesforceLicenses}
+Used Licenses - {!List_Of_User_License.UsedLicenses}
+
+Licenses Remaining - {!remainingSalesforceLicenses}</text>
+    </textTemplates>
+    <variables>
+        <name>PlatformLicenseName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Salesforce Platform</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>To Store License Name to notify to Users</description>
+        <name>SalesforceLicenseName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Salesforce</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>SenderEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>noreply@greenstreet.com</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>totalPlatformLicenses</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>To Store Salesforce User License Total Count</description>
+        <name>totalSalesforceLicenses</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>usedPlatformLicense</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>3.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>To Store Used Salesforce License</description>
+        <name>usedSalesforceLicenses</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>3.0</numberValue>
+        </value>
+    </variables>
+</Flow>

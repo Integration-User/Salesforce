@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DDS - SKU Combination</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DDS - SKU Combinations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Is for testing --></label>
+        <name>IsForTesting__c</name>
+    </fields>
+    <fields>
+        <help><!-- Combination of product codes associated with an SKU, separated by &quot;;&quot;. --></help>
+        <label><!-- Product Combination --></label>
+        <name>ProductCombination__c</name>
+    </fields>
+    <fields>
+        <help><!-- SKU to which the customer&apos;s product combination corresponds. --></help>
+        <label><!-- SKU --></label>
+        <name>SKU__c</name>
+        <picklistValues>
+            <masterLabel>Combo +  Detailed NAV</masterLabel>
+            <translation><!-- Combo +  Detailed NAV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Detailed NAV</masterLabel>
+            <translation><!-- Detailed NAV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EU Combo</masterLabel>
+            <translation><!-- EU Combo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EU Market</masterLabel>
+            <translation><!-- EU Market --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EU Reit</masterLabel>
+            <translation><!-- EU Reit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Platform</masterLabel>
+            <translation><!-- Full Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market + Detailed NAV</masterLabel>
+            <translation><!-- Market + Detailed NAV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market Combo</masterLabel>
+            <translation><!-- Market Combo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News 1</masterLabel>
+            <translation><!-- News 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News 2</masterLabel>
+            <translation><!-- News 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News 3</masterLabel>
+            <translation><!-- News 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT + Detailed NAV</masterLabel>
+            <translation><!-- REIT + Detailed NAV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Combo</masterLabel>
+            <translation><!-- REIT Combo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Combo +  Detailed NAV</masterLabel>
+            <translation><!-- REIT Combo +  Detailed NAV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>React Only</masterLabel>
+            <translation><!-- React Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Combo</masterLabel>
+            <translation><!-- US Combo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Market</masterLabel>
+            <translation><!-- US Market --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US PortfolioTools</masterLabel>
+            <translation><!-- US PortfolioTools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Reit</masterLabel>
+            <translation><!-- US Reit --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The format of the combination products must be. : {DDS}Id ; separating by &quot;;&quot; . EX : DDS1; --></errorMessage>
+        <name>Product_Combination_Format</name>
+    </validationRules>
+</CustomObjectTranslation>

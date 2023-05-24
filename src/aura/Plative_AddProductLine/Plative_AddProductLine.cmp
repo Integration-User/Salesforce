@@ -1,0 +1,85 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader"
+                access="global" controller="Plative_AddProductLineCtrl" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="account" type="object" />
+    
+    <aura:attribute name="allProducts" type="Product2[]"/>
+    <aura:attribute name="productColumns" type="List"/>
+    <aura:attribute name="filteredProducts" type="Product2[]" />    
+    <aura:attribute name="selectedProducts" type="Product2[]" />
+    
+    <aura:attribute name="allProductLines" type="Account_Product_Line__c[]"/>
+    <aura:attribute name="productLinesColumns" type="List"/>
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+    <aura:attribute name="selectedProductLines" type="Account_Product_Line__c[]"/>
+    
+    <aura:attribute name="displaySpinner" type="Boolean" default="false" />
+    
+    
+    <aura:html tag="style">
+        .slds-modal__container {
+        min-width: 85%;
+        }
+    </aura:html>
+    
+    <div class="mainContainer slds-is-relative">
+        <aura:if isTrue="{!v.displaySpinner}">
+                    <lightning:spinner variant="brand" alternativeText="Loading" size="medium"/>
+                </aura:if>
+        <div class="slds-border_bottom slds-m-bottom_large">
+            <p class="slds-p-around_medium slds-text-heading_medium slds-align_absolute-center">Add/Modify Product Lines</p>
+        </div>
+        
+        <lightning:layout multipleRows="true" class="containerHeight" >
+            
+            <lightning:layoutItem class="slds-p-around_xx-small inheritHeight" padding="around-small" size="5">
+                <lightning:datatable data="{!v.filteredProducts}"
+                                     columns="{!v.productColumns}"
+                                     keyField="Id" suppressBottomBar="true"
+                                     hideCheckboxColumn="false"
+                                     onrowselection="{!c.onSelectAvailableOptions}"/>
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem class="slds-p-around_xx-small inheritHeight" size="2">
+                <lightning:layout class="inheritHeight" verticalAlign="center" multipleRows="true"> 
+                    <lightning:layoutItem class="slds-p-around_xx-small" size="12">
+                        <lightning:button variant="brand" class="slds-align_absolute-center btnWidth" label="Add" title="Add" onclick="{! c.addProducts }" />
+                    </lightning:layoutItem>
+                    <lightning:layoutItem class="slds-p-around_xx-small" size="12">
+                        <lightning:button variant="brand" class="slds-align_absolute-center btnWidth" label="Remove" title="Remove" onclick="{! c.removeProducts }" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem class="slds-p-around_xx-small inheritHeight" size="5">
+                <lightning:datatable data="{!v.allProductLines}"
+                                     columns="{!v.productLinesColumns}"
+                                     keyField="Product__c" suppressBottomBar="true"
+                                     hideCheckboxColumn="false"
+                                     draftValues="{!v.draftValues}"
+                                     oncellchange="{!c.updateDraftValues}"
+                                     onrowselection="{!c.onSelectSelectedOptions}"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        <lightning:layout horizontalAlign="center" class="slds-m-top_x-medium">
+        	<lightning:layoutItem padding="around-medium" flexibility="auto" >
+                <lightning:input class="access" type="checkbox" label="DataLink" name="datalinkAccess" checked="{!v.account.DataLink_Access__c}" />
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-medium" flexibility="auto" >
+                <lightning:input class="access" type="checkbox" label="Website" name="websiteAccess" checked="{!v.account.Website_Access__c}" />
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        <lightning:layout multipleRows="true" class="slds-m-top_x-small">
+            <lightning:layoutItem padding="around-small" size="12">
+                <lightning:buttonGroup class="slds-align_absolute-center">
+                    <lightning:button class="btnWidth" label="Undo" title="Undo" onclick="{! c.doInit }" />
+                    <lightning:button class="btnWidth" label="Save" title="Save" onclick="{! c.saveProductLine }" variant="brand" />
+                </lightning:buttonGroup>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+</aura:component>

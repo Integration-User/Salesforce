@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Meeting Attendee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Meeting Attendees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attendee Type --></label>
+        <name>Attendee_Type__c</name>
+        <picklistValues>
+            <masterLabel>External Attendee</masterLabel>
+            <translation><!-- External Attendee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Attendee</masterLabel>
+            <translation><!-- Internal Attendee --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Meeting Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Meeting --></label>
+        <name>Meeting__c</name>
+        <relationshipLabel><!-- Meeting Attendees --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

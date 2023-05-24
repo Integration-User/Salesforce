@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MLDataDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>mlpd_0Pp5G000000sXtRSAU_v0</developerName>
+    <entityDeveloperName>Opportunity</entityDeveloperName>
+    <includedFields>Opportunity.Account_Owner__c</includedFields>
+    <includedFields>Opportunity.Amount</includedFields>
+    <includedFields>Opportunity.Annual_Recurring_Revenue__c</includedFields>
+    <includedFields>Opportunity.Company_Type_Opp__c</includedFields>
+    <includedFields>Opportunity.LeadSource</includedFields>
+    <includedFields>Opportunity.Length_of_Contract__c</includedFields>
+    <includedFields>Opportunity.License_Size__c</includedFields>
+    <includedFields>Opportunity.News_Products2__c</includedFields>
+    <includedFields>Opportunity.Priority__c</includedFields>
+    <includedFields>Opportunity.Product_Types__c</includedFields>
+    <includedFields>Opportunity.Research_Products2__c</includedFields>
+    <includedFields>Opportunity.X30_Usage_Drop__c</includedFields>
+    <parentDefinitionDevName>mlpd_0Pp5G000000sXtRSAU_v0</parentDefinitionDevName>
+    <scoringFilter>
+        <filterName>f214687c-3890-4e6c-b00d-97d544bdb31b</filterName>
+        <lhFilter>
+            <filterName>78f23081-b1dc-4561-aaae-a7bc26fe2621</filterName>
+            <lhFilter>
+                <filterName>2a807f55-e467-4d31-9bc7-5612a7d94571</filterName>
+                <lhPredictionField>Opportunity.StageName</lhPredictionField>
+                <operation>Equals</operation>
+                <rhType>String</rhType>
+                <rhValue>Closed Lost</rhValue>
+                <sortOrder>1</sortOrder>
+            </lhFilter>
+            <operation>Or</operation>
+            <rhFilter>
+                <filterName>26f37b52-72be-41c8-be01-f913ddf0389a</filterName>
+                <lhPredictionField>Opportunity.StageName</lhPredictionField>
+                <operation>Equals</operation>
+                <rhType>String</rhType>
+                <rhValue>Closed Won</rhValue>
+                <sortOrder>2</sortOrder>
+            </rhFilter>
+        </lhFilter>
+        <operation>Not</operation>
+    </scoringFilter>
+    <trainingFilter>
+        <filterName>375c9d5b-7e15-45f5-ab49-bf39b4ea1199</filterName>
+        <lhFilter>
+            <filterName>3d9ab48f-9590-4248-8724-1c3ca6159eb8</filterName>
+            <lhPredictionField>Opportunity.StageName</lhPredictionField>
+            <operation>Equals</operation>
+            <rhType>String</rhType>
+            <rhValue>Closed Lost</rhValue>
+            <sortOrder>1</sortOrder>
+        </lhFilter>
+        <operation>Or</operation>
+        <rhFilter>
+            <filterName>03504725-3af6-4e73-a6d4-b931453bc246</filterName>
+            <lhPredictionField>Opportunity.StageName</lhPredictionField>
+            <operation>Equals</operation>
+            <rhType>String</rhType>
+            <rhValue>Closed Won</rhValue>
+            <sortOrder>2</sortOrder>
+        </rhFilter>
+    </trainingFilter>
+    <type>Prediction</type>
+</MLDataDefinition>

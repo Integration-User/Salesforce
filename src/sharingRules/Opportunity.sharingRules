@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Advisory_Team_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Advisory Team Sharing</label>
+        <sharedTo>
+            <group>Advisory</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Opportunity,Renewal - Closed,Favor,Sales Opportunity - Closed,Advisory - Closed,Advisory,Favour - Closed,Renewal</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Commercial_Ops_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Commercial Ops Access</label>
+        <sharedTo>
+            <role>Commercial_Operations</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Opportunity - Closed,Sales Opportunity,Renewal - Closed,Favour - Closed,Favor,Renewal</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Opp_Sharing_Rules_Non_Advisory</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Opp Sharing Rules (Non Advisory)</label>
+        <sharedTo>
+            <group>Non_Advisory_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Opportunity,Renewal - Closed,Favor,Sales Opportunity - Closed,Advertising - Closed,Favour - Closed,Advertising,Renewal</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

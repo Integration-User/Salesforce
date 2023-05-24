@@ -1,0 +1,7 @@
+<!--
+ - Created by Kunal Jain on 25-02-2020.
+ -->
+
+<aura:component description="Plative_ResetGSAUser"  implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    <c:Plative_GSAWebCalloutAction sObjectApiName="Contact" actionType="reset_password" recordId="{!v.recordId}" />
+</aura:component>

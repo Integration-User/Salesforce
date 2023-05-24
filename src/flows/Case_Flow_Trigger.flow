@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>When case is closed - send email to “Account Manager” and “account manager’s manager” to inform them of the new client.</description>
+        <name>Notify_To_Account_Manager_On_Case_Close</name>
+        <label>Notify To Account Manager On Case Close</label>
+        <locationX>314</locationX>
+        <locationY>455</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailTemplateToManager</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>ToAddress</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Subject</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Updated Account related contact owner where contact fetching condition will be : 
+AccountId = Case.AccountId AND
+Contact_Status__c = &apos;Active&apos; AND
+Contact_Account_Owners_Match__c = FALSE</description>
+        <name>Update_Contact_Owner_From_Account</name>
+        <label>Update Contact Owner From Account</label>
+        <locationX>50</locationX>
+        <locationY>575</locationY>
+        <actionName>UpdateContactOwner</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>accountId</name>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ownerId</name>
+            <value>
+                <elementReference>$Record.Account_Manager__c</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Check_Account_Manager_Case_User</name>
+        <label>Check Account Manager Case User</label>
+        <locationX>314</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Account_Owner_As_per_Account_Manager_Condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account_Assignment</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account_Manager__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Owner</targetReference>
+            </connector>
+            <label>Update Account Owner As per Account Manager Condition</label>
+        </rules>
+        <rules>
+            <name>Send_Email_To_Close_Account_Manager_Case_Condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Notify_To_Account_Manager_On_Case_Close</targetReference>
+            </connector>
+            <label>Send Email To Close Account Manager Case Condition</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>ToAddress</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account_Manager__r.Email} &amp; &quot; , &quot; &amp; {!$Record.Account_Manager__r.Manager_Email__c}</expression>
+    </formulas>
+    <interviewLabel>Case Flow Trigger {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case Flow Trigger</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Account_Owner</name>
+        <label>Update Account Owner</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <connector>
+            <targetReference>Update_Contact_Owner_From_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Account_Manager__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Account_Manager_Case_User</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>EmailTemplateToManager</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!$Record.Account_Manager__r.FirstName} {!$Record.Account_Manager__r.LastName},
+
+You have been assigned the following client:
+
+    * Account Name : {!$Record.Account.Name}
+    * Company Type : {!$Record.Account.Company_Type__c}
+    * Total ARR : {!$Record.Account.Total_ARR__c}
+    * Contract End Date : {!$Record.Opportunity__r.Contract_End_Date__c}
+    * Products : {!$Record.Opportunity__r.Products__c}
+    * Close Reason : {!$Record.Opportunity__r.Close_Reason__c}
+    * Opportunity owner name : {!$Record.Opportunity__r.Owner.FirstName} {!$Record.Opportunity__r.Owner.LastName} 
+
+Link opportunity - {!$Label.Opportunity_Link}{!$Record.Opportunity__c}</text>
+    </textTemplates>
+    <variables>
+        <name>Subject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>New Account Assignment: &quot;{!$Record.Account.Name}&quot;</stringValue>
+        </value>
+    </variables>
+</Flow>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Use this button to log a new CSA payment that we need to create an invoice for and send to cutomer</description>
+    <fieldOverrides>
+        <field>Activation_Deactivation_Needs__c</field>
+        <literalValue>None</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Billing_Schedule__c</field>
+        <literalValue>One-time</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>CloseDate</field>
+        <formula>Today()</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Description</field>
+        <formula>&quot;US REIT: $&quot; &amp; BR() &amp;
+&quot;EUR REIT: $&quot; &amp; BR() &amp;
+&quot;US REA: $&quot; &amp; BR() &amp;
+&quot;EUR REA: $&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Name</field>
+        <formula>&quot;C&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Other_Invoice_Frequency__c</field>
+        <formula>&quot;CSA Payment&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>StageName</field>
+        <literalValue>Qualified Prospect (2)</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Terms__c</field>
+        <literalValue>Net 30</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Win_Validation__c</field>
+        <literalValue>Opportunity Reviewed</literalValue>
+    </fieldOverrides>
+    <label>CSA Payment</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>AccountId</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Billing_Contact__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Description</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Contract_Start_Date__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Contract_End_Date__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+    </quickActionLayout>
+    <successMessage>This CSA opp has been created and will be invoiced shortly!</successMessage>
+    <targetObject>Opportunity</targetObject>
+    <targetRecordType>Opportunity.Existing_Business</targetRecordType>
+    <type>Create</type>
+</QuickAction>

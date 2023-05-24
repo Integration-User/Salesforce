@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Includes the mapping of Salesforce product to Netsuite item group based on Contract type of account.</description>
+    <fields>
+        <fullName>Customer_Channel__c</fullName>
+        <description>Customer Channel of the Account associated to opportunity line item</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Customer Channel</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Netsuite_Internal_Id__c</fullName>
+        <description>Internal id of the item group in Netsuite</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Netsuite Internal Id</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SF_Product_Name__c</fullName>
+        <description>Name of the Product in Salesforce</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>SF Product Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>SF to NS Product Mapping</label>
+    <listViews>
+        <fullName>Better_View</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>Customer_Channel__c</columns>
+        <columns>Netsuite_Internal_Id__c</columns>
+        <columns>SF_Product_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Better View</label>
+    </listViews>
+    <pluralLabel>SF to NS Product Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

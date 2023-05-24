@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DDS - Model Score</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DDS - Model Scores</value>
+    </caseValues>
+    <fields>
+        <help><!-- Priority of the account to determine the corresponding ranks. --></help>
+        <label><!-- Account Priority --></label>
+        <name>AccountPriority__c</name>
+        <picklistValues>
+            <masterLabel>Core</masterLabel>
+            <translation><!-- Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise</masterLabel>
+            <translation><!-- Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic</masterLabel>
+            <translation><!-- Strategic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- For test apex class. --></help>
+        <label><!-- Is for testing --></label>
+        <name>IsForTesting__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum percentage of the range for a specific score. --></help>
+        <label><!-- Residual Cut Off Max --></label>
+        <name>ResidualCutOffMax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minimum percentage of the range for a specific score. --></help>
+        <label><!-- Residual Cut Off Min --></label>
+        <name>ResidualCutOffMin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Type --></label>
+        <name>SalesType__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Letter score for a specific residual percent range. --></help>
+        <label><!-- Score --></label>
+        <name>Score__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D</masterLabel>
+            <translation><!-- D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F</masterLabel>
+            <translation><!-- F --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- At least one limit of the range must be complete, either the minimum or the maximum. --></errorMessage>
+        <name>IncompleteResidualCutOffRanges</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>GSA_Opportunity_Product</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>GSA_Opportunity_Product</fullName>
+        <fields>Product2Id</fields>
+        <fields>Starting_Price__c</fields>
+        <fields>UnitPrice</fields>
+        <fields>Discount</fields>
+        <fields>TotalPrice</fields>
+        <fields>Upsell_Cross_sell__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <label>GSA Opportunity Product</label>
+    </compactLayouts>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ARR_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), 0,
+IF((End_Date__c - Start_Date__c)&lt;2,0,
+IF((End_Date__c - Start_Date__c)&lt;364,(TotalPrice/((End_Date__c - Start_Date__c)/365)),
+IF((End_Date__c - Start_Date__c)=364, TotalPrice,
+IF((End_Date__c - Start_Date__c)=365, TotalPrice,
+IF((End_Date__c - Start_Date__c)=366, TotalPrice,
+IF((End_Date__c - Start_Date__c)&gt;366,(TotalPrice/((End_Date__c - Start_Date__c)/365)),0)))))))</formula>
+        <label>ARR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ARR__c</fullName>
+        <externalId>false</externalId>
+        <label>ARR (NS)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Account.Name</formula>
+        <label>Account Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Allocated__c</fullName>
+        <externalId>false</externalId>
+        <label>% Allocated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>At_RIsk_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND(NOT(ISBLANK((TEXT( Opportunity.Renewal_Risk__c )))), Opportunity.IsClosed = FALSE), ARR_Formula__c  , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>At RIsk Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Schedule__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Schedule</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Annual</fullName>
+                    <default>false</default>
+                    <label>Annual</label>
+                </value>
+                <value>
+                    <fullName>One-time</fullName>
+                    <default>false</default>
+                    <label>One-time</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CDB_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>CDB ID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Color__c</fullName>
+        <externalId>false</externalId>
+        <label>Color</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contract_Start_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH(Start_Date__c),
+1,&quot;01 (Jan) &quot;,
+2,&quot;02 (Feb) &quot;,
+3,&quot;03 (Mar) &quot;,
+4,&quot;04 (Apr) &quot;,
+5,&quot;05 (May) &quot;,
+6,&quot;06 (Jun) &quot;,
+7,&quot;07 (Jul) &quot;,
+8,&quot;08 (Aug) &quot;,
+9,&quot;09 (Sep) &quot;,
+10,&quot;10 (Oct) &quot;,
+11,&quot;11 (Nov) &quot;,
+12,&quot;12 (Dec) &quot;,
+null)
++
+TEXT(YEAR(Start_Date__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract Start Month</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Channel__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Account.Customer_Channel__c</formula>
+        <label>Customer Channel</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+        <inlineHelpText>Enter Whole % (example: 20)</inlineHelpText>
+    </fields>
+    <fields>
+        <fullName>Discount__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Finance_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Finance Effective Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hidden_Billing_Contact_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Billing Contact Category</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Billing_Contact_Category</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Increase_Percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Starting_Price__c=0,0,Increase_dollar__c /  Starting_Price__c)</formula>
+        <label>% Increase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Increase_dollar__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( UnitPrice &gt; 0, (ARR_Formula__c  - Starting_Price__c),0)</formula>
+        <label>$ Increase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ListPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Lost_Product__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Lost Product</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lost__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( UnitPrice = 0,  Starting_Price__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>$ Lost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MRR__c</fullName>
+        <externalId>false</externalId>
+        <label>MRR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+    </fields>
+    <fields>
+        <fullName>New_Business_Credit__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Sales_Type__c, &quot;Renewal&quot;), 0,
+IF( ISPICKVAL(Sales_Type__c, &quot;New&quot;), ARR_Formula__c ,
+IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Credit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>News_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>News ID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>News__c</fullName>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(PricebookEntry.Product2.Family, &quot;News&quot;)</formula>
+        <label>News?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Line_Item_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Id</formula>
+        <label>Opportunity Line Item ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Product_Name__c</fullName>
+        <description>For Roll-up Summary Calculation based on Product name</description>
+        <externalId>false</externalId>
+        <label>Opportunity Product Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Percentage_of_Total_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Opportunity.Total_ARR__c=0,0,TotalPrice  /  Opportunity.Total_ARR__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Percentage of Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Product_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.Product2.Description</formula>
+        <label>Product Description</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_External_Id__c</fullName>
+        <description>External Id of the product in NS.</description>
+        <externalId>false</externalId>
+        <label>Product External Id</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(PricebookEntry.Product2.Family)</formula>
+        <label>Product Family</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Publication__c</fullName>
+        <externalId>false</externalId>
+        <label>Publication</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ABA</fullName>
+                    <default>false</default>
+                    <label>ABA</label>
+                </value>
+                <value>
+                    <fullName>CMA</fullName>
+                    <default>false</default>
+                    <label>CMA</label>
+                </value>
+                <value>
+                    <fullName>REA</fullName>
+                    <default>false</default>
+                    <label>REA</label>
+                </value>
+                <value>
+                    <fullName>React</fullName>
+                    <default>false</default>
+                    <label>React</label>
+                </value>
+                <value>
+                    <fullName>HFA</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>HFA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+    </fields>
+    <fields>
+        <fullName>React_id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>React id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Recurring_Revenue_Snapshot__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Recurring Revenue Snapshot</label>
+        <referenceTo>Recurring_Revenue_Snapshot__c</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Renewable_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Opportunity.StageName, &quot;Closed Won&quot;),  ARR_Formula__c ,  Starting_Price__c)</formula>
+        <label>Renewable Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Credit__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Sales_Type__c, &quot;Renewal&quot;), ARR_Formula__c,
+IF( ISPICKVAL(Sales_Type__c, &quot;New&quot;), 0,
+IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), 0, 0)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Renewal Credit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Research__c</fullName>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(PricebookEntry.Product2.Family, &quot;Research&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Research?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Risk_Adjusted_ARR__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL( Opportunity.StageName ,&quot;Closed Lost&quot;), 0,
+IF(ISPICKVAL( Opportunity.StageName ,&quot;Suspended&quot;), 0, 
+IF(ISPICKVAL( Opportunity.StageName ,&quot;Closed Won&quot;), ARR_Formula__c, 
+IF(ISPICKVAL(Opportunity.Risk_Type__c,&quot;Pricing&quot;), ARR_Formula__c * 0.7,
+IF(ISPICKVAL(Opportunity.Risk_Type__c,&quot;Timing&quot;), ARR_Formula__c * 0.0,
+IF(ISPICKVAL(Opportunity.Risk_Type__c,&quot;Full Attrition&quot;), ARR_Formula__c * 0.0, 
+ARR_Formula__c ))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Risk Adjusted ARR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Type_NS_Internal_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( TEXT(Sales_Type__c) , &apos;New&apos;, &apos;3&apos;, &apos;Renewal&apos;, &apos;2&apos;,&apos;Upsell&apos;, &apos;1&apos;, &apos;3&apos; )</formula>
+        <label>Sales Type NS Internal ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+                <value>
+                    <fullName>Upsell</fullName>
+                    <default>false</default>
+                    <label>Upsell</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ServiceDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Size</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Full-page</fullName>
+                    <default>false</default>
+                    <label>Full-page</label>
+                </value>
+                <value>
+                    <fullName>Half-page</fullName>
+                    <default>false</default>
+                    <label>Half-page</label>
+                </value>
+                <value>
+                    <fullName>Quarter-page</fullName>
+                    <default>false</default>
+                    <label>Quarter-page</label>
+                </value>
+                <value>
+                    <fullName>Banner</fullName>
+                    <default>false</default>
+                    <label>Banner</label>
+                </value>
+                <value>
+                    <fullName>Junior</fullName>
+                    <default>false</default>
+                    <label>Junior</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Starting_Price__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Starting Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Subtotal</fullName>
+    </fields>
+    <fields>
+        <fullName>Sync_to_Netsuite__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box to denote if record should be synced to netsuite by a scheduled job</description>
+        <externalId>false</externalId>
+        <label>Sync to Netsuite</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Temp_Exdternal_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Temp_Exdternal_ID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Trial_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Trial End Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Trial_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Trial Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Trial__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Trial?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Trial_or_Beta__c</fullName>
+        <externalId>false</externalId>
+        <label>Trial or Beta?</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Trial</fullName>
+                    <default>false</default>
+                    <label>Trial</label>
+                </value>
+                <value>
+                    <fullName>Beta</fullName>
+                    <default>false</default>
+                    <label>Beta</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Trigger_Checkbox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Trigger Checkbox</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UnitPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Upsell_Cross_sell__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Upsell / Cross-sell</label>
+        <type>Checkbox</type>
+    </fields>
+    <listViews>
+        <fullName>Test_List_View</fullName>
+        <columns>Opportunity</columns>
+        <columns>Product2</columns>
+        <columns>UnitPrice</columns>
+        <columns>TotalPrice</columns>
+        <columns>Upsell_Cross_sell__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Starting_Price__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Test List View</label>
+    </listViews>
+    <validationRules>
+        <fullName>Cannot_have_Starting_Price_for_an_Upsell</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+Upsell_Cross_sell__c = TRUE,
+ Starting_Price__c &gt; 0)</errorConditionFormula>
+        <errorMessage>Products that are considered an &quot;Upsell&quot; must have a Starting Price of $0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Starting_Price_Required</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(
+OR( 
+ISPICKVAL(Opportunity.StageName, &quot;Verbal Win (6)&quot;),
+ISPICKVAL(Opportunity.StageName, &quot;Closed Lost&quot;)),
+ISBLANK(Starting_Price__c))</errorConditionFormula>
+        <errorMessage>Please enter an accurate starting price for each product.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Pricing_Matrix</fullName>
+        <availability>online</availability>
+        <description>Pricing Matrix: last updated 072519</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Pricing Matrix</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/sfc/p/f4000003AzjR/a/f4000000ku7P/DZ2pqo57j0nqoeSAEAziODz7O1E0tagvze0759LLB.Y</url>
+    </webLinks>
+</CustomObject>

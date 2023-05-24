@@ -1,0 +1,100 @@
+<!--
+* Description : Custom lightning component to display tasks and events 
+*				related list for advisory only
+* [09.Apr.2021] Plative - Code Creation 
+-->
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" 
+                controller="Plative_TaskRelatedListController">
+	<aura:attribute type="Plative_ActivityWrapper[]" name="taskList"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="columnsWithActions" type="List" access="private"/>
+	<aura:attribute name="sobjectLabel" type="String" access="private" default="Activity"/>   
+    <aura:attribute name="sobjectLabelPlural" type="String" access="private" default="Advisory Activities"/> 
+	<aura:attribute name="numberOfRecordsForTitle" type="String" access="private"/>  
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection"  type="Boolean"
+                default="true"/>   
+    <aura:attribute name="allData" type="Plative_ActivityWrapper[]" />
+    <aura:attribute name="filteredData" type="Plative_ActivityWrapper[]" />
+    <aura:attribute name="tableData" type="Plative_ActivityWrapper[]" />
+
+	<!-- pagination -->
+	<aura:attribute name="pageSize" type="Integer" default="5" />
+	<aura:attribute name="pageSizeOptions" type="Integer[]" default="5,10,20,30,50,100" />
+	<aura:attribute name="currentPageNumber" type="Integer" default="1" />
+	<aura:attribute name="totalPages" type="Integer" default="1" />
+	<aura:attribute name="isLoading" type="Boolean" default="false" />
+
+	<lightning:overlayLibrary aura:id="overlayLib"/>
+
+    <aura:if isTrue="{! v.isLoading }">
+        <lightning:spinner alternativeText="Loading" />
+    </aura:if>
+	
+   <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <div class="c-container" style="position:relative" >
+        <aura:if isTrue="{!v.displaySpinner}">
+        	<lightning:spinner class="" variant="brand" size="medium"/>
+        </aura:if>
+         <lightning:card class="slds-card_boundary" iconName="standard:custom">         
+            <aura:set attribute="title">
+                <b>{!(v.sobjectLabelPlural) +' (' + (v.numberOfRecordsForTitle) + ')' + if(not(empty(v.additionalTitle)),' - ' + v.additionalTitle,'')}</b>
+            </aura:set>    
+            <p class="slds-p-horizontal_small">                  
+    			<lightning:datatable data="{! v.tableData }"
+                        columns="{! v.columnsWithActions }"
+                        keyField="id"
+                        hideCheckboxColumn="true"
+						onrowaction="{! c.handleRowAction }"
+						showRowNumberColumn="true"
+						sortedBy="{!v.sortedBy}"
+                        sortedDirection="{!v.sortedDirection}"
+                        onsort="{!c.updateColumnSorting}"/>                 
+            </p>       
+        <div class="slds-p-around_small slds-grid slds-grid_align-spread slds-grid_vertical-align-start">
+            <div>
+                <lightning:select
+                    label="Number of records on page:"
+                    value="{! v.pageSize }"
+                    onchange="{! c.onPageSizeChange }">
+                    <aura:iteration items="{! v.pageSizeOptions }" var="opt">
+                        <option text="{! opt }"></option>
+                    </aura:iteration>
+                </lightning:select>
+            </div>
+            <div style="padding-top: 20px;">
+                <lightning:button
+                    label="First"
+                    iconName="utility:left"
+                    iconPosition="left"
+                    onclick="{! c.onFirst }"
+                    disabled="{! v.currentPageNumber == 1 }" />
+                <lightning:button
+                    label="Previous"
+                    iconName="utility:chevronleft"
+                    iconPosition="left"
+                    onclick="{! c.onPrev }"
+                    disabled="{! v.currentPageNumber == 1 }" />
+                <span class="slds-var-p-horizontal_x-small">
+                    Page {! (v.currentPageNumber) } of {! (v.totalPages) }
+                </span>
+                <span class="slds-var-p-horizontal_x-small">
+                    Number of records: {! (v.filteredData.length) }
+                </span>
+                <lightning:button
+                    label="Next"
+                    iconName="utility:chevronright"
+                    iconPosition="right"
+                    onclick="{! c.onNext }"
+                    disabled="{! v.currentPageNumber == v.totalPages }" />
+                <lightning:button
+                    label="Last"
+                    iconName="utility:right"
+                    iconPosition="right"
+                    onclick="{! c.onLast }"        
+                    disabled="{! v.currentPageNumber == v.totalPages }" />
+            </div>
+		</div>		
+    </lightning:card>
+  </div>			
+</aura:component>

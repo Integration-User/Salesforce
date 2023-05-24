@@ -1,0 +1,5195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>GSA_Task_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>GSA_Task_Record_Page1</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>LID__Tasks</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>LID__Tasks</fullName>
+        <fields>Subject</fields>
+        <fields>WhoId</fields>
+        <fields>WhatId</fields>
+        <label>Tasks</label>
+    </compactLayouts>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ActivityDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CallDisposition</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CallDurationInSeconds</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CallObject</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CallType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CompletedDateTime</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>IsRecurrence</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsReminderSet</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RecurrenceInterval</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>RecurrenceRegeneratedType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>Analyst_Call_List_Task</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Analyst Call List</label>
+        <queue>Analyst_Call_List</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CompletedTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY,LAST_N_DAYS:7</value>
+        </filters>
+        <label>Recently Completed Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>CompletedTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>TODAY,LAST_N_DAYS:30</value>
+        </filters>
+        <label>ENCODED:{!FilterNames.Task_CompletedTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>Deactivation_Tasks_Task</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Deactivation Tasks</label>
+        <queue>Deactivation_Tasks</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DelegatedTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Delegated</filterScope>
+        <label>ENCODED:{!FilterNames.Task_DelegatedTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>Last_Diagnostic_Discussion</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>TYPE</columns>
+        <columns>DUE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>Minutes_Spent__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Diagnostic_Discussion__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>STATUS</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </filters>
+        <label>Last Diagnostic Discussion</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Compliance_Notes</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>PRIORITY</columns>
+        <columns>STATUS</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TYPE</field>
+            <operation>equals</operation>
+            <value>Compliance</value>
+        </filters>
+        <label>My Compliance Notes</label>
+        <sharedTo>
+            <role>Sales</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Unresolved_Tasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>PRIORITY</columns>
+        <columns>STATUS</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>SUBJECT</field>
+            <operation>contains</operation>
+            <value>Unresolved</value>
+        </filters>
+        <filters>
+            <field>STATUS</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <label>My Unresolved Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>OpenTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>STATUS</columns>
+        <columns>DUE_DATE</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>NEXT_N_DAYS:14</value>
+        </filters>
+        <label>My Upcoming Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>OverdueTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Submitted Form</value>
+        </filters>
+        <filters>
+            <field>STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <label>Overdue Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>Overdue_Tasks_excluding_unresolved</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>PRIORITY</columns>
+        <columns>STATUS</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Unresolved,submitted form</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <label>Overdue Tasks (excluding unresolved)</label>
+    </listViews>
+    <listViews>
+        <fullName>RecurringTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>ENCODED:{!FilterNames.Task_RecurringTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today&apos;s Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>UnscheduledTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>equals</operation>
+        </filters>
+        <label>ENCODED:{!FilterNames.Task_UnscheduledTasks}</label>
+    </listViews>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>LID__InMail</fullName>
+        <active>false</active>
+        <compactLayoutAssignment>LID__Tasks</compactLayoutAssignment>
+        <description>Record type for LinkedIn inMails (sent to non-connections)</description>
+        <label>LinkedIn InMail</label>
+        <picklistValues>
+            <picklist>Analysts__c</picklist>
+            <values>
+                <fullName>Adam Shapton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alan Peterson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alex Williamson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexander Wu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexandra Boyle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexis Skitini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alistair Bush</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Allyson Bruner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amanda Nguyen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andres Toome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew McCulloch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew Spindler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anna Cervisi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ashton Stansbury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barry Saks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bayle Smith</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ben Perkins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brandi Mallinger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brett Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carolina Paini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Casey Thormahlen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cedrik Lachance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Chan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Darling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Lucarelli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Christos Savvinidis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Arora</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Smead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Leupold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Riggins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damon Scott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Andersen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Busch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Ismail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danielle Voloshin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dave Bragg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Balaguer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Guarino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Prescott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deborah Cruickshanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dirk Aulabaugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dylan Burzinski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edoardo Gili</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Steiner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Frankel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Lovett</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erin Harris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farren Casad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fran Browning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gabriella Peak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Galen Faurot-Pigeon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gemma van Der Westhuizen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hayley Allen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hemant Kotak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jaclyn Connolly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jared Giles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeff Meister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jena Winters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jesse Freitag-Akselrod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jessica Duong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jim Sullivan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jimmy Meek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joe Stokeld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Hawinkels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Lutzius</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Magee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Pawlowski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joi Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jonathan Hammel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joseph Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Josh Robbins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Juella Waller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justin Brown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kaitlin McDonnell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katherine Marin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kathleen Castellano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katie Clemons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kawika Tarayao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kelly Madigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Hoffman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Rapadas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Angle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Santos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Cameron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Rebolloso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laurie Hauck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louis Attwood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lukas Hartwich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luke Gilman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lulu Zhang</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manisha Bans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maria Wiedner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marie Dormeuil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matt Souter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maya Greenaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Eynon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Hobson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Kao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Stroyeck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Vranich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Kirby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Potter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitchell Carter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murray Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murrie Holland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Natascha Collinson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nathan Siino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Fromm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Tannura</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nikki Pagdades</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Otto Aletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paige Gast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parth Kulkarni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paul Eager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paulina Rojas Schmidt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Papadakos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Rothemund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phil Owens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pierre Rigaud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Piotr Podgórny</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rachel Kliminski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rahul Kaushal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Randy Wussler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Raymond Haskew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reagan Berkley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Filley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Virdee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robert Xu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robin Russel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robyn Francis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Araracap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Sen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rosemary Pugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ruben Bos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Lumb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Miller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sadie Baldwin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Godoshian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Jensen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seth Laughlin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spenser Allaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staci Pollock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stephen Pazzano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Susan Worsham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tim Joy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tyler Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vince Tibone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weston Mui</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Will Morrow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Diagnostic_Discussion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Feedback_Entered__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products_Discussed__c</picklist>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Subject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type__c</picklist>
+            <values>
+                <fullName>Comprehensive Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working With</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Web_Demo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LID__LinkedIn_Call</fullName>
+        <active>false</active>
+        <description>Record type for calls from the LinkedIn Sales Navigator mobile app</description>
+        <label>LinkedIn Call</label>
+        <picklistValues>
+            <picklist>Analysts__c</picklist>
+            <values>
+                <fullName>Adam Shapton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alan Peterson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alex Williamson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexander Wu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexandra Boyle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexis Skitini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alistair Bush</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Allyson Bruner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amanda Nguyen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andres Toome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew McCulloch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew Simmons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew Spindler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anna Cervisi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ashton Stansbury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barry Saks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bayle Smith</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ben Perkins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brandi Mallinger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brett Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carolina Paini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Casey Thormahlen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cedrik Lachance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Chan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Darling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Lucarelli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Christos Savvinidis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Arora</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Smead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Leupold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Riggins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damon Scott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Andersen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Busch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Ismail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danielle Voloshin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dave Bragg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Balaguer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Guarino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Prescott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deborah Cruickshanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dirk Aulabaugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dylan Burzinski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edoardo Gili</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Steiner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Frankel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Lovett</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erin Harris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farren Casad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fran Browning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gabriella Peak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Galen Faurot-Pigeon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gemma van Der Westhuizen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hayley Allen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hemant Kotak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jaclyn Connolly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jared Giles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeff Meister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jena Winters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jesse Freitag-Akselrod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jessica Duong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jim Sullivan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jimmy Meek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joe Stokeld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Hawinkels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Lutzius</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Magee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Pawlowski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joi Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jonathan Hammel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joseph Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Josh Robbins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Juella Waller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justin Brown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kaitlin McDonnell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katherine Marin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kathleen Castellano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katie Clemons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kawika Tarayao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kelly Madigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Hoffman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Rapadas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Angle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Santos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Cameron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Rebolloso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laurie Hauck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louis Attwood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lukas Hartwich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luke Gilman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lulu Zhang</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manisha Bans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maria Wiedner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marie Dormeuil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matt Souter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maya Greenaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Eynon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Hobson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Kao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Knott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Stroyeck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Vranich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Kirby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Potter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitchell Carter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murray Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murrie Holland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Natascha Collinson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nathan Siino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Fromm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Tannura</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nikki Pagdades</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Otto Aletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paige Gast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parth Kulkarni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paul Eager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paulina Rojas Schmidt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Papadakos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Rothemund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phil Owens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pierre Rigaud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Piotr Podgórny</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rachel Kliminski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rahul Kaushal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Randy Wussler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Raymond Haskew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reagan Berkley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Filley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Virdee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robert Xu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robin Russel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robyn Francis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Araracap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Sen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rosemary Pugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ruben Bos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Lumb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Miller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sadie Baldwin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Godoshian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Jensen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seth Laughlin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spenser Allaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staci Pollock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stephen Pazzano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Susan Worsham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tim Joy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tyler Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vince Tibone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weston Mui</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Will Morrow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Diagnostic_Discussion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Feedback_Entered__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products_Discussed__c</picklist>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type__c</picklist>
+            <values>
+                <fullName>Comprehensive Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working With</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Web_Demo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LID__Message</fullName>
+        <active>false</active>
+        <compactLayoutAssignment>LID__Tasks</compactLayoutAssignment>
+        <description>Record type for LinkedIn messages (sent to connections)</description>
+        <label>LinkedIn Message</label>
+        <picklistValues>
+            <picklist>Analysts__c</picklist>
+            <values>
+                <fullName>Adam Shapton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alan Peterson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alex Williamson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexander Wu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexandra Boyle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexis Skitini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alistair Bush</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Allyson Bruner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amanda Nguyen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andres Toome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew McCulloch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew Spindler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anna Cervisi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ashton Stansbury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barry Saks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bayle Smith</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ben Perkins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brandi Mallinger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brett Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carolina Paini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Casey Thormahlen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cedrik Lachance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Chan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Darling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Lucarelli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Christos Savvinidis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Arora</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Smead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Leupold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Riggins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damon Scott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Andersen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Busch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Ismail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danielle Voloshin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dave Bragg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Balaguer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Guarino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Prescott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deborah Cruickshanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dirk Aulabaugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dylan Burzinski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edoardo Gili</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Steiner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Frankel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Lovett</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erin Harris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farren Casad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fran Browning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gabriella Peak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Galen Faurot-Pigeon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gemma van Der Westhuizen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hayley Allen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hemant Kotak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jaclyn Connolly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jared Giles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeff Meister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jena Winters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jesse Freitag-Akselrod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jessica Duong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jim Sullivan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jimmy Meek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joe Stokeld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Hawinkels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Lutzius</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Magee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Pawlowski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joi Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jonathan Hammel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joseph Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Josh Robbins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Juella Waller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justin Brown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kaitlin McDonnell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katherine Marin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kathleen Castellano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katie Clemons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kawika Tarayao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kelly Madigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Hoffman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Rapadas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Angle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Santos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Cameron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Rebolloso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laurie Hauck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louis Attwood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lukas Hartwich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luke Gilman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lulu Zhang</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manisha Bans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maria Wiedner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marie Dormeuil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matt Souter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maya Greenaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Eynon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Hobson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Kao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Stroyeck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Vranich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Kirby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Potter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitchell Carter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murray Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murrie Holland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Natascha Collinson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nathan Siino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Fromm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Tannura</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nikki Pagdades</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Otto Aletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paige Gast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parth Kulkarni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paul Eager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paulina Rojas Schmidt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Papadakos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Rothemund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phil Owens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pierre Rigaud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Piotr Podgórny</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rachel Kliminski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rahul Kaushal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Randy Wussler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Raymond Haskew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reagan Berkley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Filley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Virdee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robert Xu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robin Russel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robyn Francis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Araracap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Sen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rosemary Pugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ruben Bos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Lumb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Miller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sadie Baldwin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Godoshian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Jensen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seth Laughlin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spenser Allaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staci Pollock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stephen Pazzano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Susan Worsham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tim Joy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tyler Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vince Tibone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weston Mui</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Will Morrow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Diagnostic_Discussion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Feedback_Entered__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products_Discussed__c</picklist>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Subject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type__c</picklist>
+            <values>
+                <fullName>Comprehensive Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working With</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Web_Demo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LID__PointDrive_Presentation_Created</fullName>
+        <active>false</active>
+        <compactLayoutAssignment>LID__Tasks</compactLayoutAssignment>
+        <description>Record type for PointDrives created</description>
+        <label>PointDrive Created</label>
+        <picklistValues>
+            <picklist>Analysts__c</picklist>
+            <values>
+                <fullName>Adam Shapton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alan Peterson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alex Williamson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexander Wu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexandra Boyle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexis Skitini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alistair Bush</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Allyson Bruner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amanda Nguyen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andres Toome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew McCulloch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew Spindler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anna Cervisi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ashton Stansbury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barry Saks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bayle Smith</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ben Perkins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brandi Mallinger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brett Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carolina Paini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Casey Thormahlen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cedrik Lachance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Chan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Darling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Lucarelli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Christos Savvinidis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Arora</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Smead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Leupold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Riggins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damon Scott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Andersen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Busch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Ismail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danielle Voloshin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dave Bragg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Balaguer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Guarino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Prescott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deborah Cruickshanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dirk Aulabaugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dylan Burzinski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edoardo Gili</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Steiner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Frankel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Lovett</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erin Harris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farren Casad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fran Browning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gabriella Peak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Galen Faurot-Pigeon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gemma van Der Westhuizen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hayley Allen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hemant Kotak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jaclyn Connolly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jared Giles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeff Meister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jena Winters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jesse Freitag-Akselrod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jessica Duong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jim Sullivan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jimmy Meek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joe Stokeld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Hawinkels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Lutzius</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Magee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Pawlowski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joi Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jonathan Hammel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joseph Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Josh Robbins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Juella Waller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justin Brown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kaitlin McDonnell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katherine Marin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kathleen Castellano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katie Clemons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kawika Tarayao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kelly Madigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Hoffman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Rapadas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Angle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Santos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Cameron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Rebolloso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laurie Hauck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louis Attwood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lukas Hartwich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luke Gilman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lulu Zhang</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manisha Bans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maria Wiedner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marie Dormeuil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matt Souter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maya Greenaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Eynon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Hobson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Kao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Stroyeck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Vranich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Kirby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Potter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitchell Carter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murray Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murrie Holland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Natascha Collinson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nathan Siino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Fromm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Tannura</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nikki Pagdades</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Otto Aletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paige Gast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parth Kulkarni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paul Eager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paulina Rojas Schmidt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Papadakos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Rothemund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phil Owens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pierre Rigaud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Piotr Podgórny</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rachel Kliminski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rahul Kaushal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Randy Wussler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Raymond Haskew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reagan Berkley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Filley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Virdee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robert Xu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robin Russel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robyn Francis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Araracap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Sen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rosemary Pugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ruben Bos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Lumb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Miller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sadie Baldwin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Godoshian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Jensen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seth Laughlin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spenser Allaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staci Pollock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stephen Pazzano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Susan Worsham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tim Joy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tyler Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vince Tibone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weston Mui</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Will Morrow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Diagnostic_Discussion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Feedback_Entered__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products_Discussed__c</picklist>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Subject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type__c</picklist>
+            <values>
+                <fullName>Comprehensive Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working With</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Web_Demo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LID__PointDrive_Presentation_Viewed</fullName>
+        <active>false</active>
+        <compactLayoutAssignment>LID__Tasks</compactLayoutAssignment>
+        <description>Record type for PointDrives viewed</description>
+        <label>PointDrive Viewed</label>
+        <picklistValues>
+            <picklist>Analysts__c</picklist>
+            <values>
+                <fullName>Adam Shapton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alan Peterson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alex Williamson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexander Wu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexandra Boyle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexis Skitini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alistair Bush</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Allyson Bruner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amanda Nguyen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andres Toome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew McCulloch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew Spindler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anna Cervisi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ashton Stansbury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barry Saks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bayle Smith</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ben Perkins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brandi Mallinger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brett Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carolina Paini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Casey Thormahlen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cedrik Lachance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Chan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Darling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Lucarelli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Christos Savvinidis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Arora</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Smead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Leupold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Riggins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damon Scott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Andersen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Busch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Ismail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danielle Voloshin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dave Bragg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Balaguer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Guarino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Prescott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deborah Cruickshanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dirk Aulabaugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dylan Burzinski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edoardo Gili</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Steiner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Frankel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Lovett</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erin Harris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farren Casad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fran Browning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gabriella Peak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Galen Faurot-Pigeon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gemma van Der Westhuizen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hayley Allen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hemant Kotak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jaclyn Connolly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jared Giles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeff Meister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jena Winters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jesse Freitag-Akselrod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jessica Duong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jim Sullivan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jimmy Meek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joe Stokeld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Hawinkels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Lutzius</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Magee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Pawlowski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joi Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jonathan Hammel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joseph Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Josh Robbins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Juella Waller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justin Brown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kaitlin McDonnell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katherine Marin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kathleen Castellano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katie Clemons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kawika Tarayao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kelly Madigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Hoffman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Rapadas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Angle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Santos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Cameron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Rebolloso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laurie Hauck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louis Attwood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lukas Hartwich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luke Gilman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lulu Zhang</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manisha Bans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maria Wiedner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marie Dormeuil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matt Souter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maya Greenaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Eynon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Hobson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Kao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Stroyeck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Vranich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Kirby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Potter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitchell Carter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murray Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murrie Holland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Natascha Collinson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nathan Siino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Fromm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Tannura</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nikki Pagdades</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Otto Aletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paige Gast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parth Kulkarni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paul Eager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paulina Rojas Schmidt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Papadakos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Rothemund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phil Owens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pierre Rigaud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Piotr Podgórny</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rachel Kliminski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rahul Kaushal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Randy Wussler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Raymond Haskew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reagan Berkley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Filley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Virdee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robert Xu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robin Russel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robyn Francis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Araracap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Sen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rosemary Pugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ruben Bos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Lumb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Miller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sadie Baldwin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Godoshian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Jensen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seth Laughlin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spenser Allaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staci Pollock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stephen Pazzano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Susan Worsham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tim Joy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tyler Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vince Tibone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weston Mui</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Will Morrow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Diagnostic_Discussion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Feedback_Entered__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products_Discussed__c</picklist>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Subject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type__c</picklist>
+            <values>
+                <fullName>Comprehensive Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working With</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Web_Demo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Task</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>LID__Tasks</compactLayoutAssignment>
+        <label>Task</label>
+        <picklistValues>
+            <picklist>Analysts__c</picklist>
+            <values>
+                <fullName>Adam Shapton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alan Peterson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alex Williamson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexander Wu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexandra Boyle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alexis Skitini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alistair Bush</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Allyson Bruner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amanda Nguyen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andres Toome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew McCulloch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew Simmons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andrew Spindler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anna Cervisi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ashton Stansbury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barry Saks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bayle Smith</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ben Perkins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brandi Mallinger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brett Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carolina Paini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Casey Thormahlen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cedrik Lachance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Chan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Darling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chris Lucarelli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Christos Savvinidis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Arora</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claire Smead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Leupold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Riggins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damon Scott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Andersen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Busch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daniel Ismail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danielle Voloshin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dave Bragg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Balaguer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Guarino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Prescott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deborah Cruickshanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dirk Aulabaugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dylan Burzinski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edoardo Gili</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Steiner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Frankel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eric Lovett</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erin Harris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farren Casad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fran Browning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gabriella Peak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Galen Faurot-Pigeon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gemma van Der Westhuizen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hayley Allen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hemant Kotak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jaclyn Connolly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jared Giles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeff Meister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jena Winters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jesse Freitag-Akselrod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jessica Duong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jim Sullivan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jimmy Meek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joe Stokeld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Hawinkels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Lutzius</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Magee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Pawlowski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joi Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jonathan Hammel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joseph Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Josh Robbins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Juella Waller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justin Brown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kaitlin McDonnell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katherine Marin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kathleen Castellano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Katie Clemons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kawika Tarayao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kelly Madigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Hoffman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kris Rapadas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Angle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kristen Santos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Cameron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lauren Rebolloso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laurie Hauck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louis Attwood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lukas Hartwich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luke Gilman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lulu Zhang</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manisha Bans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maria Wiedner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marie Dormeuil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matt Souter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maya Greenaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Eynon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Hobson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Kao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Stroyeck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michael Vranich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Kirby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mike Potter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitchell Carter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murray Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murrie Holland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Natascha Collinson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nathan Siino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Fromm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nick Tannura</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nikki Pagdades</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Otto Aletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paige Gast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parth Kulkarni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paul Eager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paulina Rojas Schmidt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Papadakos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peter Rothemund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phil Owens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pierre Rigaud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Piotr Podgórny</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rachel Kliminski</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rahul Kaushal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Randy Wussler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Raymond Haskew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reagan Berkley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Filley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rob Virdee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robert Xu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robin Russel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Robyn Francis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Araracap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ron Sen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rosemary Pugh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ruben Bos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Lumb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ryan Miller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sadie Baldwin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Godoshian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sarah Jensen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Lee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seth Laughlin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spenser Allaway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staci Pollock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stephen Pazzano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Susan Worsham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tim Joy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tyler Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vince Tibone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weston Mui</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Will Morrow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Diagnostic_Discussion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Feedback_Entered__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products_Discussed__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataLink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU Market Forecasts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU Standardized Downloads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Market Forecasts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Standardized Downloads</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Subject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type__c</picklist>
+            <values>
+                <fullName>Comprehensive Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working With</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Use Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street %E2%80%93 Confidential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-Person Analyst Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-Person Sales Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAV%2FData Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NDRS Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPS Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outgoing Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual Analyst Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual Sales Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Web_Demo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>LID__cannot_edit_Priority_on_Linkedin_Tasks</fullName>
+        <active>false</active>
+        <description>Validation Rule not in use</description>
+        <errorConditionFormula>false</errorConditionFormula>
+        <errorDisplayField>Priority</errorDisplayField>
+        <errorMessage>You cannot edit the Priority field on LInkedin Tasks</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LID__cannot_edit_assigned_on_Linkedin_Tasks</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(RecordType.Name = &quot;inMail&quot;, RecordType.Name = &quot;Messages&quot;, RecordType.Name = &quot;PointDrive Presentation Created&quot;, RecordType.Name = &quot;PointDrive Presentation Viewed&quot;, RecordType.Name = &quot;LinkedIn_Call&quot;)
+&amp;&amp; (ISCHANGED( OwnerId ))</errorConditionFormula>
+        <errorDisplayField>Status</errorDisplayField>
+        <errorMessage>You cannot edit the Assigned To field on LinkedIn Tasks</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LID__cannot_edit_status_on_Linkedin_Tasks</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR(RecordType.Name = &quot;inMail&quot;, RecordType.Name = &quot;Messages&quot;, RecordType.Name = &quot;PointDrive Presentation Created&quot;, RecordType.Name = &quot;PointDrive Presentation Viewed&quot;, RecordType.Name = &quot;LinkedIn_Call&quot;)
+&amp;&amp; (ISCHANGED( Status ))</errorConditionFormula>
+        <errorDisplayField>OwnerId</errorDisplayField>
+        <errorMessage>You cannot edit the Assigned To field on LinkedIn Tasks</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NAV_Request_Model_Count_Blank</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Type,&apos;NAV/Data Request&apos;),
+ISBLANK(Model_Count__c))</errorConditionFormula>
+        <errorDisplayField>Model_Count__c</errorDisplayField>
+        <errorMessage>Please enter Model Count for NAV Requests.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_Log_Event_On_Task</fullName>
+        <active>true</active>
+        <description>This will prevent specific roles to log event as task</description>
+        <errorConditionFormula>AND(
+  RecordType.DeveloperName = &quot;Task&quot;,
+  OR(
+    $UserRole.Name = &quot;CAM&quot;,
+    $UserRole.Name = &quot;CAM Manager&quot;,
+    $UserRole.Name = &quot;Customer Success&quot;,
+    $UserRole.Name = &quot;Customer Success Manager&quot;
+  ),
+  OR(
+  ISPICKVAL(Type, &quot;Virtual Visit&quot;), 
+  ISPICKVAL(Type, &quot;Virtual Sales Visit&quot;), 
+  ISPICKVAL(Type, &quot;Virtual Training&quot;), 
+  ISPICKVAL(Type, &quot;Virtual Analyst Visit&quot;), 
+  ISPICKVAL(Type, &quot;In-Person Visit&quot;), 
+  ISPICKVAL(Type, &quot;In-Person Sales Visit&quot;), 
+  ISPICKVAL(Type, &quot;In-Person Training&quot;), 
+  ISPICKVAL(Type, &quot;In-Person Analyst Visit&quot;)
+))</errorConditionFormula>
+        <errorMessage>Please log this Visit as an Event</errorMessage>
+    </validationRules>
+</CustomObject>

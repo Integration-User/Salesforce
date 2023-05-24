@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Letter score is associated with a specific range over the residual percentage depending on the model type and account priority.</description>
+    <fields>
+        <fullName>AccountPriority__c</fullName>
+        <description>Priority of the account to determine the corresponding ranks.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Priority of the account to determine the corresponding ranks.</inlineHelpText>
+        <label>Account Priority</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Core</fullName>
+                    <default>true</default>
+                    <label>Core</label>
+                </value>
+                <value>
+                    <fullName>Strategic</fullName>
+                    <default>false</default>
+                    <label>Strategic</label>
+                </value>
+                <value>
+                    <fullName>Enterprise</fullName>
+                    <default>false</default>
+                    <label>Enterprise</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IsForTesting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>For test apex class.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>For test apex class.</inlineHelpText>
+        <label>Is for testing</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ResidualCutOffMax__c</fullName>
+        <description>Maximum percentage of the range for a specific score.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Maximum percentage of the range for a specific score.</inlineHelpText>
+        <label>Residual Cut Off Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ResidualCutOffMin__c</fullName>
+        <description>Minimum percentage of the range for a specific score.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Minimum percentage of the range for a specific score.</inlineHelpText>
+        <label>Residual Cut Off Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>SalesType__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Sales Type</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Score__c</fullName>
+        <description>Letter score for a specific residual percent range.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Letter score for a specific residual percent range.</inlineHelpText>
+        <label>Score</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A</fullName>
+                    <default>true</default>
+                    <label>A</label>
+                </value>
+                <value>
+                    <fullName>B</fullName>
+                    <default>false</default>
+                    <label>B</label>
+                </value>
+                <value>
+                    <fullName>C</fullName>
+                    <default>false</default>
+                    <label>C</label>
+                </value>
+                <value>
+                    <fullName>D</fullName>
+                    <default>false</default>
+                    <label>D</label>
+                </value>
+                <value>
+                    <fullName>F</fullName>
+                    <default>false</default>
+                    <label>F</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>DDS - Model Score</label>
+    <listViews>
+        <fullName>AllProd</fullName>
+        <columns>SalesType__c</columns>
+        <columns>AccountPriority__c</columns>
+        <columns>ResidualCutOffMin__c</columns>
+        <columns>ResidualCutOffMax__c</columns>
+        <columns>Score__c</columns>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsForTesting__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Prod</label>
+    </listViews>
+    <listViews>
+        <fullName>Renewal</fullName>
+        <columns>SalesType__c</columns>
+        <columns>AccountPriority__c</columns>
+        <columns>ResidualCutOffMin__c</columns>
+        <columns>ResidualCutOffMax__c</columns>
+        <columns>Score__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsForTesting__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>SalesType__c</field>
+            <operation>equals</operation>
+            <value>Renewal</value>
+        </filters>
+        <label>Renewal</label>
+    </listViews>
+    <pluralLabel>DDS - Model Scores</pluralLabel>
+    <validationRules>
+        <fullName>IncompleteResidualCutOffRanges</fullName>
+        <active>true</active>
+        <description>At least one limit of the range must be complete, either the minimum or the maximum.</description>
+        <errorConditionFormula>AND(ISBLANK( ResidualCutOffMin__c ), ISBLANK( ResidualCutOffMax__c))</errorConditionFormula>
+        <errorMessage>At least one limit of the range must be complete, either the minimum or the maximum.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

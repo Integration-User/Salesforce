@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Compliance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Compliance</value>
+    </caseValues>
+    <fields>
+        <label><!-- PPD Sent --></label>
+        <name>ADV_PPD_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account_Name__c</name>
+        <relationshipLabel><!-- Compliance --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account Owner --></label>
+        <name>Account_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activation Date --></label>
+        <name>Activation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add to Restricted List? --></label>
+        <name>Add_to_Restricted_List__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved By --></label>
+        <name>Approved_By_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Box Link --></label>
+        <name>Box_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- CAF Type --></label>
+        <name>CAF_Type__c</name>
+        <picklistValues>
+            <masterLabel>Activation</masterLabel>
+            <translation><!-- Activation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change</masterLabel>
+            <translation><!-- Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivation</masterLabel>
+            <translation><!-- Deactivation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Verification --></label>
+        <name>Call_Verification__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Yes, send special notice. --></help>
+        <label><!-- Canadian Customer? --></label>
+        <name>Canadian_Customer__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Contact that provided the change information --></help>
+        <label><!-- Change Info Provided by: --></label>
+        <name>Change_Info_Provided_by__c</name>
+        <relationshipLabel><!-- Compliance --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Change Made --></label>
+        <name>Change_Made__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Type --></label>
+        <name>Change_Type__c</name>
+        <picklistValues>
+            <masterLabel>Address</masterLabel>
+            <translation><!-- Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Favor Extension</masterLabel>
+            <translation><!-- Favor Extension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name</masterLabel>
+            <translation><!-- Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Number</masterLabel>
+            <translation><!-- Phone Number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Check State Registration --></label>
+        <name>Check_State_Registration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who should compliance reach out to with questions? --></help>
+        <label><!-- Compliance Main Contact --></label>
+        <name>Compliance_Main_Contact__c</name>
+        <relationshipLabel><!-- Compliance (Compliance Main Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract Start Date --></label>
+        <name>Contract_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this a new client, a lost client, or just an address change? --></help>
+        <label><!-- Customer Action Form Type --></label>
+        <name>Customer_Action_Form_Type__c</name>
+        <picklistValues>
+            <masterLabel>Activation</masterLabel>
+            <translation><!-- Activation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change</masterLabel>
+            <translation><!-- Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivation</masterLabel>
+            <translation><!-- Deactivation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Channel --></label>
+        <name>Customer_Channel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Notice from Solicitor --></label>
+        <name>Customer_Notice_from_Solicitor__c</name>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Deactivation Date --></label>
+        <name>Deactivation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deactivation Reason --></label>
+        <name>Deactivation_Reason__c</name>
+    </fields>
+    <fields>
+        <help><!-- Create virtual Compliance folder for this account under the appropriate client file and add compliance documents (OFAC, RIA, ID, etc) --></help>
+        <label><!-- Docs added to compliance client file --></label>
+        <name>Docs_added_to_compliance_client_file__c</name>
+    </fields>
+    <fields>
+        <label><!-- EL Compliance Status --></label>
+        <name>EL_Compliance_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Wall Sitter --></label>
+        <name>Engagement_Wall_Sitter__c</name>
+        <relationshipLabel><!-- Compliance (Engagement Wall Sitter) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If yes, a favor opportunity will be created for you to activate and permission users. --></help>
+        <label><!-- Favor Access --></label>
+        <name>Favor_Access__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please give context as to why we are extending a favor to this person. --></help>
+        <label><!-- Favor Reason --></label>
+        <name>Favor_Reason__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Yes, second prinicpal signature is required. --></help>
+        <label><!-- Foreign Bank? --></label>
+        <name>Foreign_Bank__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Form CRS Sent --></label>
+        <name>Form_CRS_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fully Executed Returned --></label>
+        <name>Fully_Executed_Returned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Search Verified --></label>
+        <name>Google_Search_Verified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Search for the company on www.google.com to ensure they are a real entity --></help>
+        <label><!-- Google Search --></label>
+        <name>Google_Search__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Further Investigation Needed</masterLabel>
+            <translation><!-- Further Investigation Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+        <picklistValues>
+            <masterLabel>Dallas</masterLabel>
+            <translation><!-- Dallas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>London</masterLabel>
+            <translation><!-- London --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newport</masterLabel>
+            <translation><!-- Newport --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ID Received --></label>
+        <name>ID_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- ID Request Date --></label>
+        <name>ID_Request_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ID Request --></label>
+        <name>Identification_Request__c</name>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Public? --></label>
+        <name>Is_Public__c</name>
+    </fields>
+    <fields>
+        <help><!-- Letter sent to client verifying the change information --></help>
+        <label><!-- Letter Sent --></label>
+        <name>Letter_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lost Client Date --></label>
+        <name>Lost_Client_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please provide the updated client data here --></help>
+        <label><!-- New Information --></label>
+        <name>New_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes/Comments --></label>
+        <name>Notes_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- OFAC Check --></label>
+        <name>OFAC_Check__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide the old address, phone number, name, etc --></help>
+        <label><!-- Old Information --></label>
+        <name>Old_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- Iraq, Kuwait, Lebanon, Libya, Qatar, Saudi Arabia, Syria, Yemen, North Korea? --></help>
+        <label><!-- On Boycott List? --></label>
+        <name>On_Boycott_List__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity_New__c</name>
+        <relationshipLabel><!-- Compliance --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Stage --></label>
+        <name>Opportunity_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Compliance (Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Politically Exposed Person? --></label>
+        <name>Politically_Exposed_Person__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary GSA Contact --></label>
+        <name>Primary_GSA_Contact__c</name>
+        <relationshipLabel><!-- Compliance (Primary GSA Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Types --></label>
+        <name>Product_Types__c</name>
+    </fields>
+    <fields>
+        <label><!-- RIA Check --></label>
+        <name>RIACheck__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registered Investment Advisor? --></label>
+        <name>Registered_Investment_Advisor__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Risk Notes --></label>
+        <name>Risk_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk --></label>
+        <name>Risk__c</name>
+        <picklistValues>
+            <masterLabel>Client is a consortium of companies</masterLabel>
+            <translation><!-- Client is a consortium of companies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client is allowed to redistribute the deliverable to select market participants</masterLabel>
+            <translation><!-- Client is allowed to redistribute the deliverable to select market participants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client is company’s Board and findings can’t be communicated to Management</masterLabel>
+            <translation><!-- Client is company’s Board and findings can’t be communicated to Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deliverable will be in public domain</masterLabel>
+            <translation><!-- Deliverable will be in public domain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Doing due diligence on company in our coverage universe</masterLabel>
+            <translation><!-- Doing due diligence on company in our coverage universe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Doing due diligence on company soon to be in our coverage universe</masterLabel>
+            <translation><!-- Doing due diligence on company soon to be in our coverage universe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Doing due diligence on company we previously worked for, but can’t use previous data/findings</masterLabel>
+            <translation><!-- Doing due diligence on company we previously worked for, but can’t use previous data/findings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engagement will influence a private market transaction</masterLabel>
+            <translation><!-- Engagement will influence a private market transaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engagement will likely influence a public market event</masterLabel>
+            <translation><!-- Engagement will likely influence a public market event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSA name will be used in public domain</masterLabel>
+            <translation><!-- GSA name will be used in public domain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need the client to provide third party data sources</masterLabel>
+            <translation><!-- Need the client to provide third party data sources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need to acquire/publish third-party data sources</masterLabel>
+            <translation><!-- Need to acquire/publish third-party data sources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need to partner with a brokerage firm</masterLabel>
+            <translation><!-- Need to partner with a brokerage firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need to partner with another advisory firm</masterLabel>
+            <translation><!-- Need to partner with another advisory firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need to use GSA-acquired data that can’t be republish</masterLabel>
+            <translation><!-- Need to use GSA-acquired data that can’t be republish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timing of assignment</masterLabel>
+            <translation><!-- Timing of assignment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SWF: Foreign Jurisdiction&amp;Entity Check --></label>
+        <name>SWF_Foreign_Jurisdiction_Entity_Check__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is required for Foreign Banks --></help>
+        <label><!-- Second Approval --></label>
+        <name>Second_Approval__c</name>
+        <relationshipLabel><!-- Compliance (Second Approval) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Send Request for ID --></label>
+        <name>Send_Request_for_ID__c</name>
+        <picklistValues>
+            <masterLabel>No, Already Requested</masterLabel>
+            <translation><!-- No, Already Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No, Received</masterLabel>
+            <translation><!-- No, Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sign EL Received --></label>
+        <name>Sign_EL_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solicitor Used --></label>
+        <name>Solicitor_Used__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Started</masterLabel>
+            <translation><!-- Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transitioned</masterLabel>
+            <translation><!-- Transitioned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject to ERISA Regulation? --></label>
+        <name>Subject_to_ERISA_Regulation__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Trial End Date --></label>
+        <name>Trial_End_Date2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trial End Date --></label>
+        <name>Trial_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- US to EU, GDPR letter --></label>
+        <name>US_to_EU_GDPR_letter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verify OFAC --></label>
+        <name>Verify_OFAC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website --></label>
+        <name>Website__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- To be used for US Advisory Clients --></description>
+        <label><!-- US Advisory --></label>
+        <name>US_Advisory</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- To be used for US favor accounts. --></description>
+        <label><!-- US Favor --></label>
+        <name>US_Favor</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- To be used for clients with a US contract in place. --></description>
+        <label><!-- US Subscription --></label>
+        <name>US_Subscription</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Only Designated Compliance personnel can approve records. --></errorMessage>
+        <name>Approved_Approvers</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only the Compliance team can approve records for Change or Deactivation requests. --></errorMessage>
+        <name>Deactivation_Change_Approvals</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To move to &quot;Pending Approval&quot;, please fill out all the fields in the compliance section. --></errorMessage>
+        <name>US_Change_Pending_Approval_Reqs</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The follow is required to move this record to &quot;Transitioned&quot;: OFAC Check, Docs added to compliance client file, along with internal and External Main Contacts. --></errorMessage>
+        <name>US_Favor_Activation_Transition_Reqs</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To Move this record to &quot;Pending Approval&quot; make sure the fields in the Compliance Section are completed. --></errorMessage>
+        <name>US_Sub_Activation_PendingApproval_Reqs</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The follow is required to move this record to &quot;Transitioned&quot;: OFAC Check, Docs added to compliance client file, along with internal and External Main Contacts. *You also much activate the account prior to transitioning. --></errorMessage>
+        <name>US_Sub_Activation_Transition_Reqs</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Run_OFAC --></label>
+        <name>Run_OFAC</name>
+    </webLinks>
+</CustomObjectTranslation>

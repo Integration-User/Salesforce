@@ -1,0 +1,36 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader"
+                access="global" controller="Plative_DatalinkTokenUtility" description="Plative_ClearTokenLtng" >
+    
+     
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="displaySpinner" type="boolean" default="false"/>
+    <aura:attribute name="maxToken" type="Integer" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    
+    <div id="mainDiv" class="slds-is-relative">
+        
+        <aura:if isTrue="{!v.displaySpinner}">
+            <lightning:spinner size="medium" alternativeText="Loading" variant="brand"/>
+        </aura:if>
+        
+        <div class="slds-border_bottom slds-m-bottom_medium">
+            <p class="slds-p-around_medium slds-text-heading_large slds-align_absolute-center">Clear Tokens</p>
+        </div>
+        <lightning:layout class="slds-is-relative" multipleRows="true" horizontalAlign="spread">
+            <lightning:layoutItem padding="around-small" size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                  largeDeviceSize="12">
+                <p class="slds-text-heading_medium">Are you sure you want clear tokens for this Contact?</p>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                  largeDeviceSize="12">
+                <lightning:button variant="brand" class="slds-float_right slds-m-left_xx-small" label="Yes"
+                                  title="Yes" onclick="{! c.clearTokensC }"/>
+                <lightning:button label="Cancel" class="slds-float_right" title="Cancel"
+                                  onclick="{! c.closeQuickAction }"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        
+    </div>
+    
+</aura:component>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataset>forecasting_item2</dataset>
+    <dimensions>
+        <field>User.UniqueUserName</field>
+        <isDerived>false</isDerived>
+        <label>User Name</label>
+        <linkTemplate>/{{row.OwnerId}}</linkTemplate>
+        <linkTooltip>Open User</linkTooltip>
+        <recordIdField>OwnerId</recordIdField>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <measures>
+        <field>Quota Remaining</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Quota Remaining</label>
+        <showInExplorer>false</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>Won</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Won</label>
+        <showInExplorer>false</showInExplorer>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>Commit</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Commit</label>
+        <showInExplorer>false</showInExplorer>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>Adjusted Commit</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Adjusted Commit</label>
+        <showInExplorer>false</showInExplorer>
+        <sortIndex>3</sortIndex>
+    </measures>
+    <measures>
+        <field>Best Case</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Best Case</label>
+        <showInExplorer>false</showInExplorer>
+        <sortIndex>4</sortIndex>
+    </measures>
+    <measures>
+        <field>Adjusted Best Case</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Adjusted Best Case</label>
+        <showInExplorer>false</showInExplorer>
+        <sortIndex>5</sortIndex>
+    </measures>
+    <measures>
+        <field>Pipeline</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Pipeline</label>
+        <showInExplorer>false</showInExplorer>
+        <sortIndex>6</sortIndex>
+    </measures>
+    <measures>
+        <field>Forecast</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Forecast</label>
+        <showInExplorer>false</showInExplorer>
+        <sortIndex>7</sortIndex>
+    </measures>
+    <measures>
+        <field>Adjusted Forecast</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Adjusted Forecast</label>
+        <showInExplorer>false</showInExplorer>
+        <sortIndex>8</sortIndex>
+    </measures>
+</WaveXmd>

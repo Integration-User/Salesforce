@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>CRE AUM CT&apos;s</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;Company types that will require &lt;strong&gt;CRE AUM&lt;/strong&gt;:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Family Office&lt;/p&gt;&lt;p&gt;Hedge Fund&lt;/p&gt;&lt;p&gt;High Net Worth - RIA&lt;/p&gt;&lt;p&gt;Long Only&lt;/p&gt;&lt;p&gt;Pension Fund/Endowment&lt;/p&gt;&lt;p&gt;Private Equity&lt;/p&gt;&lt;p&gt;Real Estate Company&lt;/p&gt;&lt;p&gt;REIT&lt;/p&gt;&lt;p&gt;Sovereign Wealth Fund&lt;/p&gt;</body>
+        <customApplication>Green_Street_Advisors</customApplication>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>CRE AUM CT&apos;s</masterLabel>
+        <publishedDate>2023-02-06</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2023-02-06</startDate>
+        <targetPageKey1>Opportunity</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>CRE AUM Company Types</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_gsa sales user</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_system administrator kh</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

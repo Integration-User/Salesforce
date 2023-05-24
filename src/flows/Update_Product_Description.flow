@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>Append_Description_values</name>
+        <label>Append Description values</label>
+        <locationX>638</locationX>
+        <locationY>328</locationY>
+        <assignmentItems>
+            <assignToReference>FinalDescription</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AddDescriptionToFinal</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Line_Items</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_to_Final</name>
+        <label>Update to Final</label>
+        <locationX>1040</locationX>
+        <locationY>333</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Product_Description_NS__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AddFinal</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>If_Line_Items_Available</name>
+        <label>If Line Items Available</label>
+        <locationX>664</locationX>
+        <locationY>141</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_If_Line_Items_Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_All_Line_Items</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Through_Line_Items</targetReference>
+            </connector>
+            <label>Check If Line Items Available</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>AddDescriptionToFinal</name>
+        <dataType>String</dataType>
+        <expression>if(isblank({!FinalDescription}),
+{!Loop_Through_Line_Items.Product2.Description}, 
+if(CONTAINS({!FinalDescription}, {!Loop_Through_Line_Items.Product2.Description}),{!FinalDescription},
+{!FinalDescription} &amp; &apos; - &apos; &amp; {!Loop_Through_Line_Items.Product2.Description}))</expression>
+    </formulas>
+    <formulas>
+        <name>AddFinal</name>
+        <dataType>String</dataType>
+        <expression>{!FinalDescription}</expression>
+    </formulas>
+    <interviewLabel>Update Product Description {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Product Description</label>
+    <loops>
+        <name>Loop_Through_Line_Items</name>
+        <label>Loop Through Line Items</label>
+        <locationX>842</locationX>
+        <locationY>327</locationY>
+        <collectionReference>Get_All_Line_Items</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Append_Description_values</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_to_Final</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_All_Line_Items</name>
+        <label>Get All Line Items</label>
+        <locationX>449</locationX>
+        <locationY>138</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>If_Line_Items_Available</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>UnitPrice</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>52</locationX>
+        <locationY>65</locationY>
+        <connector>
+            <targetReference>Get_All_Line_Items</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>AddDescription</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;if(isblank({!FinalDescription}),&lt;/p&gt;&lt;p&gt;{!Loop_Through_Line_Items.Product2.Description},&amp;nbsp;&lt;/p&gt;&lt;p&gt;if(CONTAINS({!FinalDescription}, {!Loop_Through_Line_Items.Product2.Description}),{!FinalDescription},&lt;/p&gt;&lt;p&gt;{!FinalDescription} &amp;amp; &apos; - &apos; &amp;amp; {!Loop_Through_Line_Items.Product2.Description}))&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>FinalDescriptionToUpdate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Access to Green Street&apos;s:</text>
+    </textTemplates>
+    <variables>
+        <name>FinalDescription</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Access to Green Street&apos;s: </stringValue>
+        </value>
+    </variables>
+</Flow>

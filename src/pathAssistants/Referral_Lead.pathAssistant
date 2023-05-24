@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Referral Lead</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Reason_Disqualified__c</fieldNames>
+        <fieldNames>Questions_Comments__c</fieldNames>
+        <picklistValueName>Disqualified</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Questions_Comments__c</fieldNames>
+        <picklistValueName>Open</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Questions_Comments__c</fieldNames>
+        <picklistValueName>Sales_Qualified</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Referrals</recordTypeName>
+</PathAssistant>

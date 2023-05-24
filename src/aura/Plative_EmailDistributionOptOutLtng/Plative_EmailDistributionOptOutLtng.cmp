@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader"
+                access="global" controller="Plative_EmailDistributionOptOutCtrl">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="displaySpinner" type="Boolean" default="false" />
+    <aura:attribute name="options" type="List" />
+    <aura:attribute name="selectedOptions" type="List" />
+    
+    <div class="mainContainer slds-is-relative">
+        <aura:if isTrue="{!v.displaySpinner}">
+            <lightning:spinner variant="brand" alternativeText="Loading" size="medium"/>
+        </aura:if>
+        
+        <div class="slds-border_bottom slds-m-bottom_large">
+            <p class="slds-p-around_medium slds-text-heading_medium slds-align_absolute-center">Email Distribution</p>
+        </div>
+        
+        <lightning:layout multipleRows="true" >
+            <lightning:layoutItem padding="around-small" size="12" > 
+                    <!-- DualList Box for Email Distribution Selection -->
+                    <lightning:dualListbox name="languages"
+                                           label= "Select Email Distribution for Opt-Out"
+                                           sourceLabel="Opted-In"
+                                           selectedLabel="Opted-Out"
+                                           options="{!v.options}"
+                                           value="{!v.selectedOptions}" 
+                                           disableReordering="true" />
+                    
+                </lightning:layoutItem>  
+                <lightning:layoutItem class="slds-align_absolute-center" padding="around-small" size="12">
+                    <lightning:button variant="brand" label="Save" title="Save" onclick="{!c.saveEmailDistributions}" />
+                </lightning:layoutItem>
+            
+        </lightning:layout>
+        
+        
+    </div>
+	
+</aura:component>

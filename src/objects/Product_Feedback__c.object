@@ -1,0 +1,2511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Feedback</relationshipLabel>
+        <relationshipName>Product_Feedback</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Company_Type2__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( Contact__r.Account.Company_Type__c )</formula>
+        <label>Company Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Company_Type</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Competitors__c</fullName>
+        <externalId>false</externalId>
+        <label>Competitors</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Axiometrics</fullName>
+                    <default>false</default>
+                    <label>Axiometrics</label>
+                </value>
+                <value>
+                    <fullName>BAML</fullName>
+                    <default>false</default>
+                    <label>BAML</label>
+                </value>
+                <value>
+                    <fullName>Bloomberg</fullName>
+                    <default>false</default>
+                    <label>Bloomberg</label>
+                </value>
+                <value>
+                    <fullName>Broker Provided Information</fullName>
+                    <default>false</default>
+                    <label>Broker Provided Information</label>
+                </value>
+                <value>
+                    <fullName>Burgiss</fullName>
+                    <default>false</default>
+                    <label>Burgiss</label>
+                </value>
+                <value>
+                    <fullName>Capital One</fullName>
+                    <default>false</default>
+                    <label>Capital One</label>
+                </value>
+                <value>
+                    <fullName>CBRE</fullName>
+                    <default>false</default>
+                    <label>CBRE</label>
+                </value>
+                <value>
+                    <fullName>Citi</fullName>
+                    <default>false</default>
+                    <label>Citi</label>
+                </value>
+                <value>
+                    <fullName>CompStak</fullName>
+                    <default>false</default>
+                    <label>CompStak</label>
+                </value>
+                <value>
+                    <fullName>CoStar</fullName>
+                    <default>false</default>
+                    <label>CoStar</label>
+                </value>
+                <value>
+                    <fullName>Datscha</fullName>
+                    <default>false</default>
+                    <label>Datscha</label>
+                </value>
+                <value>
+                    <fullName>Estates Gazette</fullName>
+                    <default>false</default>
+                    <label>Estates Gazette</label>
+                </value>
+                <value>
+                    <fullName>FERI</fullName>
+                    <default>false</default>
+                    <label>FERI</label>
+                </value>
+                <value>
+                    <fullName>GeoPhy</fullName>
+                    <default>false</default>
+                    <label>GeoPhy</label>
+                </value>
+                <value>
+                    <fullName>I don&apos;t know</fullName>
+                    <default>false</default>
+                    <label>I don&apos;t know</label>
+                </value>
+                <value>
+                    <fullName>ISI</fullName>
+                    <default>false</default>
+                    <label>ISI</label>
+                </value>
+                <value>
+                    <fullName>Jefferies</fullName>
+                    <default>false</default>
+                    <label>Jefferies</label>
+                </value>
+                <value>
+                    <fullName>JPM</fullName>
+                    <default>false</default>
+                    <label>JPM</label>
+                </value>
+                <value>
+                    <fullName>Kempen</fullName>
+                    <default>false</default>
+                    <label>Kempen</label>
+                </value>
+                <value>
+                    <fullName>Keybanc</fullName>
+                    <default>false</default>
+                    <label>Keybanc</label>
+                </value>
+                <value>
+                    <fullName>Kroll Bond Rating</fullName>
+                    <default>false</default>
+                    <label>Kroll Bond Rating</label>
+                </value>
+                <value>
+                    <fullName>Moody&apos;s</fullName>
+                    <default>false</default>
+                    <label>Moody&apos;s</label>
+                </value>
+                <value>
+                    <fullName>Morgan Stanley</fullName>
+                    <default>false</default>
+                    <label>Morgan Stanley</label>
+                </value>
+                <value>
+                    <fullName>MSCI</fullName>
+                    <default>false</default>
+                    <label>MSCI</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>PMA</fullName>
+                    <default>false</default>
+                    <label>PMA</label>
+                </value>
+                <value>
+                    <fullName>PropertyEU</fullName>
+                    <default>false</default>
+                    <label>PropertyEU</label>
+                </value>
+                <value>
+                    <fullName>Property Week</fullName>
+                    <default>false</default>
+                    <label>Property Week</label>
+                </value>
+                <value>
+                    <fullName>RCA</fullName>
+                    <default>false</default>
+                    <label>RCA</label>
+                </value>
+                <value>
+                    <fullName>REIS</fullName>
+                    <default>false</default>
+                    <label>REIS</label>
+                </value>
+                <value>
+                    <fullName>Trepp</fullName>
+                    <default>false</default>
+                    <label>Trepp</label>
+                </value>
+                <value>
+                    <fullName>UBS</fullName>
+                    <default>false</default>
+                    <label>UBS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Contact this piece of feedback is associated with</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Feedback</relationshipLabel>
+        <relationshipName>Product_Feedback</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description_of_Feedback__c</fullName>
+        <description>Description of the feedback</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please be as detailed as possible</inlineHelpText>
+        <label>Description of Feedback</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Feedback_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Feedback Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product Feedback</fullName>
+                    <default>false</default>
+                    <label>Product Feedback</label>
+                </value>
+                <value>
+                    <fullName>Report Feedback</fullName>
+                    <default>false</default>
+                    <label>Report Feedback</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Platform__c</fullName>
+        <defaultValue>&quot;WP1&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Platform</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>WP1</fullName>
+                    <default>false</default>
+                    <label>WP1</label>
+                </value>
+                <value>
+                    <fullName>Legacy</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Legacy</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Trying to tie product feedback to the product</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Product Feedback</relationshipLabel>
+        <relationshipName>Product_Feedback</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>What Product line is this feedback regarding?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What Product line is this feedback regarding?</inlineHelpText>
+        <label>Product</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Feedback_Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>Products</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>US Research</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>EURO Research</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>News</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>News - ABA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>News - CMA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>News - REA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>React</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>REIT Data</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>REIT Data - Company Analysis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <valueName>REIT Data - Detailed NAVs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>REIT Data - Interactive Charting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>REIT Data - Portfolio Search</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>REIT Data - Retail DB</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>REIT Data - Weekly REIT Pricing Review</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>MD&amp;D</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>MD&amp;D - Market Data</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>MD&amp;D - Market Forecasts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>MD&amp;D - Sales Comps</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>MD&amp;D Standardized Downloads</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>MD&amp;D - Rent Comps</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Debt Databases</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Debt DB - ABS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Debt DB - CMBS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Debt DB - CRE-CLO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Debt DB - High Yield</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>AVM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Portfolio Analytics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>API</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>DataLink</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Market Participants</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Rankings</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>PDF Viewer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Not Applicable</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>US</fullName>
+                    <default>false</default>
+                    <label>US</label>
+                </value>
+                <value>
+                    <fullName>Europe</fullName>
+                    <default>false</default>
+                    <label>Europe</label>
+                </value>
+                <value>
+                    <fullName>Global</fullName>
+                    <default>false</default>
+                    <label>Global</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Report_Publish_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Report Publish Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Report_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Report Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sectors__c</fullName>
+        <externalId>false</externalId>
+        <label>Sectors</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Sectors</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type_Feedback__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Feedback_Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>API</fullName>
+                    <default>false</default>
+                    <label>API</label>
+                </value>
+                <value>
+                    <fullName>Bug</fullName>
+                    <default>false</default>
+                    <label>Bug</label>
+                </value>
+                <value>
+                    <fullName>Coverage</fullName>
+                    <default>false</default>
+                    <label>Coverage</label>
+                </value>
+                <value>
+                    <fullName>Enhancement</fullName>
+                    <default>false</default>
+                    <label>Enhancement</label>
+                </value>
+                <value>
+                    <fullName>Functionality</fullName>
+                    <default>false</default>
+                    <label>Functionality</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Closed Won</fullName>
+                    <default>false</default>
+                    <label>Closed Won</label>
+                </value>
+                <value>
+                    <fullName>Closed Lost</fullName>
+                    <default>false</default>
+                    <label>Closed Lost</label>
+                </value>
+                <value>
+                    <fullName>Macro</fullName>
+                    <default>false</default>
+                    <label>Macro</label>
+                </value>
+                <value>
+                    <fullName>Insights</fullName>
+                    <default>false</default>
+                    <label>Insights</label>
+                </value>
+                <value>
+                    <fullName>Sector</fullName>
+                    <default>false</default>
+                    <label>Sector</label>
+                </value>
+                <value>
+                    <fullName>Company</fullName>
+                    <default>false</default>
+                    <label>Company</label>
+                </value>
+                <value>
+                    <fullName>Market</fullName>
+                    <default>false</default>
+                    <label>Market</label>
+                </value>
+                <value>
+                    <fullName>REA</fullName>
+                    <default>false</default>
+                    <label>REA</label>
+                </value>
+                <value>
+                    <fullName>CMA</fullName>
+                    <default>false</default>
+                    <label>CMA</label>
+                </value>
+                <value>
+                    <fullName>ABA</fullName>
+                    <default>false</default>
+                    <label>ABA</label>
+                </value>
+                <value>
+                    <fullName>HFA</fullName>
+                    <default>false</default>
+                    <label>HFA</label>
+                </value>
+                <value>
+                    <fullName>React News</fullName>
+                    <default>false</default>
+                    <label>React News</label>
+                </value>
+                <value>
+                    <fullName>News</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>News</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <valueName>Bug</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <valueName>Coverage</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <valueName>Enhancement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <valueName>Functionality</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <valueName>Price</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Macro</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Insights</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Sector</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Company</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>Market</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>REA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>CMA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>ABA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Report Feedback</controllingFieldValue>
+                <valueName>React News</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Use_Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Use Case</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Product Feedback</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Description_of_Feedback__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>contains</operation>
+            <value>Sutton</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{YYYY}{MM}-{0}</displayFormat>
+        <label>Feedback Item Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Product Feedback</pluralLabel>
+    <recordTypes>
+        <fullName>Product_Feedback</fullName>
+        <active>true</active>
+        <label>Product Feedback</label>
+        <picklistValues>
+            <picklist>Company_Type__c</picklist>
+            <values>
+                <fullName>Accountant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alpha Capture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank - Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank - Lender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Income%2FCMBS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Dedicated%2C Event Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Generalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Generalist%2C Dedicated Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Generalist%2C Dedicated Sponsor%2C Event Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Generalist%2C Event Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Net Worth - RIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Institutional Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law Firm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Only- Dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Only- Generalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Only- Generalist%2C Dedicated Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Contracted Hedge Fund-dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Contracted Hedge Fund-generalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Contracted Long Only-dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Contracted Long Only-generalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension Fund%2FEndowment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Equity - Dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Equity - Diversified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT - Coverage Universe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT - Non Coverage Universe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rating Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retailer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sovereign Wealth Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trading Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>University</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competitors__c</picklist>
+            <values>
+                <fullName>Axiometrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BAML</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bloomberg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Provided Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burgiss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CBRE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capital One</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Citi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CompStak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Datscha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estates Gazette</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FERI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GeoPhy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I don%27t know</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JPM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jefferies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kempen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Keybanc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kroll Bond Rating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSCI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morgan Stanley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PropertyEU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Feedback_Type__c</picklist>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>WP1</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activist Situations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Diagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Positioning %26 Investor Messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataLink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt DB - ABS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt DB - CMBS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt DB - CRE-CLO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt DB - High Yield</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial%2FStrategic Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Market Forecasts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Rent Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D Standardized Downloads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Participants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEWS - HFAlert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Test Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche Sector Expertise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Investment Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Valuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Company Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Detailed NAVs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Interactive Charting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Portfolio Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Retail DB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Weekly REIT Pricing Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rankings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Transactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Committees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sectors__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Feedback__c</picklist>
+            <values>
+                <fullName>ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Lost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HFA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Macro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sector</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Report_Feedback</fullName>
+        <active>true</active>
+        <label>Report Feedback</label>
+        <picklistValues>
+            <picklist>Company_Type__c</picklist>
+            <values>
+                <fullName>Accountant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alpha Capture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank - Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank - Lender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Income%2FCMBS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Dedicated%2C Event Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Generalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Generalist%2C Dedicated Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Generalist%2C Dedicated Sponsor%2C Event Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Fund - Generalist%2C Event Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Net Worth - RIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Institutional Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law Firm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Only- Dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Only- Generalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Only- Generalist%2C Dedicated Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Contracted Hedge Fund-dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Contracted Hedge Fund-generalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Contracted Long Only-dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Contracted Long Only-generalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension Fund%2FEndowment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Equity - Dedicated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Equity - Diversified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT - Coverage Universe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT - Non Coverage Universe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rating Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retailer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sovereign Wealth Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trading Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>University</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competitors__c</picklist>
+            <values>
+                <fullName>Axiometrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BAML</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bloomberg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Provided Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burgiss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CBRE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capital One</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Citi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CompStak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Datscha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estates Gazette</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FERI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GeoPhy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I don%27t know</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JPM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jefferies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kempen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Keybanc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kroll Bond Rating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSCI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morgan Stanley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PropertyEU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Feedback_Type__c</picklist>
+            <values>
+                <fullName>Product Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>WP1</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activist Situations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Diagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Positioning %26 Investor Messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataLink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt DB - ABS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt DB - CMBS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt DB - CRE-CLO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt DB - High Yield</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial%2FStrategic Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Market Forecasts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Rent Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D Standardized Downloads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Participants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEWS - HFAlert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Test Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche Sector Expertise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Investment Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Valuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Company Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Detailed NAVs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Interactive Charting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Portfolio Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Retail DB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Weekly REIT Pricing Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rankings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Transactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Committees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sectors__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Feedback__c</picklist>
+            <values>
+                <fullName>ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HFA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Macro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sector</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Require_Product_Feedback_Fields</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Feedback_Type__c,&quot;Product Feedback&quot;),
+ISBLANK(Contact__c))</errorConditionFormula>
+        <errorDisplayField>Contact__c</errorDisplayField>
+        <errorMessage>You must fill in the Contact for Product Feedback.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Report_Feedback_Fields</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Feedback_Type__c,&quot;Report Feedback&quot;),
+OR(
+NOT(ISBLANK(Contact__c)),
+ISBLANK(Report_Title__c),
+ISBLANK(Report_Publish_Date__c )))</errorConditionFormula>
+        <errorMessage>You must fill in Report Title and Report Publish Date and Contact must be blank for Report Feedback.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Opportunity Product Picklist</masterLabel>
+    <promptVersions>
+        <body>Hover over the &quot;Opportunities&quot; related list to view a list of products associated with each opportunity.</body>
+        <customApplication>Green_Street_Advisors</customApplication>
+        <delayDays>1</delayDays>
+        <description>2021 - Q3 - Sprint 2: Opp Product picklist release</description>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayType>Targeted</displayType>
+        <endDate>2021-10-01</endDate>
+        <isPublished>false</isPublished>
+        <masterLabel>Opportunity Product Picklist</masterLabel>
+        <referenceElementContext>{&quot;component&quot;:&quot;force:relatedListQuickLinksContainer&quot;,&quot;attributes&quot;:{&quot;id&quot;:&quot;force_relatedListQuickLinksContainer&quot;},&quot;version&quot;:1}</referenceElementContext>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2021-09-24</startDate>
+        <targetPageKey1>Account</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <themeColor>Theme4</themeColor>
+        <themeSaturation>Light</themeSaturation>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Enhanced Opportunity Related List</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_gsa advertising user</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_gsa advisory</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_system admin - integrations</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_system administrator kh</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>MarketingProfile</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_gsa sales user</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

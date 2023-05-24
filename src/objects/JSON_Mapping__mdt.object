@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>JSON mapping for different payloads</description>
+    <fields>
+        <fullName>Child_Object_API_Name__c</fullName>
+        <description>APi name of the child object</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Child Object API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_type__c</fullName>
+        <description>Data type of the field value</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Data type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Boolean</fullName>
+                    <default>true</default>
+                    <label>Boolean</label>
+                </value>
+                <value>
+                    <fullName>String</fullName>
+                    <default>false</default>
+                    <label>String</label>
+                </value>
+                <value>
+                    <fullName>Number</fullName>
+                    <default>false</default>
+                    <label>Number</label>
+                </value>
+                <value>
+                    <fullName>Text</fullName>
+                    <default>false</default>
+                    <label>Text</label>
+                </value>
+                <value>
+                    <fullName>Decimal</fullName>
+                    <default>false</default>
+                    <label>Decimal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Default_Value__c</fullName>
+        <description>If any default value is to be set for a property use this field</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Default Value</label>
+        <length>131072</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Field_API_Name__c</fullName>
+        <description>API name of the salesforce field</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group__c</fullName>
+        <description>Grouping fields of complex type in case multiple instances need to be created of the same complex type that are mapped to different salesforce fields.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Group</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JSON_Node__c</fullName>
+        <description>Node name of JSON</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>JSON Node</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>List_has_Child_Records__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>List has Child Records</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Null_Check_field__c</fullName>
+        <description>this field is used to check a different field value which if null stops the current node from being rendered.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Null Check field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object_API_Name__c</fullName>
+        <description>API name of the object</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Object API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <description>Nesting order in json</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Node__c</fullName>
+        <description>Name of parent json node</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Parent Node</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_of_Node__c</fullName>
+        <description>Whether the current JSON node is a complex structure(Map), list of elements(List)  or a simple key-value pair(Simple)</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Type of Node</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Simple</fullName>
+                    <default>true</default>
+                    <label>Simple</label>
+                </value>
+                <value>
+                    <fullName>Map</fullName>
+                    <default>false</default>
+                    <label>Map</label>
+                </value>
+                <value>
+                    <fullName>List</fullName>
+                    <default>false</default>
+                    <label>List</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>JSON Mapping</label>
+    <listViews>
+        <fullName>Account</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Null_Check_field__c</columns>
+        <columns>Field_API_Name__c</columns>
+        <columns>Order__c</columns>
+        <columns>JSON_Node__c</columns>
+        <columns>Type_of_Node__c</columns>
+        <columns>Parent_Node__c</columns>
+        <columns>Group__c</columns>
+        <columns>Default_Value__c</columns>
+        <columns>Data_type__c</columns>
+        <columns>Child_Object_API_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Object_API_Name__c</field>
+            <operation>equals</operation>
+            <value>Account</value>
+        </filters>
+        <label>Account</label>
+    </listViews>
+    <listViews>
+        <fullName>Contact</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Object_API_Name__c</columns>
+        <columns>Field_API_Name__c</columns>
+        <columns>Order__c</columns>
+        <columns>JSON_Node__c</columns>
+        <columns>Type_of_Node__c</columns>
+        <columns>Parent_Node__c</columns>
+        <columns>Group__c</columns>
+        <columns>Default_Value__c</columns>
+        <columns>Data_type__c</columns>
+        <columns>Child_Object_API_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Object_API_Name__c</field>
+            <operation>equals</operation>
+            <value>Contact</value>
+        </filters>
+        <label>Contact</label>
+    </listViews>
+    <listViews>
+        <fullName>Opportunity</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Object_API_Name__c</columns>
+        <columns>Field_API_Name__c</columns>
+        <columns>Order__c</columns>
+        <columns>JSON_Node__c</columns>
+        <columns>Type_of_Node__c</columns>
+        <columns>Parent_Node__c</columns>
+        <columns>Group__c</columns>
+        <columns>Default_Value__c</columns>
+        <columns>Data_type__c</columns>
+        <columns>Child_Object_API_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Object_API_Name__c</field>
+            <operation>equals</operation>
+            <value>Opportunity</value>
+        </filters>
+        <label>Opportunity</label>
+    </listViews>
+    <listViews>
+        <fullName>Project</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Object_API_Name__c</columns>
+        <columns>Field_API_Name__c</columns>
+        <columns>Order__c</columns>
+        <columns>JSON_Node__c</columns>
+        <columns>Type_of_Node__c</columns>
+        <columns>Parent_Node__c</columns>
+        <columns>Group__c</columns>
+        <columns>Default_Value__c</columns>
+        <columns>Data_type__c</columns>
+        <columns>Child_Object_API_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Object_API_Name__c</field>
+            <operation>equals</operation>
+            <value>Project__c</value>
+        </filters>
+        <label>Project</label>
+    </listViews>
+    <pluralLabel>JSON Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

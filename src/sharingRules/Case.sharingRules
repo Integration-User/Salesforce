@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Open_Case_Access_to_All</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Open Case Access to All</label>
+        <sharedTo>
+            <group>Green_Street_All</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Opportunity Review,Help Desk,Client Access,User List Requests,Duplicate Request</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>
