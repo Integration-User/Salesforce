@@ -89,6 +89,7 @@
                 if (draftValues[i].Product__c == allProductLines[j].Product__c) {
                     allProductLines[j].Start_Date__c = (draftValues[i].Start_Date__c != undefined && draftValues[i].Start_Date__c != null && draftValues[i].Start_Date__c != '') ? draftValues[i].Start_Date__c: allProductLines[j].Start_Date__c;
                     allProductLines[j].End_Date__c = (draftValues[i].End_Date__c != undefined && draftValues[i].End_Date__c != null && draftValues[i].End_Date__c != '') ? draftValues[i].End_Date__c : allProductLines[j].End_Date__c;
+                	allProductLines[j].Trial__c = (draftValues[i].Trial__c != undefined && draftValues[i].Trial__c != null ) ? draftValues[i].Trial__c: allProductLines[j].Trial__c;
                 }
             }
         }
