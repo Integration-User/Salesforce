@@ -856,8 +856,8 @@ public class Plative_SFToNSSyncUtility {
             Boolean newsAvail = false;
             Boolean researchAvail = false;
             for(String str : product.split(';')) {
-                if(mapProductWithCategory.get(str) == 'News'){  newsAvail = true;}
-                else if(mapProductWithCategory.get(str) == 'Research'){ researchAvail = true;}
+                if(mapProductWithCategory.get(str.trim()) == 'News'){  newsAvail = true;}
+                else if(mapProductWithCategory.get(str.trim()) == 'Research'){ researchAvail = true;}
             }
             String categoryName = '';
             if(newsAvail && researchAvail) categoryName = 'Research & News';
