@@ -32,10 +32,35 @@
         </value>
     </constants>
     <decisions>
+        <name>Lead_Conversion</name>
+        <label>Lead Conversion</label>
+        <locationX>537</locationX>
+        <locationY>408</locationY>
+        <defaultConnector>
+            <targetReference>Get_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ConvertedAccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_GSA_Relationship</targetReference>
+            </connector>
+            <label>New Account</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Update_Lead</name>
         <label>Update Lead</label>
-        <locationX>874</locationX>
-        <locationY>411</locationY>
+        <locationX>872</locationX>
+        <locationY>404</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_Lead_Converted</name>
@@ -47,22 +72,6 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Update_GSA_Relationship</targetReference>
-            </connector>
-            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-            <label>Is Lead Converted?</label>
-        </rules>
-        <rules>
-            <name>Qualified_or_Disqualified_Lead</name>
-            <conditionLogic>or</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Disqualified</stringValue>
-                </rightValue>
-            </conditions>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -71,9 +80,25 @@
                 </rightValue>
             </conditions>
             <connector>
+                <targetReference>Update_Qualifying_Status</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Is Lead Converted?</label>
+        </rules>
+        <rules>
+            <name>Disqualified_Lead</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Disqualified</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
                 <targetReference>Update_Qualified_Date_and_Qualifying_Team</targetReference>
             </connector>
-            <label>Qualified or Disqualified Lead</label>
+            <label>Disqualified Lead</label>
         </rules>
         <rules>
             <name>Removed_from_Queue</name>
@@ -92,6 +117,13 @@
                     <elementReference>UserIDInitial</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Assigned_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Assigned_Team_and_Date</targetReference>
             </connector>
@@ -99,7 +131,8 @@
         </rules>
     </decisions>
     <description>SF-546: Added Qualifying Team Update
-Added Assignment Team</description>
+Added Assignment Team
+GS Client ID mapping</description>
     <environments>Default</environments>
     <interviewLabel>Lead Tracking Automation {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Lead Tracking Automation</label>
@@ -122,11 +155,32 @@ Added Assignment Team</description>
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>345</locationX>
+        <locationY>427</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Lead_GS_Relationship</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ConvertedAccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Assigned_Team_and_Date</name>
         <label>Update Assigned Team and Date</label>
         <locationX>883</locationX>
-        <locationY>594</locationY>
+        <locationY>606</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -144,7 +198,7 @@ Added Assignment Team</description>
         <inputAssignments>
             <field>Assignment_Team__c</field>
             <value>
-                <elementReference>$User.Sales_Team__c</elementReference>
+                <elementReference>$Record.Owner:User.Sales_Team__c</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -152,8 +206,8 @@ Added Assignment Team</description>
     <recordUpdates>
         <name>Update_GSA_Relationship</name>
         <label>Update GSA Relationship</label>
-        <locationX>579</locationX>
-        <locationY>413</locationY>
+        <locationX>509</locationX>
+        <locationY>239</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -171,10 +225,23 @@ Added Assignment Team</description>
         <object>Account</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Lead_GS_Relationship</name>
+        <label>Update Lead GS Relationship</label>
+        <locationX>345</locationX>
+        <locationY>629</locationY>
+        <inputAssignments>
+            <field>GS_Relationship__c</field>
+            <value>
+                <elementReference>Get_Account.Type</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Qualified_Date_and_Qualifying_Team</name>
         <label>Update Qualified Date and Qualifying Team</label>
-        <locationX>1145</locationX>
-        <locationY>396</locationY>
+        <locationX>1146</locationX>
+        <locationY>408</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -192,7 +259,37 @@ Added Assignment Team</description>
         <inputAssignments>
             <field>Qualifying_Team__c</field>
             <value>
-                <elementReference>$User.Sales_Team__c</elementReference>
+                <elementReference>$Record.Owner:User.Sales_Team__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Qualifying_Status</name>
+        <label>Update Qualifying Status</label>
+        <locationX>686</locationX>
+        <locationY>406</locationY>
+        <connector>
+            <targetReference>Lead_Conversion</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Qualified_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualifying_Team__c</field>
+            <value>
+                <elementReference>$Record.Owner:User.Sales_Team__c</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
