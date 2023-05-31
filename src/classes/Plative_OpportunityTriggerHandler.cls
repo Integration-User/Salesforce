@@ -114,10 +114,6 @@ public without sharing class Plative_OpportunityTriggerHandler {
         Plative_OpportunityTriggerHelper.updateHvtAndYoyFlag(triggerNewMap, triggerOldMap);
         //Plative_OpportunityTriggerHelper.updateOpportunityProcessesBeforeAction(Trigger.new, triggerOldMap);
         // SF-309 - Update Products Include based on Product instead of checkbox
-        Map<String, String> mapProductWithCategory = new Map<String, String>();
-        for (Product_Category_Family_Mapping__mdt productFamily : Product_Category_Family_Mapping__mdt.getAll().values()) {
-            mapProductWithCategory.put(productFamily.MasterLabel, productFamily.Product_Category__c);
-        }
         for (Opportunity oppty : triggerNewMap.values()) {
             Opportunity oldOppty = triggerOldMap.get(oppty.Id);
             if (oppty.Products__c != null && oldOppty.Products__c != oppty.Products__c) {
