@@ -1,9 +1,9 @@
 public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Opportunity>, Database.Stateful{
-    public String generatedCSVFile ='Id, Name, old products__c, new products__c, old Type, new Type\n';
+    public String generatedCSVFile ='Id, Name, Old products__c, New products__c, Old Product Type, New Product Type\n';
     public Iterable<Opportunity> start(Database.BatchableContext BC) {
         Set<Opportunity> diffOpp = new Set<Opportunity>(); 
-        for (Opportunity opp : [SELECT id, name, products__c, (SELECT product2.Name FROM OpportunityLineItems) FROM Opportunity]) {
-            List<String> oppProducts = new List<String>();
+        for (Opportunity opp : [SELECT id, name, products__c, Product_Types__c, (SELECT product2.Name FROM OpportunityLineItems WHERE Lost_Product__c = false) FROM Opportunity]) {
+            /*List<String> oppProducts = new List<String>();
             if (String.isNotBlank(opp.products__c)) {
                 oppProducts = opp.products__c.split(';');
             }
@@ -12,7 +12,8 @@ public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Oppo
                 if (!oppProducts.contains(oli.product2.Name) || oppProducts.size() != oliList.size()) {
                     diffOpp.add(opp);
                 }
-            }
+            }*/
+            diffOpp.add(opp);
         }
         System.debug('diffOpp-->'+diffOpp.size());
         return new list<Opportunity>(diffOpp);
@@ -23,6 +24,7 @@ public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Oppo
         for (Opportunity opp : oppList) {
             String proName = opp.Products__C;
             String productNames = '';
+            string oldProductTypes = opp.Product_Types__c;
             for (OpportunityLineItem oli : opp.OpportunityLineItems) {
                 if (String.isEmpty(productNames)) {
                     productNames = oli.product2.Name;
@@ -30,29 +32,38 @@ public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Oppo
                     productNames += ';' + oli.product2.Name;
                 }
             }
-            if (proName != productNames) {
-                opp.Products__C = productNames;
+            List<String> CategoryName = Plative_SFToNSSyncUtility.getProductCategoryName(New List<String>{productNames});
+            if (CategoryName!= null && !CategoryName.isEmpty() && CategoryName.size() > 0) opp.Product_Types__c = CategoryName[0];
+            String[] oldproductName = proName.split(';');oldproductName.sort();
+            String[] newproductName = productNames.split(';');newproductName.sort();
+            proName = string.join(oldproductName, ';');
+            productNames = string.join(newproductName, ';');
+            if (proName != productNames || oldProductTypes != opp.Product_Types__c) {
+                opp.Products__c = productNames;
                 updatedOppList.add(opp);
-                String fileRow = opp.Id + ',' + opp.Name.replaceAll(',', ';')+ ',' +proName+ ',' + productNames;
+                String fileRow = opp.Id + ',' + opp.Name.replaceAll(',', ';')+ ',' +proName+ ',' + productNames+ ',' +oldProductTypes+ ',' + opp.Product_Types__c;
                 generatedCSVFile +=  fileRow + '\n';
             }
             
         }
-        //if(!updatedOppList.isEmpty()) update updatedOppList;
+        boolean isUpdate = System_Configuration__mdt.getInstance('UpdateProductsOnOpportunityBatch').IsEnabled__c;
+        system.debug('updatedOppList.isEmpty()->'+updatedOppList.isEmpty());
+        system.debug('isUpdate->'+ isUpdate);
+        if(!updatedOppList.isEmpty() && isUpdate) update updatedOppList;
     }
     
     
     public void finish(Database.BatchableContext BC) {
         Messaging.EmailFileAttachment csvAttachment = new Messaging.EmailFileAttachment();
         Blob csvBlob = blob.valueOf(generatedCSVFile);
-        String csvName = 'OpportunityProductMismatchData-GSFull.csv';
+        String csvName = 'OpportunityProductTypeMismatchData.csv';
         csvAttachment.setFileName(csvName);
         csvAttachment.setBody(csvBlob);
         Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
         String[] toAddresses = new String[]{'mgupta@greenstreet.com', 'ksantos@greenstreet.com'};
-        email.setSubject('Opportunity Product Mismatch Data CSV GS Full');
+        email.setSubject('Opportunity Product AND Type Mismatch Data CSV Full');
         email.setToAddresses(toAddresses);
-        email.setPlainTextBody('Opportunity Product Mismatch Data CSV GSFull');
+        email.setPlainTextBody('Opportunity Product And Type Mismatch Data CSV');
         email.setFileAttachments(new Messaging.EmailFileAttachment[]{csvAttachment});
         Messaging.SendEmailResult[] r = Messaging.sendEmail(new Messaging.SingleEmailMessage[]{email});
     }
