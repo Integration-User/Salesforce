@@ -1930,18 +1930,14 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>Protected_By_Age__c</fullName>
         <externalId>false</externalId>
-        <formula>IF(
-  Now()- Protected_By_Last_Change__c &gt; 0 ,
-  TEXT( FLOOR( Now() - Protected_By_Last_Change__c ) ) &amp; &quot; day(s) &quot;
-  &amp; TEXT( FLOOR( MOD( (Now() - Protected_By_Last_Change__c ) * 24, 24 ) ) ) &amp; &quot; hour(s) &quot;
-  &amp; TEXT( ROUND( MOD( (Now()- Protected_By_Last_Change__c ) * 24 * 60, 60 ), 0 ) ) &amp; &quot; minute(s)&quot;,
-  &quot;&quot;
-)</formula>
-        <inlineHelpText>Calculates the Date/Time Today - Protected By Last Change</inlineHelpText>
+        <formula>FLOOR( Now() - Protected_By_Last_Change__c )</formula>
+        <inlineHelpText>Calculates the Date/Time Today - Protected By Last Change in Days</inlineHelpText>
         <label>Protected By Age</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>0</scale>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
