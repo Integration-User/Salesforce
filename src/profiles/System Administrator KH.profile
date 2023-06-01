@@ -20136,6 +20136,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.SAO_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.SalesLoft1__Most_Recent_Cadence_Name__c</field>
         <readable>false</readable>
@@ -32040,6 +32045,10 @@
         <field>zisf__zicCleanJob__c.zisf__logs__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Upsell_Process</flow>
+    </flowAccesses>
     <layoutAssignments>
         <layout>API_Settings__mdt-API Settings Layout</layout>
     </layoutAssignments>
