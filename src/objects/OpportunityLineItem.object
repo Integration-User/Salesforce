@@ -276,6 +276,29 @@ TEXT(YEAR(Start_Date__c))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Delivery_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Delivery Method</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Snowflake</fullName>
+                    <default>false</default>
+                    <label>Snowflake</label>
+                </value>
+                <value>
+                    <fullName>API</fullName>
+                    <default>false</default>
+                    <label>API</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
     </fields>
     <fields>
