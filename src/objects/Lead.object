@@ -354,6 +354,7 @@
     <fields>
         <fullName>Assigned_Date__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>Capture the date/time of when a lead was moved out of a queue</inlineHelpText>
         <label>Assigned Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -885,6 +886,7 @@
     <fields>
         <fullName>GS_Relationship__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>Determines the matched account’s client status</inlineHelpText>
         <label>GS Relationship</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1116,6 +1118,7 @@
   &quot;Referral: Past Client Introduction&quot;, &quot;Hot&quot;,
   &quot;Wall Street Journal&quot;, &quot;Hot&quot;, 
 IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formula>
+        <inlineHelpText>Classification based on the lead source</inlineHelpText>
         <label>Lead Classification</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -3202,6 +3205,7 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Qualifying_Team__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>Team name of the lead owner when moved to converted state</inlineHelpText>
         <label>Qualifying Team</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
