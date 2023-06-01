@@ -151,13 +151,15 @@
     </compactLayouts>
     <compactLayouts>
         <fullName>copado__User_Story_Highlight_Panel</fullName>
-        <fields>Name</fields>
+        <fields>copado__User_Story_Title__c</fields>
         <fields>copado__Sprint__c</fields>
-        <fields>copado__Project__c</fields>
-        <fields>copado__Release__c</fields>
+        <fields>copado__Developer__c</fields>
         <fields>RecordTypeId</fields>
-        <fields>copado__Progress__c</fields>
+        <fields>Jira_Key__c</fields>
+        <fields>copado__Progress_Status__c</fields>
         <fields>copado__Status__c</fields>
+        <fields>copado__Story_Points_SFDC__c</fields>
+        <fields>copado__Org_Credential__c</fields>
         <label>User Story Highlight Panel</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -6138,6 +6140,29 @@
         <label>Work Manager Relations</label>
     </fieldSets>
     <fields>
+        <fullName>Jira_Key_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira Key Text</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Key__c</fullName>
+        <description>link to Jira User Story</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://greenst.atlassian.net/browse/&quot; + Jira_Key_Text__c, Jira_Key_Text__c)</formula>
+        <label>Jira Key</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Acceptance_Criteria_Status__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -7395,9 +7420,9 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Funnel</fullName>
+                    <fullName>New</fullName>
                     <default>false</default>
-                    <label>Funnel</label>
+                    <label>New</label>
                 </value>
                 <value>
                     <fullName>Prioritized</fullName>
@@ -7408,11 +7433,6 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
                     <fullName>In Progress</fullName>
                     <default>false</default>
                     <label>In Progress</label>
-                </value>
-                <value>
-                    <fullName>Blocked</fullName>
-                    <default>false</default>
-                    <label>Blocked</label>
                 </value>
                 <value>
                     <fullName>Code Review</fullName>
@@ -7433,6 +7453,11 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
                     <fullName>Done</fullName>
                     <default>false</default>
                     <label>Done</label>
+                </value>
+                <value>
+                    <fullName>Blocked</fullName>
+                    <default>false</default>
+                    <label>Blocked</label>
                 </value>
                 <value>
                     <fullName>Cancelled</fullName>
