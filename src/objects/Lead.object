@@ -1173,6 +1173,11 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
                     <label>Account Management</label>
                 </value>
                 <value>
+                    <fullName>Commercial + Advisory ARR</fullName>
+                    <default>false</default>
+                    <label>Commercial + Advisory ARR</label>
+                </value>
+                <value>
                     <fullName>GSI</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
@@ -7326,6 +7331,25 @@ Stored as Long on Solr.</description>
         <compactLayoutAssignment>Referral_Lead</compactLayoutAssignment>
         <label>Referral</label>
         <picklistValues>
+            <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Account Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial %2B Advisory ARR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRE_Exposure__c</picklist>
             <values>
                 <fullName>%240-100M</fullName>
@@ -8061,21 +8085,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Zoominfo</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Lead_Type__c</picklist>
-            <values>
-                <fullName>Account Management</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
