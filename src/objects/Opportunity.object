@@ -506,7 +506,7 @@
         <fullName>BDR_Referred_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>BDR Referred By</label>
+        <label>SAO Owner</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Opportunities_2</relationshipName>
         <required>false</required>
@@ -3798,6 +3798,15 @@ NULL))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>SAO_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>SAO Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>SalesLoft1__Most_Recent_Cadence_Name__c</fullName>
