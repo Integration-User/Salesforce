@@ -506,7 +506,7 @@
         <fullName>BDR_Referred_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>BDR Referred By</label>
+        <label>SAO Owner</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Opportunities_2</relationshipName>
         <required>false</required>
@@ -938,6 +938,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <fullName>Overdue Renewal Contract</fullName>
                     <default>false</default>
                     <label>Overdue Renewal Contract</label>
+                </value>
+                <value>
+                    <fullName>Mass Pipeline Cleanup</fullName>
+                    <default>false</default>
+                    <label>Mass Pipeline Cleanup</label>
                 </value>
             </valueSetDefinition>
             <valueSettings>
@@ -3793,6 +3798,15 @@ NULL))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>SAO_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>SAO Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>SalesLoft1__Most_Recent_Cadence_Name__c</fullName>
@@ -18166,6 +18180,101 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Sales Opportunity</label>
         <picklistValues>
+            <picklist>Close_Reason__c</picklist>
+            <values>
+                <fullName>Advisory Involvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change of Business Model %2F Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitive Win</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Due Diligence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Economic Impact %28e%2Eg%2E COVID%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Favor Access Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest - Check Back Later</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Product Line%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Conditions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mass Pipeline Cleanup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merger %26 Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-responsive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Out of Business %2F Fund Closure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overdue Renewal Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Offering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Validating Investment Thesis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
                 <fullName>Add Upsold Products</fullName>
@@ -18258,97 +18367,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>Corporate</fullName>
                 <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Close_Reason__c</picklist>
-            <values>
-                <fullName>Advisory Involvement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Change of Business Model %2F Strategy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Communication Strategy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Competition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Competitive Win</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Due Diligence</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Economic Impact %28e%2Eg%2E COVID%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Favor Access Expired</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Lost Product Line%28s%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Market Conditions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Merger %26 Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-coverage</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-payment</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Online Order</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Out of Business %2F Fund Closure</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Overdue Renewal Contract</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Product Offering</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Validating Investment Thesis</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Value Equation</fullName>
-                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
