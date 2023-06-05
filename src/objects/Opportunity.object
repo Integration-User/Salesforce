@@ -939,6 +939,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Overdue Renewal Contract</label>
                 </value>
+                <value>
+                    <fullName>Mass Pipeline Cleanup</fullName>
+                    <default>false</default>
+                    <label>Mass Pipeline Cleanup</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
@@ -11303,6 +11308,217 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Renewal</businessProcess>
         <label>Renewal</label>
         <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activist Situations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Diagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Positioning %26 Investor Messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataLink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial%2FStrategic Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Rent Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEWS - HFAlert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche Sector Expertise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Investment Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Valuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Transactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Committees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
                 <fullName>Add Upsold Products</fullName>
@@ -12190,201 +12406,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research Only</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Products__c</picklist>
-            <values>
-                <fullName>API</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Activist Situations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Asset-Backed Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Atlas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Commercial Mortgage Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company Diagnostics</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company Positioning %26 Investor Messaging</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DataLink</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deal Tracker</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Debt Databases</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EU News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EURO Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Financial%2FStrategic Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSI</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MD%26D - Rent Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NEWS - HFAlert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Niche Sector Expertise</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other%2FNA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PDF Viewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pan-European Research %2B REIT Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Analytics</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Investment Strategy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Tools</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Valuation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Real Estate Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales Transactions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Special Committees</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Transaction Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Portfolio Tools</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16724,6 +16745,217 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Renewal</businessProcess>
         <label>Renewal - Closed</label>
         <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activist Situations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Diagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Positioning %26 Investor Messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataLink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial%2FStrategic Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Rent Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEWS - HFAlert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche Sector Expertise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Investment Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Valuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Transactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Committees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
                 <fullName>Add Upsold Products</fullName>
@@ -17611,201 +17843,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Products__c</picklist>
-            <values>
-                <fullName>API</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Activist Situations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Asset-Backed Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Atlas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Commercial Mortgage Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company Diagnostics</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company Positioning %26 Investor Messaging</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DataLink</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deal Tracker</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Debt Databases</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EU News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EURO Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Financial%2FStrategic Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSI</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MD%26D - Rent Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NEWS - HFAlert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Niche Sector Expertise</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other%2FNA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PDF Viewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pan-European Research %2B REIT Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Analytics</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Investment Strategy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Tools</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Valuation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Real Estate Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales Transactions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Special Committees</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Transaction Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Portfolio Tools</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research %2B REIT Data</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>React_Status__c</picklist>
             <values>
                 <fullName>Active</fullName>
@@ -18175,6 +18212,312 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Sales Opportunity</label>
         <picklistValues>
+            <picklist>Close_Reason__c</picklist>
+            <values>
+                <fullName>Advisory Involvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change of Business Model %2F Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitive Win</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Due Diligence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Economic Impact %28e%2Eg%2E COVID%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Favor Access Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest - Check Back Later</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Product Line%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Conditions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mass Pipeline Cleanup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merger %26 Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-responsive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Out of Business %2F Fund Closure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overdue Renewal Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Offering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Validating Investment Thesis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activist Situations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Diagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Positioning %26 Investor Messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataLink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial%2FStrategic Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Rent Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEWS - HFAlert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche Sector Expertise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Investment Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Valuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Transactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Committees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
                 <fullName>Add Upsold Products</fullName>
@@ -18267,97 +18610,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>Corporate</fullName>
                 <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Close_Reason__c</picklist>
-            <values>
-                <fullName>Advisory Involvement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Change of Business Model %2F Strategy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Communication Strategy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Competition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Competitive Win</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Due Diligence</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Economic Impact %28e%2Eg%2E COVID%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Favor Access Expired</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Lost Product Line%28s%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Market Conditions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Merger %26 Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-coverage</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-payment</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Online Order</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Out of Business %2F Fund Closure</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Overdue Renewal Contract</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Product Offering</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Validating Investment Thesis</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Value Equation</fullName>
-                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -19054,201 +19306,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research Only</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Products__c</picklist>
-            <values>
-                <fullName>API</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Activist Situations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Asset-Backed Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Atlas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Commercial Mortgage Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company Diagnostics</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company Positioning %26 Investor Messaging</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DataLink</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deal Tracker</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Debt Databases</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EU News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EURO Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Financial%2FStrategic Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSI</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MD%26D - Rent Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NEWS - HFAlert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Niche Sector Expertise</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other%2FNA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PDF Viewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pan-European Research %2B REIT Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Analytics</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Investment Strategy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Tools</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Valuation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Real Estate Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales Transactions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Special Committees</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Transaction Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Portfolio Tools</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19622,6 +19679,221 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Sales Opportunity - Closed</label>
         <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activist Situations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Diagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Positioning %26 Investor Messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataLink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial%2FStrategic Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Rent Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEWS - HFAlert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche Sector Expertise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Investment Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Valuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Transactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Committees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
                 <fullName>Add Upsold Products</fullName>
@@ -20493,205 +20765,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research Only</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Products__c</picklist>
-            <values>
-                <fullName>API</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Activist Situations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Asset-Backed Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Atlas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Commercial Mortgage Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company Diagnostics</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company Positioning %26 Investor Messaging</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DataLink</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deal Tracker</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Debt Databases</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EU News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EURO Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Financial%2FStrategic Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSI</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MD%26D - Rent Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NEWS - HFAlert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News - REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Niche Sector Expertise</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other%2FNA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PDF Viewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pan-European Research %2B REIT Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Analytics</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Investment Strategy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Tools</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Portfolio Valuation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Real Estate Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales Transactions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Special Committees</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Transaction Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Portfolio Tools</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
