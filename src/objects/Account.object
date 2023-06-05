@@ -1928,6 +1928,28 @@ Owner.Id = $User.Id)</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Protected_By_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>FLOOR( Now() - Protected_By_Last_Change__c )</formula>
+        <inlineHelpText>Calculates the Date/Time Today - Protected By Last Change in Days</inlineHelpText>
+        <label>Protected By Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Protected_By_Last_Change__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Captures the timestamp when Protected By Last Change field is updated</inlineHelpText>
+        <label>Protected By Last Change</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Protected_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
