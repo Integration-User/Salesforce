@@ -119,6 +119,37 @@
                     <stringValue>Referral</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Lead_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Commercial + Advisory ARR</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>myRule_1_pmetdec</targetReference>
             </connector>
@@ -224,6 +255,37 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Referrals</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Lead_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Commercial + Advisory ARR</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -649,6 +711,37 @@
                     <stringValue>Referral</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Lead_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Commercial + Advisory ARR</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>myDecision4</targetReference>
             </connector>
@@ -859,7 +952,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A3_2077079713</name>
+        <name>formula_2_myRule_1_A3_5836172475</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -870,11 +963,11 @@
                 <stringValue>Text([Lead].Lead_Type__c)&amp;&quot; Referral Submitted by: &quot;&amp;[Lead].Referred_By_Lead__c.CommunityNickname  </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A3_6940514679</name>
+        <name>formula_3_myRule_1_A3_8275844970</name>
         <dataType>String</dataType>
         <expression>Text({!myVariable_current.Lead_Type__c})&amp;&quot; Referral Submitted by: &quot;&amp;{!myVariable_current.Referred_By_Lead__r.CommunityNickname}</expression>
     </formulas>
-    <interviewLabel>Lead_Disqualification-46_InterviewLabel</interviewLabel>
+    <interviewLabel>Lead_Disqualification-48_InterviewLabel</interviewLabel>
     <label>Lead Updates</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -942,7 +1035,7 @@
             </processMetadataValues>
             <field>ActivityDate</field>
             <value>
-                <elementReference>formula_2_myRule_1_A3_2077079713</elementReference>
+                <elementReference>formula_2_myRule_1_A3_5836172475</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1098,7 +1191,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_3_myRule_1_A3_6940514679</elementReference>
+                <elementReference>formula_3_myRule_1_A3_8275844970</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1429,7 +1522,7 @@
         <processMetadataValues>
             <name>evaluationType</name>
             <value>
-                <stringValue>criteria</stringValue>
+                <stringValue>always</stringValue>
             </value>
         </processMetadataValues>
         <processMetadataValues>
@@ -1469,55 +1562,6 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>inputDataType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Send Referral To:</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>operatorDataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Lead_Type__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Commercial + Advisory ARR</stringValue>
             </value>
         </filters>
         <inputAssignments>
