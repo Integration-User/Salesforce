@@ -352,6 +352,52 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Assigned_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Capture the date/time of when a lead was moved out of a queue</inlineHelpText>
+        <label>Assigned Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Assignment_Team__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Team name of the lead owner after moving out of the queue</inlineHelpText>
+        <label>Assignment Team</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hewett Research</fullName>
+                    <default>false</default>
+                    <label>Hewett Research</label>
+                </value>
+                <value>
+                    <fullName>UK Sales</fullName>
+                    <default>false</default>
+                    <label>UK Sales</label>
+                </value>
+                <value>
+                    <fullName>US News</fullName>
+                    <default>false</default>
+                    <label>US News</label>
+                </value>
+                <value>
+                    <fullName>US Research</fullName>
+                    <default>false</default>
+                    <label>US Research</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>BDR_Referred_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -838,6 +884,52 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>GS_Relationship__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the matched account’s client status</inlineHelpText>
+        <label>GS Relationship</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Client</fullName>
+                    <default>false</default>
+                    <label>Client</label>
+                </value>
+                <value>
+                    <fullName>Former</fullName>
+                    <default>false</default>
+                    <label>Former</label>
+                </value>
+                <value>
+                    <fullName>Prospect</fullName>
+                    <default>false</default>
+                    <label>Prospect</label>
+                </value>
+                <value>
+                    <fullName>Favor</fullName>
+                    <default>false</default>
+                    <label>Favor</label>
+                </value>
+                <value>
+                    <fullName>Parent</fullName>
+                    <default>false</default>
+                    <label>Parent</label>
+                </value>
+                <value>
+                    <fullName>Trial</fullName>
+                    <default>false</default>
+                    <label>Trial</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>GenderIdentity</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1007,6 +1099,31 @@
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Classification__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(LeadSource,
+  &quot;Inquiry&quot;, &quot;Hot&quot;,
+  &quot;Referral&quot;, &quot;Hot&quot;,
+  &quot;AM Referral&quot;, &quot;Hot&quot;,
+  &quot;News Subscription Request&quot;, &quot;Hot&quot;,
+  &quot;Online Research Led to our Website&quot;, &quot;Hot&quot;,
+  &quot;Reputation Recognition&quot;, &quot;Hot&quot;,
+  &quot;Employee Referral&quot;, &quot;Hot&quot;,
+  &quot;Advisory Referral&quot;, &quot;Hot&quot;,
+  &quot;Financial Times&quot;, &quot;Hot&quot;, 
+  &quot;Bloomberg&quot;, &quot;Hot&quot;,
+  &quot;Employee Referral&quot;, &quot;Hot&quot;, 
+  &quot;Referral: Past Client Introduction&quot;, &quot;Hot&quot;,
+  &quot;Wall Street Journal&quot;, &quot;Hot&quot;, 
+IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formula>
+        <inlineHelpText>Classification based on the lead source</inlineHelpText>
+        <label>Lead Classification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Lead_Priority__c</fullName>
@@ -3081,6 +3198,52 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Qualified_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Populates when the lead status is moved to disqualified or qualified</inlineHelpText>
+        <label>Qualified Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Qualifying_Team__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Team name of the lead owner when moved to converted state</inlineHelpText>
+        <label>Qualifying Team</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hewett Research</fullName>
+                    <default>false</default>
+                    <label>Hewett Research</label>
+                </value>
+                <value>
+                    <fullName>UK Sales</fullName>
+                    <default>false</default>
+                    <label>UK Sales</label>
+                </value>
+                <value>
+                    <fullName>US News</fullName>
+                    <default>false</default>
+                    <label>US News</label>
+                </value>
+                <value>
+                    <fullName>US Research</fullName>
+                    <default>false</default>
+                    <label>US Research</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Questions_Comments__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>This field maps to the Opportunity on conversion of the lead.</inlineHelpText>
@@ -3651,6 +3814,32 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Time_to_Assignment__c</fullName>
+        <externalId>false</externalId>
+        <formula>ROUND( MOD( (Assigned_Date__c - CreatedDate ) * 24 * 60, 60 ), 0 )</formula>
+        <inlineHelpText>Calculates the (Assigned Date - Created Date) in Minutes</inlineHelpText>
+        <label>Time to Assignment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_to_Conversion__c</fullName>
+        <externalId>false</externalId>
+        <formula>ROUND( MOD( (Qualified_Date__c - CreatedDate ) * 24 * 60, 60 ), 0 )</formula>
+        <inlineHelpText>Calculates the (Qualified Date - Created Date) in Minutes</inlineHelpText>
+        <label>Time to Conversion</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Timing_to_Subscribe_to_Next_RE_Provider__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>When do you anticipate subscribing to your next research provider?</inlineHelpText>
@@ -4194,6 +4383,15 @@ Stored as Long on Solr.</description>
         <label>Disqualified Leads</label>
     </listViews>
     <listViews>
+        <fullName>EU_SDR_Inbound_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>EU SDR Inbound</label>
+        <queue>EU_SDR_Inbound</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>Lead_Queue_Lead</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -4279,6 +4477,15 @@ Stored as Long on Solr.</description>
             <value>TODAY</value>
         </filters>
         <label>Today&apos;s Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>US_SDR_Inbound_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>US SDR Inbound</label>
+        <queue>US_SDR_Inbound</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
