@@ -3816,7 +3816,7 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Time_to_Assignment__c</fullName>
         <externalId>false</externalId>
-        <formula>ROUND( MOD( (Assigned_Date__c - CreatedDate ) * 24 * 60, 60 ), 0 )</formula>
+        <formula>(Assigned_Date__c - CreatedDate ) * 24 * 60</formula>
         <inlineHelpText>Calculates the (Assigned Date - Created Date) in Minutes</inlineHelpText>
         <label>Time to Assignment</label>
         <precision>18</precision>
@@ -3829,7 +3829,7 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Time_to_Conversion__c</fullName>
         <externalId>false</externalId>
-        <formula>ROUND( MOD( (Qualified_Date__c - CreatedDate ) * 24 * 60, 60 ), 0 )</formula>
+        <formula>(Qualified_Date__c - CreatedDate ) * 24 * 60</formula>
         <inlineHelpText>Calculates the (Qualified Date - Created Date) in Minutes</inlineHelpText>
         <label>Time to Conversion</label>
         <precision>18</precision>
