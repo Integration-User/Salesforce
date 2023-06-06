@@ -14614,6 +14614,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Type_to_Trigger_Survey__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Urgency__c</field>
         <readable>true</readable>
@@ -32131,6 +32136,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Account_Protected_By_Last_Change_Update</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Cases_Processes</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
