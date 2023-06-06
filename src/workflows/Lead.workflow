@@ -61,6 +61,20 @@
         <template>Referral_Templates/New_Referral</template>
     </alerts>
     <alerts>
+        <fullName>New_Referral_Commercial_and_Advisory_Alert_Email</fullName>
+        <description>New Referral Commercial and Advisory Alert Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Referred_By_Lead__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Templates/Commercial_Advisory_ARR_Template_Email</template>
+    </alerts>
+    <alerts>
         <fullName>Referral_Assignment</fullName>
         <description>Referral Assignment</description>
         <protected>false</protected>
