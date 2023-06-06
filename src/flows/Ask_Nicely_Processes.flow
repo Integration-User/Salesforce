@@ -44,10 +44,34 @@
             <name>myRule_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_1</leftValueReference>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.asknicely__segment__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>Green_Street_NPS_Survey</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -959,7 +983,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_12_myRule_11_A1_5440005563</name>
+        <name>formula_12_myRule_11_A1_4267164302</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -970,16 +994,11 @@
                 <stringValue>[asknicely__NPS__c].asknicely__contact__r.Full_Name__c</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_13_myRule_11_A1_1270926899</name>
+        <name>formula_13_myRule_11_A1_8695743737</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.asknicely__contact__r.Full_Name__c}</expression>
     </formulas>
-    <formulas>
-        <name>formula_myRule_1</name>
-        <dataType>Boolean</dataType>
-        <expression>true</expression>
-    </formulas>
-    <interviewLabel>Ask_Nicely_Processes-13_InterviewLabel</interviewLabel>
+    <interviewLabel>Ask_Nicely_Processes-14_InterviewLabel</interviewLabel>
     <label>AskNicely Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -1044,7 +1063,7 @@
             </processMetadataValues>
             <field>ActivityDate</field>
             <value>
-                <elementReference>formula_12_myRule_11_A1_5440005563</elementReference>
+                <elementReference>formula_12_myRule_11_A1_4267164302</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1176,7 +1195,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_13_myRule_11_A1_1270926899</elementReference>
+                <elementReference>formula_13_myRule_11_A1_8695743737</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
