@@ -3651,6 +3651,32 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Time_to_Assignment__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Assigned_Date__c - CreatedDate ) * 24 * 60</formula>
+        <inlineHelpText>Calculates the (Assigned Date - Created Date) in Minutes</inlineHelpText>
+        <label>Time to Assignment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_to_Conversion__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Qualified_Date__c - CreatedDate ) * 24 * 60</formula>
+        <inlineHelpText>Calculates the (Qualified Date - Created Date) in Minutes</inlineHelpText>
+        <label>Time to Conversion</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Timing_to_Subscribe_to_Next_RE_Provider__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>When do you anticipate subscribing to your next research provider?</inlineHelpText>
