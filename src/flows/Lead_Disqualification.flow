@@ -71,6 +71,38 @@
     </actionCalls>
     <apiVersion>49.0</apiVersion>
     <decisions>
+        <name>isChangedDecision14_myRule_13_OwnerId</name>
+        <label>isChangedDecision14_myRule_13_OwnerId</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_14_myRule_13_OwnerId</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.OwnerId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.OwnerId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision</targetReference>
+            </connector>
+            <label>isChangedRule_14_myRule_13_OwnerId</label>
+        </rules>
+    </decisions>
+    <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
@@ -261,13 +293,19 @@
                 <processMetadataValues>
                     <name>inputDataType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>Group;User</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
                     <name>leftHandSideType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>ID</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
@@ -279,13 +317,13 @@
                 <processMetadataValues>
                     <name>rightHandSideType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.Lead_Type__c</leftValueReference>
+                <leftValueReference>isChangedRule_14_myRule_13_OwnerId</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Commercial + Advisory ARR</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -952,7 +990,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A3_5836172475</name>
+        <name>formula_2_myRule_1_A3_2792716907</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -963,11 +1001,11 @@
                 <stringValue>Text([Lead].Lead_Type__c)&amp;&quot; Referral Submitted by: &quot;&amp;[Lead].Referred_By_Lead__c.CommunityNickname  </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A3_8275844970</name>
+        <name>formula_3_myRule_1_A3_0813228871</name>
         <dataType>String</dataType>
         <expression>Text({!myVariable_current.Lead_Type__c})&amp;&quot; Referral Submitted by: &quot;&amp;{!myVariable_current.Referred_By_Lead__r.CommunityNickname}</expression>
     </formulas>
-    <interviewLabel>Lead_Disqualification-48_InterviewLabel</interviewLabel>
+    <interviewLabel>Lead_Disqualification-51_InterviewLabel</interviewLabel>
     <label>Lead Updates</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -1035,7 +1073,7 @@
             </processMetadataValues>
             <field>ActivityDate</field>
             <value>
-                <elementReference>formula_2_myRule_1_A3_5836172475</elementReference>
+                <elementReference>formula_2_myRule_1_A3_2792716907</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1191,7 +1229,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_3_myRule_1_A3_8275844970</elementReference>
+                <elementReference>formula_3_myRule_1_A3_0813228871</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1522,7 +1560,7 @@
         <processMetadataValues>
             <name>evaluationType</name>
             <value>
-                <stringValue>always</stringValue>
+                <stringValue>criteria</stringValue>
             </value>
         </processMetadataValues>
         <processMetadataValues>
@@ -1562,6 +1600,55 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Send Referral To:</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Lead_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Commercial + Advisory ARR</stringValue>
             </value>
         </filters>
         <inputAssignments>
@@ -2688,7 +2775,7 @@
         </inputAssignments>
         <object>Lead</object>
     </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
+    <startElementReference>isChangedDecision14_myRule_13_OwnerId</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
