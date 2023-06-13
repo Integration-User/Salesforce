@@ -375,6 +375,10 @@
                 <behavior>Readonly</behavior>
                 <field>DDS_AUMValue__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Protected_By_Age__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -388,10 +392,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>X18_digit_Account_ID__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Protected_By_Age__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -444,11 +444,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Account.Add_Remove_Email_Distribution</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>4</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Account.Activate_Account</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
@@ -467,6 +462,11 @@
             <actionName>Account.Update_Downloads</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>3</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Account.Add_Remove_Email_Distribution</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Account.New_Contact</actionName>
