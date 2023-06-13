@@ -169,6 +169,7 @@ public with sharing class Plative_GSAWebCalloutUtility {
                 }
             }
 
+            request.setTimeout(30000);
             response = Http.send(request);
             //system.debug('Response Code: ' + response.getStatusCode());
             system.debug('Response Body: ' + response.getBody());
