@@ -310,9 +310,8 @@
         <fields>Name</fields>
         <fields>Company</fields>
         <fields>Title</fields>
-        <fields>Phone</fields>
-        <fields>MobilePhone</fields>
-        <fields>Email</fields>
+        <fields>LeadSource</fields>
+        <fields>Lead_Classification__c</fields>
         <fields>HasOptedOutOfEmail</fields>
         <fields>Status</fields>
         <label>Leads Custom Compact Layout</label>
@@ -355,7 +354,7 @@
         <fullName>Assignment_Team__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Initial Team this lead was assigned to</inlineHelpText>
-        <label>Assignment Team</label>
+        <label>Assigned Team</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -393,6 +392,11 @@
                     <fullName>US SDR Inbound</fullName>
                     <default>false</default>
                     <label>US SDR Inbound</label>
+                </value>
+                <value>
+                    <fullName>SDR Outbound</fullName>
+                    <default>false</default>
+                    <label>SDR Outbound</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3169,6 +3173,11 @@
                     <default>false</default>
                     <label>US SDR Inbound</label>
                 </value>
+                <value>
+                    <fullName>SDR Outbound</fullName>
+                    <default>false</default>
+                    <label>SDR Outbound</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -4416,6 +4425,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>SDR Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>UK Sales</fullName>
                 <default>false</default>
             </values>
@@ -4440,6 +4453,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR Outbound</fullName>
                 <default>false</default>
             </values>
             <values>
