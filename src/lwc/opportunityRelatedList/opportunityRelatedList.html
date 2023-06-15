@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title={cardLabel} icon-name="standard:product_item" if:false={isDesktop}>
+        <template lwc:if={showCases}>
+            <div class="slds-p-top_x-small">
+            <template for:each={OpportunityLineItem} for:item="opp">
+                <div key={opp.oppLineItem.Id} class="slds-m-bottom_small slds-p-left_medium">
+                    <lightning-tile label={opp.oppLineItem.Name} href={opp.productUrl}>
+                        <dl class="slds-dl_horizontal">
+                            <dt class="slds-dl_horizontal__label">
+                                <p class="slds-truncate" title="Subject">Product Name:</p>
+                            </dt>
+                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                <p class="slds-truncate" title="Subject">{opp.oppLineItem.Product2.Name}</p>
+                            </dd>
+                            <dt class="slds-dl_horizontal__label">
+                                <p class="slds-truncate" title="Status">Sales Type:</p>
+                            </dt>
+                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                <p class="slds-truncate" title="Status">{opp.oppLineItem.Sales_Type__c}</p>
+                            </dd>
+                            <dt class="slds-dl_horizontal__label">
+                                <p class="slds-truncate" title="Priority">Lost Product:</p>
+                            </dt>
+                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                <p class="slds-truncate" title="Priority">{opp.oppLineItem.Lost_Product__c}</p>
+                            </dd>
+                        </dl>
+                    </lightning-tile>
+                </div>
+            </template>
+        </div>
+        </template>
+        <template lwc:else>
+            <p>No OpportunityLineItem records to display.</p>
+        </template>
+    </lightning-card>
+    <lightning-card title={cardLabel} icon-name="standard:product" if:true={isDesktop}>
+        <div class="slds-m-around_medium">
+            <template if:true={OpportunityLineItem}>
+                <lightning-datatable
+                    data={OpportunityLineItem}
+                    columns={columns}
+                    key-field="id"
+                    hide-checkbox-column
+                    show-row-number-column="true"
+                    default-sort-direction={defaultSortDirection}
+                    sorted-direction={sortDirection}
+                    sorted-by={sortedBy}
+                    onsort={onHandleSort}>
+                >
+                </lightning-datatable>
+            </template>
+            <template if:true={error}>
+                <p>No OpportunityLineItem records to display.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
