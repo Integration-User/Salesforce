@@ -44,7 +44,6 @@ export default class FilteredRelatedCaseList extends LightningElement {
     wiredOppLineItems({ error, data }) {
         if (data) {
             this.OpportunityLineItem = data;
-            console.log(JSON.stringify(this.OpportunityLineItem))
             this.showCases = this.OpportunityLineItem.length > 0 ? true : false;
         } else if (error) {
             console.log(error);
