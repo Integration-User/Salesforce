@@ -12086,6 +12086,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Budgeted_Account_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Budgeted_Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
