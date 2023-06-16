@@ -16,15 +16,16 @@ global class GetInfoForUser{
             List<PermissionSetGroup> permissionGroupList = [SELECT Id,DeveloperName,MasterLabel 
                         FROM PermissionSetGroup WHERE MasterLabel =: userInfoList[0].Permission_Set_Group__c];
             
-            if (permissionGroupList != null && permissionGroupList.size() > 0) 
-                output.permissionSetId = permissionGroupList[0].id; 
-            if(roleToUsed == null || permissionGroupList == null){
+            if(roleToUsed == null || permissionGroupList == null || userInfoList[0].Profle_Id__c == null){
                 output.errorMessage = 'Role or permission for department is not available';    
+            } else {
+                if (permissionGroupList != null && permissionGroupList.size() > 0) 
+                    output.permissionSetId = permissionGroupList[0].id; 
+                if(roleToUsed != null) {
+                    output.profileId =  userInfoList[0].Profle_Id__c;
+                    output.roleId = roleToUsed.id; 
+                } 
             }
-            if(roleToUsed != null) {
-                output.profileId =  userInfoList[0].Profle_Id__c;
-                output.roleId = roleToUsed.id; 
-            } 
         }
         listOutput.add(output);
         
