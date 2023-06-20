@@ -129,6 +129,17 @@ public class ConsolidatedOpportunityTest {
         ocr1.ContactId = ct2.Id;
         ocr1.Role ='Billing Contact';
         insert ocr1;
+        Case cse = new Case();
+        cse.recordTypeId = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Account_Assignment').getRecordTypeId();
+        cse.AccountId = accnt.id;
+        cse.Status = 'New';
+        cse.Origin = 'Email';
+        cse.Opportunity__c = oppty1.Id;
+        insert cse;
+    }
+    @isTest static void getAllOpportunityLineItemsTest() {
+        List<Case> caseList = [Select Id From case Where Origin = 'Email' LIMIT 1];
+        ConsolidatedOpportunity.getAllOpportunityLineItems(caseList[0].Id);
     }
     @isTest static void createEnrolmentsTest() {
         Test.startTest();
