@@ -71,4 +71,49 @@ public class ConsolidatedOpportunity {
          @InvocableVariable
         public String isError;
     }
+    
+    @AuraEnabled(cacheable=true)
+    public static List<opportunityWrapper> getAllOpportunityLineItems(Id caseId){
+        List<Case> cse = [Select Id, Opportunity__c from Case where id = :caseId];
+        List<opportunityWrapper> oppWrapperList = new List<opportunityWrapper>();
+        List<OpportunityLineItem> OppLineItemsList = new List<OpportunityLineItem> ();
+        if(!cse.isEmpty()) {
+            OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
+                                                          FROM OpportunityLineItem 
+                                                          WHERE OpportunityId =: cse[0].Opportunity__c];
+            if(!OppLineItemsList.isEmpty()) {
+                for(OpportunityLineItem oil : OppLineItemsList){
+                    opportunityWrapper oppWrapper = new opportunityWrapper();
+                    oppWrapper.oppLineItem = oil;
+                    oppWrapper.productUrl = '/' + oil.Id;
+                    oppWrapper.productName = oil.Product2.Name;
+                    oppWrapper.lostProduct = oil.Lost_Product__c;
+                    oppWrapper.salesType = oil.Sales_Type__c;
+                    oppWrapper.startDate = oil.Start_Date__c;
+                    oppWrapper.endDate = oil.End_Date__c;
+                    oppWrapper.name = oil.Name;
+                    oppWrapperList.add(oppWrapper);
+                }
+            }
+        }
+        return oppWrapperList;
+    }
+    public class opportunityWrapper{
+        @AuraEnabled
+        public OpportunityLineItem oppLineItem{get;set;}
+        @AuraEnabled
+        public String name{get;set;}
+        @AuraEnabled
+        public String productUrl{get;set;}
+        @AuraEnabled
+        public String productName {get;set;}
+        @AuraEnabled
+        public boolean lostProduct {get;set;}
+        @AuraEnabled
+        public String salesType {get;set;}
+        @AuraEnabled
+        public date startDate {get;set;}
+        @AuraEnabled
+        public date endDate {get;set;}
+    }
 }
