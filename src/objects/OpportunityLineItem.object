@@ -810,6 +810,20 @@ Upsell_Cross_sell__c = TRUE,
         <errorMessage>Products that are considered an &quot;Upsell&quot; must have a Starting Price of $0.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Delivery_method_required_for_DataDeliver</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ ISPICKVAL(Delivery_Method__c, &apos;&apos;),
+ OR(
+     Product2.Name  =  &apos;US Data Delivery - Market Data &amp; Deals&apos;,
+     Product2.Name  =  &apos;US Data Delivery - REIT Data&apos;,
+     Product2.Name  =  &apos;EUR Data Delivery - Market Data &amp; Deals&apos;,
+     Product2.Name  =  &apos;EUR Data Delivery - REIT Data&apos;
+ )
+)</errorConditionFormula>
+        <errorMessage>&quot;Delivery method&quot; is required for data delivery products</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Starting_Price_Required</fullName>
         <active>false</active>
         <errorConditionFormula>AND(
