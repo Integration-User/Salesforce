@@ -69,8 +69,8 @@ public class Plative_OpportunityTriggerTest {
         oppty.StageName = 'Qualified Prospect (2)';
         oppty.AccountId = accnt.Id;
         oppty.X2nd_Year_Amount_in_USD__c = 60000;
-        //oppty.X3rd_Year_Amount_in_USD__c = 60000;
-        //oppty.Year_4_Amount__c = 60000;
+        oppty.X3rd_Year_Amount_in_USD__c = 80000;
+        oppty.Year_4_Amount__c = 90000;
         //oppty.Year_5_Amount__c = 60000;
         //oppty.Year_6_Amount__c = 60000;
         //oppty.Year_7_Amount__c = 60000;
