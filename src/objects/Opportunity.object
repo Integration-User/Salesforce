@@ -21331,6 +21331,7 @@ ISPICKVAL( StageName , &quot;Closed Won&quot;))</errorConditionFormula>
 		),
 	DDS_ARRChanged__c = TRUE,
 	DDS_ScoreApplicability__c = TRUE,
+        $UserRole.DeveloperName  &lt;&gt; &apos;Commercial_Operations&apos;,
 	OR(
 		ISCHANGED(StageName),
 		ISCHANGED(Win_Validation__c)
