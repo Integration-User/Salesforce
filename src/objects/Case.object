@@ -556,6 +556,15 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Case_Error__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Error_Reason__c, &quot;&quot;), False, True)</formula>
+        <label>Case Error</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Case_Owner_Role__c</fullName>
         <externalId>false</externalId>
         <formula>Owner:User.UserRole.Name</formula>
@@ -755,6 +764,76 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Error_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Deactivated pre/post contract expiration date</fullName>
+                    <default>false</default>
+                    <label>Deactivated pre/post contract expiration date</label>
+                </value>
+                <value>
+                    <fullName>Account Email Distro was not removed</fullName>
+                    <default>false</default>
+                    <label>Account Email Distro was not removed</label>
+                </value>
+                <value>
+                    <fullName>Product removed in error</fullName>
+                    <default>false</default>
+                    <label>Product removed in error</label>
+                </value>
+                <value>
+                    <fullName>Activated post contract start date</fullName>
+                    <default>false</default>
+                    <label>Activated post contract start date</label>
+                </value>
+                <value>
+                    <fullName>Billing Schedule Error</fullName>
+                    <default>false</default>
+                    <label>Billing Schedule Error</label>
+                </value>
+                <value>
+                    <fullName>Contract Start and End Date</fullName>
+                    <default>false</default>
+                    <label>Contract Start and End Date</label>
+                </value>
+                <value>
+                    <fullName>Multi-Year Oppy not marked</fullName>
+                    <default>false</default>
+                    <label>Multi-Year Oppy not marked</label>
+                </value>
+                <value>
+                    <fullName>Create Renewal Box checked on MY</fullName>
+                    <default>false</default>
+                    <label>Create Renewal Box checked on MY</label>
+                </value>
+                <value>
+                    <fullName>Merged wrong Account</fullName>
+                    <default>false</default>
+                    <label>Merged wrong Account</label>
+                </value>
+                <value>
+                    <fullName>Contact Merge Error</fullName>
+                    <default>false</default>
+                    <label>Contact Merge Error</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Error__c</fullName>
@@ -1282,6 +1361,46 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>On_Hold_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>On Hold Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Contract</fullName>
+                    <default>false</default>
+                    <label>No Contract</label>
+                </value>
+                <value>
+                    <fullName>Signature Missing on Contract</fullName>
+                    <default>false</default>
+                    <label>Signature Missing on Contract</label>
+                </value>
+                <value>
+                    <fullName>Amount Discrepancy</fullName>
+                    <default>false</default>
+                    <label>Amount Discrepancy</label>
+                </value>
+                <value>
+                    <fullName>Wrong Subsidiary on Opportunity</fullName>
+                    <default>false</default>
+                    <label>Wrong Subsidiary on Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Opportunity_Record_Type__c</fullName>
         <externalId>false</externalId>
         <formula>Opportunity__r.RecordType.Name</formula>
@@ -1310,6 +1429,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Other_Error_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Error Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -4478,6 +4608,52 @@ FALSE)))))))))))))</formula>
         <description>Used to manage and track client deactivation needs</description>
         <label>Client Access</label>
         <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Account Email Distro was not removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activated post contract start date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated pre%2Fpost contract expiration date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product removed in error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ActivationDeactivation_Needs__c</picklist>
             <values>
                 <fullName>Add Upsold Products</fullName>
@@ -7437,6 +7613,44 @@ FALSE)))))))))))))</formula>
         <businessProcess>User List Request</businessProcess>
         <label>Duplicate Request</label>
         <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Contact Merge Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merged wrong Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ActivationDeactivation_Needs__c</picklist>
             <values>
                 <fullName>Full Account Deactivation</fullName>
@@ -9366,6 +9580,52 @@ FALSE)))))))))))))</formula>
         <businessProcess>User List Request</businessProcess>
         <description>Used to review opportunity data before closing and sending over a Sales Order to NS.</description>
         <label>Opportunity Review</label>
+        <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Billing Schedule Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Start and End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Renewal Box checked on MY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Year Oppy not marked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>ActivationDeactivation_Needs__c</picklist>
             <values>
@@ -12327,5 +12587,21 @@ OR(
 ISNULL(Use_Case__c)))))</errorConditionFormula>
         <errorMessage>The following fields are required to close this case - 
 Minutes Spent, Contact Name, Type, Products Discussed, Solution Notes, Use Case</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_On_Hold_Reason</fullName>
+        <active>true</active>
+        <description>Requires On Hold Reason for Client Access, Opportunity Review and Duplicate Request case record types when status is moved to On Hold</description>
+        <errorConditionFormula>AND(
+ISCHANGED( Status ),
+ISPICKVAL( Status, &quot;On Hold&quot;),
+ISPICKVAL( On_Hold_Reason__c , &quot;&quot;),
+OR(
+RecordType.DeveloperName = &quot;Client_Access&quot;,
+RecordType.DeveloperName = &quot;Duplicate_Request&quot;,
+RecordType.DeveloperName = &quot;Opportunity_Review&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>On_Hold_Reason__c</errorDisplayField>
+        <errorMessage>Please provide the On Hold Reason when moving the status to On Hold</errorMessage>
     </validationRules>
 </CustomObject>
