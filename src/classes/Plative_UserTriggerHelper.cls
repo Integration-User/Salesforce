@@ -55,7 +55,7 @@ public class Plative_UserTriggerHelper  {
                                             lstUsersToSync,
                                             lstChildSobjects, apiSettings,
                                             syncSetting.Sync_Order__c));
-        Plative_SFToNSSyncUtility.triggerJobsInQueue();
+        if(!Test.isRunningTest()) Plative_SFToNSSyncUtility.triggerJobsInQueue();
     }   
     
     /**
@@ -85,9 +85,15 @@ public class Plative_UserTriggerHelper  {
             List<GetInfoForUser.UserCreateInfoOutput> listIds = GetInfoForUser.getUserInfo(listUserInfo);
             if(listIds != null && listIds.size() > 0){
                 String permssionSetGrpID = listIds[0].permissionSetId;
-                permSet.PermissionSetGroupId = permssionSetGrpID;
+                if(String.isNotBlank(permssionSetGrpID)) {
+                    List<PermissionSetAssignment> isPresent  = [Select Id from PermissionSetAssignment 
+                                                          where PermissionSetGroupId = :permssionSetGrpID AND AssigneeId =: permSet.AssigneeId];
+                    if(isPresent.isEmpty()) {
+                    permSet.PermissionSetGroupId = permssionSetGrpID;
+                    insert permSet;
+                }
             }
-            insert permSet;
+        }
         }
         
     }
