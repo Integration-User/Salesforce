@@ -86,8 +86,12 @@ public class Plative_UserTriggerHelper  {
             if(listIds != null && listIds.size() > 0){
                 String permssionSetGrpID = listIds[0].permissionSetId;
                 if(String.isNotBlank(permssionSetGrpID)) {
-                    permSet.PermissionSetGroupId = permssionSetGrpID;
-                    insert permSet;
+                    List<PermissionSetAssignment> isPresent  = [Select Id from PermissionSetAssignment 
+                                                          where PermissionSetGroupId = :permssionSetGrpID AND AssigneeId =: permSet.AssigneeId];
+                    if(isPresent.isEmpty()) {
+                        permSet.PermissionSetGroupId = permssionSetGrpID;
+                        insert permSet;
+                    }
                 }
             }
         }
