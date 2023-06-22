@@ -14381,6 +14381,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.On_Hold_Reason__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.Opportunity_Record_Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
