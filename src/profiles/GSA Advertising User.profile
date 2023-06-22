@@ -14400,7 +14400,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Case.On_Hold_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -18673,6 +18673,11 @@
         <editable>false</editable>
         <field>Lead.HasOptedOutOfFax</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lead.Inbound_Lead__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
