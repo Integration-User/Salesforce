@@ -1025,6 +1025,21 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Inbound_Lead__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(LeadSource , &quot;Marketing Qualified&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Inquiry&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Digital Campaign&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Conference/Event&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Slide Request&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Targeted Campaign&quot;) , TRUE, 
+FALSE
+))))))</formula>
+        <label>Inbound Lead?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>IndividualId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
