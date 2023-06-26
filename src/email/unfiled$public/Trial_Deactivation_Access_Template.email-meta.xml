@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent to notify opportunity that the trial activation is deactivated</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Trial Deactivation Access Template</name>
+    <style>none</style>
+    <subject>{!Case.Account} {!Opportunity.Activation_Deactivation_Needs__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
