@@ -60,13 +60,6 @@
                     <numberValue>1.0</numberValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.Trial_End_Date__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>$Flow.CurrentDate</elementReference>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>Update_to_Full_Conversion</targetReference>
             </connector>
