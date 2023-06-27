@@ -4,8 +4,8 @@
         <description>This will notify case owner and Claire for cases open without activity for 4 days</description>
         <name>CaseStaleFor4days</name>
         <label>CaseStaleFor4days</label>
-        <locationX>1018</locationX>
-        <locationY>408</locationY>
+        <locationX>1250</locationX>
+        <locationY>540</locationY>
         <actionName>Case.Case_Stale_For_4_days</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -19,8 +19,8 @@
     <actionCalls>
         <name>ClientTrialActivationEmailAlert</name>
         <label>ClientTrialActivationEmailAlert</label>
-        <locationX>314</locationX>
-        <locationY>984</locationY>
+        <locationX>873</locationX>
+        <locationY>1053</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -37,8 +37,8 @@
     <actionCalls>
         <name>TrialActivationEmailAlert</name>
         <label>TrialActivationEmailAlert</label>
-        <locationX>50</locationX>
-        <locationY>984</locationY>
+        <locationX>253</locationX>
+        <locationY>1054</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -56,8 +56,8 @@
     <decisions>
         <name>Activation_Decision</name>
         <label>Activation Decision</label>
-        <locationX>534</locationX>
-        <locationY>288</locationY>
+        <locationX>729</locationX>
+        <locationY>250</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>ActivationCase</name>
@@ -69,21 +69,114 @@
                     <stringValue>Closed</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Opportunity_Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Trial_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Full Access</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Description_For_trial_opportunity</targetReference>
+                <targetReference>Create_Activation_Case</targetReference>
             </connector>
             <label>ActivationCase</label>
+        </rules>
+        <rules>
+            <name>Limited_Access_Trial_Oppty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Trial_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Limited Access</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Limited Trial Activation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client_Access</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GSA_Relation_Decision</targetReference>
+            </connector>
+            <label>Limited Access Trial Oppty</label>
+        </rules>
+        <rules>
+            <name>Close_Full_Trial_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client_Access</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Full Trial Activation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GSA_Relation_Decision</targetReference>
+            </connector>
+            <label>Close Full Trial Case</label>
         </rules>
     </decisions>
     <decisions>
         <name>Compliance_Creation</name>
         <label>Compliance Creation</label>
-        <locationX>314</locationX>
-        <locationY>1200</locationY>
+        <locationX>546</locationX>
+        <locationY>1248</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>ClientAccessCaseClosed</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 ) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -113,10 +206,17 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Description</leftValueReference>
-                <operator>Contains</operator>
+                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Please review this trial opportunity</stringValue>
+                    <stringValue>Limited Trial Activation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Full Trial Activation</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -127,42 +227,14 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Description_For_trial_opportunity</name>
-        <label>Description For trial opportunity</label>
-        <locationX>314</locationX>
-        <locationY>408</locationY>
-        <defaultConnector>
-            <targetReference>GSA_Relation_Decision</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Trial_opportunity_case</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Description</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>Please review this trial opportunity</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Create_Activation_Case</targetReference>
-            </connector>
-            <label>Trial opportunity case</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>GSA_Relation_Decision</name>
         <label>GSA Relation Decision</label>
-        <locationX>314</locationX>
-        <locationY>744</locationY>
-        <defaultConnector>
-            <targetReference>Compliance_Creation</targetReference>
-        </defaultConnector>
+        <locationX>536</locationX>
+        <locationY>680</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>GSARelationTrial</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 5) AND (3 OR 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Account.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -181,7 +253,14 @@
                 <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Trial Activation</stringValue>
+                    <stringValue>Full Trial Activation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Limited Trial Activation</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -198,7 +277,7 @@
         </rules>
         <rules>
             <name>GSARelationClient</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3) AND (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Account.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -214,17 +293,24 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Trial Activation</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Limited Trial Activation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Full Trial Activation</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -236,8 +322,8 @@
     <decisions>
         <name>Untouched_Case_For_4_days_Decision</name>
         <label>Untouched Case For 4 days Decision</label>
-        <locationX>1150</locationX>
-        <locationY>288</locationY>
+        <locationX>1382</locationX>
+        <locationY>432</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>X3BusinessDaysSinceModified</name>
@@ -312,7 +398,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -325,8 +411,8 @@
     <recordCreates>
         <name>Create_Activation_Case</name>
         <label>Create Activation Case</label>
-        <locationX>182</locationX>
-        <locationY>528</locationY>
+        <locationX>294</locationX>
+        <locationY>290</locationY>
         <connector>
             <targetReference>GSA_Relation_Decision</targetReference>
         </connector>
@@ -339,7 +425,7 @@
         <inputAssignments>
             <field>ActivationDeactivation_Needs__c</field>
             <value>
-                <stringValue>Trial Activation</stringValue>
+                <stringValue>Full Trial Activation</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -381,7 +467,7 @@
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>0125G000001QBa1QAG</stringValue>
+                <elementReference>$Label.Client_Access</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -393,7 +479,7 @@
         <inputAssignments>
             <field>Subject</field>
             <value>
-                <stringValue>{!$Record.Opportunity__r.Name} - Trial Activation</stringValue>
+                <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -402,8 +488,8 @@
     <recordCreates>
         <name>Create_Compliance_Record</name>
         <label>Create Compliance Record</label>
-        <locationX>182</locationX>
-        <locationY>1320</locationY>
+        <locationX>50</locationX>
+        <locationY>1255</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
             <value>
@@ -446,8 +532,8 @@
     <recordUpdates>
         <name>Update_Account_GSA_Relation_To_Client_Trial</name>
         <label>Update Account GSA Relation To Client + Trial</label>
-        <locationX>314</locationX>
-        <locationY>864</locationY>
+        <locationX>874</locationX>
+        <locationY>681</locationY>
         <connector>
             <targetReference>ClientTrialActivationEmailAlert</targetReference>
         </connector>
@@ -477,8 +563,8 @@
     <recordUpdates>
         <name>Update_Account_GSA_Relation_To_Trial</name>
         <label>Update Account GSA Relation To Trial</label>
-        <locationX>50</locationX>
-        <locationY>864</locationY>
+        <locationX>253</locationX>
+        <locationY>677</locationY>
         <connector>
             <targetReference>TrialActivationEmailAlert</targetReference>
         </connector>
@@ -506,8 +592,8 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>716</locationX>
-        <locationY>0</locationY>
+        <locationX>948</locationX>
+        <locationY>156</locationY>
         <connector>
             <targetReference>Activation_Decision</targetReference>
         </connector>
@@ -540,6 +626,16 @@
         <isOutput>false</isOutput>
         <value>
             <elementReference>$Flow.CurrentDate</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>LimitedAccessVar</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Limited Access</stringValue>
         </value>
     </variables>
 </Flow>
