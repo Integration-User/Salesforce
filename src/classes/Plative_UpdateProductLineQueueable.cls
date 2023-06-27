@@ -27,12 +27,15 @@ public without sharing class Plative_UpdateProductLineQueueable implements Queue
         }
         
         
-        List<Account_Product_Line__c> productLineList = [Select Account__c,Product__r.Name,Product__r.Website_Product__c,Account__r.GSA_ID__c from Account_Product_Line__c where Account__c IN :accountIdSetToProcess];
+        List<Account_Product_Line__c> productLineList = [Select Account__c,Product__r.Name,Product__r.Website_Product__c,Account__r.GSA_ID__c, Trial__c from Account_Product_Line__c where Account__c IN :accountIdSetToProcess];
         for(Account_Product_Line__c productLine: productLineList){
             if(!accountIdVsProductLinesMap.containsKey(productLine.Account__c)){
                 accountIdVsProductLinesMap.put(productLine.Account__c, new List<String>());
-            }            
-            accountIdVsProductLinesMap.get(productLine.Account__c).add(productLine.Product__r.Website_Product__c);
+            }
+            // SF-513
+            String productName = productLine.Product__r.Website_Product__c;
+            if (productLine.Trial__c) productName += ' - Trial'; 
+            accountIdVsProductLinesMap.get(productLine.Account__c).add(productName);
             accountIdVsGSAId.put(productLine.Account__c,productLine.Account__r.GSA_ID__c);
         }
         for(Id accId : accountIdSet){
