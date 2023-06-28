@@ -19,12 +19,6 @@
                 type: 'text'
             },
             {
-                label: 'Trial',
-                fieldName: 'Trial__c',
-                type: 'boolean',
-                editable: true
-            },
-            {
                 label: 'Start Date',
                 fieldName: 'Start_Date__c',
                 type: 'date-local',

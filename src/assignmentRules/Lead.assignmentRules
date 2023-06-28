@@ -36,5 +36,17 @@
                 <value>United States</value>
             </criteriaItems>
         </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Marketing</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.LeadSource</field>
+                <operation>equals</operation>
+                <value>Zoominfo</value>
+            </criteriaItems>
+        </ruleEntry>
     </assignmentRule>
 </AssignmentRules>
