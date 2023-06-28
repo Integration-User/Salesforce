@@ -4,14 +4,13 @@
 
 public without sharing class Plative_AccountProductLineTriggerHandler {
     
-    public static boolean firstRun = false;
+    
     //Call on After Insert
     public static void afterInsert(List<Account_Product_Line__c> triggerNew){
         Plative_AccountProductLineTriggerHelper.addEmailDistributions(triggerNew);
     }
     
     public static void updateProductLineOnPlatform(List<Account_Product_Line__c> triggerNew) {
-        firstRun = true;
         Set<Id> accountIdSet = new Set<Id>();
         for (Account_Product_Line__c productLine : triggerNew) {
             accountIdSet.add(productLine.Account__c);
