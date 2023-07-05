@@ -16,7 +16,7 @@ public with sharing class Plative_GSAWebCalloutUtility {
 
         //Fetch field related to the recordId for either account or contact
         accountIdMap = new Map<Id, Account>([Select Id,Name,Product_Line__c,GSA_ID__c from Account where Id = :recordId]);
-        contactIdMap = new Map<Id, Contact>([Select Id,Name,AccountId,Account.GSA_ID__c,Account.Account_Status__c,FirstName,LastName,Email,Username__c,Datalink_Access_New__c,Website_Access_New__c,GSA_ID__c from Contact where Id = :recordId]);
+        contactIdMap = new Map<Id, Contact>([Select Id,Name,AccountId,Account.GSA_ID__c,Account.Account_Status__c,FirstName,LastName,Email,Username__c,Datalink_Access_New__c,Website_Access_New__c,GSA_ID__c, Left_this_Account__c, Contact_Status__c from Contact where Id = :recordId]);
 
         List<SObject> sObjectUpdateList = new List<SObject>();
         List<Integration_Log__c > integrationLogInsertList = new List<Integration_Log__c>();
@@ -47,7 +47,7 @@ public with sharing class Plative_GSAWebCalloutUtility {
                     List<Account_Product_Line__c> productLineList = [Select Id,Product__r.Name,Product__r.Website_Product__c from Account_Product_Line__c where Account__c = :accnt.Id];
                     String productLines = '';
                     for(Account_Product_Line__c productLine: productLineList){
-                        productLines += productLine.Product__r.Website_Product__c + ';';
+                        productLines += productLine.Product__r.Website_Product__c + ';';                        
                     }
                     productLines = productLines.removeEnd(';');
 
