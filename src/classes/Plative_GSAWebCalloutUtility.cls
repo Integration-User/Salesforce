@@ -233,7 +233,8 @@ public with sharing class Plative_GSAWebCalloutUtility {
 
                         //If record is of contact sobject & action is activate
                         else if (sObjectApiName.toLowerCase() == 'contact' && action == 'activate') {
-                            sObjectUpdateList.add(new Contact(Id = recordId, Contact_Status__c = 'Active', Activation_Date__c=System.today(), Activate_Contact__c=true));
+                            // SF-574 - Update Left_this_Account__c as null if contact is moved to a different account or activated
+                            sObjectUpdateList.add(new Contact(Id = recordId, Contact_Status__c = 'Active', Activation_Date__c=System.today(), Activate_Contact__c=true, Left_this_Account__c = null));
                             contactIdSetForED.add(recordId);
                         }
  
