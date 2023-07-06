@@ -242,7 +242,6 @@ public class Plative_OpportunityRenewalHelper {
                 //newOLI.Start_Date__c = starDt;
                 //newOLI.End_Date__c = endDt;
                 newOLI.Sales_Type__c = 'Renewal';
-                
                 newOLI.Starting_Price__c = populateArr ? OLI.ARR_Formula__c : newOLI.Starting_Price__c;
 
                 newOLI.UnitPrice = populateArr ? newOLI.Starting_Price__c : newOLI.UnitPrice;
@@ -271,6 +270,13 @@ public class Plative_OpportunityRenewalHelper {
                      newOLI.Start_Date__c = OLI.End_Date__c.addDays(1);
                     newOLI.End_Date__c = newOLI.Start_Date__c.addYears(1).addDays(-1);
                 }
+                
+                /*SF-540 - Leap Year Dates*/
+                if(newOLI.Start_Date__c != null && newOLI.End_Date__c != null 
+                   && Date.isLeapYear(newOLI.Start_Date__c.year()) 
+                   && newOLI.End_Date__c.daysBetween(newOLI.Start_Date__c) == 364) 
+                    newOLI.End_Date__c = OLI.End_Date__c.addDays(1);
+                    
                 oliToCreate.add(newOLI);
             }     
         
@@ -396,7 +402,7 @@ public class Plative_OpportunityRenewalHelper {
         
         //Get related Opportunity Products 
         Map<Id,List<OpportunityLineItem>> opportunityIdVsProducts = new Map<Id,List<OpportunityLineItem>>();
-        List<OpportunityLineItem> opptyLineItemsList = [Select Id,Opportunity.Automatic_Renewal__c,Start_Date__c,End_Date__c,OpportunityId,Percentage_of_Total_Amount__c,Product2Id,Quantity,PricebookEntryId,ARR_Formula__c from OpportunityLineItem where OpportunityId IN :opportunityMap.keySet() AND Lost_Product__c = false];
+        List<OpportunityLineItem> opptyLineItemsList = [Select Id,Opportunity.Automatic_Renewal__c,Start_Date__c,End_Date__c,OpportunityId,Percentage_of_Total_Amount__c,Product2Id,Quantity,PricebookEntryId,ARR_Formula__c  from OpportunityLineItem where OpportunityId IN :opportunityMap.keySet() AND Lost_Product__c = false];
         for(Integer i=0,j=opptyLineItemsList.size(); i<j; i++){
             if(!opportunityIdVsProducts.containsKey(opptyLineItemsList[i].OpportunityId)){
                 opportunityIdVsProducts.put(opptyLineItemsList[i].OpportunityId, new List<OpportunityLineItem>());
