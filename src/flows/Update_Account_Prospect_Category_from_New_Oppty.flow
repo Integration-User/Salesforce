@@ -32,7 +32,7 @@
         </rules>
         <rules>
             <name>Closed_Sales_Opportunity</name>
-            <conditionLogic>1 AND 4 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.AccountId</leftValueReference>
                 <operator>IsNull</operator>
@@ -49,16 +49,16 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Closed Lost</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.StageName</leftValueReference>
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity_Closed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -107,6 +107,15 @@
             <value>
                 <stringValue></stringValue>
             </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Prospect_Notes__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Re_visit_Date__c</field>
         </inputAssignments>
         <object>Account</object>
     </recordUpdates>
