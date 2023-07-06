@@ -824,6 +824,10 @@ public class Plative_SFToNSSyncUtility {
                 allProducts.addall(con.Current_Products__c.split(';'));	
                 setProductChangedCons.add(con.id);
             }
+            //SF-574:- Update Left_this_Account__c as null if contact is moved to a different account or activated
+            if(con.Left_this_Account__c != null && con.AccountId != oldCon.AccountId){
+                con.Left_this_Account__c = null;
+            }
         }
         if(setProductChangedCons != null && setProductChangedCons.size() > 0){
             for(Id id : setProductChangedCons){
