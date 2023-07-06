@@ -36520,7 +36520,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Account.Subsidiary_Account</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
