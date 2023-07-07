@@ -22038,13 +22038,74 @@ CloseDate  &lt;  TODAY() + 89)</errorConditionFormula>
         <fullName>Require_Trial_Type</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+AND(
 ISPICKVAL( Trial_Type__c, &quot;&quot;),
+PICKLISTCOUNT(Products__c ) &gt;=1
+),
+AND(
+OR(
+INCLUDES(Products__c  , &quot;US Research&quot;),
+INCLUDES(Products__c  , &quot;EURO Research&quot;),
+INCLUDES(Products__c  , &quot;News - CMA&quot;),
+INCLUDES(Products__c  , &quot;News - ABA&quot;),
+INCLUDES(Products__c  , &quot;News - REA&quot;),
+INCLUDES(Products__c  , &quot;MD&amp;D - Rent Comps&quot;),
+INCLUDES(Products__c  , &quot;Debt Databases&quot;),
+INCLUDES(Products__c  , &quot;Portfolio Analytics&quot;),
+INCLUDES(Products__c  , &quot;API&quot;),
+INCLUDES(Products__c  , &quot;DataLink&quot;),
+INCLUDES(Products__c  , &quot;PDF Viewer&quot;),
+INCLUDES(Products__c  , &quot;Activist Situations&quot;),
+INCLUDES(Products__c  , &quot;Advertising&quot;),
+INCLUDES(Products__c  , &quot;Advisory&quot;),
+INCLUDES(Products__c  , &quot;Asset-Backed Alert&quot;),
+INCLUDES(Products__c  , &quot;Atlas&quot;),
+INCLUDES(Products__c  , &quot;Commercial Mortgage Alert&quot;),
+INCLUDES(Products__c  , &quot;Company Diagnostics&quot;),
+INCLUDES(Products__c  , &quot;Company Positioning &amp; Investor Messaging&quot;),
+INCLUDES(Products__c  , &quot;Customized Sector/Market Research&quot;),
+INCLUDES(Products__c  , &quot;Deal Tracker&quot;),
+INCLUDES(Products__c  , &quot;EU News&quot;),
+INCLUDES(Products__c  , &quot;Financial/Strategic Advisory&quot;),
+INCLUDES(Products__c  , &quot;GSI&quot;),
+INCLUDES(Products__c  , &quot;IPOs, M&amp;A, Privatizations&quot;),
+INCLUDES(Products__c  , &quot;Market Data &amp; Deals&quot;),
+INCLUDES(Products__c  , &quot;NEWS = HFAlert&quot;),
+INCLUDES(Products__c  , &quot;Niche Sector Expertise&quot;),
+INCLUDES(Products__c  , &quot;Other/NA&quot;),
+INCLUDES(Products__c  , &quot;Pan-European Research + Market Data &amp; Deals&quot;),
+INCLUDES(Products__c  , &quot;Pan-European Research + REIT Data&quot;),
+INCLUDES(Products__c  , &quot;Portfolio Investment Strategy&quot;),
+INCLUDES(Products__c  , &quot;Portfolio Tools&quot;),
+INCLUDES(Products__c  , &quot;Portfolio Valuation&quot;),
+INCLUDES(Products__c  , &quot;React Advertising&quot;),
+INCLUDES(Products__c  , &quot;Real Estate Alert&quot;),
+INCLUDES(Products__c  , &quot;REIT Conversions &amp; OpCo/PropCo&quot;),
+INCLUDES(Products__c  , &quot;Sales Transactions&quot;),
+INCLUDES(Products__c  , &quot;Special Committees&quot;),
+INCLUDES(Products__c  , &quot;Transaction Advisory&quot;),
+INCLUDES(Products__c  , &quot;US News&quot;),
+INCLUDES(Products__c  , &quot;US Portfolio Tools&quot;),
+INCLUDES(Products__c  , &quot;US Research + Market Data &amp; Deals&quot;),
+INCLUDES(Products__c  , &quot;US Research + REIT Data&quot;),
+INCLUDES(Products__c  , &quot;US Detailed NAV&quot;),
+INCLUDES(Products__c  , &quot;EUR Detailed NAV&quot;),
+INCLUDES(Products__c  , &quot;Not Applicable&quot;),
+INCLUDES(Products__c  , &quot;US Data Delivery - Market Data &amp; Deals&quot;),
+INCLUDES(Products__c  , &quot;US Data Delivery - REIT Data&quot;),
+INCLUDES(Products__c  , &quot;EUR Data Delivery - Market Data &amp; Deals&quot;),
+INCLUDES(Products__c  , &quot;EUR Data Delivery - Market REIT Data&quot;)
+)
+),
+AND(
 OR(
 RecordType.DeveloperName= &quot;Sales_Opportunity&quot;,
-RecordType.DeveloperName= &quot;Existing_Business&quot;),
+RecordType.DeveloperName= &quot;Existing_Business&quot;)
+),
+AND(
 OR(
 NOT(ISBLANK( Trial_End_Date__c )),
-NOT(ISBLANK( Trial_Start_Date__c ))
+NOT(ISBLANK( Trial_Start_Date__c )))
 )
 )</errorConditionFormula>
         <errorDisplayField>Trial_Type__c</errorDisplayField>
