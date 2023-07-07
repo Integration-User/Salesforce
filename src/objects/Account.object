@@ -1972,6 +1972,55 @@ Owner.Id = $User.Id)</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Prospect_Category__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used for &quot;Pre-opportunity&quot; prospecting</inlineHelpText>
+        <label>Prospect Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Target</fullName>
+                    <default>false</default>
+                    <label>Target</label>
+                </value>
+                <value>
+                    <fullName>Suspect</fullName>
+                    <default>false</default>
+                    <label>Suspect</label>
+                </value>
+                <value>
+                    <fullName>Re-visit Timing</fullName>
+                    <default>false</default>
+                    <label>Re-visit Timing</label>
+                </value>
+                <value>
+                    <fullName>Not Viable Now</fullName>
+                    <default>false</default>
+                    <label>Not Viable Now</label>
+                </value>
+                <value>
+                    <fullName>Pipeline</fullName>
+                    <default>false</default>
+                    <label>Pipeline</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Prospect_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Prospect Notes</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Protected_By_Age__c</fullName>
         <externalId>false</externalId>
         <formula>FLOOR( Now() - Protected_By_Last_Change__c )</formula>
@@ -2062,6 +2111,15 @@ Owner.Id = $User.Id)</formula>
         <securityClassification>Confidential</securityClassification>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Re_visit_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field must be entered when “Re-visit Timing” is selected.</inlineHelpText>
+        <label>Re-visit Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>React_Client__c</fullName>
@@ -4969,6 +5027,29 @@ Stored as Long on Solr.</description>
         <description>Accounts for different lines of businesses with one parent account.</description>
         <label>2 Subsidiary Account</label>
         <picklistValues>
+            <picklist>Prospect_Category__c</picklist>
+            <values>
+                <fullName>Not Viable Now</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Re-visit Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suspect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Type</picklist>
             <values>
                 <fullName>Client</fullName>
@@ -6383,6 +6464,40 @@ Id=&quot;001f400000dzfxV&quot;,
 Id=&quot;001f400000dzfxU&quot;),
 ISCHANGED(Name))</errorConditionFormula>
         <errorMessage>You cannot change the name of this Account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Prospect_Not_Viable</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Prospect_Category__c, &quot;Not Viable Now&quot;),
+ISBLANK(Prospect_Notes__c),
+RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
+)</errorConditionFormula>
+        <errorDisplayField>Prospect_Notes__c</errorDisplayField>
+        <errorMessage>Please provide Prospect Notes when Prospect Category &quot;Not Viable Now&quot; is selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Revisit_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+
+ISPICKVAL(Prospect_Category__c, &quot;Re-visit Timing&quot;),
+ISBLANK(Re_visit_Date__c),
+RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
+)</errorConditionFormula>
+        <errorDisplayField>Prospect_Category__c</errorDisplayField>
+        <errorMessage>Please provide the Re-visit Date if the Prospect Category is Re-visit Timing</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Revisit_Timing</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Prospect_Category__c, &quot;&quot;),
+NOT(ISBLANK(Re_visit_Date__c)),
+RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
+)</errorConditionFormula>
+        <errorDisplayField>Re_visit_Date__c</errorDisplayField>
+        <errorMessage>Prospect Category cannot be blank when Date is entered</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Email_Distribution</fullName>

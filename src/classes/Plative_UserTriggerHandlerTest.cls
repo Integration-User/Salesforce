@@ -12,14 +12,14 @@ private class Plative_UserTriggerHandlerTest {
                            Email = 'abel.axiom@sunoco.com.invalid',Username = 'abel.axiom@sunoco.com',
                            CommunityNickname = 'aaxio', isActive = false, ProfileId = p.Id,
                            EmailEncodingKey='UTF-8',LocaleSidKey = 'en_US', 
-                           LanguageLocaleKey='en_US', TimeZoneSidKey='America/Chicago', Department = 'US Sales' ); 
+                           LanguageLocaleKey='en_US', TimeZoneSidKey='America/Chicago', Department = 'US Sale' ); 
         insert u1;
         
         User u2 = new User(FirstName = 'Bob', LastName = 'Builder', Alias = 'bbuil',
                            Email = 'bob.builder@sunoco.com.invalid',Username = 'bob.builder@sunoco.com',
                            CommunityNickname = 'bbuil', isActive = False, ProfileId = p.Id,
                            EmailEncodingKey='UTF-8',LocaleSidKey = 'en_US',Netsuite_ID__c ='232323',
-                           LanguageLocaleKey='en_US', TimeZoneSidKey='America/Chicago', Department = 'US Sales'  ); 
+                           LanguageLocaleKey='en_US', TimeZoneSidKey='America/Chicago', Department = 'US Sale'  ); 
         insert u2;
 
     }
