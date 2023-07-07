@@ -408,6 +408,11 @@
                     <default>false</default>
                     <label>SDR Outbound</label>
                 </value>
+                <value>
+                    <fullName>Head of SDR&apos;s</fullName>
+                    <default>false</default>
+                    <label>Head of SDR&apos;s</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -939,6 +944,11 @@
                     <fullName>Trial</fullName>
                     <default>false</default>
                     <label>Trial</label>
+                </value>
+                <value>
+                    <fullName>Client + Trial</fullName>
+                    <default>false</default>
+                    <label>Client + Trial</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3284,6 +3294,11 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
                     <default>false</default>
                     <label>SDR Outbound</label>
                 </value>
+                <value>
+                    <fullName>Head of SDR&apos;s</fullName>
+                    <default>false</default>
+                    <label>Head of SDR&apos;s</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -4086,6 +4101,17 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>ZoomInfo_Job_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Job Title</label>
+        <length>225</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>affectlayer__AffectLayer_Notes__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -4539,9 +4565,44 @@ Stored as Long on Solr.</description>
         <businessProcess>Marketing</businessProcess>
         <label>Marketing</label>
         <picklistValues>
+            <picklist>GS_Relationship__c</picklist>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client %2B Trial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Assignment_Team__c</picklist>
             <values>
                 <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4573,6 +4634,10 @@ Stored as Long on Solr.</description>
             <picklist>Qualifying_Team__c</picklist>
             <values>
                 <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7436,6 +7501,37 @@ Stored as Long on Solr.</description>
         <businessProcess>Referrals</businessProcess>
         <compactLayoutAssignment>Referral_Lead</compactLayoutAssignment>
         <label>Referral</label>
+        <picklistValues>
+            <picklist>GS_Relationship__c</picklist>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client %2B Trial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>

@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionCalls>
-        <name>TrialDeactivationEmailAlert</name>
-        <label>TrialDeactivationEmailAlert</label>
-        <locationX>578</locationX>
-        <locationY>528</locationY>
-        <actionName>Opportunity.Trial_Deactivation_Email_Alert</actionName>
-        <actionType>emailAlert</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
     <apiVersion>57.0</apiVersion>
     <decisions>
         <name>Trial_Start_Or_Deactivation_Decision_On_Oppty</name>
         <label>Trial Start Or Deactivation Decision On Oppty</label>
-        <locationX>182</locationX>
-        <locationY>288</locationY>
+        <locationX>445</locationX>
+        <locationY>325</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Review_Trial</name>
@@ -39,40 +24,77 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Full Access</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Opportunity_Review_Case</targetReference>
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Review Trial</label>
         </rules>
-    </decisions>
-    <decisions>
-        <name>TrialEndDeactivationCaseCondition</name>
-        <label>TrialEndDeactivationCaseCon</label>
-        <locationX>710</locationX>
-        <locationY>288</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Trial_End_Deactivation_Case</name>
+            <name>Limited_Access_Oppty_Trial</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.StageName</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Trial_Start_Date__c</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue>Closed Won</stringValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Win_Validation__c</leftValueReference>
+                <leftValueReference>$Record.Trial_End_Date__c</leftValueReference>
                 <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Limited Access</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Limited_Case_Trial</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Limited Access Oppty Trial</label>
+        </rules>
+        <rules>
+            <name>Update_Deactivation_Due_Date</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Trial_End_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing_Business</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Deactivation_Case</targetReference>
+                <targetReference>Case_Due_Date_Update</targetReference>
             </connector>
-            <label>Trial End Deactivation Case</label>
+            <label>Update Deactivation Due Date</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -102,7 +124,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -113,13 +135,10 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <name>Deactivation_Case</name>
-        <label>Deactivation Case</label>
-        <locationX>578</locationX>
-        <locationY>408</locationY>
-        <connector>
-            <targetReference>TrialDeactivationEmailAlert</targetReference>
-        </connector>
+        <name>Create_Limited_Case_Trial</name>
+        <label>Create Limited Case Trial</label>
+        <locationX>314</locationX>
+        <locationY>432</locationY>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -129,7 +148,7 @@
         <inputAssignments>
             <field>ActivationDeactivation_Needs__c</field>
             <value>
-                <stringValue>Trial Deactivation</stringValue>
+                <stringValue>Limited Trial Activation</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -139,9 +158,15 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>Limited Access Trial Activation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Due_Date__c</field>
             <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
+                <elementReference>$Record.Trial_Start_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -153,7 +178,7 @@
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <stringValue>00G5G000004kklJ</stringValue>
+                <elementReference>$Label.Client_Access_Queue</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -165,7 +190,7 @@
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>0125G000001QBa1QAG</stringValue>
+                <elementReference>$Label.Client_Access</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -177,7 +202,7 @@
         <inputAssignments>
             <field>Subject</field>
             <value>
-                <stringValue>{!$Record.Name} - Trial Deactivation</stringValue>
+                <stringValue>Limited Trial Activation - {!$Record.Name}</stringValue>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -187,7 +212,7 @@
         <name>Opportunity_Review_Case</name>
         <label>Opportunity Review Case</label>
         <locationX>50</locationX>
-        <locationY>408</locationY>
+        <locationY>432</locationY>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -227,7 +252,7 @@
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>0125G000001QBYjQAO</stringValue>
+                <elementReference>$Label.Opportunity_Review</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -245,9 +270,51 @@
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordUpdates>
+        <name>Case_Due_Date_Update</name>
+        <label>Case Due Date Update</label>
+        <locationX>578</locationX>
+        <locationY>432</locationY>
+        <filterLogic>(1 OR 2) AND (3 AND 4)</filterLogic>
+        <filters>
+            <field>ActivationDeactivation_Needs__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Limited Trial Deactivation</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ActivationDeactivation_Needs__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Full Trial Deactivation</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Due_Date__c</field>
+            <value>
+                <elementReference>$Record.Trial_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
     <start>
-        <locationX>320</locationX>
-        <locationY>0</locationY>
+        <locationX>716</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Trial_Start_Or_Deactivation_Decision_On_Oppty</targetReference>
         </connector>
@@ -255,9 +322,6 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <scheduledPaths>
             <name>Create_Deactivation_Case</name>
-            <connector>
-                <targetReference>TrialEndDeactivationCaseCondition</targetReference>
-            </connector>
             <label>Create Deactivation Case</label>
             <offsetNumber>1</offsetNumber>
             <offsetUnit>Minutes</offsetUnit>
