@@ -1980,7 +1980,6 @@ Owner.Id = $User.Id)</formula>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
-            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
@@ -1996,12 +1995,12 @@ Owner.Id = $User.Id)</formula>
                 <value>
                     <fullName>Re-visit Timing</fullName>
                     <default>false</default>
-                    <label>Re-visit Timing</label>
+                    <label>Revisit Timing</label>
                 </value>
                 <value>
                     <fullName>Not Viable Now</fullName>
                     <default>false</default>
-                    <label>Not Viable Now</label>
+                    <label>Not Viable</label>
                 </value>
                 <value>
                     <fullName>Pipeline</fullName>
@@ -2115,8 +2114,8 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>Re_visit_Date__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>This field must be entered when “Re-visit Timing” is selected.</inlineHelpText>
-        <label>Re-visit Date</label>
+        <inlineHelpText>This field must be entered when “Revisit Timing” is selected.</inlineHelpText>
+        <label>Revisit Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
@@ -5033,10 +5032,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pipeline</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Re-visit Timing</fullName>
                 <default>false</default>
             </values>
@@ -6474,7 +6469,7 @@ ISBLANK(Prospect_Notes__c),
 RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
 )</errorConditionFormula>
         <errorDisplayField>Prospect_Notes__c</errorDisplayField>
-        <errorMessage>Please provide Prospect Notes when Prospect Category &quot;Not Viable Now&quot; is selected</errorMessage>
+        <errorMessage>Please provide Prospect Notes when Prospect Category &quot;Not Viable&quot; is selected</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Revisit_Date</fullName>
@@ -6486,7 +6481,7 @@ ISBLANK(Re_visit_Date__c),
 RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
 )</errorConditionFormula>
         <errorDisplayField>Prospect_Category__c</errorDisplayField>
-        <errorMessage>Please provide the Re-visit Date if the Prospect Category is Re-visit Timing</errorMessage>
+        <errorMessage>Please provide the Revisit Date if the Prospect Category is Revisit Timing</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Revisit_Timing</fullName>
