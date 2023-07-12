@@ -16,7 +16,7 @@ public with sharing class Plative_GSAWebCalloutUtility {
 
         //Fetch field related to the recordId for either account or contact
         accountIdMap = new Map<Id, Account>([Select Id,Name,Product_Line__c,GSA_ID__c from Account where Id = :recordId]);
-        contactIdMap = new Map<Id, Contact>([Select Id,Name,AccountId,Account.GSA_ID__c,Account.Account_Status__c,FirstName,LastName,Email,Username__c,Datalink_Access_New__c,Website_Access_New__c,GSA_ID__c from Contact where Id = :recordId]);
+        contactIdMap = new Map<Id, Contact>([Select Id,Name,AccountId,Account.GSA_ID__c,Account.Account_Status__c,FirstName,LastName,Email,Username__c,Datalink_Access_New__c,Website_Access_New__c,GSA_ID__c, Left_this_Account__c, Contact_Status__c from Contact where Id = :recordId]);
 
         List<SObject> sObjectUpdateList = new List<SObject>();
         List<Integration_Log__c > integrationLogInsertList = new List<Integration_Log__c>();
@@ -44,12 +44,10 @@ public with sharing class Plative_GSAWebCalloutUtility {
                     //endpoint += '/companies/' + action;
 					endpoint = platform.Company_Activation__c;
                     Account accnt = accountIdMap.get(recordId);
-                    List<Account_Product_Line__c> productLineList = [Select Id,Product__r.Name,Product__r.Website_Product__c, Trial__c from Account_Product_Line__c where Account__c = :accnt.Id];
+                    List<Account_Product_Line__c> productLineList = [Select Id,Product__r.Name,Product__r.Website_Product__c from Account_Product_Line__c where Account__c = :accnt.Id];
                     String productLines = '';
                     for(Account_Product_Line__c productLine: productLineList){
-                        if (productLine.Trial__c) productLines += productLine.Product__r.Website_Product__c + ' - Trial;';
-                        else productLines += productLine.Product__r.Website_Product__c + ';';
-                        
+                        productLines += productLine.Product__r.Website_Product__c + ';';                        
                     }
                     productLines = productLines.removeEnd(';');
 
@@ -143,6 +141,12 @@ public with sharing class Plative_GSAWebCalloutUtility {
                 else if (action == 'deactivate') {
                     Contact cont = contactIdMap.get(recordId);
                     system.debug('activate user');
+                    // SF-574 - Left this Account field 
+                    if (String.isNotBlank(cont.Account.Account_Status__c) && cont.Account.Account_Status__c == 'Active'
+                        && String.isBlank(cont.Left_this_Account__c) && cont.Contact_Status__c == 'Active') {
+                        message = 'Error : Please update the field, “Left this Account” before deactivating this contact.';
+                        return message;
+                    }
                     endpoint = platform.User_Deactivation__c + cont.GSA_ID__c + '/' + action;
                     request.setEndpoint(endpoint);
                     JSONGenerator gen = JSON.createGenerator(true);
@@ -227,7 +231,8 @@ public with sharing class Plative_GSAWebCalloutUtility {
 
                         //If record is of contact sobject & action is activate
                         else if (sObjectApiName.toLowerCase() == 'contact' && action == 'activate') {
-                            sObjectUpdateList.add(new Contact(Id = recordId, Contact_Status__c = 'Active', Activation_Date__c=System.today(), Activate_Contact__c=true));
+                            // SF-574 - Update Left_this_Account__c as null if contact is moved to a different account or activated
+                            sObjectUpdateList.add(new Contact(Id = recordId, Contact_Status__c = 'Active', Activation_Date__c=System.today(), Activate_Contact__c=true, Left_this_Account__c = null));
                             contactIdSetForED.add(recordId);
                         }
  

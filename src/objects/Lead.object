@@ -310,9 +310,8 @@
         <fields>Name</fields>
         <fields>Company</fields>
         <fields>Title</fields>
-        <fields>Phone</fields>
-        <fields>MobilePhone</fields>
-        <fields>Email</fields>
+        <fields>LeadSource</fields>
+        <fields>Lead_Classification__c</fields>
         <fields>HasOptedOutOfEmail</fields>
         <fields>Status</fields>
         <label>Leads Custom Compact Layout</label>
@@ -364,8 +363,8 @@
     <fields>
         <fullName>Assignment_Team__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>Team name of the lead owner after moving out of the queue</inlineHelpText>
-        <label>Assignment Team</label>
+        <inlineHelpText>Initial Team this lead was assigned to</inlineHelpText>
+        <label>Assigned Team</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -393,6 +392,26 @@
                     <fullName>US Research</fullName>
                     <default>false</default>
                     <label>US Research</label>
+                </value>
+                <value>
+                    <fullName>EU SDR Inbound</fullName>
+                    <default>false</default>
+                    <label>EU SDR Inbound</label>
+                </value>
+                <value>
+                    <fullName>US SDR Inbound</fullName>
+                    <default>false</default>
+                    <label>US SDR Inbound</label>
+                </value>
+                <value>
+                    <fullName>SDR Outbound</fullName>
+                    <default>false</default>
+                    <label>SDR Outbound</label>
+                </value>
+                <value>
+                    <fullName>Head of SDR&apos;s</fullName>
+                    <default>false</default>
+                    <label>Head of SDR&apos;s</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -926,6 +945,11 @@
                     <default>false</default>
                     <label>Trial</label>
                 </value>
+                <value>
+                    <fullName>Client + Trial</fullName>
+                    <default>false</default>
+                    <label>Client + Trial</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1009,6 +1033,21 @@
         <fullName>HasOptedOutOfFax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Inbound_Lead__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(LeadSource , &quot;Marketing Qualified&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Inquiry&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Digital Campaign&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Conference/Event&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Slide Request&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Targeted Campaign&quot;) , TRUE, 
+FALSE
+))))))</formula>
+        <label>Inbound Lead?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>IndividualId</fullName>
@@ -1124,6 +1163,19 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Leads (Lead Contact)</relationshipLabel>
+        <relationshipName>Leads2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Lead_Priority__c</fullName>
@@ -3211,7 +3263,7 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <fullName>Qualifying_Team__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Team name of the lead owner when moved to converted state</inlineHelpText>
-        <label>Qualifying Team</label>
+        <label>Qualified Team</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -3239,6 +3291,26 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
                     <fullName>US Research</fullName>
                     <default>false</default>
                     <label>US Research</label>
+                </value>
+                <value>
+                    <fullName>EU SDR Inbound</fullName>
+                    <default>false</default>
+                    <label>EU SDR Inbound</label>
+                </value>
+                <value>
+                    <fullName>US SDR Inbound</fullName>
+                    <default>false</default>
+                    <label>US SDR Inbound</label>
+                </value>
+                <value>
+                    <fullName>SDR Outbound</fullName>
+                    <default>false</default>
+                    <label>SDR Outbound</label>
+                </value>
+                <value>
+                    <fullName>Head of SDR&apos;s</fullName>
+                    <default>false</default>
+                    <label>Head of SDR&apos;s</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3816,9 +3888,9 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Time_to_Assignment__c</fullName>
         <externalId>false</externalId>
-        <formula>ROUND( MOD( (Assigned_Date__c - CreatedDate ) * 24 * 60, 60 ), 0 )</formula>
+        <formula>(Assigned_Date__c - CreatedDate ) * 24 * 60</formula>
         <inlineHelpText>Calculates the (Assigned Date - Created Date) in Minutes</inlineHelpText>
-        <label>Time to Assignment</label>
+        <label>Time to Assigned</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -3829,9 +3901,9 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Time_to_Conversion__c</fullName>
         <externalId>false</externalId>
-        <formula>ROUND( MOD( (Qualified_Date__c - CreatedDate ) * 24 * 60, 60 ), 0 )</formula>
+        <formula>(Qualified_Date__c - CreatedDate ) * 24 * 60</formula>
         <inlineHelpText>Calculates the (Qualified Date - Created Date) in Minutes</inlineHelpText>
-        <label>Time to Conversion</label>
+        <label>Time to Qualified</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -4494,6 +4566,107 @@ Stored as Long on Solr.</description>
         <active>true</active>
         <businessProcess>Marketing</businessProcess>
         <label>Marketing</label>
+        <picklistValues>
+            <picklist>GS_Relationship__c</picklist>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client %2B Trial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Assignment_Team__c</picklist>
+            <values>
+                <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Qualifying_Team__c</picklist>
+            <values>
+                <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>CRE_Exposure__c</picklist>
             <values>
@@ -7330,6 +7503,37 @@ Stored as Long on Solr.</description>
         <businessProcess>Referrals</businessProcess>
         <compactLayoutAssignment>Referral_Lead</compactLayoutAssignment>
         <label>Referral</label>
+        <picklistValues>
+            <picklist>GS_Relationship__c</picklist>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client %2B Trial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
@@ -10222,6 +10426,18 @@ AND(
 (ISBLANK( Phone )) 
 ))</errorConditionFormula>
         <errorMessage>You must enter an Email or Phone number to qualify a lead or convert it (stage 2).</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_GS_Relationship</fullName>
+        <active>true</active>
+        <description>Input GS Relationship when lead is marked as Disqualified</description>
+        <errorConditionFormula>AND(
+$RecordType.Name = &quot;Marketing&quot;,
+ISPICKVAL( GS_Relationship__c, &quot;&quot;),
+ISPICKVAL( Status , &quot;Disqualified&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>GS_Relationship__c</errorDisplayField>
+        <errorMessage>Please provide GS Relationship before disqualifying this lead</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Reason_Disqualified</fullName>

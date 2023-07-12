@@ -4,7 +4,7 @@
         <name>Notify_to_User_for_Lost_Product</name>
         <label>Notify to User for Lost Product</label>
         <locationX>50</locationX>
-        <locationY>1799</locationY>
+        <locationY>1631</locationY>
         <actionName>OpportunityLineItem.React_News_Notification_Lost_Product</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -20,7 +20,7 @@
         <name>Is_React_News_Notification_required</name>
         <label>Is React News Notification required</label>
         <locationX>402</locationX>
-        <locationY>1031</locationY>
+        <locationY>947</locationY>
         <assignmentItems>
             <assignToReference>ReactNewsNotificationRequired</assignToReference>
             <operator>Assign</operator>
@@ -43,7 +43,7 @@
         <name>Update_Finance_Effective_Date_As_Closed_Opp_Date</name>
         <label>Update Finance Effective Date As Closed Opp Date</label>
         <locationX>270</locationX>
-        <locationY>695</locationY>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>ClosedLineItem.Id</assignToReference>
             <operator>Assign</operator>
@@ -80,7 +80,7 @@
         <name>Update_Finance_Effective_Date_As_Start_Date</name>
         <label>Update Finance Effective Date As Start Date</label>
         <locationX>534</locationX>
-        <locationY>695</locationY>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>StartDateLineItems.Id</assignToReference>
             <operator>Assign</operator>
@@ -117,7 +117,7 @@
         <name>Check_Finance_Effective_Date_Condition_0</name>
         <label>Check Finance Effective Date Condition</label>
         <locationX>534</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <defaultConnector>
             <targetReference>Is_React_news_Lost_Product</targetReference>
         </defaultConnector>
@@ -171,7 +171,7 @@
         <name>Is_React_news_Lost_Product</name>
         <label>Is React news Lost Product</label>
         <locationX>534</locationX>
-        <locationY>911</locationY>
+        <locationY>839</locationY>
         <defaultConnector>
             <targetReference>Iterate_Line_Items</targetReference>
         </defaultConnector>
@@ -200,6 +200,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Iterate_Line_Items.Product2.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>React News</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Is_React_News_Notification_required</targetReference>
             </connector>
@@ -210,7 +217,7 @@
         <name>Is_Status_Changes</name>
         <label>Is Status Changes</label>
         <locationX>182</locationX>
-        <locationY>1679</locationY>
+        <locationY>1523</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Status_Changes</name>
@@ -232,7 +239,7 @@
         <name>IsLineItemListEmpty</name>
         <label>IsLineItemListEmpty</label>
         <locationX>182</locationX>
-        <locationY>1343</locationY>
+        <locationY>1223</locationY>
         <defaultConnector>
             <targetReference>Is_Status_Changes</targetReference>
         </defaultConnector>
@@ -260,7 +267,7 @@
         <name>Iterate_Line_Items</name>
         <label>Iterate Line Items</label>
         <locationX>182</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <collectionReference>Opportunity_Line_Items</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -293,7 +300,7 @@
         <name>Opportunity_Line_Items</name>
         <label>Opportunity Line Items</label>
         <locationX>182</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Iterate_Line_Items</targetReference>
@@ -328,7 +335,7 @@
         <name>Update_Opportunity_Line_Items</name>
         <label>Update Opportunity Line Items</label>
         <locationX>50</locationX>
-        <locationY>1463</locationY>
+        <locationY>1331</locationY>
         <connector>
             <targetReference>Is_Status_Changes</targetReference>
         </connector>
