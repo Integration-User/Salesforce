@@ -31,6 +31,13 @@
                     <stringValue>Full Access</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Products__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>React News</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Opportunity_Review_Case</targetReference>
             </connector>
@@ -59,6 +66,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Limited Access</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Products__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>React News</stringValue>
                 </rightValue>
             </conditions>
             <connector>
