@@ -272,6 +272,13 @@ public class Plative_OpportunityRenewalHelper {
                      newOLI.Start_Date__c = OLI.End_Date__c.addDays(1);
                     newOLI.End_Date__c = newOLI.Start_Date__c.addYears(1).addDays(-1);
                 }
+                
+                /*SF-540 - Leap Year Dates*/
+                if(newOLI.Start_Date__c != null && newOLI.End_Date__c != null 
+                   && Date.isLeapYear(newOLI.Start_Date__c.year()) 
+                   && newOLI.End_Date__c.daysBetween(newOLI.Start_Date__c) == 364) 
+                    newOLI.End_Date__c = OLI.End_Date__c.addDays(1);
+                    
                 oliToCreate.add(newOLI);
             }     
         
