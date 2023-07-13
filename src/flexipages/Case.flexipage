@@ -56,6 +56,338 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Full Trial Activation&lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt; - for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))); color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(116, 116, 116))); font-size: var(--lwc-fontSize3,0.8125rem);&quot;&gt;Add Products &amp;amp; Trial Dates&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Add Account Email Distributions&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText12</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Full Trial Activation</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Upsell</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Renewal</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Full Trial Deactivation&lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, sans-serif;&quot;&gt;for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Remove Account Email Distributions associated with Trial Products&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))); color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(116, 116, 116))); font-size: var(--lwc-fontSize3,0.8125rem); font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, Helvetica, Arial, sans-serif, &apos;Apple Color Emoji&apos;, &apos;Segoe UI Emoji&apos;, &apos;Segoe UI Symbol&apos;);&quot;&gt;Remove Products where Trial = True&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText13</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Full Trial Deactivation</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Renewal</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Upsell</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Full Trial Conversion &lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;- &lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, sans-serif;&quot;&gt;for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(116, 116, 116))); font-size: var(--lwc-fontSize3,0.8125rem); background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255)));&quot;&gt;Ensure all products listed on the opportunity are active at the account&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText11</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Full Trial Conversion</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>New</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Renewal</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Upsell</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Full Trial Activation&lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, sans-serif;&quot;&gt;for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))); color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(116, 116, 116))); font-size: var(--lwc-fontSize3,0.8125rem);&quot;&gt;Add Products &amp;amp; Trial Dates&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))); color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(116, 116, 116))); font-size: var(--lwc-fontSize3,0.8125rem);&quot;&gt;Activate account&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Add Account Email Distributions&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText9</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Full Trial Activation</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>New</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Full Trial Deactivation&lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, sans-serif;&quot;&gt;for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Remove Account Email Distributions&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))); color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(116, 116, 116))); font-size: var(--lwc-fontSize3,0.8125rem);&quot;&gt;Deactivate Account&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Delete Products&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText10</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Full Trial Deactivation</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>New</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; color: black;&quot;&gt;Limited Trial Activation&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: black;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: rgb(0, 0, 0);&quot;&gt;for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Add Products with Trial = true &amp;amp; Add Trial Dates&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Add Account Email Distributions&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText14</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Limited Trial Activation</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Renewal</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Upsell</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; color: black;&quot;&gt;Limited Trial Activation&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: black;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: rgb(0, 0, 0);&quot;&gt;for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Add Products with Trial = true, Datalink False &amp;amp; Add Trial Dates&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Activate account&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Add Account Email Distributions&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText6</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Limited Trial Activation</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>New</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Limited Trial Deactivation&lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, sans-serif;&quot;&gt;for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Remove Account Email Distributions&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Deactivate account&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Delete Products&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText7</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Limited Trial Deactivation</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>New</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Limited Trial Deactivation&lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt; - for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Remove Account Email Distributions associated with Trial Products&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Remove Products where Trial = True&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText15</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Limited Trial Deactivation</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Renewal</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Upsell</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Limited Trial Conversion &lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;- &lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, sans-serif;&quot;&gt;for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Review list of upsold products, uncheck the trial box if any&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText16</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Limited Trial Conversion</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Renewal</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Upsell</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Limited Trial Conversion &lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;- &lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, sans-serif;&quot;&gt;for products tied to this opportunity…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Deactivate account&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Add Products&lt;/li&gt;&lt;li&gt;Check Datalink = True&lt;/li&gt;&lt;li&gt;Activate Account&lt;/li&gt;&lt;li&gt;Add Account Email Distributions&lt;/li&gt;&lt;li&gt;Activate&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText8</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Limited Trial Conversion</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Sales_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>New</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
                     <value>&lt;p&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Full Account Deactivation&lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt; - for all products at account…&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Remove &lt;/span&gt;&lt;strong style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;all&lt;/strong&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt; Account Email Distros &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Make sure Contact Email Distro&apos;s were automatically removed also&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Deactivate account&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Delete &lt;strong&gt;all &lt;/strong&gt;Products&amp;nbsp;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
@@ -332,6 +664,26 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>opportunityRelatedList</componentName>
+                <identifier>c_opportunityRelatedList</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ba8906ff-91b3-45a5-8844-837a21f124af</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>true</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-4c79fc54-0528-48f4-9fbf-ad62ae939d7a</value>
@@ -342,6 +694,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>detailTab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-ba8906ff-91b3-45a5-8844-837a21f124af</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Products</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-86a55c3b-1aab-4697-b33a-1abdd07a1157</name>
