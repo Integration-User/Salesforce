@@ -44,10 +44,12 @@ public with sharing class Plative_GSAWebCalloutUtility {
                     //endpoint += '/companies/' + action;
 					endpoint = platform.Company_Activation__c;
                     Account accnt = accountIdMap.get(recordId);
-                    List<Account_Product_Line__c> productLineList = [Select Id,Product__r.Name,Product__r.Website_Product__c from Account_Product_Line__c where Account__c = :accnt.Id];
+                    List<Account_Product_Line__c> productLineList = [Select Id,Product__r.Name,Product__r.Website_Product__c, Trial__c from Account_Product_Line__c where Account__c = :accnt.Id];
                     String productLines = '';
                     for(Account_Product_Line__c productLine: productLineList){
-                        productLines += productLine.Product__r.Website_Product__c + ';';                        
+                        if (productLine.Trial__c) productLines += productLine.Product__r.Website_Product__c + ' - Trial;';
+                        else productLines += productLine.Product__r.Website_Product__c + ';';
+                        
                     }
                     productLines = productLines.removeEnd(';');
 

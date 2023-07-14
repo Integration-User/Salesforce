@@ -32159,6 +32159,10 @@
         <field>zisf__zicCleanJob__c.zisf__logs__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Upsell_Process</flow>
+    </flowAccesses>
     <layoutAssignments>
         <layout>API_Settings__mdt-API Settings Layout</layout>
     </layoutAssignments>

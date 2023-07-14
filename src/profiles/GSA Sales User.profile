@@ -14615,11 +14615,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Type_to_Trigger_Survey__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Urgency__c</field>
         <readable>true</readable>
@@ -19050,6 +19045,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.ZoomInfo_Job_Title__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Lead.affectlayer__AffectLayer_Notes__c</field>
         <readable>false</readable>
@@ -20662,6 +20662,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>OpportunityLineItem.Customer_Channel__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OpportunityLineItem.Delivery_Method__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -32185,11 +32190,11 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Cases_Processes</flow>
+        <flow>Lead_Tracking_Automation</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Lead_Tracking_Automation</flow>
+        <flow>Upsell_Process</flow>
     </flowAccesses>
     <layoutAssignments>
         <layout>API_Settings__mdt-API Settings Layout</layout>

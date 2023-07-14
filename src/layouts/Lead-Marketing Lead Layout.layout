@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>DataDotComClean</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -23,11 +24,7 @@
                 <field>Company_Segment__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Lead_Classification__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>LeadSource</field>
             </layoutItems>
             <layoutItems>
@@ -39,12 +36,20 @@
                 <field>Website</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Lead_Priority__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Next_Outreach_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>List_Membership_Lead__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ZoomInfo_Job_Title__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -66,7 +71,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>GS_Relationship__c</field>
+                <field>Phone</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -81,10 +86,6 @@
                 <field>Person_Stage__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Lead_Priority__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Required</behavior>
                 <field>CurrencyIsoCode</field>
             </layoutItems>
@@ -95,14 +96,14 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Lead Timeline</label>
+        <label>Lead Stats</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>Assignment_Team__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>Assigned_Date__c</field>
             </layoutItems>
             <layoutItems>
@@ -111,21 +112,25 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>CreatedById</field>
+                <field>Lead_Classification__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>Qualifying_Team__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>Qualified_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Time_to_Conversion__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>GS_Relationship__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -308,6 +313,10 @@
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CreatedById</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>LastModifiedById</field>

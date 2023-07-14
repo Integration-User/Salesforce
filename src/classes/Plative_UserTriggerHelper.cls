@@ -89,11 +89,11 @@ public class Plative_UserTriggerHelper  {
                     List<PermissionSetAssignment> isPresent  = [Select Id from PermissionSetAssignment 
                                                           where PermissionSetGroupId = :permssionSetGrpID AND AssigneeId =: permSet.AssigneeId];
                     if(isPresent.isEmpty()) {
-                    permSet.PermissionSetGroupId = permssionSetGrpID;
-                    insert permSet;
+                        permSet.PermissionSetGroupId = permssionSetGrpID;
+                        insert permSet;
+                    }
                 }
             }
-        }
         }
         
     }
