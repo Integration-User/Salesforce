@@ -4,8 +4,8 @@
     <assignments>
         <name>Get_GSA_Contact_Count</name>
         <label>Get GSA Contact Count</label>
-        <locationX>1140</locationX>
-        <locationY>465</locationY>
+        <locationX>50</locationX>
+        <locationY>1055</locationY>
         <assignmentItems>
             <assignToReference>ContactCount</assignToReference>
             <operator>AssignCount</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Get_GSA_Contact_Ids</name>
         <label>Get GSA Contact Ids</label>
-        <locationX>1163</locationX>
-        <locationY>266</locationY>
+        <locationX>270</locationX>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>ContactIds</assignToReference>
             <operator>Add</operator>
@@ -36,8 +36,8 @@
     <decisions>
         <name>Check_Who_Id_Value</name>
         <label>Check Who Id Value</label>
-        <locationX>800</locationX>
-        <locationY>145</locationY>
+        <locationX>512</locationX>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_WhoId_Not_Empty</name>
@@ -47,6 +47,13 @@
                 <operator>GreaterThan</operator>
                 <rightValue>
                     <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Outgoing Email</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -71,6 +78,13 @@
                     <numberValue>0.0</numberValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Outgoing Email</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Set_GSA_Analyst_Count_Empty_For_Task</targetReference>
             </connector>
@@ -80,8 +94,8 @@
     <decisions>
         <name>Checking_Contact_Record_Found</name>
         <label>Checking Contact Record Found</label>
-        <locationX>945</locationX>
-        <locationY>461</locationY>
+        <locationX>182</locationX>
+        <locationY>947</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Contact_Exists</name>
@@ -105,8 +119,8 @@
     <loops>
         <name>Asssign_GAS_ContactIds</name>
         <label>Asssign GAS ContactIds</label>
-        <locationX>977</locationX>
-        <locationY>267</locationY>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
         <collectionReference>TaskWhoRelation_Info</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -125,7 +139,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -138,8 +152,8 @@
     <recordLookups>
         <name>Get_Contact_Details</name>
         <label>Get Contact Details</label>
-        <locationX>861</locationX>
-        <locationY>376</locationY>
+        <locationX>182</locationX>
+        <locationY>839</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Checking_Contact_Record_Found</targetReference>
@@ -168,8 +182,8 @@
     <recordLookups>
         <name>TaskWhoRelation_Info</name>
         <label>TaskWhoRelationInfo</label>
-        <locationX>1042</locationX>
-        <locationY>142</locationY>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Asssign_GAS_ContactIds</targetReference>
@@ -191,8 +205,8 @@
     <recordUpdates>
         <name>Set_GSA_Analyst_Count_Empty_For_Task</name>
         <label>Set GSA Analyst Count Empty For Task</label>
-        <locationX>692</locationX>
-        <locationY>421</locationY>
+        <locationX>578</locationX>
+        <locationY>431</locationY>
         <inputAssignments>
             <field>Analyst_Count_Data__c</field>
             <value>
@@ -204,8 +218,8 @@
     <recordUpdates>
         <name>Update_Count_Of_GSA_Analyst</name>
         <label>Update Count Of GSA Analyst</label>
-        <locationX>1287</locationX>
-        <locationY>465</locationY>
+        <locationX>50</locationX>
+        <locationY>1163</locationY>
         <inputAssignments>
             <field>Analyst_Count_Data__c</field>
             <value>
@@ -215,8 +229,8 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>426</locationX>
-        <locationY>50</locationY>
+        <locationX>386</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Check_Who_Id_Value</targetReference>
         </connector>
