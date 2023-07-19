@@ -18,11 +18,35 @@
         </value>
     </choices>
     <choices>
+        <name>DemoRequest</name>
+        <choiceText>Demo Request</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Demo Request</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>DigitalCampaign</name>
         <choiceText>Digital Campaign</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>Digital Campaign</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>GreenStreetEvent</name>
+        <choiceText>Green Street Event</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Green Street Event</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>IndustryMarketingEvent</name>
+        <choiceText>Industry Marketing Event</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Industry Marketing Event</stringValue>
         </value>
     </choices>
     <choices>
@@ -66,6 +90,14 @@
         </value>
     </choices>
     <choices>
+        <name>PaidAcquisition</name>
+        <choiceText>Paid Acquisition</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Paid Acquisition</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>ProactiveOutreach</name>
         <choiceText>Proactive Outreach</choiceText>
         <dataType>String</dataType>
@@ -74,11 +106,27 @@
         </value>
     </choices>
     <choices>
+        <name>ReactUSNews</name>
+        <choiceText>React and US News Ecomm Inquiries</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>React &amp; US News Ecomm Inquiries</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>Referral</name>
         <choiceText>Referral</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>Referral</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>ReportRequest</name>
+        <choiceText>Report Request</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Report Request</stringValue>
         </value>
     </choices>
     <choices>
@@ -103,6 +151,14 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Upsell Opportunity</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>VirtualEvent</name>
+        <choiceText>Virtual Event</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Virtual Event</stringValue>
         </value>
     </choices>
     <choices>
@@ -164,7 +220,8 @@
             <label>Non US Identified Country</label>
         </rules>
     </decisions>
-    <description>SF-584</description>
+    <description>SF-584
+SF-591</description>
     <dynamicChoiceSets>
         <name>LeadSource</name>
         <dataType>Picklist</dataType>
@@ -380,12 +437,16 @@
         </fields>
         <fields>
             <name>Lead_Source</name>
-            <choiceReferences>MarketingQualified</choiceReferences>
             <choiceReferences>Inquiry</choiceReferences>
-            <choiceReferences>DigitalCampaign</choiceReferences>
-            <choiceReferences>ConferenceEvent</choiceReferences>
+            <choiceReferences>DemoRequest</choiceReferences>
+            <choiceReferences>MarketingQualified</choiceReferences>
             <choiceReferences>SlideRequest</choiceReferences>
-            <choiceReferences>TargetedCampaign</choiceReferences>
+            <choiceReferences>ReactUSNews</choiceReferences>
+            <choiceReferences>VirtualEvent</choiceReferences>
+            <choiceReferences>GreenStreetEvent</choiceReferences>
+            <choiceReferences>IndustryMarketingEvent</choiceReferences>
+            <choiceReferences>ReportRequest</choiceReferences>
+            <choiceReferences>PaidAcquisition</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Lead Source</fieldText>
             <fieldType>DropdownBox</fieldType>
