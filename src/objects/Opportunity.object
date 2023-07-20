@@ -2914,8 +2914,8 @@ OwnerId  = $User.Id)</formula>
         <fullName>Opportunity_Age__c</fullName>
         <description>How long is/was this deal open (SS2-Close)</description>
         <externalId>false</externalId>
-        <formula>IF(IsClosed,(CloseDate - (Prospect_Since__c)), 
-TODAY() - (Prospect_Since__c))</formula>
+        <formula>IF(IsClosed,(CloseDate - DATEVALUE(CreatedDate)),
+TODAY() - DATEVALUE(CreatedDate))</formula>
         <label>Opportunity Age</label>
         <precision>18</precision>
         <required>false</required>
