@@ -3458,6 +3458,36 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
                     <default>false</default>
                     <label>Academic - Professor</label>
                 </value>
+                <value>
+                    <fullName>Unreachable</fullName>
+                    <default>false</default>
+                    <label>Unreachable</label>
+                </value>
+                <value>
+                    <fullName>Timing</fullName>
+                    <default>false</default>
+                    <label>Timing</label>
+                </value>
+                <value>
+                    <fullName>No Research Budget</fullName>
+                    <default>false</default>
+                    <label>No Research Budget</label>
+                </value>
+                <value>
+                    <fullName>Product Fit</fullName>
+                    <default>false</default>
+                    <label>Product Fit</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Student/non-buying EDU/Media/non-viable contact</fullName>
+                    <default>false</default>
+                    <label>Student/non-buying EDU/Media/non-viable contact</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -4577,6 +4607,33 @@ Stored as Long on Solr.</description>
         <active>true</active>
         <businessProcess>Marketing</businessProcess>
         <label>Marketing</label>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>No Research Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Fit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student%2Fnon-buying EDU%2FMedia%2Fnon-viable contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unreachable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>GS_Relationship__c</picklist>
             <values>
@@ -7046,61 +7103,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Warm</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Reason_Disqualified__c</picklist>
-            <values>
-                <fullName>Academic - Professor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Academic - Student</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Competitor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Current Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engaged but Bad Timing</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engaged but Company Type Doesn%E2%80%99t Use Research%2FData%2FNews</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engaged but No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engaged but Not Responsive</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engaged but Not the Right Contact %28Department%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engaged but Not the Right Contact %28Seniority%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engaged but Still Learning%2FNot Ready for Sales</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engaged but on Prohibited List</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Student%2FProfessor%2FMedia%2FVendor</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
