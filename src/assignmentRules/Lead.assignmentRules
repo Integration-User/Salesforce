@@ -6,11 +6,21 @@
         <ruleEntry>
             <assignedTo>US_SDR_Inbound</assignedTo>
             <assignedToType>Queue</assignedToType>
-            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <booleanFilter>(1 AND 2 AND 3) AND (4 OR 5)</booleanFilter>
             <criteriaItems>
                 <field>Lead.CreatedById</field>
                 <operation>equals</operation>
                 <value>Integration User</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.CreatedDate</field>
+                <operation>equals</operation>
+                <value>TODAY</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Status</field>
+                <operation>equals</operation>
+                <value>Open</value>
             </criteriaItems>
             <criteriaItems>
                 <field>Lead.Marketing_Identified_Country_lead__c</field>
@@ -35,6 +45,16 @@
                 <operation>notEqual</operation>
                 <value>United States</value>
             </criteriaItems>
+            <criteriaItems>
+                <field>Lead.CreatedDate</field>
+                <operation>equals</operation>
+                <value>TODAY</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Status</field>
+                <operation>equals</operation>
+                <value>Open</value>
+            </criteriaItems>
         </ruleEntry>
         <ruleEntry>
             <criteriaItems>
@@ -45,7 +65,7 @@
             <criteriaItems>
                 <field>Lead.LeadSource</field>
                 <operation>equals</operation>
-                <value>Zoominfo</value>
+                <value>Proactive Outreach</value>
             </criteriaItems>
         </ruleEntry>
     </assignmentRule>
