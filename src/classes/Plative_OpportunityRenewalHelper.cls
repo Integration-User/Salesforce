@@ -35,7 +35,7 @@ public class Plative_OpportunityRenewalHelper {
                     //}
                 }
         
-        OpportunityLineItem[] createdOLIs = [Select Id,Start_Date__c,End_Date__c,OpportunityId,Percentage_of_Total_Amount__c,Product2Id,Quantity,PricebookEntryId from OpportunityLineItem where OpportunityId in :soRenewalOpportunityMap.keyset() AND Lost_Product__c = false];
+        OpportunityLineItem[] createdOLIs = [Select Id,Start_Date__c,End_Date__c,OpportunityId,Percentage_of_Total_Amount__c,Product2Id,Quantity,PricebookEntryId, Delivery_Method__c from OpportunityLineItem where OpportunityId in :soRenewalOpportunityMap.keyset() AND Lost_Product__c = false];
         
         for(OpportunityLineItem oli : createdOLIs){
             if(soOpportunityLineItemMap.containsKey(oli.OpportunityId)){
@@ -242,6 +242,8 @@ public class Plative_OpportunityRenewalHelper {
                 //newOLI.Start_Date__c = starDt;
                 //newOLI.End_Date__c = endDt;
                 newOLI.Sales_Type__c = 'Renewal';
+                // SF-560 - Delivery Method Requirements
+                newOLI.Delivery_Method__c = OLI.Delivery_Method__c;
                 newOLI.Starting_Price__c = populateArr ? OLI.ARR_Formula__c : newOLI.Starting_Price__c;
 
                 newOLI.UnitPrice = populateArr ? newOLI.Starting_Price__c : newOLI.UnitPrice;
@@ -402,7 +404,7 @@ public class Plative_OpportunityRenewalHelper {
         
         //Get related Opportunity Products 
         Map<Id,List<OpportunityLineItem>> opportunityIdVsProducts = new Map<Id,List<OpportunityLineItem>>();
-        List<OpportunityLineItem> opptyLineItemsList = [Select Id,Opportunity.Automatic_Renewal__c,Start_Date__c,End_Date__c,OpportunityId,Percentage_of_Total_Amount__c,Product2Id,Quantity,PricebookEntryId,ARR_Formula__c  from OpportunityLineItem where OpportunityId IN :opportunityMap.keySet() AND Lost_Product__c = false];
+        List<OpportunityLineItem> opptyLineItemsList = [Select Id,Opportunity.Automatic_Renewal__c,Start_Date__c,End_Date__c,OpportunityId,Percentage_of_Total_Amount__c,Product2Id,Quantity,PricebookEntryId,ARR_Formula__c, Delivery_Method__c from OpportunityLineItem where OpportunityId IN :opportunityMap.keySet() AND Lost_Product__c = false];
         for(Integer i=0,j=opptyLineItemsList.size(); i<j; i++){
             if(!opportunityIdVsProducts.containsKey(opptyLineItemsList[i].OpportunityId)){
                 opportunityIdVsProducts.put(opptyLineItemsList[i].OpportunityId, new List<OpportunityLineItem>());
