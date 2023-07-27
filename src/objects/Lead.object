@@ -1133,6 +1133,15 @@ FALSE
         <fullName>LastTransferDate</fullName>
     </fields>
     <fields>
+        <fullName>Last_Page_Seen__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Page Seen</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>LeadSource</fullName>
         <description>Make sure Lead Source values matches with Contact and Opportunity Lead Source fields.</description>
         <trackFeedHistory>true</trackFeedHistory>
@@ -3179,6 +3188,82 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Product_Interest_Marketing__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Interest</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>U.S. News</fullName>
+                    <default>false</default>
+                    <label>U.S. News</label>
+                </value>
+                <value>
+                    <fullName>Pan-European React News</fullName>
+                    <default>false</default>
+                    <label>Pan-European React News</label>
+                </value>
+                <value>
+                    <fullName>U.S. Sales Comps</fullName>
+                    <default>false</default>
+                    <label>U.S. Sales Comps</label>
+                </value>
+                <value>
+                    <fullName>European Sales Comps</fullName>
+                    <default>false</default>
+                    <label>European Sales Comps</label>
+                </value>
+                <value>
+                    <fullName>U.S. Research</fullName>
+                    <default>false</default>
+                    <label>U.S. Research</label>
+                </value>
+                <value>
+                    <fullName>Pan-European Research</fullName>
+                    <default>false</default>
+                    <label>Pan-European Research</label>
+                </value>
+                <value>
+                    <fullName>Detailed NAV and Earnings Models</fullName>
+                    <default>false</default>
+                    <label>Detailed NAV and Earnings Models</label>
+                </value>
+                <value>
+                    <fullName>U.S. Portfolio Tools (Includes AVM &amp; Portfolio Analytics)</fullName>
+                    <default>false</default>
+                    <label>U.S. Portfolio Tools (Includes AVM &amp; Portfolio Analytics)</label>
+                </value>
+                <value>
+                    <fullName>Data Delivery (Includes Standardized Downloads, DataLink, &amp; API)</fullName>
+                    <default>false</default>
+                    <label>Data Delivery (Includes Standardized Downloads, DataLink, &amp; API)</label>
+                </value>
+                <value>
+                    <fullName>U.S. Data Analytics</fullName>
+                    <default>false</default>
+                    <label>U.S. Data Analytics</label>
+                </value>
+                <value>
+                    <fullName>Pan-European Data Analytics</fullName>
+                    <default>false</default>
+                    <label>Pan-European Data Analytics</label>
+                </value>
+                <value>
+                    <fullName>U.S. Rent Comps</fullName>
+                    <default>false</default>
+                    <label>U.S. Rent Comps</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Product_Interest__c</fullName>
         <externalId>false</externalId>
         <label>Product Interest</label>
@@ -3226,6 +3311,56 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
             </valueSettings>
         </valueSet>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Professional_Function__c</fullName>
+        <externalId>false</externalId>
+        <label>Professional Function</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Acquisition</fullName>
+                    <default>false</default>
+                    <label>Acquisition</label>
+                </value>
+                <value>
+                    <fullName>Credit/Lending</fullName>
+                    <default>false</default>
+                    <label>Credit/Lending</label>
+                </value>
+                <value>
+                    <fullName>Asset Manager</fullName>
+                    <default>false</default>
+                    <label>Asset Manager</label>
+                </value>
+                <value>
+                    <fullName>C Suite</fullName>
+                    <default>false</default>
+                    <label>C Suite</label>
+                </value>
+                <value>
+                    <fullName>Vice President</fullName>
+                    <default>false</default>
+                    <label>Vice President</label>
+                </value>
+                <value>
+                    <fullName>Portfolio Manager</fullName>
+                    <default>false</default>
+                    <label>Portfolio Manager</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Pronouns</fullName>
@@ -4601,100 +4736,7 @@ Stored as Long on Solr.</description>
         <businessProcess>Marketing</businessProcess>
         <label>Marketing</label>
         <picklistValues>
-            <picklist>Reason_Disqualified__c</picklist>
-            <values>
-                <fullName>No Research Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Product Fit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Student%2Fnon-buying EDU%2FMedia%2Fnon-viable contact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Timing</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Unreachable</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>GS_Relationship__c</picklist>
-            <values>
-                <fullName>Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Client %2B Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Favor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Former</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Parent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Prospect</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Trial</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Assignment_Team__c</picklist>
-            <values>
-                <fullName>EU SDR Inbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Head of SDR%27s</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Hewett Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SDR Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>UK Sales</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US SDR Inbound</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Qualifying_Team__c</picklist>
             <values>
                 <fullName>EU SDR Inbound</fullName>
                 <default>false</default>
@@ -5250,6 +5292,37 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GS_Relationship__c</picklist>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client %2B Trial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7050,6 +7123,57 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Product_Interest_Marketing__c</picklist>
+            <values>
+                <fullName>Data Delivery %28Includes Standardized Downloads%2C DataLink%2C %26 API%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detailed NAV and Earnings Models</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Data Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Data Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Portfolio Tools %28Includes AVM %26 Portfolio Analytics%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Rent Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Sales Comps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Product_Interest__c</picklist>
             <values>
                 <fullName>Advisory Services</fullName>
@@ -7085,6 +7209,72 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Professional_Function__c</picklist>
+            <values>
+                <fullName>Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C Suite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit%2FLending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vice President</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Qualifying_Team__c</picklist>
+            <values>
+                <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Rating</picklist>
             <values>
                 <fullName>Cold</fullName>
@@ -7096,6 +7286,33 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Warm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_Disqualified__c</picklist>
+            <values>
+                <fullName>No Research Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Fit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student%2Fnon-buying EDU%2FMedia%2Fnon-viable contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unreachable</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
