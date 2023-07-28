@@ -38,7 +38,6 @@
     </actionOverrides>
     <brand>
         <headerColor>#559A23</headerColor>
-        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
     <formFactors>Small</formFactors>
