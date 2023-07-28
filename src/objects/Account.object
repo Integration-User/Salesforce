@@ -784,21 +784,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
-        <fullName>Closed_Sales__c</fullName>
-        <externalId>false</externalId>
-        <label>Closed Sales</label>
-        <summarizedField>Opportunity.Amount</summarizedField>
-        <summaryFilterItems>
-            <field>Opportunity.IsWon</field>
-            <operation>equals</operation>
-            <value>True</value>
-        </summaryFilterItems>
-        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <type>Summary</type>
-    </fields>
-    <fields>
         <fullName>Company_Domain_Name__c</fullName>
         <description>Receives Company Domain Name from HubSpot</description>
         <externalId>false</externalId>
