@@ -1684,21 +1684,6 @@ Owner.Id = $User.Id)</formula>
         <type>Summary</type>
     </fields>
     <fields>
-        <fullName>Open_Opportunities__c</fullName>
-        <externalId>false</externalId>
-        <label>Open Opportunities</label>
-        <summarizedField>Opportunity.Amount</summarizedField>
-        <summaryFilterItems>
-            <field>Opportunity.IsClosed</field>
-            <operation>equals</operation>
-            <value>False</value>
-        </summaryFilterItems>
-        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <type>Summary</type>
-    </fields>
-    <fields>
         <fullName>OperatingHoursId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
