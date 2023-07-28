@@ -12416,11 +12416,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.Open_Opportunities__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Account.OperatingHoursId</field>
         <readable>false</readable>
     </fieldPermissions>
