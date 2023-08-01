@@ -784,21 +784,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
-        <fullName>Closed_Sales__c</fullName>
-        <externalId>false</externalId>
-        <label>Closed Sales</label>
-        <summarizedField>Opportunity.Amount</summarizedField>
-        <summaryFilterItems>
-            <field>Opportunity.IsWon</field>
-            <operation>equals</operation>
-            <value>True</value>
-        </summaryFilterItems>
-        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <type>Summary</type>
-    </fields>
-    <fields>
         <fullName>Company_Domain_Name__c</fullName>
         <description>Receives Company Domain Name from HubSpot</description>
         <externalId>false</externalId>
@@ -1695,21 +1680,6 @@ Owner.Id = $User.Id)</formula>
         </summaryFilterItems>
         <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
         <summaryOperation>count</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <type>Summary</type>
-    </fields>
-    <fields>
-        <fullName>Open_Opportunities__c</fullName>
-        <externalId>false</externalId>
-        <label>Open Opportunities</label>
-        <summarizedField>Opportunity.Amount</summarizedField>
-        <summaryFilterItems>
-            <field>Opportunity.IsClosed</field>
-            <operation>equals</operation>
-            <value>False</value>
-        </summaryFilterItems>
-        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
     </fields>
@@ -2934,7 +2904,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <fullName>ZoomInfo_Country_account__c</fullName>
         <externalId>false</externalId>
         <label>ZoomInfo Country</label>
-        <length>50</length>
+        <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
@@ -2962,7 +2932,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <fullName>ZoomInfo_Employee_Count_account__c</fullName>
         <externalId>false</externalId>
         <label>ZoomInfo Employee Count</label>
-        <length>15</length>
+        <length>50</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
@@ -3103,7 +3073,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <fullName>ZoomInfo_Revenue_account__c</fullName>
         <externalId>false</externalId>
         <label>ZoomInfo Revenue</label>
-        <length>15</length>
+        <length>20</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
@@ -3132,7 +3102,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <fullName>ZoomInfo_Street_account__c</fullName>
         <externalId>false</externalId>
         <label>ZoomInfo Street</label>
-        <length>100</length>
+        <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
@@ -3151,7 +3121,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <fullName>ZoomInfo_Ticker_account__c</fullName>
         <externalId>false</externalId>
         <label>ZoomInfo Ticker</label>
-        <length>15</length>
+        <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
@@ -3200,7 +3170,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <fullName>ZoomInfo_Zip_Code_account__c</fullName>
         <externalId>false</externalId>
         <label>ZoomInfo Zip Code</label>
-        <length>10</length>
+        <length>20</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
