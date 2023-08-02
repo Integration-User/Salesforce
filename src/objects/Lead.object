@@ -4272,10 +4272,343 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>ZoomInfo_Company_City_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_Country_Code_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company Country Code</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_Description_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_ID_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_NAICS_Code_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company NAICS Code</label>
+        <length>131000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_Name_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company Name</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_Phone_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_Revenue_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company Revenue</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_Revenue_Range_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company Revenue Range</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_SIC_Code_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company SIC Code</label>
+        <length>131000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_State__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_Street_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company Street</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_Ticker_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company Ticker</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Company_Zip_Code_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Company Zip Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Direct_Phone_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Direct Phone</label>
+        <length>225</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Education_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Education</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Email_Address_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Email Address</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Employee_Count_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Employee Count</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Employment_History_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Employment History</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_First_Name_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo First Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Job_Title_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Job Title</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>ZoomInfo_Job_Title__c</fullName>
         <externalId>false</externalId>
         <label>ZoomInfo Job Title</label>
         <length>225</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Last_Name_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Last Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Last_Updated_Date_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Last Updated Date</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Management_Level_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Management Level</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Person_City_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Person City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Person_Country_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Person Country</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Person_ID_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Person ID</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Person_State_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Person State</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Person_Street_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Person Street</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Person_Zip_Code_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Person Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Technology_Products_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Technology Products</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Website_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Website</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ZoomInfo_Within_EU_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>ZoomInfo Within EU</label>
+        <length>5</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
