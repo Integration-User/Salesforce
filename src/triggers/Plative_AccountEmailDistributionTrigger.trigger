@@ -4,7 +4,7 @@
 * History     : 
 * [25.May.2020] Kunal - Code Creation 
 */
-trigger Plative_AccountEmailDistributionTrigger on Account_Email_Distribution__c (after insert, after delete) {
+trigger Plative_AccountEmailDistributionTrigger on Account_Email_Distribution__c (before insert, before update, after insert, after delete) {
     
     Trigger_Control_Setting__c setting = Trigger_Control_Setting__c.getOrgDefaults();    
     if(Test.isRunningTest() || setting.Account_Email_Distribution__c){
@@ -15,6 +15,11 @@ trigger Plative_AccountEmailDistributionTrigger on Account_Email_Distribution__c
             if(Trigger.isDelete){
                 Plative_AccountEmailDistributionHandler.afterDelete(Trigger.Old);            
             }
+        }
+    }
+    if(Trigger.isBefore) {
+        for(Account_Email_Distribution__c accEmailDistribution : Trigger.New) {
+            accEmailDistribution.Name = accEmailDistribution.Email_Distribution__c;
         }
     }
     
