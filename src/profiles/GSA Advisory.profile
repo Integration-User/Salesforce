@@ -191,12 +191,12 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__Insights</application>
+        <application>standard__HVSConsole</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__LightningInstrumentation</application>
+        <application>standard__Insights</application>
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
@@ -353,6 +353,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ConsolidatedOpportunityTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ContactEmailDistributionTriggerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -904,6 +908,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>OpportunityProductRelatedListController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Plative_AccountEmailDistributionHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1201,6 +1209,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_UserTriggerHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Plative_UserTriggerHandlerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -12115,6 +12127,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Closed_Sales__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Company_Domain_Name__c</field>
         <readable>true</readable>
@@ -12412,6 +12429,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Number_of_Open_Opportunities__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Open_Opportunities__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13610,11 +13632,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignInfluence.ContactId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>CampaignInfluence.Days_to_Close__c</field>
         <readable>true</readable>
@@ -13622,16 +13639,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>CampaignInfluence.Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignInfluence.Influence</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignInfluence.RevenueShare</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -14633,6 +14640,11 @@
         <editable>false</editable>
         <field>Case.of_Days_Open__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case_Record_Type__mdt.Record_Type_Id__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -17466,6 +17478,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Cadence_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Campaign__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17538,6 +17555,11 @@
         <editable>true</editable>
         <field>Event.GSA_Analyst__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Event.Hours_Spent__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -18631,6 +18653,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Encryption_Field__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.European_CPPI__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -19161,6 +19188,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.ZoomInfo_Job_Title__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.ZoomInfo_Last_Name_Lead__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -19555,6 +19587,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Backup_Sales_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Base_Sale_Price__c</field>
         <readable>true</readable>
@@ -19582,6 +19619,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Billing_Schedule__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Budget_Confirmed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.CDB_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -19916,6 +19963,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Discovery_Completed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.EL_Compliance_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20007,6 +20059,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Invoice_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Invoice_Frequency__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20106,6 +20163,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Management_Team__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Market_Focus__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20153,6 +20215,11 @@
         <editable>false</editable>
         <field>Opportunity.News_HFAlert__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.News_ID__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -20206,6 +20273,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Other_Interest__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Other_Invoice_Frequency__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20227,6 +20299,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Percent_Complete__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Personal_Supplement_Sent__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20302,6 +20379,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Quota_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.ROI_Analysis_Completed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20536,6 +20618,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Terms_Approval_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.Terms_NS_Internal_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20607,6 +20694,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Trigger_Real_time_Sync__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Two_Year_Revenue_Credit__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -22295,6 +22387,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>System_Configuration__mdt.IsEnabled__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Task.ActivityDate</field>
         <readable>true</readable>
@@ -22322,6 +22419,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.CDB_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Cadence_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -22398,6 +22500,11 @@
         <editable>true</editable>
         <field>Task.GSA_Analyst__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Task.Hours_Spent__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -26042,6 +26149,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Environmental_Variable__c.copado__Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Epic__c.Developer__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -32399,6 +32511,9 @@
         <layout>Account_Product_Line__c-Account Product Line Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ActionCadence-Cadence Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Alert__mdt-Alert Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -32587,6 +32702,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>CaseInteraction-Case Feed Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case_Record_Type__mdt-Case Record Type Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Child_Object_Sync_Settings__mdt-Child Object Sync Settings Layout</layout>
@@ -32933,6 +33051,9 @@
         <layout>Sync_Settings__mdt-Sync Settings Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>System_Configuration__mdt-System Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Task-Task Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -33019,6 +33140,27 @@
         <layout>copado__User_Story__c-copado__User Story Layout</layout>
     </layoutAssignments>
     <objectPermissions>
+        <object>AAKCS__AAkonsult_Settings__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AAKCS__Campaign_Status_Default_Value__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AAKCS__Campaign_Status_Default__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AAKCS__Error_Log__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AIPredictionEvent</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AIRecordInsight</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>API_Settings__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33028,6 +33170,30 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>AccountContactRelation</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AccountTeamMember</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Account_Email_Distribution__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Account_Product_Line__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>ActivityMetric</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Alert__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AppAnalyticsQueryRequest</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Appcues__c</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33035,6 +33201,24 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Asset</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AssetRelationship</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AssetTokenEvent</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AssociatedLocation</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AsyncOperationEvent</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>AsyncOperationStatus</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Attachment</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33073,6 +33257,21 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>BatchApexErrorEvent</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Batch_Schedule__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>BusinessBrand</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>CMTD__EnhancedRelatedList__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>CallCoachConfigModifyEvent</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33082,6 +33281,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>CampaignMember</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33089,6 +33291,30 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Case</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>CaseComment</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>CaseExternalDocument</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Case_Record_Type__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>ChatterActivity</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Child_Object_Sync_Settings__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>CollaborationGroup</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>CollaborationGroupMember</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>CollaborationGroupRecord</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -33199,6 +33425,24 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>Contact_Email_Distribution__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Contact_Email_Distribution__c_hd</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>ContentDistribution</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>ContentDocument</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>ContentDocumentLink</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>ContentVersion</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33206,6 +33450,27 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Contract</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Customer</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>DDS_FormulaPredictor__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>DDS_ModelScores__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>DDS_SKUCombination__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>DDS_YoYSegmentation__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>DOZISF__Complete_Setting__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>DOZISF__JWT_Setting__mdt</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33235,6 +33500,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>DataObjectDataChgEvent</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33262,6 +33530,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>DuplicateRecordItem</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33269,6 +33540,12 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>DuplicateRecordSet</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>EmailMessage</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Email_Distribution__c</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -33280,6 +33557,45 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>Event</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>EventRelayFeedback</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>FeedComment</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>FeedItem</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Field_Mapping__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Field_Trip__Field_Analysis__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Field_Trip__Field_Analytic_Config__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Field_Trip__Logistics__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Field_Trip__Object_Analysis__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>ForecastingItem__hd</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>GSA_Platform__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>HubSpot_Inc__HubSpot_Intelligence__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>HubSpot_Inc__HubSpot_Intelligence__c_hd</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
@@ -33289,6 +33605,12 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>IdeaComment</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Image</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33296,6 +33618,18 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Individual</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Integration_Log__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>JSON_Mapping__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Knowledge__ka</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Knowledge__kav</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33343,6 +33677,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>LinkedArticle</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33350,6 +33687,27 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Location</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>LocationTrustMeasure</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Log_Setting__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>LogoutEventStream</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>MLModel</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>MLModelFactor</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>MLModelFactorComponent</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>MLModelMetric</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33361,6 +33719,27 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>MacroUsage</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Meeting_Attendee__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Meeting__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Milestone__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>NS_Picklist_Internal_Id__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Netsuite_Integration_User__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Note</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33368,6 +33747,9 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>OperatingHours</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OperatingHoursHoliday</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33379,6 +33761,24 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>OpportunityContactRole</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OpportunityLineItem</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OpportunityLineItemSplit</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OpportunitySplit</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OpportunityTeamMember</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Opportunity__hd</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33386,6 +33786,27 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Order</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OrderItem</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OrgLifecycleNotification</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OrgMetric</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OrgMetricScanResult</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OrgMetricScanSummary</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OutOfOffice</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Partner</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33397,6 +33818,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>PlatformStatusAlertEvent</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
@@ -33406,6 +33830,12 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>ProcessException</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>ProcessExceptionEvent</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
@@ -33413,6 +33843,9 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Product2</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Product_Category_Family_Mapping__mdt</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33451,6 +33884,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>Project_Team__c</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33458,6 +33894,15 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Project__c</object>
         <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>PromptAction</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>PromptError</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>PushTopic</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33469,6 +33914,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>QuickTextUsage</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33478,6 +33926,30 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>QuoteLineItem</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Recommendation</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>RecommendationResponse</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>RecordAction</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Recurring_Revenue_Snapshot__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SF_to_NS_Product_Mapping__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Seller</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SetupAssistantStep</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33485,6 +33957,21 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Shadow_Contact__c</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Shadow_Mapping__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SharingRecordCollection</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SharingRecordCollectionItem</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SharingRecordCollectionMember</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SocialPersona</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33523,6 +34010,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>SurveyEngagementContext</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
@@ -33530,6 +34020,21 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>SurveyInvitation</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SurveyPage</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SurveyQuestion</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SurveyQuestionChoice</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SurveyQuestionResponse</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SurveyQuestionScore</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33541,6 +34046,33 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>SurveySubject</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SurveyVersion</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>SurveyVersionAddlInfo</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Sync_Settings__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>System_Configuration__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Task</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>TimeSlot</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Topic</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>TopicAssignment</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
@@ -33550,6 +34082,51 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>Trigger_Control_Setting__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Trip_Books__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>UnifiedActivityEvent</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>User</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>UserPrioritizedRecord</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>UserProvAccount</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>UserProvAccountStaging</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>UserProvMockTarget</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>UserProvisioningLog</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>UserProvisioningRequest</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>User_info_Mapping__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>VideoCall</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>VideoCallParticipant</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>VideoCallRecording</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>VoiceCall</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
@@ -33557,6 +34134,18 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>WebMetric_Daily_Summary__c</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>WorkBadge</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>WorkBadgeDefinition</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>WorkThanks</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>XFILES__App_Config__c</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33595,6 +34184,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>XFILES__Feature_Order_Details__c</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33602,6 +34194,9 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>XFILES__Folder_Info__c</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>XFILES__GDrive_Folder_Setting__c</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33640,6 +34235,12 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>XFILES__Site_Details__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>XFILES__Template_Structure__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33658,6 +34259,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>XFILES__Xfile_Manage_Folder_Hierarchy__c</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33665,6 +34269,480 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>XFILES__Xfilespro_Audit_Log__c</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>XFILES__xFiles_custom_setting__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>affectlayer__AffectLayerSettings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>affectlayer__AffectLayer_Admin_Setting__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>affectlayer__AffectLayer_User_Setting__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>affectlayer__AffectLayer__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>affectlayer__ChorusEngagementContact__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>affectlayer__ChorusEngagementUser__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>affectlayer__Engagement__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>affectlayer__Moment__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>asknicely__AskNicely_CustomData__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>asknicely__NPS__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Apex_Test_Result__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Application_Feature__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Application__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Artifact_Dependency__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Artifact_Version__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Artifact__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Automation_Event__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Automation_Rule__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Automation_Template_For_CLI__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__AuxiliaryObject__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Branch_Management_Permission__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Build_Task__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Bundled_Story__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Bundled_UserStory__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Burndown_Item__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Change_Management_Settings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Compliance_Finding__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Compliance_Rule_Criteria__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Compliance_Rule_Group_Item__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Compliance_Rule_Group__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Compliance_Rule__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Compliance_Scan_Result__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Connection_Behavior__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Continuous_Integration_Permission__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Continuous_Integration__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Copado_Feature__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Copado_Notification__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Copado_Setting__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Copado_Smart_Help__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Data_Change_Event_Condition_Items__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Data_Change_Event_Condition__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Data_Change_Event__e</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Data_Set__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Data_Template_Setup__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Data_Template__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Deployment_Flow_Step__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Deployment_Flow__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Deployment_History__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Deployment_Job__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Deployment_Task__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Deployment__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Destination_Org__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Environment__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Environmental_Variable__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Epic__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Event__e</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__ExtensionConfiguration__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__ExtensionKeyValueSetting__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__ExtensionPackageConfiguration__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__External_CI_Job_Result__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__External_CI_Job__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__External_CI_Setting__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Filter__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Function__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Git_Backup__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Git_Commit__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Git_Operation_Restriction__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Git_Org_Commit__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Git_Repository__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Installed_Artifact_Version__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__JobExecution__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__JobStep__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__JobTemplate__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Kanban_Board_View__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Kanban_Board__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Logger_Event__e</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__MC_Custom_Job_Step__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__MC_Notification__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__MC_Result__e</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Metadata_Group_Item__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Metadata_Group__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__MultiCloudAutomation__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Notification_Default_Channels__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Notification_Subscription__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__OrgDiff__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Org__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Persona_Permission__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Persona__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Personal_Settings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Pipeline_Action__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Project__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Promoted_User_Story__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Promotion__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Pull_Request_Review__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Pull_Request__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Quality_Gate_Rule_Condition__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Quality_Gate_Rule__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Quality_Gate__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Record_Matching_Formula__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Release__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Result__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Scheduled_Job_Run__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Scheduled_Job__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Scratch_Org_Definition__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Scratch_Org_Project_Template__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Group_Org_Credential__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Group_Test_Suite__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Group_Variable__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Locator_Reference__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Locator__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Settings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Test_Case_Per_Suite__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Test_Case__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Test_Group__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Test_Result__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Test_Run__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Selenium_Test_Suite__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Snapshot_Difference__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Sprint__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Stage_Connection__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Stage__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__StandardResources__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Static_Code_Analysis_Result__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Static_Code_Analysis_Rule__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Static_Code_Analysis_Settings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Static_Code_Analysis_Violation__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Step__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Streaming_Setting__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__System_Property__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Team_Dependency__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Team_Member__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Team__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__TestTool__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__TestType__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Test_Run_Step__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Test_Run__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Test_Script_Step__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Test_Script__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Test_Suite_Script__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Test__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__Theme__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__UISection__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__User_Persona_Assignment__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__User_Story_Bundle__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__User_Story_Commit__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__User_Story_Data_Commit__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__User_Story_Metadata__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__User_Story_Selenium_Test__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__User_Story_Task__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copado__User_Story__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copadoconnect__Additional_Parameter__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copadoconnect__Copado_Integration__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copadoconnect__FieldMapping__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copadoconnect__Field_Value_Mapping__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copadoconnect__Integration_Log__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>copadoconnect__ObjectMapping__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>dlrs__DeclarativeLookupRollupSummaries__c</object>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -33703,6 +34781,9 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <object>dlrs__LookupRollupSummary2__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -33728,6 +34809,96 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>dlrs__LookupRollupSummary__c</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>eContacts__Forms__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>eContacts__Question__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>eContacts__Queue_Item__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>eContacts__Responses__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>eContacts__Settings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__Filter__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__HS_Filter__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Describe__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Exception__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Export_Rollups__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Object_Realtime__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Queue__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Rollup_Audit__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Rollup_Conditions__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Rollup_Dummy__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Rollup_Group__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Settings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__PS_Use_Case_Library__mdt</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__RH_Job__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>rh2__Rollup_Helper_Record_Scope__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__FmcDefaultValue__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__ZoomAppTokenStorage__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__ZoomInfo_Clean_Settings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__ZoomInfo_Custom_Settings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__ZoomInfo_Inbound_Settings__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__ZoomInfo__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__ZoomSessions__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__ZoomTokenStorage__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__Zoom_Scheduler__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>zisf__zicCleanJob__c</object>
     </objectPermissions>
     <pageAccesses>
         <apexPage>AAKCS__campaignStatusDefault</apexPage>
@@ -35878,7 +37049,15 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>rh2__PS_Health_Check</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>rh2__PS_Import_Export</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__PS_Read_Only_Rollups</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -35887,6 +37066,14 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>rh2__PS_Rollup_Queue</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__PS_ScheduleManagement</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__PS_Use_Case</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -35904,10 +37091,6 @@
     <tabVisibilities>
         <tab>standard-Account</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ActiveScratchOrg</tab>
-        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-AppLauncher</tab>
@@ -35986,6 +37169,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-ContentNote</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Contract</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -36006,6 +37193,14 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-DeleteEvent</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DiscoveryForAccounts</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Document</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -36014,15 +37209,39 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-EmailTemplate</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-EngagementChannelType</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-EnhancedLetterhead</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Event</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-Feed</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-File</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-FlowInterview</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-FlowOrchestrationInstance</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-FlowOrchestrationWorkItem</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -36050,6 +37269,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-LightningBoltHome</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-ListEmail</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -36066,8 +37289,16 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-NamespaceRegistry</tab>
-        <visibility>DefaultOff</visibility>
+        <tab>standard-MobileHome</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-News</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-OnlineSalesHome</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-OperatingHours</tab>
@@ -36102,6 +37333,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-ProcessInstanceWorkitem</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Product2</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -36134,11 +37369,11 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-ScratchOrgInfo</tab>
-        <visibility>DefaultOff</visibility>
+        <tab>standard-Seller</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-Seller</tab>
+        <tab>standard-SharingRecordCollection</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -36166,6 +37401,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-Today</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-UserProfile</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -36174,15 +37413,15 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-WaveHome</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-WorkBadge</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-WorkBadgeDefinition</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-WorkQueue</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -36223,12 +37462,76 @@
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>AICreateInsightObjects</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AIViewInsightObjects</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessCMC</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessContentBuilder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessToComplaintMgmt</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessToServiceProcess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccountIQUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccountSwitcherUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ActivateContract</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ActivateOrder</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ActivitiesAccess</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>AddAnalyticsRemoteConnections</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>AddDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AddWaveNotificationRecipients</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AdminAnalyticsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AllowERIBasicAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AllowEmailIC</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AllowLightningLogin</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36251,16 +37554,128 @@
         <name>ApiEnabled</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ApiUserOnly</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ArchiveArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AssignPermissionSets</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>AssignTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AuthorApex</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AutomatedActionsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AutomatedDataEntry</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AutomaticActivityCapture</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>B2BMarketingAnalyticsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>BotManageBots</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>BotManageBotsTrainingData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>BulkApiHardDelete</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>BulkMacrosAllowed</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>BypassMFAForUiLogins</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CIPartnerIntegrationUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CMSECEAuthoringAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CallCoachingUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CampaignInfluence2</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanApproveFeedPost</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanEditDataPrepRecipe</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanEditPrompts</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanInsertFeedSystemFields</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanManageMaps</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanUpdateEmailMessage</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanUseNewDashboardBuilder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanVerifyComment</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChangeDashboardColors</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChangeTargetAssignee</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterComposeUiCodesnippet</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ChatterEditOwnPost</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterEditOwnRecordPost</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36279,12 +37694,48 @@
         <name>ChatterOwnGroups</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ClientSecretRotation</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CloseConversations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ConfigCustomRecs</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ConfigureDataspaceScope</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ConnectOrgToEnvironmentHub</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ConsentApiUpdate</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ContentAdministrator</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ContentHubUser</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ContentWorkspaces</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ConvertLeads</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateAuditFields</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36299,24 +37750,100 @@
         <name>CreateCustomizeReports</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateDashboardFolders</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>CreateLtngTempFolder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateLtngTempInPub</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateQuickCadence</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateReportFolders</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>CreateReportInLightning</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateStandardCadence</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>CreateTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateWorkBadgeDefinition</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateWorkspaces</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CustomMobileAppsAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CustomSidebarOnAllPages</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>CustomizeApplication</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>DataExport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DebugApex</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DelegatedTwoFactor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DeleteActivatedContract</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DeleteTopics</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>DistributeFromPersWksp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditASEFields</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditActivatedOrders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditBillingInfo</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditBrandTemplates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditCaseComments</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36325,6 +37852,14 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>EditHtmlTemplates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditIQFields</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditKnowledge</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36339,12 +37874,32 @@
         <name>EditOppLineItemUnitPrice</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>EditPublicDocuments</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditPublicFilters</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditPublicTemplates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditReadonlyFields</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>EditTask</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>EditTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditTranslation</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36355,6 +37910,14 @@
         <name>EmailSingle</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>EnableBCTransactionPolling</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EnableIPFSUpload</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>EnableNotifications</name>
     </userPermissions>
@@ -36363,8 +37926,124 @@
         <name>ExportReport</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>FSCArcGraphCommunityUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>FSCComprehensiveUserAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>FeedPinning</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ForceTwoFactor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>GiveRecognitionBadge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>GovernNetworks</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HasUnlimitedErbScoringRequests</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HasUnlimitedNBAExecutions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HeadlessCMSAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HideReadByList</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HighVelocitySalesUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IdentityConnect</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IdentityEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ImportCustomObjects</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ImportLeads</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ImportPersonal</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InboundMigrationToolsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppAdmin</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppDashboardEditor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppEltEditor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppUploadUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsCreateApplication</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IsotopeAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IsotopeCToCUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IsotopeLEX</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LMEndMessagingSessionUserPerm</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LMOutboundMessagingUserPerm</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LeadScoreResultPublisher</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LeadScoreUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36379,24 +38058,368 @@
         <name>ListEmailSend</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>LtngPromoReserved01UserPerm</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageAnalyticSnapshots</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageAuthProviders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageBusinessHourHolidays</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageC360AConnections</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCMS</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCallCenters</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCases</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCertificates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageChatterMessages</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageContentPermissions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageContentProperties</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageContentTypes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageConvMiningReports</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ManageCustomPermissions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCustomReportTypes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDashbdsInPubFolders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDataCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDataIntegrations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDataspaceScope</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDynamicDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageEmailClientConfig</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageEncryptionKeys</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageExchangeConfig</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageExternalConnections</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageForecastingCustomData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageHealthCheck</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageHubConnections</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageInteraction</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageInternalUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageIpAddresses</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageKnowledgeImportExport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageLeads</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageLoginAccessPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageMobile</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageNetworks</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageOrchInstsAndWorkItems</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManagePasswordPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageProfilesPermissionsets</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManagePropositions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManagePvtRptsAndDashbds</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageQuotas</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageRecommendationStrategies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageReleaseUpdates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageRemoteAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageReportsInPubFolders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageRoles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSandboxes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSearchPromotionRules</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSessionPermissionSets</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSharing</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSolutions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSubscriptions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSurveys</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSynonyms</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageTemplatedApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageTrustMeasures</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageTwoFactor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageUnlistedGroups</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageUsers</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>MassInlineEdit</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>MergeTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModerateChatter</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModerateNetworkUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModifyAllData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModifyDataClassification</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModifyMetadata</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>NativeWebviewScrolling</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>NewReportBuilder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>OpportunityIQUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>OpportunityScoreUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>OrgPerformanceAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>OutboundMigrationToolsUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>OverrideForecasts</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>Packaging2</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>Packaging2Delete</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PasswordNeverExpires</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PerformanceAnalysisAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PipelineInspectorUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PreventClassicExperience</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PrivacyDataAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PublishArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PublishTranslation</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>QueryAllFiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>QuipMetricsAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>QuipUserEngagementMetrics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>RecordVisibilityAPI</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>RemoveDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ResetPasswords</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36407,8 +38430,48 @@
         <name>RunReports</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>SCEViewAllData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesAnalyticsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesConsole</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesforceIQInbox</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesforceMeetingsUserPerm</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SandboxTestingInCommunityApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ScheduleJob</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ScheduleReports</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SendAnnouncementEmails</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SendCustomNotifications</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36419,12 +38482,56 @@
         <name>SendSitRequests</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ShareInternalArticles</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ShowCompanyNameAsUserBadge</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>SkipIdentityConfirmation</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SocialInsightsLogoAdmin</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SolutionImport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>StdAutomaticActivityCapture</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SubmitForTranslation</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>SubmitMacrosAllowed</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SubscribeDashboardRolesGrps</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SubscribeDashboardToOtherUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SubscribeReportRolesGrps</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SubscribeReportToOtherUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SubscribeReportsRunAsUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36435,24 +38542,192 @@
         <name>SubscribeToLightningReports</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>TraceXdsQueries</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TransactionSecurityExempt</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>TransactionalEmailSend</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TransferAnyCase</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>TransferAnyEntity</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>TransferAnyLead</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TwoFactorApi</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UpdateReportTypeReferences</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UpdateWithInactiveOwner</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseAssistantDialog</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseMySearch</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseQuerySuggestions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseSubscriptionEmails</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseTeamReassignWizards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseTemplatedApp</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>VideoConferenceMeetUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>VideoConferenceTeamsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>VideoConferenceZoomUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllActivities</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllCustomSettings</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllForecasts</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllForeignKeyNames</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllProfiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAnomalyEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewArchivedArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewContent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDataAssessment</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDataCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDataLeakageEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDeveloperName</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDraftArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewEncryptedData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewEventLogFiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewForecastingPredictive</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewHealthCheck</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewHelpLink</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewMLModels</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ViewMyTeamsDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewOnlyEmbeddedAppUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewPlatformEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewPrivateStaticResources</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewPublicDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewPublicReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewRestrictionAndScopingRules</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -36461,5 +38736,21 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewTrustMeasures</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewUserPII</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>WaveManagePrivateAssetsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>WaveTabularDownload</name>
     </userPermissions>
 </Profile>
