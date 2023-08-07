@@ -4,7 +4,16 @@
     <actionOnUpdate>Allow</actionOnUpdate>
     <alertText>Is this lead being actively worked by another rep?</alertText>
     <description xsi:nil="true"/>
-    <duplicateRuleFilter xsi:nil="true"/>
+    <duplicateRuleFilter>
+        <booleanFilter xsi:nil="true"/>
+        <duplicateRuleFilterItems>
+            <field>RecordType</field>
+            <operation>equals</operation>
+            <value>Marketing</value>
+            <sortOrder>1</sortOrder>
+            <table>Lead</table>
+        </duplicateRuleFilterItems>
+    </duplicateRuleFilter>
     <duplicateRuleMatchRules>
         <matchRuleSObjectType>Lead</matchRuleSObjectType>
         <matchingRule>Custom_Lead_Rule_Email</matchingRule>
@@ -12,7 +21,6 @@
     </duplicateRuleMatchRules>
     <isActive>true</isActive>
     <masterLabel>Custom Lead Duplicate Rule</masterLabel>
-    <operationsOnInsert>Alert</operationsOnInsert>
     <operationsOnInsert>Report</operationsOnInsert>
     <operationsOnUpdate>Alert</operationsOnUpdate>
     <securityOption>EnforceSharingRules</securityOption>
