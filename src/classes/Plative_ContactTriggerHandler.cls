@@ -37,6 +37,19 @@ public class Plative_ContactTriggerHandler {
             Plative_ContactTriggerHandler.beforeUpdateRun = true;
         }
     }
+    public static void beforeActions(List<Contact> newList){
+        for(Contact con : newList){
+            // Moving logic from 'Process Builder - Contact Updates + Linkedin Updates' to trigger To update User Name 
+            if(con.Username__c == null && con.Email != null){
+                con.Username__c = con.Email;
+            }
+            /* Moving logic from 'Process Builder - Contact Updates + Linkedin Updates' to trigger To update Onboarding Status
+            if(con.Contact_Status__c == 'Active' && String.isBlank(Con.Onboarding_Status__c)) {
+                con.Onboarding_Status__c = 'Registrant';
+                con.Registrant_Date__c = System.today();
+            }*/
+        }
+    }
     
     
     /**
