@@ -52,6 +52,12 @@
         <locationX>652</locationX>
         <locationY>367</locationY>
         <inputAssignments>
+            <field>Onboarding_Status__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>OwnerId</field>
             <value>
                 <elementReference>$Record.Account.OwnerId</elementReference>
@@ -65,6 +71,14 @@
         <connector>
             <targetReference>AccountID_Is_Changed</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Contact</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
