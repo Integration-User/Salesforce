@@ -773,6 +773,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Disqualified_Context__c</fullName>
+        <externalId>false</externalId>
+        <label>Disqualified Context</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>DoNotCall</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -3717,6 +3726,15 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Revisit_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Revisit Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>SalesLoft1__Active_Lead__c</fullName>
@@ -10983,6 +11001,20 @@ ISPICKVAL(Lead_Type__c,&quot;Advisory&quot;))</errorConditionFormula>
         <errorMessage>Please ensure Typical Advisory Minimum ($100K/£100) is populated before saving this Lead.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_Disqualified_Context</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$RecordType.Name = &quot;Marketing&quot;,
+ISBLANK(Disqualified_Context__c),
+OR(
+ISPICKVAL( Reason_Disqualified__c , &quot;Other&quot;),
+ISPICKVAL( Reason_Disqualified__c , &quot;Product Fit&quot;)
+)
+)</errorConditionFormula>
+        <errorDisplayField>Disqualified_Context__c</errorDisplayField>
+        <errorMessage>Please provide Disqualified Context.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Email_OR_Phone_to_Sales_Qualify</fullName>
         <active>true</active>
         <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
@@ -11021,6 +11053,17 @@ ISBLANK (TEXT( LeadSource )))
 
 ))</errorConditionFormula>
         <errorMessage>Provide Lead Source and a Reason for Disqualification.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Revisit_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$RecordType.Name = &quot;Marketing&quot;,
+ISPICKVAL( Reason_Disqualified__c , &quot;Timing&quot;),
+ISBLANK(Revisit_Date__c) 
+)</errorConditionFormula>
+        <errorDisplayField>Revisit_Date__c</errorDisplayField>
+        <errorMessage>Please provide Revisit Date.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Sales_Qualify</fullName>
