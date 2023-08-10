@@ -18611,6 +18611,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Disqualified_Context__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.DoNotCall</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -18937,6 +18942,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Lead.Research_Data_in_Role_Mktg_Identified__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Revisit_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
