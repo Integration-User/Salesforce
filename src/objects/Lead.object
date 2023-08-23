@@ -1051,9 +1051,12 @@ IF( ISPICKVAL(LeadSource , &quot;Inquiry&quot;) , TRUE,
 IF( ISPICKVAL(LeadSource , &quot;Digital Campaign&quot;) , TRUE,
 IF( ISPICKVAL(LeadSource , &quot;Conference/Event&quot;) , TRUE,
 IF( ISPICKVAL(LeadSource , &quot;Slide Request&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;New Alert Trial&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Demo Request&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Report Request&quot;) , TRUE,
+IF( ISPICKVAL(LeadSource , &quot;Snowflake&quot;) , TRUE,
 IF( ISPICKVAL(LeadSource , &quot;Targeted Campaign&quot;) , TRUE, 
-FALSE
-))))))</formula>
+FALSE))))))))))</formula>
         <label>Inbound Lead?</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -5928,6 +5931,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Slide Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
                 <default>false</default>
             </values>
             <values>
