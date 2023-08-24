@@ -2,10 +2,71 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>58.0</apiVersion>
     <decisions>
+        <name>Closed_Lost_Sales_Opportunity</name>
+        <label>Closed Lost Sales Opportunity</label>
+        <locationX>336</locationX>
+        <locationY>623</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Open_Sales_Opportunities</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Sales_Opportunity_Closed_for_Account</name>
+        <label>Is Sales Opportunity Closed for Account</label>
+        <locationX>182</locationX>
+        <locationY>839</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Open_Sales_Opportunities</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Prospect_Category_As_Suspect</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>New_Opportunity_Decision</name>
         <label>New Opportunity Decision</label>
-        <locationX>314</locationX>
+        <locationX>336</locationX>
         <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Sales_Opportunity</name>
@@ -89,11 +150,58 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Open_Sales_Opportunities</name>
+        <label>All Open Sales Opportunities</label>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Sales_Opportunity_Closed_for_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.RecordTypeId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>StageName</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Reset_Account_Prospect_Category</name>
         <label>Reset Account Prospect Category</label>
-        <locationX>314</locationX>
+        <locationX>336</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -122,8 +230,11 @@
     <recordUpdates>
         <name>Update_Account_Prospect_Category</name>
         <label>Update Account Prospect Category</label>
-        <locationX>50</locationX>
+        <locationX>72</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -140,8 +251,29 @@
         </inputAssignments>
         <object>Account</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account_Prospect_Category_As_Suspect</name>
+        <label>Update Account Prospect Category As Suspect</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Prospect_Category__c</field>
+            <value>
+                <stringValue>Suspect</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
     <start>
-        <locationX>188</locationX>
+        <locationX>210</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>New_Opportunity_Decision</targetReference>
