@@ -5,23 +5,30 @@
         <name>CAM_Owner_Change</name>
         <label>CAM Owner Change</label>
         <locationX>182</locationX>
-        <locationY>311</locationY>
+        <locationY>287</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Owner.UserRole.Name</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>CAM</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>$Record.OwnerId</leftValueReference>
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.UserRoleId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>CAM</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -61,7 +68,7 @@
         <name>Update_Budgeted_Account_Owner</name>
         <label>Update Budgeted Account Owner</label>
         <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationY>395</locationY>
         <inputAssignments>
             <field>Budgeted_Account_Owner__c</field>
             <value>
