@@ -4,7 +4,7 @@
         <name>Active_user_Notification</name>
         <label>Active user Notification</label>
         <locationX>50</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -26,21 +26,17 @@
                 <stringValue>User Activation Request</stringValue>
             </value>
         </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Create_User_Notification</name>
         <label>Create User Notification</label>
         <locationX>314</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>emailBody</name>
-            <value>
-                <elementReference>CreateUserNotification</elementReference>
-            </value>
-        </inputParameters>
         <inputParameters>
             <name>emailAddresses</name>
             <value>
@@ -50,15 +46,23 @@
         <inputParameters>
             <name>emailSubject</name>
             <value>
-                <stringValue>User Creation Request</stringValue>
+                <elementReference>UserCreationRequestSubject</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>CreateUserNotification</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Deactivation_Notification_Request</name>
         <label>Deactivation Notification Request</label>
         <locationX>578</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -80,13 +84,15 @@
                 <stringValue>User Deactivation Request </stringValue>
             </value>
         </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>55.0</apiVersion>
     <decisions>
         <name>Send_User_Onboarding_Notification</name>
         <label>Send User Onboarding Notification</label>
         <locationX>446</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Active_User</name>
@@ -191,6 +197,11 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>UserCreationRequestSubject</name>
+        <dataType>String</dataType>
+        <expression>&apos;User Creation Request - &quot;&apos; &amp; {!$Record.FirstName} &amp; &apos; &apos; &amp; {!$Record.LastName} &amp; &apos;&quot;&apos;</expression>
+    </formulas>
     <interviewLabel>User Onboarding Notification On Contact {!$Flow.CurrentDateTime}</interviewLabel>
     <label>User Onboarding Notification On Contact</label>
     <processMetadataValues>
@@ -216,7 +227,7 @@
         <name>UserInfo</name>
         <label>UserInfo</label>
         <locationX>446</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Send_User_Onboarding_Notification</targetReference>
