@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>ProductCombination__c</field>
-        <value xsi:type="xsd:string">DDS11DDS8</value>
+        <value xsi:type="xsd:string">DDS8;DDS11</value>
     </values>
     <values>
         <field>SKU__c</field>
