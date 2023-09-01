@@ -38,16 +38,19 @@ public class AccountTriggerTest {
         userRecord1.ProfileId = p2.Id;
         insert userRecord1;
         Test.startTest();
-        Account acc = [Select Id, OwnerId FROM Account WHERE Name = 'Test Account 1'];
+        Account acc = [Select Id, Synced__c, OwnerId, BillingStreet, BillingCity, BillingState, BillingPostalCode, ShippingCity, ShippingStreet, ShippingCountry, ShippingPostalCode FROM Account WHERE Name = 'Test Account 1'];
         acc.OwnerId = userRecord1.Id;
         boolean isError = false;
+        acc.Trigger_Real_time_Sync__c = true;
+        acc.Synced__c = 'Yes';
         try {
             Update acc;
+            Plative_AccountTriggerHelper.updateCTypeId(null, null);
         } catch (Exception e) {
             System.debug(' Message - ' + e.getMessage());
             isError = true;
         }
-        
+        Plative_AccountTriggerHelper.checkIfAddressChanged(acc, acc);
         Test.stopTest();
         Opportunity opp = [Select Id, OwnerId From Opportunity Where AccountId = :acc.Id]; 
         if (!isError) System.assertEquals(acc.OwnerId, opp.OwnerId);

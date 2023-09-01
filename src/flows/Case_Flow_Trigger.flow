@@ -5,7 +5,7 @@
         <name>Notify_To_Account_Manager_On_Case_Close</name>
         <label>Notify To Account Manager On Case Close</label>
         <locationX>314</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -27,6 +27,8 @@
                 <elementReference>Subject</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <description>Updated Account related contact owner where contact fetching condition will be : 
@@ -36,7 +38,7 @@ Contact_Account_Owners_Match__c = FALSE</description>
         <name>Update_Contact_Owner_From_Account</name>
         <label>Update Contact Owner From Account</label>
         <locationX>50</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <actionName>UpdateContactOwner</actionName>
         <actionType>apex</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -52,14 +54,16 @@ Contact_Account_Owners_Match__c = FALSE</description>
                 <elementReference>$Record.Account_Manager__c</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>UpdateContactOwner</nameSegment>
         <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>55.0</apiVersion>
     <decisions>
         <name>Check_Account_Manager_Case_User</name>
         <label>Check Account Manager Case User</label>
         <locationX>314</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Update_Account_Owner_As_per_Account_Manager_Condition</name>
@@ -144,7 +148,7 @@ Contact_Account_Owners_Match__c = FALSE</description>
         <name>Update_Account_Owner</name>
         <label>Update Account Owner</label>
         <locationX>50</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Update_Contact_Owner_From_Account</targetReference>
         </connector>
@@ -156,6 +160,12 @@ Contact_Account_Owners_Match__c = FALSE</description>
                 <elementReference>$Record.AccountId</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Is_Customer_Rep_Changed__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
