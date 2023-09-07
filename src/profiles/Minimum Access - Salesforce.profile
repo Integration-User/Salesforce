@@ -15435,6 +15435,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Hubspot_Score__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Interests__c</field>
         <readable>false</readable>
@@ -18847,6 +18852,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Lead.Number_of_Acq_Disp_Executed_Per_Year__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Original_HubSpot_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
