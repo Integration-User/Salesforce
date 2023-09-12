@@ -2115,6 +2115,36 @@ null))</formula>
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Support_Tier__c</fullName>
+        <externalId>false</externalId>
+        <label>Support Tier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Tier 1 - Client Support</fullName>
+                    <default>false</default>
+                    <label>Tier 1 - Client Support</label>
+                </value>
+                <value>
+                    <fullName>Tier 2 - Client Support</fullName>
+                    <default>false</default>
+                    <label>Tier 2 - Client Support</label>
+                </value>
+                <value>
+                    <fullName>Tier 3 - Data Support</fullName>
+                    <default>false</default>
+                    <label>Tier 3 - Data Support</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Support_Type__c</fullName>
         <externalId>false</externalId>
         <label>Support Type</label>
@@ -8574,148 +8604,6 @@ FALSE)))))))))))))</formula>
         <description>Customer Success Help Desk</description>
         <label>Help Desk</label>
         <picklistValues>
-            <picklist>Type</picklist>
-            <values>
-                <fullName>API</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>AVM %2F Portfolio Tools</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Administrative</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Analyst Visit %2F Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Backup Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Support</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DataLink</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Detailed NAV %2F Model</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email Preferences</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Error</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>External</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Feedback</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Internal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Methodology</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Password Reset</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Platform Functionality</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Problem</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Question</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Research Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SEC Registration</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Subscription</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Tech Support</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Training Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Unsubscribe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Usage Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Website Data</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Origin</picklist>
-            <values>
-                <fullName>Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>External Data Support</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Internal Data Support</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Phone</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Transferred from REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Web</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>ActivationDeactivation_Needs__c</picklist>
             <values>
                 <fullName>Full Account Deactivation</fullName>
@@ -9107,6 +8995,33 @@ FALSE)))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Data Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Data Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred from REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Ownership__c</picklist>
             <values>
                 <fullName>Administrator</fullName>
@@ -9427,6 +9342,21 @@ FALSE)))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 - Data Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Support_Type__c</picklist>
             <values>
                 <fullName>Client Support</fullName>
@@ -9473,6 +9403,97 @@ FALSE)))))))))))))</formula>
             </values>
             <values>
                 <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>%E2%80%9CGo Fish%E2%80%9D %2F Miscellaneous</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advanced Back Up Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Analyst Visit %2F Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backup Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complex Methodology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Preferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Research Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Methodology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Platform Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research %2F Analyst Input</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsubscribe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage Request</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12377,12 +12398,28 @@ FALSE)))))))))))))</formula>
         <picklistValues>
             <picklist>Type</picklist>
             <values>
-                <fullName>REACT News Trial</fullName>
+                <fullName>Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Preferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsubscribe</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>User List Request</fullName>
-                <default>true</default>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
