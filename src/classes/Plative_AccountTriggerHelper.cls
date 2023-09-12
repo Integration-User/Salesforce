@@ -176,8 +176,9 @@ public class Plative_AccountTriggerHelper  {
 	public static void setOwnerChangeCheckbox(Map<Id, Account> mapNewAcc, Map<Id, Account> mapOldAcc){
 		for(Account acc : mapNewAcc.values()){
 			Account oldRecord = mapOldAcc.get(acc.id);
-			if(acc.ownerid != oldRecord.ownerid){
+			if(acc.ownerid != oldRecord.ownerid) {
 				acc.Force_Owner_Update__c = true;
+                acc.Is_Customer_Rep_Changed__c = true;
 			}
 		}
 	}
