@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <name>Help_Desk_Case_Decision</name>
+        <label>Help Desk Case Decision</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Help_Desk_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Help_Desk</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Support_Tier</targetReference>
+            </connector>
+            <label>Help Desk Case</label>
+        </rules>
+    </decisions>
+    <description>SF-638</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>SupportTierFormula</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+{!$Record.Type},
+&apos;Analyst Visit / Request&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Backup Data&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Administrative&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Email Preferences&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Error&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Password Reset&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Platform Functionality&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Subscription&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Problem&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Unsubscribe&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Upsell&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Usage Request&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Methodology&apos;, &apos;Tier 2 - Client Support&apos;,
+&apos;Other&apos;, &apos;Tier 2 - Client Support&apos;,
+&apos;Research Request&apos;, &apos;Tier 2 - Client Support&apos;,
+&apos;Tech Support&apos;, &apos;Tier 2 - Client Support&apos;,
+&apos;Training Request&apos;, &apos;Tier 2 - Client Support&apos;,
+&apos;“Go Fish” / Miscellaneous&apos;, &apos;Tier 3 - Data Support&apos;,
+&apos;Advanced Back Up Data&apos;, &apos;Tier 3 - Data Support&apos;,
+&apos;Complex Methodology&apos;, &apos;Tier 3 - Data Support&apos;,
+&apos;Internal Research Request&apos;, &apos;Tier 3 - Data Support&apos;,
+&apos;Research / Analyst Input&apos;, &apos;Tier 3 - Data Support&apos;, &apos;&apos;)</expression>
+    </formulas>
+    <interviewLabel>C {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - Update Support Tier</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Support_Tier</name>
+        <label>Update Support Tier</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Support_Tier__c</field>
+            <value>
+                <elementReference>SupportTierFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Help_Desk_Case_Decision</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
