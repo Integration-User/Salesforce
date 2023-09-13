@@ -89,13 +89,26 @@ public class Plative_UserTriggerHelper  {
                     List<PermissionSetAssignment> isPresent  = [Select Id from PermissionSetAssignment 
                                                           where PermissionSetGroupId = :permssionSetGrpID AND AssigneeId =: permSet.AssigneeId];
                     if(isPresent.isEmpty()) {
-                    permSet.PermissionSetGroupId = permssionSetGrpID;
-                    insert permSet;
+                        permSet.PermissionSetGroupId = permssionSetGrpID;
+                        try {
+                           insert permSet; 
+                        } catch(Exception e ) {
+                            System.debug('Exception - ' + e.getMessage());
+                            addPermissionSetGroup(permSet.AssigneeId, permssionSetGrpID);
+                        }
+                        
+                    }
                 }
             }
         }
-        }
         
     }
- 
+
+    @future
+    public static void addPermissionSetGroup(Id userId, Id permssionSetGrpID) {
+        PermissionSetAssignment permSet = new PermissionSetAssignment();
+        permSet.PermissionSetGroupId = permssionSetGrpID;
+        permSet.AssigneeId = userId;
+        insert permSet;
+    }
 }
