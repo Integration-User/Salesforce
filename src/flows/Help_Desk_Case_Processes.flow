@@ -4,54 +4,12 @@
         <processMetadataValues>
             <name>emailAlertSelection</name>
             <value>
-                <stringValue>Data_Support_Inside_Office_Hours_Email_Alert</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_11_A1</name>
-        <label>Send DS US Inside Office Hours Email</label>
-        <locationX>1100</locationX>
-        <locationY>200</locationY>
-        <actionName>Case.Data_Support_Inside_Office_Hours_Email_Alert</actionName>
-        <actionType>emailAlert</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <processMetadataValues>
-            <name>emailAlertSelection</name>
-            <value>
-                <stringValue>Data_Support_Outside_Office_Hours_Email_Alert</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_13_A1</name>
-        <label>Send DS US Outside Office Hours Email</label>
-        <locationX>1300</locationX>
-        <locationY>200</locationY>
-        <actionName>Case.Data_Support_Outside_Office_Hours_Email_Alert</actionName>
-        <actionType>emailAlert</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <processMetadataValues>
-            <name>emailAlertSelection</name>
-            <value>
                 <stringValue>Help_Desk_Weekend_Email_Alert</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_7_A1</name>
+        <name>myRule_6_A1</name>
         <label>Send Help Desk Weekend Email</label>
-        <locationX>700</locationX>
+        <locationX>600</locationX>
         <locationY>200</locationY>
         <actionName>Case.Help_Desk_Weekend_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
@@ -62,6 +20,8 @@
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>Case.Help_Desk_Weekend_Email_Alert</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <processMetadataValues>
@@ -70,9 +30,9 @@
                 <stringValue>Data_Support_Weekend_Email_Alert</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_9_A1</name>
+        <name>myRule_8_A1</name>
         <label>Send Data Support Weekend Email</label>
-        <locationX>900</locationX>
+        <locationX>800</locationX>
         <locationY>200</locationY>
         <actionName>Case.Data_Support_Weekend_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
@@ -83,6 +43,8 @@
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>Case.Data_Support_Weekend_Email_Alert</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>56.0</apiVersion>
     <decisions>
@@ -91,7 +53,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>isChangedDecision5_myRule_4_OwnerId</targetReference>
+            <targetReference>myDecision</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
@@ -112,41 +74,9 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>isChangedDecision5_myRule_4_OwnerId</targetReference>
-            </connector>
-            <label>isChangedRule_2_myRule_1_ContactId</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>isChangedDecision5_myRule_4_OwnerId</name>
-        <label>isChangedDecision5_myRule_4_OwnerId</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>isChangedRule_5_myRule_4_OwnerId</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>myVariable_old</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>myVariable_old.OwnerId</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>myVariable_current.OwnerId</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
                 <targetReference>myDecision</targetReference>
             </connector>
-            <label>isChangedRule_5_myRule_4_OwnerId</label>
+            <label>isChangedRule_2_myRule_1_ContactId</label>
         </rules>
     </decisions>
     <decisions>
@@ -251,65 +181,6 @@
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>4.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision10</name>
-        <label>myDecision10</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision12</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_11</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>formula_myRule_11</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_11_A1</targetReference>
-            </connector>
-            <label>DS US Case Created within Office Hours</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>5.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision12</name>
-        <label>myDecision12</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_13</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>formula_myRule_13</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_13_A1</targetReference>
-            </connector>
-            <label>DS US Case Created outside Office Hours</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
                 <numberValue>1.0</numberValue>
             </value>
         </processMetadataValues>
@@ -318,49 +189,12 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision6</targetReference>
+            <targetReference>myDecision5</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_4</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideReferenceTo</name>
-                    <value>
-                        <stringValue>Group;User</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>ID</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>isChangedRule_5_myRule_4_OwnerId</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -392,6 +226,68 @@
                     <stringValue>Help Desk</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Origin</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal Data Support</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Origin</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>External Data Support</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>myRule_4_A1</targetReference>
             </connector>
@@ -405,26 +301,26 @@
                 <numberValue>2.0</numberValue>
             </value>
         </processMetadataValues>
-        <name>myDecision6</name>
-        <label>myDecision6</label>
+        <name>myDecision5</name>
+        <label>myDecision5</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision8</targetReference>
+            <targetReference>myDecision7</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myRule_7</name>
+            <name>myRule_6</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_7</leftValueReference>
+                <leftValueReference>formula_myRule_6</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_7_A1</targetReference>
+                <targetReference>myRule_6_A1</targetReference>
             </connector>
             <label>Help Desk Case Created during Weekend</label>
         </rules>
@@ -436,120 +332,27 @@
                 <numberValue>3.0</numberValue>
             </value>
         </processMetadataValues>
-        <name>myDecision8</name>
-        <label>myDecision8</label>
+        <name>myDecision7</name>
+        <label>myDecision7</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision10</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myRule_9</name>
+            <name>myRule_8</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_9</leftValueReference>
+                <leftValueReference>formula_myRule_8</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_9_A1</targetReference>
+                <targetReference>myRule_8_A1</targetReference>
             </connector>
             <label>Data Support Case Created during Weekend</label>
         </rules>
     </decisions>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>AND(
-ISNEW(),
-[Case].RecordType.Name = &quot;Help Desk&quot;,
-ISPICKVAL([Case].Support_Type__c,&quot;US Data Support&quot;),
-
-OR(
-ISPICKVAL([Case].Origin,&quot;Internal Data Support&quot;),
-ISPICKVAL([Case].Origin,&quot;External Data Support&quot;)),
-
-OR(
-[Case].Submitted_Day__c=&quot;Monday&quot;,
-[Case].Submitted_Day__c=&quot;Tuesday&quot;,
-[Case].Submitted_Day__c=&quot;Wednesday&quot;,
-[Case].Submitted_Day__c=&quot;Thursday&quot;,
-[Case].Submitted_Day__c=&quot;Friday&quot;),
-
-[Case].Submitted_Within_Office_Hours__c=&quot;Yes, US Time&quot;)</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_myRule_11</name>
-        <dataType>Boolean</dataType>
-        <expression>AND(
-ISNEW(),
-{!myVariable_current.RecordType.Name} = &quot;Help Desk&quot;,
-ISPICKVAL({!myVariable_current.Support_Type__c},&quot;US Data Support&quot;),
-
-OR(
-ISPICKVAL({!myVariable_current.Origin},&quot;Internal Data Support&quot;),
-ISPICKVAL({!myVariable_current.Origin},&quot;External Data Support&quot;)),
-
-OR(
-{!myVariable_current.Submitted_Day__c}=&quot;Monday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Tuesday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Wednesday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Thursday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Friday&quot;),
-
-{!myVariable_current.Submitted_Within_Office_Hours__c}=&quot;Yes, US Time&quot;)</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>AND(
-ISNEW(),
-[Case].RecordType.Name = &quot;Help Desk&quot;,
-ISPICKVAL([Case].Support_Type__c,&quot;US Data Support&quot;),
-
-OR(
-ISPICKVAL([Case].Origin,&quot;Internal Data Support&quot;),
-ISPICKVAL([Case].Origin,&quot;External Data Support&quot;)),
-
-OR(
-[Case].Submitted_Day__c=&quot;Monday&quot;,
-[Case].Submitted_Day__c=&quot;Tuesday&quot;,
-[Case].Submitted_Day__c=&quot;Wednesday&quot;,
-[Case].Submitted_Day__c=&quot;Thursday&quot;,
-[Case].Submitted_Day__c=&quot;Friday&quot;),
-
-OR(
-[Case].Submitted_Within_Office_Hours__c=&quot;Yes, UK Time&quot;,
-[Case].Submitted_Within_Office_Hours__c=&quot;No&quot;))</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_myRule_13</name>
-        <dataType>Boolean</dataType>
-        <expression>AND(
-ISNEW(),
-{!myVariable_current.RecordType.Name} = &quot;Help Desk&quot;,
-ISPICKVAL({!myVariable_current.Support_Type__c},&quot;US Data Support&quot;),
-
-OR(
-ISPICKVAL({!myVariable_current.Origin},&quot;Internal Data Support&quot;),
-ISPICKVAL({!myVariable_current.Origin},&quot;External Data Support&quot;)),
-
-OR(
-{!myVariable_current.Submitted_Day__c}=&quot;Monday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Tuesday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Wednesday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Thursday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Friday&quot;),
-
-OR(
-{!myVariable_current.Submitted_Within_Office_Hours__c}=&quot;Yes, UK Time&quot;,
-{!myVariable_current.Submitted_Within_Office_Hours__c}=&quot;No&quot;))</expression>
-    </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
@@ -567,7 +370,7 @@ AND(
 [Case].Submitted_Within_Office_Hours__c=&quot;No&quot;)))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_myRule_7</name>
+        <name>formula_myRule_6</name>
         <dataType>Boolean</dataType>
         <expression>AND(
 ISNEW(),
@@ -598,7 +401,7 @@ OR(
 [Case].Submitted_Day__c=&quot;Sunday&quot;))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_myRule_9</name>
+        <name>formula_myRule_8</name>
         <dataType>Boolean</dataType>
         <expression>AND(
 ISNEW(),
@@ -612,7 +415,7 @@ OR(
 {!myVariable_current.Submitted_Day__c}=&quot;Saturday&quot;,
 {!myVariable_current.Submitted_Day__c}=&quot;Sunday&quot;))</expression>
     </formulas>
-    <interviewLabel>Help_Desk_Case_Processes-3_InterviewLabel</interviewLabel>
+    <interviewLabel>Help_Desk_Case_Processes-5_InterviewLabel</interviewLabel>
     <label>Help Desk Case Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -785,144 +588,11 @@ OR(
             <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_4_A1</name>
-        <label>Update to Client Support</label>
+        <label>Update to US Data Support (Queue)</label>
         <locationX>400</locationX>
         <locationY>200</locationY>
         <connector>
             <targetReference>myRule_4_A2</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>inputDataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Case Owner Role</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>operatorDataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Case_Owner_Role__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Customer Success</stringValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Support Type</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Support_Type__c</field>
-            <value>
-                <stringValue>Client Support</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>criteria</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Case]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_4_A2</name>
-        <label>Update to Client Support (Queue)</label>
-        <locationX>400</locationX>
-        <locationY>300</locationY>
-        <connector>
-            <targetReference>myRule_4_A3</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -993,90 +663,6 @@ OR(
                 <stringValue>00G5G000004cMsDUAU</stringValue>
             </value>
         </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Support Type</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Support_Type__c</field>
-            <value>
-                <stringValue>Client Support</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>criteria</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Case]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_4_A3</name>
-        <label>Update to US Data Support</label>
-        <locationX>400</locationX>
-        <locationY>400</locationY>
-        <connector>
-            <targetReference>myRule_4_A4</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
         <filters>
             <processMetadataValues>
                 <name>implicit</name>
@@ -1087,13 +673,13 @@ OR(
             <processMetadataValues>
                 <name>inputDataType</name>
                 <value>
-                    <stringValue>String</stringValue>
+                    <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Case Owner Role</stringValue>
+                    <stringValue>Case Origin</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -1105,7 +691,7 @@ OR(
             <processMetadataValues>
                 <name>leftHandSideType</name>
                 <value>
-                    <stringValue>String</stringValue>
+                    <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -1117,13 +703,13 @@ OR(
             <processMetadataValues>
                 <name>rightHandSideType</name>
                 <value>
-                    <stringValue>String</stringValue>
+                    <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Case_Owner_Role__c</field>
+            <field>Origin</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>REA</stringValue>
+                <stringValue>External Data Support</stringValue>
             </value>
         </filters>
         <inputAssignments>
@@ -1189,284 +775,12 @@ OR(
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_4_A4</name>
-        <label>Update to US Data Support (Queue)</label>
-        <locationX>400</locationX>
-        <locationY>500</locationY>
-        <connector>
-            <targetReference>myRule_4_A5</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>inputDataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Owner ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>Group;User</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>operatorDataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideLabel</name>
-                <value>
-                    <stringValue>US_Data_Support</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Queue</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>OwnerId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>00G5G000004KaHLUA0</stringValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Support Type</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Support_Type__c</field>
-            <value>
-                <stringValue>US Data Support</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>criteria</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Case]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_4_A5</name>
-        <label>Update to EU Data Support</label>
-        <locationX>400</locationX>
-        <locationY>600</locationY>
-        <connector>
-            <targetReference>myRule_4_A6</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>inputDataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Case Owner Role</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>operatorDataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Case_Owner_Role__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>EU REA</stringValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Support Type</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Support_Type__c</field>
-            <value>
-                <stringValue>EU Data Support</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>criteria</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Case]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_4_A6</name>
+        <name>myRule_4_A2</name>
         <label>Update to EU Data Support (Queue)</label>
         <locationX>400</locationX>
-        <locationY>700</locationY>
+        <locationY>300</locationY>
         <connector>
-            <targetReference>myDecision6</targetReference>
+            <targetReference>myDecision5</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
