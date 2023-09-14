@@ -2330,20 +2330,19 @@ null))</formula>
     <fields>
         <fullName>Type_to_Trigger_Survey__c</fullName>
         <externalId>false</externalId>
-        <formula>IF (ISPICKVAL(Type, &quot;Website Data&quot;), TRUE, 
-IF (ISPICKVAL(Type, &quot;Error&quot;), TRUE, 
+        <formula>IF (ISPICKVAL(Type, &quot;Error&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Methodology&quot;), TRUE, 
-IF (ISPICKVAL(Type, &quot;Question&quot;), TRUE, 
-IF (ISPICKVAL(Type, &quot;Research Request&quot;), TRUE, 
-IF (ISPICKVAL(Type, &quot;Tech Problem&quot;), TRUE, 
+IF (ISPICKVAL(Type, &quot;Problem&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Platform Functionality&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Backup Data&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Subscription&quot;), TRUE, 
-IF (ISPICKVAL(Type, &quot;Email Preferences&quot;), TRUE, 
-IF (ISPICKVAL(Type, &quot;Detailed NAV Model&quot;), TRUE, 
-IF (ISPICKVAL(Type, &quot;Datalink&quot;), TRUE, 
-IF (ISPICKVAL(Type, &quot;API&quot;), TRUE, 
-FALSE)))))))))))))</formula>
+IF (ISPICKVAL(Type, &quot;Email Preferences&quot;), TRUE,
+IF (ISPICKVAL(Type, &quot;Research Request&quot;), TRUE,
+IF (ISPICKVAL(Type, &quot;“Go Fish” / Miscellaneous&quot;), TRUE,
+IF (ISPICKVAL(Type, &quot;Advanced Back Up Data&quot;), TRUE,
+IF (ISPICKVAL(Type, &quot;Complex Methodology&quot;), TRUE,
+IF (ISPICKVAL(Type, &quot;Research / Analyst Input&quot;), TRUE,
+FALSE))))))))))))</formula>
         <label>Type to Trigger Survey</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -2959,7 +2958,7 @@ FALSE)))))))))))))</formula>
         <filters>
             <field>Support_Type__c</field>
             <operation>equals</operation>
-            <value>Client Support</value>
+            <value>Client Support,US Data Support</value>
         </filters>
         <label>All Open Help Desk Cases</label>
     </listViews>
