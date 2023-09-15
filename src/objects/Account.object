@@ -1750,6 +1750,14 @@ Owner.Id = $User.Id)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Owner_is_Active__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner.IsActive</formula>
+        <label>Owner is Active</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Ownership</fullName>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -2457,6 +2465,11 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
                     <fullName>REOC</fullName>
                     <default>false</default>
                     <label>REOC</label>
+                </value>
+                <value>
+                    <fullName>IPO Prospect</fullName>
+                    <default>false</default>
+                    <label>IPO Prospect</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
@@ -4960,6 +4973,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>IPO Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>LatAm</fullName>
                 <default>false</default>
             </values>
@@ -6315,6 +6332,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>IB %28Small%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IPO Prospect</fullName>
                 <default>false</default>
             </values>
             <values>
