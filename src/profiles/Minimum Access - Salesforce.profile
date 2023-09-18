@@ -15345,6 +15345,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Excel_Last_Use_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Fax</field>
         <readable>false</readable>
@@ -15842,6 +15847,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.U_S_Webinars_and_Featured_Insights__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Unsubscribe_All_Email_Preferences__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
