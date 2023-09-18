@@ -36,4 +36,24 @@ private class Plative_UserTriggerHandlerTest {
 		update updateUserList;
         Test.stopTest();
     }
+     @isTest static void testUsersWithGroup() {
+        //Get Profile id of Admin
+        Test.startTest();
+        List<User> updateUserList = new List<User>();
+        for (User usr : [SELECT Id, isActive, ProfileId FROM User where Username IN ('abel.axiom@sunoco.com', 'bob.builder@sunoco.com')]) {
+            system.debug('usr->'+usr);
+            usr.IsActive = true;
+            usr.Trigger_Real_time_Sync__c = true;
+            updateUserList.add(usr);
+        }          
+		update updateUserList;
+         try {
+             List<PermissionSetGroup> psg = [select Id, Status from PermissionSetGroup LIMIT 1];
+             Plative_UserTriggerHelper.addPermissionSetGroup(updateUserList[0].Id, psg[0].Id); 
+         }  catch(Exception e ) {
+             System.debug('Exception - ' + e.getMessage());
+         }
+         
+        Test.stopTest();
+    }
 }
