@@ -1,51 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionCalls>
-        <processMetadataValues>
-            <name>emailAlertSelection</name>
-            <value>
-                <stringValue>Help_Desk_Weekend_Email_Alert</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_6_A1</name>
-        <label>Send Help Desk Weekend Email</label>
-        <locationX>600</locationX>
-        <locationY>200</locationY>
-        <actionName>Case.Help_Desk_Weekend_Email_Alert</actionName>
-        <actionType>emailAlert</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-        <nameSegment>Case.Help_Desk_Weekend_Email_Alert</nameSegment>
-        <versionSegment>1</versionSegment>
-    </actionCalls>
-    <actionCalls>
-        <processMetadataValues>
-            <name>emailAlertSelection</name>
-            <value>
-                <stringValue>Data_Support_Weekend_Email_Alert</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_8_A1</name>
-        <label>Send Data Support Weekend Email</label>
-        <locationX>800</locationX>
-        <locationY>200</locationY>
-        <actionName>Case.Data_Support_Weekend_Email_Alert</actionName>
-        <actionType>emailAlert</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-        <nameSegment>Case.Data_Support_Weekend_Email_Alert</nameSegment>
-        <versionSegment>1</versionSegment>
-    </actionCalls>
     <apiVersion>56.0</apiVersion>
     <decisions>
         <name>isChangedDecision2_myRule_1_ContactId</name>
@@ -188,9 +142,6 @@
         <label>myDecision3</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision5</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_4</name>
@@ -294,130 +245,7 @@
             <label>Check if Help Desk Ownership Changed</label>
         </rules>
     </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>2.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision5</name>
-        <label>myDecision5</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision7</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_6</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>formula_myRule_6</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_6_A1</targetReference>
-            </connector>
-            <label>Help Desk Case Created during Weekend</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>3.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision7</name>
-        <label>myDecision7</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_8</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>formula_myRule_8</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_8_A1</targetReference>
-            </connector>
-            <label>Data Support Case Created during Weekend</label>
-        </rules>
-    </decisions>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>AND(
-ISNEW(),
-[Case].RecordType.Name = &quot;Help Desk&quot;,
-
-OR(
-ISPICKVAL([Case].Origin,&quot;Email&quot;),
-ISPICKVAL([Case].Origin,&quot;External Data Support&quot;),
-
-OR(
-[Case].Submitted_Day__c=&quot;Saturday&quot;,
-[Case].Submitted_Day__c=&quot;Sunday&quot;,
-AND(
-[Case].Submitted_Day__c=&quot;Friday&quot;,
-[Case].Submitted_Within_Office_Hours__c=&quot;No&quot;))))</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_myRule_6</name>
-        <dataType>Boolean</dataType>
-        <expression>AND(
-ISNEW(),
-{!myVariable_current.RecordType.Name} = &quot;Help Desk&quot;,
-
-OR(
-ISPICKVAL({!myVariable_current.Origin},&quot;Email&quot;),
-ISPICKVAL({!myVariable_current.Origin},&quot;External Data Support&quot;),
-
-OR(
-{!myVariable_current.Submitted_Day__c}=&quot;Saturday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Sunday&quot;,
-AND(
-{!myVariable_current.Submitted_Day__c}=&quot;Friday&quot;,
-{!myVariable_current.Submitted_Within_Office_Hours__c}=&quot;No&quot;))))</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>AND(
-ISNEW(),
-[Case].RecordType.Name = &quot;Help Desk&quot;,
-ISPICKVAL([Case].Origin,&quot;Internal Data Support&quot;),
-
-
-OR(
-[Case].Submitted_Day__c=&quot;Saturday&quot;,
-[Case].Submitted_Day__c=&quot;Sunday&quot;))</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_myRule_8</name>
-        <dataType>Boolean</dataType>
-        <expression>AND(
-ISNEW(),
-{!myVariable_current.RecordType.Name} = &quot;Help Desk&quot;,
-ISPICKVAL({!myVariable_current.Origin},&quot;Internal Data Support&quot;),
-
-
-OR(
-{!myVariable_current.Submitted_Day__c}=&quot;Saturday&quot;,
-{!myVariable_current.Submitted_Day__c}=&quot;Sunday&quot;))</expression>
-    </formulas>
-    <interviewLabel>Help_Desk_Case_Processes-6_InterviewLabel</interviewLabel>
+    <interviewLabel>Help_Desk_Case_Processes-8_InterviewLabel</interviewLabel>
     <label>Help Desk Case Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -781,9 +609,6 @@ OR(
         <label>Update to EU Data Support (Queue)</label>
         <locationX>400</locationX>
         <locationY>300</locationY>
-        <connector>
-            <targetReference>myDecision5</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <processMetadataValues>
