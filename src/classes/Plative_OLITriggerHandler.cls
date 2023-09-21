@@ -21,6 +21,13 @@ public class Plative_OLITriggerHandler  {
             if (oli.Lost_Product__c) {
                 oli.UnitPrice = 0.0;
             }
+            // SF-645 - Leap Year date issues
+            if(oli.End_Date__c != null && oli.Start_Date__c != null 
+               && ((Date.isLeapYear(oli.End_Date__c.year()) && oli.Start_Date__c.daysBetween(oli.End_Date__c) == 364 && oli.Start_Date__c.dayOfYear() >= 60)
+              || (Date.isLeapYear(oli.Start_Date__c.year()) && oli.Start_Date__c.dayOfYear() <= 60))) {
+                System.debug('oli.Start_Date__c->'+oli.Start_Date__c+', oli.End_Date__c->'+oli.End_Date__c + ', times->'+oli.Start_Date__c.daysBetween(oli.End_Date__c));
+                oli.End_Date__c = oli.End_Date__c.addDays(1);
+            }
         }
     }
 
