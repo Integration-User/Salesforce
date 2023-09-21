@@ -363,14 +363,14 @@ ISNEW(),
 
 OR(
 ISPICKVAL([Case].Origin,&quot;Email&quot;),
-ISPICKVAL([Case].Origin,&quot;External Data Support&quot;),
+ISPICKVAL([Case].Origin,&quot;External Data Support&quot;)),
 
 OR(
 [Case].Submitted_Day__c=&quot;Saturday&quot;,
 [Case].Submitted_Day__c=&quot;Sunday&quot;,
 AND(
 [Case].Submitted_Day__c=&quot;Friday&quot;,
-[Case].Submitted_Within_Office_Hours__c=&quot;No&quot;))))</stringValue>
+[Case].Submitted_Within_Office_Hours__c=&quot;No&quot;)))</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_6</name>
@@ -381,14 +381,14 @@ ISNEW(),
 
 OR(
 ISPICKVAL({!myVariable_current.Origin},&quot;Email&quot;),
-ISPICKVAL({!myVariable_current.Origin},&quot;External Data Support&quot;),
+ISPICKVAL({!myVariable_current.Origin},&quot;External Data Support&quot;)),
 
 OR(
 {!myVariable_current.Submitted_Day__c}=&quot;Saturday&quot;,
 {!myVariable_current.Submitted_Day__c}=&quot;Sunday&quot;,
 AND(
 {!myVariable_current.Submitted_Day__c}=&quot;Friday&quot;,
-{!myVariable_current.Submitted_Within_Office_Hours__c}=&quot;No&quot;))))</expression>
+{!myVariable_current.Submitted_Within_Office_Hours__c}=&quot;No&quot;)))</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -417,7 +417,7 @@ OR(
 {!myVariable_current.Submitted_Day__c}=&quot;Saturday&quot;,
 {!myVariable_current.Submitted_Day__c}=&quot;Sunday&quot;))</expression>
     </formulas>
-    <interviewLabel>Help_Desk_Case_Processes-6_InterviewLabel</interviewLabel>
+    <interviewLabel>Help_Desk_Case_Processes-9_InterviewLabel</interviewLabel>
     <label>Help Desk Case Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
