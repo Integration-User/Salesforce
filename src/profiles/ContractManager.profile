@@ -37731,10 +37731,6 @@
         <name>DistributeFromPersWksp</name>
     </userPermissions>
     <userPermissions>
-        <enabled>false</enabled>
-        <name>EditASEFields</name>
-    </userPermissions>
-    <userPermissions>
         <enabled>true</enabled>
         <name>EditActivatedOrders</name>
     </userPermissions>
@@ -37757,10 +37753,6 @@
     <userPermissions>
         <enabled>false</enabled>
         <name>EditHtmlTemplates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>EditIQFields</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>

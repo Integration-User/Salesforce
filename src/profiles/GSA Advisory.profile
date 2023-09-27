@@ -37902,10 +37902,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
-        <name>EditASEFields</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
         <name>EditActivatedOrders</name>
     </userPermissions>
     <userPermissions>
@@ -37927,10 +37923,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>EditHtmlTemplates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>EditIQFields</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
