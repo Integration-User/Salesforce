@@ -39173,10 +39173,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
-        <name>EditIQFields</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
         <name>EditKnowledge</name>
     </userPermissions>
     <userPermissions>
