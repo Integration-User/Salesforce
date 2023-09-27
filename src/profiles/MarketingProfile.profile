@@ -37721,10 +37721,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
-        <name>EditASEFields</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
         <name>EditActivatedOrders</name>
     </userPermissions>
     <userPermissions>
