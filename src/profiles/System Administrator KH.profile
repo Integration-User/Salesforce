@@ -39146,10 +39146,6 @@
         <name>EditHtmlTemplates</name>
     </userPermissions>
     <userPermissions>
-        <enabled>false</enabled>
-        <name>EditIQFields</name>
-    </userPermissions>
-    <userPermissions>
         <enabled>true</enabled>
         <name>EditKnowledge</name>
     </userPermissions>
