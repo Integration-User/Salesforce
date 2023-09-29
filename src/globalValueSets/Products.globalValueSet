@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
+        <fullName>API</fullName>
+        <default>false</default>
+        <label>API</label>
+    </customValue>
+    <customValue>
+        <fullName>Excel Add-In</fullName>
+        <default>false</default>
+        <label>Excel Add-In</label>
+    </customValue>
+    <customValue>
+        <fullName>DataLink</fullName>
+        <default>false</default>
+        <label>DataLink (Legacy)</label>
+    </customValue>
+    <customValue>
+        <fullName>Snowflake</fullName>
+        <default>false</default>
+        <label>Snowflake</label>
+    </customValue>
+    <customValue>
         <fullName>US Research</fullName>
         <default>false</default>
         <label>US Research</label>
@@ -11,9 +31,9 @@
         <label>EURO Research</label>
     </customValue>
     <customValue>
-        <fullName>News</fullName>
+        <fullName>US News</fullName>
         <default>false</default>
-        <label>News</label>
+        <label>US News</label>
     </customValue>
     <customValue>
         <fullName>News - ABA</fullName>
@@ -29,6 +49,11 @@
         <fullName>News - REA</fullName>
         <default>false</default>
         <label>News - REA</label>
+    </customValue>
+    <customValue>
+        <fullName>News</fullName>
+        <default>false</default>
+        <label>News</label>
     </customValue>
     <customValue>
         <fullName>React</fullName>
@@ -101,6 +126,16 @@
         <label>MD&amp;D - Rent Comps</label>
     </customValue>
     <customValue>
+        <fullName>AVM</fullName>
+        <default>false</default>
+        <label>AVM</label>
+    </customValue>
+    <customValue>
+        <fullName>Portfolio Analytics</fullName>
+        <default>false</default>
+        <label>Portfolio Analytics</label>
+    </customValue>
+    <customValue>
         <fullName>Debt Databases</fullName>
         <default>false</default>
         <label>Debt Databases</label>
@@ -126,31 +161,6 @@
         <label>Debt DB - High Yield</label>
     </customValue>
     <customValue>
-        <fullName>AVM</fullName>
-        <default>false</default>
-        <label>AVM</label>
-    </customValue>
-    <customValue>
-        <fullName>Portfolio Analytics</fullName>
-        <default>false</default>
-        <label>Portfolio Analytics</label>
-    </customValue>
-    <customValue>
-        <fullName>API</fullName>
-        <default>false</default>
-        <label>API</label>
-    </customValue>
-    <customValue>
-        <fullName>Snowflake</fullName>
-        <default>false</default>
-        <label>Snowflake</label>
-    </customValue>
-    <customValue>
-        <fullName>DataLink</fullName>
-        <default>false</default>
-        <label>DataLink (Legacy)</label>
-    </customValue>
-    <customValue>
         <fullName>Market Participants</fullName>
         <default>false</default>
         <label>Market Participants</label>
@@ -164,6 +174,11 @@
         <fullName>PDF Viewer</fullName>
         <default>false</default>
         <label>PDF Viewer</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Applicable</fullName>
+        <default>false</default>
+        <label>Not Applicable</label>
     </customValue>
     <customValue>
         <fullName>Activist Situations</fullName>
@@ -321,11 +336,6 @@
         <label>Transaction Advisory</label>
     </customValue>
     <customValue>
-        <fullName>US News</fullName>
-        <default>false</default>
-        <label>US News</label>
-    </customValue>
-    <customValue>
         <fullName>US Portfolio Tools</fullName>
         <default>false</default>
         <label>US Portfolio Tools</label>
@@ -366,11 +376,6 @@
         <label>EUR Detailed NAV</label>
     </customValue>
     <customValue>
-        <fullName>Not Applicable</fullName>
-        <default>false</default>
-        <label>Not Applicable</label>
-    </customValue>
-    <customValue>
         <fullName>US Data Delivery - Market Data &amp; Deals</fullName>
         <default>false</default>
         <label>US Data Delivery - Market Data &amp; Deals</label>
@@ -391,39 +396,10 @@
         <label>EUR Data Delivery - REIT Data</label>
     </customValue>
     <customValue>
-        <fullName>Excel Add-In</fullName>
-        <default>false</default>
-        <label>Excel Add-In</label>
-    </customValue>
-    <customValue>
-        <fullName>Learning Center</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Learning Center</label>
-    </customValue>
-    <customValue>
         <fullName>EU REIT</fullName>
         <default>false</default>
         <isActive>false</isActive>
         <label>EU REIT</label>
-    </customValue>
-    <customValue>
-        <fullName>EU Sales Comps</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>EU Sales Comps</label>
-    </customValue>
-    <customValue>
-        <fullName>US Market Data</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>US Market Data</label>
-    </customValue>
-    <customValue>
-        <fullName>US Market Forecasts</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>US Market Forecasts</label>
     </customValue>
     <customValue>
         <fullName>NA REIT</fullName>
@@ -432,34 +408,10 @@
         <label>NA REIT</label>
     </customValue>
     <customValue>
-        <fullName>US Standardized Downloads</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>US Standardized Downloads</label>
-    </customValue>
-    <customValue>
         <fullName>REA</fullName>
         <default>false</default>
         <isActive>false</isActive>
         <label>REA</label>
-    </customValue>
-    <customValue>
-        <fullName>EU Market Data</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>EU Market Data</label>
-    </customValue>
-    <customValue>
-        <fullName>EU Market Forecasts</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>EU Market Forecasts</label>
-    </customValue>
-    <customValue>
-        <fullName>EU Standardized Downloads</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>EU Standardized Downloads</label>
     </customValue>
     <customValue>
         <fullName>Forecast Scenarios</fullName>
@@ -474,10 +426,58 @@
         <label>Credit Analytics</label>
     </customValue>
     <customValue>
+        <fullName>EU Standardized Downloads</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>EU Standardized Downloads</label>
+    </customValue>
+    <customValue>
         <fullName>eREA</fullName>
         <default>false</default>
         <isActive>false</isActive>
         <label>eREA</label>
+    </customValue>
+    <customValue>
+        <fullName>US Standardized Downloads</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>US Standardized Downloads</label>
+    </customValue>
+    <customValue>
+        <fullName>US Market Forecasts</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>US Market Forecasts</label>
+    </customValue>
+    <customValue>
+        <fullName>US Market Data</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>US Market Data</label>
+    </customValue>
+    <customValue>
+        <fullName>EU Market Data</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>EU Market Data</label>
+    </customValue>
+    <customValue>
+        <fullName>EU Sales Comps</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>EU Sales Comps</label>
+    </customValue>
+    <customValue>
+        <fullName>Learning Center</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Learning Center</label>
+    </customValue>
+    <customValue>
+        <fullName>EU Market Forecasts</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>EU Market Forecasts</label>
     </customValue>
     <description>DO NOT REMOVE ANY VALUES FROM GLOBAL PICKLIST. only remove values from the specific record type impacted.</description>
     <masterLabel>Products</masterLabel>
