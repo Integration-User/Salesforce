@@ -22035,7 +22035,7 @@ IsClosed=TRUE)</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-ISBLANK(Other_Vendorsnew__c),
+ISBLANK(Account.Other_Vendors__c),
 ISPICKVAL(Win_Validation__c,&quot;Pending Review&quot;),
 OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
