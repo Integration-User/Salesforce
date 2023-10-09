@@ -14949,6 +14949,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Compliance__c.Contract__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Compliance__c.Customer_Action_Form_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -15050,6 +15055,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Compliance__c.Is_Public__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Compliance__c.KYC__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -32822,6 +32832,10 @@
         <layout>CommunityMemberLayout-Community Member Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Compliance__c-UK Subscription</layout>
+        <recordType>Compliance__c.UK_Subscription</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Compliance__c-US Advisory</layout>
         <recordType>Compliance__c.US_Advisory</recordType>
     </layoutAssignments>
@@ -37056,6 +37070,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Case.User_List_Requests</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Compliance__c.UK_Subscription</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
