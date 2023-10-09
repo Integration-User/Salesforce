@@ -8,11 +8,12 @@ public class Plative_OLITriggerHandler  {
     /**
     * Description : before insert DML event
     **/
+
     public static void beforeInsert(List<OpportunityLineItem> lstOLI){
         Boolean isSuccess = Plative_OLITriggerHelper.updateProdNSInternalId(lstOLI);
     }
 
-    public static void beforeUpdate(List<OpportunityLineItem> lstOLI){
+    public static void beforeUpdate(List<OpportunityLineItem> lstOLI, Map<Id, OpportunityLineItem> oldOliMap){
         /*SF-320- Current Products Accuracy - Update sales price = 0 if product is Lost
 		 * Also Commenting updateProdNSInternalId method because it was not triggering before update. 
 		*/
@@ -21,8 +22,11 @@ public class Plative_OLITriggerHandler  {
             if (oli.Lost_Product__c) {
                 oli.UnitPrice = 0.0;
             }
+
             // SF-645 - Leap Year date issues
-            if(oli.End_Date__c != null && oli.Start_Date__c != null 
+            OpportunityLineItem oldOli = oldOliMap.get(oli.Id);
+            if(oli.End_Date__c != null && oli.Start_Date__c != null && (oli.End_Date__c != oldOli.End_Date__c || oli.Start_Date__c != oldOli.Start_Date__c)
+               && (oli.Start_Date__c != oldOli.Start_Date__c || oli.End_Date__c != oldOli.End_Date__c) 
                && ((Date.isLeapYear(oli.End_Date__c.year()) && oli.Start_Date__c.daysBetween(oli.End_Date__c) == 364 && oli.Start_Date__c.dayOfYear() >= 60)
               || (Date.isLeapYear(oli.Start_Date__c.year()) && oli.Start_Date__c.dayOfYear() <= 60))) {
                 System.debug('oli.Start_Date__c->'+oli.Start_Date__c+', oli.End_Date__c->'+oli.End_Date__c + ', times->'+oli.Start_Date__c.daysBetween(oli.End_Date__c));
