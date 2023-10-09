@@ -15,6 +15,8 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>Case.Case_Stale_For_4_days</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>ClientTrialActivationEmailAlert</name>
@@ -33,6 +35,8 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>Case.Trial_Activation_Email_Alert</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>TrialActivationEmailAlert</name>
@@ -51,6 +55,8 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>Case.Trial_Activation_Email_Alert</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>57.0</apiVersion>
     <decisions>
@@ -175,8 +181,8 @@
         <locationY>1248</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>ClientAccessCaseClosed</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 ) AND (5 OR 6)</conditionLogic>
+            <name>US_Client_Access_Closed</name>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 7) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -199,10 +205,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Account.Subsidiary__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>10 GSA LLC</stringValue>
+                    <stringValue>React News</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -219,11 +225,75 @@
                     <stringValue>Full Trial Activation</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Subsidiary__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>10 GSA LLC</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Create_Compliance_Record</targetReference>
+                <targetReference>Create_US_Compliance_Record</targetReference>
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-            <label>ClientAccessCaseClosed</label>
+            <label>US Client Access Closed</label>
+        </rules>
+        <rules>
+            <name>UK_Client_Access_Closed</name>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5) AND (6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Sales_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>React News</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Subsidiary__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>13 GSA UK Ltd</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Full Trial Activation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActivationDeactivation_Needs__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Limited Trial Activation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_UK_Compliance_Record</targetReference>
+            </connector>
+            <label>UK Client Access Closed</label>
         </rules>
     </decisions>
     <decisions>
@@ -486,10 +556,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
-        <name>Create_Compliance_Record</name>
-        <label>Create Compliance Record</label>
-        <locationX>50</locationX>
-        <locationY>1255</locationY>
+        <name>Create_UK_Compliance_Record</name>
+        <label>Create UK Compliance Record</label>
+        <locationX>422</locationX>
+        <locationY>1400</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
             <value>
@@ -512,6 +582,62 @@
             <field>Opportunity_New__c</field>
             <value>
                 <elementReference>$Record.Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>$Label.UK_Subscription_Record_Type</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trial_End_Date__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Trial_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Compliance__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_US_Compliance_Record</name>
+        <label>Create US Compliance Record</label>
+        <locationX>688</locationX>
+        <locationY>1400</locationY>
+        <inputAssignments>
+            <field>Account_Name__c</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CAF_Type__c</field>
+            <value>
+                <stringValue>Trial Activation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Account.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity_New__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>$Label.US_Subscription_Record_Type</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
