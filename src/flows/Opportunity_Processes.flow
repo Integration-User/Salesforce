@@ -2790,7 +2790,7 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_8</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 7) OR (4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR (1 AND 2 AND 3 AND 6) OR (4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -2949,7 +2949,7 @@
                 <leftValueReference>myVariable_current.Last_Stage_Change__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_11_myRule_8_0995188568</elementReference>
+                    <elementReference>formula_11_myRule_8_8809051974</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2980,7 +2980,7 @@
                 <leftValueReference>myVariable_current.RecordType.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Advisory </stringValue>
+                    <stringValue>Advisory</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -5123,7 +5123,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_8_0995188568</name>
+        <name>formula_11_myRule_8_8809051974</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -5134,7 +5134,7 @@
                 <stringValue>[Opportunity].Account.Name +&quot; - &quot;+ Text( [Opportunity].Activation_Deactivation_Needs__c)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_43_myRule_42_A1_9109165346</name>
+        <name>formula_43_myRule_42_A1_8273798108</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Account.Name} +&quot; - &quot;+ Text( {!myVariable_current.Activation_Deactivation_Needs__c})</expression>
     </formulas>
@@ -5145,11 +5145,11 @@
                 <stringValue>[Opportunity].Contract_Start_Date__c + 364</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_3428694853</name>
+        <name>formula_4_myRule_1_A1_6814826082</name>
         <dataType>Date</dataType>
         <expression>{!myVariable_current.Contract_Start_Date__c} + 364</expression>
     </formulas>
-    <interviewLabel>Opportunity_Processes-65_InterviewLabel</interviewLabel>
+    <interviewLabel>Opportunity_Processes-67_InterviewLabel</interviewLabel>
     <label>Opportunity Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -6225,7 +6225,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_43_myRule_42_A1_9109165346</elementReference>
+                <elementReference>formula_43_myRule_42_A1_8273798108</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -7109,7 +7109,7 @@
             </processMetadataValues>
             <field>End_Date__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_3428694853</elementReference>
+                <elementReference>formula_4_myRule_1_A1_6814826082</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
