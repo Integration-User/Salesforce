@@ -14,7 +14,7 @@ trigger Plative_OLITrigger on OpportunityLineItem (before insert, after insert, 
 	}
 	if(trigger.isUpdate){
 		if(trigger.isbefore)
-			Plative_OLITriggerHandler.beforeUpdate(Trigger.new);
+			Plative_OLITriggerHandler.beforeUpdate(Trigger.new, Trigger.oldMap);
 	}
 	if(trigger.isdelete)
 		Plative_OLITriggerHandler.beforeDelete(Trigger.oldMap);
