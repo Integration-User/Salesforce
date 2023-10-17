@@ -12272,7 +12272,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Account.EU_Expansion_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -12542,7 +12542,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Account.Protected_By__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -12767,7 +12767,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Account.US_Expansion_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>

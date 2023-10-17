@@ -12553,7 +12553,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Account.Protected_By__c</field>
         <readable>true</readable>
     </fieldPermissions>
