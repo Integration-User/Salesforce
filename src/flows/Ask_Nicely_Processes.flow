@@ -23,6 +23,8 @@
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>asknicely__NPS__c.Unfavorable_AskNicely_Responses</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>55.0</apiVersion>
     <decisions>
@@ -379,7 +381,7 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_9</name>
-            <conditionLogic>6 AND 7 AND (1 OR 2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditionLogic>6 AND (1 OR 2 OR 3 OR 4 OR 5)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -561,40 +563,9 @@
                     </value>
                 </processMetadataValues>
                 <leftValueReference>myVariable_current.asknicely__segment__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Green_Street_NPS_Survey</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.asknicely__segment__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>New_Website_Survey</stringValue>
+                    <stringValue>CS_Helpdesk_Survey</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -752,7 +723,7 @@
         </rules>
         <rules>
             <name>myRule_9_pmetrule</name>
-            <conditionLogic>6 AND 7 AND (1 OR 2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditionLogic>6 AND (1 OR 2 OR 3 OR 4 OR 5)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -934,40 +905,9 @@
                     </value>
                 </processMetadataValues>
                 <leftValueReference>myVariable_old.asknicely__segment__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Green_Street_NPS_Survey</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.asknicely__segment__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>New_Website_Survey</stringValue>
+                    <stringValue>CS_Helpdesk_Survey</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -983,7 +923,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_12_myRule_11_A1_4267164302</name>
+        <name>formula_12_myRule_11_A1_7978477143</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -994,11 +934,11 @@
                 <stringValue>[asknicely__NPS__c].asknicely__contact__r.Full_Name__c</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_13_myRule_11_A1_8695743737</name>
+        <name>formula_13_myRule_11_A1_5598323557</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.asknicely__contact__r.Full_Name__c}</expression>
     </formulas>
-    <interviewLabel>Ask_Nicely_Processes-14_InterviewLabel</interviewLabel>
+    <interviewLabel>Ask_Nicely_Processes-15_InterviewLabel</interviewLabel>
     <label>AskNicely Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -1063,7 +1003,7 @@
             </processMetadataValues>
             <field>ActivityDate</field>
             <value>
-                <elementReference>formula_12_myRule_11_A1_4267164302</elementReference>
+                <elementReference>formula_12_myRule_11_A1_7978477143</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1195,7 +1135,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_13_myRule_11_A1_8695743737</elementReference>
+                <elementReference>formula_13_myRule_11_A1_5598323557</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
