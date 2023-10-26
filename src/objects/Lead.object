@@ -10997,6 +10997,17 @@ Stored as Long on Solr.</description>
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
     <validationRules>
+        <fullName>Assign_Lead_Owner_To_User</fullName>
+        <active>true</active>
+        <description>Prevents users to move the status when lead is owned by a queue.</description>
+        <errorConditionFormula>AND(
+$RecordType.Name = &quot;Marketing&quot;,
+ISCHANGED(Status),
+BEGINS (OwnerId, &quot;00G&quot;)
+)</errorConditionFormula>
+        <errorMessage>Please assign this lead to a user before moving the status.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Comments_Required_to_Close_Referral</fullName>
         <active>true</active>
         <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
