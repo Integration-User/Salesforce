@@ -81,7 +81,6 @@
             <connector>
                 <targetReference>From_Registrant_not_News_Only</targetReference>
             </connector>
-            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes</label>
         </rules>
     </decisions>
@@ -89,7 +88,7 @@
         <name>Status_Qualified</name>
         <label>Status: Qualified</label>
         <locationX>182</locationX>
-        <locationY>1739</locationY>
+        <locationY>1631</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Qualified_Yes_1</name>
@@ -108,10 +107,16 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Attended_Training_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Qualified_User_Status</targetReference>
             </connector>
-            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes</label>
         </rules>
     </decisions>
@@ -175,45 +180,14 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>From_Non_Responsive_News_Only_Qualified</name>
-        <label>From Non-Responsive (News Only) Qualified</label>
-        <locationX>50</locationX>
-        <locationY>1547</locationY>
-        <connector>
-            <targetReference>Status_Qualified</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Onboarding_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Nonresponsive Registrant</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Products_Include__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>News Only</stringValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Onboarding_Status__c</field>
-            <value>
-                <stringValue>Qualified Survey Respondent</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>From_Registrant_News_Only_Qualified</name>
         <label>From Registrant (News Only) Qualified</label>
         <locationX>50</locationX>
         <locationY>1439</locationY>
         <connector>
-            <targetReference>From_Non_Responsive_News_Only_Qualified</targetReference>
+            <targetReference>Status_Qualified</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>(1 OR 3 OR 4) AND 2</filterLogic>
         <filters>
             <field>Onboarding_Status__c</field>
             <operator>EqualTo</operator>
@@ -226,6 +200,20 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>News Only</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Onboarding_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Nonresponsive Registrant</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Onboarding_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing User</stringValue>
             </value>
         </filters>
         <inputAssignments>
@@ -284,7 +272,7 @@
         <name>Qualified_User_Status</name>
         <label>Qualified User Status</label>
         <locationX>50</locationX>
-        <locationY>1847</locationY>
+        <locationY>1739</locationY>
         <inputAssignments>
             <field>Onboarding_Status__c</field>
             <value>
@@ -351,7 +339,7 @@
         <connector>
             <targetReference>Do_Not_Call_Trigger</targetReference>
         </connector>
-        <filterLogic>(1 AND 2) OR 3 OR (4 AND 5)</filterLogic>
+        <filterLogic>(1 AND 2) OR 3 OR (4 AND 5) OR (6 AND 7) OR (8 AND 9)</filterLogic>
         <filters>
             <field>DoNotCall</field>
             <operator>EqualTo</operator>
@@ -385,6 +373,34 @@
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Last_Login_Date__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Last_Login_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Attended_Training_Date__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Attended_Training_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
             </value>
         </filters>
         <object>Contact</object>
