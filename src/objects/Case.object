@@ -12646,12 +12646,14 @@ RecordType.DeveloperName = &quot;Account_Assignment&quot;
     </validationRules>
     <validationRules>
         <fullName>Data_Support_Closed_Requirements</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 AND(
 RecordType.Name=&quot;Help Desk&quot;,
 ISPICKVAL(Status,&quot;Closed&quot;),
-ISPICKVAL(Support_Type__c,&quot;Data Support&quot;),
+OR(
+ISPICKVAL(Support_Type__c,&quot;US Data Support&quot;),
+ISPICKVAL(Support_Type__c,&quot;EU Data Support&quot;)),
 OR(
 ISBLANK(AccountId),
 ISBLANK(ContactId),
@@ -12668,7 +12670,10 @@ Account Name, Contact Name, Type, Minutes Spent</errorMessage>
 AND(
 RecordType.Name=&quot;Help Desk&quot;,
 ISPICKVAL(Status,&quot;Closed&quot;),
+OR(
 ISPICKVAL(Support_Type__c,&quot;Client Support&quot;),
+ISPICKVAL(Support_Type__c,&quot;US Data Support&quot;),
+ISPICKVAL(Support_Type__c,&quot;EU Data Support&quot;)),
 OR(
 ISBLANK(Minutes_Spent_Cases__c),
 ISBLANK(ContactId),
@@ -12679,6 +12684,19 @@ OR(
 ISNULL(Use_Case__c)))))</errorConditionFormula>
         <errorMessage>The following fields are required to close this case - 
 Minutes Spent, Contact Name, Type, Products Discussed, Solution Notes, Use Case</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Not_Allowed_External_Requests</fullName>
+        <active>true</active>
+        <description>Do not allow any accounts other than Green Street.</description>
+        <errorConditionFormula>AND(
+ISCHANGED(Status),
+ISPICKVAL(Status,&quot;Closed&quot;),
+AccountId = &apos;001f400000dzg4D&apos;,
+NOT(ISPICKVAL(Origin, &quot;Internal Data Support&quot;)),
+RecordType.DeveloperName = &quot;Help_Desk&quot;
+)</errorConditionFormula>
+        <errorMessage>Green Street is not allowed on this type of Case. Please choose a different account.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_On_Hold_Reason</fullName>
