@@ -9,7 +9,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>US_Closed_Won_Subscription</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 OR 6) AND 2 AND 3 AND 4 AND 5</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -43,6 +43,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>React News</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity_Closed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -52,7 +59,7 @@
         </rules>
         <rules>
             <name>UK_Closed_Won_Subscription</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 OR 6) AND 2 AND 3 AND 4 AND 5</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -88,6 +95,13 @@
                     <stringValue>React News</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Create_UK_Activation_Compliance</targetReference>
             </connector>
@@ -95,7 +109,7 @@
         </rules>
         <rules>
             <name>US_Lost_Renewal_Subscription</name>
-            <conditionLogic>((1 OR 8) AND 2 AND 5 AND 7 AND 9) OR (2 AND 3 AND 4 AND 5 AND 6 AND 9)</conditionLogic>
+            <conditionLogic>((1 OR 8) AND 2 AND 5 AND 7 AND 9) OR (2 AND (3 OR 10) AND 4 AND 5 AND 6 AND 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -159,6 +173,13 @@
                     <stringValue>React News</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Create_US_Deactivation_Compliance</targetReference>
             </connector>
@@ -166,7 +187,7 @@
         </rules>
         <rules>
             <name>UK_Lost_Renewal_Subscription</name>
-            <conditionLogic>((1 OR 8) AND 2 AND 5 AND 7 AND 9) OR (2 AND 3 AND 4 AND 5 AND 6 AND 9)</conditionLogic>
+            <conditionLogic>((1 OR 8) AND 2 AND 5 AND 7 AND 9) OR (2 AND (3 OR 10) AND 4 AND 5 AND 6 AND 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -228,6 +249,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>React News</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity_Closed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
