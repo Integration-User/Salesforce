@@ -32,6 +32,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
+                <field>Two_Year_Revenue_Credit__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>Contract_Type__c</field>
             </layoutItems>
             <layoutItems>
@@ -60,6 +64,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>News_ID__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>License_Size__c</field>
             </layoutItems>
             <layoutItems>
@@ -67,8 +75,8 @@
                 <field>AP_Email__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>IqScore</field>
+                <behavior>Edit</behavior>
+                <field>Exclude_from_Deal_Scoring_Model__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -103,6 +111,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Contract_End_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Invoice_Frequency__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -141,6 +153,10 @@
         <editHeading>true</editHeading>
         <label>Additional Context</label>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Management_Team__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Billing_Contact__c</field>
@@ -358,13 +374,6 @@
             <quickActionName>SendEmail</quickActionName>
         </quickActionListItems>
     </quickActionList>
-    <relatedContent>
-        <relatedContentItems>
-            <layoutItem>
-                <component>wits:newsPanel</component>
-            </layoutItem>
-        </relatedContentItems>
-    </relatedContent>
     <relatedLists>
         <fields>ContactName</fields>
         <fields>Role</fields>
