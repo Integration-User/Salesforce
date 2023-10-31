@@ -14352,6 +14352,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Context_for_Request__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Customer_Success_FAQ__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -14507,7 +14512,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Reason</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Reason_for_Request__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -38648,10 +38663,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ShowCompanyNameAsUserBadge</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SocialInsightsLogoAdmin</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
