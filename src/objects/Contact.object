@@ -697,7 +697,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Current_Status__c</fullName>
         <externalId>false</externalId>
-        <formula>IF(ISBLANK(TEXT(Contact_Status__c)), &quot;&quot;, TEXT(Contact_Status__c)&amp;&quot; - &quot;&amp; TExt(Usage_Status__c))</formula>
+        <formula>IF(ISBLANK(TEXT(Contact_Status__c)), &quot;&quot;, TEXT(Contact_Status__c)&amp;&quot; - &quot;&amp; Usage_Cohort__c)</formula>
         <label>Current Status</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
