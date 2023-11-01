@@ -68,7 +68,7 @@ public class Plative_OLITriggerHelper  {
         Map<Id,Opportunity> mapOpportunities = new Map<Id,Opportunity>([Select id, Products__C, Exclude_from_Deal_Scoring_Model__c from Opportunity where id in:setOppoIds]);
         
         Map<Id, boolean> excludeDealOpps = new Map<Id, boolean>();
-        for(OpportunityLineItem oil : [Select id, Product2.Name, Product2.Exclude_from_Deal_Scoring_Model__c, OpportunityId from OpportunityLineItem where id NOT IN: lstOLI.keyset() AND OpportunityId IN:setOppoIds]) {
+        for(OpportunityLineItem oil : [Select id, Product2.Name, Product2.Exclude_from_Deal_Scoring_Model__c, OpportunityId from OpportunityLineItem where id NOT IN: lstOLI.keyset() AND OpportunityId IN:setOppoIds AND Product2.Exclude_from_Deal_Scoring_Model__c = TRUE]) {
             excludeDealOpps.put(oil.OpportunityId, oil.Product2.Exclude_from_Deal_Scoring_Model__c);
         }
         System.debug('excludeDealOpps-->'+excludeDealOpps);
@@ -81,6 +81,9 @@ public class Plative_OLITriggerHelper  {
             boolean dealScorFlag = mapOpportunities.get(line.OpportunityId).Exclude_from_Deal_Scoring_Model__c;
             if(excludeDealOpps.containsKey(line.OpportunityId) && excludeDealOpps.get(line.OpportunityId) != null && excludeDealOpps.get(line.OpportunityId) != dealScorFlag) {
                 mapOpportunities.get(line.OpportunityId).Exclude_from_Deal_Scoring_Model__c = excludeDealOpps.containsKey(line.OpportunityId) ? excludeDealOpps.get(line.OpportunityId) : false;
+                isUpdate = true;
+            } else if (!excludeDealOpps.containsKey(line.OpportunityId) && mapOpportunities.get(line.OpportunityId).Exclude_from_Deal_Scoring_Model__c) {
+                mapOpportunities.get(line.OpportunityId).Exclude_from_Deal_Scoring_Model__c = false;
                 isUpdate = true;
             }
         }
