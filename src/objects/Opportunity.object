@@ -21792,7 +21792,7 @@ ISPICKVAL( StageName , &quot;Closed Won&quot;))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>DDScore_MissingApproval</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Prevents change the status from Conducting Needs Analysis (3) or Qualified Prospect (2) to any following open stages, including Closed Won when the score has not been approved. Allow changes w/o approval when &quot;Lead Source&quot; is &quot;News Subscription Request&quot;</description>
         <errorConditionFormula>AND(
 OR(
@@ -21810,6 +21810,7 @@ ISCHANGED(StageName),
 ISCHANGED(Win_Validation__c)
 ),
 DDS_ScoreApplicability__c = TRUE,
+Exclude_from_Deal_Scoring_Model__c = FALSE,
 NOT(ISPICKVAL(StageName,&quot;Deactivated&quot;)),
 NOT(ISPICKVAL(StageName,&quot;Closed Lost&quot;)),
 NOT(ISPICKVAL(StageName,&quot;Consolidated&quot;)),
