@@ -2556,7 +2556,10 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <formula>CASE(Subsidiary__c ,
 &quot;10 GSA LLC&quot;,8,
 &quot;13 GSA UK Ltd&quot;,10,
-&quot;14 React Ltd&quot;,29,0)</formula>
+&quot;14 React Ltd&quot;,29,
+&quot;18.1 LDC&quot;,48,
+&quot;18.2 On-Site Research Limited&quot;,51,
+&quot;18.3 Edge Analytics Ltd&quot;,52,0)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Subsidiary Internal Id</label>
         <precision>18</precision>
@@ -2585,6 +2588,21 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
                     <fullName>13 GSA UK Ltd</fullName>
                     <default>false</default>
                     <label>13 GSA UK Ltd</label>
+                </value>
+                <value>
+                    <fullName>18.1 LDC</fullName>
+                    <default>false</default>
+                    <label>18.1 LDC</label>
+                </value>
+                <value>
+                    <fullName>18.2 On-site Research Limited</fullName>
+                    <default>false</default>
+                    <label>18.2 On-site Research Limited</label>
+                </value>
+                <value>
+                    <fullName>18.3 Edge Analytics Ltd</fullName>
+                    <default>false</default>
+                    <label>18.3 Edge Analytics Ltd</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -5063,6 +5081,18 @@ Stored as Long on Solr.</description>
                 <fullName>13 GSA UK Ltd</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>18%2E1 LDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18%2E2 On-site Research Limited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18%2E3 Edge Analytics Ltd</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>TA_Vertical__c</picklist>
@@ -6423,6 +6453,18 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>13 GSA UK Ltd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18%2E1 LDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18%2E2 On-site Research Limited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18%2E3 Edge Analytics Ltd</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
