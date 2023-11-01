@@ -217,7 +217,7 @@
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText6</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
+                    <booleanFilter>1 AND 2 AND 3</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.DDS_ARRChanged__c}</leftValue>
                         <operator>EQUAL</operator>
@@ -227,6 +227,11 @@
                         <leftValue>{!Record.DDS_ScoreApplicability__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>true</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Exclude_from_Deal_Scoring_Model__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
