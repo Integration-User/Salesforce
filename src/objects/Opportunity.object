@@ -21810,6 +21810,7 @@ ISCHANGED(StageName),
 ISCHANGED(Win_Validation__c)
 ),
 DDS_ScoreApplicability__c = TRUE,
+Exclude_from_Deal_Scoring_Model__c = FALSE,
 NOT(ISPICKVAL(StageName,&quot;Deactivated&quot;)),
 NOT(ISPICKVAL(StageName,&quot;Closed Lost&quot;)),
 NOT(ISPICKVAL(StageName,&quot;Consolidated&quot;)),
