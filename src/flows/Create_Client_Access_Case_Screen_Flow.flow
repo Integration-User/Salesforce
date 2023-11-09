@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>59.0</apiVersion>
+    <choices>
+        <name>Case_AddUpsoldProducts</name>
+        <choiceText>Add Upsold Products</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Add Upsold Products</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Case_FullAccountActivation</name>
+        <choiceText>Full Account Activation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Full Account Activation</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Case_FullAccountDeactivation</name>
+        <choiceText>Full Account Deactivation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Full Account Deactivation</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Case_FullTrialActivation</name>
+        <choiceText>Full Trial Activation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Full Trial Activation</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Case_FullTrialDeactivation</name>
+        <choiceText>Full Trial Deactivation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Full Trial Deactivation</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Case_LimitedTrialActivation</name>
+        <choiceText>Limited Trial Activation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Limited Trial Activation</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Case_LimitedTrialDeactivation</name>
+        <choiceText>Limited Trial Deactivation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Limited Trial Deactivation</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Case_RemoveLostProducts</name>
+        <choiceText>Remove Lost Product(s)</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Remove Lost Product(s)</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Case_Suspend</name>
+        <choiceText>Suspend</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Suspend</stringValue>
+        </value>
+    </choices>
+    <dynamicChoiceSets>
+        <name>Case_ActivationDeactivation_Needs</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ActivationDeactivation_Needs__c</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Case_Products</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Products__c</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Case_Reason_for_Request</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Reason_for_Request__c</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <interviewLabel>Create Client Access Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Client Access Case - Screen Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Client_Access_Record</name>
+        <label>Create Client Access Record</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <connector>
+            <targetReference>Success_Screen</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ActivationDeactivation_Needs__c</field>
+            <value>
+                <elementReference>Activation_Deactivation_Needs</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Context_for_Request__c</field>
+            <value>
+                <elementReference>Context_for_Request</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Due_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Label.Client_Access_Queue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Products__c</field>
+            <value>
+                <elementReference>Products</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reason_for_Request__c</field>
+            <value>
+                <elementReference>Reason_for_Request</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>$Label.Client_Access</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>{!recordId.Name} - Client Access Request</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <screens>
+        <name>Create_Client_Access_Case</name>
+        <label>Create Client Access Case</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Client_Access_Record</targetReference>
+        </connector>
+        <fields>
+            <name>ClientAccessReminderText</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;“Reminder, this is not to be used for trials, new sales, or expansion opportunities. Those will be handled when the appropriate action is taken on the opportunity.”&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Activation_Deactivation_Needs</name>
+            <choiceReferences>Case_FullAccountDeactivation</choiceReferences>
+            <choiceReferences>Case_RemoveLostProducts</choiceReferences>
+            <choiceReferences>Case_FullAccountActivation</choiceReferences>
+            <choiceReferences>Case_AddUpsoldProducts</choiceReferences>
+            <choiceReferences>Case_Suspend</choiceReferences>
+            <choiceReferences>Case_FullTrialActivation</choiceReferences>
+            <choiceReferences>Case_FullTrialDeactivation</choiceReferences>
+            <choiceReferences>Case_LimitedTrialActivation</choiceReferences>
+            <choiceReferences>Case_LimitedTrialDeactivation</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Activation/Deactivation Needs</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Products</name>
+            <choiceReferences>Case_Products</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Products</fieldText>
+            <fieldType>MultiSelectPicklist</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Reason_for_Request</name>
+            <choiceReferences>Case_Reason_for_Request</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Reason for Request</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Context_for_Request</name>
+            <dataType>String</dataType>
+            <fieldText>Context for Request</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Create Request</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Success_Screen</name>
+        <label>Success Screen</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Success_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;Request has been Completed.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Done</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Client_Access_Case</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+</Flow>
