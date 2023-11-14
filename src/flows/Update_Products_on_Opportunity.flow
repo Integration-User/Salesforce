@@ -4,8 +4,8 @@
     <assignments>
         <name>Set_Product_Name</name>
         <label>Set Product Name</label>
-        <locationX>427</locationX>
-        <locationY>281</locationY>
+        <locationX>270</locationX>
+        <locationY>947</locationY>
         <assignmentItems>
             <assignToReference>ProductsName</assignToReference>
             <operator>Assign</operator>
@@ -17,11 +17,52 @@
             <targetReference>Loop_through_Line_Items</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Update_Deal_Scoring_Model_Flag</name>
+        <label>Update Deal Scoring Model Flag</label>
+        <locationX>138</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>ExcludefromDealScoringModel</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_through_Line_Items.Product2.Exclude_from_Deal_Scoring_Model__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Product_Name</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Exclude_from_Deal_Scoring_Model_Product</name>
+        <label>Check Exclude from Deal Scoring Model Product</label>
+        <locationX>270</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Set_Product_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>TRUE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_through_Line_Items.Product2.Exclude_from_Deal_Scoring_Model__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Deal_Scoring_Model_Flag</targetReference>
+            </connector>
+            <label>TRUE</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Check_Flow_Execution_Logic</name>
         <label>Check Flow Execution Logic</label>
-        <locationX>264</locationX>
-        <locationY>341</locationY>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Record_Should_be_New_OR_Lost_Product_Updated</name>
@@ -68,12 +109,12 @@ if(CONTAINS({!ProductsName}, {!Loop_through_Line_Items.Product2.Name}),{!Product
     <loops>
         <name>Loop_through_Line_Items</name>
         <label>Loop through Line Items</label>
-        <locationX>428</locationX>
-        <locationY>471</locationY>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <collectionReference>Get_All_Product_Line</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Set_Product_Name</targetReference>
+            <targetReference>Check_Exclude_from_Deal_Scoring_Model_Product</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Update_Oppotunity_Record</targetReference>
@@ -88,7 +129,7 @@ if(CONTAINS({!ProductsName}, {!Loop_through_Line_Items.Product2.Name}),{!Product
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -101,8 +142,8 @@ if(CONTAINS({!ProductsName}, {!Loop_through_Line_Items.Product2.Name}),{!Product
     <recordLookups>
         <name>Get_All_Product_Line</name>
         <label>Get All Product Line</label>
-        <locationX>169</locationX>
-        <locationY>483</locationY>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_through_Line_Items</targetReference>
@@ -129,8 +170,8 @@ if(CONTAINS({!ProductsName}, {!Loop_through_Line_Items.Product2.Name}),{!Product
     <recordUpdates>
         <name>Update_Oppotunity_Record</name>
         <label>Update Oppotunity Record</label>
-        <locationX>677</locationX>
-        <locationY>484</locationY>
+        <locationX>50</locationX>
+        <locationY>1139</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -140,6 +181,12 @@ if(CONTAINS({!ProductsName}, {!Loop_through_Line_Items.Product2.Name}),{!Product
             </value>
         </filters>
         <inputAssignments>
+            <field>Exclude_from_Deal_Scoring_Model__c</field>
+            <value>
+                <elementReference>ExcludefromDealScoringModel</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Products__c</field>
             <value>
                 <elementReference>ProductsName</elementReference>
@@ -148,8 +195,8 @@ if(CONTAINS({!ProductsName}, {!Loop_through_Line_Items.Product2.Name}),{!Product
         <object>Opportunity</object>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Check_Flow_Execution_Logic</targetReference>
         </connector>
@@ -163,6 +210,16 @@ if(CONTAINS({!ProductsName}, {!Loop_through_Line_Items.Product2.Name}),{!Product
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>&lt;html&gt; Access To : &lt;br/&gt;&lt;ul&gt;</text>
     </textTemplates>
+    <variables>
+        <name>ExcludefromDealScoringModel</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
     <variables>
         <name>FinalDescription</name>
         <dataType>String</dataType>
