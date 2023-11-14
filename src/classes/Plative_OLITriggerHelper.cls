@@ -60,16 +60,30 @@ public class Plative_OLITriggerHelper  {
     public static void UpdateProductInOpportunity(Map<Id,OpportunityLineItem> lstOLI){
         Set<Id> setOppoIds = new Set<Id>();
         Boolean isUpdate = false;
-        Map<Id,OpportunityLineItem> mapOppoLineItems = new Map<Id,OpportunityLineItem>([Select id, Product2.Name from OpportunityLineItem where id in: lstOLI.keyset()]);
+        Map<Id,OpportunityLineItem> mapOppoLineItems = new Map<Id,OpportunityLineItem>([Select id, Product2.Name, Product2.Exclude_from_Deal_Scoring_Model__c, OpportunityId from OpportunityLineItem where id in: lstOLI.keyset()]);
         for(OpportunityLineItem line: lstOLI.values()){
             setOppoIds.add(line.OpportunityId);
         }
-        Map<Id,Opportunity> mapOpportunities = new Map<Id,Opportunity>([Select id, Products__C from Opportunity where id in:setOppoIds]);
+
+        Map<Id,Opportunity> mapOpportunities = new Map<Id,Opportunity>([Select id, Products__C, Exclude_from_Deal_Scoring_Model__c from Opportunity where id in:setOppoIds]);
         
+        Map<Id, boolean> excludeDealOpps = new Map<Id, boolean>();
+        for(OpportunityLineItem oil : [Select id, Product2.Name, Product2.Exclude_from_Deal_Scoring_Model__c, OpportunityId from OpportunityLineItem where id NOT IN: lstOLI.keyset() AND OpportunityId IN:setOppoIds AND Product2.Exclude_from_Deal_Scoring_Model__c = TRUE]) {
+            excludeDealOpps.put(oil.OpportunityId, oil.Product2.Exclude_from_Deal_Scoring_Model__c);
+        }
+        System.debug('excludeDealOpps-->'+excludeDealOpps);
         for(OpportunityLineItem line: lstOLI.values()){
             String proName = mapOpportunities.get(line.OpportunityId).Products__C;
             if(proName != null && proName.contains(mapOppoLineItems.get(line.id).Product2.Name)){
                 mapOpportunities.get(line.OpportunityId).Products__C = proName.replace(mapOppoLineItems.get(line.id).Product2.Name,'');
+                isUpdate = true;
+            }
+            boolean dealScorFlag = mapOpportunities.get(line.OpportunityId).Exclude_from_Deal_Scoring_Model__c;
+            if(excludeDealOpps.containsKey(line.OpportunityId) && excludeDealOpps.get(line.OpportunityId) != null && excludeDealOpps.get(line.OpportunityId) != dealScorFlag) {
+                mapOpportunities.get(line.OpportunityId).Exclude_from_Deal_Scoring_Model__c = excludeDealOpps.containsKey(line.OpportunityId) ? excludeDealOpps.get(line.OpportunityId) : false;
+                isUpdate = true;
+            } else if (!excludeDealOpps.containsKey(line.OpportunityId) && mapOpportunities.get(line.OpportunityId).Exclude_from_Deal_Scoring_Model__c) {
+                mapOpportunities.get(line.OpportunityId).Exclude_from_Deal_Scoring_Model__c = false;
                 isUpdate = true;
             }
         }
