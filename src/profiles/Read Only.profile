@@ -24041,6 +24041,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>asknicely__NPS__c.Response_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>asknicely__NPS__c.Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -33099,6 +33104,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkThanks-Thanks Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>asknicely__NPS__c-asknicely__Asknicely Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>false</allowCreate>
