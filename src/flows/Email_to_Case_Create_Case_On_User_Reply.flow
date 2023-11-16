@@ -4,12 +4,62 @@
     <decisions>
         <name>Help_Desk_Case_Decision</name>
         <label>Help Desk Case Decision</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
+            <name>Closed_Help_Desk_IRR</name>
+            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5 AND 6</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Parent.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Parent.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Parent.Origin</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal Data Support</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Parent.Support_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>US Data Support</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Parent.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Help_Desk</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>US Data Support</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Case_For_IRR</targetReference>
+            </connector>
+            <label>Closed Help Desk: IRR</label>
+        </rules>
+        <rules>
             <name>Closed_Help_Desk_US_Client_Support</name>
-            <conditionLogic>(1 OR 5) AND 2 AND (3 OR 4)</conditionLogic>
+            <conditionLogic>(1 OR 5) AND 2 AND (3 OR 4) AND NOT 6</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Parent.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -45,6 +95,13 @@
                     <stringValue>Cancelled</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>@greenstreet.com</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Create_US_Client_Support_Case</targetReference>
             </connector>
@@ -52,7 +109,7 @@
         </rules>
         <rules>
             <name>Closed_Help_Desk_EU_Data_Support</name>
-            <conditionLogic>(1 OR 4) AND 2 AND 3</conditionLogic>
+            <conditionLogic>(1 OR 4) AND 2 AND 3 AND NOT 5</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Parent.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -79,6 +136,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>@greenstreet.com</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -111,9 +175,77 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
+        <name>Create_Case_For_IRR</name>
+        <label>Create Case For IRR</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.Parent.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BusinessHoursId</field>
+            <value>
+                <stringValue>01mf40000006lUk</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Parent.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>$Record.TextBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Origin</field>
+            <value>
+                <elementReference>$Record.Parent.Origin</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <stringValue>00G5G000004KaHL</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>$Record.ParentId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0125G000001UNHU</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>{!$Record.Parent.Subject} - Follow Up</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
         <name>Create_EU_Data_Support_Case</name>
         <label>Create EU Data Support Case</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>431</locationY>
         <inputAssignments>
             <field>AccountId</field>
@@ -181,7 +313,7 @@
     <recordCreates>
         <name>Create_US_Client_Support_Case</name>
         <label>Create US/Client Support Case</label>
-        <locationX>50</locationX>
+        <locationX>314</locationX>
         <locationY>431</locationY>
         <inputAssignments>
             <field>AccountId</field>
@@ -247,7 +379,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <start>
-        <locationX>188</locationX>
+        <locationX>320</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Help_Desk_Case_Decision</targetReference>
