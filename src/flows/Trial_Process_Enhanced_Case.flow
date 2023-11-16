@@ -4,8 +4,8 @@
         <description>This will notify case owner and Claire for cases open without activity for 4 days</description>
         <name>CaseStaleFor4days</name>
         <label>CaseStaleFor4days</label>
-        <locationX>1250</locationX>
-        <locationY>540</locationY>
+        <locationX>1367</locationX>
+        <locationY>509</locationY>
         <actionName>Case.Case_Stale_For_4_days</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -58,7 +58,38 @@
         <nameSegment>Case.Trial_Activation_Email_Alert</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
+    <actionCalls>
+        <name>Untouched_Help_Desk_Cases_Alert</name>
+        <label>Untouched Help Desk Cases Alert</label>
+        <locationX>1519</locationX>
+        <locationY>511</locationY>
+        <actionName>Case.Untouched_Help_Desk_Cases</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.Untouched_Help_Desk_Cases</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <constants>
+        <name>EU_Data_Support_OwnerId</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>00G5G000004L3wSUAS</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Help_Desk_OwnerId</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>00G5G000004cMsDUAU</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Activation_Decision</name>
         <label>Activation Decision</label>
@@ -390,10 +421,74 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Untouched_Case_For_2_Hours_Decision</name>
+        <label>Untouched Case For 2 Hours Decision</label>
+        <locationX>1511</locationX>
+        <locationY>253</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Case_Untouched_For_2_Hours</name>
+            <conditionLogic>1 AND (2 OR 6 OR 7) AND 3 AND (4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Help_Desk_OwnerId</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Help_Desk</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Submitted_Day__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Saturday</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Submitted_Day__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Sunday</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>EU_Data_Support_OwnerId</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Origin</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer Success</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Untouched_Help_Desk_Cases_Alert</targetReference>
+            </connector>
+            <label>Case Untouched For 2 Hours</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Untouched_Case_For_4_days_Decision</name>
         <label>Untouched Case For 4 days Decision</label>
-        <locationX>1382</locationX>
-        <locationY>432</locationY>
+        <locationX>1066</locationX>
+        <locationY>511</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>X3BusinessDaysSinceModified</name>
@@ -718,7 +813,7 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>948</locationX>
+        <locationX>949</locationX>
         <locationY>156</locationY>
         <connector>
             <targetReference>Activation_Decision</targetReference>
@@ -734,6 +829,17 @@
             <offsetNumber>3</offsetNumber>
             <offsetUnit>Days</offsetUnit>
             <recordField>LastModifiedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>Untouched_Case_For_2_Hours</name>
+            <connector>
+                <targetReference>Untouched_Case_For_2_Hours_Decision</targetReference>
+            </connector>
+            <label>Untouched Case For 2 Hours</label>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <recordField>CreatedDate</recordField>
             <timeSource>RecordField</timeSource>
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
