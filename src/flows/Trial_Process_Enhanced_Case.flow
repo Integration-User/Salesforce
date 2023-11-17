@@ -428,7 +428,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Case_Untouched_For_2_Hours</name>
-            <conditionLogic>1 AND (2 OR 6 OR 7) AND 3 AND (4 OR 5)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 6) AND 7 AND 3 AND (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.IsClosed</leftValueReference>
                 <operator>EqualTo</operator>
