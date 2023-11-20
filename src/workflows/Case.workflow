@@ -195,18 +195,6 @@
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Untouched_Data_Support_Cases</template>
     </alerts>
-    <alerts>
-        <fullName>Untouched_Help_Desk_Cases</fullName>
-        <description>Untouched Help Desk Cases</description>
-        <protected>false</protected>
-        <recipients>
-            <recipient>Help_Desk_untouched_cases</recipient>
-            <type>group</type>
-        </recipients>
-        <senderAddress>noreply@greenstreet.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/Untouched_Help_Desk_Cases</template>
-    </alerts>
     <fieldUpdates>
         <fullName>Set_Client_Support_Type</fullName>
         <field>Support_Type__c</field>
@@ -524,49 +512,6 @@
             </actions>
             <offsetFromField>Case.CreatedDate</offsetFromField>
             <timeLength>2</timeLength>
-            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
-        </workflowTimeTriggers>
-    </rules>
-    <rules>
-        <fullName>Untouched Help Desk Cases</fullName>
-        <actions>
-            <name>Set_Client_Support_Type</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Case.IsClosed</field>
-            <operation>equals</operation>
-            <value>False</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.OwnerId</field>
-            <operation>equals</operation>
-            <value>Help Desk</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Help Desk</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.Submitted_Day__c</field>
-            <operation>notEqual</operation>
-            <value>Saturday</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.Submitted_Day__c</field>
-            <operation>notEqual</operation>
-            <value>Sunday</value>
-        </criteriaItems>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-        <workflowTimeTriggers>
-            <actions>
-                <name>Untouched_Help_Desk_Cases</name>
-                <type>Alert</type>
-            </actions>
-            <offsetFromField>Case.CreatedDate</offsetFromField>
-            <timeLength>3</timeLength>
             <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
         </workflowTimeTriggers>
     </rules>
