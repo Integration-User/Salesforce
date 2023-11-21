@@ -12834,25 +12834,6 @@ RecordType.DeveloperName = &quot;Account_Assignment&quot;
         <errorMessage>You can’t close a “Account Assignment” case without the manager field filled in</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>Data_Support_Closed_Requirements</fullName>
-        <active>false</active>
-        <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-AND(
-RecordType.Name=&quot;Help Desk&quot;,
-ISPICKVAL(Status,&quot;Closed&quot;),
-OR(
-ISPICKVAL(Support_Type__c,&quot;US Data Support&quot;),
-ISPICKVAL(Support_Type__c,&quot;EU Data Support&quot;)),
-OR(
-ISBLANK(AccountId),
-ISBLANK(ContactId),
-ISBLANK(TEXT(Type)),
-ISBLANK(Minutes_Spent_Cases__c)
-)))</errorConditionFormula>
-        <errorMessage>The following fields are required to close this case -
-Account Name, Contact Name, Type, Minutes Spent</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>Help_Desk_Closed_Requirements</fullName>
         <active>true</active>
         <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,

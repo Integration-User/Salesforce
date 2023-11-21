@@ -8461,19 +8461,6 @@ Stored as Long on Solr.</description>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
-        <fullName>Activate_Contact</fullName>
-        <active>false</active>
-        <description>If Activate Contact Checked true, make Username &amp; Account Activation Required</description>
-        <errorConditionFormula>AND(
-  Activate_Contact__c  = TRUE,
-OR(
-      ISBLANK(  Username__c ),
-      ISPICKVAL( Account.Account_Status__c ,&quot;Active&quot;)
-)
-)</errorConditionFormula>
-        <errorMessage>Username must be filled out and Account must be Active before you can activate the Contact.</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>Datalink_of_Website_Access_Required</fullName>
         <active>false</active>
         <errorConditionFormula>IF(
