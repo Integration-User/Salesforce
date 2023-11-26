@@ -2,7 +2,7 @@ public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Oppo
     public String generatedCSVFile ='Id, Name, Old products__c, New products__c, Old Product Type, New Product Type\n';
     public Iterable<Opportunity> start(Database.BatchableContext BC) {
         Set<Opportunity> diffOpp = new Set<Opportunity>(); 
-        for (Opportunity opp : [SELECT id, name, products__c, Product_Types__c, (SELECT product2.Name FROM OpportunityLineItems WHERE Lost_Product__c = false) 
+        for (Opportunity opp : [SELECT id, name, products__c, /*Product_Types__c*/ (SELECT product2.Name FROM OpportunityLineItems WHERE Lost_Product__c = false) 
                                 FROM Opportunity Where RecordType.DeveloperName IN ('Existing_Business', 'Renewal_Closed', 'Sales_Opportunity', 'Sales_Opportunity_Closed')]) {
             /*List<String> oppProducts = new List<String>();
             if (String.isNotBlank(opp.products__c)) {
@@ -22,7 +22,7 @@ public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Oppo
     }
     
     public void execute(Database.BatchableContext BC, List<Opportunity> oppList) {
-        List<Opportunity> updatedOppList = new List<Opportunity>();
+        /*List<Opportunity> updatedOppList = new List<Opportunity>();
         for (Opportunity opp : oppList) {
             String proName = opp.Products__C;
             String productNames = '';
@@ -34,7 +34,7 @@ public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Oppo
                     productNames += ';' + oli.product2.Name;
                 }
             }
-            List<String> CategoryName = Plative_SFToNSSyncUtility.getProductCategoryName(New List<String>{productNames});
+            List<String> CategoryName = Plative_SFToNSSyncUtility.getProductCategoryNameForOpp(New List<String>{productNames});
             if (CategoryName!= null && !CategoryName.isEmpty() && CategoryName.size() > 0) opp.Product_Types__c = CategoryName[0];
             String[] oldproductName = String.isNotBlank(proName) ? proName.split(';') : new List<String>(); oldproductName.sort();
             String[] newproductName = productNames.split(';');newproductName.sort();
@@ -51,7 +51,7 @@ public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Oppo
         boolean isUpdate = System_Configuration__mdt.getInstance('UpdateProductsOnOpportunityBatch').IsEnabled__c;
         system.debug('updatedOppList.isEmpty()->'+updatedOppList.isEmpty());
         system.debug('isUpdate->'+ isUpdate);
-        if(!updatedOppList.isEmpty() && isUpdate) update updatedOppList;
+        if(!updatedOppList.isEmpty() && isUpdate) update updatedOppList;*/
     }
     
     
