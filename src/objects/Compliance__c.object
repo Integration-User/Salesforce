@@ -1010,7 +1010,10 @@
     <fields>
         <fullName>Product_Types__c</fullName>
         <externalId>false</externalId>
-        <formula>Text(Opportunity_New__r.Product_Types__c)</formula>
+        <formula>IF(INCLUDES( Opportunity_New__r.Product_Types__c, &quot;LDC&quot;), &quot;LDC;&quot;, NULL) &amp;
+    IF(INCLUDES( Opportunity_New__r.Product_Types__c, &quot;React&quot;), &quot;React;&quot;, NULL) &amp; 
+    IF(INCLUDES( Opportunity_New__r.Product_Types__c, &quot;Research&quot;), &quot;Research;&quot;, NULL) &amp;
+    IF(INCLUDES( Opportunity_New__r.Product_Types__c, &quot;News&quot;), &quot;News;&quot;, NULL)</formula>
         <label>Product Types</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
