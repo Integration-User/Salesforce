@@ -528,49 +528,6 @@
         </workflowTimeTriggers>
     </rules>
     <rules>
-        <fullName>Untouched Help Desk Cases</fullName>
-        <actions>
-            <name>Set_Client_Support_Type</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Case.IsClosed</field>
-            <operation>equals</operation>
-            <value>False</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.OwnerId</field>
-            <operation>equals</operation>
-            <value>Help Desk</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Help Desk</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.Submitted_Day__c</field>
-            <operation>notEqual</operation>
-            <value>Saturday</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.Submitted_Day__c</field>
-            <operation>notEqual</operation>
-            <value>Sunday</value>
-        </criteriaItems>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-        <workflowTimeTriggers>
-            <actions>
-                <name>Untouched_Help_Desk_Cases</name>
-                <type>Alert</type>
-            </actions>
-            <offsetFromField>Case.CreatedDate</offsetFromField>
-            <timeLength>3</timeLength>
-            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
-        </workflowTimeTriggers>
-    </rules>
-    <rules>
         <fullName>Untouched US Data Support %28External%29 Cases</fullName>
         <actions>
             <name>Set_Data_Support_External_Type</name>
