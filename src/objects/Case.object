@@ -663,6 +663,15 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Context_for_Request__c</fullName>
+        <externalId>false</externalId>
+        <label>Context for Request</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>CurrencyIsoCode</fullName>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1540,10 +1549,116 @@
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Products__c</fullName>
+        <externalId>false</externalId>
+        <label>Products</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>US Portfolio Tools</fullName>
+                    <default>false</default>
+                    <label>US Portfolio Tools</label>
+                </value>
+                <value>
+                    <fullName>EUR Detailed NAV</fullName>
+                    <default>false</default>
+                    <label>EUR Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>US Research + REIT Data</fullName>
+                    <default>false</default>
+                    <label>US Research + REIT Data</label>
+                </value>
+                <value>
+                    <fullName>Pan-European Research + REIT Data</fullName>
+                    <default>false</default>
+                    <label>Pan-European Research + REIT Data</label>
+                </value>
+                <value>
+                    <fullName>US Research + Market Data &amp; Deals</fullName>
+                    <default>false</default>
+                    <label>US Research + Market Data &amp; Deals</label>
+                </value>
+                <value>
+                    <fullName>Pan-European Research + Market Data &amp; Deals</fullName>
+                    <default>false</default>
+                    <label>Pan-European Research + Market Data &amp; Deals</label>
+                </value>
+                <value>
+                    <fullName>Asset-Backed Alert</fullName>
+                    <default>false</default>
+                    <label>Asset-Backed Alert</label>
+                </value>
+                <value>
+                    <fullName>Commercial Mortgage Alert</fullName>
+                    <default>false</default>
+                    <label>Commercial Mortgage Alert</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Alert</fullName>
+                    <default>false</default>
+                    <label>Real Estate Alert</label>
+                </value>
+                <value>
+                    <fullName>Data Delivery - API</fullName>
+                    <default>false</default>
+                    <label>Data Delivery - API</label>
+                </value>
+                <value>
+                    <fullName>US Detailed NAV</fullName>
+                    <default>false</default>
+                    <label>US Detailed NAV</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
         <fullName>Reason</fullName>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Request__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Request</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Tech Issue</fullName>
+                    <default>false</default>
+                    <label>Tech Issue</label>
+                </value>
+                <value>
+                    <fullName>Favor Account</fullName>
+                    <default>false</default>
+                    <label>Favor Account</label>
+                </value>
+                <value>
+                    <fullName>Non-payment</fullName>
+                    <default>false</default>
+                    <label>Non-payment</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Report_ID__c</fullName>
@@ -4704,52 +4819,6 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Error_Reason__c</picklist>
-            <values>
-                <fullName>Account Email Distro was not removed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Activated post contract start date</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deactivated pre%2Fpost contract expiration date</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Product removed in error</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>On_Hold_Reason__c</picklist>
-            <values>
-                <fullName>Amount Discrepancy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No Contract</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Signature Missing on Contract</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Wrong Subsidiary on Opportunity</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Application__c</picklist>
             <values>
                 <fullName>Chorus</fullName>
@@ -4784,6 +4853,29 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Account Email Distro was not removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activated post contract start date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated pre%2Fpost contract expiration date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product removed in error</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5130,6 +5222,29 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Origin</picklist>
             <values>
                 <fullName>Automation</fullName>
@@ -5226,6 +5341,53 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Delivery - API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Reason</picklist>
             <values>
                 <fullName>Complex functionality</fullName>
@@ -5245,6 +5407,25 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Request__c</picklist>
+            <values>
+                <fullName>Favor Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12651,25 +12832,6 @@ RecordType.DeveloperName = &quot;Account_Assignment&quot;
   ISBLANK( Account_Manager__c )
 )</errorConditionFormula>
         <errorMessage>You can’t close a “Account Assignment” case without the manager field filled in</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>Data_Support_Closed_Requirements</fullName>
-        <active>false</active>
-        <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-AND(
-RecordType.Name=&quot;Help Desk&quot;,
-ISPICKVAL(Status,&quot;Closed&quot;),
-OR(
-ISPICKVAL(Support_Type__c,&quot;US Data Support&quot;),
-ISPICKVAL(Support_Type__c,&quot;EU Data Support&quot;)),
-OR(
-ISBLANK(AccountId),
-ISBLANK(ContactId),
-ISBLANK(TEXT(Type)),
-ISBLANK(Minutes_Spent_Cases__c)
-)))</errorConditionFormula>
-        <errorMessage>The following fields are required to close this case -
-Account Name, Contact Name, Type, Minutes Spent</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Help_Desk_Closed_Requirements</fullName>
