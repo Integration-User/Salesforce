@@ -21888,39 +21888,6 @@ NOT(ISPICKVAL(LeadSource ,&quot;News Subscription Request&quot;))))</errorCondit
         <errorMessage>Please, click on &quot;Calculate Score&quot; and follow the approval instructions before moving the stage.</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>Discount_Approval_to_Move_to_Stage_4</fullName>
-        <active>false</active>
-        <description>If a discount is over 10% on a line item and approval is required, it must be received before saving the Opportunity  at a stage 4.</description>
-        <errorConditionFormula>AND(
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-  Discounts_over_10_Count__c &gt;0,
-  NOT(ISPICKVAL(Approval_Status__c, &apos;Approved&apos;)),
-  OR(
-    ISPICKVAL(StageName,&apos;Pricing Proposal Sent (4)&apos;),  
-    ISPICKVAL(StageName,&apos;Agreement Sent and Being Negotiated (5)&apos;),
-    ISPICKVAL(StageName, &apos;Verbal Win (6)&apos;),
-    ISPICKVAL(StageName, &apos;Closed Won&apos;)
-    )
-)</errorConditionFormula>
-        <errorMessage>to be deleted</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>Discount_Approval_to_Move_to_Stage_5</fullName>
-        <active>false</active>
-        <description>If a discount is over 10% on a line item and approval is required, it must be received before saving the Opportunity  at a stage 5.</description>
-        <errorConditionFormula>AND(
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-  Discounts_over_10_Count__c &gt;0,
-  NOT(ISPICKVAL(Approval_Status__c, &apos;Approved&apos;)),
-  OR(  
-    ISPICKVAL(StageName,&apos;Agreement Sent and Being Negotiated (5)&apos;),
-    ISPICKVAL(StageName, &apos;Verbal Win (6)&apos;),
-    ISPICKVAL(StageName, &apos;Closed Won&apos;)
-    )
-)</errorConditionFormula>
-        <errorMessage>to be deleted</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>Favor_End_Date_required_to_Activate</fullName>
         <active>true</active>
         <description>To mark a Favor Opportunity as Active, the end date is required.</description>
@@ -22243,36 +22210,6 @@ ISPICKVAL(StageName, &quot;Closed Won&quot;)
 Product_Count__c =0
 )</errorConditionFormula>
         <errorMessage>You must add Products to the Opportunity before Closing.</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>Referral_Blank_On_Upsells</fullName>
-        <active>false</active>
-        <errorConditionFormula>AND(
-OR(
-RecordType.Name = &quot;Sales Opportunity&quot;,
-RecordType.Name = &quot;Sales Opportunity - Closed&quot;,
-RecordType.Name = &quot;Renewal&quot;,
-RecordType.Name = &quot;Renewal - Closed&quot;),
-Upsells__c &gt; 0,
-ISBLANK(TEXT(Referral_Type__c)),
-NOT(ISBLANK(TEXT(Win_Validation__c))))</errorConditionFormula>
-        <errorDisplayField>Referral_Type__c</errorDisplayField>
-        <errorMessage>To be deleted</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>RenewalsFields_Reqd_to_Save_Stage_5</fullName>
-        <active>false</active>
-        <description>Sales Opportunity Stage 5 Requirements</description>
-        <errorConditionFormula>AND(
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-  RecordType.Name  = &quot;Renewal&quot;,
- ISPICKVAL( Account.CRE_Exposure__c , &quot; &quot;),
-OR(
-ISPICKVAL(StageName, &quot;Agreement Sent and Being Negotiated (5)&quot;),
-ISPICKVAL(StageName, &quot;Verbal Win (6)&quot;),
-ISPICKVAL(StageName, &quot;Closed Won&quot;)
-))</errorConditionFormula>
-        <errorMessage>to be deleted</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Rep_Forecast_Category_Change</fullName>
