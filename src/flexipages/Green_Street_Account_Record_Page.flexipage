@@ -43,9 +43,6 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Account.Client_Access_Request</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Account.Update_Downloads</value>
                             <visibilityRule>
                                 <criteria>
@@ -77,6 +74,36 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Account.Edit_New_Sales</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Subsidiary_Account</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Global.Interaction</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Subsidiary_Account</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Global.NewTask</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Subsidiary_Account</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Global.NewEvent</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
