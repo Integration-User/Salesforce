@@ -4,7 +4,7 @@
     <decisions>
         <name>Closed_Lost_Sales_Opportunity</name>
         <label>Closed Lost Sales Opportunity</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>623</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -40,7 +40,7 @@
     <decisions>
         <name>Is_Sales_Opportunity_Closed_for_Account</name>
         <label>Is Sales Opportunity Closed for Account</label>
-        <locationX>182</locationX>
+        <locationX>248</locationX>
         <locationY>839</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -62,7 +62,7 @@
     <decisions>
         <name>New_Opportunity_Decision</name>
         <label>New Opportunity Decision</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>323</locationY>
         <defaultConnector>
             <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
@@ -93,7 +93,7 @@
         </rules>
         <rules>
             <name>Closed_Sales_Opportunity</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.AccountId</leftValueReference>
                 <operator>IsNull</operator>
@@ -122,10 +122,53 @@
                     <stringValue>Sales_Opportunity_Closed</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Reset_Account_Prospect_Category</targetReference>
             </connector>
             <label>Closed Sales Opportunity</label>
+        </rules>
+        <rules>
+            <name>Suspended_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Suspended</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Close_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Non-payment</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_to_Credit_Risk</targetReference>
+            </connector>
+            <label>Suspended Opportunity</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -153,7 +196,7 @@
     <recordLookups>
         <name>Open_Sales_Opportunities</name>
         <label>All Open Sales Opportunities</label>
-        <locationX>182</locationX>
+        <locationX>248</locationX>
         <locationY>731</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -197,7 +240,7 @@
     <recordUpdates>
         <name>Reset_Account_Prospect_Category</name>
         <label>Reset Account Prospect Category</label>
-        <locationX>336</locationX>
+        <locationX>314</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
@@ -230,7 +273,7 @@
     <recordUpdates>
         <name>Update_Account_Prospect_Category</name>
         <label>Update Account Prospect Category</label>
-        <locationX>72</locationX>
+        <locationX>50</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
@@ -254,7 +297,7 @@
     <recordUpdates>
         <name>Update_Account_Prospect_Category_As_Suspect</name>
         <label>Update Account Prospect Category As Suspect</label>
-        <locationX>50</locationX>
+        <locationX>116</locationX>
         <locationY>947</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -272,8 +315,38 @@
         </inputAssignments>
         <object>Account</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account_to_Credit_Risk</name>
+        <label>Update Account to Credit Risk</label>
+        <locationX>578</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Prospect_Category__c</field>
+            <value>
+                <stringValue>Not Viable Now</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Prospect_Notes__c</field>
+            <value>
+                <stringValue>Credit Risk</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
     <start>
-        <locationX>210</locationX>
+        <locationX>320</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>New_Opportunity_Decision</targetReference>
