@@ -104,4 +104,19 @@
         <senderType>CurrentUser</senderType>
         <template>Compliance_Workflow_Email_Templates/Transitioned_CAF</template>
     </alerts>
+    <alerts>
+        <fullName>UK_CAF_Final_Approval</fullName>
+        <description>UK CAF Final Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jecusi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nkorpal@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Process_Notifications/CAF_Final_Approval</template>
+    </alerts>
 </Workflow>
