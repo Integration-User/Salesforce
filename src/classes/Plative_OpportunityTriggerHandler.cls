@@ -118,10 +118,10 @@ public without sharing class Plative_OpportunityTriggerHandler {
             Opportunity oldOppty = triggerOldMap.get(oppty.Id);
             if (oppty.Products__c != null && oldOppty.Products__c != oppty.Products__c) {
                 List<String> productType = Plative_SFToNSSyncUtility.getProductCategoryNameForOpp(New List<String>{oppty.Products__c});
-                //if (productType != null && !productType.isEmpty()) oppty.Product_Types__c = productType[0];
-                //else oppty.Product_Types__c = null;
+                if (productType != null && !productType.isEmpty()) oppty.Product_Types__c = productType[0];
+                else oppty.Product_Types__c = null;
             } else if (oppty.Products__c == null) {
-                //oppty.Product_Types__c = null;
+                oppty.Product_Types__c = null;
             }
         }
     }
