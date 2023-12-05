@@ -233,6 +233,30 @@
         </values>
     </businessProcesses>
     <businessProcesses>
+        <fullName>Sales Development</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Disqualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Sales Opportunity</fullName>
         <description>New Business Sales Process</description>
         <isActive>true</isActive>
@@ -18628,6 +18652,46 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Validating_Investment_Thesis</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sales_Development</fullName>
+        <active>true</active>
+        <businessProcess>Sales Development</businessProcess>
+        <label>Sales Development</label>
+        <picklistValues>
+            <picklist>Sales_Type__c</picklist>
+            <values>
+                <fullName>Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sectors_Sold__c</picklist>
+            <values>
+                <fullName>All Sectors</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Single%2FDual Sector</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
