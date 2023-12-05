@@ -877,4 +877,31 @@ public class Plative_SFToNSSyncUtility {
         }
         return categoryList;
     }
+    /*SF-721 - New approach to Products Include/Products fields*/
+    public static List<String> getProductCategoryNameForOpp(List<String> productNames) {
+        List<String> categoryList = null;
+        Map<String, String> mapProductWithCategory = new Map<String, String>();
+        // SF-291 - Change hard code reference in Product includes trigger To Metadata
+        for (Product_Category_Family_Mapping__mdt productFamily : Product_Category_Family_Mapping__mdt.getAll().values()) {
+            mapProductWithCategory.put(productFamily.MasterLabel, productFamily.Product_Category__c);
+        }
+        for (String product : productNames) {
+            Boolean newsAvail = false;
+            Boolean researchAvail = false;
+            Set<String> productFamilies = new Set<String>();
+            for(String str : product.split(';')) {
+                String productName = str.trim();
+                if(productName.length() > 40 ) productName = productName.substring(0, 40);
+                if(mapProductWithCategory.containsKey(productName)) {
+                    productFamilies.add(mapProductWithCategory.get(productName));
+                }
+            }
+            if(productFamilies.size() > 0) {
+                categoryList = new List<String>();
+                categoryList.add(String.join(new List<String>(productFamilies),';'));
+            }
+            break;
+        }
+        return categoryList;
+    }
 }

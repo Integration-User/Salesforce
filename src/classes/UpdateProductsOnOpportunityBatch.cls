@@ -34,7 +34,7 @@ public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Oppo
                     productNames += ';' + oli.product2.Name;
                 }
             }
-            List<String> CategoryName = Plative_SFToNSSyncUtility.getProductCategoryName(New List<String>{productNames});
+            List<String> CategoryName = Plative_SFToNSSyncUtility.getProductCategoryNameForOpp(New List<String>{productNames});
             if (CategoryName!= null && !CategoryName.isEmpty() && CategoryName.size() > 0) opp.Product_Types__c = CategoryName[0];
             String[] oldproductName = String.isNotBlank(proName) ? proName.split(';') : new List<String>(); oldproductName.sort();
             String[] newproductName = productNames.split(';');newproductName.sort();
