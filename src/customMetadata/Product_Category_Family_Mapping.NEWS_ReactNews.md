@@ -4,6 +4,6 @@
     <protected>false</protected>
     <values>
         <field>Product_Category__c</field>
-        <value xsi:type="xsd:string">News</value>
+        <value xsi:type="xsd:string">React</value>
     </values>
 </CustomMetadata>
