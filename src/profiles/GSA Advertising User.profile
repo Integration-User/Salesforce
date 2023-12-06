@@ -20231,6 +20231,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Marketing_Identified_Country__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Monthly_Recurring_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -35324,6 +35329,11 @@
         <default>false</default>
         <recordType>Opportunity.Renewal_Closed</recordType>
         <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.Sales_Development</recordType>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
