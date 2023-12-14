@@ -49,6 +49,10 @@
                 <behavior>Edit</behavior>
                 <field>Marketing_Identified_Country__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Inbound__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -60,16 +64,24 @@
                 <field>Close_Reason__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>CloseDate</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>BDR_Referred_By__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>SAO_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Lead_Channel__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Lead_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Type_Details__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -109,6 +121,10 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Sales_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>CloseDate</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
