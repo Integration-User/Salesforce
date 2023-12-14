@@ -34991,7 +34991,6 @@
     </pageAccesses>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Account.Organization_Account</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>

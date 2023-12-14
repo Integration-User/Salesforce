@@ -49,6 +49,12 @@
         <recordType>Opportunity.Sales_Development</recordType>
     </layoutAssignments>
     <recordTypeVisibilities>
+        <default>true</default>
+        <personAccountDefault>true</personAccountDefault>
+        <recordType>Account.Organization_Account</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Subsidiary_Account</recordType>
         <visible>true</visible>
