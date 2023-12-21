@@ -278,6 +278,17 @@
         <template>Referral_Templates/Referral_Status_Update</template>
     </alerts>
     <alerts>
+        <fullName>SDO_Sales_Owner_for_Review_Email_Alert</fullName>
+        <description>SDO Sales Owner for Review Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Sales_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SDO_New_Opportunity_Email_Template</template>
+    </alerts>
+    <alerts>
         <fullName>Send_Email_About_Expiring_Trial</fullName>
         <description>Send Email About Expiring Trial</description>
         <protected>false</protected>
