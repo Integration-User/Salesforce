@@ -132,6 +132,12 @@
             <targetReference>Update_Sales_Oppty_Field</targetReference>
         </connector>
         <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>CloseDate</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>

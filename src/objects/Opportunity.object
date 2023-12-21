@@ -4347,6 +4347,25 @@ OwnerId  = $User.Id)</formula>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>New Sales Opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Opportunity.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Sales_Opportunity</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.StageName</field>
+                <operation>notEqual</operation>
+                <value>Closed Won, Closed Lost, Consolidated</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.AccountId</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
         <referenceTo>Opportunity</referenceTo>
         <relationshipLabel>Sales Development</relationshipLabel>
         <relationshipName>SalesDevelopment</relationshipName>
