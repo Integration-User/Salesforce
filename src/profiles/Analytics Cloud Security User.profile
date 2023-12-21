@@ -19775,6 +19775,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Create_New_Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Created_Date_short__c</field>
         <readable>true</readable>
@@ -20275,6 +20280,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.New_Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.News_ABAlert__c</field>
         <readable>false</readable>
@@ -20587,6 +20597,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sales_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
