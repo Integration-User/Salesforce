@@ -1242,6 +1242,15 @@ TEXT(YEAR(Contract_Start_Date__c))</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Create_New_Sales_Opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Create New Sales Opportunity</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Created_Date_short__c</fullName>
         <externalId>false</externalId>
         <formula>CreatedDate</formula>
@@ -2796,6 +2805,19 @@ OwnerId  = $User.Id)</formula>
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>New_Sales_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Sales Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Sales Development</relationshipLabel>
+        <relationshipName>SalesDevelopment</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>News_ABAlert__c</fullName>
         <externalId>false</externalId>
         <label>News - ABAlert</label>
@@ -3901,6 +3923,18 @@ NULL))))</formula>
         <referenceTo>Opportunity</referenceTo>
         <relationshipLabel>Renewals</relationshipLabel>
         <relationshipName>Renewals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SalesOwner</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
