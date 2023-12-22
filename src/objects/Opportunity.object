@@ -25939,7 +25939,6 @@ RecordType.Name = &quot;Renewal&quot;),
 NOT(ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;)),
 ISPICKVAL ( StageName , &quot;Closed Won&quot;)
 )</errorConditionFormula>
-        <errorDisplayField>AccountId</errorDisplayField>
         <errorMessage>You must submit this Opportunity for review prior to closing. To do this, update &quot;Win Validation&quot; to Pending Review.</errorMessage>
     </validationRules>
     <validationRules>
