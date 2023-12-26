@@ -89,7 +89,7 @@ public class Plative_AddProductLineCtrlTest {
         productLine.Product__c = [Select Id from Product2 where Name =: Label.TestClass_ProductName LIMIT 1].Id;
         insert productLine; 
         
-        String message = 'Account Product Lines saved successfully!';
+        String message = 'Account Product Lines saved successfully! & Email Distribution progress will take a few minutes. Please refresh the page after a minute!';
         Test.startTest();
         String response = Plative_AddProductLineCtrl.saveProductLines(accntId, new List<Account_Product_Line__c>());
         System.assertEquals(message,response);
@@ -102,7 +102,7 @@ public class Plative_AddProductLineCtrlTest {
         Test.setMock(HttpCalloutMock.class, new Plative_GSAWebCalloutMock());  
         Id accntId = [Select Id from Account LIMIT 1].Id;
         Id productId = [Select Id from Product2 LIMIT 1].Id;
-        String message = 'Account Product Lines saved successfully!';        
+        String message = 'Account Product Lines saved successfully! & Email Distribution progress will take a few minutes. Please refresh the page after a minute!';        
         Test.startTest();
         String response = Plative_AddProductLineCtrl.saveProductLines(accntId, new List<Account_Product_Line__c>{new Account_Product_Line__c(Product__c=productId,Account__c=accntId)});
         System.assertEquals(message,response);
@@ -122,7 +122,7 @@ public class Plative_AddProductLineCtrlTest {
             accntProductLineInsert.add(prodLine);
         }
         insert accntProductLineInsert;
-        String message = 'Account Product Lines saved successfully!'; 
+        String message = 'Account Product Lines saved successfully! & Email Distribution progress will take a few minutes. Please refresh the page after a minute!'; 
         Test.startTest();
         String response = Plative_AddProductLineCtrl.saveProductLines(accntId, new List<Account_Product_Line__c>{accntProductLineInsert[0]});
         System.assertEquals(message,response);
