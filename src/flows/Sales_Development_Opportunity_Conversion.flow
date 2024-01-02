@@ -43,14 +43,14 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Create_New_Sales_Opportunity__c</leftValueReference>
-                <operator>IsChanged</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Create_New_Sales_Opportunity__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
@@ -101,6 +101,11 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>Add_90_Days</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 90</expression>
+    </formulas>
     <interviewLabel>Sales Development Opportunity Conversion {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Sales Development Opportunity Conversion</label>
     <processMetadataValues>
@@ -140,7 +145,7 @@
         <inputAssignments>
             <field>CloseDate</field>
             <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
+                <elementReference>Add_90_Days</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
