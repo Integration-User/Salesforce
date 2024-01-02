@@ -1064,39 +1064,7 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
-                <valueName>Communication Strategy</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Won</controllingFieldValue>
-                <valueName>Competitive Win</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Won</controllingFieldValue>
-                <valueName>Contracted Client</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Won</controllingFieldValue>
-                <valueName>CSA Client</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Won</controllingFieldValue>
-                <valueName>Due Diligence</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Won</controllingFieldValue>
                 <valueName>Made New Client</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Won</controllingFieldValue>
-                <valueName>Non-contracted</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Won</controllingFieldValue>
-                <valueName>Online Order</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Won</controllingFieldValue>
-                <valueName>Validating Investment Thesis</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -10485,7 +10453,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Made New Client</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>Market Conditions</fullName>
@@ -11874,10 +11842,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Contracted Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Due Diligence</fullName>
                 <default>false</default>
             </values>
@@ -11891,7 +11855,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Made New Client</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>Market Conditions</fullName>
