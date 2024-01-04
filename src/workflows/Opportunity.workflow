@@ -990,7 +990,7 @@
             <name>Update_Last_Stage_Change</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.StageName</field>
             <operation>notEqual</operation>
