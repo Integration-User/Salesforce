@@ -924,7 +924,7 @@
             <name>Update_Close_Date_to_Today</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.Last_Stage_Change__c</field>
             <operation>equals</operation>
@@ -936,6 +936,7 @@
             <value>Closed Won,Closed Lost</value>
         </criteriaItems>
         <description>If Opp Stage is changed and Stage is Closed Lost/Won, on save set Close Date to TODAY</description>
+        <failedMigrationToolVersion>246.16.8</failedMigrationToolVersion>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
