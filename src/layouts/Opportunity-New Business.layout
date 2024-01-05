@@ -61,6 +61,10 @@
                 <behavior>Edit</behavior>
                 <field>Trial_Type__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Marketing_Identified_Country__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -70,6 +74,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Win_Validation__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Consolidated_To__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -573,6 +581,18 @@
         <fields>SplitAmount</fields>
         <fields>SplitNote</fields>
         <relatedList>RelatedOpportunitySplits</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>OPPORTUNITY.NAME</fields>
+        <fields>Lead_Contact__c</fields>
+        <fields>Inbound__c</fields>
+        <fields>Lead_Channel__c</fields>
+        <fields>Lead_Type__c</fields>
+        <fields>OPPORTUNITY.LEAD_SOURCE</fields>
+        <fields>OPPORTUNITY.CLOSE_DATE</fields>
+        <relatedList>Opportunity.New_Sales_Opportunity__c</relatedList>
+        <sortField>OPPORTUNITY.CLOSE_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>OPPORTUNITY.NAME</fields>
