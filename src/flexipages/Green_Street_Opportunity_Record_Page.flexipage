@@ -111,7 +111,7 @@
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
+                    <booleanFilter>1 AND 2 AND 3</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.StageName}</leftValue>
                         <operator>NE</operator>
@@ -121,6 +121,11 @@
                         <leftValue>{!Record.Product_Count__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>0</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Sales Development</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
