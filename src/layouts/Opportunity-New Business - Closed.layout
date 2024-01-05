@@ -436,6 +436,16 @@
             <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>PrintableView</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>9</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>DeepClone</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>10</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
@@ -459,16 +469,6 @@
             <actionName>NewOpportunity</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>8</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>PrintableView</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>9</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>DeepClone</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>10</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
@@ -530,9 +530,15 @@
     </relatedLists>
     <relatedLists>
         <fields>OPPORTUNITY.NAME</fields>
-        <fields>ACCOUNT.NAME</fields>
+        <fields>Lead_Contact__c</fields>
+        <fields>Inbound__c</fields>
+        <fields>Lead_Channel__c</fields>
+        <fields>Lead_Type__c</fields>
+        <fields>OPPORTUNITY.LEAD_SOURCE</fields>
         <fields>OPPORTUNITY.CLOSE_DATE</fields>
         <relatedList>Opportunity.New_Sales_Opportunity__c</relatedList>
+        <sortField>OPPORTUNITY.CLOSE_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
