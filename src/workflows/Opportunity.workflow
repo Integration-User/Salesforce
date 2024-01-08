@@ -804,6 +804,11 @@
             <field>Account.LastModifiedById</field>
             <operation>notEqual</operation>
         </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Sales Development</value>
+        </criteriaItems>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
