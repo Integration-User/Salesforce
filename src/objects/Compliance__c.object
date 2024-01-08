@@ -2550,9 +2550,7 @@ IF(INCLUDES( Opportunity_New__r.Product_Types__c, &quot;News&quot;), &quot;News;
  ISPICKVAL( CAF_Type__c , &quot;Activation&quot;),
     ISCHANGED( Status__c ),
     TEXT(Status__c ) = &quot;Approved&quot;,
-    $User.Id &lt;&gt; &quot;005f4000005qh5P&quot;,
-    $User.Id &lt;&gt; &quot;005f4000005qh7j&quot;,
-    $User.Id &lt;&gt; &quot;005f4000005qh3V&quot;
+    $UserRole.Name &lt;&gt; &quot;Compliance&quot;
 )</errorConditionFormula>
         <errorMessage>Only Designated Compliance personnel can approve records.</errorMessage>
     </validationRules>
@@ -2564,9 +2562,7 @@ OR(
 ISPICKVAL(CAF_Type__c,&quot;Deactivation&quot;),
 ISPICKVAL(CAF_Type__c,&quot;Change&quot;)),
 TEXT(Status__c ) = &quot;Approved&quot;,
-$User.Id &lt;&gt; &quot;005f4000005qh7j&quot;,
-$User.Id &lt;&gt; &quot;005f4000005qh3V&quot;,
-$User.Id &lt;&gt; &quot;005f4000005qh5P&quot;
+$UserRole.Name &lt;&gt; &quot;Compliance&quot;
 )</errorConditionFormula>
         <errorMessage>Only the Compliance team can approve records for Change or Deactivation requests.</errorMessage>
     </validationRules>
