@@ -27,7 +27,8 @@ public class Plative_AccountTriggerHandler{
                     break;
                 }
             }
-            if (isContactUpdated) Database.executeBatch(new Batch_UpdateContactCurrentProduct(),50);         
+            // SF-798 - Getting Record Lock issue due to this batch class
+            // if (isContactUpdated) Database.executeBatch(new Batch_UpdateContactCurrentProduct(),50);         
         } else if (Plative_AccountTriggerHandler.afterUpdateRun && !Plative_AccountTriggerHandler.isOwnerChanged) {
             Set<Id> setAccsTochangeOppOwner = new Set<Id>();   
             List<String> oldAccountOwner = new List<String>();
