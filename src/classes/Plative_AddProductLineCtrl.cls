@@ -122,7 +122,7 @@ public class Plative_AddProductLineCtrl {
                 upsert productLinesToUpsert;
             }
             
-            response = 'Account Product Lines saved successfully!';
+            response = 'Account Product Lines saved successfully! & ' + System.Label.Email_Distribution_Message;
             
         } catch(DMLException ex){
             if(!Test.isRunningTest()) { Database.rollback(sp); } 
