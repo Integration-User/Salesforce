@@ -87,7 +87,7 @@ public class Plative_EmailDistributionCtrlTest {
         insert aed;
         Test.startTest();
         String response = Plative_EmailDistributionCtrl.saveEmailDistribution(aed.Account__c, new List<String>());
-        System.assertEquals('Success!', response);
+        System.assertEquals('Email Distribution progress will take a few minutes. Please refresh the page after a minute!', response);
         Test.stopTest();
     }
     
@@ -96,7 +96,7 @@ public class Plative_EmailDistributionCtrlTest {
         Id recordId = [Select Id from Account LIMIT 1].Id;
         Test.startTest();
         String response = Plative_EmailDistributionCtrl.saveEmailDistribution(recordId, new List<String>{'Real Estate Analytics'});
-        System.assertEquals('Success!', response);
+        System.assertEquals('Email Distribution progress will take a few minutes. Please refresh the page after a minute!', response);
         Test.stopTest();
     }
     
@@ -109,7 +109,7 @@ public class Plative_EmailDistributionCtrlTest {
         insert aed;
         Test.startTest();
         String response = Plative_EmailDistributionCtrl.saveEmailDistribution(aed.Account__c, new List<String>{'Real Estate Analytics',Label.TestClass_ProductName});
-        System.assertEquals('Success!', response);
+        System.assertEquals('Email Distribution progress will take a few minutes. Please refresh the page after a minute!', response);
         Test.stopTest();
     }
     
@@ -122,7 +122,7 @@ public class Plative_EmailDistributionCtrlTest {
         insert aed;
         Test.startTest();
         String response = Plative_EmailDistributionCtrl.saveEmailDistribution(aed.Account__c, new List<String>{'Real Estate Analytics'});
-        System.assertEquals('Success!', response);
+        System.assertEquals('Email Distribution progress will take a few minutes. Please refresh the page after a minute!', response);
         Test.stopTest();
     }
     
