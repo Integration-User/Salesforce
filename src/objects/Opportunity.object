@@ -21900,6 +21900,7 @@ RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Sales Opportunity - Closed&quot;,
 RecordType.Name = &quot;Renewal&quot;,
 RecordType.Name = &quot;Renewal - Closed&quot;),
+ISCHANGED(StageName), 
 ISPICKVAL( StageName , &quot;Closed Won&quot;))</errorConditionFormula>
         <errorMessage>Please submit for review. The Operations team will close this Opportunity once reviewed.</errorMessage>
     </validationRules>
@@ -22492,7 +22493,6 @@ RecordType.Name = &quot;Renewal&quot;),
 NOT(ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;)),
 ISPICKVAL ( StageName , &quot;Closed Won&quot;)
 )</errorConditionFormula>
-        <errorDisplayField>AccountId</errorDisplayField>
         <errorMessage>You must submit this Opportunity for review prior to closing. To do this, update &quot;Win Validation&quot; to Pending Review.</errorMessage>
     </validationRules>
     <validationRules>
