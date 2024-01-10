@@ -21861,6 +21861,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
 RecordType.Name &lt;&gt; &quot;Favor - Closed&quot;,
 IsClosed = TRUE,
+ISCHANGED(StageName),
 ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
         <errorMessage>Please ensure that Close Reason is populated before marking this Opportunity as closed.</errorMessage>
     </validationRules>
