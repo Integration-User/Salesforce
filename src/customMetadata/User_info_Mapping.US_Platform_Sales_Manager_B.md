@@ -24,7 +24,7 @@
     </values>
     <values>
         <field>Role__c</field>
-        <value xsi:type="xsd:string">US Platform Sales Manager B</value>
+        <value xsi:type="xsd:string">US Sales Manager B</value>
     </values>
     <values>
         <field>User_License__c</field>
