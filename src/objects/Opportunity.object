@@ -21629,6 +21629,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
 RecordType.Name &lt;&gt; &quot;Favour - Closed&quot;,
 ISPICKVAL(StageName,&quot;Closed Won&quot;),
+ISCHANGED(StageName), 
 ISBLANK(AP_Email__c))</errorConditionFormula>
         <errorDisplayField>AP_Email__c</errorDisplayField>
         <errorMessage>Please ensure AP Email is filled in before marking this Opportunity as Closed Won.</errorMessage>
@@ -22403,6 +22404,7 @@ ISPICKVAL(Renewal_Risk__c,&quot;Power User / VIP left the Firm&quot;)))</errorCo
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISBLANK( Consolidated_To__c ) ,
+ISCHANGED(StageName),
  ISPICKVAL( StageName , &quot;Consolidated&quot;) )</errorConditionFormula>
         <errorMessage>Please make sure that &quot;Consolidated To&quot; is filled in before setting the Stage to &quot;Consolidated&quot;.</errorMessage>
     </validationRules>
