@@ -179,10 +179,6 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
-            <validationRule>
-                <errorMessage>&lt;p&gt;You cannot convert an opportunity if this field is populated and &quot;Create New Sales Opportunity&quot; is checked.&lt;/p&gt;</errorMessage>
-                <formulaExpression>{!Create_New_Sales_Opportunity} != True</formulaExpression>
-            </validationRule>
         </fields>
         <fields>
             <name>OR_Display_Text</name>
@@ -196,6 +192,10 @@
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;You cannot convert an opportunity if this field is populated and &quot;Create New Sales Opportunity&quot; is checked.&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>{!Create_New_Sales_Opportunity} != True</formulaExpression>
+            </validationRule>
         </fields>
         <nextOrFinishButtonLabel>Convert</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
