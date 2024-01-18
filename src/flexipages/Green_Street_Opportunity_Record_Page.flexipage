@@ -10,6 +10,16 @@
                             <value>Opportunity.Deal_Score_Error</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Opportunity.Convert</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Sales_Development</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Opportunity.Edit_New_Sales</value>
                         </valueListItems>
                         <valueListItems>
