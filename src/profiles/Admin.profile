@@ -20383,6 +20383,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Lead_Classification__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Lead_Contact__c</field>
         <readable>true</readable>
@@ -20390,11 +20395,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Lead_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Lead_Classification__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20805,6 +20805,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sales_Reviewed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
