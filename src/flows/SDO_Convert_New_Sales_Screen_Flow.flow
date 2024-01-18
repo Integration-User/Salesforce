@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>60.0</apiVersion>
+    <apiVersion>58.0</apiVersion>
     <decisions>
         <name>Qualify_Oppty</name>
         <label>Qualify Oppty?</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>350</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -13,6 +13,13 @@
             <conditions>
                 <leftValueReference>Create_New_Sales_Opportunity</leftValueReference>
                 <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>New_Sales_Oppty.recordId</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
@@ -26,16 +33,45 @@
             <name>Existing_Oppty</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>New_Sales_Opportunity.recordId</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>New_Sales_Oppty.recordId</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue></stringValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Create_New_Sales_Opportunity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Update_New_Sales_Lookup</targetReference>
             </connector>
             <label>Existing Oppty</label>
+        </rules>
+        <rules>
+            <name>Validation_Rule_Screen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>New_Sales_Oppty.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Create_New_Sales_Opportunity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cannot_Convert</targetReference>
+            </connector>
+            <label>Validation Rule Screen</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -63,7 +99,7 @@
     <recordLookups>
         <name>Get_Oppty_Records</name>
         <label>Get Oppty Records</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -103,7 +139,7 @@
         <inputAssignments>
             <field>New_Sales_Opportunity__c</field>
             <value>
-                <elementReference>New_Sales_Opportunity.recordId</elementReference>
+                <elementReference>New_Sales_Oppty.recordId</elementReference>
             </value>
         </inputAssignments>
         <object>Opportunity</object>
@@ -139,9 +175,25 @@
         <object>Opportunity</object>
     </recordUpdates>
     <screens>
+        <name>Cannot_Convert</name>
+        <label>Cannot Convert</label>
+        <locationX>842</locationX>
+        <locationY>458</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ValidationText</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(237, 7, 7);&quot;&gt;You cannot convert an opportunity if both fields are populated.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Convert_Opportunity_Screen</name>
         <label>Convert Opportunity Screen</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -155,7 +207,7 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>New_Sales_Opportunity</name>
+            <name>New_Sales_Oppty</name>
             <extensionName>flowruntime:lookup</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
@@ -192,10 +244,6 @@
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
-            <validationRule>
-                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;You cannot convert an opportunity if this field is populated and &quot;Create New Sales Opportunity&quot; is checked.&lt;/span&gt;&lt;/p&gt;</errorMessage>
-                <formulaExpression>{!Create_New_Sales_Opportunity} != True</formulaExpression>
-            </validationRule>
         </fields>
         <nextOrFinishButtonLabel>Convert</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -250,7 +298,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>320</locationX>
+        <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Oppty_Records</targetReference>
