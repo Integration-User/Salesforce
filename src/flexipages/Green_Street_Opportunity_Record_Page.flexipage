@@ -8,6 +8,13 @@
                     <valueList>
                         <valueListItems>
                             <value>Opportunity.Deal_Score_Error</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Sales_Development</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Opportunity.Convert</value>
