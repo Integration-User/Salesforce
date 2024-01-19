@@ -12,7 +12,7 @@
         <name>Qualification</name>
         <label>Qualification</label>
         <locationX>578</locationX>
-        <locationY>431</locationY>
+        <locationY>395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Moved_to_Disqualified</name>
@@ -84,7 +84,7 @@
         <name>Removed_from_Integration_User</name>
         <label>Removed from Integration User</label>
         <locationX>314</locationX>
-        <locationY>323</locationY>
+        <locationY>287</locationY>
         <defaultConnector>
             <targetReference>Qualification</targetReference>
         </defaultConnector>
@@ -128,7 +128,7 @@
     </decisions>
     <environments>Default</environments>
     <interviewLabel>SDO SLA Tracking {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>SDO SLA Tracking Flow</label>
+    <label>SDO SLA Tracking on Opportunity</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -152,7 +152,7 @@
         <name>Time_Stamp_Assigned_Date</name>
         <label>Time Stamp Assigned Date</label>
         <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationY>395</locationY>
         <inputAssignments>
             <field>Assigned_Date__c</field>
             <value>
@@ -171,7 +171,7 @@
         <name>Time_Stamp_Qualified_SDO</name>
         <label>Time Stamp Reviewed SDO</label>
         <locationX>578</locationX>
-        <locationY>539</locationY>
+        <locationY>503</locationY>
         <inputAssignments>
             <field>Qualified_Date__c</field>
             <value>
@@ -190,7 +190,7 @@
         <name>Time_Stamp_S</name>
         <label>Time Stamp Disqualified SDO</label>
         <locationX>314</locationX>
-        <locationY>539</locationY>
+        <locationY>503</locationY>
         <inputAssignments>
             <field>Qualified_Date__c</field>
             <value>
@@ -211,9 +211,10 @@
         <connector>
             <targetReference>Removed_from_Integration_User</targetReference>
         </connector>
+        <filterFormula>{!$Record.RecordType.DeveloperName} = &apos;Sales_Development&apos;</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
-        <triggerType>RecordAfterSave</triggerType>
+        <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
 </Flow>
