@@ -22473,6 +22473,7 @@ ISPICKVAL( Close_Reason__c, &quot;Product Fit&quot;)
         <active>true</active>
         <description>Require Lead Type during Open Stage.</description>
         <errorConditionFormula>AND(
+$UserRole.DeveloperName &lt;&gt; &apos;System_Administrator&apos;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISPICKVAL( Lead_Type__c, &quot;&quot;),
 OR(
