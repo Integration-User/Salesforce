@@ -33,6 +33,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Submission_Notes_New__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.UTM_Content__c</field>
         <readable>true</readable>
     </fieldPermissions>
