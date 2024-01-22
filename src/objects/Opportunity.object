@@ -286,6 +286,16 @@
         <fields>RecordTypeId</fields>
         <label>New Awesome Compact Layout</label>
     </compactLayouts>
+    <compactLayouts>
+        <fullName>Sales_Development</fullName>
+        <fields>OwnerId</fields>
+        <fields>AccountId</fields>
+        <fields>Lead_Contact__c</fields>
+        <fields>Inbound__c</fields>
+        <fields>Lead_Classification__c</fields>
+        <fields>Lead_Type__c</fields>
+        <label>Sales Development</label>
+    </compactLayouts>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -18631,6 +18641,13 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
         </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sales_Development</fullName>
+        <active>true</active>
+        <businessProcess>Sales Development</businessProcess>
+        <compactLayoutAssignment>Sales_Development</compactLayoutAssignment>
+        <label>Sales Development</label>
     </recordTypes>
     <recordTypes>
         <fullName>Sales_Opportunity</fullName>
