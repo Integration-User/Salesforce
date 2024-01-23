@@ -13,6 +13,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Close_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Inbound__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -39,6 +44,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Marketing_Identified_Country__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Revisit_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
