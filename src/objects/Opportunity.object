@@ -21842,6 +21842,24 @@ ISCHANGED( StageName )))</errorConditionFormula>
         <errorMessage>You cannot edit opportunities once they have been closed. Please contact your system admin for help making any necessary changes.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Check_SDO_Missing_Account_Fields</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$RecordType.DeveloperName = &quot;Sales_Development&quot;,
+OR(
+ISPICKVAL( StageName , &quot;Disqualified&quot;),
+ISPICKVAL( StageName , &quot;In Review&quot;)),
+OR(
+ISBLANK(TEXT(Account.Subsidiary__c)),
+ISBLANK(TEXT(Account.Company_Type__c)),
+ISBLANK(Account.BillingAddress),
+ISBLANK(Account.Website),
+ISBLANK(Account.Phone)
+))</errorConditionFormula>
+        <errorMessage>To enter stages “in review” or “disqualified” the following fields are required on the account:
+Subsidiary, Main Phone, Website, Company Type, Address.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Close_Notes_Required</fullName>
         <active>true</active>
         <description>Closed Opportunity Notes are required in order to move to Pending Review.</description>
