@@ -2614,15 +2614,16 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
     <fields>
         <fullName>Lead_Classification__c</fullName>
         <externalId>false</externalId>
-        <formula>CASE(LeadSource,
-&quot;Inquiry&quot;, &quot;Hot&quot;,
-&quot;Referral&quot;, &quot;Hot&quot;,
-&quot;AM Referral&quot;, &quot;Hot&quot;,
+        <formula>CASE(Lead_Type__c,
 &quot;Demo Request&quot;, &quot;Hot&quot;,
-&quot;Snowflake&quot;, &quot;Hot&quot;,
-&quot;React &amp; US News Ecomm Inquiries&quot;, &quot;Hot&quot;,
-&quot;Referral: Past Client Introduction&quot;, &quot;Hot&quot;,
-IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formula>
+&quot;Contact Us&quot;, &quot;Hot&quot;,
+&quot;Direct Call&quot;, &quot;Hot&quot;,
+&quot;Inbound Email&quot;, &quot;Hot&quot;,
+&quot;Trial Request&quot;, &quot;Hot&quot;,
+&quot;Subscription Request&quot;, &quot;Hot&quot;,
+&quot;LinkedIn&quot;, &quot;Hot&quot;,
+&quot;Google&quot;, &quot;Hot&quot;,
+IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formula>
         <inlineHelpText>Classification based on the lead source.</inlineHelpText>
         <label>Lead Classification</label>
         <required>false</required>
