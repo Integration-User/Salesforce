@@ -5772,6 +5772,15 @@ NULL))))</formula>
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Sales_Reviewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sales Reviewed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Sales_Type_NS_Internal_ID__c</fullName>
         <externalId>false</externalId>
         <formula>CASE(Sales_Type__c, &apos;New&apos;, 3, &apos;Renewal&apos;, 2,&apos;Upsell&apos;, 1,3)</formula>
