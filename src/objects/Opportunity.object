@@ -4547,6 +4547,7 @@ OwnerId  = $User.Id)</formula>
         <label>New Sales Opportunity</label>
         <lookupFilter>
             <active>true</active>
+            <booleanFilter>(1 OR 3) AND 2</booleanFilter>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -4556,6 +4557,11 @@ OwnerId  = $User.Id)</formula>
                 <field>Opportunity.StageName</field>
                 <operation>equals</operation>
                 <value>Qualified Prospect (2), Conducting Needs Analysis (3), Pricing Proposal Sent (4), Agreement Sent and Being Negotiated (5), Verbal Win (6)</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Existing_Business</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
