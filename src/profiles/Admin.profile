@@ -19913,6 +19913,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Create_New_Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Created_Date_short__c</field>
         <readable>true</readable>
@@ -20394,6 +20399,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.New_Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.News_ABAlert__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20705,6 +20715,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sales_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -38330,6 +38345,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>BulkMacrosAllowed</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CanAccessCE</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
