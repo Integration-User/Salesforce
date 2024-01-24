@@ -4444,7 +4444,6 @@ OwnerId  = $User.Id)</formula>
         <label>New Sales Opportunity</label>
         <lookupFilter>
             <active>true</active>
-            <booleanFilter>(1 OR 3) AND 2</booleanFilter>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -4454,11 +4453,6 @@ OwnerId  = $User.Id)</formula>
                 <field>Opportunity.StageName</field>
                 <operation>equals</operation>
                 <value>Qualified Prospect (2), Conducting Needs Analysis (3), Pricing Proposal Sent (4), Agreement Sent and Being Negotiated (5), Verbal Win (6)</value>
-            </filterItems>
-            <filterItems>
-                <field>Opportunity.RecordType.DeveloperName</field>
-                <operation>equals</operation>
-                <value>Existing_Business</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -25776,6 +25770,16 @@ Create_New_Renewal_Opportunity__c=TRUE)
         <errorConditionFormula>Current_Contract_Year__c &gt; 10</errorConditionFormula>
         <errorDisplayField>Current_Contract_Year__c</errorDisplayField>
         <errorMessage>Please enter a valid Current Contract Year.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Invalid_Sales_Opportunity</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+New_Sales_Opportunity__c != NULL,
+RecordType.DeveloperName = &apos;Sales_Development&apos;,
+New_Sales_Opportunity__r.Account.Id &lt;&gt; Account.Id
+)</errorConditionFormula>
+        <errorMessage>Please select an Opportunity that is related to the Account.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>LID__Check_CompanyId_Value</fullName>
