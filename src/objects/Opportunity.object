@@ -734,6 +734,17 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Campaign_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Class_ID__c</fullName>
         <description>Internal id of the class</description>
         <externalId>false</externalId>
@@ -1962,6 +1973,28 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Digital_Medium__c</fullName>
+        <externalId>false</externalId>
+        <label>Digital Medium</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Digital_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Digital Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Discounts_over_10_Count__c</fullName>
@@ -5963,6 +5996,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>UTM_Content__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Content</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Unmet_Deal_Insights__c</fullName>
