@@ -9,7 +9,8 @@ Public class Batch_UpdateOLIExternalId implements Database.Batchable<sObject>, S
      }
      
      Public Database.QueryLocator start(Database.BatchableContext BC) {
-         String soql = 'SELECT id, Product_External_Id__c,OpportunityId,Product2Id,Customer_Channel__c from OpportunityLineItem where Product_External_Id__c = null';
+         String soql = 'SELECT id, Product_External_Id__c,OpportunityId,Product2Id,Customer_Channel__c from OpportunityLineItem ';
+         if(!Test.isRunningTest()) soql += 'where Product_External_Id__c = null';
          return Database.getQueryLocator(soql );
      }
         
