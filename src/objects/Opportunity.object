@@ -480,6 +480,82 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Assigned_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Capture the date/time of when a Opportunity was moved out from Integration User.</inlineHelpText>
+        <label>Assigned Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_Team__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Initial Team this opportunity was assigned to.</inlineHelpText>
+        <label>Assigned Team</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hewett Research</fullName>
+                    <default>false</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>White</fullName>
+                    <default>false</default>
+                    <label>White</label>
+                </value>
+                <value>
+                    <fullName>UK Sales</fullName>
+                    <default>false</default>
+                    <label>UK Sales</label>
+                </value>
+                <value>
+                    <fullName>US News</fullName>
+                    <default>false</default>
+                    <label>US News</label>
+                </value>
+                <value>
+                    <fullName>US Research</fullName>
+                    <default>false</default>
+                    <label>US Research</label>
+                </value>
+                <value>
+                    <fullName>EU SDR Inbound</fullName>
+                    <default>false</default>
+                    <label>EU SDR Inbound</label>
+                </value>
+                <value>
+                    <fullName>US SDR Inbound</fullName>
+                    <default>false</default>
+                    <label>US SDR Inbound</label>
+                </value>
+                <value>
+                    <fullName>SDR Outbound</fullName>
+                    <default>false</default>
+                    <label>SDR Outbound</label>
+                </value>
+                <value>
+                    <fullName>Head of SDR&apos;s</fullName>
+                    <default>false</default>
+                    <label>Head of SDR&apos;s</label>
+                </value>
+                <value>
+                    <fullName>React News</fullName>
+                    <default>false</default>
+                    <label>React News</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>At_RIsk_Revenue__c</fullName>
         <externalId>false</externalId>
         <formula>IF( AND(NOT(ISBLANK((TEXT(Renewal_Risk__c)))), IsClosed = FALSE), Starting_Price_Opp__c , 0)</formula>
@@ -2497,6 +2573,25 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lead_Classification__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(LeadSource,
+&quot;Inquiry&quot;, &quot;Hot&quot;,
+&quot;Referral&quot;, &quot;Hot&quot;,
+&quot;AM Referral&quot;, &quot;Hot&quot;,
+&quot;Demo Request&quot;, &quot;Hot&quot;,
+&quot;Snowflake&quot;, &quot;Hot&quot;,
+&quot;React &amp; US News Ecomm Inquiries&quot;, &quot;Hot&quot;,
+&quot;Referral: Past Client Introduction&quot;, &quot;Hot&quot;,
+IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formula>
+        <inlineHelpText>Classification based on the lead source.</inlineHelpText>
+        <label>Lead Classification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Lead_Type__c</fullName>
@@ -4926,6 +5021,82 @@ NULL))))</formula>
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Qualified_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Populates when the opportunity stage is moved to disqualified or qualified</inlineHelpText>
+        <label>Qualified Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Qualified_Team__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Team name of the opportunity owner when moved to converted state.</inlineHelpText>
+        <label>Qualified Team</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hewett Research</fullName>
+                    <default>false</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>White</fullName>
+                    <default>false</default>
+                    <label>White</label>
+                </value>
+                <value>
+                    <fullName>UK Sales</fullName>
+                    <default>false</default>
+                    <label>UK Sales</label>
+                </value>
+                <value>
+                    <fullName>US News</fullName>
+                    <default>false</default>
+                    <label>US News</label>
+                </value>
+                <value>
+                    <fullName>US Research</fullName>
+                    <default>false</default>
+                    <label>US Research</label>
+                </value>
+                <value>
+                    <fullName>EU SDR Inbound</fullName>
+                    <default>false</default>
+                    <label>EU SDR Inbound</label>
+                </value>
+                <value>
+                    <fullName>US SDR Inbound</fullName>
+                    <default>false</default>
+                    <label>US SDR Inbound</label>
+                </value>
+                <value>
+                    <fullName>SDR Outbound</fullName>
+                    <default>false</default>
+                    <label>SDR Outbound</label>
+                </value>
+                <value>
+                    <fullName>Head of SDR&apos;s</fullName>
+                    <default>false</default>
+                    <label>Head of SDR&apos;s</label>
+                </value>
+                <value>
+                    <fullName>React News</fullName>
+                    <default>false</default>
+                    <label>React News</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Questions_Comments__c</fullName>
         <externalId>false</externalId>
         <label>Questions &amp; Comments</label>
@@ -5833,6 +6004,32 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Time_to_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Assigned_Date__c - CreatedDate ) * 24 * 60</formula>
+        <inlineHelpText>Calculates the (Assigned Date - Created Date) in Minutes.</inlineHelpText>
+        <label>Time to Assigned</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_to_Qualified__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Qualified_Date__c - CreatedDate ) * 24 * 60</formula>
+        <inlineHelpText>Calculates the (Qualified Date - Created Date) in Minutes.</inlineHelpText>
+        <label>Time to Qualified</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Today__c</fullName>
