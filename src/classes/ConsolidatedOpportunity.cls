@@ -46,9 +46,16 @@ public class ConsolidatedOpportunity {
                     insert olis;
                     oppResult.result = 'Opportunity Successfully consolidated.';
                 }
+                List<Opportunity> updateOppList = new List<Opportunity>();
                 Opportunity opp = new Opportunity(Consolidated_To__c = consolidatedOpp[0].targetOpp, 
                                                   Id = consolidatedOpp[0].consolidatedOppId,stageName = 'Consolidated');
-                update opp;
+                updateOppList.add(opp);
+                // SF-824 - Consolidation Data Management for SDO process
+                For(Opportunity sdoOpp : [Select Id, New_Sales_Opportunity__c FROM Opportunity WHERE New_Sales_Opportunity__c =: consolidatedOpp[0].consolidatedOppId]) {
+                    sdoOpp.New_Sales_Opportunity__c = consolidatedOpp[0].targetOpp;
+                    updateOppList.add(sdoOpp);
+                }
+                update updateOppList;
             }
         } catch(Exception e) {
             oppResult.result = e.getMessage();
