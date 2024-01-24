@@ -5,7 +5,7 @@
         <name>Qualify_Oppty</name>
         <label>Qualify Oppty?</label>
         <locationX>578</locationX>
-        <locationY>350</locationY>
+        <locationY>242</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>New_Oppty</name>
@@ -96,32 +96,11 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
-    <recordLookups>
-        <name>Get_Oppty_Records</name>
-        <label>Get Oppty Records</label>
-        <locationX>578</locationX>
-        <locationY>134</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Convert_Opportunity_Screen</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Opportunity</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <recordUpdates>
         <name>Update_New_Sales_Lookup</name>
         <label>Update New Sales Lookup</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>350</locationY>
         <connector>
             <targetReference>Success_Screen_Existing_Oppty</targetReference>
         </connector>
@@ -148,7 +127,7 @@
         <name>Update_Oppty_New_Oppty_Checkbox</name>
         <label>Update Oppty New Oppty Checkbox</label>
         <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationY>350</locationY>
         <connector>
             <targetReference>Success_Screen_New_Oppty</targetReference>
         </connector>
@@ -178,13 +157,13 @@
         <name>Cannot_Convert</name>
         <label>Cannot Convert</label>
         <locationX>842</locationX>
-        <locationY>458</locationY>
+        <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>ValidationText</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(237, 7, 7);&quot;&gt;You cannot convert an opportunity if both fields are populated.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;You cannot convert an opportunity if both fields are populated.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -194,7 +173,7 @@
         <name>Convert_Opportunity_Screen</name>
         <label>Convert Opportunity Screen</label>
         <locationX>578</locationX>
-        <locationY>242</locationY>
+        <locationY>134</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -253,13 +232,13 @@
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>578</locationX>
-        <locationY>566</locationY>
+        <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>ErrorText</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; color: rgb(250, 3, 3);&quot;&gt;Please select an Opportunity that is related to the Account.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(255, 0, 0);&quot;&gt;Please select an Opportunity that is related to the Account.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -269,12 +248,12 @@
         <name>Success_Screen_Existing_Oppty</name>
         <label>Success Screen Existing Oppty</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>Copy_1_of_Success_Text</name>
+            <name>Link_SDO_Success_Text</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Sales Opportunity has been linked.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
@@ -285,7 +264,7 @@
         <name>Success_Screen_New_Oppty</name>
         <label>Success Screen New Oppty</label>
         <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -301,7 +280,7 @@
         <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Oppty_Records</targetReference>
+            <targetReference>Convert_Opportunity_Screen</targetReference>
         </connector>
     </start>
     <status>Active</status>
