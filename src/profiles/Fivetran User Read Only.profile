@@ -13,6 +13,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Close_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Create_New_Sales_Opportunity__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -49,6 +54,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.New_Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Revisit_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
