@@ -6576,6 +6576,32 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <label>Opportunity Pipeline</label>
     </listViews>
     <listViews>
+        <fullName>EU_SDO_s</fullName>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Sales_Development</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.FULL_NAME</field>
+            <operation>equals</operation>
+            <value>Integration User</value>
+        </filters>
+        <filters>
+            <field>Marketing_Identified_Country__c</field>
+            <operation>equals</operation>
+            <value>United Kingdom</value>
+        </filters>
+        <label>EU SDO’s</label>
+    </listViews>
+    <listViews>
         <fullName>Expired_Favor_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>Favor_End_Date__c</columns>
@@ -7082,6 +7108,32 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <role>Commercial_Operations</role>
             <role>Finance</role>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_SDO_s</fullName>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Sales_Development</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.FULL_NAME</field>
+            <operation>equals</operation>
+            <value>Integration User</value>
+        </filters>
+        <filters>
+            <field>Marketing_Identified_Country__c</field>
+            <operation>equals</operation>
+            <value>United States</value>
+        </filters>
+        <label>US SDO’s</label>
     </listViews>
     <listViews>
         <fullName>Won</fullName>
