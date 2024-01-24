@@ -2594,6 +2594,19 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Lead_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities (Lead Contact)</relationshipLabel>
+        <relationshipName>LeadContact</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Lead_Type__c</fullName>
         <externalId>false</externalId>
         <label>Lead Type</label>
@@ -5524,6 +5537,15 @@ NULL))))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Revisit_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Revisit Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Risk_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Risk Reason</label>
@@ -5876,6 +5898,28 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Submission_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submission_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Sync_Child_Records__c</fullName>
         <defaultValue>&quot;Yes&quot;</defaultValue>
         <description>Used to denote if child records are to be synced</description>
@@ -6034,6 +6078,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Top_Attribution_Driver__c</fullName>
+        <externalId>false</externalId>
+        <label>Top Attribution Driver</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>TotalOpportunityQuantity</fullName>
