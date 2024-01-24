@@ -3,6 +3,11 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Create_New_Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Inbound__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -24,6 +29,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Marketing_Identified_Country__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.New_Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sales_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
