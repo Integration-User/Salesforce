@@ -4,7 +4,7 @@
         <name>SDO_Sales_Owner_for_Review_Email_Alert</name>
         <label>SDO Sales Owner for Review Email Alert</label>
         <locationX>50</locationX>
-        <locationY>755</locationY>
+        <locationY>647</locationY>
         <actionName>Opportunity.SDO_Sales_Owner_for_Review_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -49,7 +49,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Record_Type</targetReference>
+                <targetReference>Create_Sales_Opportunity</targetReference>
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes</label>
@@ -111,7 +111,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Sales_Reviewed</targetReference>
+                <targetReference>SDO_Sales_Owner_for_Review_Email_Alert</targetReference>
             </connector>
             <label>Move to In Review</label>
         </rules>
@@ -171,7 +171,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Create_Sales_Opportunity</name>
         <label>Create Sales Opportunity</label>
         <locationX>314</locationX>
-        <locationY>863</locationY>
+        <locationY>755</locationY>
         <assignRecordIdToReference>sales_OppId_Var</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Sales_Oppty_Field</targetReference>
@@ -180,12 +180,6 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             <field>AccountId</field>
             <value>
                 <elementReference>$Record.AccountId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>$Record.CampaignId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -201,27 +195,9 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Inbound__c</field>
-            <value>
-                <elementReference>$Record.Inbound__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LeadSource</field>
             <value>
                 <elementReference>$Record.LeadSource</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead_Channel__c</field>
-            <value>
-                <elementReference>$Record.Lead_Channel__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead_Type__c</field>
-            <value>
-                <elementReference>$Record.Lead_Type__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -239,7 +215,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>Get_Record_Type.Id</elementReference>
+                <stringValue>012f4000001Dq7rAAC</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -250,32 +226,11 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         </inputAssignments>
         <object>Opportunity</object>
     </recordCreates>
-    <recordLookups>
-        <name>Get_Record_Type</name>
-        <label>Get Record Type</label>
-        <locationX>314</locationX>
-        <locationY>755</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Sales_Opportunity</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>DeveloperName</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Sales_Opportunity</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>RecordType</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <recordUpdates>
         <name>Update_Sales_Oppty_Field</name>
         <label>Update Sales Oppty Field</label>
         <locationX>314</locationX>
-        <locationY>971</locationY>
+        <locationY>863</locationY>
         <inputAssignments>
             <field>New_Sales_Opportunity__c</field>
             <value>
@@ -286,22 +241,6 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             <field>SAO_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Sales_Reviewed</name>
-        <label>Update Sales Reviewed</label>
-        <locationX>50</locationX>
-        <locationY>647</locationY>
-        <connector>
-            <targetReference>SDO_Sales_Owner_for_Review_Email_Alert</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Sales_Reviewed__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -328,7 +267,6 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <connector>
             <targetReference>Is_Oppty_an_SDO</targetReference>
         </connector>
-        <filterFormula>{!$Record.RecordType.DeveloperName} = &apos;Sales_Development&apos;</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
