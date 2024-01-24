@@ -20287,6 +20287,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Marketing_Identified_Country__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Monthly_Recurring_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
