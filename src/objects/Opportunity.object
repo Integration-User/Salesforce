@@ -4548,6 +4548,7 @@ OwnerId  = $User.Id)</formula>
         <label>New Sales Opportunity</label>
         <lookupFilter>
             <active>true</active>
+            <booleanFilter>(1 OR 3) AND 2</booleanFilter>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -4557,6 +4558,11 @@ OwnerId  = $User.Id)</formula>
                 <field>Opportunity.StageName</field>
                 <operation>equals</operation>
                 <value>Qualified Prospect (2), Conducting Needs Analysis (3), Pricing Proposal Sent (4), Agreement Sent and Being Negotiated (5), Verbal Win (6)</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Existing_Business</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -6006,17 +6012,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <trackHistory>false</trackHistory>
         <type>Html</type>
         <visibleLines>25</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Submission_Notes__c</fullName>
-        <externalId>false</externalId>
-        <label>Submission Notes</label>
-        <length>255</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Submission_URL__c</fullName>
