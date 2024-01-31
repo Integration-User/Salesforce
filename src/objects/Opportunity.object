@@ -25708,7 +25708,8 @@ ISCHANGED( StageName )))</errorConditionFormula>
         <errorConditionFormula>AND(
 ISPICKVAL(StageName, &quot;Qualified&quot;),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
-Create_New_Sales_Opportunity__c = FALSE
+Create_New_Sales_Opportunity__c = FALSE,
+ISBLANK(New_Sales_Opportunity__c)
 )</errorConditionFormula>
         <errorMessage>Either “New Sales Opportunity” or “Create New Sales Opportunity” should be checked at this stage.</errorMessage>
     </validationRules>
@@ -25750,6 +25751,7 @@ ISBLANK ( Closed_Opportunity_Notes__c)
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
 RecordType.Name &lt;&gt; &quot;Favor - Closed&quot;,
+RecordType.Name &lt;&gt; &quot;Sales Development&quot;,
 IsClosed = TRUE,
 ISCHANGED(StageName),
 ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
