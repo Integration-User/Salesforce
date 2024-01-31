@@ -5,14 +5,14 @@
         <name>IU_Email</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>crmintegration@greenstreet.com.invalid</stringValue>
+            <stringValue>crmintegration@greenstreet.com</stringValue>
         </value>
     </constants>
     <decisions>
         <name>Qualification</name>
         <label>Qualification</label>
         <locationX>578</locationX>
-        <locationY>395</locationY>
+        <locationY>503</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Moved_to_Disqualified</name>
@@ -84,7 +84,7 @@
         <name>Removed_from_Integration_User</name>
         <label>Removed from Integration User</label>
         <locationX>314</locationX>
-        <locationY>287</locationY>
+        <locationY>395</locationY>
         <defaultConnector>
             <targetReference>Qualification</targetReference>
         </defaultConnector>
@@ -127,6 +127,35 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>Add_90_Days</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 90</expression>
+    </formulas>
+    <formulas>
+        <name>Get_Month_Text</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+MONTH(DATEVALUE({!$Record.CreatedDate})),
+  1, &quot;January&quot;,
+  2, &quot;February&quot;,
+  3, &quot;March&quot;,
+  4, &quot;April&quot;,
+  5, &quot;May&quot;,
+  6, &quot;June&quot;,
+  7, &quot;July&quot;,
+  8, &quot;August&quot;,
+  9, &quot;September&quot;,
+  10, &quot;October&quot;,
+  11, &quot;November&quot;,
+  &quot;December&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>SDO_Oppty_Name_Formula</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.Lead_Channel__c}) + &quot; &quot; + &quot;-&quot; + &quot; &quot; + {!$Record.Account.Name} + &quot;:&quot; + &quot; &quot; + {!$Record.Lead_Contact__r.FirstName} + &quot; &quot; + {!$Record.Lead_Contact__r.LastName} + &quot; &quot; + {!Get_Month_Text} + &quot; &quot; + TEXT(YEAR(DATEVALUE({!$Record.CreatedDate})))</expression>
+    </formulas>
     <interviewLabel>SDO SLA Tracking {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SDO SLA Tracking on Opportunity</label>
     <processMetadataValues>
@@ -152,7 +181,7 @@
         <name>Time_Stamp_Assigned_Date</name>
         <label>Time Stamp Assigned Date</label>
         <locationX>50</locationX>
-        <locationY>395</locationY>
+        <locationY>503</locationY>
         <inputAssignments>
             <field>Assigned_Date__c</field>
             <value>
@@ -171,7 +200,32 @@
         <name>Time_Stamp_Qualified_SDO</name>
         <label>Time Stamp Reviewed SDO</label>
         <locationX>578</locationX>
-        <locationY>503</locationY>
+        <locationY>611</locationY>
+        <inputAssignments>
+            <field>Qualified_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualified_Team__c</field>
+            <value>
+                <elementReference>$Record.Owner.Sales_Team__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Reviewed__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Time_Stamp_S</name>
+        <label>Time Stamp Disqualified SDO</label>
+        <locationX>314</locationX>
+        <locationY>611</locationY>
         <inputAssignments>
             <field>Qualified_Date__c</field>
             <value>
@@ -187,20 +241,17 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Time_Stamp_S</name>
-        <label>Time Stamp Disqualified SDO</label>
+        <name>Update_SDO_Name</name>
+        <label>Update SDO Name</label>
         <locationX>314</locationX>
-        <locationY>503</locationY>
+        <locationY>287</locationY>
+        <connector>
+            <targetReference>Removed_from_Integration_User</targetReference>
+        </connector>
         <inputAssignments>
-            <field>Qualified_Date__c</field>
+            <field>Name</field>
             <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Qualified_Team__c</field>
-            <value>
-                <elementReference>$Record.Owner.Sales_Team__c</elementReference>
+                <elementReference>SDO_Oppty_Name_Formula</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -209,7 +260,7 @@
         <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Removed_from_Integration_User</targetReference>
+            <targetReference>Update_SDO_Name</targetReference>
         </connector>
         <filterFormula>{!$Record.RecordType.DeveloperName} = &apos;Sales_Development&apos;</filterFormula>
         <object>Opportunity</object>
