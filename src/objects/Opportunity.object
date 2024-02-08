@@ -1290,6 +1290,17 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
+        <fullName>Company_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Company_Type_Opp__c</fullName>
         <description>Company type mapped over from Account in order to add to an email template.</description>
         <externalId>false</externalId>
@@ -2705,6 +2716,17 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <inlineHelpText>Classification based on the lead source.</inlineHelpText>
         <label>Lead Classification</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Contact Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
@@ -6062,17 +6084,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <trackHistory>false</trackHistory>
         <type>Html</type>
         <visibleLines>25</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Submission_Notes__c</fullName>
-        <externalId>false</externalId>
-        <label>Submission Notes</label>
-        <length>255</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Submission_URL__c</fullName>
