@@ -295,6 +295,31 @@ TEXT(YEAR(Start_Date__c))</formula>
                     <default>false</default>
                     <label>API</label>
                 </value>
+                <value>
+                    <fullName>UK Retail - All</fullName>
+                    <default>false</default>
+                    <label>UK Retail - All</label>
+                </value>
+                <value>
+                    <fullName>UK Retail - Convenience</fullName>
+                    <default>false</default>
+                    <label>UK Retail - Convenience</label>
+                </value>
+                <value>
+                    <fullName>UK Retail - Multiples</fullName>
+                    <default>false</default>
+                    <label>UK Retail - Multiples</label>
+                </value>
+                <value>
+                    <fullName>UK Retail - Independents</fullName>
+                    <default>false</default>
+                    <label>UK Retail - Independents</label>
+                </value>
+                <value>
+                    <fullName>UK Retail - London</fullName>
+                    <default>false</default>
+                    <label>UK Retail - London</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -810,6 +835,18 @@ Upsell_Cross_sell__c = TRUE,
         <errorMessage>Products that are considered an &quot;Upsell&quot; must have a Starting Price of $0.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Data_Sale_Product_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+CONTAINS( Product2.Name , &apos;Data Sale&apos;),
+OR(
+ISPICKVAL(Delivery_Method__c, &apos;Snowflake&apos;),
+ISPICKVAL(Delivery_Method__c, &apos;API&apos;)
+)
+)</errorConditionFormula>
+        <errorMessage>This is not an appropriate Delivery Method for this product</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Delivery_method_required_for_DataDeliver</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -822,6 +859,17 @@ Upsell_Cross_sell__c = TRUE,
  )
 )</errorConditionFormula>
         <errorMessage>&quot;Delivery method&quot; is required for data delivery products</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Delivery_Method_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT(CONTAINS( Product2.Name , &apos;Data Sale&apos;)),
+NOT(OR (
+ISPICKVAL(Delivery_Method__c, &apos;Snowflake&apos;),
+ISPICKVAL(Delivery_Method__c, &apos;API&apos;)))
+)</errorConditionFormula>
+        <errorMessage>This is not an appropriate Delivery Method for this product</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Starting_Price_Required</fullName>
