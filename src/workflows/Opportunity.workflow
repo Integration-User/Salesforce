@@ -278,6 +278,17 @@
         <template>Referral_Templates/Referral_Status_Update</template>
     </alerts>
     <alerts>
+        <fullName>SDO_Sales_Owner_for_Review_Email_Alert</fullName>
+        <description>SDO Sales Owner for Review Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Sales_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SDO_New_Opportunity_Email_Template</template>
+    </alerts>
+    <alerts>
         <fullName>Send_Email_About_Expiring_Trial</fullName>
         <description>Send Email About Expiring Trial</description>
         <protected>false</protected>
@@ -804,6 +815,11 @@
             <field>Account.LastModifiedById</field>
             <operation>notEqual</operation>
         </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Sales Development</value>
+        </criteriaItems>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -913,7 +929,7 @@
             <name>Update_Close_Date_to_Today</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.Last_Stage_Change__c</field>
             <operation>equals</operation>
@@ -925,6 +941,7 @@
             <value>Closed Won,Closed Lost</value>
         </criteriaItems>
         <description>If Opp Stage is changed and Stage is Closed Lost/Won, on save set Close Date to TODAY</description>
+        <failedMigrationToolVersion>246.16.8</failedMigrationToolVersion>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
@@ -978,7 +995,7 @@
             <name>Update_Last_Stage_Change</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.StageName</field>
             <operation>notEqual</operation>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <constants>
+        <name>IU_Email</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>crmintegration@greenstreet.com</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Qualification</name>
+        <label>Qualification</label>
+        <locationX>578</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Moved_to_Disqualified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Disqualified</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>In Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Time_Stamp_S</targetReference>
+            </connector>
+            <label>Moved to Disqualified</label>
+        </rules>
+        <rules>
+            <name>Moved_to_In_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Time_Stamp_Qualified_SDO</targetReference>
+            </connector>
+            <label>Moved to In Review</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Removed_from_Integration_User</name>
+        <label>Removed from Integration User</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Qualification</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Mover_from_IUser</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner.Email</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>IU_Email</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Assigned_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Time_Stamp_Assigned_Date</targetReference>
+            </connector>
+            <label>Mover from IUser</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Add_90_Days</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 90</expression>
+    </formulas>
+    <formulas>
+        <name>Get_Month_Text</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+MONTH(DATEVALUE({!$Record.CreatedDate})),
+  1, &quot;January&quot;,
+  2, &quot;February&quot;,
+  3, &quot;March&quot;,
+  4, &quot;April&quot;,
+  5, &quot;May&quot;,
+  6, &quot;June&quot;,
+  7, &quot;July&quot;,
+  8, &quot;August&quot;,
+  9, &quot;September&quot;,
+  10, &quot;October&quot;,
+  11, &quot;November&quot;,
+  12, &quot;December&quot;,
+  &quot; &quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>SDO_Oppty_Name_Formula</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.Lead_Channel__c}) + &quot; &quot; + &quot;-&quot; + &quot; &quot; + {!$Record.Account.Name} + &quot;:&quot; + &quot; &quot; + {!$Record.Lead_Contact__r.FirstName} + &quot; &quot; + {!$Record.Lead_Contact__r.LastName} + &quot; &quot; + {!Get_Month_Text} + &quot; &quot; + TEXT(YEAR(DATEVALUE({!$Record.CreatedDate})))</expression>
+    </formulas>
+    <interviewLabel>SDO SLA Tracking {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SDO SLA Tracking on Opportunity</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Time_Stamp_Assigned_Date</name>
+        <label>Time Stamp Assigned Date</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <inputAssignments>
+            <field>Assigned_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assigned_Team__c</field>
+            <value>
+                <elementReference>$Record.Owner.Sales_Team__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Time_Stamp_Qualified_SDO</name>
+        <label>Time Stamp Reviewed SDO</label>
+        <locationX>578</locationX>
+        <locationY>611</locationY>
+        <inputAssignments>
+            <field>Qualified_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualified_Team__c</field>
+            <value>
+                <elementReference>$Record.Owner.Sales_Team__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Reviewed__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Time_Stamp_S</name>
+        <label>Time Stamp Disqualified SDO</label>
+        <locationX>314</locationX>
+        <locationY>611</locationY>
+        <inputAssignments>
+            <field>Qualified_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualified_Team__c</field>
+            <value>
+                <elementReference>$Record.Owner.Sales_Team__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_SDO_Name</name>
+        <label>Update SDO Name</label>
+        <locationX>314</locationX>
+        <locationY>287</locationY>
+        <connector>
+            <targetReference>Removed_from_Integration_User</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>SDO_Oppty_Name_Formula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_SDO_Name</targetReference>
+        </connector>
+        <filterFormula>{!$Record.RecordType.DeveloperName} = &apos;Sales_Development&apos;</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
