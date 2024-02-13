@@ -76,7 +76,7 @@ private class Batch_UpdateOLIExternalIdTest {
         Opportunity oppty = new Opportunity();
         oppty.Name = 'Test Oppty';
         oppty.CloseDate = System.today().addDays(5);
-        oppty.StageName = 'Qualified Prospect (2)';
+        oppty.StageName = '2 - Conducting Needs Analysis';
         oppty.AccountId = accnt.Id;
         oppty.X2nd_Year_Amount_in_USD__c = 60000;
         oppty.X3rd_Year_Amount_in_USD__c = 80000;

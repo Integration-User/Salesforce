@@ -876,7 +876,7 @@ ISPICKVAL(Delivery_Method__c, &apos;API&apos;)))
         <active>false</active>
         <errorConditionFormula>AND(
 OR( 
-ISPICKVAL(Opportunity.StageName, &quot;Verbal Win (6)&quot;),
+ISPICKVAL(Opportunity.StageName, &quot;6 - Verbal Win and Finalizing Contract​&quot;),
 ISPICKVAL(Opportunity.StageName, &quot;Closed Lost&quot;)),
 ISBLANK(Starting_Price__c))</errorConditionFormula>
         <errorMessage>Please enter an accurate starting price for each product.</errorMessage>

@@ -62,7 +62,7 @@ public class ConsolidatedOpportunityTest {
         Opportunity oppty = new Opportunity();
         oppty.Name = 'Test Oppty';
         oppty.CloseDate = System.today().addDays(5);
-        oppty.StageName = 'Qualified Prospect (2)';
+        oppty.StageName = '2 - Conducting Needs Analysis';
         oppty.AccountId = accnt.Id;
         oppty.Automatic_Renewal__c = false;
         oppty.Close_Reason__c = 'test';
@@ -97,7 +97,7 @@ public class ConsolidatedOpportunityTest {
         oppty1.Name = 'TestOppty1';
         oppty1.RecordTypeId = renewalRT;
         oppty1.CloseDate = System.today().addDays(5);
-        oppty1.StageName = 'Qualified Prospect (2)';
+        oppty1.StageName = '2 - Conducting Needs Analysis';
         oppty1.AccountId = accnt.Id;
         oppty1.X2nd_Year_Amount_in_USD__c = 60000;
         oppty1.X3rd_Year_Amount_in_USD__c = 60000;

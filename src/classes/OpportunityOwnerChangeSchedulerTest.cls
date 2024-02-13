@@ -24,7 +24,7 @@ public class OpportunityOwnerChangeSchedulerTest {
         opp.RecordTypeId = oppRecordTypeId;
         opp.Name = 'OppTest 1';
         opp.CloseDate = system.today();
-        opp.StageName = 'Qualified Prospect (2)';
+        opp.StageName = '2 - Conducting Needs Analysis';
         opp.CurrencyIsoCode = 'USD';
         opp.AccountId = acc.Id;
         opp.Sectors_Sold__c = 'All Sectors';

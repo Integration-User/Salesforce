@@ -35,7 +35,7 @@ public class Plative_ContactRoleTriggerTest {
         Opportunity oppty = new Opportunity();
         oppty.Name = 'Test Oppty';
         oppty.CloseDate = System.today().addDays(5);
-        oppty.StageName = 'Qualified Prospect (2)';
+        oppty.StageName = '2 - Conducting Needs Analysis';
         oppty.AccountId = accnt.Id;
         insert oppty;
         

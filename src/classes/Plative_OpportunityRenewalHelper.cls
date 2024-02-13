@@ -64,7 +64,7 @@ public class Plative_OpportunityRenewalHelper {
                     Opp,
                     renewalOpportunityRecordId,
                     2,
-                    'Verbal Win (6)',
+                    '6 - Verbal Win and Finalizing Contract',
                     true
                 ));
             }
@@ -74,7 +74,7 @@ public class Plative_OpportunityRenewalHelper {
                     Opp,
                     renewalOpportunityRecordId,
                     3,
-                    'Verbal Win (6)',
+                    '6 - Verbal Win and Finalizing Contract',
                     true
                 ));
             }
@@ -83,7 +83,7 @@ public class Plative_OpportunityRenewalHelper {
                     Opp,
                     renewalOpportunityRecordId,
                     4,
-                    'Verbal Win (6)',
+                    '6 - Verbal Win and Finalizing Contract',
                     true
                 ));
             }
@@ -92,7 +92,7 @@ public class Plative_OpportunityRenewalHelper {
                     Opp,
                     renewalOpportunityRecordId,
                     5,
-                    'Verbal Win (6)',
+                    '6 - Verbal Win and Finalizing Contract',
                     true
                 ));
             }
@@ -101,7 +101,7 @@ public class Plative_OpportunityRenewalHelper {
                     Opp,
                     renewalOpportunityRecordId,
                     6,
-                    'Verbal Win (6)',
+                    '6 - Verbal Win and Finalizing Contract',
                     true
                 ));
             }
@@ -110,7 +110,7 @@ public class Plative_OpportunityRenewalHelper {
                     Opp,
                     renewalOpportunityRecordId,
                     7,
-                    'Verbal Win (6)',
+                    '6 - Verbal Win and Finalizing Contract',
                     true
                 ));
             }
@@ -317,7 +317,7 @@ public class Plative_OpportunityRenewalHelper {
         newOpp.Non_Standard_Paperwork__c = Opp.Non_Standard_Paperwork__c; 
 
         if(Opp.Evergreen_Contract__c == true){
-            newOpp.stageName = 'Agreement Sent and Being Negotiated (5)';
+            newOpp.stageName = '5 - Negotiation and Agreement Sent';
             newOpp.Next_Year_Increase__c = Opp.Next_Year_Increase__c;
             
         }
@@ -432,10 +432,10 @@ public class Plative_OpportunityRenewalHelper {
         //Create Renewal Opportunities from Qualified Opportunities
         Map<Id,Opportunity> newOpportunityMap = new Map<Id,Opportunity>();
         for(Opportunity oppty: opportunityMap.values()){
-            Opportunity newOppty = createRenewalOpp(oppty, renewalOpportunityRecordId, 1, 'Pricing Proposal Sent (4)', false);
+            Opportunity newOppty = createRenewalOpp(oppty, renewalOpportunityRecordId, 1, '4 - Recommending', false);
             newOppty.Contract_Start_Date__c = oppty.Contract_End_Date__c != null ? oppty.Contract_End_Date__c.addDays(1) : null;
             newOppty.Contract_End_Date__c = newOppty.Contract_Start_Date__c != null ? newOppty.Contract_Start_Date__c.addYears(1).addDays(-1) : null;
-            newOppty.StageName = 'Qualified Prospect (2)';
+            newOppty.StageName = '2 - Conducting Needs Analysis';
             newOpportunityMap.put(oppty.Id, newOppty);
         }
         
