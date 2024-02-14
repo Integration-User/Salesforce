@@ -88,7 +88,7 @@ public class Plative_TestDataFactory  {
     public static Opportunity createOpportunity(Account acc,Boolean doInsert){  
         Opportunity oppty = new Opportunity();
         oppty.Name = 'Test Oppty';
-        oppty.StageName = 'Qualified Prospect (2)';
+        oppty.StageName = '2 - Conducting Needs Analysis';
         oppty.CloseDate = System.today()+10;
         oppty.AccountId = acc.Id;
         oppty.LeadSource = 'Inquiry';
@@ -143,6 +143,7 @@ public class Plative_TestDataFactory  {
         oli.OpportunityId = oppty.Id;
         oli.Product2Id = prod.Id;
         oli.UnitPrice = 10000;
+        oli.Delivery_Method__c = 'Snowflake';
         if(doInsert){
             insert oli;
         }
