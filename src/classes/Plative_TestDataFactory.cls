@@ -143,6 +143,7 @@ public class Plative_TestDataFactory  {
         oli.OpportunityId = oppty.Id;
         oli.Product2Id = prod.Id;
         oli.UnitPrice = 10000;
+        oli.Delivery_Method__c = 'Snowflake';
         if(doInsert){
             insert oli;
         }
