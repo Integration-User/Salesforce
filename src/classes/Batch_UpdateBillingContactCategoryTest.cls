@@ -85,6 +85,7 @@ public class Batch_UpdateBillingContactCategoryTest {
         opptyLineItem.Start_Date__c = System.today();
         opptyLineItem.End_Date__c = System.today().addMonths(1);
         opptyLineItem.Product_External_Id__c = 401;
+        opptyLineItem.Delivery_Method__c = 'Snowflake';
         insert opptyLineItem; 
         
         OpportunityContactRole ocr = new OpportunityContactRole();
