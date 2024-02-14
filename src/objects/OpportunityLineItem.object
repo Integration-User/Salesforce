@@ -865,6 +865,7 @@ ISPICKVAL(Delivery_Method__c, &apos;API&apos;)
         <active>true</active>
         <errorConditionFormula>AND(
 NOT(CONTAINS( Product2.Name , &apos;Data Sale&apos;)),
+NOT( ISBLANK(TEXT(Delivery_Method__c))),
 NOT(OR (
 ISPICKVAL(Delivery_Method__c, &apos;Snowflake&apos;),
 ISPICKVAL(Delivery_Method__c, &apos;API&apos;)))
