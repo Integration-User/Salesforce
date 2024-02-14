@@ -824,6 +824,18 @@ Upsell_Cross_sell__c = TRUE,
         <errorMessage>&quot;Delivery method&quot; is required for data delivery products</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Product_Delivery_Method_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT(CONTAINS( Product2.Name , &apos;Data Sale&apos;)),
+NOT( ISBLANK(TEXT(Delivery_Method__c))),
+NOT(OR (
+ISPICKVAL(Delivery_Method__c, &apos;Snowflake&apos;),
+ISPICKVAL(Delivery_Method__c, &apos;API&apos;)))
+)</errorConditionFormula>
+        <errorMessage>This is not an appropriate Delivery Method for this product</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Starting_Price_Required</fullName>
         <active>false</active>
         <errorConditionFormula>AND(
