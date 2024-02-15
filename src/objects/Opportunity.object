@@ -24762,10 +24762,13 @@ Subsidiary, Main Phone, Website, Company Type, Address.</errorMessage>
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL( Win_Validation__c , &quot;Pending Review&quot;),
 RecordType.Name = &quot;Sales Opportunity&quot;,
+OR(
+ISBLANK (AP_Email__c),
+ISPICKVAL(Billing_Schedule__c, &quot;&quot;),
+ISPICKVAL(Terms__c, &quot;&quot;),
 ISBLANK ( Closed_Opportunity_Notes__c)
-)</errorConditionFormula>
-        <errorDisplayField>Closed_Opportunity_Notes__c</errorDisplayField>
-        <errorMessage>Closed Opportunity Notes are required in order to move to Pending Review.</errorMessage>
+))</errorConditionFormula>
+        <errorMessage>Closed Opportunity Notes, AP Email, Billing Schedule and Terms are required in order to move to Pending Review.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Close_Reason_Blank_Closed_Opportunities</fullName>
