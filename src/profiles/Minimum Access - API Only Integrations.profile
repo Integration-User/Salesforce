@@ -3,6 +3,11 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Account_6sense_Segment_Names__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Assigned_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
