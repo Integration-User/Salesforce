@@ -2,9 +2,70 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>58.0</apiVersion>
     <decisions>
+        <name>Account_and_Contact_Owner_Decision</name>
+        <label>Account and Contact Owner Decision</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Contact_Owned_By_Integration</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_Owned_By_Integration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Owner.Email</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>crmintegration</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Owner</targetReference>
+            </connector>
+            <label>Account Owned By Integration?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Contact_Owned_By_Integration</name>
+        <label>Contact Owned By Integration</label>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Lead_Contact_Owned_by_Integration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead_Contact__r.Owner.Email</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>crmintegration</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Contact_Owner</targetReference>
+            </connector>
+            <label>Lead Contact Owned by Integration?</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>SDO_Changed</name>
         <label>SDO Changed?</label>
-        <locationX>314</locationX>
+        <locationX>512</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -24,22 +85,8 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.Account.Owner.Email</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>crmintegration</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Lead_Contact__r.Owner.Email</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>crmintegration</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
-                <targetReference>Update_Account_Owner</targetReference>
+                <targetReference>Account_and_Contact_Owner_Decision</targetReference>
             </connector>
             <label>SDO Accepted</label>
         </rules>
@@ -127,9 +174,9 @@
         <name>Update_Account_Owner</name>
         <label>Update Account Owner</label>
         <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <connector>
-            <targetReference>Update_Contact_Owner</targetReference>
+            <targetReference>Contact_Owned_By_Integration</targetReference>
         </connector>
         <inputAssignments>
             <field>OwnerId</field>
@@ -142,7 +189,7 @@
     <recordUpdates>
         <name>Update_Account_to_Sales_Owner</name>
         <label>Update Account to Sales Owner</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>Update_Contact_to_Sales_Owner</targetReference>
@@ -159,7 +206,7 @@
         <name>Update_Contact_Owner</name>
         <label>Update Contact Owner</label>
         <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationY>839</locationY>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
@@ -171,7 +218,7 @@
     <recordUpdates>
         <name>Update_Contact_to_Sales_Owner</name>
         <label>Update Contact to Sales Owner</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>539</locationY>
         <inputAssignments>
             <field>OwnerId</field>
@@ -182,7 +229,7 @@
         <inputReference>$Record.Lead_Contact__r</inputReference>
     </recordUpdates>
     <start>
-        <locationX>188</locationX>
+        <locationX>386</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>SDO_Changed</targetReference>
