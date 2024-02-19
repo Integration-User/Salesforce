@@ -737,6 +737,7 @@ ISNEW(),
 
 OR(
 ISPICKVAL([Case].Origin,&quot;Email&quot;),
+ISPICKVAL([Case].Origin,&quot;Customer Success&quot;),
 ISPICKVAL([Case].Origin,&quot;External Data Support&quot;)),
 
 OR(
@@ -755,6 +756,7 @@ ISNEW(),
 
 OR(
 ISPICKVAL({!myVariable_current.Origin},&quot;Email&quot;),
+ISPICKVAL({!myVariable_current.Origin},&quot;Customer Success&quot;),
 ISPICKVAL({!myVariable_current.Origin},&quot;External Data Support&quot;)),
 
 OR(
@@ -791,7 +793,7 @@ OR(
 {!myVariable_current.Submitted_Day__c}=&quot;Saturday&quot;,
 {!myVariable_current.Submitted_Day__c}=&quot;Sunday&quot;))</expression>
     </formulas>
-    <interviewLabel>Help_Desk_Case_Processes-11_InterviewLabel</interviewLabel>
+    <interviewLabel>Help_Desk_Case_Processes-12_InterviewLabel</interviewLabel>
     <label>Help Desk Case Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
