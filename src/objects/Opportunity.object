@@ -2882,6 +2882,16 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                     <default>false</default>
                     <label>Non-Green Street Sponsored Event</label>
                 </value>
+                <value>
+                    <fullName>Preqin</fullName>
+                    <default>false</default>
+                    <label>Preqin</label>
+                </value>
+                <value>
+                    <fullName>Salesforce</fullName>
+                    <default>false</default>
+                    <label>Salesforce</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Inquiry</controllingFieldValue>
@@ -2978,6 +2988,14 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
             <valueSettings>
                 <controllingFieldValue>Cold Outreach</controllingFieldValue>
                 <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cold Outreach</controllingFieldValue>
+                <valueName>Preqin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cold Outreach</controllingFieldValue>
+                <valueName>Salesforce</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Referral</controllingFieldValue>
@@ -21101,6 +21119,160 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>White</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lead_Channel__c</picklist>
+            <values>
+                <fullName>Cold Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecommerce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Ads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target List</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linkedin Sales Nav</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Green Street Sponsored Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PERE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Network</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preqin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scored Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Reported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsored Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscription Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZoomInfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
