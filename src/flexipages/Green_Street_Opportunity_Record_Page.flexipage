@@ -138,11 +138,11 @@
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+                    <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.StageName}</leftValue>
                         <operator>NE</operator>
-                        <rightValue>Qualified Prospect (2)</rightValue>
+                        <rightValue>2 - Conducting Needs Analysis</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Product_Count__c}</leftValue>
@@ -153,6 +153,11 @@
                         <leftValue>{!Record.RecordType.Name}</leftValue>
                         <operator>NE</operator>
                         <rightValue>Sales Development</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.StageName}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>1 - Introducing</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

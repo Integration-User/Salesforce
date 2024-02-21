@@ -60,7 +60,7 @@ public class Batch_UpdateBillingContactCategoryTest {
         Opportunity oppty = new Opportunity();
         oppty.Name = 'Test Oppty';
         oppty.CloseDate = System.today().addDays(5);
-        oppty.StageName = 'Qualified Prospect (2)';
+        oppty.StageName = '2 - Conducting Needs Analysis';
         oppty.AccountId = accnt.Id;
         oppty.X2nd_Year_Amount_in_USD__c = 60000;
         oppty.X3rd_Year_Amount_in_USD__c = 80000;
@@ -98,7 +98,7 @@ public class Batch_UpdateBillingContactCategoryTest {
         oppty1.Name = 'TestOppty1';
         oppty1.RecordTypeId = advisoryRT;
         oppty1.CloseDate = System.today().addDays(5);
-        oppty1.StageName = 'Qualified Prospect (2)';
+        oppty1.StageName = '2 - Conducting Needs Analysis';
         oppty1.AccountId = accnt.Id;
         oppty1.X2nd_Year_Amount_in_USD__c = 60000;
         oppty1.X3rd_Year_Amount_in_USD__c = 60000;
@@ -142,5 +142,4 @@ public class Batch_UpdateBillingContactCategoryTest {
         Database.executeBatch(new Batch_UpdateBillingContactCategory(), 10);
         Test.stopTest();
     }
-
 }
