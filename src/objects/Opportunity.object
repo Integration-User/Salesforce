@@ -26191,6 +26191,7 @@ ISBLANK(Account.Phone )
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
  RecordType.Name = &quot;Sales Opportunity&quot;,
+ ISCHANGED(StageName),
  OR(
 ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
 ISPICKVAL(StageName, &quot;3 - Qualifying​&quot;),
