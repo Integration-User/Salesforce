@@ -220,14 +220,16 @@
             <dataType>String</dataType>
             <fieldText>Activation/Deactivation Needs</fieldText>
             <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>Products</name>
             <choiceReferences>Case_Products</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Products</fieldText>
+            <fieldText>In order to select multiple products to remove or add - press crtl + the products you want to select Products</fieldText>
             <fieldType>MultiSelectPicklist</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
         <fields>
@@ -236,6 +238,7 @@
             <dataType>String</dataType>
             <fieldText>Reason for Request</fieldText>
             <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -243,6 +246,7 @@
             <dataType>String</dataType>
             <fieldText>Context for Request</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <nextOrFinishButtonLabel>Create Request</nextOrFinishButtonLabel>
