@@ -100,6 +100,7 @@ private class Batch_UpdateOLIExternalIdTest {
         opptyLineItem.Quantity = 1;
         opptyLineItem.Start_Date__c = System.today();
         opptyLineItem.End_Date__c = System.today().addMonths(1);
+        opptyLineItem.Delivery_Method__c = 'Snowflake';
 
         insert opptyLineItem; 
         

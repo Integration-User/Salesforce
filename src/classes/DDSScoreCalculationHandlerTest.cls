@@ -47,9 +47,11 @@ public with sharing class DDSScoreCalculationHandlerTest {
 
         OpportunityLineItem oli1 = Plative_TestDataFactory.createOLI(oppty, product1, false);
         oli1.Starting_Price__c = 10000;
+        oli1.Delivery_Method__c = 'Snowflake';
         insert oli1;
         OpportunityLineItem oli2 = Plative_TestDataFactory.createOLI(oppty, product2, false);
         oli2.Starting_Price__c = 10000;
+        oli2.Delivery_Method__c = 'Snowflake';
         insert oli2;
     }
 
