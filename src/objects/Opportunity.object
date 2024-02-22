@@ -310,6 +310,17 @@
         <fields>RecordTypeId</fields>
         <label>New Awesome Compact Layout</label>
     </compactLayouts>
+    <compactLayouts>
+        <fullName>Sales_Development</fullName>
+        <fields>Name</fields>
+        <fields>OwnerId</fields>
+        <fields>AccountId</fields>
+        <fields>Lead_Contact__c</fields>
+        <fields>Inbound__c</fields>
+        <fields>Lead_Classification__c</fields>
+        <fields>Lead_Type__c</fields>
+        <label>Sales Development</label>
+    </compactLayouts>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -551,6 +562,31 @@
                     <fullName>React News</fullName>
                     <default>false</default>
                     <label>React News</label>
+                </value>
+                <value>
+                    <fullName>Ling</fullName>
+                    <default>false</default>
+                    <label>Ling</label>
+                </value>
+                <value>
+                    <fullName>Pliha</fullName>
+                    <default>false</default>
+                    <label>Pliha</label>
+                </value>
+                <value>
+                    <fullName>Lemansky</fullName>
+                    <default>false</default>
+                    <label>Lemansky</label>
+                </value>
+                <value>
+                    <fullName>Judd</fullName>
+                    <default>false</default>
+                    <label>Judd</label>
+                </value>
+                <value>
+                    <fullName>Greco</fullName>
+                    <default>false</default>
+                    <label>Greco</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1252,6 +1288,17 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Company_Type_Opp__c</fullName>
@@ -2669,6 +2716,17 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <inlineHelpText>Classification based on the lead source.</inlineHelpText>
         <label>Lead Classification</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Contact Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
@@ -4537,6 +4595,7 @@ OwnerId  = $User.Id)</formula>
         <label>New Sales Opportunity</label>
         <lookupFilter>
             <active>true</active>
+            <booleanFilter>(1 OR 3) AND 2</booleanFilter>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -4546,6 +4605,11 @@ OwnerId  = $User.Id)</formula>
                 <field>Opportunity.StageName</field>
                 <operation>equals</operation>
                 <value>Qualified Prospect (2), Conducting Needs Analysis (3), Pricing Proposal Sent (4), Agreement Sent and Being Negotiated (5), Verbal Win (6)</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Existing_Business</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -5179,6 +5243,31 @@ NULL))))</formula>
                     <fullName>React News</fullName>
                     <default>false</default>
                     <label>React News</label>
+                </value>
+                <value>
+                    <fullName>Ling</fullName>
+                    <default>false</default>
+                    <label>Ling</label>
+                </value>
+                <value>
+                    <fullName>Pliha</fullName>
+                    <default>false</default>
+                    <label>Pliha</label>
+                </value>
+                <value>
+                    <fullName>Lemansky</fullName>
+                    <default>false</default>
+                    <label>Lemansky</label>
+                </value>
+                <value>
+                    <fullName>Judd</fullName>
+                    <default>false</default>
+                    <label>Judd</label>
+                </value>
+                <value>
+                    <fullName>Greco</fullName>
+                    <default>false</default>
+                    <label>Greco</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -5995,17 +6084,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <trackHistory>false</trackHistory>
         <type>Html</type>
         <visibleLines>25</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Submission_Notes__c</fullName>
-        <externalId>false</externalId>
-        <label>Submission Notes</label>
-        <length>255</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Submission_URL__c</fullName>
@@ -20961,7 +21039,71 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <fullName>Sales_Development</fullName>
         <active>true</active>
         <businessProcess>Sales Development</businessProcess>
+        <compactLayoutAssignment>Sales_Development</compactLayoutAssignment>
         <label>Sales Development</label>
+        <picklistValues>
+            <picklist>Assigned_Team__c</picklist>
+            <values>
+                <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Judd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lemansky</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pliha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Close_Reason__c</picklist>
             <values>
@@ -22102,6 +22244,69 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Qualified_Team__c</picklist>
+            <values>
+                <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Judd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lemansky</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pliha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sales_Type__c</picklist>
             <values>
                 <fullName>Favor</fullName>
@@ -22256,6 +22461,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Competitive Win</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consolidated</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23932,6 +24141,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Competitive Win</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consolidated</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25691,7 +25904,8 @@ ISCHANGED( StageName )))</errorConditionFormula>
         <errorConditionFormula>AND(
 ISPICKVAL(StageName, &quot;Qualified&quot;),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
-Create_New_Sales_Opportunity__c = FALSE
+Create_New_Sales_Opportunity__c = FALSE,
+ISBLANK(New_Sales_Opportunity__c)
 )</errorConditionFormula>
         <errorMessage>Either “New Sales Opportunity” or “Create New Sales Opportunity” should be checked at this stage.</errorMessage>
     </validationRules>
@@ -25721,10 +25935,13 @@ Subsidiary, Main Phone, Website, Company Type, Address.</errorMessage>
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL( Win_Validation__c , &quot;Pending Review&quot;),
 RecordType.Name = &quot;Sales Opportunity&quot;,
+OR(
+ISBLANK (AP_Email__c),
+ISPICKVAL(Billing_Schedule__c, &quot;&quot;),
+ISPICKVAL(Terms__c, &quot;&quot;),
 ISBLANK ( Closed_Opportunity_Notes__c)
-)</errorConditionFormula>
-        <errorDisplayField>Closed_Opportunity_Notes__c</errorDisplayField>
-        <errorMessage>Closed Opportunity Notes are required in order to move to Pending Review.</errorMessage>
+))</errorConditionFormula>
+        <errorMessage>Closed Opportunity Notes, AP Email, Billing Schedule and Terms are required in order to move to Pending Review.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Close_Reason_Blank_Closed_Opportunities</fullName>
@@ -25733,6 +25950,7 @@ ISBLANK ( Closed_Opportunity_Notes__c)
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
 RecordType.Name &lt;&gt; &quot;Favor - Closed&quot;,
+RecordType.Name &lt;&gt; &quot;Sales Development&quot;,
 IsClosed = TRUE,
 ISCHANGED(StageName),
 ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>

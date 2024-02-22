@@ -4,7 +4,7 @@
         <name>SDO_Sales_Owner_for_Review_Email_Alert</name>
         <label>SDO Sales Owner for Review Email Alert</label>
         <locationX>50</locationX>
-        <locationY>755</locationY>
+        <locationY>539</locationY>
         <actionName>Opportunity.SDO_Sales_Owner_for_Review_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -22,7 +22,7 @@
         <name>Convert_SDO</name>
         <label>Convert SDO?</label>
         <locationX>446</locationX>
-        <locationY>647</locationY>
+        <locationY>539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -72,7 +72,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_SDO_Name</targetReference>
+                <targetReference>SDO_Move_to_In_Review</targetReference>
             </connector>
             <label>Sales Development RT</label>
         </rules>
@@ -81,7 +81,7 @@
         <name>SDO_Move_to_In_Review</name>
         <label>SDO Move to In Review?</label>
         <locationX>248</locationX>
-        <locationY>539</locationY>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Convert_SDO</targetReference>
         </defaultConnector>
@@ -111,7 +111,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Sales_Reviewed</targetReference>
+                <targetReference>SDO_Sales_Owner_for_Review_Email_Alert</targetReference>
             </connector>
             <label>Move to In Review</label>
         </rules>
@@ -121,30 +121,6 @@
         <name>Add_90_Days</name>
         <dataType>Date</dataType>
         <expression>TODAY() + 90</expression>
-    </formulas>
-    <formulas>
-        <name>Get_Month_Text</name>
-        <dataType>String</dataType>
-        <expression>CASE(
-MONTH(DATEVALUE({!$Record.CreatedDate})),
-  1, &quot;January&quot;,
-  2, &quot;February&quot;,
-  3, &quot;March&quot;,
-  4, &quot;April&quot;,
-  5, &quot;May&quot;,
-  6, &quot;June&quot;,
-  7, &quot;July&quot;,
-  8, &quot;August&quot;,
-  9, &quot;September&quot;,
-  10, &quot;October&quot;,
-  11, &quot;November&quot;,
-  &quot;December&quot;
-)</expression>
-    </formulas>
-    <formulas>
-        <name>SDO_Oppty_Name_Formula</name>
-        <dataType>String</dataType>
-        <expression>TEXT({!$Record.Lead_Channel__c}) + &quot; &quot; + &quot;-&quot; + &quot; &quot; + {!$Record.Account.Name} + &quot;:&quot; + &quot; &quot; + {!$Record.Lead_Contact__r.Full_Name__c} + &quot; &quot; + {!Get_Month_Text} + &quot; &quot; + TEXT(YEAR(DATEVALUE({!$Record.CreatedDate})))</expression>
     </formulas>
     <interviewLabel>Sales Development Opportunity Conversion {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Sales Development Opportunity Conversion</label>
@@ -171,7 +147,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Create_Sales_Opportunity</name>
         <label>Create Sales Opportunity</label>
         <locationX>314</locationX>
-        <locationY>863</locationY>
+        <locationY>755</locationY>
         <assignRecordIdToReference>sales_OppId_Var</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Sales_Oppty_Field</targetReference>
@@ -254,7 +230,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Get_Record_Type</name>
         <label>Get Record Type</label>
         <locationX>314</locationX>
-        <locationY>755</locationY>
+        <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Sales_Opportunity</targetReference>
@@ -275,7 +251,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Update_Sales_Oppty_Field</name>
         <label>Update Sales Oppty Field</label>
         <locationX>314</locationX>
-        <locationY>971</locationY>
+        <locationY>863</locationY>
         <inputAssignments>
             <field>New_Sales_Opportunity__c</field>
             <value>
@@ -286,38 +262,6 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             <field>SAO_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Sales_Reviewed</name>
-        <label>Update Sales Reviewed</label>
-        <locationX>50</locationX>
-        <locationY>647</locationY>
-        <connector>
-            <targetReference>SDO_Sales_Owner_for_Review_Email_Alert</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Sales_Reviewed__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_SDO_Name</name>
-        <label>Update SDO Name</label>
-        <locationX>248</locationX>
-        <locationY>431</locationY>
-        <connector>
-            <targetReference>SDO_Move_to_In_Review</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Name</field>
-            <value>
-                <elementReference>SDO_Oppty_Name_Formula</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
