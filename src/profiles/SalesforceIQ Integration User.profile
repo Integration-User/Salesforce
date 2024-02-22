@@ -19725,6 +19725,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Company_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Company_Type_Opp__c</field>
         <readable>true</readable>
@@ -20207,6 +20212,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Lead_Classification__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Lead_Contact_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
