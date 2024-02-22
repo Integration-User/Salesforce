@@ -2886,6 +2886,16 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                     <default>false</default>
                     <label>Non-Green Street Sponsored Event</label>
                 </value>
+                <value>
+                    <fullName>Preqin</fullName>
+                    <default>false</default>
+                    <label>Preqin</label>
+                </value>
+                <value>
+                    <fullName>Salesforce</fullName>
+                    <default>false</default>
+                    <label>Salesforce</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Inquiry</controllingFieldValue>
@@ -2982,6 +2992,14 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
             <valueSettings>
                 <controllingFieldValue>Cold Outreach</controllingFieldValue>
                 <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cold Outreach</controllingFieldValue>
+                <valueName>Preqin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cold Outreach</controllingFieldValue>
+                <valueName>Salesforce</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Referral</controllingFieldValue>
@@ -21254,11 +21272,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Preqin</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>React</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
                 <default>false</default>
             </values>
             <values>
