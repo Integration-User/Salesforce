@@ -247,7 +247,7 @@ public without sharing class Plative_OpportunityTriggerHelper {
         //check if real time sync is to be initiated
         for (Opportunity oppty : mapNewOppty.values()) {
             //Checks if trigger real time sync field is true
-            if (  oppty.StageName == 'Verbal Win (6)' && 
+            if (  oppty.StageName == '6 - Verbal Win and Finalizing Contract' && 
                  (oppty.StageName != mapOldOppty.get(oppty.Id).StageName)){
                 setOpptyIds.add(oppty.Id);
                 hasOpptyinVerbalWin = true;
@@ -281,7 +281,7 @@ public without sharing class Plative_OpportunityTriggerHelper {
         //check if real time sync is to be initiated
         for (Opportunity oppty : mapNewOppty.values()) {
             //Checks if trigger real time sync field is true
-            if (oppty.StageName == 'Verbal Win (6)' && 
+            if (oppty.StageName == '6 - Verbal Win and Finalizing Contract' && 
                (oppty.StageName != mapOldOppty.get(oppty.Id).StageName) &&
                (oppty.RecordTypeId == salesOpptyRT || 
                 oppty.RecordTypeId == existingBusinessRT)){
