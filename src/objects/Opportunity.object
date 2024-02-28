@@ -1116,6 +1116,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Student/non-buying EDU/Media/non-viable contact</label>
                 </value>
+                <value>
+                    <fullName>Current Client</fullName>
+                    <default>false</default>
+                    <label>Current Client</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1141,6 +1146,10 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Student/non-buying EDU/Media/non-viable contact</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Disqualified</controllingFieldValue>
+                <valueName>Current Client</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
@@ -1173,6 +1182,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
                 <valueName>Lost Product Line(s)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <controllingFieldValue>Closed Won</controllingFieldValue>
+                <valueName>Made New Client</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
@@ -1250,10 +1264,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
                 <valueName>Due Diligence</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Won</controllingFieldValue>
-                <valueName>Made New Client</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
@@ -10901,80 +10911,8 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Close_Reason__c</picklist>
             <values>
-                <fullName>CSA Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Communication Strategy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Competition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Competitive Win</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Consolidated</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Contracted Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Due Diligence</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Made New Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Market Conditions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Needs Change</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Research Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-contracted</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Online Order</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Price</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Timing</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Validating Investment Thesis</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -21119,6 +21057,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>White</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Reason__c</picklist>
+            <values>
+                <fullName>Current Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Research Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Fit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student%2Fnon-buying EDU%2FMedia%2Fnon-viable contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unreachable</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
