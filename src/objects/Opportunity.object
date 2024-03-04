@@ -26446,6 +26446,7 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
         <errorConditionFormula>AND(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 NOT(ISPICKVAL(StageName ,&quot;2 - Conducting Needs Analysis&quot;)),
+NOT(ISPICKVAL(StageName ,&quot;Closed Lost&quot;)),
 ISCHANGED(CloseDate),
 ISBLANK(TEXT(Rep_Forecast_Category__c)),
 CloseDate  &lt;  TODAY() + 89)</errorConditionFormula>
