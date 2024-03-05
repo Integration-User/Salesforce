@@ -8,6 +8,6 @@
     </values>
     <values>
         <field>Maximum_log_age__c</field>
-        <value xsi:type="xsd:double">30.0</value>
+        <value xsi:type="xsd:double">10.0</value>
     </values>
 </CustomMetadata>

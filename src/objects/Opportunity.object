@@ -26049,6 +26049,7 @@ NOT(ISPICKVAL(LeadSource ,&quot;News Subscription Request&quot;))))</errorCondit
 	NOT(ISPICKVAL(StageName,&quot;Closed Lost&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;Consolidated&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;Suspended&quot;)),
+        NOT(ISPICKVAL(StageName,&quot;1 - Introducing&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;3 - Qualifying​&quot;)),
         Exclude_from_Deal_Scoring_Model__c = FALSE
@@ -26449,9 +26450,10 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
         <errorConditionFormula>AND(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 NOT(ISPICKVAL(StageName ,&quot;2 - Conducting Needs Analysis&quot;)),
+NOT(ISPICKVAL(StageName ,&quot;Closed Lost&quot;)),
 ISCHANGED(CloseDate),
 ISBLANK(TEXT(Rep_Forecast_Category__c)),
-CloseDate  &lt;  TODAY() + 89)</errorConditionFormula>
+CloseDate &lt; TODAY() + 89)</errorConditionFormula>
         <errorDisplayField>Rep_Forecast_Category__c</errorDisplayField>
         <errorMessage>This Opportunity is within the 90 day forecast period. Please update the Rep Forecast Category.</errorMessage>
     </validationRules>
