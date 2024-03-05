@@ -6,7 +6,7 @@
         <name>Check_upsell_cross_Sell_Condition</name>
         <label>Check upsell/cross Sell Condition</label>
         <locationX>314</locationX>
-        <locationY>983</locationY>
+        <locationY>887</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_Upsells_value_for_Opp</name>
@@ -57,7 +57,7 @@
         <name>SAO_Date_Check</name>
         <label>SAO Date Check</label>
         <locationX>314</locationX>
-        <locationY>647</locationY>
+        <locationY>587</locationY>
         <defaultConnector>
             <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
         </defaultConnector>
@@ -69,14 +69,14 @@
                 <leftValueReference>$Record.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Conducting Needs Analysis (3)</stringValue>
+                    <stringValue>3 - Qualifying​</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record__Prior.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Qualified Prospect (2)</stringValue>
+                    <stringValue>2 - Conducting Needs Analysis​</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -103,7 +103,7 @@
         <name>SAO_Owner_Check</name>
         <label>SAO Owner Check</label>
         <locationX>314</locationX>
-        <locationY>311</locationY>
+        <locationY>287</locationY>
         <defaultConnector>
             <targetReference>SAO_Date_Check</targetReference>
         </defaultConnector>
@@ -165,7 +165,7 @@
         <name>New_Sales_Type_Update_on_Opp</name>
         <label>New Sales Type Update on Opp</label>
         <locationX>314</locationX>
-        <locationY>1103</locationY>
+        <locationY>995</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -186,7 +186,7 @@
         <name>SAO_Date_On_Opportunity</name>
         <label>SAO Date On Opportunity</label>
         <locationX>182</locationX>
-        <locationY>767</locationY>
+        <locationY>695</locationY>
         <connector>
             <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
         </connector>
@@ -202,7 +202,7 @@
         <name>SAO_Tracking_On_Opportunity</name>
         <label>SAO Tracking On Opportunity</label>
         <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationY>395</locationY>
         <connector>
             <targetReference>SAO_Date_Check</targetReference>
         </connector>
@@ -218,7 +218,7 @@
         <name>Upsell_Update_Opp_Process</name>
         <label>Upsell Update Opp Process</label>
         <locationX>50</locationX>
-        <locationY>1103</locationY>
+        <locationY>995</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
