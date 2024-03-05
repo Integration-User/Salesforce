@@ -1728,7 +1728,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Pricing Proposal Sent (4)</stringValue>
+                    <stringValue>4 - Recommending​</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1814,7 +1814,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Agreement Sent and Being Negotiated (5)</stringValue>
+                    <stringValue>5 - Negotiation and Agreement Sent​</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2887,7 +2887,7 @@
                 <leftValueReference>myVariable_current.StageName</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Qualified Prospect (2)</stringValue>
+                    <stringValue>2 - Conducting Needs Analysis</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2949,7 +2949,7 @@
                 <leftValueReference>myVariable_current.Last_Stage_Change__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_11_myRule_8_8809051974</elementReference>
+                    <elementReference>formula_11_myRule_8_0461767890</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -4206,7 +4206,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Pricing Proposal Sent (4)</stringValue>
+                    <stringValue>4 - Recommending​</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -4301,7 +4301,7 @@
                 <leftValueReference>myVariable_old.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Agreement Sent and Being Negotiated (5)</stringValue>
+                    <stringValue>5 - Negotiation and Agreement Sent​</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -5123,7 +5123,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_8_8809051974</name>
+        <name>formula_11_myRule_8_0461767890</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -5134,7 +5134,7 @@
                 <stringValue>[Opportunity].Account.Name +&quot; - &quot;+ Text( [Opportunity].Activation_Deactivation_Needs__c)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_43_myRule_42_A1_8273798108</name>
+        <name>formula_43_myRule_42_A1_0175557185</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Account.Name} +&quot; - &quot;+ Text( {!myVariable_current.Activation_Deactivation_Needs__c})</expression>
     </formulas>
@@ -5145,11 +5145,11 @@
                 <stringValue>[Opportunity].Contract_Start_Date__c + 364</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_6814826082</name>
+        <name>formula_4_myRule_1_A1_4356349294</name>
         <dataType>Date</dataType>
         <expression>{!myVariable_current.Contract_Start_Date__c} + 364</expression>
     </formulas>
-    <interviewLabel>Opportunity_Processes-67_InterviewLabel</interviewLabel>
+    <interviewLabel>Opportunity_Processes-64_InterviewLabel</interviewLabel>
     <label>Opportunity Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -6225,7 +6225,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_43_myRule_42_A1_8273798108</elementReference>
+                <elementReference>formula_43_myRule_42_A1_0175557185</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -7109,7 +7109,7 @@
             </processMetadataValues>
             <field>End_Date__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_6814826082</elementReference>
+                <elementReference>formula_4_myRule_1_A1_4356349294</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
