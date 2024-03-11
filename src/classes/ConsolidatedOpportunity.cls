@@ -105,6 +105,32 @@ public class ConsolidatedOpportunity {
         }
         return oppWrapperList;
     }
+    // SF-768 - 3X3 Contact Levels
+    @AuraEnabled(cacheable=true)
+    public static ContactWrapperList getAllContacts(Id opportunityId){
+       	set<Id> contacts = new Set<Id>();
+        ContactWrapperList result = new ContactWrapperList();
+        List<ContactWrapper> firstList = new List<ContactWrapper>();
+        List<ContactWrapper> contactList = new List<ContactWrapper>();
+        for(OpportunityContactRole ocr : [SELECT Id, OpportunityId, ContactId, Role, Contact.Name, Contact.X3x3_Level__c, Contact.Title 
+                                          FROM OpportunityContactRole 
+                                          WHERE Contact.X3x3_Level__c != null AND OpportunityId =: opportunityId]){
+            if(!contacts.contains(ocr.ContactId)){
+                ContactWrapper conWrapper = new ContactWrapper();
+                conWrapper.contactUrl = '/' + ocr.Contact.Id;
+                conWrapper.x3x3Level = ocr.Contact.X3x3_Level__c;
+                conWrapper.tittle = ocr.Contact.Title;
+                conWrapper.name = ocr.Contact.Name;
+                conWrapper.id = ocr.ContactId;
+                contactList.add(conWrapper);
+                contacts.add(ocr.ContactId);
+                if(contacts.size() < 3) firstList.add(conWrapper);
+            }    
+       }
+        result.firstList = firstList;  
+        result.contactList = contactList; 
+        return result;
+    }
     public class opportunityWrapper{
         @AuraEnabled
         public OpportunityLineItem oppLineItem{get;set;}
@@ -122,5 +148,23 @@ public class ConsolidatedOpportunity {
         public date startDate {get;set;}
         @AuraEnabled
         public date endDate {get;set;}
+    }
+    public class ContactWrapperList{
+        @AuraEnabled
+        public List<ContactWrapper> firstList{get;set;}
+        @AuraEnabled
+        public List<ContactWrapper> contactList{get;set;}
+    }
+    public class ContactWrapper{
+        @AuraEnabled
+        public String name{get;set;}
+        @AuraEnabled
+        public String id{get;set;}
+        @AuraEnabled
+        public String contactUrl{get;set;}
+        @AuraEnabled
+        public String x3x3Level {get;set;}
+        @AuraEnabled
+        public String tittle {get;set;}
     }
 }

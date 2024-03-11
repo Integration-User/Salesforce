@@ -12,7 +12,8 @@ public without sharing class Plative_OpportunityTriggerHandler {
     public static Boolean beforeUpdateRun = false;
     public static Boolean beforeInsertRun = false;
     public static Boolean afterInsertRun = false;
-
+	public static Id renewalRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Renewal').getRecordTypeId();
+   	public static Id SalesRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Sales Opportunity').getRecordTypeId();
     /**
     * Description : before insert dml event
     **/
@@ -104,7 +105,22 @@ public without sharing class Plative_OpportunityTriggerHandler {
     * Description : Before update DML event
     **/
     public static void beforeUpdate(Map<Id, Opportunity> triggerNewMap, Map<Id, Opportunity> triggerOldMap) {
-        if (!Plative_OpportunityTriggerHandler.beforeUpdateRun) {
+        if (!Plative_OpportunityTriggerHandler.beforeUpdateRun) { 
+            // SF-768 - 3X3 Contact Levels
+            Set<Id> x3x3opportunities = new Set<Id>();
+            for (OpportunityContactRole ocr : [SELECT Id, OpportunityId FROM OpportunityContactRole WHERE Contact.X3x3_Level__c != null AND OpportunityId IN :triggerNewMap.keySet()]) {
+                x3x3opportunities.add(ocr.OpportunityId);
+            }
+            List<String> stageNames = new List<String>{'1 - Introducing', '2 - Conducting Needs Analysis', '3 - Qualifying'};
+            for (Opportunity oppty : triggerNewMap.values()) {
+                Opportunity oldOppty = triggerOldMap.get(oppty.Id);
+                if ((oppty.recordTypeId == renewalRecordTypeId || oppty.recordTypeId == salesRecordTypeId)
+                    && oppty.StageName != null && oldOppty.StageName != oppty.StageName 
+                    && !stageNames.contains(oppty.StageName) && !x3x3opportunities.contains(oppty.Id)) {
+                        oppty.addError('One contact must have a 3x3 Level designated before moving to Stage 4.');
+                }
+            }
+            // END SF-768 - 3X3 Contact Levels
             Boolean isSuccess = Plative_SFToNSSyncUtility.updateSyncToNSField(triggerOldMap,triggerNewMap,
                                                          'Opportunity', 'Update');
             Plative_OpportunityTriggerHelper.checkIfDeptOrClassUpdated(Trigger.new, triggerOldMap);
