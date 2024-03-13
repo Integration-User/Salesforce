@@ -23,6 +23,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Strategy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Assigned_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -179,6 +184,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Winback__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Strategy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
