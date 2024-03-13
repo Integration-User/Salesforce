@@ -188,11 +188,17 @@
         <layout>Contact-Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Event-Event Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Opportunity-New Business</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Sales Development</layout>
         <recordType>Opportunity.Sales_Development</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Task-Task Layout</layout>
     </layoutAssignments>
     <recordTypeVisibilities>
         <default>true</default>
