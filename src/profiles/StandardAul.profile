@@ -17730,6 +17730,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Strategy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Event.Total_Analyst_Hours__c</field>
         <readable>true</readable>
@@ -22382,6 +22387,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Strategy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
