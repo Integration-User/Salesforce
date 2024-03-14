@@ -17680,6 +17680,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Objective__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Event.Owner_Contact__c</field>
         <readable>false</readable>
@@ -22697,6 +22702,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Task.My_Team__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Objective__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

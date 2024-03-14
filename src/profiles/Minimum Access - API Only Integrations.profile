@@ -13,6 +13,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Objective__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Strategy__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -104,6 +109,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Winback__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Objective__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
