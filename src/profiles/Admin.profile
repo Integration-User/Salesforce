@@ -16124,6 +16124,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.X3x3_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.ZoomInfo_B2B_contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -21075,6 +21080,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Win_Validation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Winback__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
