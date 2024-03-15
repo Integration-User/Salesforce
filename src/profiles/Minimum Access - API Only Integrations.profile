@@ -34,6 +34,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Objective__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Assigned_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -120,6 +125,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Winback__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Objective__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <recordTypeVisibilities>
