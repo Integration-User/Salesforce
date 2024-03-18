@@ -106,12 +106,12 @@ public without sharing class Plative_OpportunityTriggerHandler {
     **/
     public static void beforeUpdate(Map<Id, Opportunity> triggerNewMap, Map<Id, Opportunity> triggerOldMap) {
         if (!Plative_OpportunityTriggerHandler.beforeUpdateRun) { 
-            /* SF-768 - 3X3 Contact Levels
+            // SF-768 - 3X3 Contact Levels
             Set<Id> x3x3opportunities = new Set<Id>();
             for (OpportunityContactRole ocr : [SELECT Id, OpportunityId FROM OpportunityContactRole WHERE Contact.X3x3_Level__c != null AND OpportunityId IN :triggerNewMap.keySet()]) {
                 x3x3opportunities.add(ocr.OpportunityId);
             }
-            List<String> stageNames = new List<String>{'1 - Introducing', '2 - Conducting Needs Analysis', '3 - Qualifying'};
+            List<String> stageNames = new List<String>{'1 - Introducing', '2 - Conducting Needs Analysis', '3 - Qualifying', 'Closed Lost'};
             for (Opportunity oppty : triggerNewMap.values()) {
                 Opportunity oldOppty = triggerOldMap.get(oppty.Id);
                 if ((oppty.recordTypeId == renewalRecordTypeId || oppty.recordTypeId == salesRecordTypeId)
@@ -121,7 +121,6 @@ public without sharing class Plative_OpportunityTriggerHandler {
                 }
             }
             // END SF-768 - 3X3 Contact Levels
-	   */
             Boolean isSuccess = Plative_SFToNSSyncUtility.updateSyncToNSField(triggerOldMap,triggerNewMap,
                                                          'Opportunity', 'Update');
             Plative_OpportunityTriggerHelper.checkIfDeptOrClassUpdated(Trigger.new, triggerOldMap);
