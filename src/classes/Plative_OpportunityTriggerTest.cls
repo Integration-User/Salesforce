@@ -12,6 +12,27 @@ public class Plative_OpportunityTriggerTest {
         Trigger_Control_Setting__c setting = new Trigger_Control_Setting__c();
         setting.Opportunity__c = true;
         insert setting;
+        Account parentAccnt = new Account();
+        parentAccnt.Name = 'Test parent Account';
+        parentAccnt.Phone = '12312323';
+        parentAccnt.Company_Type__c = 'Consultant';
+        parentAccnt.Description = 'test'; 
+        parentAccnt.Website = 'https://www.google.com';
+        parentAccnt.CRE_Exposure__c = '$0-100M';
+        parentAccnt.ShippingCity = 'Test';
+        parentAccnt.ShippingCountry = 'United States';
+        parentAccnt.ShippingState = 'Alabama';
+        parentAccnt.ShippingStreet = 'test';
+        parentAccnt.ShippingPostalCode = '123';
+        parentAccnt.BillingCity = 'Test';
+        parentAccnt.BillingCountry = 'United States';
+        parentAccnt.BillingState = 'Alabama';
+        parentAccnt.BillingStreet = 'test';
+        parentAccnt.BillingPostalCode = '123';
+        parentAccnt.Subsidiary__c = '10 GSA LLC';
+        parentAccnt.Populate_Billing_Address__c = true;
+        parentAccnt.Other_Vendors__c = 'RCA';
+        insert parentAccnt;
         
         Account accnt = new Account();
         accnt.Name = 'Test Account';
@@ -33,6 +54,7 @@ public class Plative_OpportunityTriggerTest {
         accnt.Subsidiary__c = '10 GSA LLC';
         accnt.Populate_Billing_Address__c = true;
         accnt.Other_Vendors__c = 'RCA';
+        accnt.ParentId = parentAccnt.Id;
         insert accnt;
         
         Contact ct1 = new Contact();
