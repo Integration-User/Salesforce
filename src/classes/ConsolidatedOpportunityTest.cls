@@ -34,6 +34,7 @@ public class ConsolidatedOpportunityTest {
         ct1.LastName = 'LName1';
         ct1.Email = 'fname1@test.com';
         ct1.AccountId = accnt.Id;
+        ct1.X3x3_Level__c = 'Departmental';
         insert ct1;
         
         Contact ct2 = new Contact();
@@ -141,6 +142,10 @@ public class ConsolidatedOpportunityTest {
     @isTest static void getAllOpportunityLineItemsTest() {
         List<Case> caseList = [Select Id From case Where Origin = 'Email' LIMIT 1];
         ConsolidatedOpportunity.getAllOpportunityLineItems(caseList[0].Id);
+    }
+    @isTest static void getAllContactsTest() {
+        List<Opportunity> opportunityList = [Select Id From Opportunity LIMIT 1];
+        ConsolidatedOpportunity.getAllContacts(opportunityList[0].Id);
     }
     @isTest static void createEnrolmentsTest() {
         Test.startTest();
