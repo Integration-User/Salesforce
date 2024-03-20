@@ -1575,7 +1575,7 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <summaryFilterItems>
             <field>Opportunity.StageName</field>
             <operation>equals</operation>
-            <value>Closed Won, Closed Lost, 2 - Conducting Needs Analysis​, 3 - Qualifying​, 4 - Recommending​, 5 - Negotiation and Agreement Sent​, 6 - Verbal Win and Finalizing Contract​</value>
+            <value>2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract, Closed Won, Closed Lost</value>
         </summaryFilterItems>
         <summaryFilterItems>
             <field>Opportunity.RecordTypeId</field>
@@ -1722,6 +1722,14 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>Name</fullName>
         <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Named_Account__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Named Account?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>News_ID__c</fullName>
@@ -5725,10 +5733,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Family Office</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fixed Income%2FCMBS</fullName>
                 <default>false</default>
             </values>
             <values>
