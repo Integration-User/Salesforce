@@ -200,19 +200,19 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>3 - Qualifying%E2%80%8B</fullName>
+            <fullName>3 - Qualifying</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>4 - Recommending%E2%80%8B</fullName>
+            <fullName>4 - Recommending</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>5 - Negotiation and Agreement Sent%E2%80%8B</fullName>
+            <fullName>5 - Negotiation and Agreement Sent</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>6 - Verbal Win and Finalizing Contract%E2%80%8B</fullName>
+            <fullName>6 - Verbal Win and Finalizing Contract</fullName>
             <default>false</default>
         </values>
         <values>
@@ -269,19 +269,19 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>3 - Qualifying%E2%80%8B</fullName>
+            <fullName>3 - Qualifying</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>4 - Recommending%E2%80%8B</fullName>
+            <fullName>4 - Recommending</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>5 - Negotiation and Agreement Sent%E2%80%8B</fullName>
+            <fullName>5 - Negotiation and Agreement Sent</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>6 - Verbal Win and Finalizing Contract%E2%80%8B</fullName>
+            <fullName>6 - Verbal Win and Finalizing Contract</fullName>
             <default>false</default>
         </values>
         <values>
@@ -4635,7 +4635,7 @@ OwnerId  = $User.Id)</formula>
             <filterItems>
                 <field>Opportunity.StageName</field>
                 <operation>equals</operation>
-                <value>1 - Introducing, 2 - Conducting Needs Analysis, 3 - Qualifying​, 4 - Recommending​, 5 - Negotiation and Agreement Sent​, 6 - Verbal Win and Finalizing Contract​</value>
+                <value>1 - Introducing, 2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -6626,6 +6626,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Winback__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Winback</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Won_Amount__c</fullName>
@@ -22890,11 +22899,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Preqin</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>React</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25770,9 +25787,9 @@ OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName, &quot;4 - Recommending​&quot;),
-ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent​&quot;),
-ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract​&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)),
 ISBLANK(Account.Website))</errorConditionFormula>
         <errorMessage>To save at a Stage 4 or higher, you must have the following Account fields populated: Website</errorMessage>
@@ -25822,7 +25839,7 @@ OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract​&quot;),
+ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName,&quot;Closed Won&quot;)),
 AND(
 NOT(ISBLANK(X2nd_Year_Amount_in_USD__c)),
@@ -25988,7 +26005,7 @@ ISPICKVAL( StageName , &quot;Closed Won&quot;))</errorConditionFormula>
 	NOT(ISPICKVAL(StageName,&quot;Consolidated&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;Suspended&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;)),
-	NOT(ISPICKVAL(StageName,&quot;3 - Qualifying​&quot;)),
+	NOT(ISPICKVAL(StageName,&quot;3 - Qualifying&quot;)),
         Exclude_from_Deal_Scoring_Model__c = FALSE
 	)</errorConditionFormula>
         <errorMessage>The approved ARR and score has changed. Please, click on &quot;Calculate Score&quot; and follow the approval instructions before moving the stage.</errorMessage>
@@ -26019,7 +26036,7 @@ NOT(ISPICKVAL(StageName,&quot;Closed Lost&quot;)),
 NOT(ISPICKVAL(StageName,&quot;Consolidated&quot;)),
 NOT(ISPICKVAL(StageName,&quot;Suspended&quot;)),
 NOT(ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;)),
-NOT(ISPICKVAL(StageName,&quot;3 - Qualifying​&quot;)),
+NOT(ISPICKVAL(StageName,&quot;3 - Qualifying&quot;)),
 OR(
 NOT(ISPICKVAL(LeadSource ,&quot;News Subscription Request&quot;))))</errorConditionFormula>
         <errorMessage>Please, follow the approval instructions before moving the stage.</errorMessage>
@@ -26047,7 +26064,7 @@ NOT(ISPICKVAL(LeadSource ,&quot;News Subscription Request&quot;))))</errorCondit
 	NOT(ISPICKVAL(StageName,&quot;Suspended&quot;)),
         NOT(ISPICKVAL(StageName,&quot;1 - Introducing&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;)),
-	NOT(ISPICKVAL(StageName,&quot;3 - Qualifying​&quot;)),
+	NOT(ISPICKVAL(StageName,&quot;3 - Qualifying&quot;)),
         Exclude_from_Deal_Scoring_Model__c = FALSE
 	)</errorConditionFormula>
         <errorDisplayField>StageName</errorDisplayField>
@@ -26078,8 +26095,8 @@ GSA_Subsidairy__c &lt;&gt; &quot;14 React Ltd&quot;,
 OR(
 ISBLANK(TEXT( ADV_PPD_Sent__c ))),
 OR(
-ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent​&quot;),
-ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract​&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ))</errorConditionFormula>
         <errorMessage>To save at a Stage 5 or higher, you must have the following fields completed.
@@ -26096,7 +26113,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
   Account.BillingCountry = &quot;United States&quot;
 ),
  OR(
-  ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract​&quot;),
+  ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
   ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ),
  OR( 
@@ -26113,10 +26130,10 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Advisory&quot;,
 OR(
-ISPICKVAL(StageName, &quot;3 - Qualifying​&quot;),
-ISPICKVAL(StageName, &quot;4 - Recommending​&quot;),
-ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent​&quot;),
-ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract​&quot;),
+ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ),
 OR(
@@ -26139,8 +26156,8 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
  RecordType.Name = &quot;Renewal&quot;,
  OR(
 ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
-ISPICKVAL(StageName, &quot;3 - Qualifying​&quot;),
-ISPICKVAL(StageName, &quot;4 - Recommending​&quot;),
+ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
 ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
 ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
@@ -26163,8 +26180,8 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
  ISCHANGED(StageName),
  OR(
 ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
-ISPICKVAL(StageName, &quot;3 - Qualifying​&quot;),
-ISPICKVAL(StageName, &quot;4 - Recommending​&quot;),
+ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
 ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
 ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
@@ -26232,7 +26249,7 @@ OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract​&quot;),
+ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName,&quot;Closed Won&quot;)),
 Create_New_Renewal_Opportunity__c = FALSE,
 (Contract_End_Date__c - Current_Year_Contract_Start_Date__c)&lt;366)</errorConditionFormula>
@@ -26247,7 +26264,7 @@ OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract​&quot;),
+ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName,&quot;Closed Won&quot;)),
 AND(
 ISBLANK(TEXT(Reason_For_No_Renewal__c)),
@@ -26267,7 +26284,7 @@ RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
 
 OR(
-ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract​&quot;),
+ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName,&quot;Closed Won&quot;)),
 
 OR(
@@ -26579,7 +26596,7 @@ ISPICKVAL( Lead_Type__c, &quot;Other&quot;)
         <description>To move to Stage 6, Contract Start/End Date, Billing Schedule and Billing Contact are required.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
- ISPICKVAL( StageName , &quot;6 - Verbal Win and Finalizing Contract​&quot;),
+ ISPICKVAL( StageName , &quot;6 - Verbal Win and Finalizing Contract&quot;),
 OR(
  ISBLANK(  Contract_Start_Date__c  ),
  ISBLANK(  Contract_End_Date__c  ),
@@ -26600,9 +26617,9 @@ OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName, &quot;4 - Recommending​&quot;),
-ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent​&quot;),
-ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract​&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)),
 Evergreen_Contract__c = FALSE,
 Current_Contract_Year__c = 1,
@@ -26670,9 +26687,9 @@ RecordType.Name&lt;&gt;&quot;Favor&quot;,
 RecordType.Name&lt;&gt;&quot;Favor - Closed&quot;,
 OR(
 ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;),
-ISPICKVAL(StageName,&quot;3 - Qualifying​&quot;),
+ISPICKVAL(StageName,&quot;3 - Qualifying&quot;),
 ISPICKVAL(StageName,&quot;4 - Recommending&quot;),
-ISPICKVAL(StageName,&quot;5 - Negotiation and Agreement Sent​&quot;)),
+ISPICKVAL(StageName,&quot;5 - Negotiation and Agreement Sent&quot;)),
 NOT(ISBLANK(TEXT(Win_Validation__c))))</errorConditionFormula>
         <errorDisplayField>Win_Validation__c</errorDisplayField>
         <errorMessage>Win Validation can only be selected if on SS6 or higher. Please make this field blank for now.</errorMessage>
