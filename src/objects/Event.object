@@ -1156,6 +1156,10 @@
         <picklistValues>
             <picklist>Type</picklist>
             <values>
+                <fullName>Account Handoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In-Person Analyst Visit</fullName>
                 <default>false</default>
             </values>
@@ -1230,6 +1234,23 @@ ISPICKVAL(Type,  &quot;Training&quot;),
 ISPICKVAL(Priority__c, &quot;&quot;))</errorConditionFormula>
         <errorDisplayField>Priority__c</errorDisplayField>
         <errorMessage>You must enter a priority to save this event</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Event_Objective_Strategy</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Status__c,&quot;Completed&quot;),
+OR(
+ISBLANK(Objective__c),
+ISBLANK(Strategy__c)),
+OR(
+ISPICKVAL(Type,&quot;Virtual Visit&quot;),
+ISPICKVAL(Type,&quot;In-Person Visit&quot;),
+ISPICKVAL(Type,&quot;Virtual Sales Visit&quot;),
+ISPICKVAL(Type,&quot;Virtual Analyst Visit&quot;),
+ISPICKVAL(Type,&quot;In-Person Analyst Visit&quot;),
+ISPICKVAL(Type,&quot;In-Person Sales Visit&quot;)))</errorConditionFormula>
+        <errorMessage>Please fill in the Objective and Strategy for all Visits, before marking as Complete</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Visit_Or_Training_Require_Feedback</fullName>
