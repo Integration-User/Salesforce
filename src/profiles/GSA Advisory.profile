@@ -36560,10 +36560,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AllowUniversalSearch</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>AllowViewEditConvertedLeads</name>
     </userPermissions>
     <userPermissions>
