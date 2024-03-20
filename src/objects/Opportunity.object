@@ -6628,6 +6628,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </valueSet>
     </fields>
     <fields>
+        <fullName>Winback__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Winback</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Won_Amount__c</fullName>
         <externalId>false</externalId>
         <formula>IF(IsWon=TRUE,Amount,null)</formula>
@@ -22890,11 +22899,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Preqin</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>React</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
                 <default>false</default>
             </values>
             <values>
