@@ -12417,6 +12417,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Named_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.News_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17791,6 +17796,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Strategy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Event.Total_Analyst_Hours__c</field>
         <readable>true</readable>
@@ -20961,6 +20971,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Winback__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Won_Amount__c</field>
         <readable>true</readable>
@@ -22808,6 +22823,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Strategy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
