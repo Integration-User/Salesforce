@@ -12,6 +12,27 @@ public class Plative_OpportunityTriggerTest {
         Trigger_Control_Setting__c setting = new Trigger_Control_Setting__c();
         setting.Opportunity__c = true;
         insert setting;
+        Account parentAccnt = new Account();
+        parentAccnt.Name = 'Test parent Account';
+        parentAccnt.Phone = '12312323';
+        parentAccnt.Company_Type__c = 'Consultant';
+        parentAccnt.Description = 'test'; 
+        parentAccnt.Website = 'https://www.google.com';
+        parentAccnt.CRE_Exposure__c = '$0-100M';
+        parentAccnt.ShippingCity = 'Test';
+        parentAccnt.ShippingCountry = 'United States';
+        parentAccnt.ShippingState = 'Alabama';
+        parentAccnt.ShippingStreet = 'test';
+        parentAccnt.ShippingPostalCode = '123';
+        parentAccnt.BillingCity = 'Test';
+        parentAccnt.BillingCountry = 'United States';
+        parentAccnt.BillingState = 'Alabama';
+        parentAccnt.BillingStreet = 'test';
+        parentAccnt.BillingPostalCode = '123';
+        parentAccnt.Subsidiary__c = '10 GSA LLC';
+        parentAccnt.Populate_Billing_Address__c = true;
+        parentAccnt.Other_Vendors__c = 'RCA';
+        insert parentAccnt;
         
         Account accnt = new Account();
         accnt.Name = 'Test Account';
@@ -33,6 +54,7 @@ public class Plative_OpportunityTriggerTest {
         accnt.Subsidiary__c = '10 GSA LLC';
         accnt.Populate_Billing_Address__c = true;
         accnt.Other_Vendors__c = 'RCA';
+        accnt.ParentId = parentAccnt.Id;
         insert accnt;
         
         Contact ct1 = new Contact();
@@ -54,6 +76,7 @@ public class Plative_OpportunityTriggerTest {
         Product2 product = new Product2();
         product.Name = 'Pan-European Research + Market Data & Deals';
         product.IsActive = true;
+        product.ProductCode = 'DDS10DDS11DDS2';
         insert product;
         
         PricebookEntry entry = new PricebookEntry();
@@ -66,7 +89,7 @@ public class Plative_OpportunityTriggerTest {
         Opportunity oppty = new Opportunity();
         oppty.Name = 'Test Oppty';
         oppty.CloseDate = System.today().addDays(5);
-        oppty.StageName = 'Qualified Prospect (2)';
+        oppty.StageName = '2 - Conducting Needs Analysis';
         oppty.AccountId = accnt.Id;
         oppty.X2nd_Year_Amount_in_USD__c = 60000;
         oppty.X3rd_Year_Amount_in_USD__c = 80000;
@@ -84,6 +107,7 @@ public class Plative_OpportunityTriggerTest {
         oppty.Billing_Contact__c = ct1.Id;
         oppty.Contract_Start_Date__c = System.today();
         oppty.Contract_End_Date__c = System.today().addmonths(1);
+        oppty.Current_Contract_Year__c = 1;
         insert oppty;
         
         OpportunityLineItem opptyLineItem = new OpportunityLineItem();
@@ -94,6 +118,7 @@ public class Plative_OpportunityTriggerTest {
         opptyLineItem.Start_Date__c = System.today();
         opptyLineItem.End_Date__c = System.today().addMonths(1);
         opptyLineItem.Product_External_Id__c = 401;
+        opptyLineItem.Delivery_Method__c = 'Snowflake';
         insert opptyLineItem; 
         
         OpportunityContactRole ocr = new OpportunityContactRole();
@@ -107,7 +132,7 @@ public class Plative_OpportunityTriggerTest {
         oppty1.Name = 'TestOppty1';
         oppty1.RecordTypeId = advisoryRT;
         oppty1.CloseDate = System.today().addDays(5);
-        oppty1.StageName = 'Qualified Prospect (2)';
+        oppty1.StageName = '2 - Conducting Needs Analysis';
         oppty1.AccountId = accnt.Id;
         oppty1.X2nd_Year_Amount_in_USD__c = 60000;
         oppty1.X3rd_Year_Amount_in_USD__c = 60000;
@@ -148,8 +173,10 @@ public class Plative_OpportunityTriggerTest {
     
     @isTest
     static void updateOpptyClosedWon(){        
-        Opportunity opptyTemp = [Select Id,AccountId,Name  from Opportunity LIMIT 1];
+        Opportunity opptyTemp = [Select Id,AccountId,Name  from Opportunity where RecordType.DeveloperName = 'Sales_Development' LIMIT 1];
         Opportunity oppty = new Opportunity();
+        Id oppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Sales_Opportunity_Closed').getRecordTypeId();
+        oppty.RecordTypeId = oppRecordTypeId;
         oppty.Id = opptyTemp.Id;
         oppty.StageName = 'Closed Won'; 
         oppty.ID_Request__c = 'Not Applicable';
@@ -169,6 +196,7 @@ public class Plative_OpportunityTriggerTest {
         //lastRenewalOpportunity.Win_Validation__c = 'Opportunity Reviewed';
         Plative_OpportunityTriggerHandler.afterUpdateRun = false;
         update lastRenewalOpportunity;
+        Plative_OpportunityTriggerHelper.getOppLineIteamsIds(new set<Id>{oppty.Id});
         Test.stopTest();
     }
    @isTest
@@ -224,6 +252,65 @@ public class Plative_OpportunityTriggerTest {
         opptyTemp.Products__c = 'EURO Research';
         update opptyTemp;
         Database.executeBatch(new UpdateProductsOnOpportunityBatch(), 200);
+        Test.stopTest();
+    }
+    @isTest Static void insertOpptyClosedWon() {
+        Test.startTest();
+		Account accnt = [Select Id from Account Limit 1];
+
+        Contact ct1 = new Contact();
+        ct1.FirstName = 'FName3';
+        ct1.LastName = 'LName3';
+        ct1.Email = 'fname3@test.com';
+        ct1.AccountId = accnt.Id;
+        insert ct1;
+
+        Product2 product = new Product2();
+        product.Name = 'Pan-European Research + Market Data & Deals';
+        product.IsActive = true;
+        insert product;
+        
+        PricebookEntry entry = new PricebookEntry();
+        entry.IsActive = true;
+        entry.Pricebook2Id = Test.getStandardPricebookId();
+        entry.Product2Id = product.Id;
+        entry.UnitPrice = 0;
+        insert entry;
+        Id oppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Sales_Opportunity_Closed').getRecordTypeId();
+
+        Opportunity oppty = new Opportunity();
+        oppty.Name = 'Test Oppty';
+        oppty.CloseDate = System.today().addDays(5);
+        oppty.StageName = 'Closed Won';
+        oppty.AccountId = accnt.Id;
+        oppty.Automatic_Renewal__c = false;
+        oppty.Close_Reason__c = 'test';
+        oppty.LeadSource = 'LinkedIn';
+        oppty.ADV_PPD_Sent__c = System.today();
+        oppty.CRS_Sent__c = 'Yes';
+        oppty.Billing_Schedule__c = 'In Advance - Annual';
+        oppty.Terms__c = 'Net 30';
+        oppty.Billing_Contact__c = ct1.Id;
+        oppty.Contract_Start_Date__c = System.today();
+        oppty.Contract_End_Date__c = System.today().addmonths(1);
+        oppty.RecordTypeId = oppRecordTypeId;
+        insert oppty;
+        
+        OpportunityLineItem opptyLineItem = new OpportunityLineItem();
+        opptyLineItem.OpportunityId = oppty.Id;
+        opptyLineItem.PricebookEntryId = entry.Id;
+        opptyLineItem.UnitPrice = 15000;
+        opptyLineItem.Quantity = 1;
+        opptyLineItem.Start_Date__c = System.today();
+        opptyLineItem.End_Date__c = System.today().addMonths(1);
+        opptyLineItem.Product_External_Id__c = 401;
+        insert opptyLineItem; 
+        
+        OpportunityContactRole ocr = new OpportunityContactRole();
+        ocr.OpportunityId = oppty.Id;
+        ocr.ContactId = ct1.Id;
+        ocr.Role ='Billing Contact';
+        insert ocr;
         Test.stopTest();
     }
 }

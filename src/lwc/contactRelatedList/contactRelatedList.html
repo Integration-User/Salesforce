@@ -1,0 +1,54 @@
+<template>
+    <lightning-card icon-name="standard:contact_list" title={cardLabel}>
+        <!-- a slot="title" class="slds-card__header-link baseCard__header-title-container" href="#">{cardLabel}</a -->
+
+        <template lwc:if={showCases}>
+            <div class="slds-p-top_x-small">
+            <template for:each={firstList} for:item="con">
+                <div key={con.Id} class="slds-m-bottom_small slds-p-left_medium">
+                    <lightning-tile label={con.name} href={con.contactUrl}>
+                        <dl class="slds-dl_horizontal">
+                            <dt class="slds-dl_horizontal__label">
+                                <p class="slds-truncate" title="tittle">Title:</p>
+                            </dt>
+                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                <p class="slds-truncate" title="tittle">{con.tittle}</p>
+                            </dd>
+                            <dt class="slds-dl_horizontal__label">
+                                <p class="slds-truncate" title="x3x3Level">3x3 Level:</p>
+                            </dt>
+                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                <p class="slds-truncate" title="x3x3Level">{con.x3x3Level}</p>
+                            </dd>
+                        </dl>
+                    </lightning-tile>
+                </div> 
+            </template>
+        </div>
+        <footer class="slds-card__footer">
+            <a onclick={handleGotoRelatedList} target="_blank">View All</a>
+        </footer>
+        </template>
+    </lightning-card>
+    <!-- lightning-card title={cardLabel} icon-name="standard:contact_list" if:true={isDesktop}>
+        <div class="slds-m-around_medium">
+            <template if:true={contactList}>
+                <lightning-datatable
+                    data={contactList}
+                    columns={columns}
+                    key-field="id"
+                    hide-checkbox-column
+                    show-row-number-column="true"
+                    default-sort-direction={defaultSortDirection}
+                    sorted-direction={sortDirection}
+                    sorted-by={sortedBy}
+                    onsort={onHandleSort}>
+                >
+                </lightning-datatable>
+            </template>
+            <template if:true={error}>
+                <p>No contact records to display.</p>
+            </template>
+        </div>
+    </lightning-card -->
+</template>

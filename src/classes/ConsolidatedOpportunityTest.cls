@@ -34,6 +34,7 @@ public class ConsolidatedOpportunityTest {
         ct1.LastName = 'LName1';
         ct1.Email = 'fname1@test.com';
         ct1.AccountId = accnt.Id;
+        ct1.X3x3_Level__c = 'Departmental';
         insert ct1;
         
         Contact ct2 = new Contact();
@@ -62,7 +63,7 @@ public class ConsolidatedOpportunityTest {
         Opportunity oppty = new Opportunity();
         oppty.Name = 'Test Oppty';
         oppty.CloseDate = System.today().addDays(5);
-        oppty.StageName = 'Qualified Prospect (2)';
+        oppty.StageName = '2 - Conducting Needs Analysis';
         oppty.AccountId = accnt.Id;
         oppty.Automatic_Renewal__c = false;
         oppty.Close_Reason__c = 'test';
@@ -85,6 +86,7 @@ public class ConsolidatedOpportunityTest {
         opptyLineItem.Start_Date__c = System.today();
         opptyLineItem.End_Date__c = System.today().addMonths(1);
         opptyLineItem.Product_External_Id__c = 401;
+        opptyLineItem.Delivery_Method__c = 'Snowflake';
         insert opptyLineItem; 
         
         OpportunityContactRole ocr = new OpportunityContactRole();
@@ -97,7 +99,7 @@ public class ConsolidatedOpportunityTest {
         oppty1.Name = 'TestOppty1';
         oppty1.RecordTypeId = renewalRT;
         oppty1.CloseDate = System.today().addDays(5);
-        oppty1.StageName = 'Qualified Prospect (2)';
+        oppty1.StageName = '2 - Conducting Needs Analysis';
         oppty1.AccountId = accnt.Id;
         oppty1.X2nd_Year_Amount_in_USD__c = 60000;
         oppty1.X3rd_Year_Amount_in_USD__c = 60000;
@@ -140,6 +142,10 @@ public class ConsolidatedOpportunityTest {
     @isTest static void getAllOpportunityLineItemsTest() {
         List<Case> caseList = [Select Id From case Where Origin = 'Email' LIMIT 1];
         ConsolidatedOpportunity.getAllOpportunityLineItems(caseList[0].Id);
+    }
+    @isTest static void getAllContactsTest() {
+        List<Opportunity> opportunityList = [Select Id From Opportunity LIMIT 1];
+        ConsolidatedOpportunity.getAllContacts(opportunityList[0].Id);
     }
     @isTest static void createEnrolmentsTest() {
         Test.startTest();

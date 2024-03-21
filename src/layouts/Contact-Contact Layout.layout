@@ -21,7 +21,7 @@
                 <field>Preferred_Name__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>AccountId</field>
             </layoutItems>
             <layoutItems>
@@ -118,6 +118,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>VIP_Advisory__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>X3x3_Level__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -545,9 +549,14 @@
             <sortOrder>17</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Contact.Create_Salesforce_User</actionName>
+            <actionName>Contact.Create_New_SDO</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>18</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Contact.Create_Salesforce_User</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>19</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>

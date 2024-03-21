@@ -317,6 +317,15 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Account_6sense_Segment_Names__c</fullName>
+        <externalId>false</externalId>
+        <label>6sense Segment Names</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Account_Status__c</fullName>
         <externalId>false</externalId>
         <label>Account Status</label>
@@ -1566,7 +1575,7 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <summaryFilterItems>
             <field>Opportunity.StageName</field>
             <operation>equals</operation>
-            <value>Conducting Needs Analysis (3), Pricing Proposal Sent (4), Agreement Sent and Being Negotiated (5), Verbal Win (6), Closed Won, Closed Lost, Qualified Prospect (2)</value>
+            <value>2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract, Closed Won, Closed Lost</value>
         </summaryFilterItems>
         <summaryFilterItems>
             <field>Opportunity.RecordTypeId</field>
@@ -1713,6 +1722,14 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>Name</fullName>
         <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Named_Account__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Named Account?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>News_ID__c</fullName>
@@ -5716,10 +5733,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Family Office</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fixed Income%2FCMBS</fullName>
                 <default>false</default>
             </values>
             <values>
