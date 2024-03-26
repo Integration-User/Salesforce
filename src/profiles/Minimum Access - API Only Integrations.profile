@@ -9,6 +9,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Plative_ActivitySecurityUtilTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Plative_OpportunityTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -20,6 +24,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Account_6sense_Segment_Names__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Last_Training_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
