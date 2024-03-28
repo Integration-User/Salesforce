@@ -14495,6 +14495,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Links_Screenshots_Attachments__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Location_of_Changes__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -14541,6 +14546,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.Other_Error_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Outline_Requirements_Business_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -14636,6 +14646,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Steps_to_Reproduce__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
