@@ -316,6 +316,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Batch_UpdateBillingContactCategoryTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Batch_UpdateContactCategory</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -12390,6 +12394,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.EU_Expansion_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Excel_Add_In_Users__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
