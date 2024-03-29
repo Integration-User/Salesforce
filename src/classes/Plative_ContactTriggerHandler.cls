@@ -23,6 +23,7 @@ public class Plative_ContactTriggerHandler {
             Plative_ContactTriggerHandler.afterUpdateRun = true;
             if(isUpdateBillingContact(mapOldCon,mapNewCon))
                 AddOrRemoveBillingContact.AddBillingContact(mapNewCon.keyset(),null);
+            Plative_ContactTriggerHelper.updateExcelAddUsersOnAccount(mapNewCon.values(), mapOldCon); // SF-918
         }
     }
     
@@ -60,6 +61,7 @@ public class Plative_ContactTriggerHandler {
             Plative_ContactTriggerHelper.activateContact(triggerNew,null);
             AddOrRemoveBillingContact.AddBillingContact(trigger.Newmap.keyset(),null);
             //Plative_ContactTriggerHelper.checkBillingContactChange(triggerNew, null,null);
+            Plative_ContactTriggerHelper.updateExcelAddUsersOnAccount(triggerNew, null); // SF-918
             Plative_ContactTriggerHandler.afterInsertRun = true;
         }
     }
