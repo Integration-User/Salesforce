@@ -72,7 +72,7 @@
         </recipients>
         <senderAddress>noreply@greenstreet.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/Data_Support_Outside_Office_Hours_Template</template>
+        <template>unfiled$public/Help_Desk_Case_Outside_Office_Hours_Template</template>
     </alerts>
     <alerts>
         <fullName>Data_Support_Weekend_Email_Alert</fullName>
