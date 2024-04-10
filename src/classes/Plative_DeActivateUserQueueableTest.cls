@@ -33,7 +33,8 @@ public class Plative_DeActivateUserQueueableTest {
         cont.FirstName = 'FName';
         cont.LastName = 'LName';
         cont.Email = 'test@email.com';
-        cont.Phone = '9876543210';        
+        cont.Phone = '9876543210'; 
+        cont.Billing_Contact_Multi__c = 'Research';
         insert cont; 
         
         List<Account_Email_Distribution__c> accntEd = new List<Account_Email_Distribution__c>();
@@ -57,13 +58,29 @@ public class Plative_DeActivateUserQueueableTest {
     @isTest
     static void userNameChange(){
         Test.setMock(HttpCalloutMock.class, new Plative_GSAWebCalloutMock());  
-        Contact cont = [Select Id from Contact LIMIT 1];
+        Contact cont = [Select Id, Billing_Contact_Multi__c,AccountId from Contact LIMIT 1];
         cont.Username__c = 'test@gsaplatform.com1';
         cont.Contact_Status__c = 'Active';        
         Test.startTest();
         Plative_ContactTriggerHandler.afterUpdateRun = false;
         cont.Username__c = 'test@gsaplatform.com2';
         update cont;
+        
+        Contact cont1 = new Contact();
+        cont1.AccountId = cont.AccountId;
+        cont1.FirstName = 'FName Advisory';
+        cont1.LastName = 'LName Advisory';
+        cont1.Email = 'testAdvisory@email.com';
+        cont1.Phone = '98765432101'; 
+        cont1.Billing_Contact_Multi__c = 'Advisory';
+        insert cont1; 
+        
+        Map<Id, Contact> mapOld = new Map<Id, Contact>();
+        mapOld.put(cont.Id, cont1);
+        Map<Id, Contact> mapnew = new Map<Id, Contact>();
+        mapnew.put(cont.Id, cont);
+        Plative_ContactTriggerHelper.checkBillingContactChange(new List<Contact>{cont}, mapOld, mapnew);
+        Plative_ContactTriggerHelper.addEmailDistributions(new Set<Id>{cont.id, cont1.Id});
         Test.stopTest();
     }
     
