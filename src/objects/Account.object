@@ -1274,6 +1274,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Excel_Add_In_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Excel Add-In Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Export_Activated_Users__c</fullName>
         <externalId>false</externalId>
         <formula>HYPERLINK(&apos;/00O5G000007wRTHUA2?pv0=&apos;+X18_digit_Account_ID__c+&apos;&amp;export=1&amp;enc=UTF-8&amp;xf=xlsx&amp;isdtp=p1&apos;,Text(Activated_Users__c))</formula>
@@ -1586,6 +1597,14 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <summaryOperation>max</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Last_Training_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Training Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>List_Membership_Account__c</fullName>

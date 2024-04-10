@@ -199,4 +199,24 @@ public class Plative_ContactTriggerHelper  {
             System.debug('In Apex class Plative_ContactTriggerHelper. ' + 'At line number: ' + ex.getLineNumber() + '. Cause: ' + ex.getCause() + '. Message: ' + ex.getMessage());
         }
     }
+    // SF-918 - Excel Add-In - Account
+    public static void updateExcelAddUsersOnAccount(List<Contact> contacts, Map<Id, Contact> mapOldCon){
+        Map<String, Integer> accountCounts = new Map<String, Integer>();
+        for(Contact con : contacts) {
+            Contact oldCon = mapOldCon != null ? mapOldCon.get(con.Id) : null;
+            if(!accountCounts.containsKey(con.AccountId) && (oldCon == null || (oldCon != null && con.Excel_Last_Use_Date__c != oldCon.Excel_Last_Use_Date__c))) {
+                accountCounts.put(con.AccountId, 0);
+            }
+        }
+        if(!accountCounts.isEmpty()) {
+            for(AggregateResult result : [Select Count(Id), AccountId from Contact where AccountId in :accountCounts.keySet() AND Excel_Last_Use_Date__c != null GROUP BY AccountId]) {
+                accountCounts.put(String.valueof(result.get('AccountId')), Integer.valueOf(result.get('expr0')));
+            }
+			List<Account> accUpdates = new List<Account>();
+            for(String accId : accountCounts.keySet()) {
+                accUpdates.add(New Account(Id = accId, Excel_Add_In_Users__c = accountCounts.get(accId)));
+            }
+            if(!accUpdates.isEmpty()) update accUpdates;
+        }
+    }
 }
