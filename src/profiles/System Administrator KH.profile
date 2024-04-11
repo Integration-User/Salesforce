@@ -316,6 +316,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Batch_UpdateBillingContactCategoryTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Batch_UpdateContactCategory</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -12281,6 +12285,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Excel_Add_In_Users__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Export_Activated_Users__c</field>
         <readable>true</readable>
@@ -12368,6 +12377,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Last_Renewal_Opp__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Last_Training_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
