@@ -1239,6 +1239,9 @@ ISPICKVAL(Priority__c, &quot;&quot;))</errorConditionFormula>
         <fullName>Require_Event_Objective_Strategy</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$UserRole.Name &lt;&gt; &quot;Research&quot;,
+$UserRole.Name &lt;&gt; &quot;EU REA&quot;,
+$UserRole.Name &lt;&gt; &quot;REA&quot;,
 ISPICKVAL(Status__c,&quot;Completed&quot;),
 OR(
 ISBLANK(Objective__c),
