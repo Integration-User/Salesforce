@@ -209,12 +209,12 @@ public class Plative_ContactTriggerHelper  {
             }
         }
         if(!accountCounts.isEmpty()) {
-            for(AggregateResult result : [Select Count(Id), AccountId from Contact where AccountId in :accountCounts.keySet() AND Excel_Last_Use_Date__c != null GROUP BY AccountId]) {
+            for(AggregateResult result : [Select Count(Id), AccountId from Contact where AccountId in :accountCounts.keySet() AND AccountId != null AND Excel_Last_Use_Date__c != null GROUP BY AccountId]) {
                 accountCounts.put(String.valueof(result.get('AccountId')), Integer.valueOf(result.get('expr0')));
             }
 			List<Account> accUpdates = new List<Account>();
             for(String accId : accountCounts.keySet()) {
-                accUpdates.add(New Account(Id = accId, Excel_Add_In_Users__c = accountCounts.get(accId)));
+                if(String.isNotBlank(accId)) accUpdates.add(New Account(Id = accId, Excel_Add_In_Users__c = accountCounts.get(accId)));
             }
             if(!accUpdates.isEmpty()) update accUpdates;
         }
