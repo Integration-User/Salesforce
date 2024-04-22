@@ -4621,6 +4621,15 @@ OwnerId  = $User.Id)</formula>
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>New_Sale_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>New Sale Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>New_Sales_Opportunity__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -5548,6 +5557,15 @@ NULL))))</formula>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Renewal_Month__c</fullName>
@@ -8782,26 +8800,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>DataLink</fullName>
                 <default>false</default>
             </values>
@@ -8823,6 +8821,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edge - Project work</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10320,26 +10322,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>DataLink</fullName>
                 <default>false</default>
             </values>
@@ -10361,6 +10343,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edge - Project work</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12392,10 +12378,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Contracted Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Due Diligence</fullName>
                 <default>false</default>
             </values>
@@ -12409,7 +12391,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Made New Client</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>Market Conditions</fullName>
@@ -14836,26 +14818,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>DataLink</fullName>
                 <default>false</default>
             </values>
@@ -16290,26 +16252,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>DataLink</fullName>
                 <default>false</default>
             </values>
@@ -17701,26 +17643,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20635,26 +20557,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>DataLink</fullName>
                 <default>false</default>
             </values>
@@ -20668,6 +20570,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20796,6 +20706,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Transaction Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23637,10 +23555,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Delivery - API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Data License Directory</fullName>
                 <default>false</default>
             </values>
@@ -23653,26 +23567,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>DataLink</fullName>
                 <default>false</default>
             </values>
@@ -23682,10 +23576,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Debt Databases</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Detailed NAV</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23858,10 +23748,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Research %2B REIT Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -25353,26 +25239,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>DataLink</fullName>
                 <default>false</default>
             </values>
@@ -25390,6 +25256,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25518,6 +25392,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Transaction Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26448,7 +26330,7 @@ ISBLANK(Account.Phone )
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
  RecordType.Name = &quot;Sales Opportunity&quot;,
  ISCHANGED(StageName),
-OR(
+ OR(
 ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
 ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
 ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
@@ -26736,7 +26618,7 @@ NOT(ISPICKVAL(StageName ,&quot;2 - Conducting Needs Analysis&quot;)),
 NOT(ISPICKVAL(StageName ,&quot;Closed Lost&quot;)),
 ISCHANGED(CloseDate),
 ISBLANK(TEXT(Rep_Forecast_Category__c)),
-CloseDate &lt; TODAY() + 89)</errorConditionFormula>
+CloseDate  &lt;  TODAY() + 89)</errorConditionFormula>
         <errorDisplayField>Rep_Forecast_Category__c</errorDisplayField>
         <errorMessage>This Opportunity is within the 90 day forecast period. Please update the Rep Forecast Category.</errorMessage>
     </validationRules>
