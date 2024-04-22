@@ -32,9 +32,9 @@ trigger Plative_Task on Task (after insert, after update, before insert)  {
         ownerMap.putAll([SELECT Id, UserRole.Name FROM User WHERE Id IN :ownerMap.keySet()]);
         for(Task tsk : Trigger.new) {
             User user = ownerMap.get(tsk.OwnerId);
-            if(tsk.Minutes_Spent__c == null && tsk.type == 'Outgoing Email' && (user.UserRole.Name == 'REA' || user.UserRole.Name == 'Research' || user.UserRole.Name == 'EU REA')){
-                tsk.Minutes_Spent__c = 15;
-                tsk.Analyst_Count_Data__c = 1;
+            if(tsk.type == 'Outgoing Email' && (user.UserRole.Name == 'REA' || user.UserRole.Name == 'Research' || user.UserRole.Name == 'EU REA')){
+                if(tsk.Minutes_Spent__c == null) tsk.Minutes_Spent__c = 15;
+                if(tsk.Analyst_Count_Data__c == null) tsk.Analyst_Count_Data__c = 1;
             } 
         }
     }
