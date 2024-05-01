@@ -63,6 +63,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Escalated_To__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Links_Screenshots_Attachments__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -285,6 +290,10 @@
         <layout>Account-Subsidiary Account</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Case-Help Desk Layout</layout>
+        <recordType>Case.Help_Desk</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Contact-Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -300,6 +309,15 @@
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
     </layoutAssignments>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Case</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
     <recordTypeVisibilities>
         <default>true</default>
         <personAccountDefault>true</personAccountDefault>
@@ -309,6 +327,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Subsidiary_Account</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Case.Help_Desk</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
