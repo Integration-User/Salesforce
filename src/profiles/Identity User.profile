@@ -14326,6 +14326,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.Escalated_To__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.Estimated_Completion_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
