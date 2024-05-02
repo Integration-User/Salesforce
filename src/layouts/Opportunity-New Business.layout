@@ -592,18 +592,6 @@
     </relatedLists>
     <relatedLists>
         <fields>OPPORTUNITY.NAME</fields>
-        <fields>Lead_Contact__c</fields>
-        <fields>Inbound__c</fields>
-        <fields>Lead_Channel__c</fields>
-        <fields>Lead_Type__c</fields>
-        <fields>OPPORTUNITY.LEAD_SOURCE</fields>
-        <fields>OPPORTUNITY.CLOSE_DATE</fields>
-        <relatedList>Opportunity.New_Sales_Opportunity__c</relatedList>
-        <sortField>OPPORTUNITY.CLOSE_DATE</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <fields>OPPORTUNITY.NAME</fields>
         <fields>ACCOUNT.NAME</fields>
         <fields>OPPORTUNITY.CLOSE_DATE</fields>
         <fields>Automatic_Renewal__c</fields>
@@ -632,6 +620,22 @@
         <fields>EVENT.LOCATION</fields>
         <fields>CORE.USERS.FULL_NAME</fields>
         <relatedList>RelatedHistoryList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>Buying_Process__c</fields>
+        <fields>Goals__c</fields>
+        <fields>Problems__c</fields>
+        <fields>Needs__c</fields>
+        <fields>Active__c</fields>
+        <fields>Account__c</fields>
+        <fields>CREATED_DATE</fields>
+        <fields>CREATEDBY_USER</fields>
+        <relatedList>Relationship_Intelligence__c.Related_Opportunity__c</relatedList>
+        <sortField>CREATED_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
