@@ -13,7 +13,9 @@ public without sharing class Plative_OpportunityTriggerHandler {
     public static Boolean beforeInsertRun = false;
     public static Boolean afterInsertRun = false;
 	public static Id renewalRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Renewal').getRecordTypeId();
-   	public static Id SalesRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Sales Opportunity').getRecordTypeId();
+   	public static Id salesRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Sales Opportunity').getRecordTypeId();
+    public static Id salesDevRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByDeveloperName().get('Sales_Development').getRecordTypeId();
+
     /**
     * Description : before insert dml event
     **/
@@ -112,6 +114,17 @@ public without sharing class Plative_OpportunityTriggerHandler {
                 x3x3opportunities.add(ocr.OpportunityId);
             }
             List<String> stageNames = new List<String>{'1 - Introducing', '2 - Conducting Needs Analysis', '3 - Qualifying', 'Closed Lost'};
+            Set<Id> oppIds = new Set<Id>();
+            // SF-770 Changes
+            Map<Id, Integer> relIntelligenceOpp = new  Map<Id, Integer>();
+            for(AggregateResult result : [SELECT count(Id), Related_Opportunity__c 
+                                          FROM Relationship_Intelligence__c 
+                                          WHERE Related_Opportunity__c IN :triggerNewMap.keySet() 
+                                          AND Related_Opportunity__c != null AND Active__c = TRUE GROUP BY Related_Opportunity__c ]) {
+                if(String.valueof(result.get('Related_Opportunity__c')) != null) relIntelligenceOpp.put(String.valueof(result.get('Related_Opportunity__c')), Integer.valueOf(result.get('expr0')));
+            }
+            // END SF-770 Changes
+
             for (Opportunity oppty : triggerNewMap.values()) {
                 Opportunity oldOppty = triggerOldMap.get(oppty.Id);
                 if ((oppty.recordTypeId == renewalRecordTypeId || oppty.recordTypeId == salesRecordTypeId)
@@ -119,7 +132,17 @@ public without sharing class Plative_OpportunityTriggerHandler {
                     && !stageNames.contains(oppty.StageName) && !x3x3opportunities.contains(oppty.Id)) {
                         oppty.addError('One contact must have a 3x3 Level designated before moving to Stage 4.');
                 }
+                //SF-770 Changes
+                if((oldOppty.StageName != oppty.StageName || (oppty.Win_Validation__c == 'Pending Review' && oldOppty.Win_Validation__c != oppty.Win_Validation__c))
+                   && (!relIntelligenceOpp.containsKey(oppty.id) || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) < 1))
+                   && ((oppty.recordTypeId == renewalRecordTypeId && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won'))
+                       || (oppty.recordTypeId == salesRecordTypeId && !stageNames.contains(oppty.StageName))
+                       || (oppty.recordTypeId == salesDevRecordTypeId && (oppty.StageName == 'In Review' || oppty.StageName == 'Qualified')))) {
+                    oppty.addError('Opportunity must have at least one active Relationship Intelligence record.');
+                }
+                // END SF-770 Changes
             }
+            
             // END SF-768 - 3X3 Contact Levels
             Boolean isSuccess = Plative_SFToNSSyncUtility.updateSyncToNSField(triggerOldMap,triggerNewMap,
                                                          'Opportunity', 'Update');
