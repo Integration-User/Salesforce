@@ -133,7 +133,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
                         oppty.addError('One contact must have a 3x3 Level designated before moving to Stage 4.');
                 }
                 //SF-770 Changes
-                if(oldOppty.StageName != oppty.StageName 
+                if((oldOppty.StageName != oppty.StageName || (oppty.Win_Validation__c == 'Pending Review' && oldOppty.Win_Validation__c != oppty.Win_Validation__c))
                    && (!relIntelligenceOpp.containsKey(oppty.id) || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) < 1))
                    && ((oppty.recordTypeId == renewalRecordTypeId && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won'))
                        || (oppty.recordTypeId == salesRecordTypeId && !stageNames.contains(oppty.StageName))
