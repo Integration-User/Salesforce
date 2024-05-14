@@ -5172,6 +5172,9 @@ ISBLANK(Model_Count__c))</errorConditionFormula>
         <fullName>Require_Task_Objective_Strategy</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$UserRole.Name &lt;&gt; &quot;Research&quot;,
+$UserRole.Name &lt;&gt; &quot;EU REA&quot;,
+$UserRole.Name &lt;&gt; &quot;REA&quot;,
 ISPICKVAL(Status,&quot;Completed&quot;),
 OR(
 ISBLANK(Objective__c),
