@@ -416,6 +416,14 @@
                 <behavior>Edit</behavior>
                 <field>High_Value_Target__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>New_Sale_Effective_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Renewal_Effective_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -585,15 +593,6 @@
     <relatedLists>
         <fields>OPPORTUNITY.NAME</fields>
         <fields>ACCOUNT.NAME</fields>
-        <fields>Lead_Contact__c</fields>
-        <fields>Lead_Type__c</fields>
-        <fields>OPPORTUNITY.CREATED_DATE</fields>
-        <fields>Qualified_Date__c</fields>
-        <relatedList>Opportunity.New_Sales_Opportunity__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>ACCOUNT.NAME</fields>
         <fields>OPPORTUNITY.CLOSE_DATE</fields>
         <fields>Automatic_Renewal__c</fields>
         <fields>OPPORTUNITY.STAGE_NAME</fields>
@@ -621,6 +620,22 @@
         <fields>EVENT.LOCATION</fields>
         <fields>CORE.USERS.FULL_NAME</fields>
         <relatedList>RelatedHistoryList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>Buying_Process__c</fields>
+        <fields>Goals__c</fields>
+        <fields>Problems__c</fields>
+        <fields>Needs__c</fields>
+        <fields>Active__c</fields>
+        <fields>Account__c</fields>
+        <fields>CREATED_DATE</fields>
+        <fields>CREATEDBY_USER</fields>
+        <relatedList>Relationship_Intelligence__c.Related_Opportunity__c</relatedList>
+        <sortField>CREATED_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

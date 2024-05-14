@@ -2878,7 +2878,7 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Minimum_Advisory_Fee_50k__c</fullName>
         <externalId>false</externalId>
-        <label>Typical Advisory Minimum ($100K/£100)</label>
+        <label>Typical Advisory Minimum (6-figures)</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -11219,7 +11219,7 @@ CONTAINS($UserRole.Name,&quot;BDR&quot;)
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISBLANK(TEXT(Minimum_Advisory_Fee_50k__c)),
 ISPICKVAL(Lead_Type__c,&quot;Advisory&quot;))</errorConditionFormula>
-        <errorMessage>Please ensure Typical Advisory Minimum ($100K/£100) is populated before saving this Lead.</errorMessage>
+        <errorMessage>Please ensure Typical Advisory Minimum (6-figures) is populated before saving this Lead.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Disqualified_Context</fullName>
