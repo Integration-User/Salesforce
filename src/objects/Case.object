@@ -875,6 +875,56 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Escalated_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Escalated To</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>News</fullName>
+                    <default>false</default>
+                    <label>News</label>
+                </value>
+                <value>
+                    <fullName>Research</fullName>
+                    <default>false</default>
+                    <label>Research</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Market Analytics</fullName>
+                    <default>false</default>
+                    <label>Market Analytics</label>
+                </value>
+                <value>
+                    <fullName>Tech</fullName>
+                    <default>false</default>
+                    <label>Tech</label>
+                </value>
+                <value>
+                    <fullName>Account Manager</fullName>
+                    <default>false</default>
+                    <label>Account Manager</label>
+                </value>
+                <value>
+                    <fullName>Client Support Manager</fullName>
+                    <default>false</default>
+                    <label>Client Support Manager</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Estimated_Completion_Date__c</fullName>
         <externalId>false</externalId>
         <label>Estimated Completion Date</label>
@@ -4180,6 +4230,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -5353,6 +5407,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -6334,6 +6392,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7329,6 +7391,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8416,6 +8482,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -8894,6 +8964,37 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Location_of_Changes__c</picklist>
             <values>
                 <fullName>Developer Sandbox</fullName>
@@ -9340,6 +9441,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10439,6 +10544,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -11394,6 +11503,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12427,6 +12540,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -12980,6 +13097,17 @@ RecordType.DeveloperName = &quot;Help_Desk&quot;,
 NOT(ISPICKVAL(Support_Type__c, &quot;User List Request&quot;))))
 )</errorConditionFormula>
         <errorMessage>Green Street is not allowed on this type of Case. Please choose a different account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Escalated_To</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISCHANGED(Status),
+ISPICKVAL(Status,&quot;Escalated&quot;),
+ISPICKVAL(Escalated_To__c, &quot;&quot;),
+RecordType.DeveloperName = &quot;Help_Desk&quot;
+)</errorConditionFormula>
+        <errorMessage>Please provide the &quot;Escalated To&quot; before moving the status to escalated.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Fields_for_Bugs_Issues</fullName>
