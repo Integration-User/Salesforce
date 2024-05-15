@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Budget_Details__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please include relevant context to budget including: Timing, Owner, and Process.</inlineHelpText>
+        <label>Budget Details</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customers stated budget. If a range is provided, please use an average amount.</inlineHelpText>
+        <label>Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Competition__c</fullName>
+        <externalId>false</externalId>
+        <label>Competition</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Status Quo</fullName>
+                    <default>false</default>
+                    <label>Status Quo</label>
+                </value>
+                <value>
+                    <fullName>Axiometrics</fullName>
+                    <default>false</default>
+                    <label>Axiometrics</label>
+                </value>
+                <value>
+                    <fullName>Bloomberg</fullName>
+                    <default>false</default>
+                    <label>Bloomberg</label>
+                </value>
+                <value>
+                    <fullName>Broker Provided Information</fullName>
+                    <default>false</default>
+                    <label>Broker Provided Information</label>
+                </value>
+                <value>
+                    <fullName>CBRE (ERIX) and (EA (Econometric Advisors))</fullName>
+                    <default>false</default>
+                    <label>CBRE (ERIX) and (EA (Econometric Advisors))</label>
+                </value>
+                <value>
+                    <fullName>CompStak</fullName>
+                    <default>false</default>
+                    <label>CompStak</label>
+                </value>
+                <value>
+                    <fullName>CoStar</fullName>
+                    <default>false</default>
+                    <label>CoStar</label>
+                </value>
+                <value>
+                    <fullName>Datscha - MSCI</fullName>
+                    <default>false</default>
+                    <label>Datscha - MSCI</label>
+                </value>
+                <value>
+                    <fullName>Moody&apos;s/REIS</fullName>
+                    <default>false</default>
+                    <label>Moody&apos;s/REIS</label>
+                </value>
+                <value>
+                    <fullName>NIC Map</fullName>
+                    <default>false</default>
+                    <label>NIC Map</label>
+                </value>
+                <value>
+                    <fullName>Oxford Economics</fullName>
+                    <default>false</default>
+                    <label>Oxford Economics</label>
+                </value>
+                <value>
+                    <fullName>PMA</fullName>
+                    <default>false</default>
+                    <label>PMA</label>
+                </value>
+                <value>
+                    <fullName>Property Week - for news</fullName>
+                    <default>false</default>
+                    <label>Property Week - for news</label>
+                </value>
+                <value>
+                    <fullName>RCA/MSCI</fullName>
+                    <default>false</default>
+                    <label>RCA/MSCI</label>
+                </value>
+                <value>
+                    <fullName>RealPage</fullName>
+                    <default>false</default>
+                    <label>RealPage</label>
+                </value>
+                <value>
+                    <fullName>Sell Side Banks</fullName>
+                    <default>false</default>
+                    <label>Sell Side Banks</label>
+                </value>
+                <value>
+                    <fullName>Trepp</fullName>
+                    <default>false</default>
+                    <label>Trepp</label>
+                </value>
+                <value>
+                    <fullName>Yardi</fullName>
+                    <default>false</default>
+                    <label>Yardi</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Department__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the department(s) that you are extracting relationship insights from.</inlineHelpText>
+        <label>Department</label>
+        <length>155</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the primary individual you’re working with through the decision process.</inlineHelpText>
+        <label>Key Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Relationship Intelligence</relationshipLabel>
+        <relationshipName>Relationship_Intelligence</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Other_Competition__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If related competitor is unavailable in the “Competition” options, please provide additional insight here.</inlineHelpText>
+        <label>Other Competition</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <validationRules>
+        <fullName>Require_Other_Competition</fullName>
+        <active>true</active>
+        <description>Require Other Competition when &quot;Other&quot; is included</description>
+        <errorConditionFormula>INCLUDES(Competition__c , &quot;Other&quot;) &amp;&amp; Other_Competition__c = NULL</errorConditionFormula>
+        <errorMessage>Please provide additional information of the competitor.</errorMessage>
+    </validationRules>
+</CustomObject>

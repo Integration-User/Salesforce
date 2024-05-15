@@ -180,14 +180,14 @@ public class Plative_OpportunityTriggerTest {
         oppty.Id = opptyTemp.Id;
         oppty.StageName = 'Closed Won'; 
         oppty.ID_Request__c = 'Not Applicable';
-        oppty.Win_Validation__c = 'Opportunity Reviewed';
+        oppty.Win_Validation__c = 'Pending Review';
         //oppty.Win_Validation__c = 'Opportunity Reviewed';
         Test.startTest();
         //For creating Renewal Opportunities from Sales Opportunity
         update oppty;   
         //For creating Renewal Opportunity from the last Closed Renewal Opportunity
         Opportunity lastRenewalOpportunity = [Select Id from Opportunity where Id != :oppty.Id ORDER BY CreatedDate DESC LIMIT 1];
-        //lastRenewalOpportunity.StageName = 'Closed Won';
+        lastRenewalOpportunity.StageName = 'Closed Lost';
         lastRenewalOpportunity.Close_Reason__c = 'Contracted Client';
         //lastRenewalOpportunity.Create_New_Renewal_Opportunity__c = true;
         lastRenewalOpportunity.ID_Request__c = 'Not Applicable';
@@ -212,6 +212,16 @@ public class Plative_OpportunityTriggerTest {
         oppty.Designated_ARR__c = 600000;
         //oppty.Win_Validation__c = 'Opportunity Reviewed';
         Test.startTest();
+        
+        Relationship_Intelligence__c rel = new Relationship_Intelligence__c();
+        rel.Account__c = opptyTemp.AccountId;
+        rel.Related_Opportunity__c = oppty.Id;
+        rel.Buying_Process__c = 'Evaluate';
+        rel.Active__c = true;
+        rel.Goals__c = 'testing';
+        rel.Needs__c = 'Testing';
+        rel.Problems__c = 'Testing';
+        insert rel;        
         update oppty;   
         
         Test.stopTest();
