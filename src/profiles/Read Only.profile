@@ -22129,6 +22129,36 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Budget_Details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Budget__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Competition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Department__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Key_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Other_Competition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>SF_to_NS_Product_Mapping__mdt.Customer_Channel__c</field>
         <readable>false</readable>
@@ -33213,6 +33243,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Recurring_Revenue_Snapshot__c-Recurring Revenue Snapshot Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Relationship_Intelligence__c-Relationship Intelligence Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SF_to_NS_Product_Mapping__mdt-SF to NS Product Mapping Layout</layout>
