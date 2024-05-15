@@ -11835,7 +11835,7 @@
         <apexClass>zisf__zicJobsControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
-    <custom>false</custom>
+    <custom>true</custom>
     <fieldPermissions>
         <editable>false</editable>
         <field>AAKCS__AAkonsult_Settings__mdt.AAKCS__Disable_Triggers__c</field>
@@ -22044,6 +22044,36 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Recurring_Revenue_Snapshot__c.Subsidiary__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Budget_Details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Budget__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Competition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Department__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Key_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Relationship_Intelligence__c.Other_Competition__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -33095,6 +33125,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Recurring_Revenue_Snapshot__c-Recurring Revenue Snapshot Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Relationship_Intelligence__c-Relationship Intelligence Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SF_to_NS_Product_Mapping__mdt-SF to NS Product Mapping Layout</layout>
