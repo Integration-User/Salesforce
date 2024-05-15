@@ -146,55 +146,38 @@
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
+    <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>CDB_ID__c</fullName>
-        <caseSensitive>false</caseSensitive>
-        <externalId>true</externalId>
-        <label>CDB ID</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>News_ID__c</fullName>
-        <caseSensitive>false</caseSensitive>
-        <externalId>true</externalId>
-        <label>News ID</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>Order_of_Email_DL_s__c</fullName>
-        <description>To set the order of email dl&apos;s in &apos;add/remove email dist&apos; lightning component.</description>
+        <fullName>Account__c</fullName>
         <externalId>false</externalId>
-        <label>Order of Email DL&apos;s</label>
-        <precision>10</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Relationship Intelligence</relationshipLabel>
+        <relationshipName>Relationship_Intelligence</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
-        <fullName>Subscription__c</fullName>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <label>Subscription</label>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Buying_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Buying Process</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -202,115 +185,98 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Real Estate Alert</fullName>
+                    <fullName>Plan</fullName>
                     <default>false</default>
-                    <label>Real Estate Alert</label>
+                    <label>Plan</label>
                 </value>
                 <value>
-                    <fullName>Commercial Mortgage Alert</fullName>
+                    <fullName>Recognize</fullName>
                     <default>false</default>
-                    <label>Commercial Mortgage Alert</label>
+                    <label>Recognize</label>
                 </value>
                 <value>
-                    <fullName>Asset-Backed Alert</fullName>
+                    <fullName>Search</fullName>
                     <default>false</default>
-                    <label>Asset-Backed Alert</label>
+                    <label>Search</label>
                 </value>
                 <value>
-                    <fullName>React News</fullName>
+                    <fullName>Evaluate</fullName>
                     <default>false</default>
-                    <label>React News</label>
+                    <label>Evaluate</label>
                 </value>
                 <value>
-                    <fullName>US Research + REIT Data</fullName>
+                    <fullName>Select</fullName>
                     <default>false</default>
-                    <label>US Research + REIT Data</label>
+                    <label>Select</label>
                 </value>
                 <value>
-                    <fullName>US Research + Market Data &amp; Deals</fullName>
+                    <fullName>Commit</fullName>
                     <default>false</default>
-                    <label>US Research + Market Data &amp; Deals</label>
+                    <label>Commit</label>
                 </value>
                 <value>
-                    <fullName>Pan-European Research + Market Data &amp; Deals</fullName>
+                    <fullName>Implement</fullName>
                     <default>false</default>
-                    <label>Pan-European Research + Market Data &amp; Deals</label>
+                    <label>Implement</label>
                 </value>
                 <value>
-                    <fullName>Pan-European Research + REIT Data</fullName>
+                    <fullName>Track</fullName>
                     <default>false</default>
-                    <label>Pan-European Research + REIT Data</label>
-                </value>
-                <value>
-                    <fullName>US Portfolio Tools</fullName>
-                    <default>false</default>
-                    <label>US Portfolio Tools</label>
-                </value>
-                <value>
-                    <fullName>US REA</fullName>
-                    <default>false</default>
-                    <label>US REA</label>
-                </value>
-                <value>
-                    <fullName>Canada Research + REIT data</fullName>
-                    <default>false</default>
-                    <label>Canada Research + REIT data</label>
-                </value>
-                <value>
-                    <fullName>EUR REA</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>EUR REA</label>
-                </value>
-                <value>
-                    <fullName>EUR REIT</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>EUR REIT</label>
-                </value>
-                <value>
-                    <fullName>NEWS - ABAlert</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>NEWS - ABAlert</label>
-                </value>
-                <value>
-                    <fullName>NEWS - CMAlert</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>NEWS - CMAlert</label>
-                </value>
-                <value>
-                    <fullName>NEWS - HFAlert</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>NEWS - HFAlert</label>
-                </value>
-                <value>
-                    <fullName>US REIT</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>US REIT</label>
+                    <label>Track</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <label>Email Distribution</label>
-    <listViews>
-        <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>Subscription__c</columns>
-        <columns>CURRENCY_ISO_CODE</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
+    <fields>
+        <fullName>Goals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What objectives is the client/prospect trying to achieve? What strategies are in place to achieve objectives and goals?</inlineHelpText>
+        <label>Goals</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Needs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What does the client/prospect need so they can overcome the challenges/problems/obstacles and achieve the goals and objectives? Hint: This doesn’t have to be a named Green Street product.</inlineHelpText>
+        <label>Needs</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Problems__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is standing in the way of achieving goals and objectives? Are there obstacles or challenges?</inlineHelpText>
+        <label>Problems</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Related_Opportunity__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Relationship Intelligence</relationshipLabel>
+        <relationshipName>Relationship_Intelligence</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Relationship Intelligence</label>
     <nameField>
-        <label>Name</label>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <displayFormat>RI-{0000}</displayFormat>
+        <label>Relationship Intelligence Name</label>
+        <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Email Distributions</pluralLabel>
+    <pluralLabel>Relationship Intelligence</pluralLabel>
     <searchLayouts />
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

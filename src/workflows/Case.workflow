@@ -51,6 +51,17 @@
         <template>unfiled$public/Trial_Deactivation_Access_Template</template>
     </alerts>
     <alerts>
+        <fullName>Commercial_Tech_Request_Auto_Reply</fullName>
+        <description>Commercial Tech Request Auto Reply</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requested_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Salesforce_Request_Auto_Response</template>
+    </alerts>
+    <alerts>
         <fullName>Data_Support_Inside_Office_Hours_Email_Alert</fullName>
         <description>Data Support Inside Office Hours Email Alert</description>
         <protected>false</protected>
@@ -72,7 +83,7 @@
         </recipients>
         <senderAddress>noreply@greenstreet.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/Data_Support_Outside_Office_Hours_Template</template>
+        <template>unfiled$public/Help_Desk_Case_Outside_Office_Hours_Template</template>
     </alerts>
     <alerts>
         <fullName>Data_Support_Weekend_Email_Alert</fullName>

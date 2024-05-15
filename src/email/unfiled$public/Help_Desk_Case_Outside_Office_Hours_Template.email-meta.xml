@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Letterhead</letterhead>
+    <name>Help Desk Case Outside Office Hours Template</name>
+    <style>freeForm</style>
+    <subject>Automated Email (Do Not Reply) Help Desk Case #{!Case.CaseNumber}</subject>
+    <textOnly>Hi {!Case.SuppliedName},
+
+Thank you for contacting Green Street Client Support. You’ve reached us after hours; our standard operating hours are 8 AM GMT – 5 PM PST, Monday – Friday. A member of our team will get back to you once the team is back online. We sincerely appreciate your patience and look forward to getting in touch with you. In the interim, please visit our Learning Center to access our glossary, methodology guides, FAQs, and more helpful resources. 
+ 
+Thank you,
+Green Street Client Support</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

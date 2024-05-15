@@ -875,6 +875,56 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Escalated_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Escalated To</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>News</fullName>
+                    <default>false</default>
+                    <label>News</label>
+                </value>
+                <value>
+                    <fullName>Research</fullName>
+                    <default>false</default>
+                    <label>Research</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Market Analytics</fullName>
+                    <default>false</default>
+                    <label>Market Analytics</label>
+                </value>
+                <value>
+                    <fullName>Tech</fullName>
+                    <default>false</default>
+                    <label>Tech</label>
+                </value>
+                <value>
+                    <fullName>Account Manager</fullName>
+                    <default>false</default>
+                    <label>Account Manager</label>
+                </value>
+                <value>
+                    <fullName>Client Support Manager</fullName>
+                    <default>false</default>
+                    <label>Client Support Manager</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Estimated_Completion_Date__c</fullName>
         <externalId>false</externalId>
         <label>Estimated Completion Date</label>
@@ -904,6 +954,17 @@
         <fullName>IsEscalated</fullName>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Links_Screenshots_Attachments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is required for Bug/Issue Request Category</inlineHelpText>
+        <label>Links / Screenshots / Attachments</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
     </fields>
     <fields>
         <fullName>Location_of_Changes__c</fullName>
@@ -1469,6 +1530,16 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Outline_Requirements_Business_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Outline Requirements &amp; Business Value</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -2114,6 +2185,15 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Steps_to_Reproduce__c</fullName>
+        <externalId>false</externalId>
+        <label>Steps to Reproduce</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Subject</fullName>
@@ -4150,6 +4230,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -5323,6 +5407,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -6304,6 +6392,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7299,6 +7391,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8386,6 +8482,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -8864,6 +8964,37 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Location_of_Changes__c</picklist>
             <values>
                 <fullName>Developer Sandbox</fullName>
@@ -9313,6 +9444,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Local Data Online</fullName>
                 <default>false</default>
             </values>
@@ -9386,6 +9521,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10405,6 +10544,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -11360,6 +11503,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12393,6 +12540,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -12948,6 +13099,32 @@ NOT(ISPICKVAL(Support_Type__c, &quot;User List Request&quot;))))
         <errorMessage>Green Street is not allowed on this type of Case. Please choose a different account.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_Escalated_To</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISCHANGED(Status),
+ISPICKVAL(Status,&quot;Escalated&quot;),
+ISPICKVAL(Escalated_To__c, &quot;&quot;),
+RecordType.DeveloperName = &quot;Help_Desk&quot;
+)</errorConditionFormula>
+        <errorMessage>Please provide the &quot;Escalated To&quot; before moving the status to escalated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Fields_for_Bugs_Issues</fullName>
+        <active>true</active>
+        <description>Links / Screenshots / Attachments and Steps to Reproduce fields are required when Request Category is &quot;Bugs/Issues&quot;</description>
+        <errorConditionFormula>AND(
+$RecordType.DeveloperName = &quot;Salesforce_Request&quot;,
+ISPICKVAL( Application__c, &quot;Salesforce&quot;),
+ISPICKVAL( Request_Category__c , &quot;Bug/Issue&quot;),
+OR(
+LEN(Links_Screenshots_Attachments__c) = 0,
+ISBLANK(Steps_to_Reproduce__c)
+)
+)</errorConditionFormula>
+        <errorMessage>Please provide the Links / Screenshots / Attachments and Steps to Reproduce</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_On_Hold_Reason</fullName>
         <active>true</active>
         <description>Requires On Hold Reason for Client Access, Opportunity Review and Duplicate Request case record types when status is moved to On Hold</description>
@@ -12962,5 +13139,18 @@ RecordType.DeveloperName = &quot;Opportunity_Review&quot;)
 )</errorConditionFormula>
         <errorDisplayField>On_Hold_Reason__c</errorDisplayField>
         <errorMessage>Please provide the On Hold Reason when moving the status to On Hold</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Outline_Business_Value</fullName>
+        <active>true</active>
+        <description>Provide Requirements &amp; Business Value for all request types except for except deal scoring feedback and training.</description>
+        <errorConditionFormula>AND(
+$RecordType.DeveloperName = &quot;Salesforce_Request&quot;,
+ISPICKVAL( Application__c, &quot;Salesforce&quot;),
+LEN(Outline_Requirements_Business_Value__c) = 0,
+NOT(ISPICKVAL( Request_Category__c , &quot;Training&quot;)),
+NOT(ISPICKVAL( Request_Category__c , &quot;Deal Scoring Feedback&quot;))
+)</errorConditionFormula>
+        <errorMessage>Please provide fill out the Outline Requirements &amp; Business Value</errorMessage>
     </validationRules>
 </CustomObject>

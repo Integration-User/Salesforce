@@ -4621,6 +4621,15 @@ OwnerId  = $User.Id)</formula>
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>New_Sale_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>New Sale Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>New_Sales_Opportunity__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -5548,6 +5557,15 @@ NULL))))</formula>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Renewal_Month__c</fullName>
@@ -8762,6 +8780,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -8802,11 +8824,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Edge - Project work</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Financial%2FStrategic Advisory</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10276,6 +10306,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -10316,12 +10350,20 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Edge - Project work</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Financial%2FStrategic Advisory</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>GSI</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
@@ -11778,6 +11820,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
+            </values>
+            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -12344,10 +12390,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Contracted Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Due Diligence</fullName>
                 <default>false</default>
             </values>
@@ -12361,7 +12403,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Made New Client</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>Market Conditions</fullName>
@@ -13182,6 +13224,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>GSI</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
@@ -14752,6 +14798,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -14830,6 +14880,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>GSI</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
@@ -16198,6 +16252,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -16248,6 +16306,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>GSI</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
@@ -17588,6 +17650,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -17634,6 +17700,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>GSI</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
@@ -18933,6 +19003,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>Financial%2FStrategic Advisory</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
@@ -20479,6 +20553,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -20557,6 +20635,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>GSI</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
@@ -23485,6 +23567,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -23563,6 +23649,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>GSI</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
@@ -25153,6 +25243,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -25235,6 +25329,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>GSI</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+				<default>false</default>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
@@ -26156,6 +26254,17 @@ NOT(ISPICKVAL(LeadSource ,&quot;News Subscription Request&quot;))))</errorCondit
 	)</errorConditionFormula>
         <errorDisplayField>StageName</errorDisplayField>
         <errorMessage>Please, click on &quot;Calculate Score&quot; and follow the approval instructions before moving the stage.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Do_Not_Skip_SDO_Review</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$RecordType.DeveloperName = &quot;Sales_Development&quot;,
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &quot;Qualified&quot;),
+NOT(ISPICKVAL(PRIORVALUE(StageName), &quot;In Review&quot;))
+)</errorConditionFormula>
+        <errorMessage>Please mark this opportunity to &quot;In Review&quot; before qualifying.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Favor_End_Date_required_to_Activate</fullName>
