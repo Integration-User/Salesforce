@@ -4,6 +4,29 @@
         <processMetadataValues>
             <name>emailAlertSelection</name>
             <value>
+                <stringValue>Data_Support_Outside_Office_Hours_Email_Alert</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_10_A1</name>
+        <label>Send Help Desk Outside Office Hours</label>
+        <locationX>1000</locationX>
+        <locationY>200</locationY>
+        <actionName>Case.Data_Support_Outside_Office_Hours_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.Data_Support_Outside_Office_Hours_Email_Alert</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
                 <stringValue>Help_Desk_Weekend_Email_Alert</stringValue>
             </value>
         </processMetadataValues>
@@ -460,6 +483,9 @@
         <label>myDecision7</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision9</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_8</name>
@@ -475,6 +501,34 @@
                 <targetReference>myRule_8_A1</targetReference>
             </connector>
             <label>Data Support Case Created during Weekend</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision9</name>
+        <label>myDecision9</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_10</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_10</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_10_A1</targetReference>
+            </connector>
+            <label>Help Desk Case Outside Office Hours</label>
         </rules>
     </decisions>
     <decisions>
@@ -733,6 +787,50 @@
             <value>
                 <stringValue>AND(
 ISNEW(),
+[Case].Submitted_Within_Office_Hours__c=&quot;No&quot;,
+[Case].RecordType.Name = &quot;Help Desk&quot;,
+
+OR(
+ISPICKVAL([Case].Origin,&quot;Email&quot;),
+ISPICKVAL([Case].Origin,&quot;Customer Success&quot;),
+ISPICKVAL([Case].Origin,&quot;External Data Support&quot;)),
+
+OR(
+[Case].Submitted_Day__c=&quot;Monday&quot;,
+[Case].Submitted_Day__c=&quot;Tuesday&quot;,
+[Case].Submitted_Day__c=&quot;Wednesday&quot;,
+[Case].Submitted_Day__c=&quot;Thursday&quot;,
+[Case].Submitted_Day__c=&quot;Friday&quot;)
+)
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_10</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+{!myVariable_current.Submitted_Within_Office_Hours__c}=&quot;No&quot;,
+{!myVariable_current.RecordType.Name} = &quot;Help Desk&quot;,
+
+OR(
+ISPICKVAL({!myVariable_current.Origin},&quot;Email&quot;),
+ISPICKVAL({!myVariable_current.Origin},&quot;Customer Success&quot;),
+ISPICKVAL({!myVariable_current.Origin},&quot;External Data Support&quot;)),
+
+OR(
+{!myVariable_current.Submitted_Day__c}=&quot;Monday&quot;,
+{!myVariable_current.Submitted_Day__c}=&quot;Tuesday&quot;,
+{!myVariable_current.Submitted_Day__c}=&quot;Wednesday&quot;,
+{!myVariable_current.Submitted_Day__c}=&quot;Thursday&quot;,
+{!myVariable_current.Submitted_Day__c}=&quot;Friday&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
 [Case].RecordType.Name = &quot;Help Desk&quot;,
 
 OR(
@@ -793,7 +891,7 @@ OR(
 {!myVariable_current.Submitted_Day__c}=&quot;Saturday&quot;,
 {!myVariable_current.Submitted_Day__c}=&quot;Sunday&quot;))</expression>
     </formulas>
-    <interviewLabel>Help_Desk_Case_Processes-12_InterviewLabel</interviewLabel>
+    <interviewLabel>Help_Desk_Case_Processes-11_InterviewLabel</interviewLabel>
     <label>Help Desk Case Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>

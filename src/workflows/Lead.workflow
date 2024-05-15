@@ -43,6 +43,16 @@
         <template>Process_Notifications/Referral</template>
     </alerts>
     <alerts>
+        <fullName>New_Advisory_Referral_Alert_Email</fullName>
+        <description>New Advisory Referral Alert Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Templates/New_Referral</template>
+    </alerts>
+    <alerts>
         <fullName>New_Referral_Alert_Email</fullName>
         <description>New Referral Alert Email</description>
         <protected>false</protected>
