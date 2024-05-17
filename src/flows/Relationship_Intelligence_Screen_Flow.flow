@@ -23,7 +23,7 @@
         <locationX>182</locationX>
         <locationY>458</locationY>
         <defaultConnector>
-            <targetReference>Create_Relationship_Intelligence</targetReference>
+            <targetReference>Success_Screen_without_GPN</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -462,7 +462,7 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>490</locationX>
+        <locationX>578</locationX>
         <locationY>974</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -574,6 +574,26 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Success_Screen_without_GPN</name>
+        <label>Success Screen without GPN</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Relationship_Intelligence</targetReference>
+        </connector>
+        <fields>
+            <name>WithoutGPN</name>
+            <fieldText>&lt;p&gt;Relationship Intelligence record has been added.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Finish</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
