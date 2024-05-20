@@ -79,6 +79,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>New_Product_Expansion_Owner__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Priority__c</field>
             </layoutItems>
             <layoutItems>
@@ -626,6 +630,22 @@
         <fields>CORE.USERS.FULL_NAME</fields>
         <fields>TASK.TYPE</fields>
         <relatedList>RelatedHistoryList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>Buying_Process__c</fields>
+        <fields>Goals__c</fields>
+        <fields>Problems__c</fields>
+        <fields>Needs__c</fields>
+        <fields>Active__c</fields>
+        <fields>Related_Opportunity__c</fields>
+        <fields>CREATED_DATE</fields>
+        <fields>CREATEDBY_USER</fields>
+        <relatedList>Relationship_Intelligence__c.Account__c</relatedList>
+        <sortField>CREATED_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <excludeButtons>MassChangeOwner</excludeButtons>
