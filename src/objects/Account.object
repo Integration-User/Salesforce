@@ -1751,6 +1751,17 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>New_Product_Expansion_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Product Expansion Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Accounts6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>News_ID__c</fullName>
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
