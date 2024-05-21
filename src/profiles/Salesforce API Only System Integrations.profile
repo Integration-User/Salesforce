@@ -11835,7 +11835,7 @@
         <apexClass>zisf__zicJobsControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
-    <custom>false</custom>
+    <custom>true</custom>
     <fieldPermissions>
         <editable>false</editable>
         <field>AAKCS__AAkonsult_Settings__mdt.AAKCS__Disable_Triggers__c</field>
@@ -12364,6 +12364,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Named_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.New_Product_Expansion_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
