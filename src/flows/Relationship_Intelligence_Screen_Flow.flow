@@ -18,6 +18,28 @@
         </value>
     </choices>
     <decisions>
+        <name>Form_Decision</name>
+        <label>Form Decision</label>
+        <locationX>182</locationX>
+        <locationY>974</locationY>
+        <defaultConnector>
+            <targetReference>Completed_All_Forms_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_GPN</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GPN_Choice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>No</elementReference>
+                </rightValue>
+            </conditions>
+            <label>No GPN</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>GPN_Decision</name>
         <label>GPN Decision</label>
         <locationX>182</locationX>
@@ -90,6 +112,9 @@
         <label>Create Relationship Intelligence</label>
         <locationX>182</locationX>
         <locationY>866</locationY>
+        <connector>
+            <targetReference>Form_Decision</targetReference>
+        </connector>
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
@@ -351,6 +376,22 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Completed_All_Forms_Screen</name>
+        <label>Completed All Forms Screen</label>
+        <locationX>314</locationX>
+        <locationY>1082</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Success_DisplayTxt</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;A Relationship Intelligence record has been created for this opportunity.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Contact_and_Department</name>
         <label>Contact and Department</label>
         <locationX>182</locationX>
@@ -473,7 +514,7 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Relationship_Intelligence</name>
@@ -590,7 +631,7 @@
         </connector>
         <fields>
             <name>WithoutGPN</name>
-            <fieldText>&lt;p&gt;Relationship Intelligence record has been added.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;A Relationship Intelligence record has been created for this opportunity. Please work to identify goal, problems, needs, and other surrounding intelligence prior to submitting the opportunity for review.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <nextOrFinishButtonLabel>Finish</nextOrFinishButtonLabel>
