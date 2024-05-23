@@ -19394,11 +19394,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.ZoomInfo_Job_Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Lead.ZoomInfo_Last_Name_Lead__c</field>
         <readable>true</readable>
     </fieldPermissions>
