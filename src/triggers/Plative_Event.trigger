@@ -35,7 +35,7 @@ trigger Plative_Event on Event (after insert, after update)  {
         Set<Id> accountIds = new Set<Id>();
         List<String> types = System.Label.Last_Training_Date_Event_Type.split(',');
         for(Event evt : Trigger.new){
-            if(evt.WhatId.getSObjectType().getDescribe().getName() == 'Account' && evt.Status__c == 'Completed' 
+            if(evt.WhatId != null && evt.WhatId.getSObjectType().getDescribe().getName() == 'Account' && evt.Status__c == 'Completed' 
                && (Trigger.isInsert || (Trigger.oldMap != null && evt.Status__c != Trigger.oldMap.get(evt.Id).Status__c)) 
                    && types.contains((String) evt.Type)) {
                    accountIds.add(evt.WhatId);
