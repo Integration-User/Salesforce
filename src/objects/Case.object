@@ -2384,7 +2384,7 @@ null))</formula>
                 <value>
                     <fullName>Client Support</fullName>
                     <default>false</default>
-                    <label>Client Support</label>
+                    <label>Green Street Platform Client Support</label>
                 </value>
                 <value>
                     <fullName>US Data Support</fullName>
@@ -2410,6 +2410,11 @@ null))</formula>
                     <fullName>User List Request</fullName>
                     <default>false</default>
                     <label>User List Request</label>
+                </value>
+                <value>
+                    <fullName>Green Street News Client Support</fullName>
+                    <default>false</default>
+                    <label>Green Street News Client Support</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -9641,6 +9646,10 @@ FALSE))))))))))))</formula>
         <picklistValues>
             <picklist>Origin</picklist>
             <values>
+                <fullName>Client Support News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Customer Success</fullName>
                 <default>false</default>
             </values>
@@ -10099,6 +10108,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>EU Data Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News Client Support</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13602,6 +13615,7 @@ RecordType.Name=&quot;Help Desk&quot;,
 ISPICKVAL(Status,&quot;Closed&quot;),
 OR(
 ISPICKVAL(Support_Type__c,&quot;Client Support&quot;),
+ISPICKVAL(Support_Type__c,&quot;Green Street News Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;User List Request&quot;),
 ISPICKVAL(Support_Type__c,&quot;US Data Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;EU Data Support&quot;)),
