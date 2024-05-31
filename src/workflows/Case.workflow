@@ -128,6 +128,18 @@
         <template>unfiled$public/Escalated_React_News_Case</template>
     </alerts>
     <alerts>
+        <fullName>Help_Desk_CS_News_Weekend_Email_Alert</fullName>
+        <description>Help Desk CS News Weekend Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@greenstreet.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Help_Desk_CS_News_Template_HTML</template>
+    </alerts>
+    <alerts>
         <fullName>Help_Desk_Weekend_Email_Alert</fullName>
         <description>Help Desk Weekend Email Alert</description>
         <protected>false</protected>
