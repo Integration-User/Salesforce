@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <decisions>
+        <name>Salesloft_Meeting_Type_Decision</name>
+        <label>Salesloft Meeting Type Decision</label>
+        <locationX>314</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Meeting_Type_In_Person_Sales</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Salesloft_Meeting_Type__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>In-Person Sales Visit</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Type_to_In_Person_Sales_Visit</targetReference>
+            </connector>
+            <label>Meeting Type In-Person Sales</label>
+        </rules>
+        <rules>
+            <name>Meeting_Type_Virtual_Sales_Visit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Salesloft_Meeting_Type__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Virtual Sales Visit</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Type_to_Virtual_Sales</targetReference>
+            </connector>
+            <label>Meeting Type Virtual Sales Visit</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Salesloft Meeting Type {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sync Salesloft Meeting Type on Event</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Type_to_In_Person_Sales_Visit</name>
+        <label>Update Type to In-Person Sales Visit</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>In-Person Sales Visit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Type_to_Virtual_Sales</name>
+        <label>Update Type to Virtual Sales</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Virtual Sales Visit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Salesloft_Meeting_Type_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Salesloft_Meeting_Type__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Event</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
