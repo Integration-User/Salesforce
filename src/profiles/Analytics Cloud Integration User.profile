@@ -17815,6 +17815,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Salesloft_Meeting_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -22912,6 +22917,11 @@
         <editable>false</editable>
         <field>Task.SalesLoft1__SalesLoft_View_Count__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Salesloft_Meeting_Type__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
