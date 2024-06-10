@@ -61,7 +61,8 @@ trigger Plative_Event on Event (after insert, after update)  {
                                                    AND event.Status__c = 'Completed']; 
         if(listEventRelation != null && listEventRelation.size() > 0){
             for(EventWhoRelation evtRel : listEventRelation){
-                if(!mapContact.containskey(evtRel.relationid))
+                String conId = evtRel.relationid;
+                if(!mapContact.containskey(evtRel.relationid) && conId.startsWith('003'))
                     mapContact.put(evtRel.relationid, new Contact(id=evtRel.relationid, Attended_Training_Date__c=evtRel.Event.StartDateTime.date()));
             }
             try{
