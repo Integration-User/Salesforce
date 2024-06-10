@@ -4,8 +4,8 @@
     <assignments>
         <name>Final_Analyst_Hours_for_Account</name>
         <label>Final Analyst Hours for Account</label>
-        <locationX>556</locationX>
-        <locationY>323</locationY>
+        <locationX>138</locationX>
+        <locationY>1355</locationY>
         <assignmentItems>
             <assignToReference>AnalystHoursForAccount</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Total_Analyst_Hours_For_Account</name>
         <label>Total Analyst Hours For Account</label>
-        <locationX>1069</locationX>
-        <locationY>131</locationY>
+        <locationX>138</locationX>
+        <locationY>947</locationY>
         <assignmentItems>
             <assignToReference>AnalystHoursForAccount</assignToReference>
             <operator>Add</operator>
@@ -34,10 +34,56 @@
         </connector>
     </assignments>
     <decisions>
+        <name>IsRelatedToEmptyOnEvent</name>
+        <label>Is Related To Empty On Event</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Task_Should_be_Completed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhoId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhoId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>003</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhatId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Related_To_Field_On_Event</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Task_Should_be_Completed</name>
         <label>Task Should be Completed</label>
-        <locationX>506</locationX>
-        <locationY>127</locationY>
+        <locationX>182</locationX>
+        <locationY>623</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Checking_Task_Status</name>
@@ -73,8 +119,8 @@
     <loops>
         <name>Get_Task_Analyst_Hours_Count</name>
         <label>Get Task Analyst Hours Count</label>
-        <locationX>746</locationX>
-        <locationY>324</locationY>
+        <locationX>50</locationX>
+        <locationY>1247</locationY>
         <collectionReference>Get_All_Completed_Task_Info</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -87,8 +133,8 @@
     <loops>
         <name>Iterate_All_Tasks</name>
         <label>Iterate All Tasks</label>
-        <locationX>904</locationX>
-        <locationY>131</locationY>
+        <locationX>50</locationX>
+        <locationY>839</locationY>
         <collectionReference>Get_Events_For_Account</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -107,7 +153,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -120,8 +166,8 @@
     <recordLookups>
         <name>Get_All_Completed_Task_Info</name>
         <label>Get All Completed Task Info</label>
-        <locationX>900</locationX>
-        <locationY>324</locationY>
+        <locationX>50</locationX>
+        <locationY>1139</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Task_Analyst_Hours_Count</targetReference>
@@ -164,8 +210,8 @@
     <recordLookups>
         <name>Get_Events_For_Account</name>
         <label>Get Events For Account</label>
-        <locationX>735</locationX>
-        <locationY>115</locationY>
+        <locationX>50</locationX>
+        <locationY>731</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Iterate_All_Tasks</targetReference>
@@ -206,8 +252,8 @@
     <recordUpdates>
         <name>Update_Account_For_Analyst_Hours</name>
         <label>Update Account For Analyst Hours</label>
-        <locationX>744</locationX>
-        <locationY>559</locationY>
+        <locationX>50</locationX>
+        <locationY>1547</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -224,11 +270,27 @@
         </inputAssignments>
         <object>Account</object>
     </recordUpdates>
-    <start>
-        <locationX>68</locationX>
-        <locationY>44</locationY>
+    <recordUpdates>
+        <name>Update_Related_To_Field_On_Event</name>
+        <label>Update Related To Field On Event</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Task_Should_be_Completed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>IsRelatedToEmptyOnEvent</targetReference>
         </connector>
         <object>Event</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
