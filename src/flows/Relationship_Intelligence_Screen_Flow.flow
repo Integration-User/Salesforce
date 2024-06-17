@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>60.0</apiVersion>
+    <choices>
+        <name>No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>GPN_Decision</name>
+        <label>GPN Decision</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Create_Relationship_Intelligence</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Have_GPN</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GPN_Choice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Relationship_Intelligence</targetReference>
+            </connector>
+            <label>Have GPN</label>
+        </rules>
+    </decisions>
     <dynamicChoiceSets>
         <name>BuyingProcessChoiceSet</name>
         <dataType>Picklist</dataType>
@@ -9,7 +50,20 @@
         <picklistField>Buying_Process__c</picklistField>
         <picklistObject>Relationship_Intelligence__c</picklistObject>
     </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>CompetitionChoice</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Competition__c</picklistField>
+        <picklistObject>Relationship_Intelligence__c</picklistObject>
+    </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <name>formulaCompetition</name>
+        <dataType>Boolean</dataType>
+        <expression>ISBLANK({!Other_Competition})</expression>
+    </formulas>
     <interviewLabel>Relationship Intelligence Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Relationship Intelligence Screen Flow</label>
     <processMetadataValues>
@@ -34,8 +88,11 @@
     <recordCreates>
         <name>Create_Relationship_Intelligence</name>
         <label>Create Relationship Intelligence</label>
-        <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationX>182</locationX>
+        <locationY>866</locationY>
+        <faultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>Account__c</field>
             <value>
@@ -49,9 +106,33 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Budget_Details__c</field>
+            <value>
+                <elementReference>Budget_Details</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Budget__c</field>
+            <value>
+                <elementReference>Budget</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Buying_Process__c</field>
             <value>
                 <elementReference>Buying_Process_Stage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Competition__c</field>
+            <value>
+                <elementReference>Competition</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Department__c</field>
+            <value>
+                <elementReference>Department</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -61,9 +142,21 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Key_Contact__c</field>
+            <value>
+                <elementReference>KeyContact.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Needs__c</field>
             <value>
                 <elementReference>Needs</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Other_Competition__c</field>
+            <value>
+                <elementReference>Other_Competition</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -84,11 +177,11 @@
     <recordLookups>
         <name>Get_Opportunity</name>
         <label>Get Opportunity</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Relationship_Intelligence</targetReference>
+            <targetReference>Buying_Process</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -103,15 +196,141 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <screens>
-        <name>Buying_Process</name>
-        <label>Buying Process</label>
-        <locationX>176</locationX>
-        <locationY>350</locationY>
+        <name>Additional_RI_Information</name>
+        <label>Additional RI Information</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Create_Relationship_Intelligence</targetReference>
+        </connector>
+        <fields>
+            <name>Additional_RI_Information_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Additional_RI_Information_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>CompetitionText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;What other options/competitors are being used or considered?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Competition</name>
+                    <choiceReferences>CompetitionChoice</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Competition</fieldText>
+                    <fieldType>MultiSelectPicklist</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Other_Competition</name>
+                    <fieldText>Other Competition</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <helpText>&lt;p&gt;If related competitor is unavailable in the “Competition” options, please provide additional insight here.&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Competition</leftValueReference>
+                            <operator>Contains</operator>
+                            <rightValue>
+                                <stringValue>Other</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Additional_RI_Information_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Additional_RI_Information_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>BudgetText</name>
+                    <fieldText>&lt;p&gt;What investment/budget has the prospect/client set aside to solve this problem/achieve this goal?&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Budget</name>
+                    <dataType>Currency</dataType>
+                    <fieldText>Budget</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;Customers stated budget. If a range is provided, please use an average amount.&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Additional_RI_Information_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Additional_RI_Information_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>BudgetDetailsText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;What additional budget details has your key contact shared, i.e. timing of budget, owner of the budget, allocation of the budget?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Budget_Details</name>
+                    <fieldText>Budget Details</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <helpText>&lt;p&gt;Please include relevant context to budget including: Timing, Owner, and Process&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <nextOrFinishButtonLabel>Finish</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Buying_Process</name>
+        <label>Buying Process</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Contact_and_Department</targetReference>
         </connector>
         <fields>
             <name>Buying_Process_Text</name>
@@ -127,19 +346,145 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Relationship_Intelligence</name>
-        <label>Relationship Intelligence</label>
-        <locationX>176</locationX>
-        <locationY>242</locationY>
-        <allowBack>false</allowBack>
+        <name>Contact_and_Department</name>
+        <label>Contact and Department</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Buying_Process</targetReference>
+            <targetReference>GPN_Decision</targetReference>
+        </connector>
+        <fields>
+            <name>Contact_and_Department_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Contact_and_Department_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>KeyContactText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Who is your primary contact for this opportunity?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>KeyContact</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>Key_Contact__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Key Contact</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Relationship_Intelligence__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Contact_and_Department_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Contact_and_Department_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>DepartmentText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;What department/function is your primary contact in?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Department</name>
+                    <dataType>String</dataType>
+                    <fieldText>Department</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;Represents the department(s) that you are extracting relationship insights from.&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Define_GPN</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Have you identified the customer&apos;s goals, problems, and needs?&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>GPN_Choice</name>
+            <choiceReferences>Yes</choiceReferences>
+            <choiceReferences>No</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Please select your answer</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>490</locationX>
+        <locationY>974</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorText</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; color: rgb(255, 0, 0);&quot;&gt;An error has occurred. Please contact your system administrator.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Relationship_Intelligence</name>
+        <label>Goals Problems Needs</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Additional_RI_Information</targetReference>
         </connector>
         <fields>
             <name>Relationship_Intelligence_Section1</name>
@@ -157,7 +502,7 @@
                     <fieldText>Goals</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -186,7 +531,7 @@
                     <fieldText>Problems</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -215,7 +560,7 @@
                     <fieldText>Needs</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -233,7 +578,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Opportunity</targetReference>
