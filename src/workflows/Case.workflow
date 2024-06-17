@@ -128,6 +128,18 @@
         <template>unfiled$public/Escalated_React_News_Case</template>
     </alerts>
     <alerts>
+        <fullName>GS_News_Untouched_Cases_Alert</fullName>
+        <description>GS News Untouched Cases Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>adillard@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@greenstreet.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Untouched_Help_Desk_Cases</template>
+    </alerts>
+    <alerts>
         <fullName>Help_Desk_CS_News_Weekend_Email_Alert</fullName>
         <description>Help Desk CS News Weekend Email Alert</description>
         <protected>false</protected>
