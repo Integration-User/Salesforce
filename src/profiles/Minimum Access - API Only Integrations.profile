@@ -31,6 +31,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Salesloft_Meeting_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Strategy__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -197,6 +202,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.Objective__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Salesloft_Meeting_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
