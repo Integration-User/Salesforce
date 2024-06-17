@@ -116,13 +116,52 @@ public without sharing class Plative_OpportunityTriggerHandler {
             List<String> stageNames = new List<String>{'1 - Introducing', '2 - Conducting Needs Analysis', '3 - Qualifying', 'Closed Lost'};
             Set<Id> oppIds = new Set<Id>();
             // SF-770 Changes
-            Map<Id, Integer> relIntelligenceOpp = new  Map<Id, Integer>();
+            /* Map<Id, Integer> relIntelligenceOpp = new  Map<Id, Integer>();
             for(AggregateResult result : [SELECT count(Id), Related_Opportunity__c 
                                           FROM Relationship_Intelligence__c 
                                           WHERE Related_Opportunity__c IN :triggerNewMap.keySet() 
                                           AND Related_Opportunity__c != null AND Active__c = TRUE GROUP BY Related_Opportunity__c ]) {
                 if(String.valueof(result.get('Related_Opportunity__c')) != null) relIntelligenceOpp.put(String.valueof(result.get('Related_Opportunity__c')), Integer.valueOf(result.get('expr0')));
-            }
+            }*/
+			Map<Id, Integer> relIntelligenceOpp = new  Map<Id, Integer>(); // SF-770
+			Map<Id, Integer> relIntelligenceWinOpp = new  Map<Id, Integer>(); //SF-771 to opportunity’s “Win Validation = Pending Review” the following fields should be required to be populated on the related relationship intelligence record(s)
+			Map<Id, List<String>> winOppEmptyField = new  Map<Id, List<String>>();
+            for(Relationship_Intelligence__c result : [SELECT id, Name, Related_Opportunity__c, Competition__c, Key_Contact__c, 
+													   Department__c, Budget__c, Budget_Details__c 
+													   FROM Relationship_Intelligence__c 
+													   WHERE Related_Opportunity__c IN :triggerNewMap.keySet() 
+													   AND Related_Opportunity__c != null AND Active__c = TRUE ORDER By CreatedDate DESC ]) {
+				if(relIntelligenceOpp.containsKey(result.Related_Opportunity__c)) {
+					Integer num = relIntelligenceOpp.get(result.Related_Opportunity__c) + 1;
+					relIntelligenceOpp.put(result.Related_Opportunity__c, num);
+				}
+				else relIntelligenceOpp.put(result.Related_Opportunity__c, 1);
+				//SF-771
+				if(relIntelligenceWinOpp.containsKey(result.Related_Opportunity__c) && String.isNotBlank(result.Competition__c)
+				   && (String.isNotBlank(result.Key_Contact__c) || String.isNotBlank(result.Department__c)) 
+				   && result.Budget__c != null && String.isNotBlank(result.Budget_Details__c)) {
+					   Integer num = relIntelligenceWinOpp.get(result.Related_Opportunity__c) + 1;
+					   relIntelligenceWinOpp.put(result.Related_Opportunity__c, num);                           
+				} else if(!relIntelligenceWinOpp.containsKey(result.Related_Opportunity__c) && String.isNotBlank(result.Competition__c)
+				   && (String.isNotBlank(result.Key_Contact__c) || String.isNotBlank(result.Department__c)) 
+				   && result.Budget__c != null && String.isNotBlank(result.Budget_Details__c)) {
+					relIntelligenceWinOpp.put(result.Related_Opportunity__c, 1);
+				}
+                // Changes to show missing field info from all Relationship Intelligence record on Opportunity Records.
+                String missingFields = '';
+                if(String.isBlank(result.Competition__c)) missingFields = 'Competition, ';
+                if(String.isBlank(result.Key_Contact__c)) missingFields += 'Key Contact, ';
+                if(String.isBlank(result.Department__c)) missingFields += 'Department, ';    
+                if(result.Budget__c == null) missingFields += 'Budget, ';  
+                if(String.isBlank(result.Budget_Details__c)) missingFields += 'Budget Details, ';   
+                if(String.isNotBlank(missingFields) && winOppEmptyField.containsKey(result.Related_Opportunity__c)) {
+                    winOppEmptyField.get(result.Related_Opportunity__c).add(result.Name + ' - ' + missingFields.removeEnd(', '));                                      
+                } else if(String.isNotBlank(missingFields) && !winOppEmptyField.containsKey(result.Related_Opportunity__c)) {
+                    winOppEmptyField.put(result.Related_Opportunity__c, new List<String>{result.Name + ' - ' + missingFields.removeEnd(', ')});                                      
+                }
+				//End Map Preparation SF-771
+				
+			}
             // END SF-770 Changes
 
             for (Opportunity oppty : triggerNewMap.values()) {
@@ -132,18 +171,29 @@ public without sharing class Plative_OpportunityTriggerHandler {
                     && !stageNames.contains(oppty.StageName) && !x3x3opportunities.contains(oppty.Id)) {
                         oppty.addError('One contact must have a 3x3 Level designated before moving to Stage 4.');
                 }
+                // END SF-768 - 3X3 Contact Levels
                 //SF-770 Changes
-                if((oldOppty.StageName != oppty.StageName || (oppty.Win_Validation__c == 'Pending Review' && oldOppty.Win_Validation__c != oppty.Win_Validation__c))
-                   && (!relIntelligenceOpp.containsKey(oppty.id) || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) < 1))
+                if(oldOppty.StageName != oppty.StageName && (!relIntelligenceOpp.containsKey(oppty.id) || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) < 1))
                    && ((oppty.recordTypeId == renewalRecordTypeId && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won'))
                        || (oppty.recordTypeId == salesRecordTypeId && !stageNames.contains(oppty.StageName))
                        || (oppty.recordTypeId == salesDevRecordTypeId && (oppty.StageName == 'In Review' || oppty.StageName == 'Qualified')))) {
                     oppty.addError('Opportunity must have at least one active Relationship Intelligence record.');
                 }
                 // END SF-770 Changes
+                // SF-771 Changes
+                if((oppty.Win_Validation__c == 'Pending Review' && oldOppty.Win_Validation__c != oppty.Win_Validation__c)
+                   && (!relIntelligenceOpp.containsKey(oppty.id) || !relIntelligenceWinOpp.containsKey(oppty.id) 
+                       || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceWinOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) != relIntelligenceWinOpp.get(oppty.id)))
+                   && ((oppty.recordTypeId == renewalRecordTypeId && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won'))
+                       || (oppty.recordTypeId == salesRecordTypeId && !stageNames.contains(oppty.StageName)))) {
+                    String errorMessage = 'A related Relationship Intelligence record is missing, please update to continue. ';
+                    if(winOppEmptyField.containsKey(oppty.id) && winOppEmptyField.get(oppty.id) != null) errorMessage += string.join(winOppEmptyField.get(oppty.id),' & ');
+                    oppty.Win_Validation__c.addError(errorMessage, FALSE);
+                }
+                // END SF-771 Changes
             }
             
-            // END SF-768 - 3X3 Contact Levels
+            
             Boolean isSuccess = Plative_SFToNSSyncUtility.updateSyncToNSField(triggerOldMap,triggerNewMap,
                                                          'Opportunity', 'Update');
             Plative_OpportunityTriggerHelper.checkIfDeptOrClassUpdated(Trigger.new, triggerOldMap);
