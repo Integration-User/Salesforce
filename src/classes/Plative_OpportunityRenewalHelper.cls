@@ -523,4 +523,63 @@ public class Plative_OpportunityRenewalHelper {
 
         update listLineItems;
     }
+    // SF-964 : Creatating Multiple Client Access Cases for Green Street or Green Street News
+    public static void CreateDeActivationCases(List<Opportunity> triggerNew, Map<Id,Opportunity> triggerOldMap){
+        List<Case> caseList = new List<Case>();
+        Id recordTypeId = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Client_Access').getRecordTypeId();
+        Group groupInfo = [Select Id, name from Group where DeveloperName = 'Client_Deactivation' AND Type = 'Queue' LIMIT 1];
+        
+        // Get Green Street News product List to create DeActivation Case
+        System_Configuration__mdt productConfig = System_Configuration__mdt.getInstance('Green_Street_News_Platform');
+        List<String> productList = productConfig.Value__c.split(';');
+
+        for(Opportunity opp : triggerNew) {
+            Opportunity oldOpp = triggerOldMap.get(opp.Id);
+            // Checking Same criteria as per Opportunity Processes Builder logic 
+            if(opp.IsClosed && String.isNotBlank(opp.Activation_Deactivation_Needs__c) 
+               && opp.Activation_Deactivation_Needs__c != 'None' && oldOpp.IsClosed != opp.IsClosed) {
+                   String products = opp.Products__c;
+                   Boolean isGreenStreetNews = false;
+                   Boolean isGreenStreet = false;
+                   // For Green Street News product Check
+                   for(String product : productList) {
+                       if(String.isNotBlank(products) && products.containsIgnoreCase(product)) {
+                           isGreenStreetNews = true;
+                           break;
+                       }
+                   }
+                   // For Green Street product Check
+                   if(String.isNotBlank(products)) {
+                       for(String oppProduct : products.split(';')) {
+                           if(!productList.contains(oppProduct)) {
+                               isGreenStreet = true;
+                               break;
+                           }
+                       }
+                   }
+                   system.debug('isGreenStreetNews->' + isGreenStreetNews);
+                   system.debug('isGreenStreet->' + isGreenStreet);
+                   
+                   // Green Street Platform Case
+                   if(isGreenStreet) {
+                       Case activationCase = new Case(BusinessHoursId = System.Label.Default_Business_Hours_Id, recordTypeId = recordTypeId,
+                                                      AccountId = opp.AccountId, ActivationDeactivation_Needs__c = opp.Activation_Deactivation_Needs__c,
+                                                      CurrencyIsoCode = 'USD', Due_Date__c = opp.Contract_Start_Date__c, Minutes_Spent_Cases__c = 3,
+                                                      Opportunity__c = opp.Id, Origin = 'Automation', ownerId = groupInfo.Id, Priority = 'High', 
+                                                      Status = 'New', Subject = Opp.Account_Name__c +' - '+ opp.Activation_Deactivation_Needs__c, Platform__c = 'Green Street');
+                       caseList.add(activationCase);
+                   }
+                   if(isGreenStreetNews) {
+                       Case activationCaseForNews = new Case(BusinessHoursId = System.Label.Default_Business_Hours_Id, recordTypeId = recordTypeId,
+                                                             AccountId = opp.AccountId, ActivationDeactivation_Needs__c = opp.Activation_Deactivation_Needs__c,
+                                                             CurrencyIsoCode = 'USD', Due_Date__c = opp.Contract_Start_Date__c, Minutes_Spent_Cases__c = 3,
+                                                             Opportunity__c = opp.Id, Origin = 'Automation', ownerId = groupInfo.Id, Priority = 'High', 
+                                                             Status = 'New', Subject = Opp.Account_Name__c +' - '+ opp.Activation_Deactivation_Needs__c, Platform__c = 'Green Street News');
+                       caseList.add(activationCaseForNews); 
+                   }
+               }  
+        }
+        system.debug('caseList->' + caseList);
+        if(!caseList.isEmpty() && caseList.size() > 0) insert caseList;
+    }
 }
