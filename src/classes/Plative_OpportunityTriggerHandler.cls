@@ -96,6 +96,9 @@ public without sharing class Plative_OpportunityTriggerHandler {
             if(perDesignatedARR) {
                 Plative_OpportunityRenewalHelper.updateOpportunityAllocatedAmount(designatedOppARR);
             }
+            
+            //SF-964 - Create Multiple Client Access Cases
+            Plative_OpportunityRenewalHelper.CreateDeActivationCases(lstOppty, triggerOldMap);
 
             Plative_OpportunityTriggerHandler.afterUpdateRun = true;
 

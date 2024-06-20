@@ -81,13 +81,28 @@ public class ConsolidatedOpportunity {
     
     @AuraEnabled(cacheable=true)
     public static List<opportunityWrapper> getAllOpportunityLineItems(Id caseId){
-        List<Case> cse = [Select Id, Opportunity__c from Case where id = :caseId];
+        List<Case> cse = [Select Id, Opportunity__c, Platform__c from Case where id = :caseId];
+        System_Configuration__mdt productConfig = System_Configuration__mdt.getInstance('Green_Street_News_Platform');
+        List<String> productList = productConfig.Value__c.split(';');
+        system.debug('productList->' + productList);
+        
         List<opportunityWrapper> oppWrapperList = new List<opportunityWrapper>();
         List<OpportunityLineItem> OppLineItemsList = new List<OpportunityLineItem> ();
         if(!cse.isEmpty()) {
-            OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
-                                                          FROM OpportunityLineItem 
-                                                          WHERE OpportunityId =: cse[0].Opportunity__c];
+            if(String.isNotBlank(cse[0].Platform__c) && cse[0].Platform__c == 'Green Street News') {
+                OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
+                                    FROM OpportunityLineItem 
+                                    WHERE OpportunityId =: cse[0].Opportunity__c AND Product2.Name IN :productList];
+            } else if(String.isNotBlank(cse[0].Platform__c) && cse[0].Platform__c == 'Green Street') {
+                OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
+                                    FROM OpportunityLineItem 
+                                    WHERE OpportunityId =: cse[0].Opportunity__c AND Product2.Name NOT IN :productList];
+            } else {
+                OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
+                                    FROM OpportunityLineItem 
+                                    WHERE OpportunityId =: cse[0].Opportunity__c];
+            }
+           
             if(!OppLineItemsList.isEmpty()) {
                 for(OpportunityLineItem oil : OppLineItemsList){
                     opportunityWrapper oppWrapper = new opportunityWrapper();
