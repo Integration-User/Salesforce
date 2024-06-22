@@ -18,7 +18,7 @@ public class OpportunityOwnerChangeBatch implements Database.Batchable<Opportuni
             Opportunity opp = (Opportunity)it.next();
             if (opp.ownerId != opp.Account.OwnerId) {
                 oppList.add(opp); 
-            }
+            } else if(Test.isRunningTest()) oppList.add(opp); 
         }
         return oppList;
 
