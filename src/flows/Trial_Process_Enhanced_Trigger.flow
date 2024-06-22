@@ -38,6 +38,13 @@
                     <stringValue>React News</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Products__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Green Street News: Europe</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Opportunity_Review_Case</targetReference>
             </connector>

@@ -9,7 +9,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>US_Closed_Won_Subscription</name>
-            <conditionLogic>(1 OR 6) AND 2 AND 3 AND 4 AND 5</conditionLogic>
+            <conditionLogic>(1 OR 6) AND 2 AND 3 AND 4 AND 5 AND 7</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -50,6 +50,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Sales_Opportunity_Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Products__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Green Street News: Europe</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -60,7 +67,7 @@
         </rules>
         <rules>
             <name>UK_Closed_Won_Subscription</name>
-            <conditionLogic>(1 OR 6) AND 2 AND 3 AND 4 AND 5</conditionLogic>
+            <conditionLogic>(1 OR 6) AND 2 AND 3 AND 4 AND 5 AND 7</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -103,6 +110,13 @@
                     <stringValue>Sales_Opportunity_Closed</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Products__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Green Street News: Europe</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Create_UK_Activation_Compliance</targetReference>
             </connector>
@@ -111,7 +125,7 @@
         </rules>
         <rules>
             <name>US_Lost_Renewal_Subscription</name>
-            <conditionLogic>((1 OR 8) AND 2 AND 5 AND 7 AND 9) OR (2 AND (3 OR 10) AND 4 AND 5 AND 6 AND 9)</conditionLogic>
+            <conditionLogic>((1 OR 8) AND 2 AND 5 AND 7 AND 9 AND 11) OR (2 AND (3 OR 10) AND 4 AND 5 AND 6 AND 9 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -182,6 +196,13 @@
                     <stringValue>Sales_Opportunity_Closed</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Products__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Green Street News: Europe</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Create_US_Deactivation_Compliance</targetReference>
             </connector>
@@ -190,7 +211,7 @@
         </rules>
         <rules>
             <name>UK_Lost_Renewal_Subscription</name>
-            <conditionLogic>((1 OR 8) AND 2 AND 5 AND 7 AND 9) OR (2 AND (3 OR 10) AND 4 AND 5 AND 6 AND 9)</conditionLogic>
+            <conditionLogic>((1 OR 8) AND 2 AND 5 AND 7 AND 9 AND 11) OR (2 AND (3 OR 10) AND 4 AND 5 AND 6 AND 9 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -259,6 +280,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Sales_Opportunity_Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Products__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Green Street News: Europe</stringValue>
                 </rightValue>
             </conditions>
             <connector>
