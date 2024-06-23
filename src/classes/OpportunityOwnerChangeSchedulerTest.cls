@@ -31,6 +31,7 @@ public class OpportunityOwnerChangeSchedulerTest {
         opp.Sales_Type__c = 'New';
         opp.Department__c = 'Corporate';
         opp.Class__c = 'Corporate';
+        opp.Products__c ='API';
         Insert opp;
     }
     @isTest static void testAccountOwner() {
@@ -82,5 +83,8 @@ public class OpportunityOwnerChangeSchedulerTest {
         String sch ='0 48 * * * ?'; 
         System.schedule('Schedule to update Opp Owner', sch,scheUpdateCon);
         Test.stopTest();
+    }
+    @isTest static void testOpportunityOwnerChangeBatch() {
+        Database.executeBatch(new OpportunityOwnerChangeBatch(true), 1);
     }
 }
