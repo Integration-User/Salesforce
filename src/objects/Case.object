@@ -2599,7 +2599,6 @@ null))</formula>
     </fields>
     <fields>
         <fullName>Type_to_Trigger_Survey__c</fullName>
-        <externalId>false</externalId>
         <formula>IF (ISPICKVAL(Type, &quot;Error&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Methodology&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Problem&quot;), TRUE, 
@@ -2611,8 +2610,7 @@ IF (ISPICKVAL(Type, &quot;Research Request&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;“Go Fish” / Miscellaneous&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;Advanced Back Up Data&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;Complex Methodology&quot;), TRUE,
-IF (ISPICKVAL(Type, &quot;Research / Analyst Input&quot;), TRUE,
-FALSE))))))))))))</formula>
+FALSE)))))))))))</formula>
         <label>Type to Trigger Survey</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
