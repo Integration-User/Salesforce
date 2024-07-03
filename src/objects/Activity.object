@@ -935,6 +935,12 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Canceled_Date__c</fullName>
+        <label>Canceled Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Case__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1151,6 +1157,12 @@ Owner:User.Manager.Id =  $User.Id,
 Owner:User.Id =  $User.Id)</formula>
         <label>My Team</label>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>No_Show_Date__c</fullName>
+        <label>No Show Date</label>
+        <required>false</required>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Objective__c</fullName>
