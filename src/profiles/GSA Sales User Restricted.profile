@@ -12395,6 +12395,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Market_Data_Deals_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.My_Expansion_Account__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -12560,6 +12565,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.REIT_Data_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.RR_Max_Month__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -12601,6 +12611,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Renewal_Month__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Research_Usage_L60D__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
