@@ -53,7 +53,7 @@
         </rules>
         <rules>
             <name>Canceled_No_Show_is_Blank</name>
-            <conditionLogic>((1 AND 2) OR (3 AND 4)) AND 5</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3) OR (3 AND 4 AND 1)) AND 5 AND (6 OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Canceled_Date__c</leftValueReference>
                 <operator>IsNull</operator>
@@ -87,6 +87,20 @@
                 <operator>LessThan</operator>
                 <rightValue>
                     <elementReference>$Flow.CurrentDateTime</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Show</stringValue>
                 </rightValue>
             </conditions>
             <connector>
