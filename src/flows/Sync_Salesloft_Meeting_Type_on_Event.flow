@@ -34,9 +34,9 @@
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.No_Show_Date__c</leftValueReference>
-                <operator>IsNull</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -53,7 +53,7 @@
         </rules>
         <rules>
             <name>Canceled_No_Show_is_Blank</name>
-            <conditionLogic>1 AND 2 AND 3</conditionLogic>
+            <conditionLogic>((1 AND 2) OR (3 AND 4)) AND 5</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Canceled_Date__c</leftValueReference>
                 <operator>IsNull</operator>
@@ -62,8 +62,22 @@
                 </rightValue>
             </conditions>
             <conditions>
+                <leftValueReference>$Record.Canceled_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
                 <leftValueReference>$Record.No_Show_Date__c</leftValueReference>
-                <operator>IsNull</operator>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.No_Show_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
@@ -190,6 +204,14 @@
         <connector>
             <targetReference>Salesloft_Meeting_Type_Decision</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <inputAssignments>
             <field>Status__c</field>
             <value>
