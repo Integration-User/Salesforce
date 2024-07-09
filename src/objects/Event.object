@@ -1215,8 +1215,12 @@
         <active>true</active>
         <description>This will ensure having all the fields needed filled out before changing status to &quot;Completed&quot;</description>
         <errorConditionFormula>AND(
- $UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
+ ISBLANK(Salesloft_Meeting_Type__c),
+ ISBLANK(Canceled_Date__c),
+ No_Show_Date__c = FALSE,
+ ActivityDate &lt; TODAY(),
  ISPICKVAL (Status__c,&quot;Completed&quot;),
+ $UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
 OR (
  ISPICKVAL(Web_Demo__c, &quot;&quot;),
  ISBLANK( Description ),
@@ -1244,6 +1248,10 @@ $UserRole.Name &lt;&gt; &quot;Research&quot;,
 $UserRole.Name &lt;&gt; &quot;EU REA&quot;,
 $UserRole.Name &lt;&gt; &quot;REA&quot;,
 $UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
+ISBLANK(Salesloft_Meeting_Type__c),
+ISBLANK(Canceled_Date__c),
+No_Show_Date__c = FALSE,
+ActivityDate &lt; TODAY(),
 ISPICKVAL(Status__c,&quot;Completed&quot;),
 OR(
 ISBLANK(Objective__c),
