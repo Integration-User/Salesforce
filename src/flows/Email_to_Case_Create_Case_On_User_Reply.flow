@@ -182,6 +182,11 @@
     </decisions>
     <description>Email2Case: Create new case when user replies on Help Desk Closed Case.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>Text_Body_Formula</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Record.TextBody}, 32000)</expression>
+    </formulas>
     <interviewLabel>Email-to-Case: Create Case When User Replies {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Email-to-Case: Create Case On User Reply</label>
     <processMetadataValues>
@@ -229,7 +234,7 @@
         <inputAssignments>
             <field>Description</field>
             <value>
-                <elementReference>$Record.TextBody</elementReference>
+                <elementReference>Text_Body_Formula</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -297,7 +302,7 @@
         <inputAssignments>
             <field>Description</field>
             <value>
-                <elementReference>$Record.TextBody</elementReference>
+                <elementReference>Text_Body_Formula</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -365,7 +370,7 @@
         <inputAssignments>
             <field>Description</field>
             <value>
-                <elementReference>$Record.TextBody</elementReference>
+                <elementReference>Text_Body_Formula</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -433,7 +438,7 @@
         <inputAssignments>
             <field>Description</field>
             <value>
-                <elementReference>$Record.TextBody</elementReference>
+                <elementReference>Text_Body_Formula</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
