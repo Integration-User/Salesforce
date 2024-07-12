@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Coefficient__c</field>
-        <value xsi:type="xsd:double">2.30123831050398</value>
+        <value xsi:type="xsd:double">3.2945810163959</value>
     </values>
     <values>
         <field>IsForTesting__c</field>
