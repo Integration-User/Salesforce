@@ -186,7 +186,8 @@ public without sharing class Plative_OpportunityTriggerHandler {
                        || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceWinOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) != relIntelligenceWinOpp.get(oppty.id)))
                    && ((oppty.recordTypeId == renewalRecordTypeId && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won'))
                        || (oppty.recordTypeId == salesRecordTypeId && !stageNames.contains(oppty.StageName)))) {
-                    String errorMessage = 'A related Relationship Intelligence record is missing, please update to continue. ' + string.join(winOppEmptyField.get(oppty.id),' & ');
+                    String errorMessage = 'A related Relationship Intelligence record is missing, please update to continue. ';
+                    if(winOppEmptyField.containsKey(oppty.id) && winOppEmptyField.get(oppty.id) != null) errorMessage += string.join(winOppEmptyField.get(oppty.id),' & ');
                     oppty.Win_Validation__c.addError(errorMessage, FALSE);
                 }
                 // END SF-771 Changes
