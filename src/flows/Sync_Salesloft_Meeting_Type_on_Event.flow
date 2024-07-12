@@ -4,7 +4,7 @@
     <decisions>
         <name>Canceled_No_Show_Date_Decision</name>
         <label>Canceled / No Show Date Decision</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>695</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -53,7 +53,7 @@
         </rules>
         <rules>
             <name>Canceled_No_Show_is_Blank</name>
-            <conditionLogic>((1 AND 2 AND 3) OR (3 AND 4 AND 1)) AND 5 AND (6 OR 7)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3) OR (3 AND 4 AND 1)) AND 5 AND 8 AND (6 OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Canceled_Date__c</leftValueReference>
                 <operator>IsNull</operator>
@@ -103,16 +103,52 @@
                     <stringValue>No Show</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Salesloft_Meeting_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Completed_Status</targetReference>
             </connector>
             <label>Canceled / No Show is Blank</label>
         </rules>
+        <rules>
+            <name>Adjust_Start_End_Date</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StartDateTime</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EndDateTime</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Show</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_Scheduled</targetReference>
+            </connector>
+            <label>Adjust Start / End Date</label>
+        </rules>
     </decisions>
     <decisions>
         <name>Salesloft_Meeting_Type_Decision</name>
         <label>Salesloft Meeting Type Decision</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>395</locationY>
         <defaultConnector>
             <targetReference>Canceled_No_Show_Date_Decision</targetReference>
@@ -211,9 +247,22 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Status_Scheduled</name>
+        <label>Update Status Scheduled</label>
+        <locationX>842</locationX>
+        <locationY>803</locationY>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Scheduled</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Status_to_Scheduled</name>
         <label>Update Status to Scheduled</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>287</locationY>
         <connector>
             <targetReference>Salesloft_Meeting_Type_Decision</targetReference>
@@ -237,7 +286,7 @@
     <recordUpdates>
         <name>Update_Type_to_In_Person_Sales_Visit</name>
         <label>Update Type to In-Person Sales Visit</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>503</locationY>
         <connector>
             <targetReference>Canceled_No_Show_Date_Decision</targetReference>
@@ -253,7 +302,7 @@
     <recordUpdates>
         <name>Update_Type_to_Virtual_Sales</name>
         <label>Update Type to Virtual Sales</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>503</locationY>
         <connector>
             <targetReference>Canceled_No_Show_Date_Decision</targetReference>
@@ -267,7 +316,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>320</locationX>
+        <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Update_Status_to_Scheduled</targetReference>
