@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GSA_Letterhead</letterhead>
+    <name>Help Desk CS News Template HTML</name>
+    <style>freeForm</style>
+    <subject>Automated Email (Do Not Reply) - Help Desk Case #{!Case.CaseNumber}</subject>
+    <textOnly>Hi {!Case.SuppliedName},
+
+Thank you for reaching out to Green Street’s Customer Success team. You’ve reached us over the weekend and as a result response times will be delayed.  
+
+We appreciate your patience and look forward to connecting soon.
+
+Best,
+Green Street
+
+Please do not reply to this email as inbound messages are not monitored by Green Street.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

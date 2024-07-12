@@ -5049,11 +5049,11 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Request</fullName>
+                <fullName>Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Direct Conversation</fullName>
+                <fullName>Data Request</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5116,10 +5116,6 @@
                 <fullName>Virtual Sales Visit</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>Voicemail</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Web_Demo__c</picklist>
@@ -5172,6 +5168,9 @@ ISBLANK(Model_Count__c))</errorConditionFormula>
         <fullName>Require_Task_Objective_Strategy</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$UserRole.Name &lt;&gt; &quot;Research&quot;,
+$UserRole.Name &lt;&gt; &quot;EU REA&quot;,
+$UserRole.Name &lt;&gt; &quot;REA&quot;,
 ISPICKVAL(Status,&quot;Completed&quot;),
 OR(
 ISBLANK(Objective__c),

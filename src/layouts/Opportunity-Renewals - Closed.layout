@@ -150,6 +150,10 @@
                 <behavior>Readonly</behavior>
                 <field>High_Value_Target__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Winback__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -462,6 +466,14 @@
                 <behavior>Edit</behavior>
                 <field>OCR_Marketing_Lead_Source__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>New_Sale_Effective_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Renewal_Effective_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -538,13 +550,6 @@
             <sortOrder>11</sortOrder>
         </platformActionListItems>
     </platformActionList>
-    <relatedContent>
-        <relatedContentItems>
-            <layoutItem>
-                <component>wits:newsPanel</component>
-            </layoutItem>
-        </relatedContentItems>
-    </relatedContent>
     <relatedLists>
         <fields>ContactName</fields>
         <fields>Role</fields>
@@ -680,6 +685,22 @@
         <fields>OWNER_NAME</fields>
         <fields>CASES.RECORDTYPE</fields>
         <relatedList>RelatedCaseList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>Buying_Process__c</fields>
+        <fields>Goals__c</fields>
+        <fields>Problems__c</fields>
+        <fields>Needs__c</fields>
+        <fields>Active__c</fields>
+        <fields>Account__c</fields>
+        <fields>CREATED_DATE</fields>
+        <fields>CREATEDBY_USER</fields>
+        <relatedList>Relationship_Intelligence__c.Related_Opportunity__c</relatedList>
+        <sortField>CREATED_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

@@ -2,7 +2,7 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>AskNicely_Closed_Case</fullName>
-        <ccEmails>greenstreet_45d975f@trigger.asknice.ly</ccEmails>
+        <ccEmails>greenstreet_45d975f@emailtosurvey.asknice.ly</ccEmails>
         <description>AskNicely Closed Case</description>
         <protected>false</protected>
         <senderType>CurrentUser</senderType>
@@ -51,6 +51,17 @@
         <template>unfiled$public/Trial_Deactivation_Access_Template</template>
     </alerts>
     <alerts>
+        <fullName>Commercial_Tech_Request_Auto_Reply</fullName>
+        <description>Commercial Tech Request Auto Reply</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requested_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Salesforce_Request_Auto_Response</template>
+    </alerts>
+    <alerts>
         <fullName>Data_Support_Inside_Office_Hours_Email_Alert</fullName>
         <description>Data Support Inside Office Hours Email Alert</description>
         <protected>false</protected>
@@ -72,7 +83,7 @@
         </recipients>
         <senderAddress>noreply@greenstreet.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/Data_Support_Outside_Office_Hours_Template</template>
+        <template>unfiled$public/Help_Desk_Case_Outside_Office_Hours_Template</template>
     </alerts>
     <alerts>
         <fullName>Data_Support_Weekend_Email_Alert</fullName>
@@ -115,6 +126,30 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Escalated_React_News_Case</template>
+    </alerts>
+    <alerts>
+        <fullName>GS_News_Untouched_Cases_Alert</fullName>
+        <description>GS News Untouched Cases Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>adillard@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@greenstreet.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Untouched_Help_Desk_Cases</template>
+    </alerts>
+    <alerts>
+        <fullName>Help_Desk_CS_News_Weekend_Email_Alert</fullName>
+        <description>Help Desk CS News Weekend Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@greenstreet.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Help_Desk_CS_News_Template_HTML</template>
     </alerts>
     <alerts>
         <fullName>Help_Desk_Weekend_Email_Alert</fullName>

@@ -4,6 +4,7 @@ public class Batch_UpdateBillingContactCategoryTest {
     static void testSetup(){
         Trigger_Control_Setting__c setting = new Trigger_Control_Setting__c();
         setting.Opportunity__c = true;
+        setting.Contact__c = true;
         insert setting;
         
         Account accnt = new Account();

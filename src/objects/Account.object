@@ -1274,6 +1274,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Excel_Add_In_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Excel Add-In Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Export_Activated_Users__c</fullName>
         <externalId>false</externalId>
         <formula>HYPERLINK(&apos;/00O5G000007wRTHUA2?pv0=&apos;+X18_digit_Account_ID__c+&apos;&amp;export=1&amp;enc=UTF-8&amp;xf=xlsx&amp;isdtp=p1&apos;,Text(Activated_Users__c))</formula>
@@ -1588,6 +1599,14 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>Last_Training_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Training Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>List_Membership_Account__c</fullName>
         <description>List membership for this account</description>
         <externalId>false</externalId>
@@ -1676,6 +1695,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Market_Data_Deals_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Data &amp; Deals L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>My_Expansion_Account__c</fullName>
         <externalId>false</externalId>
         <formula>IF(US_Expansion_Owner__r.Id = $User.Id, TRUE,
@@ -1728,8 +1758,19 @@ Owner.Id = $User.Id)</formula>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Named Account?</label>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>New_Product_Expansion_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Product Expansion Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Accounts6</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>News_ID__c</fullName>
@@ -2207,6 +2248,17 @@ Owner.Id = $User.Id)</formula>
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>REIT_Data_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>REIT Data L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>RR_Max_Month__c</fullName>
         <externalId>false</externalId>
         <formula>CASE(MONTH( RR_Monthly_Max__c  ),
@@ -2430,6 +2482,17 @@ Owner.Id = $User.Id)</formula>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <label>Research Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -2761,6 +2824,11 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
                     <fullName>18.3 Edge Analytics Ltd</fullName>
                     <default>false</default>
                     <label>18.3 Edge Analytics Ltd</label>
+                </value>
+                <value>
+                    <fullName>21 GSA Canada Ltd</fullName>
+                    <default>false</default>
+                    <label>21 GSA Canada Ltd</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -4360,6 +4428,14 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -4373,6 +4449,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4421,6 +4501,14 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4529,6 +4617,14 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5287,6 +5383,10 @@ Stored as Long on Solr.</description>
                 <fullName>18%2E3 Edge Analytics Ltd</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>21 GSA Canada Ltd</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>TA_Vertical__c</picklist>
@@ -5879,6 +5979,14 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -5896,6 +6004,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Data License Local Data Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5935,6 +6047,14 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Onsite</fullName>
                 <default>false</default>
             </values>
@@ -5944,6 +6064,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5972,6 +6096,14 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6831,6 +6963,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>18%2E3 Edge Analytics Ltd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21 GSA Canada Ltd</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
