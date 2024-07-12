@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Commercial_Tech_Request_Email</name>
         <label>Commercial Tech Request Email</label>
-        <locationX>358</locationX>
-        <locationY>3311</locationY>
+        <locationX>50</locationX>
+        <locationY>3047</locationY>
         <actionName>Case.New_Salesforce_Request_Case_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -21,10 +21,30 @@
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
+        <name>CTR_Auto_Reply</name>
+        <label>CTR Auto Reply</label>
+        <locationX>50</locationX>
+        <locationY>2447</locationY>
+        <actionName>Case.Commercial_Tech_Request_Auto_Reply</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Salesforce_Report_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.Commercial_Tech_Request_Auto_Reply</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>SalesforceRequestCaseClosed</name>
         <label>SalesforceRequestCaseClosed</label>
-        <locationX>358</locationX>
-        <locationY>3983</locationY>
+        <locationX>50</locationX>
+        <locationY>3647</locationY>
         <actionName>Case.Salesforce_Request_Case_Closed</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -40,8 +60,8 @@
     <actionCalls>
         <name>SalesforceRequestStatusUpdate</name>
         <label>SalesforceRequestStatusUpdate</label>
-        <locationX>358</locationX>
-        <locationY>3647</locationY>
+        <locationX>50</locationX>
+        <locationY>3347</locationY>
         <actionName>Case.Salesforce</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -61,8 +81,8 @@
     <decisions>
         <name>Application_Is_Not_Null_Decision</name>
         <label>Application Is Not Null Decision</label>
-        <locationX>490</locationX>
-        <locationY>3191</locationY>
+        <locationX>182</locationX>
+        <locationY>2939</locationY>
         <defaultConnector>
             <targetReference>Case_Is_Changed_Decision</targetReference>
         </defaultConnector>
@@ -87,8 +107,8 @@
     <decisions>
         <name>Case_Is_Changed_Decision</name>
         <label>Case Is Changed Decision</label>
-        <locationX>490</locationX>
-        <locationY>3527</locationY>
+        <locationX>182</locationX>
+        <locationY>3239</locationY>
         <defaultConnector>
             <targetReference>Case_Status_Is_Closed</targetReference>
         </defaultConnector>
@@ -134,8 +154,8 @@
     <decisions>
         <name>Case_Status_Is_Closed</name>
         <label>Case Status Is Closed</label>
-        <locationX>490</locationX>
-        <locationY>3863</locationY>
+        <locationX>182</locationX>
+        <locationY>3539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CaseStatusIsClosed</name>
@@ -157,8 +177,8 @@
     <decisions>
         <name>CTR_Amplitude_Decision</name>
         <label>CTR Amplitude Decision</label>
-        <locationX>490</locationX>
-        <locationY>503</locationY>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>CTR_Chorus_Decision</targetReference>
         </defaultConnector>
@@ -196,8 +216,8 @@
     <decisions>
         <name>CTR_Chorus_Decision</name>
         <label>CTR Chorus Decision</label>
-        <locationX>490</locationX>
-        <locationY>839</locationY>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
         <defaultConnector>
             <targetReference>CTR_Hubspot_Decision</targetReference>
         </defaultConnector>
@@ -228,8 +248,8 @@
     <decisions>
         <name>CTR_Hubspot_Decision</name>
         <label>CTR Hubspot Decision</label>
-        <locationX>490</locationX>
-        <locationY>1175</locationY>
+        <locationX>182</locationX>
+        <locationY>1031</locationY>
         <defaultConnector>
             <targetReference>CTR_Linkedln_Desicion</targetReference>
         </defaultConnector>
@@ -260,8 +280,8 @@
     <decisions>
         <name>CTR_Linkedln_Desicion</name>
         <label>CTR Linkedln Desicion</label>
-        <locationX>490</locationX>
-        <locationY>1511</locationY>
+        <locationX>182</locationX>
+        <locationY>1331</locationY>
         <defaultConnector>
             <targetReference>CTR_Salesloft_Decision</targetReference>
         </defaultConnector>
@@ -292,8 +312,8 @@
     <decisions>
         <name>CTR_Salesloft_Decision</name>
         <label>CTR Salesloft Decision</label>
-        <locationX>490</locationX>
-        <locationY>1847</locationY>
+        <locationX>182</locationX>
+        <locationY>1631</locationY>
         <defaultConnector>
             <targetReference>CTR_ZoomInfo_Decision</targetReference>
         </defaultConnector>
@@ -324,8 +344,8 @@
     <decisions>
         <name>CTR_ZoomInfo_Decision</name>
         <label>CTR ZoomInfo Decision</label>
-        <locationX>490</locationX>
-        <locationY>2183</locationY>
+        <locationX>182</locationX>
+        <locationY>1931</locationY>
         <defaultConnector>
             <targetReference>Salesforce_Request_Category_Decision</targetReference>
         </defaultConnector>
@@ -356,8 +376,8 @@
     <decisions>
         <name>New_Commercial_Tech_Request</name>
         <label>New Commercial Tech Request</label>
-        <locationX>688</locationX>
-        <locationY>383</locationY>
+        <locationX>380</locationX>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Commercial_Tech_Case</name>
@@ -392,8 +412,8 @@
     <decisions>
         <name>Salesforce_Report_Decision</name>
         <label>Salesforce Report Decision</label>
-        <locationX>490</locationX>
-        <locationY>2855</locationY>
+        <locationX>182</locationX>
+        <locationY>2639</locationY>
         <defaultConnector>
             <targetReference>Application_Is_Not_Null_Decision</targetReference>
         </defaultConnector>
@@ -431,8 +451,8 @@
     <decisions>
         <name>Salesforce_Request_Category_Decision</name>
         <label>Salesforce Request Category Decision</label>
-        <locationX>491</locationX>
-        <locationY>2522</locationY>
+        <locationX>182</locationX>
+        <locationY>2231</locationY>
         <defaultConnector>
             <targetReference>Salesforce_Report_Decision</targetReference>
         </defaultConnector>
@@ -483,15 +503,15 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
         <name>Update_Owner_Amplitude</name>
         <label>Update Owner = Amplitude</label>
-        <locationX>358</locationX>
-        <locationY>623</locationY>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <connector>
             <targetReference>CTR_Chorus_Decision</targetReference>
         </connector>
@@ -506,8 +526,8 @@
     <recordUpdates>
         <name>Update_Owner_Chorus</name>
         <label>Update Owner = Chorus</label>
-        <locationX>358</locationX>
-        <locationY>959</locationY>
+        <locationX>50</locationX>
+        <locationY>839</locationY>
         <connector>
             <targetReference>CTR_Hubspot_Decision</targetReference>
         </connector>
@@ -522,8 +542,8 @@
     <recordUpdates>
         <name>Update_Owner_Hubspot</name>
         <label>Update Owner = Hubspot</label>
-        <locationX>358</locationX>
-        <locationY>1295</locationY>
+        <locationX>50</locationX>
+        <locationY>1139</locationY>
         <connector>
             <targetReference>CTR_Linkedln_Desicion</targetReference>
         </connector>
@@ -538,8 +558,8 @@
     <recordUpdates>
         <name>Update_Owner_Linkedln</name>
         <label>Update Owner = Linkedln</label>
-        <locationX>358</locationX>
-        <locationY>1631</locationY>
+        <locationX>50</locationX>
+        <locationY>1439</locationY>
         <connector>
             <targetReference>CTR_Salesloft_Decision</targetReference>
         </connector>
@@ -554,8 +574,8 @@
     <recordUpdates>
         <name>Update_Owner_Salesforce_Report_Request</name>
         <label>Update Owner = Salesforce Report Request</label>
-        <locationX>357</locationX>
-        <locationY>2975</locationY>
+        <locationX>50</locationX>
+        <locationY>2747</locationY>
         <connector>
             <targetReference>Application_Is_Not_Null_Decision</targetReference>
         </connector>
@@ -578,10 +598,10 @@
     <recordUpdates>
         <name>Update_Owner_Salesforce_Request</name>
         <label>Update Owner = Salesforce Request</label>
-        <locationX>358</locationX>
-        <locationY>2640</locationY>
+        <locationX>50</locationX>
+        <locationY>2339</locationY>
         <connector>
-            <targetReference>Salesforce_Report_Decision</targetReference>
+            <targetReference>CTR_Auto_Reply</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -602,8 +622,8 @@
     <recordUpdates>
         <name>Update_Owner_Salesloft</name>
         <label>Update Owner = Salesloft</label>
-        <locationX>358</locationX>
-        <locationY>1967</locationY>
+        <locationX>50</locationX>
+        <locationY>1739</locationY>
         <connector>
             <targetReference>CTR_ZoomInfo_Decision</targetReference>
         </connector>
@@ -618,8 +638,8 @@
     <recordUpdates>
         <name>Update_Owner_ZoomInfo</name>
         <label>Update Owner = ZoomInfo</label>
-        <locationX>358</locationX>
-        <locationY>2303</locationY>
+        <locationX>50</locationX>
+        <locationY>2039</locationY>
         <connector>
             <targetReference>Salesforce_Request_Category_Decision</targetReference>
         </connector>
@@ -632,8 +652,8 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>562</locationX>
-        <locationY>48</locationY>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>New_Commercial_Tech_Request</targetReference>
         </connector>

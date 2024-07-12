@@ -119,6 +119,8 @@
                 <elementReference>myVariable_current.Comments__c</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>Case.Create_Case_Comment</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>53.0</apiVersion>
     <decisions>
@@ -193,10 +195,10 @@
                         <stringValue>String</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.RecordType.Name</leftValueReference>
+                <leftValueReference>myVariable_current.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Salesforce Request</stringValue>
+                    <stringValue>Salesforce_Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -345,7 +347,7 @@
         <object>Case</object>
     </recordUpdates>
     <startElementReference>isChangedDecision2_myRule_1_Comments_c</startElementReference>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

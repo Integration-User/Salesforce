@@ -25,6 +25,9 @@ public class Plative_EmailDistributionOptOutCtrlTest {
         //API Key
         platform.API_Key__c = 'SAL3sf0rc3_AP1';
         insert platform;
+        Trigger_Control_Setting__c tcs = new Trigger_Control_Setting__c();
+        tcs.Contact__c = true;
+        insert tcs;
         
         Test.setMock(HttpCalloutMock.class, new Plative_GSAWebCalloutMock());  
         Account accnt = new Account();
@@ -38,7 +41,8 @@ public class Plative_EmailDistributionOptOutCtrlTest {
         cont.LastName = 'LName';
         cont.Email = 'test@email.com';
         cont.Phone = '9876543210';
-        cont.Contact_Status__c = 'Active';        
+        cont.Contact_Status__c = 'Active';
+        cont.Excel_Last_Use_Date__c = System.now();        
         insert cont;
         
         Product2 product = new Product2();
