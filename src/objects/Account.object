@@ -1747,7 +1747,7 @@ Owner.Id = $User.Id)</formula>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Named Account?</label>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
@@ -1758,7 +1758,7 @@ Owner.Id = $User.Id)</formula>
         <referenceTo>User</referenceTo>
         <relationshipName>Accounts6</relationshipName>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -2463,6 +2463,28 @@ Owner.Id = $User.Id)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Research_Market_Data_Deals_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research+Market Data &amp; Deals L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_REIT_Data_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research + REIT Data L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Restrict_Download__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2938,6 +2960,17 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Transition_Lost_Client__c</fullName>
@@ -6015,6 +6048,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Canada</fullName>
                 <default>false</default>
             </values>
             <values>
