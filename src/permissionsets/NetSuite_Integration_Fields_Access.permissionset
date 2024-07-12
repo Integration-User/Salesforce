@@ -1,31 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Allow users to edit US/EU Expansion Owners and Protected By field</description>
+    <description>Allow edit access to Opportunity NetSuite Integration Fields</description>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.EU_Expansion_Owner__c</field>
+        <field>Opportunity.Class_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Named_Account__c</field>
+        <field>Opportunity.Class__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.New_Product_Expansion_Owner__c</field>
+        <field>Opportunity.DDS_ApprovedARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.DDS_AverageTotalARR__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Protected_By__c</field>
+        <field>Opportunity.Department_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.US_Expansion_Owner__c</field>
+        <field>Opportunity.Department__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sectors_Sold__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Edit Account Expansion Owners and Protected By</label>
+    <label>NetSuite Integration Fields Access</label>
 </PermissionSet>
