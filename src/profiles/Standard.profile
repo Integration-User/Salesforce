@@ -12615,6 +12615,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Research_Market_Data_Deals_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Research_REIT_Data_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Research_Usage_L60D__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -12762,6 +12772,11 @@
         <editable>false</editable>
         <field>Account.Total_Products__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Total_Usage_L60D__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -14450,11 +14465,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.Escalated_To__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Case.Estimated_Completion_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -14536,6 +14546,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.ParentId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Platform__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -19680,6 +19695,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Account_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.Account_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20395,11 +20415,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.New_Sale_Effective_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Opportunity.New_Sales_Opportunity__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20631,11 +20646,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Renewal_Credit__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Renewal_Effective_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -22686,6 +22696,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Sync_Settings__mdt.Sync_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>System_Configuration__mdt.Value__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -35242,7 +35257,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Case.User_List_Requests</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>

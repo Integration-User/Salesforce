@@ -62,14 +62,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.Named_Account__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.New_Product_Expansion_Owner__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -78,12 +73,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Research_Market_Data_Deals_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Research_REIT_Data_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Research_Usage_L60D__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Escalated_To__c</field>
+        <editable>false</editable>
+        <field>Account.Total_Usage_L60D__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -129,11 +134,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Event.Objective__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Event.Salesloft_Meeting_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -223,11 +223,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.New_Sale_Effective_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Opportunity.New_Sales_Opportunity__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -239,11 +234,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Qualified_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Renewal_Effective_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -378,20 +368,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Task.Salesloft_Meeting_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Task.Strategy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Case-Help Desk Layout</layout>
-        <recordType>Case.Help_Desk</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Contact-Contact Layout</layout>
@@ -413,15 +394,6 @@
         <layout>Task-Task Layout</layout>
     </layoutAssignments>
     <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Case</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
@@ -439,11 +411,6 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Subsidiary_Account</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Case.Help_Desk</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

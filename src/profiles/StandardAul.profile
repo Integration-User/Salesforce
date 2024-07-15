@@ -12615,6 +12615,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Research_Market_Data_Deals_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Research_REIT_Data_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Research_Usage_L60D__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -12762,6 +12772,11 @@
         <editable>false</editable>
         <field>Account.Total_Products__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Total_Usage_L60D__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -14447,11 +14462,6 @@
         <editable>false</editable>
         <field>Case.Error__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Escalated_To__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -20095,11 +20105,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Opportunity.New_Sale_Effective_Date__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Opportunity.News_ABAlert__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -20316,11 +20321,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Renewal_Credit__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Renewal_Effective_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
