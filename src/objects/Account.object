@@ -1695,6 +1695,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Market_Data_Deals_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Data &amp; Deals L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>My_Expansion_Account__c</fullName>
         <externalId>false</externalId>
         <formula>IF(US_Expansion_Owner__r.Id = $User.Id, TRUE,
@@ -2237,6 +2248,17 @@ Owner.Id = $User.Id)</formula>
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>REIT_Data_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>REIT Data L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>RR_Max_Month__c</fullName>
         <externalId>false</externalId>
         <formula>CASE(MONTH( RR_Monthly_Max__c  ),
@@ -2460,6 +2482,39 @@ Owner.Id = $User.Id)</formula>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_Market_Data_Deals_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research+Market Data &amp; Deals L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_REIT_Data_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research + REIT Data L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <label>Research Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -2938,6 +2993,17 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Transition_Lost_Client__c</fullName>
@@ -4419,6 +4485,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Sale - UK Retail - All</fullName>
                 <default>false</default>
             </values>
@@ -4468,6 +4538,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5966,6 +6040,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Sale</fullName>
                 <default>false</default>
             </values>
@@ -6003,6 +6081,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>

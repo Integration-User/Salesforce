@@ -12522,6 +12522,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Market_Data_Deals_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.My_Expansion_Account__c</field>
         <readable>true</readable>
@@ -12692,6 +12697,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.REIT_Data_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.RR_Max_Month__c</field>
         <readable>true</readable>
@@ -12734,6 +12744,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Renewal_Month__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Research_Market_Data_Deals_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Research_REIT_Data_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Research_Usage_L60D__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -12879,6 +12904,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Total_Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Total_Usage_L60D__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -17763,6 +17793,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Canceled_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17864,6 +17899,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Event.My_Team__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.No_Show_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -38854,6 +38894,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>FreezeUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>GiveRecognitionBadge</name>
     </userPermissions>
     <userPermissions>
@@ -38938,6 +38982,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageCustomDomains</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageCustomPermissions</name>
     </userPermissions>
     <userPermissions>
@@ -38955,6 +39003,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageDataIntegrations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageDevSandboxes</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -39111,6 +39163,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ModifyMetadata</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>MonitorLoginHistory</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

@@ -2,10 +2,150 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
     <decisions>
+        <name>Canceled_No_Show_Date_Decision</name>
+        <label>Canceled / No Show Date Decision</label>
+        <locationX>578</locationX>
+        <locationY>695</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Canceled_Date_Not_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Canceled_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Canceled_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Canceled_Status</targetReference>
+            </connector>
+            <label>Canceled Date Not Blank</label>
+        </rules>
+        <rules>
+            <name>No_Show_Date_Not_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.No_Show_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.No_Show_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_No_Show_Status</targetReference>
+            </connector>
+            <label>No Show Date Not Blank</label>
+        </rules>
+        <rules>
+            <name>Canceled_No_Show_is_Blank</name>
+            <conditionLogic>(1 AND 2 AND 3 AND 6 ) AND (4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Canceled_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.No_Show_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EndDateTime</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDateTime</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Show</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Salesloft_Meeting_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Completed_Status</targetReference>
+            </connector>
+            <label>Canceled / No Show is Blank</label>
+        </rules>
+        <rules>
+            <name>Adjust_Start_End_Date</name>
+            <conditionLogic>(1 OR 2 OR 4) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StartDateTime</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EndDateTime</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Show</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActivityDateTime</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_Scheduled</targetReference>
+            </connector>
+            <label>Adjust Start / End Date</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Salesloft_Meeting_Type_Decision</name>
         <label>Salesloft Meeting Type Decision</label>
-        <locationX>314</locationX>
-        <locationY>287</locationY>
+        <locationX>578</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Canceled_No_Show_Date_Decision</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Meeting_Type_In_Person_Sales</name>
@@ -61,10 +201,89 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <name>Update_Canceled_Status</name>
+        <label>Update Canceled Status</label>
+        <locationX>50</locationX>
+        <locationY>803</locationY>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Completed_Status</name>
+        <label>Update Completed Status</label>
+        <locationX>578</locationX>
+        <locationY>803</locationY>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_No_Show_Status</name>
+        <label>Update No Show Status</label>
+        <locationX>314</locationX>
+        <locationY>803</locationY>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>No Show</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Status_Scheduled</name>
+        <label>Update Status Scheduled</label>
+        <locationX>842</locationX>
+        <locationY>803</locationY>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Scheduled</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Status_to_Scheduled</name>
+        <label>Update Status to Scheduled</label>
+        <locationX>578</locationX>
+        <locationY>287</locationY>
+        <connector>
+            <targetReference>Salesloft_Meeting_Type_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Scheduled</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Type_to_In_Person_Sales_Visit</name>
         <label>Update Type to In-Person Sales Visit</label>
-        <locationX>50</locationX>
-        <locationY>395</locationY>
+        <locationX>314</locationX>
+        <locationY>503</locationY>
+        <connector>
+            <targetReference>Canceled_No_Show_Date_Decision</targetReference>
+        </connector>
         <inputAssignments>
             <field>Type</field>
             <value>
@@ -76,8 +295,11 @@
     <recordUpdates>
         <name>Update_Type_to_Virtual_Sales</name>
         <label>Update Type to Virtual Sales</label>
-        <locationX>314</locationX>
-        <locationY>395</locationY>
+        <locationX>578</locationX>
+        <locationY>503</locationY>
+        <connector>
+            <targetReference>Canceled_No_Show_Date_Decision</targetReference>
+        </connector>
         <inputAssignments>
             <field>Type</field>
             <value>
@@ -87,21 +309,13 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>188</locationX>
+        <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Salesloft_Meeting_Type_Decision</targetReference>
+            <targetReference>Update_Status_to_Scheduled</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Salesloft_Meeting_Type__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <object>Event</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>

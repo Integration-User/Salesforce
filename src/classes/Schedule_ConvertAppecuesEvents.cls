@@ -29,9 +29,10 @@ public with sharing class Schedule_ConvertAppecuesEvents Implements Database.Bat
         Map<Id,Event> mapEvents = new Map<Id,Event>();
         Recordtype rt = [Select id from Recordtype where name = 'Appcues Event RT' limit 1];
         for(EventRelation evr : listAppcuesEvents){
+            String relationId = evr.RelationId;
             Appcues__c record = new Appcues__c();
             record.Account__c = evr.AccountId;
-            record.Contact__c = evr.RelationId;
+            if(relationId != null && relationId.startsWith('003')) record.Contact__c = evr.RelationId;
             record.Description__c = evr.Event.Description;
             record.Event_Date__c = evr.Event.EndDateTime.date();
             record.RecordTypeId = rt.id;
