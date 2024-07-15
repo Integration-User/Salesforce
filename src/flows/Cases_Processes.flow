@@ -311,7 +311,7 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_17</name>
-            <conditionLogic>1 AND (9 OR 10 OR 11 OR 13) AND 12 AND NOT 5 AND NOT 6 AND NOT 7 AND NOT 8 AND (2 AND (3 OR 4)) AND NOT 14 AND NOT 15 AND NOT 16 AND NOT 17</conditionLogic>
+            <conditionLogic>1 AND (9 OR 10 OR 11 OR 13) AND 12 AND NOT 5 AND NOT 6 AND NOT 7 AND NOT 8 AND (2 AND (3 OR 4)) AND NOT 14 AND NOT 15 AND NOT 16 AND NOT 17 AND NOT 18 AND NOT 19</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -839,6 +839,68 @@
                     <stringValue>localdatacompany.com</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.ContactEmail</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>greenstreetnews.com</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.SuppliedEmail</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>greenstreetnews.com</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>myRule_17_pmetdec</targetReference>
             </connector>
@@ -1350,7 +1412,7 @@
         </rules>
         <rules>
             <name>myRule_17_pmetrule</name>
-            <conditionLogic>1 AND (9 OR 10 OR 11 OR 13) AND 12 AND NOT 5 AND NOT 6 AND NOT 7 AND NOT 8 AND (2 AND (3 OR 4)) AND NOT 14 AND NOT 15 AND NOT 16 AND NOT 17</conditionLogic>
+            <conditionLogic>1 AND (9 OR 10 OR 11 OR 13) AND 12 AND NOT 5 AND NOT 6 AND NOT 7 AND NOT 8 AND (2 AND (3 OR 4)) AND NOT 14 AND NOT 15 AND NOT 16 AND NOT 17 AND NOT 18 AND NOT 19</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -1878,6 +1940,68 @@
                     <stringValue>localdatacompany.com</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.ContactEmail</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>greenstreetnews.com</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.SuppliedEmail</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>greenstreetnews.com</stringValue>
+                </rightValue>
+            </conditions>
             <label>Previously Met - Prev</label>
         </rules>
     </decisions>
@@ -2134,7 +2258,7 @@
                 <stringValue>&quot;Merge &quot;+[Case].Duplicate_Contact__r.FirstName + &quot; &quot; +[Case].Duplicate_Contact__r.LastName + &quot;  Duplicate Contacts&quot;</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_10_myRule_8_A1_0593082568</name>
+        <name>formula_10_myRule_8_A1_4540097928</name>
         <dataType>String</dataType>
         <expression>&quot;Merge &quot;+{!myVariable_current.Duplicate_Contact__r.FirstName} + &quot; &quot; +{!myVariable_current.Duplicate_Contact__r.LastName} + &quot;  Duplicate Contacts&quot;</expression>
     </formulas>
@@ -2145,7 +2269,7 @@
                 <stringValue>[Case].Surviving_Contact__r.FirstName+&quot; &quot;+[Case].Surviving_Contact__r.LastName </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_8_A1_2387501933</name>
+        <name>formula_11_myRule_8_A1_9069137032</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Surviving_Contact__r.FirstName}+&quot; &quot;+{!myVariable_current.Surviving_Contact__r.LastName}</expression>
     </formulas>
@@ -2156,7 +2280,7 @@
                 <stringValue>&quot;Merge &quot;+[Case].Duplicate_Account__r.Name+ &quot; into &quot;+ [Case].Surviving_Account__r.Name</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_5_A2_5953667137</name>
+        <name>formula_6_myRule_5_A2_3262689384</name>
         <dataType>String</dataType>
         <expression>&quot;Merge &quot;+{!myVariable_current.Duplicate_Account__r.Name}+ &quot; into &quot;+ {!myVariable_current.Surviving_Account__r.Name}</expression>
     </formulas>
@@ -2167,11 +2291,11 @@
                 <stringValue>[Case].Duplicate_Contact__r.FirstName+&quot; &quot;+[Case].Duplicate_Contact__r.LastName </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_9_myRule_8_A1_4233527252</name>
+        <name>formula_9_myRule_8_A1_8478154531</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Duplicate_Contact__r.FirstName}+&quot; &quot;+{!myVariable_current.Duplicate_Contact__r.LastName}</expression>
     </formulas>
-    <interviewLabel>Cases_Processes-42_InterviewLabel</interviewLabel>
+    <interviewLabel>Cases_Processes-45_InterviewLabel</interviewLabel>
     <label>Case Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -2856,7 +2980,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_6_myRule_5_A2_5953667137</elementReference>
+                <elementReference>formula_6_myRule_5_A2_3262689384</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3097,7 +3221,7 @@
             </processMetadataValues>
             <field>Duplicate_Contact_Name__c</field>
             <value>
-                <elementReference>formula_9_myRule_8_A1_4233527252</elementReference>
+                <elementReference>formula_9_myRule_8_A1_8478154531</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3175,7 +3299,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_10_myRule_8_A1_0593082568</elementReference>
+                <elementReference>formula_10_myRule_8_A1_4540097928</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3247,7 +3371,7 @@
             </processMetadataValues>
             <field>Surviving_Contact_Name__c</field>
             <value>
-                <elementReference>formula_11_myRule_8_A1_2387501933</elementReference>
+                <elementReference>formula_11_myRule_8_A1_9069137032</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>

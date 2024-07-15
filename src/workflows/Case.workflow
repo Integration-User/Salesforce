@@ -2,7 +2,7 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>AskNicely_Closed_Case</fullName>
-        <ccEmails>greenstreet_45d975f@trigger.asknice.ly</ccEmails>
+        <ccEmails>greenstreet_45d975f@emailtosurvey.asknice.ly</ccEmails>
         <description>AskNicely Closed Case</description>
         <protected>false</protected>
         <senderType>CurrentUser</senderType>
