@@ -12548,6 +12548,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.New_Product_Expansion_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.News_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -19474,11 +19479,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.ZoomInfo_Job_Title_Lead__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.ZoomInfo_Job_Title__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
