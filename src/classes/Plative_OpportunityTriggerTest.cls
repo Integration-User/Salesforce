@@ -187,7 +187,7 @@ public class Plative_OpportunityTriggerTest {
         update oppty;   
         //For creating Renewal Opportunity from the last Closed Renewal Opportunity
         Opportunity lastRenewalOpportunity = [Select Id from Opportunity where Id != :oppty.Id ORDER BY CreatedDate DESC LIMIT 1];
-        //lastRenewalOpportunity.StageName = 'Closed Won';
+        lastRenewalOpportunity.StageName = 'Closed Lost';
         lastRenewalOpportunity.Close_Reason__c = 'Contracted Client';
         //lastRenewalOpportunity.Create_New_Renewal_Opportunity__c = true;
         lastRenewalOpportunity.ID_Request__c = 'Not Applicable';
