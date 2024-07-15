@@ -181,10 +181,12 @@ public class Plative_OpportunityTriggerTest {
         oppty.StageName = 'Closed Won'; 
         oppty.ID_Request__c = 'Not Applicable';
         oppty.Win_Validation__c = 'Pending Review';
+        oppty.Products__c = 'React News;Data License Directory';
         //oppty.Win_Validation__c = 'Opportunity Reviewed';
         Test.startTest();
         //For creating Renewal Opportunities from Sales Opportunity
-        update oppty;   
+        update oppty; 
+
         //For creating Renewal Opportunity from the last Closed Renewal Opportunity
         Opportunity lastRenewalOpportunity = [Select Id from Opportunity where Id != :oppty.Id ORDER BY CreatedDate DESC LIMIT 1];
         lastRenewalOpportunity.StageName = 'Closed Lost';
