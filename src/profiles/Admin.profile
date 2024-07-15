@@ -17798,6 +17798,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Canceled_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17899,6 +17904,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Event.My_Team__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.No_Show_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
