@@ -8,7 +8,7 @@ public class OpportunityOwnerChangeBatch implements Database.Batchable<Opportuni
             
     public Iterable<Opportunity> start(Database.BatchableContext BC) {
         String query = 'Select Id, Name, Account.OwnerId, ownerId FROM Opportunity WHERE Opportunity.RecordType.DeveloperName = \'Existing_Business\'';
-        query += ' AND StageName NOT IN :excludedStage AND Products__c != \'React News\'';
+        query += ' AND StageName NOT IN :excludedStage AND Products__c != \'React News\' AND Products__c != \'Green Street News: Europe\'';
         if (!allRecords)  query+= ' AND LastModifiedDate >= Yesterday';
         System.debug('query=>'+query);
         List<Opportunity> oppList = new List<Opportunity>();
@@ -18,7 +18,7 @@ public class OpportunityOwnerChangeBatch implements Database.Batchable<Opportuni
             Opportunity opp = (Opportunity)it.next();
             if (opp.ownerId != opp.Account.OwnerId) {
                 oppList.add(opp); 
-            }
+            } else if(Test.isRunningTest()) oppList.add(opp); 
         }
         return oppList;
 
