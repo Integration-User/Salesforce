@@ -1156,6 +1156,10 @@
         <picklistValues>
             <picklist>Type</picklist>
             <values>
+                <fullName>ABR</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Account Handoff</fullName>
                 <default>false</default>
             </values>
@@ -1173,6 +1177,10 @@
             </values>
             <values>
                 <fullName>In-Person Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QBR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1215,7 +1223,9 @@
         <active>true</active>
         <description>This will ensure having all the fields needed filled out before changing status to &quot;Completed&quot;</description>
         <errorConditionFormula>AND(
+ ISBLANK(Salesloft_Meeting_Type__c),
  ISPICKVAL (Status__c,&quot;Completed&quot;),
+ $UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
 OR (
  ISPICKVAL(Web_Demo__c, &quot;&quot;),
  ISBLANK( Description ),
@@ -1242,6 +1252,8 @@ ISPICKVAL(Priority__c, &quot;&quot;))</errorConditionFormula>
 $UserRole.Name &lt;&gt; &quot;Research&quot;,
 $UserRole.Name &lt;&gt; &quot;EU REA&quot;,
 $UserRole.Name &lt;&gt; &quot;REA&quot;,
+$UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
+ISBLANK(Salesloft_Meeting_Type__c),
 ISPICKVAL(Status__c,&quot;Completed&quot;),
 OR(
 ISBLANK(Objective__c),

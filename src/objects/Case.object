@@ -1600,6 +1600,31 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Platform__c</fullName>
+        <externalId>false</externalId>
+        <label>Platform</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green Street</fullName>
+                    <default>false</default>
+                    <label>Green Street</label>
+                </value>
+                <value>
+                    <fullName>Green Street News</fullName>
+                    <default>false</default>
+                    <label>Green Street News</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Priority</fullName>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1632,39 +1657,14 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>US Portfolio Tools</fullName>
-                    <default>false</default>
-                    <label>US Portfolio Tools</label>
-                </value>
-                <value>
-                    <fullName>EUR Detailed NAV</fullName>
-                    <default>false</default>
-                    <label>EUR Detailed NAV</label>
-                </value>
-                <value>
-                    <fullName>US Research + REIT Data</fullName>
-                    <default>false</default>
-                    <label>US Research + REIT Data</label>
-                </value>
-                <value>
-                    <fullName>Pan-European Research + REIT Data</fullName>
-                    <default>false</default>
-                    <label>Pan-European Research + REIT Data</label>
-                </value>
-                <value>
-                    <fullName>US Research + Market Data &amp; Deals</fullName>
-                    <default>false</default>
-                    <label>US Research + Market Data &amp; Deals</label>
-                </value>
-                <value>
-                    <fullName>Pan-European Research + Market Data &amp; Deals</fullName>
-                    <default>false</default>
-                    <label>Pan-European Research + Market Data &amp; Deals</label>
-                </value>
-                <value>
                     <fullName>Asset-Backed Alert</fullName>
                     <default>false</default>
                     <label>Asset-Backed Alert</label>
+                </value>
+                <value>
+                    <fullName>Canada Research + REIT Data</fullName>
+                    <default>false</default>
+                    <label>Canada Research + REIT Data</label>
                 </value>
                 <value>
                     <fullName>Commercial Mortgage Alert</fullName>
@@ -1672,19 +1672,84 @@
                     <label>Commercial Mortgage Alert</label>
                 </value>
                 <value>
-                    <fullName>Real Estate Alert</fullName>
-                    <default>false</default>
-                    <label>Real Estate Alert</label>
-                </value>
-                <value>
                     <fullName>Data Delivery - API</fullName>
                     <default>false</default>
                     <label>Data Delivery - API</label>
                 </value>
                 <value>
+                    <fullName>Data Sale</fullName>
+                    <default>false</default>
+                    <label>Data Sale</label>
+                </value>
+                <value>
+                    <fullName>Data Sale - UK Retail - All</fullName>
+                    <default>false</default>
+                    <label>Data Sale - UK Retail - All</label>
+                </value>
+                <value>
+                    <fullName>Data Sale - UK Retail - Convenience</fullName>
+                    <default>false</default>
+                    <label>Data Sale - UK Retail - Convenience</label>
+                </value>
+                <value>
+                    <fullName>Data Sale - UK Retail - Independents</fullName>
+                    <default>false</default>
+                    <label>Data Sale - UK Retail - Independents</label>
+                </value>
+                <value>
+                    <fullName>Data Sale - UK Retail - London</fullName>
+                    <default>false</default>
+                    <label>Data Sale - UK Retail - London</label>
+                </value>
+                <value>
+                    <fullName>Data Sale - UK Retail - Multiples</fullName>
+                    <default>false</default>
+                    <label>Data Sale - UK Retail - Multiples</label>
+                </value>
+                <value>
+                    <fullName>EUR Detailed NAV</fullName>
+                    <default>false</default>
+                    <label>EUR Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>Green Street News: Canada</fullName>
+                    <default>false</default>
+                    <label>Green Street News: Canada</label>
+                </value>
+                <value>
+                    <fullName>Pan-European Research + Market Data &amp; Deals</fullName>
+                    <default>false</default>
+                    <label>Pan-European Research + Market Data &amp; Deals</label>
+                </value>
+                <value>
+                    <fullName>Pan-European Research + REIT Data</fullName>
+                    <default>false</default>
+                    <label>Pan-European Research + REIT Data</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Alert</fullName>
+                    <default>false</default>
+                    <label>Real Estate Alert</label>
+                </value>
+                <value>
                     <fullName>US Detailed NAV</fullName>
                     <default>false</default>
                     <label>US Detailed NAV</label>
+                </value>
+                <value>
+                    <fullName>US Portfolio Tools</fullName>
+                    <default>false</default>
+                    <label>US Portfolio Tools</label>
+                </value>
+                <value>
+                    <fullName>US Research + Market Data &amp; Deals</fullName>
+                    <default>false</default>
+                    <label>US Research + Market Data &amp; Deals</label>
+                </value>
+                <value>
+                    <fullName>US Research + REIT Data</fullName>
+                    <default>false</default>
+                    <label>US Research + REIT Data</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2354,7 +2419,7 @@ null))</formula>
                 <value>
                     <fullName>Client Support</fullName>
                     <default>false</default>
-                    <label>Client Support</label>
+                    <label>Green Street Platform Client Support</label>
                 </value>
                 <value>
                     <fullName>US Data Support</fullName>
@@ -2380,6 +2445,11 @@ null))</formula>
                     <fullName>User List Request</fullName>
                     <default>false</default>
                     <label>User List Request</label>
+                </value>
+                <value>
+                    <fullName>Green Street News Client Support</fullName>
+                    <default>false</default>
+                    <label>Green Street News Client Support</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2529,7 +2599,6 @@ null))</formula>
     </fields>
     <fields>
         <fullName>Type_to_Trigger_Survey__c</fullName>
-        <externalId>false</externalId>
         <formula>IF (ISPICKVAL(Type, &quot;Error&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Methodology&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Problem&quot;), TRUE, 
@@ -2541,8 +2610,7 @@ IF (ISPICKVAL(Type, &quot;Research Request&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;“Go Fish” / Miscellaneous&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;Advanced Back Up Data&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;Complex Methodology&quot;), TRUE,
-IF (ISPICKVAL(Type, &quot;Research / Analyst Input&quot;), TRUE,
-FALSE))))))))))))</formula>
+FALSE)))))))))))</formula>
         <label>Type to Trigger Survey</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -4141,6 +4209,17 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -4198,23 +4277,7 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4251,6 +4314,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4330,6 +4397,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>React Advertising</fullName>
                 <default>false</default>
             </values>
@@ -4375,6 +4446,61 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Delivery - API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5415,23 +5541,15 @@ FALSE))))))))))))</formula>
         <picklistValues>
             <picklist>Products_Discussed__c</picklist>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
+                <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
+                <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5448,6 +5566,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5483,7 +5605,19 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5491,6 +5625,10 @@ FALSE))))))))))))</formula>
             <picklist>Products__c</picklist>
             <values>
                 <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5502,7 +5640,35 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Sale - UK Retail - All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Sale - UK Retail - Convenience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Sale - UK Retail - Independents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Sale - UK Retail - London</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6406,6 +6572,17 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -6423,23 +6600,7 @@ FALSE))))))))))))</formula>
         <picklistValues>
             <picklist>Products_Discussed__c</picklist>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6455,7 +6616,7 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Canada</fullName>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6492,6 +6653,61 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Delivery - API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7345,6 +7561,17 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -7406,23 +7633,7 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7474,7 +7685,7 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Canada</fullName>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7659,6 +7870,61 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Delivery - API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8533,6 +8799,17 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -8550,23 +8827,15 @@ FALSE))))))))))))</formula>
         <picklistValues>
             <picklist>Products_Discussed__c</picklist>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
+                <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
+                <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8583,6 +8852,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8618,7 +8891,74 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Delivery - API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9439,6 +9779,10 @@ FALSE))))))))))))</formula>
         <picklistValues>
             <picklist>Origin</picklist>
             <values>
+                <fullName>Client Support News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Customer Success</fullName>
                 <default>false</default>
             </values>
@@ -9524,23 +9868,7 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9565,6 +9893,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9616,6 +9948,10 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>REIT Data - Company Analysis</fullName>
                 <default>false</default>
             </values>
@@ -9644,7 +9980,66 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Delivery - API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9854,6 +10249,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>EU Data Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News Client Support</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10631,6 +11030,17 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -10648,23 +11058,15 @@ FALSE))))))))))))</formula>
         <picklistValues>
             <picklist>Products_Discussed__c</picklist>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
+                <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
+                <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10681,6 +11083,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10716,7 +11122,66 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Delivery - API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11577,6 +12042,17 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -11618,26 +12094,6 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Debt Databases</fullName>
                 <default>false</default>
             </values>
@@ -11659,10 +12115,6 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>GSI</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11747,6 +12199,61 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Delivery - API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12667,6 +13174,17 @@ FALSE))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -12684,23 +13202,7 @@ FALSE))))))))))))</formula>
         <picklistValues>
             <picklist>Products_Discussed__c</picklist>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12717,6 +13219,10 @@ FALSE))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12752,7 +13258,66 @@ FALSE))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Delivery - API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13240,6 +13805,7 @@ RecordType.Name=&quot;Help Desk&quot;,
 ISPICKVAL(Status,&quot;Closed&quot;),
 OR(
 ISPICKVAL(Support_Type__c,&quot;Client Support&quot;),
+ISPICKVAL(Support_Type__c,&quot;Green Street News Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;User List Request&quot;),
 ISPICKVAL(Support_Type__c,&quot;US Data Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;EU Data Support&quot;)),

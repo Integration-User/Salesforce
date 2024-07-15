@@ -1695,6 +1695,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Market_Data_Deals_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Data &amp; Deals L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>My_Expansion_Account__c</fullName>
         <externalId>false</externalId>
         <formula>IF(US_Expansion_Owner__r.Id = $User.Id, TRUE,
@@ -1747,8 +1758,19 @@ Owner.Id = $User.Id)</formula>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Named Account?</label>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>New_Product_Expansion_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Product Expansion Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Accounts6</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>News_ID__c</fullName>
@@ -2226,6 +2248,17 @@ Owner.Id = $User.Id)</formula>
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>REIT_Data_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>REIT Data L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>RR_Max_Month__c</fullName>
         <externalId>false</externalId>
         <formula>CASE(MONTH( RR_Monthly_Max__c  ),
@@ -2449,6 +2482,39 @@ Owner.Id = $User.Id)</formula>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_Market_Data_Deals_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research+Market Data &amp; Deals L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_REIT_Data_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research + REIT Data L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <label>Research Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -2927,6 +2993,17 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Transition_Lost_Client__c</fullName>
@@ -4384,6 +4461,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -4401,6 +4482,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4453,6 +4538,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4561,6 +4650,14 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5915,6 +6012,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -5936,6 +6037,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Data License Local Data Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5979,6 +6084,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Onsite</fullName>
                 <default>false</default>
             </values>
@@ -5988,6 +6097,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6016,6 +6129,14 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

@@ -374,6 +374,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Name</formula>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Account_Owner__c</fullName>
         <externalId>false</externalId>
         <formula>Account.OwnerIDName__c</formula>
@@ -2412,7 +2422,7 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <externalId>false</externalId>
         <label>Inbound?</label>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
@@ -5184,7 +5194,6 @@ NULL))))</formula>
     <fields>
         <fullName>Products__c</fullName>
         <description>Update all Products from associated to Product object</description>
-        <externalId>false</externalId>
         <label>Products</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -8780,6 +8789,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -8800,23 +8813,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8844,6 +8841,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Edge - Project work</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Financial%2FStrategic Advisory</fullName>
                 <default>false</default>
             </values>
@@ -8853,6 +8854,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8977,6 +8982,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10322,6 +10335,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -10342,23 +10359,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10386,6 +10387,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Edge - Project work</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Financial%2FStrategic Advisory</fullName>
                 <default>false</default>
             </values>
@@ -10395,6 +10400,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10519,6 +10528,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11804,6 +11821,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -11820,23 +11841,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11873,6 +11878,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11997,6 +12006,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13234,6 +13251,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -13250,23 +13271,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13303,6 +13308,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13427,6 +13436,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14210,6 +14227,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Industry Marketing Event</fullName>
                 <default>false</default>
             </values>
@@ -14874,6 +14903,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -14906,27 +14939,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Sale</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14971,6 +14988,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15050,6 +15071,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>React Advertising</fullName>
                 <default>false</default>
             </values>
@@ -15099,6 +15124,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16332,6 +16369,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -16349,26 +16390,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17750,6 +17771,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -17767,26 +17792,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19093,6 +19098,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Company Diagnostics</fullName>
                 <default>false</default>
             </values>
@@ -19102,26 +19111,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20029,6 +20018,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Industry Marketing Event</fullName>
                 <default>false</default>
             </values>
@@ -20693,6 +20694,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -20725,27 +20730,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Sale</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20762,6 +20751,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20790,6 +20787,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20869,6 +20870,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>React Advertising</fullName>
                 <default>false</default>
             </values>
@@ -20897,6 +20902,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>US Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>US Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -20918,6 +20931,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -21400,6 +21425,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>LeadSource</picklist>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22547,6 +22584,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -22579,27 +22620,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Sale</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22675,7 +22700,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Canada</fullName>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22892,6 +22917,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -23415,6 +23448,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24090,6 +24135,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -24114,10 +24163,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data Delivery - API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Data License Directory</fullName>
                 <default>false</default>
             </values>
@@ -24126,27 +24171,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Sale</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24159,10 +24188,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Debt Databases</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Detailed NAV</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24195,6 +24220,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24274,6 +24303,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>React Advertising</fullName>
                 <default>false</default>
             </values>
@@ -24327,6 +24360,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -25118,6 +25159,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Industry Marketing Event</fullName>
                 <default>false</default>
             </values>
@@ -25782,6 +25835,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -25814,27 +25871,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Sale</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - All</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Convenience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Independents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - London</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Sale - UK Retail - Multiples</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25855,6 +25896,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25883,6 +25932,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25962,6 +26015,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>React Advertising</fullName>
                 <default>false</default>
             </values>
@@ -25990,6 +26047,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>US Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>US Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -26011,6 +26076,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
