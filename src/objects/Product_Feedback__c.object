@@ -387,7 +387,6 @@
     </fields>
     <fields>
         <fullName>Feedback_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Feedback Type</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -451,7 +450,6 @@
     <fields>
         <fullName>Product__c</fullName>
         <description>What Product line is this feedback regarding?</description>
-        <externalId>false</externalId>
         <inlineHelpText>What Product line is this feedback regarding?</inlineHelpText>
         <label>Product</label>
         <required>true</required>
@@ -484,6 +482,10 @@
             <valueSettings>
                 <controllingFieldValue>Product Feedback</controllingFieldValue>
                 <valueName>Data Collection</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Feedback</controllingFieldValue>
+                <valueName>Data License: Petrol Station Forecourt Data</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Product Feedback</controllingFieldValue>
@@ -1355,6 +1357,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data License Directory</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
                 <default>false</default>
             </values>
@@ -2213,6 +2219,10 @@
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data License Directory</fullName>
                 <default>false</default>
             </values>
             <values>
