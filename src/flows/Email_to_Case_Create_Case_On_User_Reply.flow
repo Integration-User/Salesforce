@@ -9,7 +9,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Closed_Help_Desk_IRR</name>
-            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5 AND 6</conditionLogic>
+            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5 AND 6 AND NOT (7 OR 8)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Parent.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -52,6 +52,20 @@
                     <stringValue>US Data Support</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>clientsupport@greenstreet.com</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>clientsupport@greenstreetnews.com</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Create_Case_For_IRR</targetReference>
             </connector>
@@ -59,7 +73,7 @@
         </rules>
         <rules>
             <name>Closed_Help_Desk_US_Client_Support</name>
-            <conditionLogic>(1 OR 5) AND 2 AND (3 OR 4 OR 6 OR 7)</conditionLogic>
+            <conditionLogic>(1 OR 5) AND 2 AND (3 OR 4 OR 6 OR 7) AND NOT (8 OR 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Parent.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -109,6 +123,20 @@
                     <stringValue>User List Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>clientsupport@greenstreet.com</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>clientsupport@greenstreetnews.com</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Create_US_Client_Support_Case</targetReference>
             </connector>
@@ -116,7 +144,7 @@
         </rules>
         <rules>
             <name>Closed_Help_Desk_EU_Data_Support</name>
-            <conditionLogic>(1 OR 4) AND 2 AND 3</conditionLogic>
+            <conditionLogic>(1 OR 4) AND 2 AND 3 AND NOT (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Parent.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -145,6 +173,20 @@
                     <stringValue>Cancelled</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>clientsupport@greenstreet.com</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>clientsupport@greenstreetnews.com</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Create_EU_Data_Support_Case</targetReference>
             </connector>
@@ -152,7 +194,7 @@
         </rules>
         <rules>
             <name>Closed_User_List_Case</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3) AND NOT (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Parent.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -172,6 +214,20 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>clientsupport@greenstreet.com</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>clientsupport@greenstreetnews.com</stringValue>
                 </rightValue>
             </conditions>
             <connector>

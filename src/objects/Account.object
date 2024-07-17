@@ -936,7 +936,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     </fields>
     <fields>
         <fullName>Current_Products__c</fullName>
-        <externalId>false</externalId>
         <label>Current Products</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -1697,6 +1696,7 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     <fields>
         <fullName>Market_Data_Deals_L60D_Usage__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>Market Data &amp; Deals platform clicks for this account over the last 60 days</inlineHelpText>
         <label>Market Data &amp; Deals L60D Usage</label>
         <precision>18</precision>
         <required>false</required>
@@ -1931,7 +1931,7 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>Prior_12_Mo_Rollup__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>Total clicks for this account between 364 - 728 days ago</inlineHelpText>
+        <inlineHelpText>Total platform clicks for this account between 366-730 days ago (does not include Excel, SNF, API)</inlineHelpText>
         <label>Prior 12 Mo. Rollup</label>
         <precision>18</precision>
         <required>false</required>
@@ -2250,6 +2250,7 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>REIT_Data_L60D_Usage__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>REIT Data platform clicks for this account over the last 60 days</inlineHelpText>
         <label>REIT Data L60D Usage</label>
         <precision>18</precision>
         <required>false</required>
@@ -2509,6 +2510,7 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>Research_Usage_L60D__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>Research email and platform clicks for this account over the last 60 days</inlineHelpText>
         <label>Research Usage L60D</label>
         <precision>18</precision>
         <required>false</required>
@@ -2945,7 +2947,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
     <fields>
         <fullName>TTM_Rollup__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>Total clicks for this account over the last 364 days</inlineHelpText>
+        <inlineHelpText>Total platform clicks for this account over the last 365 days (does not include Excel, SNF, API)</inlineHelpText>
         <label>TTM Rollup</label>
         <precision>18</precision>
         <required>false</required>
