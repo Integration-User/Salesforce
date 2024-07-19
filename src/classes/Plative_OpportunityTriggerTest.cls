@@ -181,10 +181,12 @@ public class Plative_OpportunityTriggerTest {
         oppty.StageName = 'Closed Won'; 
         oppty.ID_Request__c = 'Not Applicable';
         oppty.Win_Validation__c = 'Pending Review';
+        oppty.Products__c = 'React News;Data License Directory';
         //oppty.Win_Validation__c = 'Opportunity Reviewed';
         Test.startTest();
         //For creating Renewal Opportunities from Sales Opportunity
-        update oppty;   
+        update oppty; 
+
         //For creating Renewal Opportunity from the last Closed Renewal Opportunity
         Opportunity lastRenewalOpportunity = [Select Id from Opportunity where Id != :oppty.Id ORDER BY CreatedDate DESC LIMIT 1];
         lastRenewalOpportunity.StageName = 'Closed Lost';
@@ -304,12 +306,14 @@ public class Plative_OpportunityTriggerTest {
         oppty.Contract_Start_Date__c = System.today();
         oppty.Contract_End_Date__c = System.today().addmonths(1);
         oppty.RecordTypeId = oppRecordTypeId;
+        oppty.This_Year_Increase__c = 10;
         insert oppty;
         
         OpportunityLineItem opptyLineItem = new OpportunityLineItem();
         opptyLineItem.OpportunityId = oppty.Id;
         opptyLineItem.PricebookEntryId = entry.Id;
         opptyLineItem.UnitPrice = 15000;
+        opptyLineItem.Starting_Price__c = 15000;
         opptyLineItem.Quantity = 1;
         opptyLineItem.Start_Date__c = System.today();
         opptyLineItem.End_Date__c = System.today().addMonths(1);
@@ -321,6 +325,7 @@ public class Plative_OpportunityTriggerTest {
         ocr.ContactId = ct1.Id;
         ocr.Role ='Billing Contact';
         insert ocr;
+        Plative_OpportunityRenewalHelper.updateOpportunityProduct(new List<Opportunity>{oppty});
         Test.stopTest();
     }
 }
