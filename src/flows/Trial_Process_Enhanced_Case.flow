@@ -110,8 +110,8 @@
     <decisions>
         <name>Activation_Decision</name>
         <label>Activation Decision</label>
-        <locationX>729</locationX>
-        <locationY>250</locationY>
+        <locationX>656</locationX>
+        <locationY>232</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>ActivationCase</name>
@@ -349,6 +349,53 @@
                 <targetReference>Create_UK_Compliance_Record</targetReference>
             </connector>
             <label>UK Client Access Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When an Opportunity Review case is completed for a trial request is completed where 2 different platforms are present: Green Street or Green Street News (Formerly React) 2 client access cases are created.</description>
+        <name>Green_Street_VS_Green_Street_News_Case_Condition</name>
+        <label>Green Street VS Green Street News Case Condition</label>
+        <locationX>194</locationX>
+        <locationY>268</locationY>
+        <defaultConnector>
+            <targetReference>GSA_Relation_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Green_Street_Check</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Green Street News: Canada</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Green Street News: Europe</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>React News</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_News_Activation_Case</targetReference>
+            </connector>
+            <label>Green Street Check</label>
         </rules>
     </decisions>
     <decisions>
@@ -650,8 +697,91 @@
     <recordCreates>
         <name>Create_Activation_Case</name>
         <label>Create Activation Case</label>
-        <locationX>294</locationX>
-        <locationY>290</locationY>
+        <locationX>302</locationX>
+        <locationY>125</locationY>
+        <connector>
+            <targetReference>Green_Street_VS_Green_Street_News_Case_Condition</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ActivationDeactivation_Needs__c</field>
+            <value>
+                <stringValue>Full Trial Activation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Contact.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>Trial Activation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Due_Date__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Trial_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <stringValue>00G5G000004kklJ</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Platform__c</field>
+            <value>
+                <stringValue>Green Street</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>$Label.Client_Access</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_News_Activation_Case</name>
+        <label>Create News Activation Case</label>
+        <locationX>256</locationX>
+        <locationY>425</locationY>
         <connector>
             <targetReference>GSA_Relation_Decision</targetReference>
         </connector>
@@ -695,6 +825,12 @@
             <field>OwnerId</field>
             <value>
                 <stringValue>00G5G000004kklJ</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Platform__c</field>
+            <value>
+                <stringValue>Green Street News</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
