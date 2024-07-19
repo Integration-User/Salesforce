@@ -88,6 +88,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>DuplicateRecordSet.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Canceled_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
