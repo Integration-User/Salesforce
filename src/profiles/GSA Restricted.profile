@@ -10672,10 +10672,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>rh2__PS_RollupJobTriggerHandler</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>rh2__PS_Rollup_Batch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -10693,10 +10689,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>rh2__PS_Rollup_Engine</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>rh2__PS_Rollup_Group_Config_Controller</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -14585,11 +14577,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.ParentId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Platform__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -19614,11 +19601,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Opportunity.Account_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Opportunity.Account_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -22570,11 +22552,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>System_Configuration__mdt.IsEnabled__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>System_Configuration__mdt.Value__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -31469,11 +31446,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>rh2__PS_Rollup_Audit__c.rh2__Last_Run_Duration__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>rh2__PS_Rollup_Audit__c.rh2__Last_Run_User__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -31684,11 +31656,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>rh2__PS_Rollup_Audit__c.rh2__targetCurrencyIso__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>rh2__PS_Rollup_Audit__c.rh2__targetFieldName__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -31865,11 +31832,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>rh2__RH_Job__c.rh2__Filter__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>rh2__RH_Job__c.rh2__FixedFireTime__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -33113,12 +33075,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>ListEmail-List Email Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>LiveChatTranscriptActive-Chat Transcript %28In Progress%29 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>LiveChatTranscriptWaiting-Chat Transcript %28Waiting%29 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Location-Location Layout</layout>
