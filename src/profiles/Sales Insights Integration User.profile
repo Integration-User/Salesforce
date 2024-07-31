@@ -19899,7 +19899,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Opportunity.Current_Contract_Year__c</field>
         <readable>true</readable>
     </fieldPermissions>
