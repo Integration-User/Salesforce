@@ -8876,7 +8876,7 @@ ISPICKVAL(Timezone__c, &apos;&apos;) || ISBLANK( Manager__c ) )</errorConditionF
  $User.Email &lt;&gt; &apos;jecusi@greenstreet.com&apos;,
 OR(
  Email = &apos;greenstreet-compliance@greenstreetadvisors.com&apos;,
- CONTAINS(&quot;donotcall&quot;, LEFT(Email, 9)))
+ CONTAINS(Email, &quot;donotcall&quot;))
 )</errorConditionFormula>
         <errorMessage>Email Address cannot contain greenstreet-compliance email or &quot;donotcall&quot;.</errorMessage>
     </validationRules>
