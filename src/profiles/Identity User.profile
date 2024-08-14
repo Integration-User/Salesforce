@@ -12556,6 +12556,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.SAM_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.SalesLoft1__Active_Account__c</field>
         <readable>false</readable>
     </fieldPermissions>
