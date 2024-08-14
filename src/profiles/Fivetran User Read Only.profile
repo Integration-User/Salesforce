@@ -56,6 +56,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.SAM_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.SSO__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Total_Usage_L60D__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -127,6 +137,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Create_New_Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Current_Contract_Year__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
