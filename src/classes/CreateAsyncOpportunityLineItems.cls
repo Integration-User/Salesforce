@@ -9,6 +9,7 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
     }
     public void execute(QueueableContext context) { 
         if(!this.lineItems.isEmpty()) {
+            Set<Id> renewalOppIds = new Set<Id>();
             insert this.lineItems;
             if(!this.isRenewalOpp) {
                 List<OpportunityLineItem> opptyLineItems = [Select Id,Opportunity.Automatic_Renewal__c,ARR_Formula__c,Product2Id,OpportunityId,Opportunity.Sales_Opportunity__c,Opportunity.X2nd_Year_Amount_in_USD__c, Opportunity.X3rd_Year_Amount_in_USD__c, Opportunity.Year_4_Amount__c,   Opportunity.Year_5_Amount__c, Opportunity.Year_6_Amount__c,Opportunity.Year_7_Amount__c
@@ -47,6 +48,45 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
                     }
                 }
                 update opptyLineItemUpdateList;
+                // SF-1006 - New reference field for Previous Opp
+                boolean isUpdatePriorOpportunity = System_Configuration__mdt.getInstance('UpdatePriorOpportunityField').IsEnabled__c;
+                if(isUpdatePriorOpportunity) {
+                    Map<String, Opportunity> updateOppMap = new Map<String, Opportunity>();
+                    List<String> years = new List<String>();
+                    List<Opportunity> renewOppList = [Select Id, Prior_Opportunity__c, Sales_Opportunity__c,Sales_Opportunity__r.Close_Year__c, Close_Year__c from Opportunity Where Sales_Opportunity__c IN : this.soRenewalOpportunities];
+                    for (Opportunity renewOpp : renewOppList) {
+                        years.add(renewOpp.Sales_Opportunity__r.Close_Year__c);
+                        years.add(renewOpp.Close_Year__c);
+                        updateOppMap.put(renewOpp.Sales_Opportunity__c + '-' + renewOpp.Close_Year__c, renewOpp);
+                    }
+                    years.sort();
+                    Set<String> uniqueYears = new Set<String>(years);
+                    String priorOpportunity = '';
+                    set<String> convertedyear = new Set<String>();
+                    List<Opportunity> updateList = new List<Opportunity>();
+                    for (Opportunity renewOpp : renewOppList) {
+                        for (String year : uniqueYears) { 
+                            String key = renewOpp.Sales_Opportunity__c + '-' + year;
+                            if(!convertedyear.contains(key)) {
+                                if(updateOppMap.containsKey(key)) {
+                                    priorOpportunity = updateOppMap.get(key).Id;
+                                } else {
+                                    priorOpportunity = renewOpp.Sales_Opportunity__c; 
+                                }
+                                renewOpp.Prior_Opportunity__c = priorOpportunity;
+                                System.debug('renewOpp-' + renewOpp);
+                                updateList.add(renewOpp);
+                                convertedyear.add(key);
+                                break;
+                            }
+                        }
+                    }
+                    System.debug(updateList);
+                    if(!updateList.isEmpty()) {
+                        update updateList;
+                    }
+                }
+                // End New reference field for Previous Opp
             }
         }
     }

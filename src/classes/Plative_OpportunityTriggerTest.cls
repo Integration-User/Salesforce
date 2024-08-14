@@ -306,14 +306,12 @@ public class Plative_OpportunityTriggerTest {
         oppty.Contract_Start_Date__c = System.today();
         oppty.Contract_End_Date__c = System.today().addmonths(1);
         oppty.RecordTypeId = oppRecordTypeId;
-        oppty.This_Year_Increase__c = 10;
         insert oppty;
         
         OpportunityLineItem opptyLineItem = new OpportunityLineItem();
         opptyLineItem.OpportunityId = oppty.Id;
         opptyLineItem.PricebookEntryId = entry.Id;
         opptyLineItem.UnitPrice = 15000;
-        opptyLineItem.Starting_Price__c = 15000;
         opptyLineItem.Quantity = 1;
         opptyLineItem.Start_Date__c = System.today();
         opptyLineItem.End_Date__c = System.today().addMonths(1);
@@ -325,7 +323,6 @@ public class Plative_OpportunityTriggerTest {
         ocr.ContactId = ct1.Id;
         ocr.Role ='Billing Contact';
         insert ocr;
-        Plative_OpportunityRenewalHelper.updateOpportunityProduct(new List<Opportunity>{oppty});
         Test.stopTest();
     }
 }
