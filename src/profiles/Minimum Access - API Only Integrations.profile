@@ -13,6 +13,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CreateAsyncOpportunityLineItems</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Plative_ActivitySecurityUtilTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -154,6 +158,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Lead_Contact_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Prior_Opportunity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

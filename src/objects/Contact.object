@@ -8868,6 +8868,18 @@ ISPICKVAL(Timezone__c, &apos;&apos;) || ISBLANK( Manager__c ) )</errorConditionF
         <errorDisplayField>LID__LinkedIn_Company_Id__c</errorDisplayField>
         <errorMessage>CompanyId should be a numeric value</errorMessage>
     </validationRules>
+    <validationRules>
+        <fullName>Restrict_GS_Compliance_DNC</fullName>
+        <active>true</active>
+        <description>Restrict greenstreet-compliance@greenstreetadvisors.com and emails that contain “donotcall“</description>
+        <errorConditionFormula>AND(
+ $User.Email &lt;&gt; &apos;jecusi@greenstreet.com&apos;,
+OR(
+ Email = &apos;greenstreet-compliance@greenstreetadvisors.com&apos;,
+ CONTAINS(Email, &quot;donotcall&quot;))
+)</errorConditionFormula>
+        <errorMessage>Email Address cannot contain greenstreet-compliance email or &quot;donotcall&quot;.</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>
