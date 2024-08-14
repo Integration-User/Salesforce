@@ -5079,10 +5079,9 @@ NULL))))</formula>
     </fields>
     <fields>
         <fullName>Previous_Stage__c</fullName>
-        <defaultValue>&apos;SS2&apos;</defaultValue>
         <externalId>false</externalId>
         <label>Previous Stage</label>
-        <length>5</length>
+        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -5092,6 +5091,18 @@ NULL))))</formula>
     <fields>
         <fullName>Pricebook2Id</fullName>
         <securityClassification>Confidential</securityClassification>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Prior Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Prior Opportunity)</relationshipLabel>
+        <relationshipName>Prior_Opportunity</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
