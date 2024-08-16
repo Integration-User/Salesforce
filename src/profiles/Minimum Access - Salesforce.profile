@@ -12639,13 +12639,13 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.SSO__c</field>
+        <editable>false</editable>
+        <field>Account.SAM_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.SAM_Amount__c</field>
+        <editable>true</editable>
+        <field>Account.SSO__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -21040,7 +21040,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.UTM_Campaign__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.UTM_Content__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.UTM_Medium__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.UTM_Source__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.UTM_Term__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
