@@ -345,6 +345,11 @@
         <field>Task.Strategy__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>User.Annual_Quota__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Relationship_Intelligence__c-Relationship Intelligence Layout</layout>
     </layoutAssignments>
