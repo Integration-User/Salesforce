@@ -516,7 +516,6 @@
     </fields>
     <fields>
         <fullName>Assigned_Team__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Initial Team this opportunity was assigned to.</inlineHelpText>
         <label>Assigned Team</label>
         <required>false</required>
@@ -583,16 +582,6 @@
                     <label>Ling</label>
                 </value>
                 <value>
-                    <fullName>Pliha</fullName>
-                    <default>false</default>
-                    <label>Pliha</label>
-                </value>
-                <value>
-                    <fullName>Lemansky</fullName>
-                    <default>false</default>
-                    <label>Lemansky</label>
-                </value>
-                <value>
                     <fullName>Judd</fullName>
                     <default>false</default>
                     <label>Judd</label>
@@ -601,6 +590,28 @@
                     <fullName>Greco</fullName>
                     <default>false</default>
                     <label>Greco</label>
+                </value>
+                <value>
+                    <fullName>Banks</fullName>
+                    <default>false</default>
+                    <label>Banks</label>
+                </value>
+                <value>
+                    <fullName>Souter</fullName>
+                    <default>false</default>
+                    <label>Souter</label>
+                </value>
+                <value>
+                    <fullName>Lemansky</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Lemansky</label>
+                </value>
+                <value>
+                    <fullName>Pliha</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Pliha</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -5238,7 +5249,6 @@ NULL))))</formula>
     </fields>
     <fields>
         <fullName>Qualified_Team__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Team name of the opportunity owner when moved to converted state.</inlineHelpText>
         <label>Qualified Team</label>
         <required>false</required>
@@ -5305,16 +5315,6 @@ NULL))))</formula>
                     <label>Ling</label>
                 </value>
                 <value>
-                    <fullName>Pliha</fullName>
-                    <default>false</default>
-                    <label>Pliha</label>
-                </value>
-                <value>
-                    <fullName>Lemansky</fullName>
-                    <default>false</default>
-                    <label>Lemansky</label>
-                </value>
-                <value>
                     <fullName>Judd</fullName>
                     <default>false</default>
                     <label>Judd</label>
@@ -5323,6 +5323,28 @@ NULL))))</formula>
                     <fullName>Greco</fullName>
                     <default>false</default>
                     <label>Greco</label>
+                </value>
+                <value>
+                    <fullName>Banks</fullName>
+                    <default>false</default>
+                    <label>Banks</label>
+                </value>
+                <value>
+                    <fullName>Souter</fullName>
+                    <default>false</default>
+                    <label>Souter</label>
+                </value>
+                <value>
+                    <fullName>Lemansky</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Lemansky</label>
+                </value>
+                <value>
+                    <fullName>Pliha</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Pliha</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -6505,9 +6527,53 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>UTM_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Campaign</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>UTM_Content__c</fullName>
         <externalId>false</externalId>
         <label>UTM Content</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UTM_Medium__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Medium</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UTM_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UTM_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>UTM Term</label>
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -21372,6 +21438,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Assigned_Team__c</picklist>
             <values>
+                <fullName>Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>EU SDR Inbound</fullName>
                 <default>false</default>
             </values>
@@ -21392,15 +21462,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Lemansky</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Ling</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pliha</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21409,6 +21471,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>SDR Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Souter</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22973,6 +23039,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Qualified_Team__c</picklist>
             <values>
+                <fullName>Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>EU SDR Inbound</fullName>
                 <default>false</default>
             </values>
@@ -22993,15 +23063,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Lemansky</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Ling</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pliha</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23010,6 +23072,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>SDR Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Souter</fullName>
                 <default>false</default>
             </values>
             <values>
