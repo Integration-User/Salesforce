@@ -151,6 +151,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Locatus_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.X3x3_Level__c</field>
         <readable>true</readable>
@@ -263,6 +268,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Lead_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Locatus_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
