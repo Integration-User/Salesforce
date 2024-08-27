@@ -72,6 +72,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Locatus_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Market_Data_Deals_L60D_Usage__c</field>
         <readable>true</readable>
     </fieldPermissions>
