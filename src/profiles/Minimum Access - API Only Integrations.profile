@@ -67,6 +67,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Locatus_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Named_Account__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -103,6 +108,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Steps_to_Reproduce__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Locatus_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -183,6 +193,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Lead_Contact_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Locatus_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

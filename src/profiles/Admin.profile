@@ -12518,6 +12518,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Locatus_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Lock_Opportunities__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -15814,6 +15819,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Loaded__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Locatus_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20544,6 +20554,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Locatus_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
