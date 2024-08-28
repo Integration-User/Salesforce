@@ -1295,6 +1295,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Export_Excel_Add_In_Users__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/00OOv0000044E7pMAE?pv0=&apos;+X18_digit_Account_ID__c+&apos;&amp;export=1&amp;enc=UTF-8&amp;xf=xlsx&amp;isdtp=p1&apos;,Text( Excel_Add_In_Users__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Excel Add-In Users</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -1687,6 +1698,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Locatus_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Locatus ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Lock_Opportunities__c</fullName>
@@ -2497,6 +2518,28 @@ Owner.Id = $User.Id)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Research_Market_Data_Deals_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research+Market Data &amp; Deals L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_REIT_Data_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research + REIT Data L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Research_Usage_L60D__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Research email and platform clicks for this account over the last 60 days</inlineHelpText>
@@ -3000,6 +3043,17 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Transition_Lost_Client__c</fullName>
@@ -4538,18 +4592,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6121,18 +6163,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
