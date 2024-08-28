@@ -1295,6 +1295,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Export_Excel_Add_In_Users__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/00OOv0000044E7pMAE?pv0=&apos;+X18_digit_Account_ID__c+&apos;&amp;export=1&amp;enc=UTF-8&amp;xf=xlsx&amp;isdtp=p1&apos;,Text( Excel_Add_In_Users__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Excel Add-In Users</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -1687,6 +1698,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Locatus_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Locatus ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Lock_Opportunities__c</fullName>
