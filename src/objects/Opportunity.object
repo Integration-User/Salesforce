@@ -3238,6 +3238,17 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         </valueSet>
     </fields>
     <fields>
+        <fullName>Locatus_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Locatus ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Loss_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Loss Reason</label>
@@ -8941,18 +8952,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -10531,18 +10530,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -12053,18 +12040,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -12667,10 +12642,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Contracted Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Due Diligence</fullName>
                 <default>false</default>
             </values>
@@ -12684,7 +12655,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Made New Client</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>Market Conditions</fullName>
@@ -13524,18 +13495,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15247,18 +15206,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -16844,6 +16791,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>React_Status__c</picklist>
@@ -18238,6 +18193,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>React_Status__c</picklist>
@@ -19511,6 +19474,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -21083,18 +21054,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23036,18 +22995,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -24707,18 +24654,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26470,18 +26405,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A One-Time</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -27565,7 +27488,7 @@ ISBLANK(Account.Phone )
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
  RecordType.Name = &quot;Sales Opportunity&quot;,
  ISCHANGED(StageName),
-OR(
+ OR(
 ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
 ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
 ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
@@ -27853,7 +27776,7 @@ NOT(ISPICKVAL(StageName ,&quot;2 - Conducting Needs Analysis&quot;)),
 NOT(ISPICKVAL(StageName ,&quot;Closed Lost&quot;)),
 ISCHANGED(CloseDate),
 ISBLANK(TEXT(Rep_Forecast_Category__c)),
-CloseDate &lt; TODAY() + 89)</errorConditionFormula>
+CloseDate  &lt;  TODAY() + 89)</errorConditionFormula>
         <errorDisplayField>Rep_Forecast_Category__c</errorDisplayField>
         <errorMessage>This Opportunity is within the 90 day forecast period. Please update the Rep Forecast Category.</errorMessage>
     </validationRules>
