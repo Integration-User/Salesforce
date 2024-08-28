@@ -472,8 +472,7 @@ IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
     </fields>
     <fields>
         <fullName>Percentage_of_Total_Amount__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF(Opportunity.Total_ARR__c=0,0,TotalPrice  /  Opportunity.Total_ARR__c)</formula>
+        <formula>IF(Opportunity.Total_ARR__c=0,0,ARR_Formula__c/  Opportunity.Total_ARR__c)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Percentage of Total Amount</label>
         <precision>18</precision>
