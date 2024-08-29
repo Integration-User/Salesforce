@@ -1240,6 +1240,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Debtor_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Debtor Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <securityClassification>Confidential</securityClassification>
         <trackHistory>false</trackHistory>
@@ -2864,7 +2875,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
     </fields>
     <fields>
         <fullName>Subsidiary__c</fullName>
-	<externalId>false</externalId>
+        <externalId>false</externalId>
         <label>Subsidiary</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
