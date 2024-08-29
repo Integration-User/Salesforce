@@ -2518,6 +2518,28 @@ Owner.Id = $User.Id)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Research_Market_Data_Deals_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research+Market Data &amp; Deals L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Research_REIT_Data_L60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>Research + REIT Data L60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Research_Usage_L60D__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Research email and platform clicks for this account over the last 60 days</inlineHelpText>
@@ -3036,6 +3058,17 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Transition_Lost_Client__c</fullName>
@@ -4578,6 +4611,34 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Footfall Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Housing Starts Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Office Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A One-Time Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Retail Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Retail Risk Index</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Supermarket Dashboard</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6129,6 +6190,34 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Footfall Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Housing Starts Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Office Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A One-Time Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Retail Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Retail Risk Index</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Supermarket Dashboard</fullName>
                 <default>false</default>
             </values>
             <values>

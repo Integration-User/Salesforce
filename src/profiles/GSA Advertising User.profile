@@ -21400,6 +21400,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>OpportunityLineItem.Product_Type_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>OpportunityLineItem.Publication__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -35771,7 +35776,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Product_Feedback__c.Product_Feedback</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
