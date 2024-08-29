@@ -2672,7 +2672,6 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
     </fields>
     <fields>
         <fullName>Lead_Channel__c</fullName>
-        <externalId>false</externalId>
         <label>Lead Channel</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2781,7 +2780,6 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
     </fields>
     <fields>
         <fullName>Lead_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Lead Type</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3010,6 +3008,7 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Former Account</controllingFieldValue>
+                <controllingFieldValue>Cold Outreach</controllingFieldValue>
                 <valueName>Green Street</valueName>
             </valueSettings>
             <valueSettings>
@@ -6833,6 +6832,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>X6Sense_Segment_Names__c</fullName>
+        <externalId>false</externalId>
+        <label>6Sense Segment Names</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>XFILES__Chatter_Google_Folder_Id__c</fullName>
@@ -14318,6 +14328,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
+                <fullName>6sense</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Demo Request</fullName>
                 <default>false</default>
             </values>
@@ -20125,6 +20139,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
+                <fullName>6sense</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Demo Request</fullName>
                 <default>false</default>
             </values>
@@ -21542,6 +21560,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>LeadSource</picklist>
+            <values>
+                <fullName>6sense</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Green Street</fullName>
                 <default>false</default>
@@ -23665,6 +23687,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
+                <fullName>6sense</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Demo Request</fullName>
                 <default>false</default>
             </values>
@@ -25388,6 +25414,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>LeadSource</picklist>
+            <values>
+                <fullName>6sense</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Demo Request</fullName>
                 <default>false</default>
