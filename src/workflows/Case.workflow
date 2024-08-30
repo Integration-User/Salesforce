@@ -9,6 +9,22 @@
         <template>unfiled$public/AskNicely_Closed_Case</template>
     </alerts>
     <alerts>
+        <fullName>AskNicely_Closed_Case_GS_News</fullName>
+        <ccEmails>greenstreet_45d975f@emailtosurvey.asknice.ly</ccEmails>
+        <description>AskNicely Closed Case - GS News</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/AskNicely_Closed_Case_GS_News</template>
+    </alerts>
+    <alerts>
+        <fullName>AskNicely_Closed_Case_GS_Platform</fullName>
+        <ccEmails>greenstreet_45d975f@emailtosurvey.asknice.ly</ccEmails>
+        <description>AskNicely Closed Case - GS Platform</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/AskNicely_Closed_Case_GS_Platform</template>
+    </alerts>
+    <alerts>
         <fullName>Case_Closed_Internal</fullName>
         <description>Case Closed - Internal</description>
         <protected>false</protected>
