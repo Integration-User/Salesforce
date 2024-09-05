@@ -12,6 +12,6 @@
     </values>
     <values>
         <field>SF_Product_Name__c</field>
-        <value xsi:type="xsd:string">IJ Global: One-Time</value>
+        <value xsi:type="xsd:string">IJGlobal: One-Time</value>
     </values>
 </CustomMetadata>
