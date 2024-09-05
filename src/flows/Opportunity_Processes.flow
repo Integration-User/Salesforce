@@ -360,7 +360,7 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_1</name>
-            <conditionLogic>(1 OR 2) AND (3 OR 4)</conditionLogic>
+            <conditionLogic>(1 OR 2) AND (3 OR 4) AND 5</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -483,6 +483,37 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Sales Opportunity - Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2832,7 +2863,7 @@
                 <leftValueReference>myVariable_current.Last_Stage_Change__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_11_myRule_8_1931407671</elementReference>
+                    <elementReference>formula_11_myRule_8_5224373680</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -4880,7 +4911,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_8_1931407671</name>
+        <name>formula_11_myRule_8_5224373680</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -4891,11 +4922,11 @@
                 <stringValue>[Opportunity].Contract_Start_Date__c + 364</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_6147219127</name>
+        <name>formula_4_myRule_1_A1_6015648878</name>
         <dataType>Date</dataType>
         <expression>{!myVariable_current.Contract_Start_Date__c} + 364</expression>
     </formulas>
-    <interviewLabel>Opportunity_Processes-68_InterviewLabel</interviewLabel>
+    <interviewLabel>Opportunity_Processes-67_InterviewLabel</interviewLabel>
     <label>Opportunity Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -6389,7 +6420,7 @@
             </processMetadataValues>
             <field>End_Date__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_6147219127</elementReference>
+                <elementReference>formula_4_myRule_1_A1_6015648878</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
