@@ -12,6 +12,6 @@
     </values>
     <values>
         <field>SF_Product_Name__c</field>
-        <value xsi:type="xsd:string">IJ Global: News</value>
+        <value xsi:type="xsd:string">IJGlobal: News</value>
     </values>
 </CustomMetadata>
