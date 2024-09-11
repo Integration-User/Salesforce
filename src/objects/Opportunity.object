@@ -196,7 +196,23 @@
         <fullName>Renewal</fullName>
         <isActive>true</isActive>
         <values>
-            <fullName>Agreement Sent and Being Negotiated %285%29</fullName>
+            <fullName>2 - Conducting Needs Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Qualifying</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Recommending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - Negotiation and Agreement Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 - Verbal Win and Finalizing Contract</fullName>
             <default>false</default>
         </values>
         <values>
@@ -208,27 +224,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Conducting Needs Analysis %283%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Consolidated</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Pricing Proposal Sent %284%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Qualified Prospect %282%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Suspended</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Verbal Win %286%29</fullName>
             <default>false</default>
         </values>
     </businessProcesses>
@@ -261,7 +261,27 @@
         <description>New Business Sales Process</description>
         <isActive>true</isActive>
         <values>
-            <fullName>Agreement Sent and Being Negotiated %285%29</fullName>
+            <fullName>1 - Introducing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Conducting Needs Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Qualifying</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Recommending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - Negotiation and Agreement Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 - Verbal Win and Finalizing Contract</fullName>
             <default>false</default>
         </values>
         <values>
@@ -273,27 +293,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Conducting Needs Analysis %283%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Consolidated</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Pricing Proposal Sent %284%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Qualified Prospect %282%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Suspended</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Verbal Win %286%29</fullName>
             <default>false</default>
         </values>
     </businessProcesses>
@@ -4663,7 +4667,6 @@ OwnerId  = $User.Id)</formula>
         <label>New Sales Opportunity</label>
         <lookupFilter>
             <active>true</active>
-            <booleanFilter>(1 OR 3) AND 2</booleanFilter>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -4672,12 +4675,7 @@ OwnerId  = $User.Id)</formula>
             <filterItems>
                 <field>Opportunity.StageName</field>
                 <operation>equals</operation>
-                <value>Qualified Prospect (2), Conducting Needs Analysis (3), Pricing Proposal Sent (4), Agreement Sent and Being Negotiated (5), Verbal Win (6)</value>
-            </filterItems>
-            <filterItems>
-                <field>Opportunity.RecordType.DeveloperName</field>
-                <operation>equals</operation>
-                <value>Existing_Business</value>
+                <value>1 - Introducing, 2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -8963,15 +8961,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A IJ Investor</fullName>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A News</fullName>
+                <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A One-Time</fullName>
+                <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10561,15 +10559,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A IJ Investor</fullName>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A News</fullName>
+                <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A One-Time</fullName>
+                <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12091,15 +12089,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A IJ Investor</fullName>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A News</fullName>
+                <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A One-Time</fullName>
+                <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13561,15 +13559,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A IJ Investor</fullName>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A News</fullName>
+                <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A One-Time</fullName>
+                <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15301,15 +15299,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A IJ Investor</fullName>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A News</fullName>
+                <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A One-Time</fullName>
+                <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16723,6 +16721,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -16772,6 +16778,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18121,6 +18131,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -18166,6 +18184,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19444,6 +19466,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Company Diagnostics</fullName>
                 <default>false</default>
             </values>
@@ -19473,6 +19499,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Financial%2FStrategic Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21152,15 +21182,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A IJ Investor</fullName>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A News</fullName>
+                <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A One-Time</fullName>
+                <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22017,6 +22047,953 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Marketing_Identified_Country__c</picklist>
+            <values>
+                <fullName>Afghanistan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aland Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Albania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Algeria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>American Samoa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andorra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Angola</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anguilla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Antarctica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Antigua and Barbuda</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Argentina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armenia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asia%2FPacific Region</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Austria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Azerbaijan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bahamas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bahrain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bangladesh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barbados</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belarus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bermuda</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bhutan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bolivia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bonaire Saint Eustatius and Saba</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bosnia and Herzegovina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Botswana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>British Virgin Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brunei</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulgaria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burkina Faso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burundi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cambodia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cameroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cape Verde</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cayman Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central African Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colombia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comoros</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Costa Rica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Croatia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cuba</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cyprus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Democratic Republic of the Congo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Djibouti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dominica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dominican Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>East Timor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecuador</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Egypt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>El Salvador</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equatorial Guinea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eritrea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estonia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethiopia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Faroe Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiji</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>French Guiana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>French Polynesia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>French Southern Territories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gabon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gambia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ghana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greenland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grenada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guadeloupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guatemala</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guernsey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guinea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guinea-Bissau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guyana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Haiti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Honduras</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hungary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iceland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indonesia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iran</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iraq</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ireland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isle of Man</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Israel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ivory Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jamaica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Japan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jersey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jordan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kazakhstan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kenya</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiribati</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kosovo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kuwait</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kyrgyzstan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latvia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lebanon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lesotho</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liberia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Libya</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liechtenstein</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lithuania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luxembourg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Macao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Macedonia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Madagascar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Malawi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maldives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mali</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Malta</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marshall Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Martinique</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mauritania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mauritius</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mayotte</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mexico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Micronesia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moldova</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monaco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mongolia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Montenegro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Montserrat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mozambique</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Myanmar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Namibia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nauru</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nepal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands Antilles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Caledonia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nicaragua</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nigeria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North Korea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northern Mariana Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pakistan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Palau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Palestinian Territory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Panama</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Papua New Guinea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paraguay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peru</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philippines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portugal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Puerto Rico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qatar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Republic of the Congo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reunion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Romania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rwanda</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saint Helena</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saint Kitts and Nevis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saint Lucia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saint Pierre and Miquelon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saint Vincent and the Grenadines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Samoa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>San Marino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sao Tome and Principe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saudi Arabia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senegal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serbia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seychelles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sierra Leone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slovakia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slovenia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solomon Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somalia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Korea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Sudan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sri Lanka</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sudan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suriname</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Svalbard and Jan Mayen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Swaziland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Syria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taiwan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tajikistan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tanzania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thailand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Togo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tokelau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tonga</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trinidad and Tobago</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tunisia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turkey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turkmenistan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tuvalu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Virgin Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uganda</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ukraine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United Arab Emirates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United Kingdom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United States</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United States Minor Outlying Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uruguay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uzbekistan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vanuatu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venezuela</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vietnam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wallis and Futuna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Western Sahara</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yemen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zambia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zimbabwe</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Products__c</picklist>
             <values>
                 <fullName>API</fullName>
@@ -22167,15 +23144,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A IJ Investor</fullName>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A News</fullName>
+                <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A One-Time</fullName>
+                <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22495,6 +23472,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sales_Type__c</picklist>
+            <values>
+                <fullName>Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sector_Interests__c</picklist>
             <values>
                 <fullName>All</fullName>
@@ -22598,6 +23598,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sectors_Sold__c</picklist>
+            <values>
+                <fullName>All Sectors</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Single%2FDual Sector</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -23823,15 +24834,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A IJ Investor</fullName>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A News</fullName>
+                <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A One-Time</fullName>
+                <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25595,15 +26606,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A IJ Investor</fullName>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A News</fullName>
+                <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A One-Time</fullName>
+                <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26277,9 +27288,9 @@ OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName, &quot;Pricing Proposal Sent (4)&quot;),
-ISPICKVAL(StageName, &quot;Agreement Sent and Being Negotiated (5)&quot;),
-ISPICKVAL(StageName, &quot;Verbal Win (6)&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)),
 ISBLANK(Account.Website))</errorConditionFormula>
         <errorMessage>To save at a Stage 4 or higher, you must have the following Account fields populated: Website</errorMessage>
@@ -26329,7 +27340,7 @@ OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName,&quot;Verbal Win (6)&quot;),
+ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName,&quot;Closed Won&quot;)),
 AND(
 NOT(ISBLANK(X2nd_Year_Amount_in_USD__c)),
@@ -26472,6 +27483,7 @@ RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Sales Opportunity - Closed&quot;,
 RecordType.Name = &quot;Renewal&quot;,
 RecordType.Name = &quot;Renewal - Closed&quot;),
+ISCHANGED(StageName), 
 ISPICKVAL( StageName , &quot;Closed Won&quot;))</errorConditionFormula>
         <errorMessage>Please submit for review. The Operations team will close this Opportunity once reviewed.</errorMessage>
     </validationRules>
@@ -26504,8 +27516,8 @@ ISPICKVAL( StageName , &quot;Closed Won&quot;))</errorConditionFormula>
 	NOT(ISPICKVAL(StageName,&quot;Closed Lost&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;Consolidated&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;Suspended&quot;)),
-	NOT(ISPICKVAL(StageName,&quot;Qualified Prospect (2)&quot;)),
-	NOT(ISPICKVAL(StageName,&quot;Conducting Needs Analysis (3)&quot;)),
+	NOT(ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;)),
+	NOT(ISPICKVAL(StageName,&quot;3 - Qualifying&quot;)),
         Exclude_from_Deal_Scoring_Model__c = FALSE
 	)</errorConditionFormula>
         <errorMessage>The approved ARR and score has changed. Please, click on &quot;Calculate Score&quot; and follow the approval instructions before moving the stage.</errorMessage>
@@ -26535,8 +27547,8 @@ NOT(ISPICKVAL(StageName,&quot;Deactivated&quot;)),
 NOT(ISPICKVAL(StageName,&quot;Closed Lost&quot;)),
 NOT(ISPICKVAL(StageName,&quot;Consolidated&quot;)),
 NOT(ISPICKVAL(StageName,&quot;Suspended&quot;)),
-NOT(ISPICKVAL(StageName,&quot;Qualified Prospect (2)&quot;)),
-NOT(ISPICKVAL(StageName,&quot;Conducting Needs Analysis (3)&quot;)),
+NOT(ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;)),
+NOT(ISPICKVAL(StageName,&quot;3 - Qualifying&quot;)),
 OR(
 NOT(ISPICKVAL(LeadSource ,&quot;News Subscription Request&quot;))))</errorConditionFormula>
         <errorMessage>Please, follow the approval instructions before moving the stage.</errorMessage>
@@ -26562,8 +27574,9 @@ NOT(ISPICKVAL(LeadSource ,&quot;News Subscription Request&quot;))))</errorCondit
 	NOT(ISPICKVAL(StageName,&quot;Closed Lost&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;Consolidated&quot;)),
 	NOT(ISPICKVAL(StageName,&quot;Suspended&quot;)),
-	NOT(ISPICKVAL(StageName,&quot;Qualified Prospect (2)&quot;)),
-	NOT(ISPICKVAL(StageName,&quot;Conducting Needs Analysis (3)&quot;)),
+        NOT(ISPICKVAL(StageName,&quot;1 - Introducing&quot;)),
+	NOT(ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;)),
+	NOT(ISPICKVAL(StageName,&quot;3 - Qualifying&quot;)),
         Exclude_from_Deal_Scoring_Model__c = FALSE
 	)</errorConditionFormula>
         <errorDisplayField>StageName</errorDisplayField>
@@ -26605,8 +27618,8 @@ GSA_Subsidairy__c &lt;&gt; &quot;14 React Ltd&quot;,
 OR(
 ISBLANK(TEXT( ADV_PPD_Sent__c ))),
 OR(
-ISPICKVAL(StageName, &quot;Agreement Sent and Being Negotiated (5)&quot;),
-ISPICKVAL(StageName, &quot;Verbal Win (6)&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ))</errorConditionFormula>
         <errorMessage>To save at a Stage 5 or higher, you must have the following fields completed.
@@ -26623,7 +27636,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
   Account.BillingCountry = &quot;United States&quot;
 ),
  OR(
-  ISPICKVAL(StageName, &quot;Verbal Win (6)&quot;),
+  ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
   ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ),
  OR( 
@@ -26640,10 +27653,10 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Advisory&quot;,
 OR(
-ISPICKVAL(StageName, &quot;Conducting Needs Analysis (3)&quot;),
-ISPICKVAL(StageName, &quot;Pricing Proposal Sent (4)&quot;),
-ISPICKVAL(StageName, &quot;Agreement Sent and Being Negotiated (5)&quot;),
-ISPICKVAL(StageName, &quot;Verbal Win (6)&quot;),
+ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ),
 OR(
@@ -26665,10 +27678,11 @@ ISBLANK(TEXT(Real_Estate_Capital_Markets_Public__c))
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
  RecordType.Name = &quot;Renewal&quot;,
  OR(
-ISPICKVAL(StageName, &quot;Conducting Needs Analysis (3)&quot;),
-ISPICKVAL(StageName, &quot;Pricing Proposal Sent (4)&quot;),
-ISPICKVAL(StageName, &quot;Agreement Sent and Being Negotiated (5)&quot;),
-ISPICKVAL(StageName, &quot;Verbal Win (6)&quot;),
+ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
+ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ),
  OR(
@@ -26686,11 +27700,13 @@ ISBLANK(Account.Phone )
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
  RecordType.Name = &quot;Sales Opportunity&quot;,
- OR(
-ISPICKVAL(StageName, &quot;Conducting Needs Analysis (3)&quot;),
-ISPICKVAL(StageName, &quot;Pricing Proposal Sent (4)&quot;),
-ISPICKVAL(StageName, &quot;Agreement Sent and Being Negotiated (5)&quot;),
-ISPICKVAL(StageName, &quot;Verbal Win (6)&quot;),
+ ISCHANGED(StageName),
+OR(
+ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
+ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ),
  OR(
@@ -26698,10 +27714,10 @@ ISBLANK(TEXT(Account.Company_Type__c )),
 ISBLANK(TEXT( Account.Subsidiary__c )),
 ISBLANK(Account.Description ),
 ISBLANK(Account.Phone ),
-ISBLANK(TEXT(LeadSource)
-)))</errorConditionFormula>
-        <errorDisplayField>LeadSource</errorDisplayField>
-        <errorMessage>To save at a Stage 3 or higher, you must have the Opportunity Lead Source populated and the following Account fields: Company Type, Subsidiary, Phone, and Description.</errorMessage>
+ISBLANK(TEXT(Lead_Channel__c)),
+ISBLANK(TEXT(Lead_Type__c))
+))</errorConditionFormula>
+        <errorMessage>To save at a Stage 2 or higher, you must have the Opportunity Lead Type &amp; Lead Channel populated and the following Account fields: Company Type, Subsidiary, Phone, and Description.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Fields_to_Save_Stage_3</fullName>
@@ -26711,7 +27727,7 @@ ISBLANK(TEXT(LeadSource)
 OR (
 RecordType.DeveloperName = &quot;Existing_Business&quot;,
 RecordType.DeveloperName = &quot;Sales_Opportunity&quot;),
-NOT (ISPICKVAL(StageName, &quot;Qualified Prospect (2)&quot;)),
+NOT (ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;)),
 NOT (ISPICKVAL(StageName, &quot;Consolidated&quot;)),
 NOT (ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
 AND (
@@ -26756,7 +27772,7 @@ OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName,&quot;Verbal Win (6)&quot;),
+ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName,&quot;Closed Won&quot;)),
 Create_New_Renewal_Opportunity__c = FALSE,
 (Contract_End_Date__c - Current_Year_Contract_Start_Date__c)&lt;366)</errorConditionFormula>
@@ -26771,7 +27787,7 @@ OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName,&quot;Verbal Win (6)&quot;),
+ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName,&quot;Closed Won&quot;)),
 AND(
 ISBLANK(TEXT(Reason_For_No_Renewal__c)),
@@ -26791,7 +27807,7 @@ RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
 
 OR(
-ISPICKVAL(StageName,&quot;Verbal Win (6)&quot;),
+ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName,&quot;Closed Won&quot;)),
 
 OR(
@@ -26890,7 +27906,7 @@ IsClosed=TRUE)</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Other_Vendors_Required_Closed_Lost</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISBLANK(Account.Other_Vendors__c),
@@ -27103,7 +28119,7 @@ ISPICKVAL( Lead_Type__c, &quot;Other&quot;)
         <description>To move to Stage 6, Contract Start/End Date, Billing Schedule and Billing Contact are required.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
- ISPICKVAL( StageName , &quot;Verbal Win (6)&quot;),
+ ISPICKVAL( StageName , &quot;6 - Verbal Win and Finalizing Contract&quot;),
 OR(
  ISBLANK(  Contract_Start_Date__c  ),
  ISBLANK(  Contract_End_Date__c  ),
@@ -27112,7 +28128,7 @@ OR(
  RecordType.Name = &quot;Renewal&quot;,
  RecordType.Name = &quot;Sales Opportunity&quot;)
 )</errorConditionFormula>
-        <errorMessage>Please enter Contract Start and End Date, Billing contact and Billing Frequency in order to save this Opportunity as a Verbal Win.</errorMessage>
+        <errorMessage>Please enter Contract Start and End Date, Billing contact and Billing schedule in order to save this Opportunity as a Verbal Win.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Required_Stage4_AskPrice</fullName>
@@ -27124,9 +28140,9 @@ OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
 OR(
-ISPICKVAL(StageName, &quot;Pricing Proposal Sent (4)&quot;),
-ISPICKVAL(StageName, &quot;Agreement Sent and Being Negotiated (5)&quot;),
-ISPICKVAL(StageName, &quot;Verbal Win (6)&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(StageName, &quot;Closed Won&quot;)),
 Evergreen_Contract__c = FALSE,
 Current_Contract_Year__c = 1,
@@ -27193,10 +28209,10 @@ RecordType.Name&lt;&gt;&quot;Advisory - Closed&quot;,
 RecordType.Name&lt;&gt;&quot;Favor&quot;,
 RecordType.Name&lt;&gt;&quot;Favor - Closed&quot;,
 OR(
-ISPICKVAL(StageName,&quot;Qualified Prospect (2)&quot;),
-ISPICKVAL(StageName,&quot;Conducting Needs Analysis (3)&quot;),
-ISPICKVAL(StageName,&quot;Pricing Proposal Sent (4)&quot;),
-ISPICKVAL(StageName,&quot;Agreement Sent and Being Negotiated (5)&quot;)),
+ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;),
+ISPICKVAL(StageName,&quot;3 - Qualifying&quot;),
+ISPICKVAL(StageName,&quot;4 - Recommending&quot;),
+ISPICKVAL(StageName,&quot;5 - Negotiation and Agreement Sent&quot;)),
 NOT(ISBLANK(TEXT(Win_Validation__c))))</errorConditionFormula>
         <errorDisplayField>Win_Validation__c</errorDisplayField>
         <errorMessage>Win Validation can only be selected if on SS6 or higher. Please make this field blank for now.</errorMessage>
@@ -27249,7 +28265,7 @@ NOT(ISBLANK(Year_5_Amount__c)))</errorConditionFormula>
         <requireRowSelection>true</requireRowSelection>
         <url>/lightning/o/Opportunity/new?useRecordTypeCheck=1&amp;defaultFieldValues=
 Name={!Opportunity.Sales_Type__c}%20-%20{!Account.Name}%20{!Opportunity.Renewal_Month__c}%20{!Opportunity.Renewal_Year__c},
-StageName=Qualified Prospect (2),
+StageName=1 - Introducing,
 CloseDate={!TEXT(TODAY()+90)},
 AccountId={!Account.Id},
 ContactId={!Contact.Id},
