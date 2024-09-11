@@ -8,10 +8,10 @@
     </values>
     <values>
         <field>Netsuite_Internal_Id__c</field>
-        <value xsi:type="xsd:double">681.0</value>
+        <value xsi:type="xsd:double">705.0</value>
     </values>
     <values>
         <field>SF_Product_Name__c</field>
-        <value xsi:type="xsd:string">IJ Global: IJ Investor</value>
+        <value xsi:type="xsd:string">IJGlobal: IJ Investor</value>
     </values>
 </CustomMetadata>

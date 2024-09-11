@@ -818,7 +818,7 @@
         <criteriaItems>
             <field>Opportunity.RecordTypeId</field>
             <operation>notEqual</operation>
-            <value>Sales Development</value>
+            <value>Sales Development,Advisory,Advisory - Closed,Advertising,Advertising - Closed</value>
         </criteriaItems>
         <triggerType>onAllChanges</triggerType>
     </rules>
