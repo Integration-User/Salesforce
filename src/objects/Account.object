@@ -186,7 +186,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Account_Record_Page</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -194,7 +194,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Account_Record_Page</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -2875,7 +2875,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
     </fields>
     <fields>
         <fullName>Subsidiary__c</fullName>
-	<externalId>false</externalId>
+        <externalId>false</externalId>
         <label>Subsidiary</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -4776,10 +4776,6 @@ Stored as Long on Solr.</description>
                 <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
         <picklistValues>
             <picklist>DOZISF__ZoomInfo_Enrich_Status__c</picklist>
@@ -6319,10 +6315,6 @@ Stored as Long on Solr.</description>
                 <fullName>US Tertiary Market Data</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
         <picklistValues>
             <picklist>DOZISF__ZoomInfo_Enrich_Status__c</picklist>
@@ -7305,7 +7297,7 @@ Stored as Long on Solr.</description>
         <searchFilterFields>ACCOUNT.PHONE1</searchFilterFields>
         <searchFilterFields>CORE.USERS.ALIAS</searchFilterFields>
         <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Secondary_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Subsidiary__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ACCOUNT.TYPE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Priority__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.LAST_NAME</searchResultsAdditionalFields>
