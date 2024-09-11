@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <name>Opportunity_Record_Type_Decision</name>
+        <label>Opportunity Record Type Decision</label>
+        <locationX>314</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Advertising_Oppty</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Advertising_Oppty_Name</targetReference>
+            </connector>
+            <label>Advertising Oppty</label>
+        </rules>
+        <rules>
+            <name>Advisory_Oppty</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advisory</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advisory_Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Advisory_Oppty_Name</targetReference>
+            </connector>
+            <label>Advisory Oppty</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Advertising_Opp_Name</name>
+        <dataType>String</dataType>
+        <expression>&quot;Advertising&quot; &amp; &quot; &quot;&amp; &quot;-&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name} &amp; &quot; &quot; &amp; {!$Record.Renewal_Month__c} &amp; &quot; &quot; &amp; {!$Record.Renewal_Year__c}</expression>
+    </formulas>
+    <formulas>
+        <name>Advisory_Opp_Name</name>
+        <dataType>String</dataType>
+        <expression>&quot;Advisory&quot; &amp; &quot; &quot;&amp; &quot;-&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name} &amp; &quot; &quot; &amp; {!$Record.Renewal_Month__c} &amp; &quot; &quot; &amp; {!$Record.Renewal_Year__c}</expression>
+    </formulas>
+    <interviewLabel>Opportunity - Update Advertising / Advisory Names {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Update Advertising / Advisory Names</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Advertising_Oppty_Name</name>
+        <label>Update Advertising Oppty Name</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Advertising_Opp_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Advisory_Oppty_Name</name>
+        <label>Update Advisory Oppty Name</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Advisory_Opp_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Opportunity_Record_Type_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
