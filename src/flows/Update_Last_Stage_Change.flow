@@ -1,11 +1,715 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email_Account_Name</name>
+        <label>Send Email Account Name</label>
+        <locationX>50</locationX>
+        <locationY>2231</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Change_Closed_Date</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Closed_Won_Field_Change_Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailAccountName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_AM_Referred_By</name>
+        <label>Send Email AM Referred By</label>
+        <locationX>50</locationX>
+        <locationY>3131</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Closed_Won_Field_Change_Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailAMReferredBy</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Closed_Date</name>
+        <label>Send Email Closed Date</label>
+        <locationX>50</locationX>
+        <locationY>2531</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Change_Opportunity_Owner</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Closed_Won_Field_Change_Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailClosedDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Current_Contract_Yr</name>
+        <label>Send Email Current Contract Yr</label>
+        <locationX>50</locationX>
+        <locationY>1631</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Change_Length_of_Contract</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Closed_Won_Field_Change_Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailCurrentContractYr</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Length_of_Contract</name>
+        <label>Send Email Length of Contract</label>
+        <locationX>50</locationX>
+        <locationY>1931</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Change_of_Account_Name</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Closed_Won_Field_Change_Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailLengthofContract</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Oppty_Owner</name>
+        <label>Send Email Oppty Owner</label>
+        <locationX>50</locationX>
+        <locationY>2831</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Change_Referred_By</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Closed_Won_Field_Change_Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailOpptyOwner</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Stage_Change</name>
+        <label>Send Email Stage Change</label>
+        <locationX>50</locationX>
+        <locationY>731</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Change_Contract_Start_Date</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Closed_Won_Field_Change_Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailStageChange</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_to_Contract_End_Date</name>
+        <label>Send Email to Contract End Date</label>
+        <locationX>50</locationX>
+        <locationY>1331</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Change_Current_Contract_Yr</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Closed_Won_Field_Change_Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailTemplateContractEndDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_to_Contract_Start_Date</name>
+        <label>Send Email to Contract Start Date</label>
+        <locationX>50</locationX>
+        <locationY>1031</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Change_Contract_End_Date</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Closed_Won_Field_Change_Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailTemplateContractStrtDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>59.0</apiVersion>
+    <constants>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Closed Won Field Changes Alert</stringValue>
+        </value>
+    </constants>
     <decisions>
-        <name>Closed_Stage_Decision</name>
-        <label>Closed Stage Decision</label>
+        <name>Change_Closed_Date</name>
+        <label>Change Closed Date</label>
         <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationY>2423</locationY>
+        <defaultConnector>
+            <targetReference>Change_Opportunity_Owner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Closed_Date_Change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CloseDate</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_Closed_Date</targetReference>
+            </connector>
+            <label>Send Closed Date Change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Change_Contract_End_Date</name>
+        <label>Change Contract End Date</label>
+        <locationX>182</locationX>
+        <locationY>1223</locationY>
+        <defaultConnector>
+            <targetReference>Change_Current_Contract_Yr</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Email_Contract_End</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contract_End_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PriorStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_to_Contract_End_Date</targetReference>
+            </connector>
+            <label>Send Email Contract End</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Change_Contract_Start_Date</name>
+        <label>Change Contract Start Date</label>
+        <locationX>182</locationX>
+        <locationY>923</locationY>
+        <defaultConnector>
+            <targetReference>Change_Contract_End_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Start_Date_Email</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contract_Start_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PriorStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_to_Contract_Start_Date</targetReference>
+            </connector>
+            <label>Send Start Date Email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Change_Current_Contract_Yr</name>
+        <label>Change Current Contract Yr</label>
+        <locationX>182</locationX>
+        <locationY>1523</locationY>
+        <defaultConnector>
+            <targetReference>Change_Length_of_Contract</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Current_Contract_Yr</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Current_Contract_Year__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PriorStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_Current_Contract_Yr</targetReference>
+            </connector>
+            <label>Send Current Contract Yr</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Change_Fields_when_Closed_Won</name>
+        <label>Change Fields when Closed Won</label>
+        <locationX>182</locationX>
+        <locationY>623</locationY>
+        <defaultConnector>
+            <targetReference>Change_Contract_Start_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Stage_Name_Change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PriorStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_Stage_Change</targetReference>
+            </connector>
+            <label>Stage Name Change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Change_Length_of_Contract</name>
+        <label>Change Length of Contract</label>
+        <locationX>182</locationX>
+        <locationY>1823</locationY>
+        <defaultConnector>
+            <targetReference>Change_of_Account_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Length_of_Contract</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Length_of_Contract__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PriorStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_Length_of_Contract</targetReference>
+            </connector>
+            <label>Send Length of Contract</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Change_of_Account_Name</name>
+        <label>Change of Account Name</label>
+        <locationX>182</locationX>
+        <locationY>2123</locationY>
+        <defaultConnector>
+            <targetReference>Change_Closed_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Account_Name_Change</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PriorStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_Account_Name</targetReference>
+            </connector>
+            <label>Send Account Name Change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Change_Opportunity_Owner</name>
+        <label>Change Opportunity Owner</label>
+        <locationX>182</locationX>
+        <locationY>2723</locationY>
+        <defaultConnector>
+            <targetReference>Change_Referred_By</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Opportunity_Owner</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PriorStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_Oppty_Owner</targetReference>
+            </connector>
+            <label>Send Opportunity Owner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Change_Referred_By</name>
+        <label>Change Referred By</label>
+        <locationX>182</locationX>
+        <locationY>3023</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Referred_By</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Referred_By__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PriorStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_AM_Referred_By</targetReference>
+            </connector>
+            <label>Send Referred By</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Fields_when_Closed</name>
+        <label>Update Fields when Closed</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Change_Fields_when_Closed_Won</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Closed_Stage</name>
@@ -41,6 +745,58 @@
 Workflow rule description: &quot;</description>
     <environments>Default</environments>
     <formulas>
+        <name>AMReferredByFullName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Referred_By__r.FirstName} + &apos; &apos; + {!$Record.Referred_By__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>OwnerNameFormula</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Owner.FirstName} + &apos; &apos; +{!$Record.Owner.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>PrevAccountName</name>
+        <dataType>String</dataType>
+        <expression>PRIORVALUE({!$Record.Account.Name})</expression>
+    </formulas>
+    <formulas>
+        <name>PrevAMReferredby</name>
+        <dataType>String</dataType>
+        <expression>PRIORVALUE({!$Record.Referred_By__r.FirstName}) + &apos; &apos; + PRIORVALUE({!$Record.Referred_By__r.LastName})</expression>
+    </formulas>
+    <formulas>
+        <name>PrevClosedDate</name>
+        <dataType>Date</dataType>
+        <expression>PRIORVALUE({!$Record.CloseDate})</expression>
+    </formulas>
+    <formulas>
+        <name>PrevContractEndDate</name>
+        <dataType>Date</dataType>
+        <expression>PRIORVALUE({!$Record.Contract_End_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>PrevContractStartDate</name>
+        <dataType>Date</dataType>
+        <expression>PRIORVALUE({!$Record.Contract_Start_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>PrevCurrentContractYr</name>
+        <dataType>Number</dataType>
+        <expression>PRIORVALUE({!$Record.Current_Contract_Year__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>PrevLengthofContract</name>
+        <dataType>Number</dataType>
+        <expression>PRIORVALUE({!$Record.Length_of_Contract__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>PrevOpptyOwner</name>
+        <dataType>String</dataType>
+        <expression>PRIORVALUE({!$Record.Owner.FirstName}) + &apos; &apos; + PRIORVALUE({!$Record.Owner.LastName})</expression>
+    </formulas>
+    <formulas>
         <name>PriorStage</name>
         <dataType>String</dataType>
         <expression>PRIORVALUE({!$Record.StageName})</expression>
@@ -50,7 +806,8 @@ Workflow rule description: &quot;</description>
         <dataType>Date</dataType>
         <expression>IF(ISCHANGED($Record.StageName), TODAY(), ($Record.Last_Stage_Change__c))</expression>
     </formulas>
-    <label>Update Last Stage Change</label>
+    <interviewLabel>Send Email to Change {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Send Field Email When Closed Won</label>
     <migratedFromWorkflowRuleName>Update Last Stage Change</migratedFromWorkflowRuleName>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -66,26 +823,13 @@ Workflow rule description: &quot;</description>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>mainUpdate</name>
-        <label>mainUpdate</label>
-        <locationX>182</locationX>
-        <locationY>323</locationY>
-        <connector>
-            <targetReference>Closed_Stage_Decision</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Last_Stage_Change__c</field>
-            <value>
-                <elementReference>Update_Last_Stage_ChangeFormula</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Previous_Stage</name>
         <label>Update Previous Stage</label>
         <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Change_Fields_when_Closed_Won</targetReference>
+        </connector>
         <inputAssignments>
             <field>Previous_Stage__c</field>
             <value>
@@ -98,7 +842,7 @@ Workflow rule description: &quot;</description>
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>mainUpdate</targetReference>
+            <targetReference>Update_Fields_when_Closed</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -113,4 +857,50 @@ Workflow rule description: &quot;</description>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>EmailAccountName</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There were some field changes on {!$Record.Name}:&lt;/p&gt;&lt;p&gt;Account Name from {!PrevAccountName} to &lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!$Record.Account.Name}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Link: {!$Label.Opportunity_Link}{!$Record.Id}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailAMReferredBy</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There were some field changes on {!$Record.Name}:&lt;/p&gt;&lt;p&gt;AM Referred By from {!PrevAMReferredby} to&lt;strong&gt; {!AMReferredByFullName}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Link: {!$Label.Opportunity_Link}{!$Record.Id}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailClosedDate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There were some field changes on {!$Record.Name}:&lt;/p&gt;&lt;p&gt;Close Date from {!PrevClosedDate} to &lt;strong&gt;{!$Record.CloseDate}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Link: {!$Label.Opportunity_Link}{!$Record.Id}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailCurrentContractYr</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There were some field changes on {!$Record.Name}:&lt;/p&gt;&lt;p&gt;Current Contract Year from {!PrevCurrentContractYr} to &lt;strong&gt;{!$Record.Current_Contract_Year__c}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Link: {!$Label.Opportunity_Link}{!$Record.Id}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailLengthofContract</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There were some field changes on {!$Record.Name}:&lt;/p&gt;&lt;p&gt;Length of Contract from {!PrevLengthofContract} to &lt;strong&gt;{!$Record.Length_of_Contract__c}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Link: {!$Label.Opportunity_Link}{!$Record.Id}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailOpptyOwner</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There were some field changes on {!$Record.Name}:&lt;/p&gt;&lt;p&gt;Opportunity Owner from {!PrevOpptyOwner} to &lt;strong&gt;{!OwnerNameFormula}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Link: {!$Label.Opportunity_Link}{!$Record.Id}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailStageChange</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There were some field changes on {!$Record.Name}:&lt;/p&gt;&lt;p&gt;Stage Name from {!PriorStage} to &lt;strong&gt;{!$Record.StageName}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Link: {!$Label.Opportunity_Link}{!$Record.Id}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailTemplateContractEndDate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There were some field changes on {!$Record.Name}:&lt;/p&gt;&lt;p&gt;Contract End Date from {!PrevContractEndDate} to &lt;strong&gt;{!$Record.Contract_End_Date__c}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Link: {!$Label.Opportunity_Link}{!$Record.Id}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Email template when field was changed</description>
+        <name>EmailTemplateContractStrtDate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;There were some field changes on {!$Record.Name}:&lt;/p&gt;&lt;p&gt;Contract Start Date from {!PrevContractStartDate} to &lt;strong&gt;{!$Record.Contract_Start_Date__c}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Link: {!$Label.Opportunity_Link}{!$Record.Id}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
 </Flow>
