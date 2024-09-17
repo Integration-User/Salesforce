@@ -8,10 +8,10 @@
     </values>
     <values>
         <field>Netsuite_Internal_Id__c</field>
-        <value xsi:type="xsd:double">699.0</value>
+        <value xsi:type="xsd:double">674.0</value>
     </values>
     <values>
         <field>SF_Product_Name__c</field>
-        <value xsi:type="xsd:string">Locatus: Housing Starts Data</value>
+        <value xsi:type="xsd:string">Locatus: Housing Plans Data</value>
     </values>
 </CustomMetadata>
