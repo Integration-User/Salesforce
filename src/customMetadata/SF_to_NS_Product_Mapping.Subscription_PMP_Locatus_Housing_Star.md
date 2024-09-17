@@ -12,6 +12,6 @@
     </values>
     <values>
         <field>SF_Product_Name__c</field>
-        <value xsi:type="xsd:string">Locatus: Housing Starts Data</value>
+        <value xsi:type="xsd:string">Locatus: Housing Plans Data</value>
     </values>
 </CustomMetadata>
