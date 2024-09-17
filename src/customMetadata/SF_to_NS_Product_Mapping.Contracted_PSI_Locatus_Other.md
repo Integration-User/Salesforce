@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>Netsuite_Internal_Id__c</field>
-        <value xsi:type="xsd:double">686.0</value>
+        <value xsi:type="xsd:double">711.0</value>
     </values>
     <values>
         <field>SF_Product_Name__c</field>
