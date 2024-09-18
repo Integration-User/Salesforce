@@ -4,8 +4,8 @@
         <description>This will notify case owner and Claire for cases open without activity for 4 days</description>
         <name>CaseStaleFor4days</name>
         <label>CaseStaleFor4days</label>
-        <locationX>1367</locationX>
-        <locationY>509</locationY>
+        <locationX>1370</locationX>
+        <locationY>384</locationY>
         <actionName>Case.Case_Stale_For_4_days</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -16,13 +16,14 @@
             </value>
         </inputParameters>
         <nameSegment>Case.Case_Stale_For_4_days</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>ClientTrialActivationEmailAlert</name>
         <label>ClientTrialActivationEmailAlert</label>
-        <locationX>873</locationX>
-        <locationY>1053</locationY>
+        <locationX>721</locationX>
+        <locationY>1992</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -36,13 +37,14 @@
             </value>
         </inputParameters>
         <nameSegment>Case.Trial_Activation_Email_Alert</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>GS_News_Untouched_Cases_Alert</name>
         <label>GS News Untouched Cases Alert</label>
-        <locationX>1852</locationX>
-        <locationY>252</locationY>
+        <locationX>2162</locationX>
+        <locationY>384</locationY>
         <actionName>Case.GS_News_Untouched_Cases_Alert</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -53,13 +55,14 @@
             </value>
         </inputParameters>
         <nameSegment>Case.GS_News_Untouched_Cases_Alert</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>TrialActivationEmailAlert</name>
         <label>TrialActivationEmailAlert</label>
-        <locationX>253</locationX>
-        <locationY>1054</locationY>
+        <locationX>457</locationX>
+        <locationY>1992</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -73,13 +76,14 @@
             </value>
         </inputParameters>
         <nameSegment>Case.Trial_Activation_Email_Alert</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Untouched_Help_Desk_Cases_Alert</name>
         <label>Untouched Help Desk Cases Alert</label>
-        <locationX>1519</locationX>
-        <locationY>511</locationY>
+        <locationX>1898</locationX>
+        <locationY>384</locationY>
         <actionName>Case.Untouched_Help_Desk_Cases</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -90,9 +94,396 @@
             </value>
         </inputParameters>
         <nameSegment>Case.Untouched_Help_Desk_Cases</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>GS_Case_Assignment</name>
+        <label>GS Case Assignment</label>
+        <locationX>336</locationX>
+        <locationY>384</locationY>
+        <assignmentItems>
+            <assignToReference>GSCase.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Contact.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Trial Activation</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.Due_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Trial_Start_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>00G5G000004kklJ</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.Platform__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Green Street</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Client_Access</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSCase.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CreateCaseList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>GSCase</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Green_Street_VS_Green_Street_News_Case_Condition</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IJGlobal_Product_Case_Assignment</name>
+        <label>IJGlobal Product Case Assignment</label>
+        <locationX>204</locationX>
+        <locationY>900</locationY>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.ActivationDeactivation_Needs__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Full Trial Activation</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Contact.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Trial Activation</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.Due_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Trial_Start_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>00G5G000004kklJ</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.Platform__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>IJGlobal</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Client_Access</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IJGlobalCase.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CreateCaseList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>IJGlobalCase</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Locatus_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Locatus_Product_Case_Assignment</name>
+        <label>Locatus Product Case Assignment</label>
+        <locationX>182</locationX>
+        <locationY>1200</locationY>
+        <assignmentItems>
+            <assignToReference>LocatusCase.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.ActivationDeactivation_Needs__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Full Trial Activation</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Contact.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Trial Activation</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.Due_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Trial_Start_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>00G5G000004kklJ</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.Platform__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Locatus</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Client_Access</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LocatusCase.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CreateCaseList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>LocatusCase</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Bulk_Case_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>New_Product_Case_Assignment</name>
+        <label>New Product Case Assignment</label>
+        <locationX>204</locationX>
+        <locationY>600</locationY>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.ActivationDeactivation_Needs__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Full Trial Activation</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Contact.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.Due_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Trial_Start_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>00G5G000004kklJ</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.Platform__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Green Street News</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Client_Access</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GSNewsCase.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CreateCaseList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>GSNewsCase</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IJGlobal_Decision</targetReference>
+        </connector>
+    </assignments>
     <constants>
         <name>EU_Data_Support_OwnerId</name>
         <dataType>String</dataType>
@@ -110,8 +501,8 @@
     <decisions>
         <name>Activation_Decision</name>
         <label>Activation Decision</label>
-        <locationX>656</locationX>
-        <locationY>232</locationY>
+        <locationX>721</locationX>
+        <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>ActivationCase</name>
@@ -145,7 +536,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_Activation_Case</targetReference>
+                <targetReference>GS_Case_Assignment</targetReference>
             </connector>
             <label>ActivationCase</label>
         </rules>
@@ -223,10 +614,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Bulk_Case_Decision</name>
+        <label>Bulk Case Decision</label>
+        <locationX>182</locationX>
+        <locationY>1308</locationY>
+        <defaultConnector>
+            <targetReference>GSA_Relation_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Case_List</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CreateCaseList</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Insert_Activation_Case_Records</targetReference>
+            </connector>
+            <label>Check Case List</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Compliance_Creation</name>
         <label>Compliance Creation</label>
-        <locationX>546</locationX>
-        <locationY>1248</locationY>
+        <locationX>721</locationX>
+        <locationY>2184</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>US_Client_Access_Closed</name>
@@ -355,10 +771,10 @@
         <description>When an Opportunity Review case is completed for a trial request is completed where 2 different platforms are present: Green Street or Green Street News (Formerly React) 2 client access cases are created.</description>
         <name>Green_Street_VS_Green_Street_News_Case_Condition</name>
         <label>Green Street VS Green Street News Case Condition</label>
-        <locationX>194</locationX>
-        <locationY>268</locationY>
+        <locationX>336</locationX>
+        <locationY>492</locationY>
         <defaultConnector>
-            <targetReference>GSA_Relation_Decision</targetReference>
+            <targetReference>IJGlobal_Decision</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -393,7 +809,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_News_Activation_Case</targetReference>
+                <targetReference>New_Product_Case_Assignment</targetReference>
             </connector>
             <label>Green Street Check</label>
         </rules>
@@ -401,8 +817,8 @@
     <decisions>
         <name>GSA_Relation_Decision</name>
         <label>GSA Relation Decision</label>
-        <locationX>536</locationX>
-        <locationY>680</locationY>
+        <locationX>721</locationX>
+        <locationY>1776</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>GSARelationTrial</name>
@@ -492,10 +908,75 @@
         </rules>
     </decisions>
     <decisions>
+        <name>IJGlobal_Decision</name>
+        <label>IJGlobal Decision</label>
+        <locationX>336</locationX>
+        <locationY>792</locationY>
+        <defaultConnector>
+            <targetReference>Locatus_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IJGlobal_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>IJGlobal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IJGlobal_Product_Case_Assignment</targetReference>
+            </connector>
+            <label>IJGlobal Case</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Locatus_Decision</name>
+        <label>Locatus Decision</label>
+        <locationX>336</locationX>
+        <locationY>1092</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>GSA_Relation_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Locatus_Assignment</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Locatus</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Locatus_Product_Case_Assignment</targetReference>
+            </connector>
+            <label>Locatus Assignment</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Untouched_Case_For_2_Hours_Decision</name>
         <label>Untouched Case For 2 Hours Decision</label>
-        <locationX>1511</locationX>
-        <locationY>253</locationY>
+        <locationX>2162</locationX>
+        <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Case_Untouched_For_2_Hours</name>
@@ -608,8 +1089,8 @@
     <decisions>
         <name>Untouched_Case_For_4_days_Decision</name>
         <label>Untouched Case For 4 days Decision</label>
-        <locationX>1066</locationX>
-        <locationY>511</locationY>
+        <locationX>1502</locationX>
+        <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>X3BusinessDaysSinceModified</name>
@@ -684,7 +1165,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -695,176 +1176,10 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <name>Create_Activation_Case</name>
-        <label>Create Activation Case</label>
-        <locationX>302</locationX>
-        <locationY>125</locationY>
-        <connector>
-            <targetReference>Green_Street_VS_Green_Street_News_Case_Condition</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>AccountId</field>
-            <value>
-                <elementReference>$Record.AccountId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ActivationDeactivation_Needs__c</field>
-            <value>
-                <stringValue>Full Trial Activation</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Contact.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Description</field>
-            <value>
-                <stringValue>Trial Activation</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Due_Date__c</field>
-            <value>
-                <elementReference>$Record.Opportunity__r.Trial_Start_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Opportunity__c</field>
-            <value>
-                <elementReference>$Record.Opportunity__r.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <stringValue>00G5G000004kklJ</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Platform__c</field>
-            <value>
-                <stringValue>Green Street</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Priority</field>
-            <value>
-                <stringValue>High</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>RecordTypeId</field>
-            <value>
-                <elementReference>$Label.Client_Access</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>New</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Subject</field>
-            <value>
-                <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_News_Activation_Case</name>
-        <label>Create News Activation Case</label>
-        <locationX>256</locationX>
-        <locationY>425</locationY>
-        <connector>
-            <targetReference>GSA_Relation_Decision</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>AccountId</field>
-            <value>
-                <elementReference>$Record.AccountId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ActivationDeactivation_Needs__c</field>
-            <value>
-                <stringValue>Full Trial Activation</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Contact.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Description</field>
-            <value>
-                <stringValue>Trial Activation</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Due_Date__c</field>
-            <value>
-                <elementReference>$Record.Opportunity__r.Trial_Start_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Opportunity__c</field>
-            <value>
-                <elementReference>$Record.Opportunity__r.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <stringValue>00G5G000004kklJ</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Platform__c</field>
-            <value>
-                <stringValue>Green Street News</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Priority</field>
-            <value>
-                <stringValue>High</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>RecordTypeId</field>
-            <value>
-                <elementReference>$Label.Client_Access</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>New</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Subject</field>
-            <value>
-                <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
         <name>Create_UK_Compliance_Record</name>
         <label>Create UK Compliance Record</label>
-        <locationX>422</locationX>
-        <locationY>1400</locationY>
+        <locationX>721</locationX>
+        <locationY>2292</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
             <value>
@@ -913,8 +1228,8 @@
     <recordCreates>
         <name>Create_US_Compliance_Record</name>
         <label>Create US Compliance Record</label>
-        <locationX>688</locationX>
-        <locationY>1400</locationY>
+        <locationX>457</locationX>
+        <locationY>2292</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
             <value>
@@ -960,11 +1275,21 @@
         <object>Compliance__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordCreates>
+        <name>Insert_Activation_Case_Records</name>
+        <label>Insert Activation Case Records</label>
+        <locationX>50</locationX>
+        <locationY>1416</locationY>
+        <connector>
+            <targetReference>GSA_Relation_Decision</targetReference>
+        </connector>
+        <inputReference>CreateCaseList</inputReference>
+    </recordCreates>
     <recordUpdates>
         <name>Update_Account_GSA_Relation_To_Client_Trial</name>
         <label>Update Account GSA Relation To Client + Trial</label>
-        <locationX>874</locationX>
-        <locationY>681</locationY>
+        <locationX>721</locationX>
+        <locationY>1884</locationY>
         <connector>
             <targetReference>ClientTrialActivationEmailAlert</targetReference>
         </connector>
@@ -994,8 +1319,8 @@
     <recordUpdates>
         <name>Update_Account_GSA_Relation_To_Trial</name>
         <label>Update Account GSA Relation To Trial</label>
-        <locationX>253</locationX>
-        <locationY>677</locationY>
+        <locationX>457</locationX>
+        <locationY>1884</locationY>
         <connector>
             <targetReference>TrialActivationEmailAlert</targetReference>
         </connector>
@@ -1023,8 +1348,8 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>949</locationX>
-        <locationY>156</locationY>
+        <locationX>1315</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Activation_Decision</targetReference>
         </connector>
@@ -1061,6 +1386,14 @@
         <text>&lt;p&gt;Hey {!$Record.Owner:User.FirstName},&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;There has been no activity for case: # {!$Record.CaseNumber} for the past 4 days. Please review the case to determine the next steps and follow up with clients as needed.&lt;/p&gt;</text>
     </textTemplates>
     <variables>
+        <name>CreateCaseList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
         <name>CurrentDate</name>
         <dataType>Date</dataType>
         <isCollection>false</isCollection>
@@ -1071,6 +1404,30 @@
         </value>
     </variables>
     <variables>
+        <name>GSCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>GSNewsCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>IJGlobalCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
         <name>LimitedAccessVar</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1079,5 +1436,13 @@
         <value>
             <stringValue>Limited Access</stringValue>
         </value>
+    </variables>
+    <variables>
+        <name>LocatusCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
     </variables>
 </Flow>
