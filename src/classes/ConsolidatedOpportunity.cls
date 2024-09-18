@@ -80,11 +80,23 @@ public class ConsolidatedOpportunity {
     }
     
     @AuraEnabled(cacheable=true)
-    public static List<opportunityWrapper> getAllOpportunityLineItems(Id caseId){
+    public static List<opportunityWrapper> getAllOpportunityLineItems(Id caseId) {
+        List<String> otherGreenStreetList = New List<String>();
         List<Case> cse = [Select Id, Opportunity__c, Platform__c from Case where id = :caseId];
+        // Get Green Street News product List to create DeActivation Case
         System_Configuration__mdt productConfig = System_Configuration__mdt.getInstance('Green_Street_News_Platform');
         List<String> productList = productConfig.Value__c.split(';');
-        system.debug('productList->' + productList);
+        otherGreenStreetList.addAll(productList);
+        
+        // Get Green Street Locatus product List to create DeActivation Case
+        System_Configuration__mdt locatusProductConfig = System_Configuration__mdt.getInstance('Green_Street_Locatus_Platform');
+        List<String> locatusPlatformProductList = locatusProductConfig.Value__c.split(';');
+        otherGreenStreetList.addAll(locatusPlatformProductList);
+        
+         // Get Green Street IJGlobal product List to create DeActivation Case
+        System_Configuration__mdt ijGlobalProductConfig = System_Configuration__mdt.getInstance('Green_Street_IJGlobal_Platform');
+        List<String> ijGlobalPlatformProductList = ijGlobalProductConfig.Value__c.split(';');
+        otherGreenStreetList.addAll(ijGlobalPlatformProductList);
         
         List<opportunityWrapper> oppWrapperList = new List<opportunityWrapper>();
         List<OpportunityLineItem> OppLineItemsList = new List<OpportunityLineItem> ();
@@ -93,10 +105,18 @@ public class ConsolidatedOpportunity {
                 OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
                                     FROM OpportunityLineItem 
                                     WHERE OpportunityId =: cse[0].Opportunity__c AND Product2.Name IN :productList];
+            } else if(String.isNotBlank(cse[0].Platform__c) && cse[0].Platform__c == 'Locatus') {
+                OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
+                                    FROM OpportunityLineItem 
+                                    WHERE OpportunityId =: cse[0].Opportunity__c AND Product2.Name IN :locatusPlatformProductList];
+            } else if(String.isNotBlank(cse[0].Platform__c) && cse[0].Platform__c == 'IJGlobal') {
+                OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
+                                    FROM OpportunityLineItem 
+                                    WHERE OpportunityId =: cse[0].Opportunity__c AND Product2.Name IN :ijGlobalPlatformProductList];
             } else if(String.isNotBlank(cse[0].Platform__c) && cse[0].Platform__c == 'Green Street') {
                 OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
                                     FROM OpportunityLineItem 
-                                    WHERE OpportunityId =: cse[0].Opportunity__c AND Product2.Name NOT IN :productList];
+                                    WHERE OpportunityId =: cse[0].Opportunity__c AND Product2.Name NOT IN :otherGreenStreetList];
             } else {
                 OppLineItemsList = [SELECT Id, Name, Product2Id, Product2.Name, Lost_Product__c, Sales_Type__c, Start_Date__c, End_Date__c
                                     FROM OpportunityLineItem 
