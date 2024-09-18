@@ -85,7 +85,7 @@ public class Plative_OpportunityTriggerTest {
         entry.Product2Id = product.Id;
         entry.UnitPrice = 0;
         insert entry;
-        
+
         Opportunity oppty = new Opportunity();
         oppty.Name = 'Test Oppty';
         oppty.CloseDate = System.today().addDays(5);
@@ -120,7 +120,7 @@ public class Plative_OpportunityTriggerTest {
         opptyLineItem.Product_External_Id__c = 401;
         opptyLineItem.Delivery_Method__c = 'Snowflake';
         insert opptyLineItem; 
-        
+
         OpportunityContactRole ocr = new OpportunityContactRole();
         ocr.OpportunityId = oppty.Id;
         ocr.ContactId = ct1.Id;
@@ -181,7 +181,7 @@ public class Plative_OpportunityTriggerTest {
         oppty.StageName = 'Closed Won'; 
         oppty.ID_Request__c = 'Not Applicable';
         oppty.Win_Validation__c = 'Pending Review';
-        oppty.Products__c = 'React News;Data License Directory';
+        oppty.Products__c = 'React News;Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
         //oppty.Win_Validation__c = 'Opportunity Reviewed';
         Test.startTest();
         //For creating Renewal Opportunities from Sales Opportunity
@@ -196,6 +196,7 @@ public class Plative_OpportunityTriggerTest {
         lastRenewalOpportunity.Win_Validation__c = 'Opportunity Reviewed';
         lastRenewalOpportunity.Activation_Deactivation_Needs__c = 'Full Account Activation';
         //lastRenewalOpportunity.Win_Validation__c = 'Opportunity Reviewed';
+        lastRenewalOpportunity.Products__c = 'React News;Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
         Plative_OpportunityTriggerHandler.afterUpdateRun = false;
         update lastRenewalOpportunity;
         Plative_OpportunityTriggerHelper.getOppLineIteamsIds(new set<Id>{oppty.Id});
