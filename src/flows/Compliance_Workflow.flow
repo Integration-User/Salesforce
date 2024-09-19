@@ -433,7 +433,7 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_16</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -494,6 +494,37 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>US_Subscription</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>US_Advisory</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1310,7 +1341,7 @@
         </rules>
         <rules>
             <name>myRule_16_pmetrule</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -1371,6 +1402,37 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>US_Subscription</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>US_Advisory</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2116,7 +2178,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_25_myRule_24_A1_2320770991</name>
+        <name>formula_25_myRule_24_A1_6511828149</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -2127,11 +2189,11 @@
                 <stringValue>Today()+120</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_3_A1_3929957198</name>
+        <name>formula_4_myRule_3_A1_8243546942</name>
         <dataType>Date</dataType>
         <expression>Today()+120</expression>
     </formulas>
-    <interviewLabel>Compliance_Workflow-13_InterviewLabel</interviewLabel>
+    <interviewLabel>Compliance_Workflow-14_InterviewLabel</interviewLabel>
     <label>Compliance Workflow</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -2265,7 +2327,7 @@
             </processMetadataValues>
             <field>CloseDate</field>
             <value>
-                <elementReference>formula_4_myRule_3_A1_3929957198</elementReference>
+                <elementReference>formula_4_myRule_3_A1_8243546942</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3222,7 +3284,7 @@
             </processMetadataValues>
             <field>Completed_Date__c</field>
             <value>
-                <elementReference>formula_25_myRule_24_A1_2320770991</elementReference>
+                <elementReference>formula_25_myRule_24_A1_6511828149</elementReference>
             </value>
         </inputAssignments>
         <object>Compliance__c</object>
