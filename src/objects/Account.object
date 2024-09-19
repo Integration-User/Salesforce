@@ -1465,7 +1465,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     </fields>
     <fields>
         <fullName>Interests__c</fullName>
-        <externalId>false</externalId>
         <label>Sector Interests</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1519,6 +1518,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Medical Office Building</label>
                 </value>
                 <value>
+                    <fullName>Multi-Sector</fullName>
+                    <default>false</default>
+                    <label>Multi-Sector</label>
+                </value>
+                <value>
                     <fullName>Net Lease</fullName>
                     <default>false</default>
                     <label>Net Lease</label>
@@ -1527,6 +1531,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <fullName>Office</fullName>
                     <default>false</default>
                     <label>Office</label>
+                </value>
+                <value>
+                    <fullName>Residential</fullName>
+                    <default>false</default>
+                    <label>Residential</label>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                    <label>Retail</label>
                 </value>
                 <value>
                     <fullName>Self-Storage</fullName>
@@ -4624,11 +4638,11 @@ Stored as Long on Solr.</description>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
-	    <values>
+            <values>
                 <fullName>IJGlobal%3A News</fullName>
                 <default>false</default>
             </values>
-	    <values>
+            <values>
                 <fullName>IJGlobal%3A One-Time</fullName>
                 <default>false</default>
             </values>
@@ -5028,11 +5042,23 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Net Lease</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6575,11 +6601,23 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Net Lease</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
                 <default>false</default>
             </values>
             <values>
