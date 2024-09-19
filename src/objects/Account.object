@@ -1869,6 +1869,25 @@ Owner.Id = $User.Id)</formula>
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>Number_of_Open_Sales_Opportunities__c</fullName>
+        <description>Calculates the number of open Sales Opportunities.</description>
+        <label>Number of Open Sales Opportunities</label>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Opportunity</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Closed Won, Closed Lost</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>OperatingHoursId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
