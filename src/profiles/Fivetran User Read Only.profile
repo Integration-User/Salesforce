@@ -102,6 +102,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Number_of_Open_Sales_Opportunities__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.REIT_Data_L60D_Usage__c</field>
         <readable>true</readable>
     </fieldPermissions>
