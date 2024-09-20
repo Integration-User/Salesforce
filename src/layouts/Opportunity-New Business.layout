@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
@@ -697,6 +698,7 @@
         <fields>CORE.USERS.ALIAS</fields>
         <fields>CASES.STATUS</fields>
         <fields>CASES.RECORDTYPE</fields>
+        <fields>Platform__c</fields>
         <relatedList>Case.Opportunity__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
