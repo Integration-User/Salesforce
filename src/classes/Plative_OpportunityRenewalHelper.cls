@@ -531,7 +531,15 @@ public class Plative_OpportunityRenewalHelper {
         
         // Get Green Street News product List to create DeActivation Case
         System_Configuration__mdt productConfig = System_Configuration__mdt.getInstance('Green_Street_News_Platform');
-        List<String> productList = productConfig.Value__c.split(';');
+        List<String> newsPlatformProductList = productConfig.Value__c.split(';');
+        
+        // Get Green Street Locatus product List to create DeActivation Case
+        System_Configuration__mdt locatusProductConfig = System_Configuration__mdt.getInstance('Green_Street_Locatus_Platform');
+        List<String> locatusPlatformProductList = locatusProductConfig.Value__c.split(';');
+        
+        // Get Green Street IJGlobal product List to create DeActivation Case
+        System_Configuration__mdt ijGlobalProductConfig = System_Configuration__mdt.getInstance('Green_Street_IJGlobal_Platform');
+        List<String> ijGlobalPlatformProductList = ijGlobalProductConfig.Value__c.split(';');
 
         for(Opportunity opp : triggerNew) {
             Opportunity oldOpp = triggerOldMap.get(opp.Id);
@@ -540,26 +548,44 @@ public class Plative_OpportunityRenewalHelper {
                && opp.Activation_Deactivation_Needs__c != 'None' && oldOpp.IsClosed != opp.IsClosed) {
                    String products = opp.Products__c;
                    Boolean isGreenStreetNews = false;
+                   Boolean isGreenStreetlocatus = false;
+                   Boolean isGreenStreetIJGlobal = false;
                    Boolean isGreenStreet = false;
                    // For Green Street News product Check
-                   for(String product : productList) {
+                   for(String product : newsPlatformProductList) {
                        if(String.isNotBlank(products) && products.containsIgnoreCase(product)) {
                            isGreenStreetNews = true;
+                           break;
+                       }
+                   }
+                   // For Green Street locatus product Check
+                   for(String locatusProduct : locatusPlatformProductList) {
+                       if(String.isNotBlank(products) && products.containsIgnoreCase(locatusProduct)) {
+                           isGreenStreetlocatus = true;
+                           break;
+                       }
+                   }
+                   // For Green Street ijGlobal product Check
+                   for(String ijGlobalProduct : ijGlobalPlatformProductList) {
+                       if(String.isNotBlank(products) && products.containsIgnoreCase(ijGlobalProduct)) {
+                           isGreenStreetIJGlobal = true;
                            break;
                        }
                    }
                    // For Green Street product Check
                    if(String.isNotBlank(products)) {
                        for(String oppProduct : products.split(';')) {
-                           if(!productList.contains(oppProduct)) {
+                           if(!newsPlatformProductList.contains(oppProduct) && !locatusPlatformProductList.contains(oppProduct) && !ijGlobalPlatformProductList.contains(oppProduct)) {
                                isGreenStreet = true;
                                break;
                            }
                        }
                    }
+                   system.debug('isGreenStreetIJGlobal->' + isGreenStreetIJGlobal);
+                   system.debug('isGreenStreetlocatus->' + isGreenStreetlocatus);
                    system.debug('isGreenStreetNews->' + isGreenStreetNews);
                    system.debug('isGreenStreet->' + isGreenStreet);
-                   
+
                    // Green Street Platform Case
                    if(isGreenStreet) {
                        Case activationCase = new Case(BusinessHoursId = System.Label.Default_Business_Hours_Id, recordTypeId = recordTypeId,
@@ -571,11 +597,27 @@ public class Plative_OpportunityRenewalHelper {
                    }
                    if(isGreenStreetNews) {
                        Case activationCaseForNews = new Case(BusinessHoursId = System.Label.Default_Business_Hours_Id, recordTypeId = recordTypeId,
-                                                             AccountId = opp.AccountId, ActivationDeactivation_Needs__c = opp.Activation_Deactivation_Needs__c,
-                                                             CurrencyIsoCode = 'USD', Due_Date__c = opp.Contract_Start_Date__c, Minutes_Spent_Cases__c = 3,
-                                                             Opportunity__c = opp.Id, Origin = 'Automation', ownerId = groupInfo.Id, Priority = 'High', 
-                                                             Status = 'New', Subject = Opp.Account_Name__c +' - '+ opp.Activation_Deactivation_Needs__c, Platform__c = 'Green Street News');
+                                                      AccountId = opp.AccountId, ActivationDeactivation_Needs__c = opp.Activation_Deactivation_Needs__c,
+                                                      CurrencyIsoCode = 'USD', Due_Date__c = opp.Contract_Start_Date__c, Minutes_Spent_Cases__c = 3,
+                                                      Opportunity__c = opp.Id, Origin = 'Automation', ownerId = groupInfo.Id, Priority = 'High', 
+                                                      Status = 'New', Subject = Opp.Account_Name__c +' - '+ opp.Activation_Deactivation_Needs__c, Platform__c = 'Green Street News');
                        caseList.add(activationCaseForNews); 
+                   }
+                   if(isGreenStreetlocatus) {
+                       Case activationCaseForlocatus = new Case(BusinessHoursId = System.Label.Default_Business_Hours_Id, recordTypeId = recordTypeId,
+                                                      AccountId = opp.AccountId, ActivationDeactivation_Needs__c = opp.Activation_Deactivation_Needs__c,
+                                                      CurrencyIsoCode = 'USD', Due_Date__c = opp.Contract_Start_Date__c, Minutes_Spent_Cases__c = 3,
+                                                      Opportunity__c = opp.Id, Origin = 'Automation', ownerId = groupInfo.Id, Priority = 'High', 
+                                                      Status = 'New', Subject = Opp.Account_Name__c +' - '+ opp.Activation_Deactivation_Needs__c, Platform__c = 'Locatus');
+                       caseList.add(activationCaseForlocatus);
+                   }
+                   if(isGreenStreetIJGlobal) {
+                       Case activationCaseForIJGlobal = new Case(BusinessHoursId = System.Label.Default_Business_Hours_Id, recordTypeId = recordTypeId,
+                                                      AccountId = opp.AccountId, ActivationDeactivation_Needs__c = opp.Activation_Deactivation_Needs__c,
+                                                      CurrencyIsoCode = 'USD', Due_Date__c = opp.Contract_Start_Date__c, Minutes_Spent_Cases__c = 3,
+                                                      Opportunity__c = opp.Id, Origin = 'Automation', ownerId = groupInfo.Id, Priority = 'High', 
+                                                      Status = 'New', Subject = Opp.Account_Name__c +' - '+ opp.Activation_Deactivation_Needs__c, Platform__c = 'IJGlobal');
+                       caseList.add(activationCaseForIJGlobal);
                    }
                }  
         }
