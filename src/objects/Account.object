@@ -186,7 +186,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Account_Record_Page</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -194,7 +194,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Account_Record_Page</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -1862,6 +1862,25 @@ Owner.Id = $User.Id)</formula>
             <field>Opportunity.IsClosed</field>
             <operation>notEqual</operation>
             <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Open_Sales_Opportunities__c</fullName>
+        <description>Calculates the number of open Sales Opportunities.</description>
+        <label>Number of Open Sales Opportunities</label>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Opportunity</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Closed Won, Closed Lost</value>
         </summaryFilterItems>
         <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
         <summaryOperation>count</summaryOperation>
@@ -7351,7 +7370,7 @@ Stored as Long on Solr.</description>
         <searchFilterFields>ACCOUNT.PHONE1</searchFilterFields>
         <searchFilterFields>CORE.USERS.ALIAS</searchFilterFields>
         <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Secondary_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Subsidiary__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ACCOUNT.TYPE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Priority__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.LAST_NAME</searchResultsAdditionalFields>
