@@ -22,8 +22,20 @@ public class StagingDataUploadBatch_Test {
         Test.setMock(HttpCalloutMock.class, new Plative_GSAWebCalloutMock());  
         Account accnt = new Account();
         accnt.Name = 'Test Account';
-        accnt.Account_Status__c = 'Active';        
+        accnt.Account_Status__c = 'Active'; 
+        accnt.GSA_ID_Legacy__c = '76897';
         insert accnt;
+        
+        Product2 productREIT = new Product2();
+        productREIT.Name = 'US Research + REIT Data';
+        productREIT.IsActive = true;
+        productREIT.Product_Line__c = true;
+        insert productREIT;
+        
+        Account_Product_Line__c productLine = new Account_Product_Line__c();
+        productLine.Account__c = accnt.Id;
+        productLine.Product__c = productREIT.Id;
+        insert productLine; 
         
         Contact cont = new Contact();
         cont.AccountId = accnt.Id;
@@ -55,6 +67,10 @@ public class StagingDataUploadBatch_Test {
         stgRecord.Object_API_Name__c = 'Contact_Email_Distribution__c';
         stgRecord.Record_Id__c = '6786';
         insert stgRecord;
+        Staging_Data_Upload__c stgRecord1 = new Staging_Data_Upload__c();
+        stgRecord1.Object_API_Name__c = 'Account_Product_Lines__c';
+        stgRecord1.Record_Id__c = '76897';
+        insert stgRecord1;
     } 
     
     @isTest
@@ -68,6 +84,8 @@ public class StagingDataUploadBatch_Test {
         Test.startTest();
         StagingDataUploadBatch batch = new StagingDataUploadBatch('Contact_Email_Distribution__c');
         Database.executeBatch(batch, 1);
+        StagingDataUploadBatch accBatch = new StagingDataUploadBatch('Account_Product_Lines__c');
+        Database.executeBatch(accBatch, 1);
         Test.stopTest();
     }
 
