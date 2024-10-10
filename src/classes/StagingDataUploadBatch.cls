@@ -16,7 +16,8 @@ public class StagingDataUploadBatch implements Database.Batchable<sObject> {
         for(Staging_Data_Upload__c stg : scope) {
             stgMap.put(stg.Record_Id__c, stg);
         }
-        if(!stgMap.isEMpty()) {
+        system.debug('this.targetObjectName-->' + this.targetObjectName);
+        if(!stgMap.isEMpty() && this.targetObjectName == 'Contact_Email_Distribution__c') {
            List<Contact_Email_Distribution__c> updatedDistributions = new List<Contact_Email_Distribution__c>(); 
             for(Contact_Email_Distribution__c distribution : [SELECT Id, Opt_Out__c, Email_Distribution__c from Contact_Email_Distribution__c Where Contact__r.GSA_ID__c IN :stgMap.keySet()]) {
  				distribution.Opt_Out__c = true;
@@ -32,9 +33,35 @@ public class StagingDataUploadBatch implements Database.Batchable<sObject> {
                 scope[0].Failure_Reason__c = e.getMessage();
                 update scope;
             }
-            
-            
+        } else if(!stgMap.isEMpty() && this.targetObjectName == 'Account_Product_Lines__c') {
+            Set<Id> accountIds = New Set<Id>();
+            for (Account_Product_Line__c lineItem : [Select Id, Account__c, Product__r.Name From Account_Product_Line__c where Account__r.GSA_ID__c IN :stgMap.keySet() AND Product__r.Name = 'US Research + REIT Data']) {
+                accountIds.add(lineItem.Account__c);
+            }
+            system.debug('this.accountIds-->' + accountIds);
+            if(!accountIds.isEMpty()) {
+                List<Account_Email_Distribution__c> accountEmailDistributionInsertList = new List<Account_Email_Distribution__c>();
+                for (Id accountId : accountIds) {
+                    Account_Email_Distribution__c emailDistributn = new Account_Email_Distribution__c();
+                    emailDistributn.Account__c = accountId;
+                    emailDistributn.Email_Distribution__c = 'US MORTGAGE REITS';
+                    emailDistributn.Name = 'US MORTGAGE REITS';
+                    accountEmailDistributionInsertList.add(emailDistributn); 
+                }
+                try {
+                    insert accountEmailDistributionInsertList;
+                    system.debug('this.accountEmailDistributionInsertList-->' + accountEmailDistributionInsertList);
+                    scope[0].Status__c = 'Success';
+                    update scope;
+                } catch(Exception e) {
+                    System.debug('Error - ' + e.getMessage());
+                    scope[0].Status__c = 'Failure';
+                    scope[0].Failure_Reason__c = e.getMessage();
+                    update scope;
+                }
+            }
         }
+     
         
     }
     
