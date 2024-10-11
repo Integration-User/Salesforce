@@ -460,7 +460,7 @@
     </fields>
     <fields>
         <fullName>Billing_Contact_Multi__c</fullName>
-	<externalId>false</externalId>
+        <externalId>false</externalId>
         <label>Billing Contact</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1488,6 +1488,16 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                     <label>Paid Ads</label>
                 </value>
                 <value>
+                    <fullName>Paid Search</fullName>
+                    <default>false</default>
+                    <label>Paid Search</label>
+                </value>
+                <value>
+                    <fullName>Paid Social</fullName>
+                    <default>false</default>
+                    <label>Paid Social</label>
+                </value>
+                <value>
                     <fullName>Derived Intent</fullName>
                     <default>false</default>
                     <label>Derived Intent</label>
@@ -1643,6 +1653,11 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 </value>
             </valueSetDefinition>
             <valueSettings>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Paid Ads</controllingFieldValue>
+                <valueName>Google</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Former User</controllingFieldValue>
                 <controllingFieldValue>Cold Outreach</controllingFieldValue>
                 <valueName>ZoomInfo</valueName>
@@ -1665,6 +1680,11 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Former User</controllingFieldValue>
                 <controllingFieldValue>Cold Outreach</controllingFieldValue>
                 <valueName>Personal Network</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Ads</controllingFieldValue>
+                <valueName>LinkedIn</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Former Account</controllingFieldValue>
@@ -1738,14 +1758,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
             <valueSettings>
                 <controllingFieldValue>Ecommerce</controllingFieldValue>
                 <valueName>Subscription Request</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Paid Ads</controllingFieldValue>
-                <valueName>LinkedIn</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Paid Ads</controllingFieldValue>
-                <valueName>Google</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
