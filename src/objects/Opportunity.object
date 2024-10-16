@@ -27996,7 +27996,8 @@ IsClosed=TRUE)</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
 RecordType.DeveloperName = &apos;Sales_Development&apos;,
-$UserRole.DeveloperName &lt;&gt; &apos;BDR&apos;, 
+Owner.UserRole.DeveloperName  &lt;&gt; &apos;BDR&apos;,
+Owner.UserRole.DeveloperName  &lt;&gt; &apos;BDR_Manager&apos;, 
 ISCHANGED(OwnerId))</errorConditionFormula>
         <errorMessage>Only SDRs can own an SDO.</errorMessage>
     </validationRules>
