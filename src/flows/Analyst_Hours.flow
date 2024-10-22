@@ -5,7 +5,7 @@
         <name>Final_Analyst_Hours_For_Account</name>
         <label>Final Analyst Hours For Account</label>
         <locationX>138</locationX>
-        <locationY>1355</locationY>
+        <locationY>1655</locationY>
         <assignmentItems>
             <assignToReference>AnalystHoursForAccount</assignToReference>
             <operator>Add</operator>
@@ -21,7 +21,7 @@
         <name>Total_Analyst_Hours_For_Account</name>
         <label>Total Analyst Hours For Account</label>
         <locationX>138</locationX>
-        <locationY>947</locationY>
+        <locationY>1247</locationY>
         <assignmentItems>
             <assignToReference>AnalystHoursForAccount</assignToReference>
             <operator>Add</operator>
@@ -37,7 +37,7 @@
         <name>Is_Related_To_Empty_On_Task</name>
         <label>Is Related To Empty On Task</label>
         <locationX>182</locationX>
-        <locationY>323</locationY>
+        <locationY>623</locationY>
         <defaultConnector>
             <targetReference>Task_Should_be_Completed</targetReference>
         </defaultConnector>
@@ -80,10 +80,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Salesloft_Task_Bounce</name>
+        <label>Salesloft Task Bounce</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Is_Related_To_Empty_On_Task</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Salesloft_Bounced</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bounced_Salesloft__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Bounce_Contact</targetReference>
+            </connector>
+            <label>Salesloft Bounced</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Task_Should_be_Completed</name>
         <label>Task Should be Completed</label>
         <locationX>182</locationX>
-        <locationY>623</locationY>
+        <locationY>923</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Checking_Task_Status</name>
@@ -120,7 +145,7 @@
         <name>Iterate_All_Tasks</name>
         <label>Iterate All Tasks</label>
         <locationX>50</locationX>
-        <locationY>839</locationY>
+        <locationY>1139</locationY>
         <collectionReference>Get_Tasks_For_Account</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -134,7 +159,7 @@
         <name>Iterate_Event_Analyst_Hours_Count</name>
         <label>Iterate Event Analyst Hours Count</label>
         <locationX>50</locationX>
-        <locationY>1247</locationY>
+        <locationY>1547</locationY>
         <collectionReference>Get_All_Completed_Events_For_Account</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -167,7 +192,7 @@
         <name>Get_All_Completed_Events_For_Account</name>
         <label>Get All Completed Events For Account</label>
         <locationX>50</locationX>
-        <locationY>1139</locationY>
+        <locationY>1439</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Iterate_Event_Analyst_Hours_Count</targetReference>
@@ -211,7 +236,7 @@
         <name>Get_Tasks_For_Account</name>
         <label>Get Tasks For Account</label>
         <locationX>50</locationX>
-        <locationY>731</locationY>
+        <locationY>1031</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Iterate_All_Tasks</targetReference>
@@ -253,7 +278,7 @@
         <name>Update_Account_For_Analyst_Hours</name>
         <label>Update Account For Analyst Hours</label>
         <locationX>50</locationX>
-        <locationY>1547</locationY>
+        <locationY>1847</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -271,10 +296,34 @@
         <object>Account</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Bounce_Contact</name>
+        <label>Update Bounce Contact</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Is_Related_To_Empty_On_Task</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WhoId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Bounced_Salesloft__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Related_To_Field_On_Task</name>
         <label>Update Related To Field On Task</label>
         <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationY>731</locationY>
         <connector>
             <targetReference>Task_Should_be_Completed</targetReference>
         </connector>
@@ -290,7 +339,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Is_Related_To_Empty_On_Task</targetReference>
+            <targetReference>Salesloft_Task_Bounce</targetReference>
         </connector>
         <object>Task</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>

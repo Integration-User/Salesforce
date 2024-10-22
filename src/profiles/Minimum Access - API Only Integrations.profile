@@ -426,6 +426,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Task.Bounced_Salesloft__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Task.Objective__c</field>
         <readable>true</readable>
@@ -556,6 +561,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Product_Feedback__c.Report_Feedback</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Task.Task</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <userLicense>Salesforce Integration</userLicense>
