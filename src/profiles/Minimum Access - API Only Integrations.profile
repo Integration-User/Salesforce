@@ -441,6 +441,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Task.Bounced_Salesloft__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Task.Objective__c</field>
         <readable>true</readable>
@@ -460,6 +465,10 @@
         <field>User.Annual_Quota__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Analyst_Hours</flow>
+    </flowAccesses>
     <layoutAssignments>
         <layout>Relationship_Intelligence__c-Relationship Intelligence Layout</layout>
     </layoutAssignments>
@@ -571,6 +580,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Product_Feedback__c.Report_Feedback</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Task.Task</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <userLicense>Salesforce Integration</userLicense>
