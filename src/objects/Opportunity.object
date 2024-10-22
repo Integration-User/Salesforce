@@ -2793,7 +2793,7 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <label>Lead Type</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <controllingField>Lead_Channel__c</controllingField>
@@ -27993,6 +27993,7 @@ $Profile.Name &lt;&gt; &apos;System Administrator&apos;,
 OR(
 ISCHANGED(Inbound__c),
 ISCHANGED(Lead_Channel__c),
+ISCHANGED(Lead_Type__c),
 ISCHANGED(Lead_Classification__c),
 ISCHANGED(LeadSource),
 ISCHANGED(CampaignId),
