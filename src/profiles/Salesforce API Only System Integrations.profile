@@ -22762,6 +22762,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Task.Bounced_Salesloft__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Task.CDB_ID__c</field>
         <readable>true</readable>
@@ -32809,6 +32814,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Account_Protected_By_Last_Change_Update</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Analyst_Hours</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
