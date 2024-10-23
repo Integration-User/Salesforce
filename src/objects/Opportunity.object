@@ -27997,7 +27997,6 @@ IsClosed=TRUE)</errorConditionFormula>
         <errorConditionFormula>AND(
 RecordType.DeveloperName = &apos;Sales_Development&apos;,
 NOT($Permission.Bypass_BDR_Ownership_Rule),
-Owner.UserRole.DeveloperName &lt;&gt; &apos;BDR&apos;,
 ISCHANGED(OwnerId))</errorConditionFormula>
         <errorMessage>Only SDRs can own and transfer an SDO.</errorMessage>
     </validationRules>
