@@ -148,37 +148,32 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Meeting_Type_In_Person_Sales</name>
+            <name>Meeting_Type_Check</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Salesloft_Meeting_Type__c</leftValueReference>
-                <operator>Contains</operator>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue>In-Person Sales Visit</stringValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Type_to_In_Person_Sales_Visit</targetReference>
+                <targetReference>Update_Type</targetReference>
             </connector>
-            <label>Meeting Type In-Person Sales</label>
-        </rules>
-        <rules>
-            <name>Meeting_Type_Virtual_Sales_Visit</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Salesloft_Meeting_Type__c</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>Virtual Sales Visit</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Type_to_Virtual_Sales</targetReference>
-            </connector>
-            <label>Meeting Type Virtual Sales Visit</label>
+            <label>Meeting Type Check</label>
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>Salesloft_Type_Formula</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Account Handoff&quot;), &quot;Account Handoff&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;In-Person Sales Visit&quot;), &quot;In-Person Sales Visit&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Sales Visit&quot;), &quot;Virtual Sales Visit&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Visit&quot;), &quot;Virtual Visit&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Pre-Renewal / Pricing Visit&quot;), &quot;Virtual Pre-Renewal / Pricing Visit&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Training&quot;), &quot;Virtual Training&quot;, TEXT({!$Record.Type})))))))</expression>
+    </formulas>
     <interviewLabel>Salesloft Meeting Type {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Sync Salesloft Meeting Type on Event</label>
     <processMetadataValues>
@@ -277,9 +272,9 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Type_to_In_Person_Sales_Visit</name>
-        <label>Update Type to In-Person Sales Visit</label>
-        <locationX>314</locationX>
+        <name>Update_Type</name>
+        <label>Update Type</label>
+        <locationX>446</locationX>
         <locationY>503</locationY>
         <connector>
             <targetReference>Canceled_No_Show_Date_Decision</targetReference>
@@ -287,23 +282,7 @@
         <inputAssignments>
             <field>Type</field>
             <value>
-                <stringValue>In-Person Sales Visit</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Type_to_Virtual_Sales</name>
-        <label>Update Type to Virtual Sales</label>
-        <locationX>578</locationX>
-        <locationY>503</locationY>
-        <connector>
-            <targetReference>Canceled_No_Show_Date_Decision</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Type</field>
-            <value>
-                <stringValue>Virtual Sales Visit</stringValue>
+                <elementReference>Salesloft_Type_Formula</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
