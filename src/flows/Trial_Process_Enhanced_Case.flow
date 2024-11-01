@@ -4,7 +4,7 @@
         <description>This will notify case owner and Claire for cases open without activity for 4 days</description>
         <name>CaseStaleFor4days</name>
         <label>CaseStaleFor4days</label>
-        <locationX>1370</locationX>
+        <locationX>1106</locationX>
         <locationY>384</locationY>
         <actionName>Case.Case_Stale_For_4_days</actionName>
         <actionType>emailAlert</actionType>
@@ -22,7 +22,7 @@
     <actionCalls>
         <name>ClientTrialActivationEmailAlert</name>
         <label>ClientTrialActivationEmailAlert</label>
-        <locationX>721</locationX>
+        <locationX>512</locationX>
         <locationY>1992</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
@@ -43,7 +43,7 @@
     <actionCalls>
         <name>GS_News_Untouched_Cases_Alert</name>
         <label>GS News Untouched Cases Alert</label>
-        <locationX>2162</locationX>
+        <locationX>1898</locationX>
         <locationY>384</locationY>
         <actionName>Case.GS_News_Untouched_Cases_Alert</actionName>
         <actionType>emailAlert</actionType>
@@ -61,7 +61,7 @@
     <actionCalls>
         <name>TrialActivationEmailAlert</name>
         <label>TrialActivationEmailAlert</label>
-        <locationX>457</locationX>
+        <locationX>248</locationX>
         <locationY>1992</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
@@ -82,7 +82,7 @@
     <actionCalls>
         <name>Untouched_Help_Desk_Cases_Alert</name>
         <label>Untouched Help Desk Cases Alert</label>
-        <locationX>1898</locationX>
+        <locationX>1634</locationX>
         <locationY>384</locationY>
         <actionName>Case.Untouched_Help_Desk_Cases</actionName>
         <actionType>emailAlert</actionType>
@@ -101,7 +101,7 @@
     <assignments>
         <name>GS_Case_Assignment</name>
         <label>GS Case Assignment</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>384</locationY>
         <assignmentItems>
             <assignToReference>GSCase.AccountId</assignToReference>
@@ -194,7 +194,7 @@
     <assignments>
         <name>IJGlobal_Product_Case_Assignment</name>
         <label>IJGlobal Product Case Assignment</label>
-        <locationX>204</locationX>
+        <locationX>50</locationX>
         <locationY>900</locationY>
         <assignmentItems>
             <assignToReference>IJGlobalCase.AccountId</assignToReference>
@@ -294,7 +294,7 @@
     <assignments>
         <name>Locatus_Product_Case_Assignment</name>
         <label>Locatus Product Case Assignment</label>
-        <locationX>182</locationX>
+        <locationX>50</locationX>
         <locationY>1200</locationY>
         <assignmentItems>
             <assignToReference>LocatusCase.AccountId</assignToReference>
@@ -394,7 +394,7 @@
     <assignments>
         <name>New_Product_Case_Assignment</name>
         <label>New Product Case Assignment</label>
-        <locationX>204</locationX>
+        <locationX>50</locationX>
         <locationY>600</locationY>
         <assignmentItems>
             <assignToReference>GSNewsCase.AccountId</assignToReference>
@@ -501,7 +501,7 @@
     <decisions>
         <name>Activation_Decision</name>
         <label>Activation Decision</label>
-        <locationX>721</locationX>
+        <locationX>512</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -617,7 +617,7 @@
         <name>Bulk_Case_Decision</name>
         <label>Bulk Case Decision</label>
         <locationX>182</locationX>
-        <locationY>1308</locationY>
+        <locationY>1392</locationY>
         <defaultConnector>
             <targetReference>GSA_Relation_Decision</targetReference>
         </defaultConnector>
@@ -641,7 +641,7 @@
     <decisions>
         <name>Compliance_Creation</name>
         <label>Compliance Creation</label>
-        <locationX>721</locationX>
+        <locationX>512</locationX>
         <locationY>2184</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -771,7 +771,7 @@
         <description>When an Opportunity Review case is completed for a trial request is completed where 2 different platforms are present: Green Street or Green Street News (Formerly React) 2 client access cases are created.</description>
         <name>Green_Street_VS_Green_Street_News_Case_Condition</name>
         <label>Green Street VS Green Street News Case Condition</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>492</locationY>
         <defaultConnector>
             <targetReference>IJGlobal_Decision</targetReference>
@@ -817,7 +817,7 @@
     <decisions>
         <name>GSA_Relation_Decision</name>
         <label>GSA Relation Decision</label>
-        <locationX>721</locationX>
+        <locationX>512</locationX>
         <locationY>1776</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -910,7 +910,7 @@
     <decisions>
         <name>IJGlobal_Decision</name>
         <label>IJGlobal Decision</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>792</locationY>
         <defaultConnector>
             <targetReference>Locatus_Decision</targetReference>
@@ -942,11 +942,10 @@
     <decisions>
         <name>Locatus_Decision</name>
         <label>Locatus Decision</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>1092</locationY>
         <defaultConnector>
-            <isGoTo>true</isGoTo>
-            <targetReference>GSA_Relation_Decision</targetReference>
+            <targetReference>Bulk_Case_Decision</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -975,7 +974,7 @@
     <decisions>
         <name>Untouched_Case_For_2_Hours_Decision</name>
         <label>Untouched Case For 2 Hours Decision</label>
-        <locationX>2162</locationX>
+        <locationX>1898</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1089,7 +1088,7 @@
     <decisions>
         <name>Untouched_Case_For_4_days_Decision</name>
         <label>Untouched Case For 4 days Decision</label>
-        <locationX>1502</locationX>
+        <locationX>1238</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1178,7 +1177,7 @@
     <recordCreates>
         <name>Create_UK_Compliance_Record</name>
         <label>Create UK Compliance Record</label>
-        <locationX>721</locationX>
+        <locationX>512</locationX>
         <locationY>2292</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
@@ -1228,7 +1227,7 @@
     <recordCreates>
         <name>Create_US_Compliance_Record</name>
         <label>Create US Compliance Record</label>
-        <locationX>457</locationX>
+        <locationX>248</locationX>
         <locationY>2292</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
@@ -1279,7 +1278,7 @@
         <name>Insert_Activation_Case_Records</name>
         <label>Insert Activation Case Records</label>
         <locationX>50</locationX>
-        <locationY>1416</locationY>
+        <locationY>1500</locationY>
         <connector>
             <targetReference>GSA_Relation_Decision</targetReference>
         </connector>
@@ -1288,7 +1287,7 @@
     <recordUpdates>
         <name>Update_Account_GSA_Relation_To_Client_Trial</name>
         <label>Update Account GSA Relation To Client + Trial</label>
-        <locationX>721</locationX>
+        <locationX>512</locationX>
         <locationY>1884</locationY>
         <connector>
             <targetReference>ClientTrialActivationEmailAlert</targetReference>
@@ -1319,7 +1318,7 @@
     <recordUpdates>
         <name>Update_Account_GSA_Relation_To_Trial</name>
         <label>Update Account GSA Relation To Trial</label>
-        <locationX>457</locationX>
+        <locationX>248</locationX>
         <locationY>1884</locationY>
         <connector>
             <targetReference>TrialActivationEmailAlert</targetReference>
@@ -1348,7 +1347,7 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>1315</locationX>
+        <locationX>1079</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Activation_Decision</targetReference>
