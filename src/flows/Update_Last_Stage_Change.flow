@@ -36,6 +36,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -71,6 +72,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -109,6 +111,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -147,6 +150,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -185,6 +189,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -223,6 +228,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -261,6 +267,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -299,6 +306,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -337,6 +345,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>59.0</apiVersion>
@@ -358,7 +367,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Closed_Date_Change</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND NOT (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CloseDate</leftValueReference>
                 <operator>IsChanged</operator>
@@ -380,6 +389,20 @@
                     <stringValue>Closed Won</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Send_Email_Closed_Date</targetReference>
             </connector>
@@ -397,7 +420,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Email_Contract_End</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3) AND NOT (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Contract_End_Date__c</leftValueReference>
                 <operator>IsChanged</operator>
@@ -419,6 +442,20 @@
                     <stringValue>Closed Won</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Send_Email_to_Contract_End_Date</targetReference>
             </connector>
@@ -436,7 +473,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Start_Date_Email</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3) AND NOT (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Contract_Start_Date__c</leftValueReference>
                 <operator>IsChanged</operator>
@@ -458,6 +495,20 @@
                     <stringValue>Closed Won</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Send_Email_to_Contract_Start_Date</targetReference>
             </connector>
@@ -475,7 +526,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Current_Contract_Yr</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3) AND NOT (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Current_Contract_Year__c</leftValueReference>
                 <operator>IsChanged</operator>
@@ -497,6 +548,20 @@
                     <stringValue>Closed Won</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Send_Email_Current_Contract_Yr</targetReference>
             </connector>
@@ -514,7 +579,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Stage_Name_Change</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND 4 AND NOT (3 OR 5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.StageName</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -531,7 +596,7 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Sales_Development</stringValue>
                 </rightValue>
@@ -541,6 +606,20 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -560,7 +639,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Length_of_Contract</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3) AND NOT (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Length_of_Contract__c</leftValueReference>
                 <operator>IsChanged</operator>
@@ -582,6 +661,20 @@
                     <stringValue>Closed Won</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Send_Email_Length_of_Contract</targetReference>
             </connector>
@@ -599,7 +692,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Account_Name_Change</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3) AND NOT (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.AccountId</leftValueReference>
                 <operator>IsChanged</operator>
@@ -621,6 +714,20 @@
                     <stringValue>Closed Won</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Send_Email_Account_Name</targetReference>
             </connector>
@@ -638,7 +745,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Opportunity_Owner</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3) AND NOT (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.OwnerId</leftValueReference>
                 <operator>IsChanged</operator>
@@ -660,6 +767,20 @@
                     <stringValue>Closed Won</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Send_Email_Oppty_Owner</targetReference>
             </connector>
@@ -674,7 +795,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Referred_By</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3) AND NOT (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Referred_By__c</leftValueReference>
                 <operator>IsChanged</operator>
@@ -694,6 +815,20 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
