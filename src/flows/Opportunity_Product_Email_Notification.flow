@@ -33,6 +33,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -71,6 +72,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
@@ -109,6 +111,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
@@ -120,7 +123,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_ARR_Amout</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND NOT (3 OR 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Opportunity.StageName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -133,6 +136,20 @@
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -152,7 +169,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Product_End_Date</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND NOT (3 OR 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Opportunity.StageName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -165,6 +182,20 @@
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -184,7 +215,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Send_Product_Start_Date</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND NOT (3 OR 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Opportunity.StageName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -197,6 +228,20 @@
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Advertising_Closed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
