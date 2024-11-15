@@ -516,6 +516,82 @@ IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Product_SKU_Detail__c</fullName>
+        <label>Product: SKU Detail</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>SKU_Product__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Benchmark Explorer</fullName>
+                    <default>false</default>
+                    <label>Benchmark Explorer</label>
+                </value>
+                <value>
+                    <fullName>Business area data</fullName>
+                    <default>false</default>
+                    <label>Business area data</label>
+                </value>
+                <value>
+                    <fullName>Custom projects</fullName>
+                    <default>false</default>
+                    <label>Custom projects</label>
+                </value>
+                <value>
+                    <fullName>Custom report</fullName>
+                    <default>false</default>
+                    <label>Custom report</label>
+                </value>
+                <value>
+                    <fullName>Service Area Monitor</fullName>
+                    <default>false</default>
+                    <label>Service Area Monitor</label>
+                </value>
+                <value>
+                    <fullName>Standard report</fullName>
+                    <default>false</default>
+                    <label>Standard report</label>
+                </value>
+                <value>
+                    <fullName>Vacancy Monitor</fullName>
+                    <default>false</default>
+                    <label>Vacancy Monitor</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Locatus: Footfall Data</controllingFieldValue>
+                <valueName>Custom report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Locatus: Footfall Data</controllingFieldValue>
+                <valueName>Standard report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Locatus: Other</controllingFieldValue>
+                <valueName>Benchmark Explorer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Locatus: Other</controllingFieldValue>
+                <valueName>Business area data</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Locatus: Other</controllingFieldValue>
+                <valueName>Custom projects</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Locatus: Other</controllingFieldValue>
+                <valueName>Service Area Monitor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Locatus: Other</controllingFieldValue>
+                <valueName>Vacancy Monitor</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Product_Type_Description__c</fullName>
         <externalId>false</externalId>
         <label>Product Type Description</label>
@@ -634,6 +710,28 @@ ARR_Formula__c ))))))</formula>
         <required>false</required>
         <scale>2</scale>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SKU_Product__c</fullName>
+        <label>SKU Product</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Locatus: Footfall Data</fullName>
+                    <default>false</default>
+                    <label>Locatus: Footfall Data</label>
+                </value>
+                <value>
+                    <fullName>Locatus: Other</fullName>
+                    <default>false</default>
+                    <label>Locatus: Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Sales_Type_NS_Internal_ID__c</fullName>
@@ -840,6 +938,13 @@ ARR_Formula__c ))))))</formula>
 Upsell_Cross_sell__c = TRUE,
  Starting_Price__c &gt; 0)</errorConditionFormula>
         <errorMessage>Products that are considered an &quot;Upsell&quot; must have a Starting Price of $0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Product_SKU_Detail_Condition</fullName>
+        <active>false</active>
+        <errorConditionFormula>(Product2.Name  = &apos;Locatus: Footfall Data&apos;  ||  Product2.Name  =  &apos;Locatus: Other&apos;)  &amp;&amp;   ISBLANK( TEXT( Product_SKU_Detail__c )) &amp;&amp; !isNew()</errorConditionFormula>
+        <errorDisplayField>Product_SKU_Detail__c</errorDisplayField>
+        <errorMessage>Please update Product: SKU Detail</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Data_Sale_Product_Validation</fullName>
