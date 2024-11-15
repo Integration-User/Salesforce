@@ -181,7 +181,7 @@ public class Plative_OpportunityTriggerTest {
         oppty.StageName = 'Closed Won'; 
         oppty.ID_Request__c = 'Not Applicable';
         oppty.Win_Validation__c = 'Pending Review';
-        oppty.Products__c = 'React News;Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
+        oppty.Products__c = 'Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
         //oppty.Win_Validation__c = 'Opportunity Reviewed';
         Test.startTest();
         //For creating Renewal Opportunities from Sales Opportunity
