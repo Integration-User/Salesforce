@@ -1101,7 +1101,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_OpportunityTriggerTest</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_ProjectSyncSchedulable</apexClass>
