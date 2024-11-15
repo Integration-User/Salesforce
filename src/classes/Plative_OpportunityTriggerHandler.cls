@@ -15,7 +15,6 @@ public without sharing class Plative_OpportunityTriggerHandler {
 	public static Id renewalRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Renewal').getRecordTypeId();
    	public static Id salesRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Sales Opportunity').getRecordTypeId();
     public static Id salesDevRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByDeveloperName().get('Sales_Development').getRecordTypeId();
-
     /**
     * Description : before insert dml event
     **/
@@ -111,6 +110,9 @@ public without sharing class Plative_OpportunityTriggerHandler {
     **/
     public static void beforeUpdate(Map<Id, Opportunity> triggerNewMap, Map<Id, Opportunity> triggerOldMap) {
         if (!Plative_OpportunityTriggerHandler.beforeUpdateRun) { 
+            //SF-1064 Add Validation to Update Product: SKU Detail before moving to Stage 6 - Verbal Win and Finalizing Contract
+            beforeUpdateValidations(triggerNewMap, triggerOldMap); 
+            
             // SF-768 - 3X3 Contact Levels
             Set<Id> x3x3opportunities = new Set<Id>();
             for (OpportunityContactRole ocr : [SELECT Id, OpportunityId FROM OpportunityContactRole WHERE Contact.X3x3_Level__c != null AND OpportunityId IN :triggerNewMap.keySet()]) {
@@ -216,5 +218,24 @@ public without sharing class Plative_OpportunityTriggerHandler {
                 oppty.Product_Types__c = null;
             }
         }
+    }
+    public static void beforeUpdateValidations(Map<Id, Opportunity> triggerNewMap, Map<Id, Opportunity> triggerOldMap) {
+        /*SF-1064 Add Validation to Update Product: SKU Detail before moving to Stage 6 - Verbal Win and Finalizing Contract*/
+        System_Configuration__mdt skuDetailproductConfig = System_Configuration__mdt.getInstance('SKU_Detail_Validation_Product_List');
+        List<String> skuDetailproductValidationList = skuDetailproductConfig.Value__c.split(';');
+        Set<Id> skuDetailproductOpportunities = new Set<Id>();
+        for (OpportunityLineItem oli : [SELECT Id, OpportunityId, Product2.Name FROM OpportunityLineItem WHERE Product2.Name IN :skuDetailproductValidationList
+                                        AND OpportunityId IN :triggerNewMap.keySet() AND Product_SKU_Detail__c = null]) {
+            skuDetailproductOpportunities.add(oli.OpportunityId);
+        }
+        for (Opportunity oppty : triggerNewMap.values()) {
+            Opportunity oldOppty = triggerOldMap.get(oppty.Id);
+            if(oldOppty.StageName != oppty.StageName && (oppty.recordTypeId == renewalRecordTypeId || oppty.recordTypeId == salesRecordTypeId)
+               && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won') && skuDetailproductOpportunities.contains(oppty.Id)) {
+                   System.debug(skuDetailproductConfig.Value__c.replace(';', ' OR ') + ' Opportunity Product must \'Product: SKU Detail\' value before moving the stage.');
+                   oppty.addError('Before moving to Stage 6, \'Product: SKU Detail\' must be entered for ' + skuDetailproductConfig.Value__c.replace(';', ' & '));
+           }
+        }
+		// END - SF-1064
     }
 }
