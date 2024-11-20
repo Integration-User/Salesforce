@@ -2935,6 +2935,11 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                     <default>false</default>
                     <label>Salesforce</label>
                 </value>
+                <value>
+                    <fullName>Upsell</fullName>
+                    <default>false</default>
+                    <label>Upsell</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Paid Search</controllingFieldValue>
@@ -3043,6 +3048,10 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                 <controllingFieldValue>Inquiry</controllingFieldValue>
                 <controllingFieldValue>Ecommerce</controllingFieldValue>
                 <valueName>Subscription Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inquiry</controllingFieldValue>
+                <valueName>Upsell</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
@@ -14877,6 +14886,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
@@ -20844,6 +20857,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
@@ -22307,6 +22324,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Trial Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24763,6 +24784,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
@@ -26568,6 +26593,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Trial Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell</fullName>
                 <default>false</default>
             </values>
             <values>
