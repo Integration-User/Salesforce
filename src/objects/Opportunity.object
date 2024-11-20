@@ -7125,6 +7125,47 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <label>All Opportunities</label>
     </listViews>
     <listViews>
+        <fullName>All_Open_IJ_Global_Inbound_SDOs</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Lead_Contact__c</columns>
+        <columns>Lead_Contact_Email__c</columns>
+        <columns>Contact_Name_For_Testing__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Lead_Channel__c</columns>
+        <columns>Lead_Type__c</columns>
+        <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+        <columns>Submission_Notes_New__c</columns>
+        <columns>Marketing_Identified_Country__c</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Sales_Development</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <operation>equals</operation>
+            <value>IJGlobal</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>iuser</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Disqualified,Qualified</value>
+        </filters>
+        <label>All Open IJ Global Inbound SDOs</label>
+        <sharedTo>
+            <group>IJ_Global_Inbound_SDOs</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>CSA_Payments</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -7369,6 +7410,39 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <roleAndSubordinates>CAM_Manager</roleAndSubordinates>
             <roleAndSubordinates>Sales_Manager</roleAndSubordinates>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Working_IJ_Global_Inbound_SDOs</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Lead_Contact__c</columns>
+        <columns>Lead_Contact_Email__c</columns>
+        <columns>Contact_Name_For_Testing__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Lead_Channel__c</columns>
+        <columns>Lead_Type__c</columns>
+        <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+        <columns>Submission_Notes_New__c</columns>
+        <columns>Marketing_Identified_Country__c</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Sales_Development</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <operation>equals</operation>
+            <value>IJGlobal</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Disqualified,Qualified</value>
+        </filters>
+        <label>My Open &amp; Working IJ Global Inbound SDOs</label>
     </listViews>
     <listViews>
         <fullName>My_Opportunities_Next_30_days</fullName>
