@@ -181,7 +181,7 @@ public class Plative_OpportunityTriggerTest {
         oppty.StageName = 'Closed Won'; 
         oppty.ID_Request__c = 'Not Applicable';
         oppty.Win_Validation__c = 'Pending Review';
-        oppty.Products__c = 'React News;Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
+        oppty.Products__c = 'Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
         //oppty.Win_Validation__c = 'Opportunity Reviewed';
         Test.startTest();
         //For creating Renewal Opportunities from Sales Opportunity
@@ -196,7 +196,7 @@ public class Plative_OpportunityTriggerTest {
         lastRenewalOpportunity.Win_Validation__c = 'Opportunity Reviewed';
         lastRenewalOpportunity.Activation_Deactivation_Needs__c = 'Full Account Activation';
         //lastRenewalOpportunity.Win_Validation__c = 'Opportunity Reviewed';
-        lastRenewalOpportunity.Products__c = 'React News;Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
+        lastRenewalOpportunity.Products__c = 'Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
         Plative_OpportunityTriggerHandler.afterUpdateRun = false;
         update lastRenewalOpportunity;
         Plative_OpportunityTriggerHelper.getOppLineIteamsIds(new set<Id>{oppty.Id});
