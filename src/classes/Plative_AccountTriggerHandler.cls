@@ -11,6 +11,7 @@ public class Plative_AccountTriggerHandler{
 	public static Boolean beforeUpdateRun = false;
 	public static Boolean beforeInsertRun = false;
     public static Boolean isOwnerChanged = false;
+    public static Boolean isAccountTriggerSkip = false;
 
 	/**
 	* Description : after update DML
