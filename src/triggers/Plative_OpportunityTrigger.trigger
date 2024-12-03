@@ -8,7 +8,9 @@
 trigger Plative_OpportunityTrigger on Opportunity (before insert, after insert, before update, after update) {
     
     Trigger_Control_Setting__c setting = Trigger_Control_Setting__c.getOrgDefaults();
-
+    Trigger_Execution_Update__mdt triggerSkipUpdate = Trigger_Execution_Update__mdt.getInstance('User_'+UserInfo.getuserId());
+    if(triggerSkipUpdate != null && triggerSkipUpdate.Skip_Trigger__c && triggerSkipUpdate.Objects_Name__c.contains('Opportunity')) return;
+    
     if (setting.Opportunity__c && Trigger.isBefore && Trigger.isUpdate) {
         Plative_OpportunityTriggerHandler.beforeUpdate(Trigger.newMap, Trigger.oldMap);
     }
