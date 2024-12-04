@@ -23,7 +23,7 @@
         <name>ClientTrialActivationEmailAlert</name>
         <label>ClientTrialActivationEmailAlert</label>
         <locationX>512</locationX>
-        <locationY>1992</locationY>
+        <locationY>2100</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -62,7 +62,7 @@
         <name>TrialActivationEmailAlert</name>
         <label>TrialActivationEmailAlert</label>
         <locationX>248</locationX>
-        <locationY>1992</locationY>
+        <locationY>2100</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -195,7 +195,7 @@
         <name>IJGlobal_Product_Case_Assignment</name>
         <label>IJGlobal Product Case Assignment</label>
         <locationX>50</locationX>
-        <locationY>900</locationY>
+        <locationY>1008</locationY>
         <assignmentItems>
             <assignToReference>IJGlobalCase.AccountId</assignToReference>
             <operator>Assign</operator>
@@ -242,7 +242,7 @@
             <assignToReference>IJGlobalCase.OwnerId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>00G5G000004kklJ</stringValue>
+                <elementReference>Get_IJGlobal_Queue.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -295,7 +295,7 @@
         <name>Locatus_Product_Case_Assignment</name>
         <label>Locatus Product Case Assignment</label>
         <locationX>50</locationX>
-        <locationY>1200</locationY>
+        <locationY>1308</locationY>
         <assignmentItems>
             <assignToReference>LocatusCase.AccountId</assignToReference>
             <operator>Assign</operator>
@@ -498,6 +498,13 @@
             <stringValue>00G5G000004cMsDUAU</stringValue>
         </value>
     </constants>
+    <constants>
+        <name>IJGlobal_Queue</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>00Gct000000c3ZZEAY</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Activation_Decision</name>
         <label>Activation Decision</label>
@@ -617,7 +624,7 @@
         <name>Bulk_Case_Decision</name>
         <label>Bulk Case Decision</label>
         <locationX>182</locationX>
-        <locationY>1392</locationY>
+        <locationY>1500</locationY>
         <defaultConnector>
             <targetReference>GSA_Relation_Decision</targetReference>
         </defaultConnector>
@@ -642,7 +649,7 @@
         <name>Compliance_Creation</name>
         <label>Compliance Creation</label>
         <locationX>512</locationX>
-        <locationY>2184</locationY>
+        <locationY>2292</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>US_Client_Access_Closed</name>
@@ -818,7 +825,7 @@
         <name>GSA_Relation_Decision</name>
         <label>GSA Relation Decision</label>
         <locationX>512</locationX>
-        <locationY>1776</locationY>
+        <locationY>1884</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>GSARelationTrial</name>
@@ -934,7 +941,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>IJGlobal_Product_Case_Assignment</targetReference>
+                <targetReference>Get_IJGlobal_Queue</targetReference>
             </connector>
             <label>IJGlobal Case</label>
         </rules>
@@ -943,7 +950,7 @@
         <name>Locatus_Decision</name>
         <label>Locatus Decision</label>
         <locationX>182</locationX>
-        <locationY>1092</locationY>
+        <locationY>1200</locationY>
         <defaultConnector>
             <targetReference>Bulk_Case_Decision</targetReference>
         </defaultConnector>
@@ -1178,7 +1185,7 @@
         <name>Create_UK_Compliance_Record</name>
         <label>Create UK Compliance Record</label>
         <locationX>512</locationX>
-        <locationY>2292</locationY>
+        <locationY>2400</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
             <value>
@@ -1228,7 +1235,7 @@
         <name>Create_US_Compliance_Record</name>
         <label>Create US Compliance Record</label>
         <locationX>248</locationX>
-        <locationY>2292</locationY>
+        <locationY>2400</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
             <value>
@@ -1278,17 +1285,38 @@
         <name>Insert_Activation_Case_Records</name>
         <label>Insert Activation Case Records</label>
         <locationX>50</locationX>
-        <locationY>1500</locationY>
+        <locationY>1608</locationY>
         <connector>
             <targetReference>GSA_Relation_Decision</targetReference>
         </connector>
         <inputReference>CreateCaseList</inputReference>
     </recordCreates>
+    <recordLookups>
+        <name>Get_IJGlobal_Queue</name>
+        <label>Get IJGlobal Queue</label>
+        <locationX>50</locationX>
+        <locationY>900</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IJGlobal_Product_Case_Assignment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>IJGlobal</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Account_GSA_Relation_To_Client_Trial</name>
         <label>Update Account GSA Relation To Client + Trial</label>
         <locationX>512</locationX>
-        <locationY>1884</locationY>
+        <locationY>1992</locationY>
         <connector>
             <targetReference>ClientTrialActivationEmailAlert</targetReference>
         </connector>
@@ -1319,7 +1347,7 @@
         <name>Update_Account_GSA_Relation_To_Trial</name>
         <label>Update Account GSA Relation To Trial</label>
         <locationX>248</locationX>
-        <locationY>1884</locationY>
+        <locationY>1992</locationY>
         <connector>
             <targetReference>TrialActivationEmailAlert</targetReference>
         </connector>
