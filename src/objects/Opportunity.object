@@ -28580,11 +28580,9 @@ ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ),
  OR(
 ISBLANK(TEXT(Account.Company_Type__c )),
-ISBLANK(TEXT( Account.Subsidiary__c )),
-ISBLANK(Account.Description ),
-ISBLANK(Account.Phone )
+ISBLANK(TEXT( Account.Subsidiary__c ))
 ))</errorConditionFormula>
-        <errorMessage>To save at a Stage 3 or higher, you must have the following Account fields: Company Type, Subsidiary, Phone, and Description.</errorMessage>
+        <errorMessage>To save at a Stage 3 or higher, you must have the following Account fields: Company Type and Subsidiary.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Fields_Required_to_Save_at_Stage_3</fullName>
@@ -28605,12 +28603,10 @@ ISPICKVAL(StageName, &quot;Closed Won&quot;)
  OR(
 ISBLANK(TEXT(Account.Company_Type__c )),
 ISBLANK(TEXT( Account.Subsidiary__c )),
-ISBLANK(Account.Description ),
-ISBLANK(Account.Phone ),
 ISBLANK(TEXT(Lead_Channel__c)),
 ISBLANK(TEXT(Lead_Type__c))
 ))</errorConditionFormula>
-        <errorMessage>To save at a Stage 2 or higher, you must have the Opportunity Lead Type &amp; Lead Channel populated and the following Account fields: Company Type, Subsidiary, Phone, and Description.</errorMessage>
+        <errorMessage>To save at a Stage 2 or higher, you must have the Opportunity Lead Type &amp; Lead Channel populated and the following Account fields: Company Type and Subsidiary.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Fields_to_Save_Stage_3</fullName>
