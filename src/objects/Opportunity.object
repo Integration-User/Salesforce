@@ -29049,6 +29049,7 @@ OR(
         <description>Ask Price is required to save at ss4 or higher.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
