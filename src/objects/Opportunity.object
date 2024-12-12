@@ -28104,6 +28104,7 @@ ISBLANK(AP_Email__c))</errorConditionFormula>
         <errorConditionFormula>AND(
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK(Company_Type_Opp__c),
+ISCHANGED(StageName),
 OR(
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
 ISPICKVAL( StageName , &quot;In Review&quot;)
@@ -28119,6 +28120,7 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Renewal&quot;,
 ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
+ISCHANGED(StageName),
 OR(
 ISPICKVAL(StageName, &quot;Closed Lost&quot;),
 ISPICKVAL(StageName, &quot;Suspended&quot;),
@@ -28136,6 +28138,7 @@ ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;)
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
+ISCHANGED(StageName),
 ISPICKVAL(StageName, &quot;Closed Lost&quot;),
 NOT(ISBLANK(Trial_End_Date__c )))</errorConditionFormula>
         <errorDisplayField>Activation_Deactivation_Needs__c</errorDisplayField>
@@ -28159,6 +28162,7 @@ ISPICKVAL(Win_Validation__c, &quot;Pending Review&quot;))</errorConditionFormula
         <description>In order to save the Opportunity at a stage 4 or higher, you must include a website on the account.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
@@ -28211,6 +28215,7 @@ TEXT(Default_Contact__r.LeadSource)&lt;&gt;TEXT(LeadSource))
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 Current_Contract_Year__c =1,
+ISCHANGED(StageName),
 OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
@@ -28228,6 +28233,7 @@ Create_New_Renewal_Opportunity__c=TRUE))</errorConditionFormula>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name=&quot;Renewal&quot;,
+ISCHANGED(StageName),
 
 OR(
 ISPICKVAL( Win_Validation__c ,&quot;Pending Review&quot;),
@@ -28257,6 +28263,7 @@ ISCHANGED( StageName )))</errorConditionFormula>
         <fullName>Check_New_Sales_Opportunity</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+ISCHANGED(StageName),
 ISPICKVAL(StageName, &quot;Qualified&quot;),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
 Create_New_Sales_Opportunity__c = FALSE,
@@ -28270,6 +28277,7 @@ ISBLANK(New_Sales_Opportunity__c)
         <errorConditionFormula>AND(
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
+ISCHANGED(StageName),
 OR(
 ISBLANK(TEXT(Account.Company_Type__c)),
 ISBLANK(Account.BillingAddress),
@@ -28283,6 +28291,8 @@ ISBLANK(Account.Website)
         <errorConditionFormula>AND(
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISPICKVAL( StageName , &quot;In Review&quot;),
+ISCHANGED(StageName),
+
 OR(
 ISBLANK(TEXT(Account.Subsidiary__c)),
 ISBLANK(TEXT(Account.Company_Type__c)),
@@ -28328,6 +28338,7 @@ ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name=&quot;Advertising&quot;,
 RecordType.Name=&quot;Advertising - Closed&quot;,
@@ -28477,6 +28488,7 @@ NOT(ISPICKVAL(PRIORVALUE(StageName), &quot;In Review&quot;))
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Favor&quot;, 
 ISPICKVAL( StageName ,  &quot;Active&quot;),
+ISCHANGED(StageName),
 ISBLANK(Favor_End_Date__c)
 )</errorConditionFormula>
         <errorDisplayField>Favor_End_Date__c</errorDisplayField>
@@ -28490,6 +28502,7 @@ ISBLANK(Favor_End_Date__c)
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISPICKVAL( Sales_Type__c , &quot;New&quot; ),
+ISCHANGED(StageName),
 GSA_Subsidairy__c &lt;&gt; &quot;14 React Ltd&quot;,
 OR(
 ISBLANK(TEXT( ADV_PPD_Sent__c ))),
@@ -28508,6 +28521,7 @@ Opportunity: PPD Sent</errorMessage>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Events&quot;,
+ISCHANGED(StageName),
  OR(
   Account.ShippingCountry = &quot;United States&quot;,
   Account.BillingCountry = &quot;United States&quot;
@@ -28529,6 +28543,7 @@ RecordType.Name &lt;&gt; &quot;Events&quot;,
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Advisory&quot;,
+ISCHANGED(StageName),
 OR(
 ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
 ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
@@ -28553,7 +28568,8 @@ ISBLANK(TEXT(Real_Estate_Capital_Markets_Public__c))
         <description>Requires user to add Account fields - Company Type, Subsidiary, Description, and Account Phone on the Opportunity in order to save the Opportunity at a stage 3 or higher.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
- RecordType.Name = &quot;Renewal&quot;,
+RecordType.Name = &quot;Renewal&quot;,
+ISCHANGED(StageName),
  OR(
 ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
 ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
@@ -28645,6 +28661,7 @@ ISPICKVAL(Account.Company_Type__c, &quot;Non-Contracted Long Only-generalist&quo
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 Current_Contract_Year__c &lt;&gt; 1,
+ISCHANGED(StageName),
 OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
@@ -28660,6 +28677,7 @@ Create_New_Renewal_Opportunity__c = FALSE,
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
@@ -28679,10 +28697,12 @@ Create_New_Renewal_Opportunity__c=FALSE))</errorConditionFormula>
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Events&quot;,
 Current_Contract_Year__c=1,
+ISCHANGED(StageName),
 
 OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
+
 
 OR(
 ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
@@ -28846,6 +28866,7 @@ NOT(ISPICKVAL(StageName, &quot;Open&quot;))
         <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 4 or higher.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
  OR(
   RecordType.DeveloperName = &quot;Sales Opportunity&quot; ,
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
@@ -28856,10 +28877,11 @@ Product_Count__c =0
     </validationRules>
     <validationRules>
         <fullName>Require_Close_Opportunity_Notes</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>AND(
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK( Closed_Opportunity_Notes__c ),
+ISCHANGED(StageName),
 ISPICKVAL( StageName , &quot;In Review&quot;)
 )</errorConditionFormula>
         <errorDisplayField>Closed_Opportunity_Notes__c</errorDisplayField>
@@ -28885,6 +28907,7 @@ ISPICKVAL( Close_Reason__c, &quot;Product Fit&quot;)
         <errorConditionFormula>AND(
 $UserRole.DeveloperName &lt;&gt; &apos;System_Administrator&apos;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
+ISCHANGED(StageName),
 ISPICKVAL( Lead_Type__c, &quot;&quot;),
 OR(
 ISPICKVAL( StageName , &quot;Open&quot;),
@@ -28898,6 +28921,7 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
         <active>true</active>
         <errorConditionFormula>AND(
 RecordType.Name = &quot;Sales Opportunity&quot;,
+ISCHANGED(StageName),
 NOT(ISPICKVAL(StageName ,&quot;2 - Conducting Needs Analysis&quot;)),
 NOT(ISPICKVAL(StageName ,&quot;Closed Lost&quot;)),
 ISCHANGED(CloseDate),
@@ -28932,6 +28956,7 @@ ISPICKVAL(Close_Reason__c, &quot;&quot;)
         <active>true</active>
         <errorConditionFormula>AND(
 ISPICKVAL(StageName, &quot;In Review&quot;),
+ISCHANGED(StageName),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK(Sales_Owner__c)
 )</errorConditionFormula>
@@ -29032,7 +29057,8 @@ ISPICKVAL( Lead_Type__c, &quot;Other&quot;)
         <description>To move to Stage 6, Contract Start/End Date, Billing Schedule and Billing Contact are required.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
- ISPICKVAL( StageName , &quot;6 - Verbal Win and Finalizing Contract&quot;),
+ISCHANGED(StageName),
+ISPICKVAL( StageName , &quot;6 - Verbal Win and Finalizing Contract&quot;),
 OR(
  ISBLANK(  Contract_Start_Date__c  ),
  ISBLANK(  Contract_End_Date__c  ),
@@ -29105,6 +29131,7 @@ ISPICKVAL( StageName , &quot;Consolidated&quot;) )</errorConditionFormula>
         <description>Win Validation Required for renewals and sales ops</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
@@ -29124,6 +29151,7 @@ RecordType.Name&lt;&gt;&quot;Advisory&quot;,
 RecordType.Name&lt;&gt;&quot;Advisory - Closed&quot;,
 RecordType.Name&lt;&gt;&quot;Favor&quot;,
 RecordType.Name&lt;&gt;&quot;Favor - Closed&quot;,
+ISCHANGED(StageName),
 OR(
 ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;),
 ISPICKVAL(StageName,&quot;3 - Qualifying&quot;),
