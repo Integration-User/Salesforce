@@ -2436,6 +2436,115 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         </valueSet>
     </fields>
     <fields>
+        <fullName>IJ_Global_Events_Business_Unit__c</fullName>
+        <label>IJ Global Events - Business Unit</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AMS</fullName>
+                    <default>false</default>
+                    <label>AMS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Event_Cost_Centre__c</fullName>
+        <externalId>false</externalId>
+        <label>IJ Global Events - Event Cost Centre</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Event_Profit_Centre__c</fullName>
+        <externalId>false</externalId>
+        <label>IJ Global Events - Event Profit Centre</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Invoice_Status__c</fullName>
+        <label>IJ Global Events - Invoice Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Paid</fullName>
+                    <default>false</default>
+                    <label>Paid</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Netsuite_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>IJ Global Events - Netsuite Order Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Payment_Stage__c</fullName>
+        <label>IJ Global Events - Payment Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Paid</fullName>
+                    <default>false</default>
+                    <label>Paid</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_UID__c</fullName>
+        <externalId>false</externalId>
+        <label>IJ Global Events - UID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Inbound__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -14313,6 +14422,41 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Made New Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Events</fullName>
+        <active>true</active>
+        <businessProcess>Sales Opportunity</businessProcess>
+        <label>Events</label>
+        <picklistValues>
+            <picklist>IJ_Global_Events_Business_Unit__c</picklist>
+            <values>
+                <fullName>AMS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IJ_Global_Events_Invoice_Status__c</picklist>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IJ_Global_Events_Payment_Stage__c</picklist>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
