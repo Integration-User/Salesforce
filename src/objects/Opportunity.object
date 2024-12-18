@@ -2436,6 +2436,115 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         </valueSet>
     </fields>
     <fields>
+        <fullName>IJ_Global_Events_Business_Unit__c</fullName>
+        <label>IJ Global Events - Business Unit</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AMS</fullName>
+                    <default>false</default>
+                    <label>AMS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Event_Cost_Centre__c</fullName>
+        <externalId>false</externalId>
+        <label>IJ Global Events - Event Cost Centre</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Event_Profit_Centre__c</fullName>
+        <externalId>false</externalId>
+        <label>IJ Global Events - Event Profit Centre</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Invoice_Status__c</fullName>
+        <label>IJ Global Events - Invoice Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Paid</fullName>
+                    <default>false</default>
+                    <label>Paid</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Netsuite_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>IJ Global Events - Netsuite Order Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_Payment_Stage__c</fullName>
+        <label>IJ Global Events - Payment Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Paid</fullName>
+                    <default>false</default>
+                    <label>Paid</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IJ_Global_Events_UID__c</fullName>
+        <externalId>false</externalId>
+        <label>IJ Global Events - UID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Inbound__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -9068,11 +9177,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9189,10 +9306,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10698,11 +10811,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10819,10 +10940,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12260,11 +12377,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12381,10 +12506,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13762,11 +13883,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13883,10 +14012,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14313,6 +14438,41 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Made New Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Events</fullName>
+        <active>true</active>
+        <businessProcess>Sales Opportunity</businessProcess>
+        <label>Events</label>
+        <picklistValues>
+            <picklist>IJ_Global_Events_Business_Unit__c</picklist>
+            <values>
+                <fullName>AMS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IJ_Global_Events_Invoice_Status__c</picklist>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IJ_Global_Events_Payment_Stage__c</picklist>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15546,11 +15706,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15671,10 +15839,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17060,6 +17224,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -17133,10 +17305,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18478,6 +18646,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
@@ -18551,10 +18727,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19806,6 +19978,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21517,11 +21697,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21642,10 +21830,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23710,11 +23894,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23898,15 +24090,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25444,11 +25628,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25569,10 +25761,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27260,11 +27448,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27385,10 +27581,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27897,6 +28089,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name &lt;&gt; &quot;Events&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
 RecordType.Name &lt;&gt; &quot;Favour - Closed&quot;,
 ISPICKVAL(StageName,&quot;Closed Won&quot;),
@@ -27911,6 +28104,7 @@ ISBLANK(AP_Email__c))</errorConditionFormula>
         <errorConditionFormula>AND(
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK(Company_Type_Opp__c),
+ISCHANGED(StageName),
 OR(
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
 ISPICKVAL( StageName , &quot;In Review&quot;)
@@ -27926,6 +28120,7 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Renewal&quot;,
 ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
+ISCHANGED(StageName),
 OR(
 ISPICKVAL(StageName, &quot;Closed Lost&quot;),
 ISPICKVAL(StageName, &quot;Suspended&quot;),
@@ -27943,6 +28138,7 @@ ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;)
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
+ISCHANGED(StageName),
 ISPICKVAL(StageName, &quot;Closed Lost&quot;),
 NOT(ISBLANK(Trial_End_Date__c )))</errorConditionFormula>
         <errorDisplayField>Activation_Deactivation_Needs__c</errorDisplayField>
@@ -27966,6 +28162,7 @@ ISPICKVAL(Win_Validation__c, &quot;Pending Review&quot;))</errorConditionFormula
         <description>In order to save the Opportunity at a stage 4 or higher, you must include a website on the account.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
@@ -28018,6 +28215,7 @@ TEXT(Default_Contact__r.LeadSource)&lt;&gt;TEXT(LeadSource))
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 Current_Contract_Year__c =1,
+ISCHANGED(StageName),
 OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
@@ -28035,6 +28233,7 @@ Create_New_Renewal_Opportunity__c=TRUE))</errorConditionFormula>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name=&quot;Renewal&quot;,
+ISCHANGED(StageName),
 
 OR(
 ISPICKVAL( Win_Validation__c ,&quot;Pending Review&quot;),
@@ -28064,6 +28263,7 @@ ISCHANGED( StageName )))</errorConditionFormula>
         <fullName>Check_New_Sales_Opportunity</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+ISCHANGED(StageName),
 ISPICKVAL(StageName, &quot;Qualified&quot;),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
 Create_New_Sales_Opportunity__c = FALSE,
@@ -28077,6 +28277,7 @@ ISBLANK(New_Sales_Opportunity__c)
         <errorConditionFormula>AND(
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
+ISCHANGED(StageName),
 OR(
 ISBLANK(TEXT(Account.Company_Type__c)),
 ISBLANK(Account.BillingAddress),
@@ -28090,6 +28291,8 @@ ISBLANK(Account.Website)
         <errorConditionFormula>AND(
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISPICKVAL( StageName , &quot;In Review&quot;),
+ISCHANGED(StageName),
+
 OR(
 ISBLANK(TEXT(Account.Subsidiary__c)),
 ISBLANK(TEXT(Account.Company_Type__c)),
@@ -28121,6 +28324,7 @@ ISBLANK ( Closed_Opportunity_Notes__c)
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name &lt;&gt; &quot;Events&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
 RecordType.Name &lt;&gt; &quot;Favor - Closed&quot;,
 RecordType.Name &lt;&gt; &quot;Sales Development&quot;,
@@ -28134,6 +28338,7 @@ ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name=&quot;Advertising&quot;,
 RecordType.Name=&quot;Advertising - Closed&quot;,
@@ -28283,6 +28488,7 @@ NOT(ISPICKVAL(PRIORVALUE(StageName), &quot;In Review&quot;))
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Favor&quot;, 
 ISPICKVAL( StageName ,  &quot;Active&quot;),
+ISCHANGED(StageName),
 ISBLANK(Favor_End_Date__c)
 )</errorConditionFormula>
         <errorDisplayField>Favor_End_Date__c</errorDisplayField>
@@ -28296,6 +28502,7 @@ ISBLANK(Favor_End_Date__c)
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISPICKVAL( Sales_Type__c , &quot;New&quot; ),
+ISCHANGED(StageName),
 GSA_Subsidairy__c &lt;&gt; &quot;14 React Ltd&quot;,
 OR(
 ISBLANK(TEXT( ADV_PPD_Sent__c ))),
@@ -28313,6 +28520,8 @@ Opportunity: PPD Sent</errorMessage>
         <description>Requires user to add the Account field - Shipping Address - on the Opportunity in order to save the Opportunity at a stage 6  or higher.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name &lt;&gt; &quot;Events&quot;,
+ISCHANGED(StageName),
  OR(
   Account.ShippingCountry = &quot;United States&quot;,
   Account.BillingCountry = &quot;United States&quot;
@@ -28334,6 +28543,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Advisory&quot;,
+ISCHANGED(StageName),
 OR(
 ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
 ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
@@ -28358,7 +28568,8 @@ ISBLANK(TEXT(Real_Estate_Capital_Markets_Public__c))
         <description>Requires user to add Account fields - Company Type, Subsidiary, Description, and Account Phone on the Opportunity in order to save the Opportunity at a stage 3 or higher.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
- RecordType.Name = &quot;Renewal&quot;,
+RecordType.Name = &quot;Renewal&quot;,
+ISCHANGED(StageName),
  OR(
 ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
 ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
@@ -28450,6 +28661,7 @@ ISPICKVAL(Account.Company_Type__c, &quot;Non-Contracted Long Only-generalist&quo
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 Current_Contract_Year__c &lt;&gt; 1,
+ISCHANGED(StageName),
 OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
@@ -28465,6 +28677,7 @@ Create_New_Renewal_Opportunity__c = FALSE,
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
@@ -28482,11 +28695,14 @@ Create_New_Renewal_Opportunity__c=FALSE))</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name &lt;&gt; &quot;Events&quot;,
 Current_Contract_Year__c=1,
+ISCHANGED(StageName),
 
 OR(
 RecordType.Name=&quot;Sales Opportunity&quot;,
 RecordType.Name=&quot;Renewal&quot;),
+
 
 OR(
 ISPICKVAL(StageName,&quot;6 - Verbal Win and Finalizing Contract&quot;),
@@ -28533,7 +28749,9 @@ Create_New_Renewal_Opportunity__c=TRUE)
     <validationRules>
         <fullName>Invalid_Current_Contract_Year</fullName>
         <active>true</active>
-        <errorConditionFormula>Current_Contract_Year__c &gt; 10</errorConditionFormula>
+        <errorConditionFormula>AND(
+RecordType.Name &lt;&gt; &quot;Events&quot;,
+Current_Contract_Year__c &gt; 10)</errorConditionFormula>
         <errorDisplayField>Current_Contract_Year__c</errorDisplayField>
         <errorMessage>Please enter a valid Current Contract Year.</errorMessage>
     </validationRules>
@@ -28611,8 +28829,10 @@ ISCHANGED(OwnerId))</errorConditionFormula>
     <validationRules>
         <fullName>Other_Billing_Frequency</fullName>
         <active>true</active>
-        <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-				If(ispickval( Billing_Schedule__c , &quot;Other&quot;) &amp;&amp; isblank(  Other_Invoice_Frequency__c  ), true, false)
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name &lt;&gt; &quot;Events&quot;,
+IF(ISPICKVAL(Billing_Schedule__c , &quot;Other&quot;) &amp;&amp; ISBLANK(  Other_Invoice_Frequency__c  ), true, false)
 )</errorConditionFormula>
         <errorDisplayField>Other_Invoice_Frequency__c</errorDisplayField>
         <errorMessage>Please specify the Billing Frequency</errorMessage>
@@ -28646,6 +28866,7 @@ NOT(ISPICKVAL(StageName, &quot;Open&quot;))
         <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 4 or higher.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
  OR(
   RecordType.DeveloperName = &quot;Sales Opportunity&quot; ,
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
@@ -28656,10 +28877,11 @@ Product_Count__c =0
     </validationRules>
     <validationRules>
         <fullName>Require_Close_Opportunity_Notes</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>AND(
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK( Closed_Opportunity_Notes__c ),
+ISCHANGED(StageName),
 ISPICKVAL( StageName , &quot;In Review&quot;)
 )</errorConditionFormula>
         <errorDisplayField>Closed_Opportunity_Notes__c</errorDisplayField>
@@ -28685,6 +28907,7 @@ ISPICKVAL( Close_Reason__c, &quot;Product Fit&quot;)
         <errorConditionFormula>AND(
 $UserRole.DeveloperName &lt;&gt; &apos;System_Administrator&apos;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
+ISCHANGED(StageName),
 ISPICKVAL( Lead_Type__c, &quot;&quot;),
 OR(
 ISPICKVAL( StageName , &quot;Open&quot;),
@@ -28698,6 +28921,7 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
         <active>true</active>
         <errorConditionFormula>AND(
 RecordType.Name = &quot;Sales Opportunity&quot;,
+ISCHANGED(StageName),
 NOT(ISPICKVAL(StageName ,&quot;2 - Conducting Needs Analysis&quot;)),
 NOT(ISPICKVAL(StageName ,&quot;Closed Lost&quot;)),
 ISCHANGED(CloseDate),
@@ -28732,6 +28956,7 @@ ISPICKVAL(Close_Reason__c, &quot;&quot;)
         <active>true</active>
         <errorConditionFormula>AND(
 ISPICKVAL(StageName, &quot;In Review&quot;),
+ISCHANGED(StageName),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK(Sales_Owner__c)
 )</errorConditionFormula>
@@ -28832,7 +29057,8 @@ ISPICKVAL( Lead_Type__c, &quot;Other&quot;)
         <description>To move to Stage 6, Contract Start/End Date, Billing Schedule and Billing Contact are required.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
- ISPICKVAL( StageName , &quot;6 - Verbal Win and Finalizing Contract&quot;),
+ISCHANGED(StageName),
+ISPICKVAL( StageName , &quot;6 - Verbal Win and Finalizing Contract&quot;),
 OR(
  ISBLANK(  Contract_Start_Date__c  ),
  ISBLANK(  Contract_End_Date__c  ),
@@ -28849,6 +29075,7 @@ OR(
         <description>Ask Price is required to save at ss4 or higher.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
@@ -28892,9 +29119,10 @@ ISPICKVAL(Renewal_Risk__c,&quot;Power User / VIP left the Firm&quot;)))</errorCo
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name &lt;&gt; &quot;Events&quot;,
 ISBLANK( Consolidated_To__c ) ,
 ISCHANGED(StageName),
- ISPICKVAL( StageName , &quot;Consolidated&quot;) )</errorConditionFormula>
+ISPICKVAL( StageName , &quot;Consolidated&quot;) )</errorConditionFormula>
         <errorMessage>Please make sure that &quot;Consolidated To&quot; is filled in before setting the Stage to &quot;Consolidated&quot;.</errorMessage>
     </validationRules>
     <validationRules>
@@ -28903,6 +29131,7 @@ ISCHANGED(StageName),
         <description>Win Validation Required for renewals and sales ops</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
 OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
 RecordType.Name = &quot;Renewal&quot;),
@@ -28917,10 +29146,12 @@ ISPICKVAL ( StageName , &quot;Closed Won&quot;)
         <errorConditionFormula>AND(
 NOT(ISNEW()),
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name&lt;&gt;&quot;Events&quot;,
 RecordType.Name&lt;&gt;&quot;Advisory&quot;,
 RecordType.Name&lt;&gt;&quot;Advisory - Closed&quot;,
 RecordType.Name&lt;&gt;&quot;Favor&quot;,
 RecordType.Name&lt;&gt;&quot;Favor - Closed&quot;,
+ISCHANGED(StageName),
 OR(
 ISPICKVAL(StageName,&quot;2 - Conducting Needs Analysis&quot;),
 ISPICKVAL(StageName,&quot;3 - Qualifying&quot;),
@@ -28935,6 +29166,7 @@ NOT(ISBLANK(TEXT(Win_Validation__c))))</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name&lt;&gt;&quot;Events&quot;,
 Length_of_Contract__c&lt;=1,
 NOT(ISBLANK(X2nd_Year_Amount_in_USD__c)))</errorConditionFormula>
         <errorMessage>You can only enter a Year 2 Amount if the Contract length is more than 1.</errorMessage>
@@ -28944,6 +29176,7 @@ NOT(ISBLANK(X2nd_Year_Amount_in_USD__c)))</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name&lt;&gt;&quot;Events&quot;,
 Length_of_Contract__c&lt;=2,
 NOT(ISBLANK(X3rd_Year_Amount_in_USD__c)))</errorConditionFormula>
         <errorMessage>You can only enter a Year 3 Amount if the Contract length is more than 2.</errorMessage>
@@ -28953,6 +29186,7 @@ NOT(ISBLANK(X3rd_Year_Amount_in_USD__c)))</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name&lt;&gt;&quot;Events&quot;,
 Length_of_Contract__c&lt;=3,
 NOT(ISBLANK(Year_4_Amount__c)))</errorConditionFormula>
         <errorMessage>You can only enter a Year 4 Amount if the Contract length is more than 3.</errorMessage>
@@ -28962,6 +29196,7 @@ NOT(ISBLANK(Year_4_Amount__c)))</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name&lt;&gt;&quot;Events&quot;,
 Length_of_Contract__c =4,
 NOT(ISBLANK(Year_5_Amount__c)))</errorConditionFormula>
         <errorMessage>You can only enter a Year 5 Amount if the Contract length is more than 4.</errorMessage>
