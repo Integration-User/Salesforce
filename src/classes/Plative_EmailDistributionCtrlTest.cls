@@ -125,6 +125,20 @@ public class Plative_EmailDistributionCtrlTest {
         System.assertEquals('Email Distribution progress will take a few minutes. Please refresh the page after a minute!', response);
         Test.stopTest();
     }
-    
+     @isTest
+    static void saveEmailDistributionCase5(){
+        Test.startTest();
+        Trigger_Control_Setting__c setting = new Trigger_Control_Setting__c();
+        setting.Account__c = true;
+        insert setting;
+        Account acc = [Select Id, Account_Status__c from Account LIMIT 1];
+        Account_Email_Distribution__c aed = new Account_Email_Distribution__c();
+        aed.Account__c = acc.Id;
+        aed.Email_Distribution__c = Label.TestClass_ProductName;
+        insert aed;
+        acc.Account_Status__c = 'Inactive';
+		update acc;
+        Test.stopTest();
+    }
 
 }
