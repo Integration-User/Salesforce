@@ -5,7 +5,7 @@
 * [05.Mar.2020] Anisa Shaikh - Code Creation
 */
 trigger Plative_Account on Account (before insert, before update, after update)  { 
-	
+	if(Plative_AccountTriggerHandler.isAccountTriggerSkip) return;
 	Trigger_Control_Setting__c setting = Trigger_Control_Setting__c.getOrgDefaults();
     if (setting.Account__c && trigger.isBefore && Trigger.isUpdate) {
 			Plative_AccountTriggerHandler.beforeUpdate(Trigger.newMap, Trigger.oldMap);
