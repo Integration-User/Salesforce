@@ -5,7 +5,7 @@
         <name>Check_Products_List</name>
         <label>Check Products List</label>
         <locationX>182</locationX>
-        <locationY>587</locationY>
+        <locationY>287</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Related_Products</name>
@@ -28,31 +28,6 @@
                 <targetReference>Update_Product_On_Line_Item</targetReference>
             </connector>
             <label>Related Products</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Is_Product_Type_Description_required</name>
-        <label>Is Product Type Description required</label>
-        <locationX>182</locationX>
-        <locationY>287</locationY>
-        <defaultConnector>
-            <targetReference>Check_Products_List</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record__Prior.Product2.One_Time__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Product_Type_Description</targetReference>
-            </connector>
-            <label>Yes</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -81,7 +56,7 @@
         <name>Update_Product_On_Line_Item</name>
         <label>Update Product On Line Item</label>
         <locationX>50</locationX>
-        <locationY>695</locationY>
+        <locationY>395</locationY>
         <inputAssignments>
             <field>SKU_Product__c</field>
             <value>
@@ -90,27 +65,11 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <recordUpdates>
-        <name>Update_Product_Type_Description</name>
-        <label>Update Product_Type_Description</label>
-        <locationX>50</locationX>
-        <locationY>395</locationY>
-        <connector>
-            <targetReference>Check_Products_List</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Product_Type_Description__c</field>
-            <value>
-                <elementReference>$Record.Product2.Description</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Is_Product_Type_Description_required</targetReference>
+            <targetReference>Check_Products_List</targetReference>
         </connector>
         <object>OpportunityLineItem</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
