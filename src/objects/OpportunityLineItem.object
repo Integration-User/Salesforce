@@ -489,7 +489,7 @@ IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
     <fields>
         <fullName>Product_Description__c</fullName>
         <externalId>false</externalId>
-        <formula>PricebookEntry.Product2.Description</formula>
+        <formula>IF(ISBLANK(Product_Type_Description__c) , PricebookEntry.Product2.Description, Product_Type_Description__c)</formula>
         <label>Product Description</label>
         <required>false</required>
         <type>Text</type>

@@ -224,17 +224,31 @@ public without sharing class Plative_OpportunityTriggerHandler {
         System_Configuration__mdt skuDetailproductConfig = System_Configuration__mdt.getInstance('SKU_Detail_Validation_Product_List');
         List<String> skuDetailproductValidationList = skuDetailproductConfig.Value__c.split(';');
         Set<Id> skuDetailproductOpportunities = new Set<Id>();
-        for (OpportunityLineItem oli : [SELECT Id, OpportunityId, Product2.Name FROM OpportunityLineItem WHERE Product2.Name IN :skuDetailproductValidationList
-                                        AND OpportunityId IN :triggerNewMap.keySet() AND Product_SKU_Detail__c = null]) {
-            skuDetailproductOpportunities.add(oli.OpportunityId);
+        Map<Id, List<String>> oneTimeProductList = new Map<Id, List<String>>();
+        for (OpportunityLineItem oli : [SELECT Id, OpportunityId, Product2.Name, Product_Type_Description__c, Product_SKU_Detail__c, Product2.One_Time__c FROM OpportunityLineItem WHERE OpportunityId IN :triggerNewMap.keySet()]) {
+            if(skuDetailproductValidationList.contains(oli.Product2.Name) && oli.Product_SKU_Detail__c == null) {
+                skuDetailproductOpportunities.add(oli.OpportunityId);
+            }
+            // SF-1071 : Product Type Description Field
+            if(String.isBlank(oli.Product_Type_Description__c) && oli.Product2.One_Time__c && oneTimeProductList.containsKey(oli.OpportunityId)) {
+                oneTimeProductList.get(oli.OpportunityId).add(oli.Product2.Name);
+            } else if(String.isBlank(oli.Product_Type_Description__c) && oli.Product2.One_Time__c && !oneTimeProductList.containsKey(oli.OpportunityId)) {
+                oneTimeProductList.put(oli.OpportunityId, new List<String> {oli.Product2.Name});
+            }
         }
         for (Opportunity oppty : triggerNewMap.values()) {
             Opportunity oldOppty = triggerOldMap.get(oppty.Id);
             if(oldOppty.StageName != oppty.StageName && (oppty.recordTypeId == renewalRecordTypeId || oppty.recordTypeId == salesRecordTypeId)
-               && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won') && skuDetailproductOpportunities.contains(oppty.Id)) {
-                   System.debug(skuDetailproductConfig.Value__c.replace(';', ' OR ') + ' Opportunity Product must \'Product: SKU Detail\' value before moving the stage.');
-                   oppty.addError('Before moving to Stage 6, \'Product: SKU Detail\' must be entered for ' + skuDetailproductConfig.Value__c.replace(';', ' & '));
-           }
+               && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won')) {
+                   if(skuDetailproductOpportunities.contains(oppty.Id)) {
+                       System.debug(skuDetailproductConfig.Value__c.replace(';', ' OR ') + ' Opportunity Product must \'Product: SKU Detail\' value before moving the stage.');
+                       oppty.addError('Before moving to Stage 6, \'Product: SKU Detail\' must be entered for ' + skuDetailproductConfig.Value__c.replace(';', ' & '));
+                   }
+                   if(oneTimeProductList.containsKey(oppty.Id)) {
+                       System.debug('=oneTimeProductList Validation =' + oneTimeProductList.get(oppty.Id));
+                       oppty.addError('Before moving to Stage 6, \'Product Type Description\' field must be entered on Products for ' + string.join(oneTimeProductList.get(oppty.Id),' & '));
+                   }
+               }
         }
 		// END - SF-1064
     }
