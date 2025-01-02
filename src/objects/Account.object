@@ -1321,6 +1321,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>First_Renewal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>First Renewal Year</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Force_Owner_Update__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2909,7 +2919,6 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
     </fields>
     <fields>
         <fullName>Subsidiary__c</fullName>
-        <externalId>false</externalId>
         <label>Subsidiary</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -2930,7 +2939,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
                 <value>
                     <fullName>18.1 LDC</fullName>
                     <default>false</default>
-                    <label>18.1 LDC</label>
+                    <label>Green Street Solutions (UK) LTD</label>
                 </value>
                 <value>
                     <fullName>18.2 On-site Research Limited</fullName>
