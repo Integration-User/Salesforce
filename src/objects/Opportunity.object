@@ -28504,6 +28504,7 @@ RecordType.Name = &quot;Sales Opportunity&quot;,
 ISPICKVAL( Sales_Type__c , &quot;New&quot; ),
 ISCHANGED(StageName),
 GSA_Subsidairy__c &lt;&gt; &quot;14 React Ltd&quot;,
+GSA_Subsidairy__c &lt;&gt; &quot;23 IJGlobal&quot;,
 OR(
 ISBLANK(TEXT( ADV_PPD_Sent__c ))),
 OR(
@@ -28895,6 +28896,22 @@ ISPICKVAL( Close_Reason__c, &quot;Product Fit&quot;)
 )
 )</errorConditionFormula>
         <errorMessage>Please provide Closed Opportunity Notes.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Closed_Notes_Sales</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( StageName , &quot;Closed Lost&quot;),
+ISCHANGED(StageName),
+ISBLANK(Closed_Opportunity_Notes__c ),
+OR(
+$RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+$RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;,
+$RecordType.DeveloperName = &quot;Existing_Business&quot;,
+$RecordType.DeveloperName = &quot;Renewal_Closed&quot;
+)
+)</errorConditionFormula>
+        <errorMessage>Closed Opportunity Notes is required when Opportunity is Closed Lost.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Lead_Type</fullName>
