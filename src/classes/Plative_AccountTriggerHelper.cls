@@ -196,8 +196,12 @@ public class Plative_AccountTriggerHelper  {
                 List<String> CategoryName = Plative_SFToNSSyncUtility.getProductCategoryName(New List<String>{acc.Current_Products__c});
                 system.debug('-acc.CategoryName->'+CategoryName);
                 if (CategoryName!= null && !CategoryName.isEmpty() && CategoryName.size() > 0) acc.Products_Include__c = CategoryName[0];
+                // SF-1339
+                acc.Current_Products_Text__c = acc.Current_Products__c.replace(';', ',');
+                    
             } else if (acc.Is_Contact_Update__c && String.isBlank(acc.Current_Products__c)) {
                 acc.Products_Include__c = null;
+                acc.Current_Products_Text__c = acc.Current_Products__c;
             }
         }
         
