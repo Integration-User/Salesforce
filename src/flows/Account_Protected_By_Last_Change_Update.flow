@@ -4,8 +4,8 @@
     <assignments>
         <name>Update_Contact_Acc_Name</name>
         <label>Update Contact Acc Name</label>
-        <locationX>1406</locationX>
-        <locationY>565</locationY>
+        <locationX>534</locationX>
+        <locationY>1055</locationY>
         <assignmentItems>
             <assignToReference>Contact.Id</assignToReference>
             <operator>Assign</operator>
@@ -34,8 +34,8 @@
     <decisions>
         <name>Change_in_Current_Product_Decision</name>
         <label>Change in Current Product Decision</label>
-        <locationX>1071</locationX>
-        <locationY>385</locationY>
+        <locationX>644</locationX>
+        <locationY>731</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Current_Product_Change</name>
@@ -54,10 +54,42 @@
         </rules>
     </decisions>
     <decisions>
+        <name>First_Renewal_Year</name>
+        <label>First Renewal Year</label>
+        <locationX>347</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Protected_By_field_update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Became_Client_not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Became_Client__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_First_Renewal_Year</targetReference>
+            </connector>
+            <label>Became Client not Null</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Protected_By_field_update</name>
         <label>Protected By field update</label>
-        <locationX>873</locationX>
-        <locationY>389</locationY>
+        <locationX>347</locationX>
+        <locationY>623</locationY>
         <defaultConnector>
             <targetReference>Change_in_Current_Product_Decision</targetReference>
         </defaultConnector>
@@ -81,8 +113,8 @@
     <decisions>
         <name>Update_Contact_List_Not_Empty</name>
         <label>Update Contact List Not Empty</label>
-        <locationX>873</locationX>
-        <locationY>566</locationY>
+        <locationX>446</locationX>
+        <locationY>1247</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -103,13 +135,24 @@
     <description>SF-546: Flow to time stamp Protected By Last Change
 SF-775: PB Migration</description>
     <environments>Default</environments>
+    <formulas>
+        <name>Add_1Year_BecameClient</name>
+        <dataType>Number</dataType>
+        <expression>YEAR({!$Record.Became_Client__c}) + 1</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>Convert_Yr_Text</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!Add_1Year_BecameClient})</expression>
+    </formulas>
     <interviewLabel>Account {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account Protected By Last Change Update</label>
     <loops>
         <name>Loop_Through_Contacts</name>
         <label>Loop Through Contacts</label>
-        <locationX>1121</locationX>
-        <locationY>563</locationY>
+        <locationX>446</locationX>
+        <locationY>947</locationY>
         <collectionReference>Get_All_Contacts</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -128,7 +171,7 @@ SF-775: PB Migration</description>
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -141,8 +184,8 @@ SF-775: PB Migration</description>
     <recordLookups>
         <name>Get_All_Contacts</name>
         <label>Get All Contacts</label>
-        <locationX>1353</locationX>
-        <locationY>388</locationY>
+        <locationX>446</locationX>
+        <locationY>839</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Through_Contacts</targetReference>
@@ -167,17 +210,33 @@ SF-775: PB Migration</description>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Update_First_Renewal_Year</name>
+        <label>Update First Renewal Year</label>
+        <locationX>215</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Protected_By_field_update</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>First_Renewal_Year__c</field>
+            <value>
+                <elementReference>Convert_Yr_Text</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Product_Name_On_Contact</name>
         <label>Update Product Name On Contact</label>
-        <locationX>881</locationX>
-        <locationY>784</locationY>
+        <locationX>314</locationX>
+        <locationY>1355</locationY>
         <inputReference>ContactList</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Protected_By_Last_Change</name>
         <label>Update Protected By Last Change</label>
-        <locationX>596</locationX>
-        <locationY>387</locationY>
+        <locationX>50</locationX>
+        <locationY>731</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -195,10 +254,10 @@ SF-775: PB Migration</description>
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>755</locationX>
-        <locationY>48</locationY>
+        <locationX>221</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>Protected_By_field_update</targetReference>
+            <targetReference>First_Renewal_Year</targetReference>
         </connector>
         <object>Account</object>
         <recordTriggerType>Update</recordTriggerType>
