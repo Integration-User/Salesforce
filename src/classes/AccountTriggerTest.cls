@@ -43,6 +43,7 @@ public class AccountTriggerTest {
         boolean isError = false;
         acc.Trigger_Real_time_Sync__c = true;
         acc.Synced__c = 'Yes';
+        acc.Company_Type__c = 'Accountant';
         try {
             Update acc;
             Plative_AccountTriggerHelper.updateCTypeId(null, null);
