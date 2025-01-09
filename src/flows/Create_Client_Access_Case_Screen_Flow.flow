@@ -66,6 +66,14 @@
         </value>
     </choices>
     <choices>
+        <name>Case_Renew_Subscription</name>
+        <choiceText>Renew Subscription</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Renew Subscription</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>Case_Suspend</name>
         <choiceText>Suspend</choiceText>
         <dataType>String</dataType>
@@ -217,6 +225,7 @@
             <choiceReferences>Case_FullTrialDeactivation</choiceReferences>
             <choiceReferences>Case_LimitedTrialActivation</choiceReferences>
             <choiceReferences>Case_LimitedTrialDeactivation</choiceReferences>
+            <choiceReferences>Case_Renew_Subscription</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Activation/Deactivation Needs</fieldText>
             <fieldType>DropdownBox</fieldType>
@@ -227,7 +236,7 @@
             <name>Products</name>
             <choiceReferences>Case_Products</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>In order to select multiple products to remove or add, press Ctrl + the products you want to select</fieldText>
+            <fieldText>Products</fieldText>
             <fieldType>MultiSelectPicklist</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
