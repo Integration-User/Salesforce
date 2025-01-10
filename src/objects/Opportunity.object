@@ -602,6 +602,11 @@
                     <label>Souter</label>
                 </value>
                 <value>
+                    <fullName>Walburger</fullName>
+                    <default>false</default>
+                    <label>Walburger</label>
+                </value>
+                <value>
                     <fullName>Lemansky</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
@@ -5481,6 +5486,11 @@ NULL))))</formula>
                     <fullName>Souter</fullName>
                     <default>false</default>
                     <label>Souter</label>
+                </value>
+                <value>
+                    <fullName>Walburger</fullName>
+                    <default>false</default>
+                    <label>Walburger</label>
                 </value>
                 <value>
                     <fullName>Lemansky</fullName>
@@ -22361,6 +22371,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Walburger</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>White</fullName>
                 <default>false</default>
             </values>
@@ -24222,6 +24236,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walburger</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -28895,6 +28913,22 @@ ISPICKVAL( Close_Reason__c, &quot;Product Fit&quot;)
 )
 )</errorConditionFormula>
         <errorMessage>Please provide Closed Opportunity Notes.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Closed_Notes_Sales</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( StageName , &quot;Closed Lost&quot;),
+ISCHANGED(StageName),
+ISBLANK(Closed_Opportunity_Notes__c ),
+OR(
+$RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+$RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;,
+$RecordType.DeveloperName = &quot;Existing_Business&quot;,
+$RecordType.DeveloperName = &quot;Renewal_Closed&quot;
+)
+)</errorConditionFormula>
+        <errorMessage>Closed Opportunity Notes is required when Opportunity is Closed Lost.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Lead_Type</fullName>

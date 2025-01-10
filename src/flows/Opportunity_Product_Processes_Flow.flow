@@ -9,7 +9,7 @@
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Check_Sales_RT</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>(6 OR 7) AND (1 OR 2) AND (3 OR (4 AND 5))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Opportunity.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -24,10 +24,44 @@
                     <stringValue>Sales_Opportunity_Closed</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.End_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Record.Opportunity.CloseDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Start_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Record.Opportunity.Contract_Start_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.End_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Record.Opportunity.Contract_Start_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity.CloseDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity.Contract_Start_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Start_and_End_Dates</targetReference>
             </connector>
-            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Check Sales RT</label>
         </rules>
     </decisions>
