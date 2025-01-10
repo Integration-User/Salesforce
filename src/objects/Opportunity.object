@@ -395,7 +395,6 @@
     </fields>
     <fields>
         <fullName>Activation_Deactivation_Needs__c</fullName>
-        <externalId>false</externalId>
         <label>Activation/Deactivation Needs</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -433,6 +432,11 @@
                     <fullName>Add Upsold Products</fullName>
                     <default>false</default>
                     <label>Add Upsold Product(s)</label>
+                </value>
+                <value>
+                    <fullName>Renew Subscription</fullName>
+                    <default>false</default>
+                    <label>Renew Subscription</label>
                 </value>
                 <value>
                     <fullName>Suspend</fullName>
@@ -8087,6 +8091,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Remove Lost Products</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Approval_Status__c</picklist>
@@ -9801,6 +9809,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Remove Lost Products</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Approval_Status__c</picklist>
@@ -11455,6 +11467,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Remove Lost Products</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Approval_Status__c</picklist>
@@ -12965,6 +12981,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Remove Lost Products</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Approval_Status__c</picklist>
@@ -14458,6 +14478,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Events</label>
         <picklistValues>
+            <picklist>Activation_Deactivation_Needs__c</picklist>
+            <values>
+                <fullName>Add Upsold Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Account Activation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Account Deactivation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>IJ_Global_Events_Business_Unit__c</picklist>
             <values>
                 <fullName>AMS</fullName>
@@ -14512,6 +14559,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20510,6 +20561,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Suspend</fullName>
                 <default>false</default>
             </values>
@@ -24436,6 +24491,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Remove Lost Products</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Approval_Status__c</picklist>
@@ -26270,6 +26329,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
