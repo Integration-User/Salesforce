@@ -533,6 +533,33 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; color: black;&quot;&gt;Renewal Subscription&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: black;&quot;&gt; - for IJGlobal Products&lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Click &quot;Create New Subscription&quot; on Opportunity&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Make sure all users are added as required and the subscription dates align with the product dates&lt;/li&gt;&lt;/ol&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText18</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Client_Access</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.ActivationDeactivation_Needs__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Renew Subscription</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
                     <value>&lt;p&gt;&lt;span style=&quot;color: rgb(116, 116, 116); font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt;Suspend&lt;/strong&gt;&lt;span style=&quot;color: black; font-family: Arial, sans-serif;&quot;&gt; - &lt;/span&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;Export user list &amp;amp; contact email distros&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Remove &lt;strong&gt;all &lt;/strong&gt;Account Email Distros&lt;/li&gt;&lt;li&gt;Deactivate Account&lt;/li&gt;&lt;li&gt;Delete Products&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(116, 116, 116); font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; font-size: 10pt;&quot;&gt;Link to contact email distro report: &lt;/span&gt;&lt;a href=&quot;https://greenstreetadvisors.lightning.force.com/lightning/r/Report/00O5G000008xzqbUAA/view?queryScope=userFolders&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: blue; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; font-size: 10pt;&quot;&gt;https://greenstreetadvisors.lightning.force.com/lightning/r/Report/00O5G000008xzqbUAA/view?queryScope=userFolders&lt;/a&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
