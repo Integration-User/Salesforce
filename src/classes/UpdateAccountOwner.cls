@@ -131,7 +131,7 @@ public class UpdateAccountOwner implements Database.Batchable<sObject>, Database
                 } 
             } else {
                 AccResult.result = 'Error: You do not have permission to access this functionality. Please contact your Salesforce administrator for help.';
-                AccResult.isError = 'true';
+               AccResult.isError = 'true';
             }
         } catch(Exception e) {
             AccResult.result = e.getMessage();
