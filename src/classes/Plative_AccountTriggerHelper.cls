@@ -6,6 +6,7 @@
 public class Plative_AccountTriggerHelper  {
 	
 	public static Boolean accUpdateSync = false;
+    public static List<Account> accountOwnerChangeList = New List<Account>();
 	/**
 	* Description : Check if records to be synced
 	**/
@@ -179,6 +180,7 @@ public class Plative_AccountTriggerHelper  {
 			if(acc.ownerid != oldRecord.ownerid) {
 				acc.Force_Owner_Update__c = true;
                 acc.Is_Customer_Rep_Changed__c = true;
+                accountOwnerChangeList.add(acc);
 			}
 		}
 	}
@@ -229,6 +231,20 @@ public class Plative_AccountTriggerHelper  {
         }
         if(!renewalOwnerChanges.isEmpty()) {
             update renewalOwnerChanges;
+        }
+        // Account Team 
+        List<Account> customerRepToAccount = New List<Account>();
+        for (AccountTeamMember atm: [SELECT AccountId, Account.Customer_Success_Rep__c,User.name FROM AccountTeamMember WHERE TeamMemberRole = 'Customer Success' AND AccountId IN :accIds ORDER BY LastModifiedDate DESC]) {
+            system.debug('atm-->' + atm);
+            if(atm.Account.Customer_Success_Rep__c != atm.User.name) {
+                customerRepToAccount.add(new Account(Id = atm.AccountId, Customer_Success_Rep__c = atm.User.name));
+            }
+        }
+        system.debug('customerRepToAccount-->' + customerRepToAccount);
+        
+        if(!customerRepToAccount.isEmpty()) {
+            Plative_AccountTriggerHandler.isAccountTriggerSkip = true;
+            update customerRepToAccount;
         }
     }
 
