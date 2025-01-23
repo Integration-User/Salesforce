@@ -5,7 +5,7 @@
         <name>Update_Contact_Acc_Name</name>
         <label>Update Contact Acc Name</label>
         <locationX>534</locationX>
-        <locationY>1055</locationY>
+        <locationY>1763</locationY>
         <assignmentItems>
             <assignToReference>Contact.Id</assignToReference>
             <operator>Assign</operator>
@@ -35,7 +35,7 @@
         <name>Change_in_Current_Product_Decision</name>
         <label>Change in Current Product Decision</label>
         <locationX>644</locationX>
-        <locationY>731</locationY>
+        <locationY>1439</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Current_Product_Change</name>
@@ -54,12 +54,44 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_Research_Opportunity</name>
+        <label>Check Research Opportunity</label>
+        <locationX>193</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Lost_Client_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Research_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.AccountId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_First_Renewal_Year</targetReference>
+            </connector>
+            <label>Research Opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>First_Renewal_Year</name>
         <label>First Renewal Year</label>
         <locationX>347</locationX>
         <locationY>323</locationY>
         <defaultConnector>
-            <targetReference>Protected_By_field_update</targetReference>
+            <targetReference>Lost_Client_Decision</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -79,17 +111,56 @@
                     <stringValue>Client</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Update_First_Renewal_Year</targetReference>
+                <targetReference>Update_First_Renewal_Yr</targetReference>
             </connector>
             <label>Became Client not Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Lost_Client_Decision</name>
+        <label>Lost Client Decision</label>
+        <locationX>347</locationX>
+        <locationY>1031</locationY>
+        <defaultConnector>
+            <targetReference>Protected_By_field_update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Became_Lost_Client</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inactive</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lost_Client_Renewal_Yr</targetReference>
+            </connector>
+            <label>Became Lost Client</label>
         </rules>
     </decisions>
     <decisions>
         <name>Protected_By_field_update</name>
         <label>Protected By field update</label>
         <locationX>347</locationX>
-        <locationY>623</locationY>
+        <locationY>1331</locationY>
         <defaultConnector>
             <targetReference>Change_in_Current_Product_Decision</targetReference>
         </defaultConnector>
@@ -114,7 +185,7 @@
         <name>Update_Contact_List_Not_Empty</name>
         <label>Update Contact List Not Empty</label>
         <locationX>446</locationX>
-        <locationY>1247</locationY>
+        <locationY>1955</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -136,15 +207,26 @@
 SF-775: PB Migration</description>
     <environments>Default</environments>
     <formulas>
-        <name>Add_1Year_BecameClient</name>
+        <name>Add_1Year_ActivationDate</name>
         <dataType>Number</dataType>
-        <expression>YEAR({!$Record.Became_Client__c}) + 1</expression>
+        <expression>YEAR({!$Record.Activation_Date__c}) + 1</expression>
         <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>Add_1Year_ContractStartDate</name>
+        <dataType>Number</dataType>
+        <expression>YEAR({!Get_Opportunity.Contract_Start_Date__c}) + 1</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>Convert_ActivationYr_Text</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!Add_1Year_ActivationDate})</expression>
     </formulas>
     <formulas>
         <name>Convert_Yr_Text</name>
         <dataType>String</dataType>
-        <expression>TEXT({!Add_1Year_BecameClient})</expression>
+        <expression>TEXT({!Add_1Year_ContractStartDate})</expression>
     </formulas>
     <interviewLabel>Account {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account Protected By Last Change Update</label>
@@ -152,7 +234,7 @@ SF-775: PB Migration</description>
         <name>Loop_Through_Contacts</name>
         <label>Loop Through Contacts</label>
         <locationX>446</locationX>
-        <locationY>947</locationY>
+        <locationY>1655</locationY>
         <collectionReference>Get_All_Contacts</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -185,7 +267,7 @@ SF-775: PB Migration</description>
         <name>Get_All_Contacts</name>
         <label>Get All Contacts</label>
         <locationX>446</locationX>
-        <locationY>839</locationY>
+        <locationY>1547</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Through_Contacts</targetReference>
@@ -209,16 +291,53 @@ SF-775: PB Migration</description>
         <object>Contact</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Opportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>193</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Research_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Research_Products__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>Contract_Start_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_First_Renewal_Year</name>
-        <label>Update First Renewal Year</label>
-        <locationX>215</locationX>
-        <locationY>431</locationY>
+        <label>Update First Research</label>
+        <locationX>61</locationX>
+        <locationY>755</locationY>
         <connector>
-            <targetReference>Protected_By_field_update</targetReference>
+            <targetReference>Lost_Client_Decision</targetReference>
         </connector>
         <inputAssignments>
-            <field>First_Renewal_Year__c</field>
+            <field>First_Renewal_Year_Research__c</field>
             <value>
                 <elementReference>Convert_Yr_Text</elementReference>
             </value>
@@ -226,17 +345,49 @@ SF-775: PB Migration</description>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_First_Renewal_Yr</name>
+        <label>Update First Renewal Yr</label>
+        <locationX>193</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Get_Opportunity</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>First_Renewal_Year__c</field>
+            <value>
+                <elementReference>Convert_ActivationYr_Text</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Lost_Client_Renewal_Yr</name>
+        <label>Update Lost Client Renewal Yr</label>
+        <locationX>215</locationX>
+        <locationY>1139</locationY>
+        <connector>
+            <targetReference>Protected_By_field_update</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>First_Renewal_Year_Research__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Renewal_Year__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Product_Name_On_Contact</name>
         <label>Update Product Name On Contact</label>
         <locationX>314</locationX>
-        <locationY>1355</locationY>
+        <locationY>2063</locationY>
         <inputReference>ContactList</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Protected_By_Last_Change</name>
         <label>Update Protected By Last Change</label>
         <locationX>50</locationX>
-        <locationY>731</locationY>
+        <locationY>1439</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -279,5 +430,12 @@ SF-775: PB Migration</description>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>
