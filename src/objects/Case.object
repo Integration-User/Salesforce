@@ -311,7 +311,6 @@
     </fields>
     <fields>
         <fullName>ActivationDeactivation_Needs__c</fullName>
-        <externalId>false</externalId>
         <label>Activation/Deactivation Needs</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -374,6 +373,11 @@
                     <fullName>Limited Trial Conversion</fullName>
                     <default>false</default>
                     <label>Limited Trial Conversion</label>
+                </value>
+                <value>
+                    <fullName>Renew Subscription</fullName>
+                    <default>false</default>
+                    <label>Renew Subscription</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -5135,6 +5139,10 @@ FALSE)))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Suspend</fullName>
                 <default>false</default>
             </values>
@@ -9735,6 +9743,10 @@ FALSE)))))))))))</formula>
                 <fullName>Remove Lost Products</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Application__c</picklist>
@@ -11016,6 +11028,10 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
