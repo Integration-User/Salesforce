@@ -2395,6 +2395,15 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         </valueSet>
     </fields>
     <fields>
+        <fullName>Goals__c</fullName>
+        <label>Goals</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>HVT_Increase_Unmet__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -4777,6 +4786,15 @@ OwnerId  = $User.Id)</formula>
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Needs__c</fullName>
+        <label>Needs</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>NetSuite_ID__c</fullName>
         <description>Set by the integration with NetSuite</description>
         <externalId>true</externalId>
@@ -5290,6 +5308,15 @@ NULL))))</formula>
         <trackTrending>true</trackTrending>
     </fields>
     <fields>
+        <fullName>Problems__c</fullName>
+        <label>Problems</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Product_Count__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Counts # of Opportunity Products added to support validation rule.</inlineHelpText>
@@ -5732,9 +5759,8 @@ NULL))))</formula>
     <fields>
         <fullName>Referred_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <inlineHelpText>Internal Referral Source</inlineHelpText>
-        <label>AM Referred By</label>
+        <label>Referred By</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Opportunities</relationshipName>
         <required>false</required>
