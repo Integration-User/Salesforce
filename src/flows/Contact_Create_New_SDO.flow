@@ -171,14 +171,6 @@
             <targetReference>Get_Record_Type</targetReference>
         </connector>
         <fields>
-            <name>Inbound</name>
-            <dataType>Boolean</dataType>
-            <fieldText>Inbound?</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
             <name>Lead_Dependent_Picklist</name>
             <extensionName>flowruntime:dependentPicklists</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -244,6 +236,14 @@
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Inbound</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Inbound?</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
         </fields>
         <nextOrFinishButtonLabel>Create SDO</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
