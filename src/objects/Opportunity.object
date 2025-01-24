@@ -2370,8 +2370,8 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <fullName>GSA_Subsidairy__c</fullName>
         <description>Used for routing on-boarding and compliance alert</description>
         <externalId>false</externalId>
-        <formula>Text(Account.Subsidiary__c)</formula>
-        <label>GSA Subsidairy</label>
+        <formula>IF(Text(Account.Subsidiary__c) = &quot;18.1 LDC&quot;,&quot;18.1 Green Street Solutions (UK) LTD&quot;,Text(Account.Subsidiary__c))</formula>
+        <label>GSA Subsidiary</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
