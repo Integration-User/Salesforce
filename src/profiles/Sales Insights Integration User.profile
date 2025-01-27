@@ -12308,6 +12308,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.First_Renewal_Year_Research__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.First_Renewal_Year__c</field>
         <readable>true</readable>
     </fieldPermissions>
