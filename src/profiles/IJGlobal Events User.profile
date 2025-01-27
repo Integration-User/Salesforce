@@ -13573,11 +13573,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.First_Renewal_Year_Research__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Account.First_Renewal_Year__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20113,11 +20108,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.Goals__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Lead.HasOptedOutOfEmail</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20248,11 +20238,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.Needs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Lead.Next_Outreach_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20309,11 +20294,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Press_Releases__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.Problems__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20384,11 +20364,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Referred_By_Lead__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Lead.Referred_By__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -21548,11 +21523,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.Goals__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Opportunity.HVT_Increase_Unmet__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -21782,11 +21752,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Needs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.NetSuite_ID__c</field>
         <readable>false</readable>
@@ -21932,11 +21897,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Problems__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Product_Count__c</field>
         <readable>false</readable>
@@ -21989,6 +21949,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Quota_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.React_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -40224,6 +40189,9 @@
         <layout>Shadow_Mapping__mdt-Shadow Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>SiqExchangeConnection-Exchange Connection Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -41072,6 +41040,15 @@
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>EngagementChannelType</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>EvaluationJobResultEvent</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
