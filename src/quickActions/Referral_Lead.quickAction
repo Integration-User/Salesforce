@@ -18,6 +18,10 @@
         <formula>&quot;&lt;i&gt;Compelling Reason for Referral:&lt;/i&gt;&lt;br/&gt; &lt;br/&gt;&lt;br/&gt;&lt;b&gt;Red flags, budget, timing, urgency?&lt;/b&gt;&lt;br/&gt; &lt;br/&gt;*Advisory Referral Only Question*&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Previous Advisory Intro?&lt;/b&gt; (provide details)&quot;</formula>
     </fieldOverrides>
     <fieldOverrides>
+        <field>Referred_By__c</field>
+        <formula>CreatedBy.Id</formula>
+    </fieldOverrides>
+    <fieldOverrides>
         <field>Referred_By_Lead__c</field>
         <formula>$User.Id</formula>
     </fieldOverrides>
@@ -47,11 +51,26 @@
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>Product_Interest_1__c</field>
-                <uiBehavior>Edit</uiBehavior>
+                <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>Geographic_Exposure__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Goals__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Problems__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Needs__c</field>
                 <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
@@ -97,13 +116,21 @@
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
-                <emptySpace>false</emptySpace>
-                <field>Other_Vendors_Lead__c</field>
-                <uiBehavior>Required</uiBehavior>
+                <emptySpace>true</emptySpace>
+                <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>true</emptySpace>
                 <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>true</emptySpace>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Other_Vendors_Lead__c</field>
+                <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
