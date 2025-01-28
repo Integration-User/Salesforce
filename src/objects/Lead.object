@@ -1306,7 +1306,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Lead_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Send Referral To:</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1335,6 +1334,11 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
                     <fullName>Commercial + Advisory ARR</fullName>
                     <default>false</default>
                     <label>Commercial + Advisory ARR</label>
+                </value>
+                <value>
+                    <fullName>IJGlobal</fullName>
+                    <default>false</default>
+                    <label>IJGlobal</label>
                 </value>
                 <value>
                     <fullName>GSI</fullName>
@@ -9194,22 +9198,7 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Sales</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Lead_Type__c</picklist>
-            <values>
-                <fullName>Account Management</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Commercial %2B Advisory ARR</fullName>
+                <fullName>IJGlobal</fullName>
                 <default>false</default>
             </values>
             <values>
