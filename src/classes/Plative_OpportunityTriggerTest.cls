@@ -178,6 +178,7 @@ public class Plative_OpportunityTriggerTest {
         Id oppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Sales_Opportunity_Closed').getRecordTypeId();
         oppty.RecordTypeId = oppRecordTypeId;
         oppty.Id = opptyTemp.Id;
+        oppty.Closed_Opportunity_Notes__c = 'teetsing 123';
         oppty.StageName = 'Closed Won'; 
         oppty.ID_Request__c = 'Not Applicable';
         oppty.Win_Validation__c = 'Pending Review';
@@ -190,6 +191,7 @@ public class Plative_OpportunityTriggerTest {
         //For creating Renewal Opportunity from the last Closed Renewal Opportunity
         Opportunity lastRenewalOpportunity = [Select Id from Opportunity where Id != :oppty.Id ORDER BY CreatedDate DESC LIMIT 1];
         lastRenewalOpportunity.StageName = 'Closed Lost';
+         lastRenewalOpportunity.Closed_Opportunity_Notes__c = 'teetsing 123';
         lastRenewalOpportunity.Close_Reason__c = 'Contracted Client';
         //lastRenewalOpportunity.Create_New_Renewal_Opportunity__c = true;
         lastRenewalOpportunity.ID_Request__c = 'Not Applicable';
@@ -308,6 +310,7 @@ public class Plative_OpportunityTriggerTest {
         oppty.Contract_End_Date__c = System.today().addmonths(1);
         oppty.RecordTypeId = oppRecordTypeId;
         oppty.This_Year_Increase__c = 10;
+        oppty.Closed_Opportunity_Notes__c = 'teetsing 123';
         insert oppty;
         
         OpportunityLineItem opptyLineItem = new OpportunityLineItem();
