@@ -367,9 +367,6 @@ public class Plative_OpportunityRenewalHelper {
                 newOpp.Amount = Opp.Year_7_Amount__c;
             }
         }
-        // SF-1328
-        newOpp.License_Size__c = Opp.License_Size__c;
-        newOpp.License_Type__c = Opp.License_Type__c;
         
         return newOpp;
     }
