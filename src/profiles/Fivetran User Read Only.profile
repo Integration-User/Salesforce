@@ -93,6 +93,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Entitlement_Guidance_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Entitlement_Guidance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Excel_Add_In_Users__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -649,6 +659,10 @@
         <layout>Account-Subsidiary Account</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Account-Subsidiary Account</layout>
+        <recordType>Account.Subsidiary_Account</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Case-Help Desk Layout</layout>
         <recordType>Case.Help_Desk</recordType>
     </layoutAssignments>
@@ -717,7 +731,6 @@
     </objectPermissions>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Account.Organization_Account</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
