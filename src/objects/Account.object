@@ -1283,12 +1283,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     <fields>
         <fullName>EU_Expansion_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>EU Expansion Owner</label>
+        <label>EU Named Account Owner</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Accounts4</relationshipName>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -3201,12 +3200,11 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
     <fields>
         <fullName>US_Expansion_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>US Expansion Owner</label>
+        <label>US Named Account Owner</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Accounts5</relationshipName>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
