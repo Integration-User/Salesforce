@@ -118,6 +118,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.GS_News_Canada_Client__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.LDC_Industry__c</field>
         <readable>true</readable>
     </fieldPermissions>
