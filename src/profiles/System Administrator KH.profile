@@ -17770,6 +17770,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Potential_Advisory_Lead__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -22862,6 +22867,11 @@
         <editable>false</editable>
         <field>Task.Owner_Contact__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Potential_Advisory_Lead__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
