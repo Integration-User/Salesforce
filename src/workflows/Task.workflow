@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Potential_Advisory_Lead_Email_Alert</fullName>
+        <description>Potential Advisory Lead Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jecusi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Potential_Advisory_Lead_Template</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Update_Email_Task_Type</fullName>
         <field>Type</field>
