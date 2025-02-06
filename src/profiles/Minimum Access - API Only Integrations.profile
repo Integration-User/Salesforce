@@ -60,6 +60,10 @@
         <apexClass>UpdateAccountOwnerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateAccountProductOnOppCloseWonBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -69,6 +73,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Account_6sense_Segment_Names__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Account_Handoff_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Business_Days_to_Onboarding_Completion__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -84,6 +98,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Debtor_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Entitlement_Guidance_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Entitlement_Guidance__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -104,6 +128,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.First_Renewal_Year__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.GS_News_Canada_Client__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -234,6 +263,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Event.Objective__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Potential_Advisory_Lead__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -538,12 +572,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>System_Configuration__mdt.List_Of_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Task.Bounced_Salesloft__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.Objective__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Potential_Advisory_Lead__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>Plative_OpportunityTriggerHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateAccountProductOnOppCloseWonBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>System_Configuration__mdt.List_Of_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <layoutAssignments>
+        <layout>System_Configuration__mdt-System Configuration Layout</layout>
+    </layoutAssignments>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>

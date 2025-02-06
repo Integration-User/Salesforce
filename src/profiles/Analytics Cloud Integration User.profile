@@ -1248,6 +1248,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UpdateAccountProductOnOppCloseWonBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UpdateAnalystHoursForAccountBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -12288,6 +12292,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Entitlement_Guidance_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Entitlement_Guidance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Excel_Add_In_Users__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -12339,6 +12353,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.GSA_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.GS_News_Canada_Client__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -17848,6 +17867,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Potential_Advisory_Lead__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -22908,6 +22932,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>System_Configuration__mdt.List_Of_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>System_Configuration__mdt.Value__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -23055,6 +23084,11 @@
         <editable>false</editable>
         <field>Task.Owner_Contact__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Potential_Advisory_Lead__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -33580,6 +33614,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Sync_Settings__mdt-Sync Settings Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>System_Configuration__mdt-System Configuration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
