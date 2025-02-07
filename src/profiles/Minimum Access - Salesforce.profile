@@ -1248,6 +1248,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UpdateAccountProductOnOppCloseWonBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UpdateAnalystHoursForAccountBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -22938,6 +22942,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>System_Configuration__mdt.List_Of_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>System_Configuration__mdt.Value__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -33315,6 +33324,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SurveyVersion-Survey Version Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>System_Configuration__mdt-System Configuration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>UserProvAccount-User Provisioning Account Layout</layout>
