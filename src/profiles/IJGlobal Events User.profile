@@ -1278,6 +1278,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UpdateAccountProductOnOppCloseWonBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UpdateAnalystHoursForAccountBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
