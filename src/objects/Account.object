@@ -1329,6 +1329,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>First_Renewal_Year_Research__c</fullName>
+        <externalId>false</externalId>
+        <label>First Renewal Year (Research)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>First_Renewal_Year__c</fullName>
         <externalId>false</externalId>
         <label>First Renewal Year</label>
@@ -2973,11 +2983,6 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
                     <fullName>22.3 Belgium</fullName>
                     <default>false</default>
                     <label>22.3 Belgium</label>
-                </value>
-                <value>
-                    <fullName>23 IJGlobal</fullName>
-                    <default>false</default>
-                    <label>23 IJGlobal</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
