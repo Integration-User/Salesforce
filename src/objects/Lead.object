@@ -463,6 +463,11 @@
                     <label>Souter</label>
                 </value>
                 <value>
+                    <fullName>Walburger</fullName>
+                    <default>false</default>
+                    <label>Walburger</label>
+                </value>
+                <value>
                     <fullName>Lemansky</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
@@ -1100,6 +1105,15 @@
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Goals__c</fullName>
+        <label>Goals</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>HasOptedOutOfEmail</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1292,7 +1306,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Lead_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Send Referral To:</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1321,6 +1334,11 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
                     <fullName>Commercial + Advisory ARR</fullName>
                     <default>false</default>
                     <label>Commercial + Advisory ARR</label>
+                </value>
+                <value>
+                    <fullName>IJGlobal</fullName>
+                    <default>false</default>
+                    <label>IJGlobal</label>
                 </value>
                 <value>
                     <fullName>GSI</fullName>
@@ -2971,6 +2989,15 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Needs__c</fullName>
+        <label>Needs</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Next_Outreach_Date__c</fullName>
         <externalId>false</externalId>
         <label>Next Outreach Date</label>
@@ -3234,6 +3261,15 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Problems__c</fullName>
+        <label>Problems</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Product_Interest_1__c</fullName>
@@ -3592,6 +3628,11 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
                     <label>Souter</label>
                 </value>
                 <value>
+                    <fullName>Walburger</fullName>
+                    <default>false</default>
+                    <label>Walburger</label>
+                </value>
+                <value>
                     <fullName>Lemansky</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
@@ -3798,13 +3839,23 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <fullName>Referred_By_Lead__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Referred By field on lead object</description>
-        <externalId>false</externalId>
-        <label>AM Referred By</label>
+        <label>Referred By</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Leads</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Referred_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Referred By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>LeadReferredBy</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -5296,6 +5347,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walburger</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7859,6 +7914,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Walburger</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>White</fullName>
                 <default>false</default>
             </values>
@@ -7966,6 +8025,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -7975,6 +8038,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8042,6 +8109,26 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -8075,6 +8162,42 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8335,6 +8458,29 @@ Stored as Long on Solr.</description>
         <businessProcess>Referrals</businessProcess>
         <compactLayoutAssignment>Referral_Lead</compactLayoutAssignment>
         <label>Referral</label>
+        <picklistValues>
+            <picklist>Assignment_Team__c</picklist>
+            <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walburger</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>CRE_Exposure__c</picklist>
             <values>
@@ -9116,22 +9262,7 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Sales</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Lead_Type__c</picklist>
-            <values>
-                <fullName>Account Management</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advisory</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Commercial %2B Advisory ARR</fullName>
+                <fullName>IJGlobal</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10702,6 +10833,29 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Qualifying_Team__c</picklist>
+            <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walburger</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Rating</picklist>
             <values>
                 <fullName>Cold</fullName>
@@ -10832,6 +10986,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -10841,6 +10999,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10908,6 +11070,26 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -10941,6 +11123,42 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
