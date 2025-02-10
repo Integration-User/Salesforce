@@ -1248,6 +1248,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UpdateAccountProductOnOppCloseWonBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UpdateAnalystHoursForAccountBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -22722,6 +22726,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>System_Configuration__mdt.List_Of_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Task.ActivityDate</field>
         <readable>true</readable>
@@ -33344,6 +33353,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Sync_Settings__mdt-Sync Settings Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>System_Configuration__mdt-System Configuration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
