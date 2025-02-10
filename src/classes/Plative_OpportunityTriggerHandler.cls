@@ -83,6 +83,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
                     designatedOppARR.add(triggeredOpp);
                 }
             }
+            // SF-1389
             if(!closedOppIds.isEmpty() && closedOppIds.size() > 0 && !System.isFuture() && !System.isBatch()) {
                 UpdateAccountProductOnOppCloseWonBatch updateAccount = new UpdateAccountProductOnOppCloseWonBatch(closedOppIds);
                 Database.executeBatch(updateAccount, 5);

@@ -1,3 +1,5 @@
+// SF-1389 : Current Products adjustment(IJ, React, RAP)
+// IF an opportunity is marked closed won or lost, check on the products that are won or lost, and either add new products onto the Current products field on the associated account(if product was won), or remove the products from Current Products field if product was lost
 public class UpdateAccountProductOnOppCloseWonBatch implements Database.Batchable<sObject>, Database.Stateful {
     List<String> productList = new List<String>{'IJGlobal: Data Delivery + News + IJ Investor', 'IJGlobal: IJ Investor', 
         										'IJGlobal: IJ Investor - Trial', 'IJGlobal: News', 'IJGlobal: News - Trial', 
@@ -25,10 +27,8 @@ public class UpdateAccountProductOnOppCloseWonBatch implements Database.Batchabl
                     if(opp.account.Current_Products__c != null && !opp.account.Current_Products__c.contains(oli.Product2.name)) {
                         Account acc = new Account(id = opp.AccountId, Current_Products__c = opp.account.Current_Products__c + ';' + oli.Product2.name);
                         accountUpdates.put(opp.AccountId, acc);
-                        System.debug('acc 2-->' + acc);
                     } else {
                          Account acc = new Account(id = opp.AccountId, Current_Products__c = oli.Product2.name);
-                        System.debug('acc 3-->' + acc);
                         accountUpdates.put(opp.AccountId, acc);
                     }   
                 }
