@@ -560,6 +560,91 @@ IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
                     <default>false</default>
                     <label>Vacancy Monitor</label>
                 </value>
+                <value>
+                    <fullName>Seat</fullName>
+                    <default>false</default>
+                    <label>Seat</label>
+                </value>
+                <value>
+                    <fullName>Standard Table</fullName>
+                    <default>false</default>
+                    <label>Standard Table</label>
+                </value>
+                <value>
+                    <fullName>Gold Table</fullName>
+                    <default>false</default>
+                    <label>Gold Table</label>
+                </value>
+                <value>
+                    <fullName>Platinum Table</fullName>
+                    <default>false</default>
+                    <label>Platinum Table</label>
+                </value>
+                <value>
+                    <fullName>Platinum Plus Table</fullName>
+                    <default>false</default>
+                    <label>Platinum Plus Table</label>
+                </value>
+                <value>
+                    <fullName>Logo License</fullName>
+                    <default>false</default>
+                    <label>Logo License</label>
+                </value>
+                <value>
+                    <fullName>Trophy</fullName>
+                    <default>false</default>
+                    <label>Trophy</label>
+                </value>
+                <value>
+                    <fullName>Banner Advertisement</fullName>
+                    <default>false</default>
+                    <label>Banner Advertisement</label>
+                </value>
+                <value>
+                    <fullName>Headline Partner</fullName>
+                    <default>false</default>
+                    <label>Headline Partner</label>
+                </value>
+                <value>
+                    <fullName>Drinks Reception Partner</fullName>
+                    <default>false</default>
+                    <label>Drinks Reception Partner</label>
+                </value>
+                <value>
+                    <fullName>Sponsorship Add-on</fullName>
+                    <default>false</default>
+                    <label>Sponsorship Add-on</label>
+                </value>
+                <value>
+                    <fullName>Exhibitor</fullName>
+                    <default>false</default>
+                    <label>Exhibitor</label>
+                </value>
+                <value>
+                    <fullName>Gold</fullName>
+                    <default>false</default>
+                    <label>Gold</label>
+                </value>
+                <value>
+                    <fullName>Platinum</fullName>
+                    <default>false</default>
+                    <label>Platinum</label>
+                </value>
+                <value>
+                    <fullName>Silver</fullName>
+                    <default>false</default>
+                    <label>Silver</label>
+                </value>
+                <value>
+                    <fullName>Events</fullName>
+                    <default>false</default>
+                    <label>Events</label>
+                </value>
+                <value>
+                    <fullName>Registration</fullName>
+                    <default>false</default>
+                    <label>Registration</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Locatus: Footfall Data</controllingFieldValue>
@@ -588,6 +673,75 @@ IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
             <valueSettings>
                 <controllingFieldValue>Locatus: Other</controllingFieldValue>
                 <valueName>Vacancy Monitor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Table</controllingFieldValue>
+                <valueName>Seat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Table</controllingFieldValue>
+                <valueName>Standard Table</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Table</controllingFieldValue>
+                <valueName>Gold Table</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Table</controllingFieldValue>
+                <valueName>Platinum Table</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Table</controllingFieldValue>
+                <valueName>Platinum Plus Table</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Add-on</controllingFieldValue>
+                <valueName>Logo License</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Add-on</controllingFieldValue>
+                <valueName>Trophy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Add-on</controllingFieldValue>
+                <valueName>Banner Advertisement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Sponsorship</controllingFieldValue>
+                <valueName>Headline Partner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Sponsorship</controllingFieldValue>
+                <valueName>Drinks Reception Partner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Award Sponsorship</controllingFieldValue>
+                <controllingFieldValue>IJ Global: Event Sponsorship</controllingFieldValue>
+                <valueName>Sponsorship Add-on</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Event Sponsorship</controllingFieldValue>
+                <valueName>Exhibitor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Event Sponsorship</controllingFieldValue>
+                <valueName>Gold</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Event Sponsorship</controllingFieldValue>
+                <valueName>Platinum</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Event Sponsorship</controllingFieldValue>
+                <valueName>Silver</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Event Sponsorship</controllingFieldValue>
+                <valueName>Events</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IJ Global: Events Registration</controllingFieldValue>
+                <valueName>Registration</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -729,6 +883,31 @@ ARR_Formula__c ))))))</formula>
                     <fullName>Locatus: Other</fullName>
                     <default>false</default>
                     <label>Locatus: Other</label>
+                </value>
+                <value>
+                    <fullName>IJ Global: Award Table</fullName>
+                    <default>false</default>
+                    <label>IJ Global: Award Table</label>
+                </value>
+                <value>
+                    <fullName>IJ Global: Award Add-on</fullName>
+                    <default>false</default>
+                    <label>IJ Global: Award Add-on</label>
+                </value>
+                <value>
+                    <fullName>IJ Global: Award Sponsorship</fullName>
+                    <default>false</default>
+                    <label>IJ Global: Award Sponsorship</label>
+                </value>
+                <value>
+                    <fullName>IJ Global: Event Sponsorship</fullName>
+                    <default>false</default>
+                    <label>IJ Global: Event Sponsorship</label>
+                </value>
+                <value>
+                    <fullName>IJ Global: Events Registration</fullName>
+                    <default>false</default>
+                    <label>IJ Global: Events Registration</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -945,6 +1124,18 @@ Upsell_Cross_sell__c = TRUE,
         <errorConditionFormula>(Product2.Name  = &apos;Locatus: Footfall Data&apos;  ||  Product2.Name  =  &apos;Locatus: Other&apos;)  &amp;&amp;   ISBLANK( TEXT( Product_SKU_Detail__c )) &amp;&amp; !isNew()</errorConditionFormula>
         <errorDisplayField>Product_SKU_Detail__c</errorDisplayField>
         <errorMessage>Please update Product: SKU Detail</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_SKU_Product_with_Select_Product</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (
+
+NOT( ISNULL(TEXT(SKU_Product__c) ) ),
+	
+NOT( TEXT(SKU_Product__c) == Product2.Name )
+)</errorConditionFormula>
+        <errorDisplayField>SKU_Product__c</errorDisplayField>
+        <errorMessage>Please ensure that SKU Detail matches SKU Product</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Data_Sale_Product_Validation</fullName>

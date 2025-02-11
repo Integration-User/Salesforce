@@ -14,10 +14,23 @@
     </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>OpportunityLineItem.Product_SKU_Detail__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OpportunityLineItem.SKU_Product__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>System_Configuration__mdt.List_Of_Value__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <layoutAssignments>
+        <layout>OpportunityLineItem-Sales Opportunity Product Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>System_Configuration__mdt-System Configuration Layout</layout>
     </layoutAssignments>
