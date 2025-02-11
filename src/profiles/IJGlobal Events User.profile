@@ -40167,7 +40167,7 @@
         <layout>OpportunityContactRole-Opportunity Contact Role Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>OpportunityLineItem-Opportunity Product Layout</layout>
+        <layout>OpportunityLineItem-Sales Opportunity Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>OpportunitySplit-Opportunity Split Layout</layout>
@@ -40266,6 +40266,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Shadow_Mapping__mdt-Shadow Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SiqExchangeConnection-Exchange Connection Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
