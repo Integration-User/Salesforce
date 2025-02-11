@@ -326,6 +326,13 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Account_Handoff_Date__c</fullName>
+        <label>Account Handoff Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Account_Status__c</fullName>
         <externalId>false</externalId>
         <label>Account Status</label>
@@ -633,6 +640,24 @@ IF (LEN( BillingCountry) = 0, 0,1)</formula>
         <label>Bulk Activation</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Business_Days_to_Onboarding_Completion__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+  AND(NOT(ISBLANK(Account_Handoff_Date__c )), NOT(ISBLANK(Became_Client__c))),
+( 
+    ((Account_Handoff_Date__c - Became_Client__c) + 
+    (CASE( MOD( Became_Client__c- DATE(1900, 1, 1), 7) , 6 , 1, 0) 
+    + CASE( MOD( Account_Handoff_Date__c - DATE(1900, 1, 1), 7), 6 , 1, 0)) ) / 7 * 5),0)</formula>
+        <inlineHelpText>Number of business days between the Became Client Date, and the completion of the Onboarding handoff event.</inlineHelpText>
+        <label>Business Days to Onboarding Completion</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>CRE_Exposure__c</fullName>
@@ -1283,13 +1308,42 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     <fields>
         <fullName>EU_Expansion_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>EU Expansion Owner</label>
+        <label>EU Named Account Owner</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Accounts4</relationshipName>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Entitlement_Guidance_Notes__c</fullName>
+        <label>Entitlement Guidance Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Entitlement_Guidance__c</fullName>
+        <label>Entitlement Guidance</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Restricted - See Notes Field</fullName>
+                    <default>false</default>
+                    <label>Restricted - See Notes Field</label>
+                </value>
+                <value>
+                    <fullName>No Restrictions</fullName>
+                    <default>false</default>
+                    <label>No Restrictions</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Excel_Add_In_Users__c</fullName>
@@ -1396,6 +1450,13 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GS_News_Canada_Client__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>GS News: Canada Client</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Geographic_Exposure__c</fullName>
@@ -3201,12 +3262,11 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
     <fields>
         <fullName>US_Expansion_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>US Expansion Owner</label>
+        <label>US Named Account Owner</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Accounts5</relationshipName>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -4869,6 +4929,17 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Entitlement_Guidance__c</picklist>
+            <values>
+                <fullName>No Restrictions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Restricted - See Notes Field</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Geographic_Exposure__c</picklist>
             <values>
                 <fullName>International</fullName>
@@ -6444,6 +6515,17 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Entitlement_Guidance__c</picklist>
+            <values>
+                <fullName>No Restrictions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Restricted - See Notes Field</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Geographic_Exposure__c</picklist>
             <values>
                 <fullName>International</fullName>
@@ -7491,6 +7573,14 @@ Id=&quot;001f400000dzfxV&quot;,
 Id=&quot;001f400000dzfxU&quot;),
 ISCHANGED(Name))</errorConditionFormula>
         <errorMessage>You cannot change the name of this Account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Entitlement_Guidance</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( Entitlement_Guidance__c , &quot;Restricted - See Notes Field&quot;) ,
+ISBLANK(Entitlement_Guidance_Notes__c))</errorConditionFormula>
+        <errorMessage>Please provide the Entitlement Guidance Notes.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Prospect_Not_Viable</fullName>
