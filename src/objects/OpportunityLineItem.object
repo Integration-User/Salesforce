@@ -1128,12 +1128,7 @@ Upsell_Cross_sell__c = TRUE,
     <validationRules>
         <fullName>Check_SKU_Product_with_Select_Product</fullName>
         <active>true</active>
-        <errorConditionFormula>AND (
-
-NOT( ISNULL(TEXT(SKU_Product__c) ) ),
-	
-NOT( TEXT(SKU_Product__c) == Product2.Name )
-)</errorConditionFormula>
+        <errorConditionFormula>IF((NOT( ISBLANK(TEXT(SKU_Product__c) ) ) &amp;&amp; NOT( TEXT(SKU_Product__c) == Product2.Name )),true, false)</errorConditionFormula>
         <errorDisplayField>SKU_Product__c</errorDisplayField>
         <errorMessage>Please ensure that SKU Detail matches SKU Product</errorMessage>
     </validationRules>
