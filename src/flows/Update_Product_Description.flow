@@ -49,13 +49,14 @@
             <label>Check If Line Items Available</label>
         </rules>
     </decisions>
+    <environments>Default</environments>
     <formulas>
         <name>AddDescriptionToFinal</name>
         <dataType>String</dataType>
         <expression>if(isblank({!FinalDescription}),
-{!Loop_Through_Line_Items.Product2.Description}, 
+{!Loop_Through_Line_Items.Product2.Description} &amp; if(isblank(TEXT({!Loop_Through_Line_Items.Product_SKU_Detail__c})), &apos;&apos;, &apos;(&apos; &amp; TEXT({!Loop_Through_Line_Items.Product_SKU_Detail__c}) &amp; &apos;)&apos;), 
 if(CONTAINS({!FinalDescription}, {!Loop_Through_Line_Items.Product2.Description}),{!FinalDescription},
-{!FinalDescription} &amp; &apos; - &apos; &amp; {!Loop_Through_Line_Items.Product2.Description}))</expression>
+{!FinalDescription} &amp; &apos; - &apos; &amp; {!Loop_Through_Line_Items.Product2.Description} &amp; if(isblank(TEXT({!Loop_Through_Line_Items.Product_SKU_Detail__c})), &apos;&apos;, &apos;(&apos; &amp; TEXT({!Loop_Through_Line_Items.Product_SKU_Detail__c}) &amp; &apos;)&apos;)))</expression>
     </formulas>
     <formulas>
         <name>AddFinal</name>
