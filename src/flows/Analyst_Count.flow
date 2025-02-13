@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Potential_Advisory_Lead_Email</name>
+        <label>Send Potential Advisory Lead Email</label>
+        <locationX>380</locationX>
+        <locationY>431</locationY>
+        <actionName>Task.Potential_Advisory_Lead_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Check_Who_Id_Value</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Task.Potential_Advisory_Lead_Email_Alert</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>56.0</apiVersion>
     <assignments>
         <name>Get_GSA_Contact_Count</name>
         <label>Get GSA Contact Count</label>
         <locationX>50</locationX>
-        <locationY>1055</locationY>
+        <locationY>1355</locationY>
         <assignmentItems>
             <assignToReference>ContactCount</assignToReference>
             <operator>AssignCount</operator>
@@ -21,7 +42,7 @@
         <name>Get_GSA_Contact_Ids</name>
         <label>Get GSA Contact Ids</label>
         <locationX>270</locationX>
-        <locationY>647</locationY>
+        <locationY>947</locationY>
         <assignmentItems>
             <assignToReference>ContactIds</assignToReference>
             <operator>Add</operator>
@@ -37,7 +58,7 @@
         <name>Check_Who_Id_Value</name>
         <label>Check Who Id Value</label>
         <locationX>512</locationX>
-        <locationY>323</locationY>
+        <locationY>623</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_WhoId_Not_Empty</name>
@@ -95,7 +116,7 @@
         <name>Checking_Contact_Record_Found</name>
         <label>Checking Contact Record Found</label>
         <locationX>182</locationX>
-        <locationY>947</locationY>
+        <locationY>1247</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Contact_Exists</name>
@@ -113,6 +134,31 @@
             <label>Contact Exists</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Potential_Advisory_Lead</name>
+        <label>Potential Advisory Lead</label>
+        <locationX>512</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Check_Who_Id_Value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Potential_Advisory_Lead_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Potential_Advisory_Lead__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Potential_Advisory_Lead_Email</targetReference>
+            </connector>
+            <label>Potential Advisory Lead True</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>Analyst Count {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Analyst Count For Task Record</label>
@@ -120,7 +166,7 @@
         <name>Asssign_GAS_ContactIds</name>
         <label>Asssign GAS ContactIds</label>
         <locationX>182</locationX>
-        <locationY>539</locationY>
+        <locationY>839</locationY>
         <collectionReference>TaskWhoRelation_Info</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -153,7 +199,7 @@
         <name>Get_Contact_Details</name>
         <label>Get Contact Details</label>
         <locationX>182</locationX>
-        <locationY>839</locationY>
+        <locationY>1139</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Checking_Contact_Record_Found</targetReference>
@@ -183,7 +229,7 @@
         <name>TaskWhoRelation_Info</name>
         <label>TaskWhoRelationInfo</label>
         <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationY>731</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Asssign_GAS_ContactIds</targetReference>
@@ -206,7 +252,7 @@
         <name>Set_GSA_Analyst_Count_Empty_For_Task</name>
         <label>Set GSA Analyst Count Empty For Task</label>
         <locationX>578</locationX>
-        <locationY>431</locationY>
+        <locationY>731</locationY>
         <inputAssignments>
             <field>Analyst_Count_Data__c</field>
             <value>
@@ -219,7 +265,7 @@
         <name>Update_Count_Of_GSA_Analyst</name>
         <label>Update Count Of GSA Analyst</label>
         <locationX>50</locationX>
-        <locationY>1163</locationY>
+        <locationY>1463</locationY>
         <inputAssignments>
             <field>Analyst_Count_Data__c</field>
             <value>
@@ -232,7 +278,7 @@
         <locationX>386</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Check_Who_Id_Value</targetReference>
+            <targetReference>Potential_Advisory_Lead</targetReference>
         </connector>
         <object>Task</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>

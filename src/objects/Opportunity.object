@@ -395,7 +395,6 @@
     </fields>
     <fields>
         <fullName>Activation_Deactivation_Needs__c</fullName>
-        <externalId>false</externalId>
         <label>Activation/Deactivation Needs</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -433,6 +432,11 @@
                     <fullName>Add Upsold Products</fullName>
                     <default>false</default>
                     <label>Add Upsold Product(s)</label>
+                </value>
+                <value>
+                    <fullName>Renew Subscription</fullName>
+                    <default>false</default>
+                    <label>Renew Subscription</label>
                 </value>
                 <value>
                     <fullName>Suspend</fullName>
@@ -600,6 +604,11 @@
                     <fullName>Souter</fullName>
                     <default>false</default>
                     <label>Souter</label>
+                </value>
+                <value>
+                    <fullName>Walburger</fullName>
+                    <default>false</default>
+                    <label>Walburger</label>
                 </value>
                 <value>
                     <fullName>Lemansky</fullName>
@@ -2365,8 +2374,8 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <fullName>GSA_Subsidairy__c</fullName>
         <description>Used for routing on-boarding and compliance alert</description>
         <externalId>false</externalId>
-        <formula>Text(Account.Subsidiary__c)</formula>
-        <label>GSA Subsidairy</label>
+        <formula>IF(Text(Account.Subsidiary__c) = &quot;18.1 LDC&quot;,&quot;18.1 Green Street Solutions (UK) LTD&quot;,Text(Account.Subsidiary__c))</formula>
+        <label>GSA Subsidiary</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
@@ -2384,6 +2393,15 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
             <restricted>true</restricted>
             <valueSetName>Geographies</valueSetName>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Goals__c</fullName>
+        <label>Goals</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>HVT_Increase_Unmet__c</fullName>
@@ -4768,6 +4786,15 @@ OwnerId  = $User.Id)</formula>
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Needs__c</fullName>
+        <label>Needs</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>NetSuite_ID__c</fullName>
         <description>Set by the integration with NetSuite</description>
         <externalId>true</externalId>
@@ -5281,6 +5308,15 @@ NULL))))</formula>
         <trackTrending>true</trackTrending>
     </fields>
     <fields>
+        <fullName>Problems__c</fullName>
+        <label>Problems</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Product_Count__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Counts # of Opportunity Products added to support validation rule.</inlineHelpText>
@@ -5481,6 +5517,11 @@ NULL))))</formula>
                     <fullName>Souter</fullName>
                     <default>false</default>
                     <label>Souter</label>
+                </value>
+                <value>
+                    <fullName>Walburger</fullName>
+                    <default>false</default>
+                    <label>Walburger</label>
                 </value>
                 <value>
                     <fullName>Lemansky</fullName>
@@ -5718,9 +5759,8 @@ NULL))))</formula>
     <fields>
         <fullName>Referred_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <inlineHelpText>Internal Referral Source</inlineHelpText>
-        <label>AM Referred By</label>
+        <label>Referred By</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Opportunities</relationshipName>
         <required>false</required>
@@ -8077,6 +8117,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Remove Lost Products</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Approval_Status__c</picklist>
@@ -9101,7 +9145,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9174,6 +9226,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9534,6 +9606,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -9543,6 +9619,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9610,6 +9690,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -9643,6 +9743,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9789,6 +9925,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10735,7 +10875,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10808,6 +10956,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11180,6 +11348,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -11189,6 +11361,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11256,6 +11432,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -11289,6 +11485,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11445,6 +11677,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Remove Lost Products</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Approval_Status__c</picklist>
@@ -12309,7 +12545,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12374,6 +12618,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12726,6 +12990,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -12735,6 +13003,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12802,6 +13074,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -12835,6 +13127,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12955,6 +13283,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Remove Lost Products</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Approval_Status__c</picklist>
@@ -13815,7 +14147,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13880,6 +14220,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14232,6 +14592,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -14241,6 +14605,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14308,6 +14676,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -14341,6 +14729,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14448,6 +14872,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Events</label>
         <picklistValues>
+            <picklist>Activation_Deactivation_Needs__c</picklist>
+            <values>
+                <fullName>Add Upsold Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Account Activation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Account Deactivation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>IJ_Global_Events_Business_Unit__c</picklist>
             <values>
                 <fullName>AMS</fullName>
@@ -14473,6 +14924,544 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activist Situations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Mortgage Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Diagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Positioning %26 Investor Messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data License Directory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data License Local Data Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data License%3A Petrol Station Forecourt Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataLink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt Databases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EU News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edge - Project work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial%2FStrategic Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A One-Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A DISC data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Footfall Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Housing Plans Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Office Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A One-Time Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Retail Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A Retail Risk Index</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD%26D - Rent Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEWS - HFAlert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - REA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche Sector Expertise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Investment Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Valuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Conversions %26 OpCo%2FPropCo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Royalties</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Transactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Committees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Portfolio Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Forecast Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Tertiary Market Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sector_Interests__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure - Oil %26 Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure - Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure - Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure - Social %26 Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure - Transport</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14502,6 +15491,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15606,7 +16599,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15703,6 +16704,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16083,6 +17104,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -16092,6 +17117,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16159,6 +17188,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -16192,6 +17241,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17164,6 +18249,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -17221,6 +18314,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17513,6 +18626,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -17522,6 +18639,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17589,6 +18710,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -17622,6 +18763,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18594,6 +19771,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Commercial Mortgage Alert</fullName>
                 <default>false</default>
             </values>
@@ -18643,6 +19828,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18931,6 +20136,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -18940,6 +20149,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19007,6 +20220,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -19040,6 +20273,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19945,6 +21214,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Company Diagnostics</fullName>
                 <default>false</default>
             </values>
@@ -19978,6 +21255,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20246,6 +21543,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -20255,6 +21556,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20322,6 +21627,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -20355,6 +21680,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -20497,6 +21858,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21597,7 +22962,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21694,6 +23067,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22074,6 +23467,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -22083,6 +23480,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22150,6 +23551,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -22183,6 +23604,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -22358,6 +23815,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walburger</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23774,7 +25235,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23891,6 +25360,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24225,6 +25714,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Walburger</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>White</fullName>
                 <default>false</default>
             </values>
@@ -24263,6 +25756,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -24272,6 +25769,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24343,6 +25844,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -24376,6 +25897,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -24416,6 +25973,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -25528,7 +27089,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25625,6 +27194,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26001,6 +27590,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -26010,6 +27603,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26077,6 +27674,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -26110,6 +27727,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -26252,6 +27905,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Remove Lost Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew Subscription</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -27344,7 +29001,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27445,6 +29110,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27825,6 +29510,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Canada Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cold Storage</fullName>
                 <default>false</default>
             </values>
@@ -27834,6 +29523,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Data Centers %28U%2ES%2E and Pan-European%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27901,6 +29594,26 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-European Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Residential</fullName>
                 <default>false</default>
             </values>
@@ -27934,6 +29647,42 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Strip Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
