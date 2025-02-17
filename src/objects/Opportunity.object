@@ -9220,7 +9220,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -10942,7 +10942,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -12596,7 +12596,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -14190,7 +14190,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -16315,7 +16315,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -17917,7 +17917,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -22606,7 +22606,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -24891,7 +24891,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -26717,7 +26717,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -28625,7 +28625,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -29376,8 +29376,10 @@ ISCHANGED(StageName),
 OR(
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
 ISPICKVAL( StageName , &quot;In Review&quot;)
-)
-)</errorConditionFormula>
+),
+OR
+(
+NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
         <errorMessage>Company type on account must be completed.</errorMessage>
     </validationRules>
     <validationRules>
@@ -29556,7 +29558,10 @@ OR(
 ISBLANK(TEXT(Account.Company_Type__c)),
 ISBLANK(Account.BillingAddress),
 ISBLANK(Account.Website)
-))</errorConditionFormula>
+),
+OR
+(
+NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
         <errorMessage>To enter &quot;Disqualified&quot; stage, the following fields are required on the account: Website, Company Type, Address.</errorMessage>
     </validationRules>
     <validationRules>
