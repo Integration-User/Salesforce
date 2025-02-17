@@ -29666,8 +29666,10 @@ ISCHANGED(StageName),
 OR(
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
 ISPICKVAL( StageName , &quot;In Review&quot;)
-)
-)</errorConditionFormula>
+),
+OR
+(
+NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
         <errorMessage>Company type on account must be completed.</errorMessage>
     </validationRules>
     <validationRules>
@@ -29846,7 +29848,10 @@ OR(
 ISBLANK(TEXT(Account.Company_Type__c)),
 ISBLANK(Account.BillingAddress),
 ISBLANK(Account.Website)
-))</errorConditionFormula>
+),
+OR
+(
+NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
         <errorMessage>To enter &quot;Disqualified&quot; stage, the following fields are required on the account: Website, Company Type, Address.</errorMessage>
     </validationRules>
     <validationRules>
