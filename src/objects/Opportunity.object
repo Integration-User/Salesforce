@@ -338,6 +338,17 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>AM_Referrer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>AM Referrer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>AMReferrerOppty</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>AP_Email__c</fullName>
         <externalId>false</externalId>
         <label>AP Email</label>
