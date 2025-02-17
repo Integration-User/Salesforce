@@ -29164,6 +29164,12 @@ ISBLANK(AP_Email__c))</errorConditionFormula>
         <fullName>Acct_Company_Type_Is_Required</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$UserRole.DeveloperName &lt;&gt; &quot;Subscription_Manager&quot;,
+$UserRole.DeveloperName &lt;&gt; &quot;Subscription_Operations&quot;,
+$UserRole.DeveloperName &lt;&gt; &quot;Subscription_Sales&quot;,
+$UserRole.DeveloperName &lt;&gt; &quot;Event_Manager&quot;,
+$UserRole.DeveloperName &lt;&gt; &quot;Event_Operations&quot;,
+$UserRole.DeveloperName &lt;&gt; &quot;Event_User&quot;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK(Company_Type_Opp__c),
 ISCHANGED(StageName),
