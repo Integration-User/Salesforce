@@ -85,6 +85,19 @@ public class Plative_OpportunityTriggerTest {
         entry.Product2Id = product.Id;
         entry.UnitPrice = 0;
         insert entry;
+        
+        Product2 iJproduct = new Product2();
+        iJproduct.Name = 'IJGlobal: News';
+        iJproduct.IsActive = true;
+        iJproduct.ProductCode = 'DDS10DDS11DDS3';
+        insert iJproduct;
+        PricebookEntry ijEntry = new PricebookEntry();
+        ijEntry.IsActive = true;
+        ijEntry.Pricebook2Id = Test.getStandardPricebookId();
+        ijEntry.Product2Id = iJproduct.Id;
+        ijEntry.UnitPrice = 0;
+        insert ijEntry;
+        
 
         Opportunity oppty = new Opportunity();
         oppty.Name = 'Test Oppty';
@@ -279,6 +292,18 @@ public class Plative_OpportunityTriggerTest {
         ct1.Email = 'fname3@test.com';
         ct1.AccountId = accnt.Id;
         insert ct1;
+        
+         Product2 iJproduct = new Product2();
+        iJproduct.Name = 'IJGlobal: News';
+        iJproduct.IsActive = true;
+        iJproduct.ProductCode = 'DDS10DDS11DDS3';
+        insert iJproduct;
+        PricebookEntry ijEntry = new PricebookEntry();
+        ijEntry.IsActive = true;
+        ijEntry.Pricebook2Id = Test.getStandardPricebookId();
+        ijEntry.Product2Id = iJproduct.Id;
+        ijEntry.UnitPrice = 0;
+        insert ijEntry;
 
         Product2 product = new Product2();
         product.Name = 'Pan-European Research + Market Data & Deals';
@@ -312,17 +337,28 @@ public class Plative_OpportunityTriggerTest {
         oppty.This_Year_Increase__c = 10;
         oppty.Closed_Opportunity_Notes__c = 'teetsing 123';
         insert oppty;
-        
+        List<OpportunityLineItem> oils = new  List<OpportunityLineItem>();
         OpportunityLineItem opptyLineItem = new OpportunityLineItem();
         opptyLineItem.OpportunityId = oppty.Id;
-        opptyLineItem.PricebookEntryId = entry.Id;
+        opptyLineItem.PricebookEntryId = ijEntry.Id;
         opptyLineItem.UnitPrice = 15000;
         opptyLineItem.Starting_Price__c = 15000;
         opptyLineItem.Quantity = 1;
         opptyLineItem.Start_Date__c = System.today();
         opptyLineItem.End_Date__c = System.today().addMonths(1);
         opptyLineItem.Product_External_Id__c = 401;
-        insert opptyLineItem; 
+        oils.add(opptyLineItem);
+        OpportunityLineItem opptyLineItem1 = new OpportunityLineItem();
+        opptyLineItem1.OpportunityId = oppty.Id;
+        opptyLineItem1.PricebookEntryId = entry.Id;
+        opptyLineItem1.UnitPrice = 15000;
+        opptyLineItem1.Starting_Price__c = 15000;
+        opptyLineItem1.Quantity = 1;
+        opptyLineItem1.Start_Date__c = System.today();
+        opptyLineItem1.End_Date__c = System.today().addMonths(1);
+        opptyLineItem1.Product_External_Id__c = 401;
+        oils.add(opptyLineItem1);
+        insert oils; 
         
         OpportunityContactRole ocr = new OpportunityContactRole();
         ocr.OpportunityId = oppty.Id;
@@ -330,6 +366,8 @@ public class Plative_OpportunityTriggerTest {
         ocr.Role ='Billing Contact';
         insert ocr;
         Plative_OpportunityRenewalHelper.updateOpportunityProduct(new List<Opportunity>{oppty});
+        UpdateAccountProductOnOppCloseWonBatch updateAccount = new UpdateAccountProductOnOppCloseWonBatch(new List<Id>{oppty.Id});
+        Database.executeBatch(updateAccount, 5);
         Test.stopTest();
     }
 }
