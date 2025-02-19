@@ -60,6 +60,10 @@
         <apexClass>UpdateAccountOwnerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateAccountProductOnOppCloseWonBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
@@ -663,6 +667,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>System_Configuration__mdt.List_Of_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Task.Bounced_Salesloft__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -727,6 +736,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Relationship_Intelligence__c-Relationship Intelligence Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>System_Configuration__mdt-System Configuration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
