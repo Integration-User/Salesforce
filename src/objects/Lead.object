@@ -327,6 +327,17 @@
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
     <fields>
+        <fullName>AM_Referrer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>AM Referrer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>AMReferrer</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Leads associated with this account.</description>

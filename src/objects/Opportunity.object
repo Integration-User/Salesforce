@@ -338,6 +338,17 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>AM_Referrer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>AM Referrer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>AMReferrerOppty</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>AP_Email__c</fullName>
         <externalId>false</externalId>
         <label>AP Email</label>
@@ -9220,7 +9231,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -10942,7 +10953,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -12596,7 +12607,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -14190,7 +14201,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -16315,7 +16326,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -17917,7 +17928,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -22606,7 +22617,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -24891,7 +24902,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -26717,7 +26728,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -28625,7 +28636,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>IJ Global%3A Award Add-on</fullName>
                 <default>false</default>
             </values>

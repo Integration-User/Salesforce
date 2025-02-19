@@ -313,6 +313,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.AM_Referrer__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Goals__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -334,6 +339,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Referred_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.AM_Referrer__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
