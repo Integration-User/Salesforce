@@ -19961,6 +19961,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.AM_Referrer__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -21047,6 +21052,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.ADV_PPD_Sent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.AM_Referrer__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
