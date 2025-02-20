@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>List_Of_Value__c</field>
-        <value xsi:type="xsd:string">IJGlobal: Data Delivery + News + IJ Investor;IJGlobal: IJ Investor;IJGlobal: IJ Investor - Trial;IJGlobal: News;IJGlobal: News - Trial;IJGlobal: News + IJ Investor;IJGlobal: News + IJ Investor - Trial;IJGlobal: One-Time;Green Street News: Canada;Green Street News: Europe;UK Retail Analytics Pro</value>
+        <value xsi:type="xsd:string">IJGlobal: Data Delivery + News + IJ Investor;IJGlobal: IJ Investor;IJGlobal: IJ Investor - Trial;IJGlobal: News;IJGlobal: News - Trial;IJGlobal: News + IJ Investor;IJGlobal: News + IJ Investor - Trial;IJGlobal: One-Time;Green Street News: Canada;IJ Global: Award Table;Green Street News: Europe;UK Retail Analytics Pro;IJ Global: Award Add-on;IJ Global: Award Sponsorship;IJ Global: Event Sponsorship;IJ Global: Events Registration</value>
     </values>
     <values>
         <field>Value__c</field>
