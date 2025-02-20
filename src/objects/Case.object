@@ -277,12 +277,11 @@
     <fields>
         <fullName>Account_Manager__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Account Manager</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Cases2</relationshipName>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -384,7 +383,6 @@
     </fields>
     <fields>
         <fullName>Application__c</fullName>
-        <externalId>false</externalId>
         <label>Application</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -404,7 +402,6 @@
     <fields>
         <fullName>Assisted_Case_Owner_1__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Assisted Case Owner 1</label>
         <lookupFilter>
             <active>true</active>
@@ -426,7 +423,6 @@
     <fields>
         <fullName>Assisted_Case_Owner_2__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Assisted Case Owner 2</label>
         <lookupFilter>
             <active>true</active>
@@ -448,7 +444,6 @@
     <fields>
         <fullName>Assisted_Case_Owner_3__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Assisted Case Owner 3</label>
         <lookupFilter>
             <active>true</active>
@@ -470,7 +465,6 @@
     <fields>
         <fullName>Assisted_Case_Owner_4__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Assisted Case Owner 4</label>
         <lookupFilter>
             <active>true</active>
@@ -492,7 +486,6 @@
     <fields>
         <fullName>Assisted_Case_Owner_5__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Assisted Case Owner 5</label>
         <lookupFilter>
             <active>true</active>
@@ -515,7 +508,6 @@
         <fullName>Assisted_Case_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Created for customer Success</description>
-        <externalId>false</externalId>
         <label>Assisted Case Owner</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Cases</relationshipName>
@@ -552,7 +544,6 @@
     </fields>
     <fields>
         <fullName>Business_Impact__c</fullName>
-        <externalId>false</externalId>
         <label>Business Impact</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -581,7 +572,6 @@
     </fields>
     <fields>
         <fullName>Case_Error__c</fullName>
-        <externalId>false</externalId>
         <formula>IF(ISPICKVAL(Error_Reason__c, &quot;&quot;), False, True)</formula>
         <label>Case Error</label>
         <trackHistory>false</trackHistory>
@@ -610,7 +600,6 @@
     </fields>
     <fields>
         <fullName>Comments__c</fullName>
-        <externalId>false</externalId>
         <label>Comments</label>
         <length>131072</length>
         <trackHistory>false</trackHistory>
@@ -631,7 +620,6 @@
     </fields>
     <fields>
         <fullName>Complete__c</fullName>
-        <externalId>false</externalId>
         <label>% Complete</label>
         <precision>18</precision>
         <required>false</required>
@@ -668,7 +656,6 @@
     </fields>
     <fields>
         <fullName>Context_for_Request__c</fullName>
-        <externalId>false</externalId>
         <label>Context for Request</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -683,7 +670,6 @@
     <fields>
         <fullName>Customer_Success_FAQ__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Customer Success FAQ</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -721,7 +707,6 @@
     </fields>
     <fields>
         <fullName>Due_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Due Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -753,7 +738,6 @@
     <fields>
         <fullName>Duplicate_Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Duplicate Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Cases (Merging Account)</relationshipLabel>
@@ -788,7 +772,6 @@
     <fields>
         <fullName>Duplicate_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Duplicate Contact</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Cases (Duplicate Contact)</relationshipLabel>
@@ -800,7 +783,6 @@
     </fields>
     <fields>
         <fullName>Error_Reason__c</fullName>
-        <externalId>false</externalId>
         <label>Error Reason</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -871,7 +853,6 @@
     <fields>
         <fullName>Error__c</fullName>
         <description>Space where the user place the error they are getting</description>
-        <externalId>false</externalId>
         <label>Error?</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -880,7 +861,6 @@
     </fields>
     <fields>
         <fullName>Escalated_To__c</fullName>
-        <externalId>false</externalId>
         <label>Escalated To</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -930,7 +910,6 @@
     </fields>
     <fields>
         <fullName>Estimated_Completion_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Estimated Completion Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -961,7 +940,6 @@
     </fields>
     <fields>
         <fullName>Links_Screenshots_Attachments__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>This is required for Bug/Issue Request Category</inlineHelpText>
         <label>Links / Screenshots / Attachments</label>
         <length>131072</length>
@@ -972,7 +950,6 @@
     </fields>
     <fields>
         <fullName>Location_of_Changes__c</fullName>
-        <externalId>false</externalId>
         <label>Location of Changes</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1002,7 +979,6 @@
     </fields>
     <fields>
         <fullName>Markets__c</fullName>
-        <externalId>false</externalId>
         <label>Markets</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1436,7 +1412,6 @@
     <fields>
         <fullName>Mirror_User__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Mirror User</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Cases1</relationshipName>
@@ -1448,7 +1423,6 @@
     <fields>
         <fullName>NetSuite_Merged__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>NetSuite Merged</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1456,7 +1430,6 @@
     </fields>
     <fields>
         <fullName>On_Hold_Reason__c</fullName>
-        <externalId>false</externalId>
         <label>On Hold Reason</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1508,7 +1481,6 @@
     <fields>
         <fullName>Opportunity__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Opportunity</label>
         <referenceTo>Opportunity</referenceTo>
         <relationshipLabel>Cases</relationshipLabel>
@@ -1537,7 +1509,6 @@
     </fields>
     <fields>
         <fullName>Outline_Requirements_Business_Value__c</fullName>
-        <externalId>false</externalId>
         <label>Outline Requirements &amp; Business Value</label>
         <length>131072</length>
         <trackHistory>false</trackHistory>
@@ -1554,7 +1525,6 @@
     </fields>
     <fields>
         <fullName>Ownership__c</fullName>
-        <externalId>false</externalId>
         <label>Ownership</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1789,7 +1759,6 @@
     </fields>
     <fields>
         <fullName>Reason_for_Request__c</fullName>
-        <externalId>false</externalId>
         <label>Reason for Request</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1836,7 +1805,6 @@
     </fields>
     <fields>
         <fullName>Request_Category__c</fullName>
-        <externalId>false</externalId>
         <label>Request Category</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2001,7 +1969,6 @@
     </fields>
     <fields>
         <fullName>Request_Description__c</fullName>
-        <externalId>false</externalId>
         <label>Request Description</label>
         <length>131072</length>
         <trackHistory>false</trackHistory>
@@ -2024,7 +1991,6 @@
     <fields>
         <fullName>Requested_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Requested By</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Related_Cases</relationshipName>
@@ -2036,7 +2002,6 @@
     <fields>
         <fullName>Research_Status__c</fullName>
         <description>This field is used to trigger compliance records.</description>
-        <externalId>false</externalId>
         <inlineHelpText>If you added research products to the account, and there were none to begin with, please select &quot;1st Time Research Client&quot;. If you removed all research products from the account, please select &quot;Lost All Research Products&quot;. If neither of these occurred as products were added/removed, please select N/A.</inlineHelpText>
         <label>Research Status</label>
         <required>false</required>
@@ -2081,7 +2046,6 @@
     </fields>
     <fields>
         <fullName>Resolution__c</fullName>
-        <externalId>false</externalId>
         <label>Resolution</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2128,7 +2092,6 @@
     </fields>
     <fields>
         <fullName>Sectors__c</fullName>
-        <externalId>false</externalId>
         <label>Sectors</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2249,7 +2212,6 @@
     </fields>
     <fields>
         <fullName>Solution_Notes__c</fullName>
-        <externalId>false</externalId>
         <label>Solution Notes</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2264,7 +2226,6 @@
     </fields>
     <fields>
         <fullName>Start_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Start Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2279,7 +2240,6 @@
     </fields>
     <fields>
         <fullName>Steps_to_Reproduce__c</fullName>
-        <externalId>false</externalId>
         <label>Steps to Reproduce</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2402,7 +2362,6 @@ null))</formula>
     </fields>
     <fields>
         <fullName>Support_Tier__c</fullName>
-        <externalId>false</externalId>
         <label>Support Tier</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2432,7 +2391,6 @@ null))</formula>
     </fields>
     <fields>
         <fullName>Support_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Support Type</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -2505,7 +2463,6 @@ null))</formula>
     <fields>
         <fullName>Surviving_Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Surviving Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Cases</relationshipLabel>
@@ -2540,7 +2497,6 @@ null))</formula>
     <fields>
         <fullName>Surviving_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Surviving Contact</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Cases</relationshipLabel>
@@ -2552,7 +2508,6 @@ null))</formula>
     </fields>
     <fields>
         <fullName>Team__c</fullName>
-        <externalId>false</externalId>
         <label>Team</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2607,7 +2562,6 @@ null))</formula>
     <fields>
         <fullName>Transaction__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Transaction</label>
         <referenceTo>Transaction__c</referenceTo>
         <relationshipLabel>Cases</relationshipLabel>
@@ -2644,7 +2598,6 @@ FALSE)))))))))))</formula>
     </fields>
     <fields>
         <fullName>Urgency__c</fullName>
-        <externalId>false</externalId>
         <label>Urgency</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2688,7 +2641,6 @@ FALSE)))))))))))</formula>
     </fields>
     <fields>
         <fullName>Use_Case__c</fullName>
-        <externalId>false</externalId>
         <label>Use Case</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2780,7 +2732,6 @@ FALSE)))))))))))</formula>
     <fields>
         <fullName>Webmetrics_Merged__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Webmetrics Merged</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -2788,7 +2739,6 @@ FALSE)))))))))))</formula>
     </fields>
     <fields>
         <fullName>Website_Module__c</fullName>
-        <externalId>false</externalId>
         <label>Website Module</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2950,11 +2900,6 @@ FALSE)))))))))))</formula>
         <columns>ActivationDeactivation_Needs__c</columns>
         <columns>Opportunity__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.Client_Access</value>
-        </filters>
         <filters>
             <field>CASES.CREATED_DATE</field>
             <operation>equals</operation>
@@ -3209,7 +3154,7 @@ FALSE)))))))))))</formula>
     </listViews>
     <listViews>
         <fullName>All_Open_Help_Desk_Cases</fullName>
-        <booleanFilter>1 AND 2 AND (3 OR 4 OR 7) AND 5 AND (3 OR 6)</booleanFilter>
+        <booleanFilter>1 AND 2 AND (3 OR 4 OR 7) AND (5 OR 8 OR 9)  AND (3 OR 6) AND 10</booleanFilter>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
         <columns>CASES.SUBJECT</columns>
@@ -3259,6 +3204,21 @@ FALSE)))))))))))</formula>
             <field>OWNER_NAME</field>
             <operation>contains</operation>
             <value>User List Requests</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Automatisch</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Respuesta automática</value>
+        </filters>
+        <filters>
+            <field>Support_Type__c</field>
+            <operation>notEqual</operation>
+            <value>React News,Green Street News Client Support</value>
         </filters>
         <label>All Open Help Desk Cases</label>
     </listViews>
@@ -3412,6 +3372,7 @@ FALSE)))))))))))</formula>
     </listViews>
     <listViews>
         <fullName>Client_Deactivation_Case</fullName>
+        <booleanFilter>(1 AND 2 AND 3 AND 5) OR (1 AND 2 AND 4 AND 6)</booleanFilter>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.SUBJECT</columns>
@@ -3435,7 +3396,22 @@ FALSE)))))))))))</formula>
         <filters>
             <field>Due_Date__c</field>
             <operation>lessOrEqual</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <filters>
+            <field>Due_Date__c</field>
+            <operation>lessOrEqual</operation>
             <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>ActivationDeactivation_Needs__c</field>
+            <operation>equals</operation>
+            <value>Full Account Deactivation,Remove Lost Products,Suspend,Full Trial Deactivation,Limited Trial Deactivation</value>
+        </filters>
+        <filters>
+            <field>ActivationDeactivation_Needs__c</field>
+            <operation>equals</operation>
+            <value>Full Account Activation,Add Upsold Products,Full Trial Activation,Full Trial Conversion,Limited Trial Activation,Limited Trial Conversion</value>
         </filters>
         <label>Open Client Access Requests</label>
     </listViews>
@@ -3481,6 +3457,7 @@ FALSE)))))))))))</formula>
         <columns>CASES.PRIORITY</columns>
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
+        <columns>Solution_Notes__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>CASES.RECORDTYPE</field>
@@ -3551,6 +3528,155 @@ FALSE)))))))))))</formula>
             <value>0</value>
         </filters>
         <label>Open Duplicate Requests</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>GS_News</fullName>
+        <booleanFilter>1 AND 2 AND (3 OR 4 OR 7) AND (5 OR 8 OR 9 OR 10)  AND 6</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Support_Type__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Minutes_Spent_Cases__c</columns>
+        <columns>Solution_Notes__c</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>Products_Discussed__c</columns>
+        <columns>Account_Owner__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.NAME</columns>
+        <columns>CASES.EMAIL</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Help_Desk</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>New,On Hold,Escalated,Working</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Help Desk</value>
+        </filters>
+        <filters>
+            <field>Case_Owner_Role__c</field>
+            <operation>contains</operation>
+            <value>Customer Success</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Automatic Reply</value>
+        </filters>
+        <filters>
+            <field>Support_Type__c</field>
+            <operation>equals</operation>
+            <value>Green Street News Client Support</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>User List Requests</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Automatische Antwort</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Respuesta automática</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Automatisch antwoord</value>
+        </filters>
+        <label>GS News</label>
+    </listViews>
+    <listViews>
+        <fullName>GS_News_Open_Help_Desk_Cases</fullName>
+        <booleanFilter>1 AND 2 AND (3 OR 4 OR 7) AND (5 OR 8 OR 9 OR 10)  AND 6</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Support_Type__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Minutes_Spent_Cases__c</columns>
+        <columns>Solution_Notes__c</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>Products_Discussed__c</columns>
+        <columns>Account_Owner__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.NAME</columns>
+        <columns>CASES.EMAIL</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Help_Desk</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>New,On Hold,Escalated,Working</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Help Desk</value>
+        </filters>
+        <filters>
+            <field>Case_Owner_Role__c</field>
+            <operation>contains</operation>
+            <value>Customer Success</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Automatic Reply</value>
+        </filters>
+        <filters>
+            <field>Support_Type__c</field>
+            <operation>equals</operation>
+            <value>React News,Green Street News Client Support</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>User List Requests</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Automatisch</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Respuesta automática</value>
+        </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Automatisch antwoord</value>
+        </filters>
+        <label>GS News Open Help Desk Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>IJGlobal_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>IJGlobal</label>
+        <queue>IJGlobal</queue>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
@@ -3835,6 +3961,84 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Account Email Distro was not removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activated post contract start date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Schedule Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Merge Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Start and End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Renewal Box checked on MY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated pre%2Fpost contract expiration date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merged wrong Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Year Oppy not marked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product removed in error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4177,6 +4381,29 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Zurich</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4650,6 +4877,25 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Reason_for_Request__c</picklist>
+            <values>
+                <fullName>Favor Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Request_Category__c</picklist>
             <values>
                 <fullName>Bug %2F Broken Feature</fullName>
@@ -4818,6 +5064,21 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 - Data Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Support_Type__c</picklist>
             <values>
                 <fullName>Client Support</fullName>
@@ -4979,10 +5240,6 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>User List Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Website Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5247,6 +5504,37 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Product removed in error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6152,6 +6440,21 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 - Data Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Support_Type__c</picklist>
             <values>
                 <fullName>Client Support</fullName>
@@ -6429,6 +6732,84 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Account Email Distro was not removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activated post contract start date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Schedule Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Merge Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Start and End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Renewal Box checked on MY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated pre%2Fpost contract expiration date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merged wrong Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Year Oppy not marked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product removed in error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6771,6 +7152,29 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Zurich</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7080,6 +7484,25 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Reason_for_Request__c</picklist>
+            <values>
+                <fullName>Favor Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Request_Category__c</picklist>
             <values>
                 <fullName>Bug %2F Broken Feature</fullName>
@@ -7236,6 +7659,21 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Tower</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 - Data Support</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7506,6 +7944,84 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Account Email Distro was not removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activated post contract start date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Schedule Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Merge Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Start and End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Renewal Box checked on MY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated pre%2Fpost contract expiration date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merged wrong Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Year Oppy not marked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product removed in error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7848,6 +8364,29 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Zurich</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8393,6 +8932,25 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Reason_for_Request__c</picklist>
+            <values>
+                <fullName>Favor Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Request_Category__c</picklist>
             <values>
                 <fullName>Bug %2F Broken Feature</fullName>
@@ -8557,6 +9115,21 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Tower</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 - Data Support</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8837,6 +9410,37 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9531,6 +10135,25 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Reason_for_Request__c</picklist>
+            <values>
+                <fullName>Favor Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Request_Category__c</picklist>
             <values>
                 <fullName>Bug %2F Broken Feature</fullName>
@@ -9687,6 +10310,21 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Tower</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 - Data Support</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9949,6 +10587,53 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Account Email Distro was not removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activated post contract start date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Schedule Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Merge Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Start and End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Renewal Box checked on MY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated pre%2Fpost contract expiration date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merged wrong Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Year Oppy not marked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product removed in error</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10322,6 +11007,29 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Zurich</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10731,6 +11439,25 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Request__c</picklist>
+            <values>
+                <fullName>Favor Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11299,6 +12026,37 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11993,6 +12751,25 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Reason_for_Request__c</picklist>
+            <values>
+                <fullName>Favor Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Request_Category__c</picklist>
             <values>
                 <fullName>Bug %2F Broken Feature</fullName>
@@ -12149,6 +12926,21 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Tower</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 - Data Support</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12434,6 +13226,84 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Account Email Distro was not removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activated post contract start date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Schedule Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Merge Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Start and End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Renewal Box checked on MY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated pre%2Fpost contract expiration date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merged wrong Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Year Oppy not marked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product removed in error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12776,6 +13646,29 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Zurich</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13161,6 +14054,25 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Reason_for_Request__c</picklist>
+            <values>
+                <fullName>Favor Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Request_Category__c</picklist>
             <values>
                 <fullName>Bug %2F Broken Feature</fullName>
@@ -13341,6 +14253,21 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Tower</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 - Data Support</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13666,6 +14593,84 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Error_Reason__c</picklist>
+            <values>
+                <fullName>Account Email Distro was not removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activated post contract start date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Schedule Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Merge Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Start and End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Renewal Box checked on MY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated pre%2Fpost contract expiration date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merged wrong Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Year Oppy not marked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product removed in error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14012,6 +15017,29 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>On_Hold_Reason__c</picklist>
+            <values>
+                <fullName>Amount Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Missing on Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Subsidiary on Opportunity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Origin</picklist>
             <values>
                 <fullName>Email</fullName>
@@ -14325,6 +15353,25 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Reason_for_Request__c</picklist>
+            <values>
+                <fullName>Favor Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Request_Category__c</picklist>
             <values>
                 <fullName>Bug %2F Broken Feature</fullName>
@@ -14481,6 +15528,21 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Tower</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2 - Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 - Data Support</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

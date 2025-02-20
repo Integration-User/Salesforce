@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Stores the configuration for the automatic opportunity creation.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <fields>
+        <fullName>CventEvents__AccountAssignmentRule__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the Account assignment rule for the Opportunity.</description>
+        <inlineHelpText>Indicates the Account assignment rule for the Opportunity.</inlineHelpText>
+        <label>Account Assignment Rule</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assign to Contact&apos;s Account</fullName>
+                    <default>false</default>
+                    <label>Assign to Contact&apos;s Account</label>
+                </value>
+                <value>
+                    <fullName>Assign to specific Account</fullName>
+                    <default>false</default>
+                    <label>Assign to specific Account</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__ActionType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates what action should be taken on opportunity.</description>
+        <inlineHelpText>Indicates what action should be taken on opportunity.</inlineHelpText>
+        <label>Action Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Create New</fullName>
+                    <default>false</default>
+                    <label>Create New</label>
+                </value>
+                <value>
+                    <fullName>Update Existing</fullName>
+                    <default>true</default>
+                    <label>Update Existing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__CampaignAssignmentRule__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the Campaign assignment rule for the Opportunity Primary Campaign Source.</description>
+        <inlineHelpText>Indicates the Campaign assignment rule for the Opportunity Primary Campaign Source.</inlineHelpText>
+        <label>Campaign Assignment Rule</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assign to specific Campaign</fullName>
+                    <default>false</default>
+                    <label>Assign to specific Campaign</label>
+                </value>
+                <value>
+                    <fullName>Campaign most recently linked to event</fullName>
+                    <default>false</default>
+                    <label>Campaign most recently linked to event</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__CloseDateRule__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the logic of population the Opportunity Close Date field.</description>
+        <inlineHelpText>Indicates the logic of population the Opportunity Close Date field.</inlineHelpText>
+        <label>Close Date Rule</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Specific Date</fullName>
+                    <default>false</default>
+                    <label>Specific Date</label>
+                </value>
+                <value>
+                    <fullName>A certain number of days after the object is created</fullName>
+                    <default>false</default>
+                    <label>A certain number of days after the object is created</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__ContactAssignmentRule__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the Contact assignment rule for the Opportunity Contact Role.</description>
+        <inlineHelpText>Indicates the Contact assignment rule for the Opportunity Contact Role.</inlineHelpText>
+        <label>Contact Assignment Rule</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assign to Attendee&apos;s Contact</fullName>
+                    <default>false</default>
+                    <label>Assign to Attendee&apos;s Contact</label>
+                </value>
+                <value>
+                    <fullName>Assign to specific Contact</fullName>
+                    <default>false</default>
+                    <label>Assign to specific Contact</label>
+                </value>
+                <value>
+                    <fullName>Do not create a contact role</fullName>
+                    <default>false</default>
+                    <label>Do not create a contact role</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the Opportunity Configuration is active.</description>
+        <inlineHelpText>Indicates whether the Opportunity Configuration is active.</inlineHelpText>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsExistingRecordScenario__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the Opportunity will be created in case of a single SF prospect has been matched with Cvent contact.</description>
+        <inlineHelpText>Indicates whether the Opportunity will be created in case of a single SF prospect has been matched with Cvent contact.</inlineHelpText>
+        <label>Single Match Scenario</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsMultipleExistingRecordsScenario__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the Opportunity will be created in case of multiple SF prospects has been matched with Cvent contact.</description>
+        <inlineHelpText>Indicates whether the Opportunity will be created in case of multiple SF prospects has been matched with Cvent contact.</inlineHelpText>
+        <label>Multiple Match Scenario</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsNewRecordScenario__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the Opportunity will be created in case of new SF prospect has been created and associated with Cvent contact.</description>
+        <inlineHelpText>Indicates whether the Opportunity will be created in case of new SF prospect has been created and associated with Cvent contact.</inlineHelpText>
+        <label>No Match Scenario</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__NumberOfDays__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the number of days between the Opportunity creation and Opportunity Close Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the number of days between the Opportunity creation and Opportunity Close Date.</inlineHelpText>
+        <label>Number Of Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Account of the Opportunity in case of &apos;Assign to specific Account&apos; rule.</description>
+        <inlineHelpText>Account of the Opportunity in case of &apos;Assign to specific Account&apos; rule.</inlineHelpText>
+        <label>Opportunity Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>OpportunityConfigurations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityAmountString__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Amount value of the Opportunity. Has text type in order to keep data tags in addition to numeric values. Replaces OpportunityAmount__c field which has been deprecated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount value of the Opportunity.</inlineHelpText>
+        <label>Opportunity Amount</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityCampaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Primary Campaign Source value of the Opportunity.</description>
+        <inlineHelpText>Primary Campaign Source value of the Opportunity.</inlineHelpText>
+        <label>Opportunity Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipName>OpportunityConfigurations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityCloseDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Close Date of the Opportunity.</description>
+        <inlineHelpText>Close Date of the Opportunity.</inlineHelpText>
+        <label>Opportunity Close Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityContactRole__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Role of the Opportunity Contact Role.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Role of the Opportunity Contact Role.</inlineHelpText>
+        <label>Opportunity Contact Role</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Contact of the Opportunity Contact Role in case of &apos;Assign to specific Contact&apos; rule.</description>
+        <inlineHelpText>Contact of the Opportunity Contact Role in case of &apos;Assign to specific Contact&apos; rule.</inlineHelpText>
+        <label>Opportunity Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>OpportunityConfigurations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of the Opportunity.</description>
+        <inlineHelpText>Description of the Opportunity.</inlineHelpText>
+        <label>Opportunity Description</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityIsPrivate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Is Private value of the Opportunity.</description>
+        <inlineHelpText>Is Private value of the Opportunity.</inlineHelpText>
+        <label>Opportunity Is Private</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityLeadSource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Lead Source of the Opportunity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lead Source of the Opportunity.</inlineHelpText>
+        <label>Lead Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the Opportunity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the Opportunity.</inlineHelpText>
+        <label>Opportunity Name</label>
+        <length>120</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityOwner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Owner of the Opportunity in case of &apos;Assign to specific User&apos; rule.</description>
+        <inlineHelpText>Owner of the Opportunity in case of &apos;Assign to specific User&apos; rule.</inlineHelpText>
+        <label>Opportunity Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>OpportunityConfigurations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityStage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stage of the Opportunity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stage of the Opportunity.</inlineHelpText>
+        <label>Opportunity Stage</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OpportunityType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of the Opportunity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Type of the Opportunity.</inlineHelpText>
+        <label>Opportunity Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__OwnerAssignmentRule__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the assignment rule for the Opportunity owner.</description>
+        <inlineHelpText>Indicates the assignment rule for the Opportunity owner.</inlineHelpText>
+        <label>Owner Assignment Rule</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assign to Contact&apos;s owner</fullName>
+                    <default>false</default>
+                    <label>Assign to Contact&apos;s owner</label>
+                </value>
+                <value>
+                    <fullName>Assign to specific User</fullName>
+                    <default>false</default>
+                    <label>Assign to specific User</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Opportunity Configuration</label>
+    <listViews>
+        <fullName>CventEvents__All</fullName>
+        <columns>NAME</columns>
+        <columns>CventEvents__OpportunityName__c</columns>
+        <columns>CventEvents__IsActive__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>OC-{00000000}</displayFormat>
+        <label>Opportunity Configuration Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Opportunity Configurations</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <searchResultsAdditionalFields>CventEvents__OpportunityName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CventEvents__IsActive__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

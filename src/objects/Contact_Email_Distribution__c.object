@@ -160,7 +160,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Account__c</fullName>
-        <externalId>false</externalId>
         <label>Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Contact Email Distributions</relationshipLabel>
@@ -185,7 +184,6 @@
     </fields>
     <fields>
         <fullName>Contact__c</fullName>
-        <externalId>false</externalId>
         <label>Contact</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Contact Email Distributions</relationshipLabel>
@@ -221,7 +219,6 @@
     <fields>
         <fullName>Opt_Out__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Opt Out</label>
         <trackHistory>true</trackHistory>
         <type>Checkbox</type>
@@ -229,7 +226,6 @@
     <fields>
         <fullName>Soft_Launch__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <inlineHelpText>Used in WP1 to identify the distributions created during soft launch</inlineHelpText>
         <label>Soft Launch</label>
         <trackHistory>false</trackHistory>
@@ -238,7 +234,15 @@
     <label>Contact Email Distribution</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Contact__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Contact__c</field>
+            <operation>equals</operation>
+            <value>Kip Kolodziejski</value>
+        </filters>
         <label>All</label>
     </listViews>
     <listViews>

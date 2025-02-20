@@ -270,7 +270,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -278,7 +278,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Contact_Record_Page</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -408,9 +408,19 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>ActionCadenceAssigneeId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActionCadenceId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActionCadenceState</fullName>
+    </fields>
+    <fields>
         <fullName>Activate_Contact__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Activate Contact</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -418,7 +428,6 @@
     <fields>
         <fullName>Activation_Date__c</fullName>
         <description>Used to identify when the Contact was Activated for the GSA Platform</description>
-        <externalId>false</externalId>
         <inlineHelpText>Used to identify when the Contact was Activated for the GSA Platform</inlineHelpText>
         <label>Activation Date</label>
         <required>false</required>
@@ -426,9 +435,11 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>ActiveTrackerCount</fullName>
+    </fields>
+    <fields>
         <fullName>Active_User__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Active User</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -436,14 +447,12 @@
     <fields>
         <fullName>Advisory_Contact__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Advisory Contact</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Advisory_Last_Interaction_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Advisory Last Interaction Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -452,14 +461,12 @@
     <fields>
         <fullName>Affiliate_Contact__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Affiliate Contact</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>AskNicely_Survey_Sent_Date__c</fullName>
-        <externalId>false</externalId>
         <label>AskNicely Survey Sent Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -478,7 +485,6 @@
     <fields>
         <fullName>Assistant__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Assistant</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Contacts</relationshipLabel>
@@ -489,15 +495,27 @@
     </fields>
     <fields>
         <fullName>Attended_Training_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Attended Training Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Available_for_Trial__c</fullName>
+        <formula>AND(
+NOT(ISBLANK(FirstName)),
+NOT(ISBLANK(LastName)),
+NOT(ISBLANK(Email)),
+NOT(ISBLANK(AccountId))
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Available for Trial</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Billing_Contact_Multi__c</fullName>
-        <externalId>false</externalId>
         <label>Billing Contact</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -557,7 +575,6 @@
     <fields>
         <fullName>Billing_Contact__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Billing Contact</label>
         <trackHistory>true</trackHistory>
         <type>Checkbox</type>
@@ -570,7 +587,6 @@
     <fields>
         <fullName>Blog_and_Market_Currents_Newsletter__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Blog and Market Currents Newsletter</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -644,7 +660,6 @@
     <fields>
         <fullName>Bulk_Activation__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Bulk Activation</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -658,6 +673,11 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BuyerAttributes</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Campaign_Name_Contact__c</fullName>
@@ -683,7 +703,6 @@
     </fields>
     <fields>
         <fullName>Company_Segment__c</fullName>
-        <externalId>false</externalId>
         <label>Company Segment</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -705,8 +724,213 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Company_Type__c</fullName>
+        <label>Account Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Academia</fullName>
+                    <default>false</default>
+                    <label>Academia</label>
+                </value>
+                <value>
+                    <fullName>Airline</fullName>
+                    <default>false</default>
+                    <label>Airline</label>
+                </value>
+                <value>
+                    <fullName>Airport</fullName>
+                    <default>false</default>
+                    <label>Airport</label>
+                </value>
+                <value>
+                    <fullName>Asset/Investment Management</fullName>
+                    <default>false</default>
+                    <label>Asset/Investment Management</label>
+                </value>
+                <value>
+                    <fullName>Audit/Accountancy</fullName>
+                    <default>false</default>
+                    <label>Audit/Accountancy</label>
+                </value>
+                <value>
+                    <fullName>Broker</fullName>
+                    <default>false</default>
+                    <label>Broker</label>
+                </value>
+                <value>
+                    <fullName>Carrier</fullName>
+                    <default>false</default>
+                    <label>Carrier</label>
+                </value>
+                <value>
+                    <fullName>Consultancy</fullName>
+                    <default>false</default>
+                    <label>Consultancy</label>
+                </value>
+                <value>
+                    <fullName>Corporate</fullName>
+                    <default>false</default>
+                    <label>Corporate</label>
+                </value>
+                <value>
+                    <fullName>Credit Card Acquirer</fullName>
+                    <default>false</default>
+                    <label>Credit Card Acquirer</label>
+                </value>
+                <value>
+                    <fullName>Development Bank/Body</fullName>
+                    <default>false</default>
+                    <label>Development Bank/Body</label>
+                </value>
+                <value>
+                    <fullName>ECA</fullName>
+                    <default>false</default>
+                    <label>ECA</label>
+                </value>
+                <value>
+                    <fullName>Engine Lessor</fullName>
+                    <default>false</default>
+                    <label>Engine Lessor</label>
+                </value>
+                <value>
+                    <fullName>Executive Search</fullName>
+                    <default>false</default>
+                    <label>Executive Search</label>
+                </value>
+                <value>
+                    <fullName>Financial Arranger</fullName>
+                    <default>false</default>
+                    <label>Financial Arranger</label>
+                </value>
+                <value>
+                    <fullName>Fuel Supplier</fullName>
+                    <default>false</default>
+                    <label>Fuel Supplier</label>
+                </value>
+                <value>
+                    <fullName>Fund</fullName>
+                    <default>false</default>
+                    <label>Fund</label>
+                </value>
+                <value>
+                    <fullName>Government/Regulatory</fullName>
+                    <default>false</default>
+                    <label>Government/Regulatory</label>
+                </value>
+                <value>
+                    <fullName>Individual</fullName>
+                    <default>false</default>
+                    <label>Individual</label>
+                </value>
+                <value>
+                    <fullName>Infrastructure Developers and Services</fullName>
+                    <default>false</default>
+                    <label>Infrastructure Developers and Services</label>
+                </value>
+                <value>
+                    <fullName>Infrastructure/Utility</fullName>
+                    <default>false</default>
+                    <label>Infrastructure/Utility</label>
+                </value>
+                <value>
+                    <fullName>Institutional Investor</fullName>
+                    <default>false</default>
+                    <label>Institutional Investor</label>
+                </value>
+                <value>
+                    <fullName>Investment Bank</fullName>
+                    <default>false</default>
+                    <label>Investment Bank</label>
+                </value>
+                <value>
+                    <fullName>Law Firm</fullName>
+                    <default>false</default>
+                    <label>Law Firm</label>
+                </value>
+                <value>
+                    <fullName>Lender</fullName>
+                    <default>false</default>
+                    <label>Lender</label>
+                </value>
+                <value>
+                    <fullName>Lessor</fullName>
+                    <default>false</default>
+                    <label>Lessor</label>
+                </value>
+                <value>
+                    <fullName>MGA</fullName>
+                    <default>false</default>
+                    <label>MGA</label>
+                </value>
+                <value>
+                    <fullName>MRO</fullName>
+                    <default>false</default>
+                    <label>MRO</label>
+                </value>
+                <value>
+                    <fullName>OEM</fullName>
+                    <default>false</default>
+                    <label>OEM</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Other Air Finance</fullName>
+                    <default>false</default>
+                    <label>Other Air Finance</label>
+                </value>
+                <value>
+                    <fullName>Other Finance</fullName>
+                    <default>false</default>
+                    <label>Other Finance</label>
+                </value>
+                <value>
+                    <fullName>Other Insurance</fullName>
+                    <default>false</default>
+                    <label>Other Insurance</label>
+                </value>
+                <value>
+                    <fullName>Other Service Provider</fullName>
+                    <default>false</default>
+                    <label>Other Service Provider</label>
+                </value>
+                <value>
+                    <fullName>Private Equity</fullName>
+                    <default>false</default>
+                    <label>Private Equity</label>
+                </value>
+                <value>
+                    <fullName>Rating Agency</fullName>
+                    <default>false</default>
+                    <label>Rating Agency</label>
+                </value>
+                <value>
+                    <fullName>Reinsurer</fullName>
+                    <default>false</default>
+                    <label>Reinsurer</label>
+                </value>
+                <value>
+                    <fullName>Trade Association</fullName>
+                    <default>false</default>
+                    <label>Trade Association</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ContactSource</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Contact_Account_Owners_Match__c</fullName>
-        <externalId>false</externalId>
         <formula>Account.Owner.Id =  Owner.Id</formula>
         <label>Contact &amp; Account Owners Match?</label>
         <trackHistory>false</trackHistory>
@@ -728,7 +952,6 @@
     <fields>
         <fullName>Contact_Status__c</fullName>
         <businessStatus>Active</businessStatus>
-        <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -756,13 +979,234 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Contact_Type__c</fullName>
+        <label>Contact Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approving Manager - Learning</fullName>
+                    <default>false</default>
+                    <label>Approving Manager - Learning</label>
+                </value>
+                <value>
+                    <fullName>Buyer - Data</fullName>
+                    <default>false</default>
+                    <label>Buyer - Data</label>
+                </value>
+                <value>
+                    <fullName>Buyer - Euromoney</fullName>
+                    <default>false</default>
+                    <label>Buyer - Euromoney</label>
+                </value>
+                <value>
+                    <fullName>Delegate - Learning</fullName>
+                    <default>false</default>
+                    <label>Delegate - Learning</label>
+                </value>
+                <value>
+                    <fullName>Expert - ECR</fullName>
+                    <default>false</default>
+                    <label>Expert - ECR</label>
+                </value>
+                <value>
+                    <fullName>Lapsed Subscriber - ECR</fullName>
+                    <default>false</default>
+                    <label>Lapsed Subscriber - ECR</label>
+                </value>
+                <value>
+                    <fullName>Lapsed Subscriber - Euromoney</fullName>
+                    <default>false</default>
+                    <label>Lapsed Subscriber - Euromoney</label>
+                </value>
+                <value>
+                    <fullName>Lapsed Subscriber - GC</fullName>
+                    <default>false</default>
+                    <label>Lapsed Subscriber - GC</label>
+                </value>
+                <value>
+                    <fullName>Prospect - ECR</fullName>
+                    <default>false</default>
+                    <label>Prospect - ECR</label>
+                </value>
+                <value>
+                    <fullName>Prospect - Euromoney</fullName>
+                    <default>false</default>
+                    <label>Prospect - Euromoney</label>
+                </value>
+                <value>
+                    <fullName>Prospect - GC</fullName>
+                    <default>false</default>
+                    <label>Prospect - GC</label>
+                </value>
+                <value>
+                    <fullName>Prospect - Learning</fullName>
+                    <default>false</default>
+                    <label>Prospect - Learning</label>
+                </value>
+                <value>
+                    <fullName>Subscriber - ECR</fullName>
+                    <default>false</default>
+                    <label>Subscriber - ECR</label>
+                </value>
+                <value>
+                    <fullName>Subscriber - Euromoney</fullName>
+                    <default>false</default>
+                    <label>Subscriber - Euromoney</label>
+                </value>
+                <value>
+                    <fullName>Subscriber - GC</fullName>
+                    <default>false</default>
+                    <label>Subscriber - GC</label>
+                </value>
+                <value>
+                    <fullName>Survey Respondent Data</fullName>
+                    <default>false</default>
+                    <label>Survey Respondent Data</label>
+                </value>
+                <value>
+                    <fullName>Survey Respondent - Euromoney</fullName>
+                    <default>false</default>
+                    <label>Survey Respondent - Euromoney</label>
+                </value>
+                <value>
+                    <fullName>Trainer - Learning</fullName>
+                    <default>false</default>
+                    <label>Trainer - Learning</label>
+                </value>
+                <value>
+                    <fullName>Trialist - ECR</fullName>
+                    <default>false</default>
+                    <label>Trialist - ECR</label>
+                </value>
+                <value>
+                    <fullName>Trialist - ECR - Lapsed</fullName>
+                    <default>false</default>
+                    <label>Trialist - ECR - Lapsed</label>
+                </value>
+                <value>
+                    <fullName>Trialist - GC</fullName>
+                    <default>false</default>
+                    <label>Trialist - GC</label>
+                </value>
+                <value>
+                    <fullName>Trialist - GC - Lapsed</fullName>
+                    <default>false</default>
+                    <label>Trialist - GC - Lapsed</label>
+                </value>
+                <value>
+                    <fullName>Distribution List</fullName>
+                    <default>false</default>
+                    <label>Distribution List</label>
+                </value>
+                <value>
+                    <fullName>Accounts Payable</fullName>
+                    <default>false</default>
+                    <label>Accounts Payable</label>
+                </value>
+                <value>
+                    <fullName>IT</fullName>
+                    <default>false</default>
+                    <label>IT</label>
+                </value>
+                <value>
+                    <fullName>Ops Support</fullName>
+                    <default>false</default>
+                    <label>Ops Support</label>
+                </value>
+                <value>
+                    <fullName>Invoice Contact</fullName>
+                    <default>false</default>
+                    <label>Invoice Contact</label>
+                </value>
+                <value>
+                    <fullName>Contract/Commercial Contact</fullName>
+                    <default>false</default>
+                    <label>Contract/Commercial Contact</label>
+                </value>
+                <value>
+                    <fullName>Operations Contact</fullName>
+                    <default>false</default>
+                    <label>Operations Contact</label>
+                </value>
+                <value>
+                    <fullName>Data Contact</fullName>
+                    <default>false</default>
+                    <label>Data Contact</label>
+                </value>
+                <value>
+                    <fullName>Procurement Contact</fullName>
+                    <default>false</default>
+                    <label>Procurement Contact</label>
+                </value>
+                <value>
+                    <fullName>Disaster Recovery Contact</fullName>
+                    <default>false</default>
+                    <label>Disaster Recovery Contact</label>
+                </value>
+                <value>
+                    <fullName>Legal/Compliance</fullName>
+                    <default>false</default>
+                    <label>Legal/Compliance</label>
+                </value>
+                <value>
+                    <fullName>Customer - Euromoney</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Customer - Euromoney</label>
+                </value>
+                <value>
+                    <fullName>Prospect</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Prospect</label>
+                </value>
+                <value>
+                    <fullName>Survey Respondent</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Survey Respondent</label>
+                </value>
+                <value>
+                    <fullName>TBC</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>TBC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
         <fullName>Contact_Use_Case__c</fullName>
-        <externalId>false</externalId>
         <label>Contact Use Case</label>
         <length>131072</length>
         <trackHistory>true</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Convert_from_Trial__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>If this contact has been automatically converted from a trial, this is ticked.</inlineHelpText>
+        <label>Converted from Trial</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>MailingCountry</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>CurrencyIsoCode</fullName>
@@ -803,7 +1247,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Current_RE_Research_Lacking_Other__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>If other, please elaborate (open text)</inlineHelpText>
         <label>Current RE Research Lacking (Other)</label>
         <length>32768</length>
@@ -823,11 +1266,21 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Current_User__c</fullName>
-        <externalId>false</externalId>
         <formula>User__r.Id = $User.Id</formula>
         <label>Current User?</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__ContactStub__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Cvent Contact Stub</label>
+        <length>36</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>DOZISF__ZoomInfo_Company_ID__c</fullName>
@@ -843,7 +1296,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>DOZISF__ZoomInfo_Enrich_Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>ZoomInfo Enrich Status</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -878,7 +1330,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>DOZISF__ZoomInfo_First_Updated__c</fullName>
         <deprecated>false</deprecated>
         <description>Date and time when the record was first created or updated by ZoomInfo</description>
-        <externalId>false</externalId>
         <label>ZoomInfo First Updated</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -910,7 +1361,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>DOZISF__ZoomInfo_Last_Updated__c</fullName>
         <deprecated>false</deprecated>
         <description>Date and time when the record was last created or updated by ZoomInfo</description>
-        <externalId>false</externalId>
         <label>ZoomInfo Last Updated</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -930,7 +1380,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>DataLink_Access_Del__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>DataLink Access</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -938,7 +1387,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Data_Contact__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <inlineHelpText>Important *technical* contact as it relates to data provision to this account, eg API, DataLink etc. May or may not also be a Current end user.</inlineHelpText>
         <label>Data Contact</label>
         <trackHistory>false</trackHistory>
@@ -968,7 +1416,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Datalink_Access_New__c</fullName>
-        <externalId>false</externalId>
         <formula>Account.DataLink_Access__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Datalink Access (New)</label>
@@ -978,7 +1425,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Deactivate_Contact__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Deactivate Contact</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -986,7 +1432,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Deactivation_Date__c</fullName>
         <description>Used to identify when the Contact was Deactivated for the GSA Platform</description>
-        <externalId>false</externalId>
         <inlineHelpText>Used to identify when the Contact was Deactivated for the GSA Platform</inlineHelpText>
         <label>Deactivation Date</label>
         <required>false</required>
@@ -994,8 +1439,45 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Delinian_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Used for migration from Delinian Business Intelligence (NXG) org</description>
+        <externalId>true</externalId>
+        <label>Delinian Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Delinian_Parent_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Delinian Parent Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Department</fullName>
         <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>DepartmentGroup</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Derived_Product_Interest__c</fullName>
+        <label>Derived Product Interest</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Derived_Product_Interest</valueSetName>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Description</fullName>
@@ -1005,7 +1487,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Description_New__c</fullName>
         <description>For back end filtering on list views</description>
-        <externalId>false</externalId>
         <label>Description (New)</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1041,7 +1522,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>EU_Contact__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>EU Contact</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -1052,8 +1532,21 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Email_Consent_Date_Time__c</fullName>
+        <label>Email Consent Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Email_Opt_In__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Email Opt In</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Email_Username_Misaligned__c</fullName>
-        <externalId>false</externalId>
         <formula>LOWER(Email) &lt;&gt; LOWER(Username__c)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Email &amp; Username Misaligned</label>
@@ -1063,7 +1556,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>European_CPPI__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>European CPPI</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -1071,14 +1563,12 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>European_Webinars_and_Featured_Insights__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>European Webinars and Featured Insights</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Excel_Last_Use_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Excel Last Use Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1091,7 +1581,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Firms_AUM_Portfolio_Size_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>What is your firm’s AUM (Assets Under Management)/portfolio size?</inlineHelpText>
         <label>Firms AUM/Portfolio Size Mktg Identified</label>
         <required>false</required>
@@ -1135,8 +1624,13 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         </valueSet>
     </fields>
     <fields>
+        <fullName>FirstCallDateTime</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstEmailDateTime</fullName>
+    </fields>
+    <fields>
         <fullName>Former_Client__c</fullName>
-        <externalId>false</externalId>
         <label>Former Client?</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1171,14 +1665,12 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>GSA_Analyst__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>GSA Analyst</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>GSA_CDB_Contact_URL__c</fullName>
-        <externalId>false</externalId>
         <label>GSA CDB Contact URL</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1228,7 +1720,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>GS_Start_Date__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Date Employee is starting with Green Street</inlineHelpText>
         <label>GS Start Date</label>
         <required>false</required>
@@ -1242,7 +1733,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Geographies_of_Interest_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which geographic regions are of interest to you? Check all that apply.</inlineHelpText>
         <label>Geographies of Interest Mktg Identified</label>
         <required>false</required>
@@ -1303,7 +1793,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Green_Street_User_Phone__c</fullName>
-        <externalId>false</externalId>
         <label>Green Street User: Phone</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1327,6 +1816,24 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>HasOptedOutOfFax</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Has_Active_Opportunities_Billing_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>if checked the record will be included in the automatic sanction check process.</description>
+        <inlineHelpText>if checked the record will be included in the automatic sanction check process.</inlineHelpText>
+        <label>Has Active Opportunities Billing Contact</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Has_Active_Opportunities__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>if checked the record will be included in the automatic sanction check process.</description>
+        <inlineHelpText>if checked the record will be included in the automatic sanction check process.</inlineHelpText>
+        <label>Has Active Opportunities</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>HomePhone</fullName>
@@ -1361,7 +1868,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Interests__c</fullName>
-        <externalId>false</externalId>
         <label>Interests</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1385,7 +1891,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Key_Contact__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <inlineHelpText>Important contacts as it relates to commercial side of relationship (Example: renewal contact(s), vendor manager, contract signatories)</inlineHelpText>
         <label>Key Contact</label>
         <trackHistory>false</trackHistory>
@@ -1394,7 +1899,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Key_User__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Key User</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -1413,7 +1917,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>LID__Level__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Level</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1467,7 +1970,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>LID__No_longer_at_Company__c</fullName>
         <businessStatus>Active</businessStatus>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Field automatically updated by LinkedIn Sales Navigator Data Validation. “Not at Company” means Contact is not with associated Account based on LinkedIn profile. No value indicates LinkedIn has no feedback to share.</inlineHelpText>
         <label>Not at Company Flag</label>
         <required>false</required>
@@ -1514,8 +2016,29 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>LastCUUpdateDate</fullName>
     </fields>
     <fields>
+        <fullName>Last_Campaign_Associated_Time__c</fullName>
+        <description>The time that this Lead or Contact was associated to their most recent Campaign (based on “Member First Associated Date” field)</description>
+        <inlineHelpText>The time that this Lead or Contact was associated to their most recent Campaign</inlineHelpText>
+        <label>Last Campaign Associated Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Campaign_Touchpoint__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The most recent Campaign to which this Lead or Contact has been associated</description>
+        <inlineHelpText>The most recent Campaign to which this Lead or Contact has been associated</inlineHelpText>
+        <label>Last Campaign Touchpoint</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Last_Login_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Last Login Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1524,7 +2047,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Last_Login_Date_standard__c</fullName>
         <description>used in reports to ensure onboarding data is updated accurately</description>
-        <externalId>false</externalId>
         <formula>Last_Login_Date__c</formula>
         <label>Last Login Date - standard</label>
         <required>false</required>
@@ -1533,8 +2055,16 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Last_Seen_on_Internal_Site__c</fullName>
-        <externalId>false</externalId>
         <label>Last Seen on Internal Site</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Subscription_End_Date__c</fullName>
+        <description>Shows the latest Subscription End Date from all related Subscription users</description>
+        <inlineHelpText>Shows the latest Subscription End Date from all related Subscription users</inlineHelpText>
+        <label>Latest Subscription End Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
@@ -1617,6 +2147,55 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lead_Message__c</fullName>
+        <label>Lead Message</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Lead_Notes__c</fullName>
+        <label>Lead Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Lead_Score_CLV_Decile__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Score CLV Decile</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Score_Decile__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Score Decile</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Lead_Type__c</fullName>
@@ -1893,8 +2472,14 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         </valueSet>
     </fields>
     <fields>
+        <fullName>Left_Company__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Left Company</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Left_this_Account__c</fullName>
-        <externalId>false</externalId>
         <label>Left this Account</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1923,7 +2508,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>LinkedIn_Profile__c</fullName>
-        <externalId>false</externalId>
         <label>LinkedIn Profile</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1932,7 +2516,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>List_Membership__c</fullName>
         <description>Assign this prospect to one or multiple lists</description>
-        <externalId>false</externalId>
         <inlineHelpText>Designate this contact to a list for easy prospect aggregation</inlineHelpText>
         <label>List Membership</label>
         <required>false</required>
@@ -1942,7 +2525,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Loaded__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Loaded</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -1959,12 +2541,11 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>MailingAddress</fullName>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>Manager__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Manager</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Contacts1</relationshipName>
@@ -1974,13 +2555,11 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Marketing_Identified_Country_contact__c</fullName>
-        <externalId>false</externalId>
         <label>Marketing Identified Country</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
-            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
@@ -3148,7 +3727,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Marketing_Identified_State_contact__c</fullName>
-        <externalId>false</externalId>
         <label>Marketing Identified State</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -3487,7 +4065,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Mass_Deactivate__c</fullName>
-        <externalId>false</externalId>
         <label>Mass Deactivation Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -3501,7 +4078,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Monthly_User__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Monthly User</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -3509,7 +4085,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>NA_Contact__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>NA Contact</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -3520,7 +4095,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>New_User_Date__c</fullName>
-        <externalId>false</externalId>
         <label>New User Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -3550,7 +4124,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Next_Outreach_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Next Outreach Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -3559,15 +4132,20 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Next_Steps__c</fullName>
         <description>Use this field to add information regarding what to do next to move this prospect along in the sales process.</description>
-        <externalId>false</externalId>
         <label>Next Steps</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Notes__c</fullName>
+        <label>Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Number_of_Acq_Disp_Executed_Per_Year__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>How many acquisitions/dispositions does your firm typically execute in a year?</inlineHelpText>
         <label>Number of Acq/Disp Executed Per Year</label>
         <required>false</required>
@@ -3606,8 +4184,31 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         </valueSet>
     </fields>
     <fields>
-        <fullName>Onboarding_Status__c</fullName>
+        <fullName>Number_of_Opportunities__c</fullName>
+        <description>.</description>
         <externalId>false</externalId>
+        <inlineHelpText>.</inlineHelpText>
+        <label>Number of Opportunities</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Subscription_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Subscription Users</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Onboarding_Status__c</fullName>
         <label>Onboarding Status</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -3675,9 +4276,57 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Pardot_Opt_out__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Pardot Opt-out</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Pardot_Sub_Name__c</fullName>
+        <description>Field to caputre Subscription name, with the use of roll up helper</description>
+        <externalId>false</externalId>
+        <label>Pardot Sub Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pardot_Sub_Surname__c</fullName>
+        <description>Pardot Sub Surname is pulled from the subscriptions, via rollup helper</description>
+        <externalId>false</externalId>
+        <label>Pardot Sub Surname</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Account_Id_Brand__c</fullName>
+        <description>Used for Data Separation to store the Original Contact Id on the Cloned Contact</description>
+        <externalId>false</externalId>
+        <label>Parent Account Id (Brand)</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Phone</fullName>
         <securityClassification>Confidential</securityClassification>
         <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Phone_2__c</fullName>
+        <description>Used in layout</description>
+        <label>Phone 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Phone</type>
     </fields>
     <fields>
         <fullName>Phone_Extension__c</fullName>
@@ -3690,8 +4339,14 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Phone_Opt_In__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Phone Opt In</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Portfolio_Turnover_Per_Year__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>If you have greater than 0 acquisitions/dispositions, how much of your portfolio do you turn over each year?</inlineHelpText>
         <label>Portfolio Turnover Per Year</label>
         <required>false</required>
@@ -3735,9 +4390,15 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         </valueSet>
     </fields>
     <fields>
+        <fullName>Post_Opt_In__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Post Opt In</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Power_User__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Power User</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -3757,14 +4418,121 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Press_Releases__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Press Releases</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Product_Interest__c</fullName>
+        <label>Product Interest</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Insurance Insider</fullName>
+                    <default>false</default>
+                    <label>Insurance Insider</label>
+                </value>
+                <value>
+                    <fullName>Inside P&amp;C</fullName>
+                    <default>false</default>
+                    <label>Inside P&amp;C</label>
+                </value>
+                <value>
+                    <fullName>Trading Risk</fullName>
+                    <default>false</default>
+                    <label>Trading Risk</label>
+                </value>
+                <value>
+                    <fullName>Airfinance Journal</fullName>
+                    <default>false</default>
+                    <label>Airfinance Journal</label>
+                </value>
+                <value>
+                    <fullName>The Airline Analyst</fullName>
+                    <default>false</default>
+                    <label>The Airline Analyst</label>
+                </value>
+                <value>
+                    <fullName>The Lessor Analyst</fullName>
+                    <default>false</default>
+                    <label>The Lessor Analyst</label>
+                </value>
+                <value>
+                    <fullName>Deal Tracker</fullName>
+                    <default>false</default>
+                    <label>Deal Tracker</label>
+                </value>
+                <value>
+                    <fullName>Fleet Tracker</fullName>
+                    <default>false</default>
+                    <label>Fleet Tracker</label>
+                </value>
+                <value>
+                    <fullName>The Airline Analyst Financial Ratings</fullName>
+                    <default>false</default>
+                    <label>The Airline Analyst Financial Ratings</label>
+                </value>
+                <value>
+                    <fullName>In-House</fullName>
+                    <default>false</default>
+                    <label>In-House</label>
+                </value>
+                <value>
+                    <fullName>Public</fullName>
+                    <default>false</default>
+                    <label>Public</label>
+                </value>
+                <value>
+                    <fullName>ELOD</fullName>
+                    <default>false</default>
+                    <label>ELOD</label>
+                </value>
+                <value>
+                    <fullName>Customer Service</fullName>
+                    <default>false</default>
+                    <label>Customer Service</label>
+                </value>
+                <value>
+                    <fullName>Trainer Enquiry</fullName>
+                    <default>false</default>
+                    <label>Trainer Enquiry</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>IJGlobal</fullName>
+                    <default>false</default>
+                    <label>IJGlobal</label>
+                </value>
+                <value>
+                    <fullName>Power Finance &amp; Risk</fullName>
+                    <default>false</default>
+                    <label>Power Finance &amp; Risk</label>
+                </value>
+                <value>
+                    <fullName>IJInvestor</fullName>
+                    <default>false</default>
+                    <label>IJInvestor</label>
+                </value>
+                <value>
+                    <fullName>Primary Market Monitor</fullName>
+                    <default>false</default>
+                    <label>Primary Market Monitor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Products_Include__c</fullName>
-        <externalId>false</externalId>
         <label>Products Include</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -3793,7 +4561,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Professional_Designation__c</fullName>
-        <externalId>false</externalId>
         <label>Professional Designation</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -3833,7 +4600,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>React_Client__c</fullName>
-        <externalId>false</externalId>
         <formula>Account.React_Client__c</formula>
         <label>React Client</label>
         <trackHistory>false</trackHistory>
@@ -3852,7 +4618,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Registrant_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Registrant Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -3878,7 +4643,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Research_Data_in_Role_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which of the following describe how you use real estate research/data in your role?  Check all that apply.</inlineHelpText>
         <label>Research/Data in Role Mktg Identified</label>
         <required>false</required>
@@ -3928,6 +4692,23 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SMS_Opt_In__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SMS Opt In</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>SalesLoft1__Active_Contact__c</fullName>
         <deprecated>false</deprecated>
         <description>If Contact has an activity logged within the last 30 days, this field will return a value of 1.</description>
@@ -3958,7 +4739,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>SalesLoft1__Most_Recent_Cadence_Next_Step_Due_Date__c</fullName>
         <deprecated>false</deprecated>
         <description>Next SalesLoft step due date.</description>
-        <externalId>false</externalId>
         <label>Most Recent Cadence - Next Step Due Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -3980,10 +4760,32 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Salesforce_User__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Salesforce User</label>
         <trackHistory>true</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sanction_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(LOWER(MailingCountry), &quot;iran&quot;), &quot;Black List&quot;, 
+IF(CONTAINS(LOWER(MailingCountry), &quot;cuba&quot;), &quot;Black List&quot;, 
+IF(CONTAINS(LOWER(MailingCountry), &quot;democratic people&apos;s republic of&quot;), &quot;Black List&quot;, 
+IF(CONTAINS(LOWER(MailingCountry), &quot;sudan&quot;), &quot;Red List&quot;, 
+IF(CONTAINS(LOWER(MailingCountry), &quot;syria&quot;), &quot;Black List&quot;, 
+IF(CONTAINS(LOWER(MailingCountry), &quot;ukraine&quot;), &quot;Red List&quot;, 
+IF(CONTAINS(LOWER(MailingCountry), &quot;russia&quot;), &quot;Red List&quot;, 
+IF(CONTAINS(LOWER(MailingCountry), &quot;myanmar&quot;), &quot;Red List&quot;, 
+IF(CONTAINS(LOWER(MailingCountry), &quot;venezuela&quot;), &quot;Red List&quot;, 
+&quot;Clear&quot;)))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sanction Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ScheduledResumeDateTime</fullName>
     </fields>
     <fields>
         <fullName>Secondary_Email__c</fullName>
@@ -4057,7 +4859,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Sectors_of_Interest_Marketing_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which property sectors are of interest to you?  Check all that apply.</inlineHelpText>
         <label>Sectors of Interest Marketing Identified</label>
         <required>false</required>
@@ -4142,16 +4943,43 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Service_Email_Breaking_News__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SRP Service Email Breaking News</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Email_Daily_Update__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for SRP</description>
+        <label>SRP Service Email Daily Update</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Email_Monthly_Newsletter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SRP Service Email Monthly Newsletter</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Email_Quarterly_Newsletter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SRP Service Email Quarterly Newsletter</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Signatory__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Signatory</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Subscribe_to_Competitors_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Do you subscribe to any of the following providers? Check all that apply.</inlineHelpText>
         <label>Subscribe to Competitors Mktg Identified</label>
         <required>false</required>
@@ -4198,7 +5026,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Survey_Opt_Out__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Survey Opt-Out</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -4206,7 +5033,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Sync_to_Netsuite__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Sync to Netsuite</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -4231,7 +5057,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
-        <trackHistory>true</trackHistory>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
     </fields>
@@ -4244,13 +5070,12 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
-        <trackHistory>true</trackHistory>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>TOS_Sign_Off__c</fullName>
-        <externalId>false</externalId>
         <label>TOS Sign Off</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -4265,7 +5090,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
-        <trackHistory>true</trackHistory>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
     </fields>
@@ -4273,14 +5098,12 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>Temporary_reactivation_exercise__c</fullName>
         <defaultValue>false</defaultValue>
         <description>used to designate which contacts need to be reactivated after mass deactivation efforts.</description>
-        <externalId>false</externalId>
         <label>Temporary reactivation exercise</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Timezone__c</fullName>
-        <externalId>false</externalId>
         <label>Timezone</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -6434,7 +7257,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>Timing_to_Subscribe_to_Next_RE_Provider__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>When do you anticipate subscribing to your next research provider?</inlineHelpText>
         <label>Timing to Subscribe to Next RE Provider</label>
         <required>false</required>
@@ -6478,8 +7300,11 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>TitleType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Title_Data_Source__c</fullName>
-        <externalId>false</externalId>
         <label>Title Data Source</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -6508,7 +7333,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>To_Deactivate_On__c</fullName>
-        <externalId>false</externalId>
         <label>To Deactivate On</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -6529,7 +7353,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>Top_Tier_Prospect__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Near term opportunities that should be contacted on a regular basis.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Check this Box for this contact to be added to a list of VIP&apos;s that should be top of mind</inlineHelpText>
         <label>Top Tier Prospect</label>
         <trackHistory>false</trackHistory>
@@ -6539,14 +7362,12 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>Trigger_Real_time_Sync__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Setting this checkbox to true will initiate sync to Netsuite</description>
-        <externalId>false</externalId>
         <label>Trigger Real-time Sync</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>UK_Markets_of_Interest_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which markets within United Kingdom/Continental Europe are you interested in? (Check all that apply)</inlineHelpText>
         <label>UK Markets of Interest Mktg Identified</label>
         <required>false</required>
@@ -6577,7 +7398,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>US_Markets_of_Interest_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which markets within the U.S and Canada are you interested in? (Check all that apply)</inlineHelpText>
         <label>US Markets of Interest Mktg Identified</label>
         <required>false</required>
@@ -6620,7 +7440,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>U_S_CPPI__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>U.S. CPPI</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -6628,7 +7447,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>U_S_Webinars_and_Featured_Insights__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>U.S. Webinars and Featured Insights</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -6636,7 +7454,6 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Unsubscribe_All_Email_Preferences__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <inlineHelpText>This user has unsubscribed from all website email preferences.</inlineHelpText>
         <label>Unsubscribe All - Email Preferences</label>
         <trackHistory>false</trackHistory>
@@ -6658,7 +7475,6 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     </fields>
     <fields>
         <fullName>Usage_Risk__c</fullName>
-        <externalId>false</externalId>
         <label>Usage Risk</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -6702,7 +7518,6 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     </fields>
     <fields>
         <fullName>Usage_Status__c</fullName>
-        <externalId>false</externalId>
         <label>Usage Status</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -6731,7 +7546,6 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     </fields>
     <fields>
         <fullName>User_Department__c</fullName>
-        <externalId>false</externalId>
         <label>User Department</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -6886,7 +7700,6 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     <fields>
         <fullName>User_List__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>User List?</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -6894,7 +7707,6 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     <fields>
         <fullName>User__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Analyst User</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Contacts</relationshipName>
@@ -6915,7 +7727,6 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     <fields>
         <fullName>VIP_Advisory__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>VIP Advisory</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -6923,7 +7734,6 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     <fields>
         <fullName>VIP__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <inlineHelpText>Important contacts as it relates to user and engagement (Example: Power uses, senior level executives, Green Street champions)</inlineHelpText>
         <label>VIP</label>
         <trackHistory>false</trackHistory>
@@ -6931,7 +7741,6 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     </fields>
     <fields>
         <fullName>Website_Access_New__c</fullName>
-        <externalId>false</externalId>
         <formula>Account.Website_Access__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Website Access (New)</label>
@@ -6941,14 +7750,12 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     <fields>
         <fullName>Website_Access_del__c</fullName>
         <defaultValue>true</defaultValue>
-        <externalId>false</externalId>
         <label>Website Access</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Where_is_Current_RE_Research_Lacking__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Where do you feel your current real estate research is lacking? Check all that apply.</inlineHelpText>
         <label>Where is Current RE Research Lacking</label>
         <required>false</required>
@@ -7004,7 +7811,6 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
     </fields>
     <fields>
         <fullName>X3x3_Level__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Executive: Responsible for the strategizing and decision-making that contributes to the success of a company or organization.
 
 Departmental: Responsible for leading teams of employees and ensuring their productivity aligns with the team and organization&apos;s goals.
@@ -7039,7 +7845,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_B2B_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo B2B</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7048,7 +7853,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_B2C_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo B2C</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7057,7 +7861,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Bank_with_M_Assets_Held_contac__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Bank with $M Assets Held</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7086,7 +7889,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_Description_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company Description</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7105,7 +7907,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_NAICS_Code_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company NAICS Code</label>
         <length>131000</length>
         <trackHistory>false</trackHistory>
@@ -7144,7 +7945,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_SIC_Code_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company SIC Code</label>
         <length>131000</length>
         <trackHistory>false</trackHistory>
@@ -7193,7 +7993,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Credit_Union_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Credit Union</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7212,7 +8011,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Eduction_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Eduction</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7241,7 +8039,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Employment_History_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Employment History</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7250,7 +8047,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_FDIC_Insured_Bank_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo FDIC Insured Bank</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7269,7 +8065,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Fiscal_Year_Ends_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Fiscal Year Ends</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7278,7 +8073,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Founded_Date_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Founded Date</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7297,7 +8091,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_International_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo International</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7356,7 +8149,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Number_of_Banks_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Number of Banks</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7365,7 +8157,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Number_of_Credit_Unions_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Number of Credit Unions</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7374,7 +8165,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Number_of_Locations__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Number of Locations</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7413,7 +8203,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Person_Image_URL_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Person Image URL</label>
         <length>131072</length>
         <trackHistory>false</trackHistory>
@@ -7452,7 +8241,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Technology_Products_contact__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Technology Products</label>
         <length>131072</length>
         <trackHistory>false</trackHistory>
@@ -7461,7 +8249,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     </fields>
     <fields>
         <fullName>ZoomInfo_Top_100_Law_Firms_by_Revenue_co__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Top 100 Law Firms by Revenue</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7504,7 +8291,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <description>This field indicates whether the contact was created by Chorus or Zoominfo.</description>
-        <externalId>false</externalId>
         <label>Created by ChorusZI</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -7512,7 +8298,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     <fields>
         <fullName>asknicely__CSAT_Last_Responded__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>CSAT Last Responded</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -7532,7 +8317,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     <fields>
         <fullName>asknicely__CSAT_Type__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>CSAT Type</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -7561,7 +8345,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     <fields>
         <fullName>asknicely__FIVESTAR_Last_Responded__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Five Star Last Responded</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -7581,7 +8364,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     <fields>
         <fullName>asknicely__FIVESTAR_Type__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Five Star Type</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -7610,7 +8392,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     <fields>
         <fullName>asknicely__NPS_Last_Responded__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>NPS Last Responded</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -7633,7 +8414,6 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
         <description>Promoter - Contacted scored 9-10
 Passive - Contacted scored 7-8
 Detractor -Contacted scored 0-6</description>
-        <externalId>false</externalId>
         <inlineHelpText>Whether a customer is a promoter, passive or detractor</inlineHelpText>
         <label>NPS Type</label>
         <required>false</required>
@@ -7663,7 +8443,6 @@ Detractor -Contacted scored 0-6</description>
     <fields>
         <fullName>asknicely__csat_comment__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>CSAT Comment</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7685,7 +8464,6 @@ Detractor -Contacted scored 0-6</description>
     <fields>
         <fullName>asknicely__fivestar_comment__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Five Star Comment</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7708,7 +8486,6 @@ Detractor -Contacted scored 0-6</description>
         <fullName>asknicely__nps_comment__c</fullName>
         <deprecated>false</deprecated>
         <description>The last comment from this customer</description>
-        <externalId>false</externalId>
         <label>NPS Comment</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -7731,7 +8508,6 @@ Detractor -Contacted scored 0-6</description>
     <fields>
         <fullName>dynamic_checkbox__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>dynamic checkbox</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -7739,7 +8515,6 @@ Detractor -Contacted scored 0-6</description>
     <fields>
         <fullName>eContacts__Business_Card__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Image Data Only</label>
         <length>131072</length>
         <trackHistory>false</trackHistory>
@@ -7750,7 +8525,6 @@ Detractor -Contacted scored 0-6</description>
         <fullName>eContacts__Created_By_eContacts__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Created By eContacts</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -7770,7 +8544,6 @@ Detractor -Contacted scored 0-6</description>
         <fullName>eContacts__Location__c</fullName>
         <deprecated>false</deprecated>
         <displayLocationInDecimal>true</displayLocationInDecimal>
-        <externalId>false</externalId>
         <label>Location</label>
         <required>false</required>
         <scale>15</scale>
@@ -7780,7 +8553,6 @@ Detractor -Contacted scored 0-6</description>
     <fields>
         <fullName>eContacts__Secondary_Image__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Image Data2 Only</label>
         <length>131072</length>
         <trackHistory>false</trackHistory>
@@ -7789,7 +8561,6 @@ Detractor -Contacted scored 0-6</description>
     </fields>
     <fields>
         <fullName>of_Paid_RE_Subscription_Services_Used__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>How many paid real estate research/data subscription services do you currently use?</inlineHelpText>
         <label># of Paid RE Subscription Services Used</label>
         <required>false</required>
@@ -7829,7 +8600,6 @@ Detractor -Contacted scored 0-6</description>
     </fields>
     <fields>
         <fullName>opted_out_of_email_distros__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>used to find the WP1 impacted users that were opted out of all email distros accidentally.</inlineHelpText>
         <label>opted out of email distros</label>
         <summaryFilterItems>
@@ -7853,10 +8623,23 @@ Detractor -Contacted scored 0-6</description>
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>prqnconnmvpb__PreqinContactId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Preqin Contact ID</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Preqin Contact ID</inlineHelpText>
+        <label>Preqin Contact ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>rh2__Currency_Test__c</fullName>
         <deprecated>false</deprecated>
         <description>Test Description</description>
-        <externalId>false</externalId>
         <inlineHelpText>Test Description</inlineHelpText>
         <label>Currency Test</label>
         <precision>18</precision>
@@ -7869,7 +8652,6 @@ Detractor -Contacted scored 0-6</description>
         <fullName>rh2__Describe__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Describe</label>
         <referenceTo>rh2__PS_Describe__c</referenceTo>
         <relationshipLabel>Contacts</relationshipLabel>
@@ -7881,7 +8663,6 @@ Detractor -Contacted scored 0-6</description>
     <fields>
         <fullName>rh2__Formula_Test__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <formula>rh2__Currency_Test__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Formula Test</label>
@@ -7944,7 +8725,6 @@ Detractor -Contacted scored 0-6</description>
         <fullName>zisf__ZoomInfo_Last_Clean_Run__c</fullName>
         <deprecated>false</deprecated>
         <description>Date/time refers to last time ZoomInfo Clean ran for record.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Date/time refers to last time ZoomInfo Clean ran for record.</inlineHelpText>
         <label>ZoomInfo Last Clean Run</label>
         <required>false</required>
@@ -7967,7 +8747,6 @@ Detractor -Contacted scored 0-6</description>
     <fields>
         <fullName>zisf__Zoom_Clean_Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>ZoomInfo Clean Status</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -8037,7 +8816,6 @@ Stored as Long on Solr.</description>
         <fullName>zisf__zoom_lastupdated__c</fullName>
         <deprecated>false</deprecated>
         <description>Last updated from ZoomInfo timestamp</description>
-        <externalId>false</externalId>
         <label>ZoomInfo Last Updated</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -8155,6 +8933,25 @@ Stored as Long on Solr.</description>
         <label>BS Business Development Activity</label>
     </listViews>
     <listViews>
+        <fullName>Bounced_Contacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Company_Type_Contact__c</field>
+            <operation>contains</operation>
+            <value>Broker</value>
+        </filters>
+        <label>Bounced Broker Contacts</label>
+        <sharedTo>
+            <role>Customer_Success</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>Casey_Searl_Business_Development</fullName>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -8174,37 +8971,6 @@ Stored as Long on Solr.</description>
         <sharedTo>
             <roleAndSubordinates>BDR_Manager</roleAndSubordinates>
             <roleAndSubordinates>Sales_Manager</roleAndSubordinates>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>Contacts_to_Mass_Deactivate</fullName>
-        <columns>FULL_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>Activation_Date__c</columns>
-        <columns>Deactivation_Date__c</columns>
-        <columns>Contact_Status__c</columns>
-        <columns>Activate_Contact__c</columns>
-        <columns>To_Deactivate_On__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>To_Deactivate_On__c</field>
-            <operation>equals</operation>
-            <value>11/18/2021</value>
-        </filters>
-        <filters>
-            <field>Contact_Status__c</field>
-            <operation>equals</operation>
-            <value>Inactive</value>
-        </filters>
-        <filters>
-            <field>Activate_Contact__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>Contacts to Mass Deactivate</label>
-        <sharedTo>
-            <role>Commercial_Operations</role>
-            <role>System_Administrator</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -8242,16 +9008,32 @@ Stored as Long on Solr.</description>
         <columns>Last_Login_Date__c</columns>
         <columns>CONTACT.LAST_UPDATE</columns>
         <columns>Loaded__c</columns>
+        <columns>ACCOUNT.TYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ACCOUNT.NAME</field>
             <operation>startsWith</operation>
-            <value>Sixth Street Partners LLC</value>
+            <value>Fried,Frank,Harris,Shriver &amp; Jacobso</value>
         </filters>
         <filters>
-            <field>User_List__c</field>
+            <field>Contact_Status__c</field>
             <operation>equals</operation>
-            <value>1</value>
+            <value>Inactive</value>
+        </filters>
+        <filters>
+            <field>ACCOUNT.TYPE</field>
+            <operation>equals</operation>
+            <value>Client</value>
+        </filters>
+        <filters>
+            <field>Account.GSA_ID__c</field>
+            <operation>notEqual</operation>
+            <value>22832</value>
+        </filters>
+        <filters>
+            <field>Deactivation_Date__c</field>
+            <operation>equals</operation>
+            <value>3/4/2024</value>
         </filters>
         <label>Copy of Copy of User List Updates</label>
         <sharedTo>
@@ -8293,7 +9075,7 @@ Stored as Long on Solr.</description>
         <filters>
             <field>ACCOUNT.NAME</field>
             <operation>contains</operation>
-            <value>HSBC Global Asset Management (NA)</value>
+            <value>dexus</value>
         </filters>
         <label>Copy of User List Updates</label>
         <sharedTo>
@@ -8495,23 +9277,30 @@ Stored as Long on Solr.</description>
         <label>Mass Activations JLL EMEA</label>
     </listViews>
     <listViews>
-        <fullName>Mass_Deactivations</fullName>
+        <fullName>Mass_Deactivate_Contacts</fullName>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
-        <columns>CONTACT.PHONE1</columns>
         <columns>CONTACT.EMAIL</columns>
-        <columns>CONTACT.TITLE</columns>
-        <columns>Activation_Date__c</columns>
-        <columns>Deactivation_Date__c</columns>
+        <columns>CORE.USERS.ALIAS</columns>
         <columns>Mass_Deactivate__c</columns>
-        <columns>Activate_Contact__c</columns>
         <columns>Contact_Status__c</columns>
+        <columns>Activate_Contact__c</columns>
+        <columns>Account.GSA_ID__c</columns>
         <columns>GSA_ID__c</columns>
+        <columns>LID__No_longer_at_Company__c</columns>
+        <columns>Deactivation_Date__c</columns>
         <filterScope>Everything</filterScope>
-        <label>Mass Deactivations</label>
-        <sharedTo>
-            <role>Commercial_Operations</role>
-        </sharedTo>
+        <filters>
+            <field>Contact_Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>notContain</operation>
+            <value>Green Street</value>
+        </filters>
+        <label>Mass Deactivate Contacts</label>
     </listViews>
     <listViews>
         <fullName>Mona_Georgia_Prospecting_List</fullName>
@@ -8916,12 +9705,12 @@ Stored as Long on Solr.</description>
         <columns>CONTACT.PHONE1</columns>
         <columns>CONTACT.EMAIL</columns>
         <columns>CONTACT.TITLE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Key_User__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Account.OwnerIDName__c</field>
-            <operation>equals</operation>
-            <value>Ben Perkins</value>
+            <field>CONTACT.EMAIL</field>
+            <operation>contains</operation>
+            <value>charlotte.kail@whitecase.com</value>
         </filters>
         <label>Test List</label>
     </listViews>
@@ -8960,7 +9749,12 @@ Stored as Long on Solr.</description>
         <filters>
             <field>ACCOUNT.NAME</field>
             <operation>contains</operation>
-            <value>Kroger</value>
+            <value>Natixis North America LLC</value>
+        </filters>
+        <filters>
+            <field>Contact_Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
         </filters>
         <label>User List Updates- Client Ops</label>
         <sharedTo>
@@ -9053,6 +9847,78 @@ OR(
 )</errorConditionFormula>
         <errorMessage>Email Address cannot contain greenstreet-compliance email or &quot;donotcall&quot;.</errorMessage>
     </validationRules>
+    <webLinks>
+        <fullName>CventEvents__InviteContactToEvent</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Invite</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__ContactInviteExtension</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>CventEvents__ModifyCancelContactToEvent</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Modify/Cancel</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__ContactModifyCancelExtension</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>CventEvents__NominateContactToEvent</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Nominate</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__ContactNominateExtension</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>CventEvents__RegisterContactToEvent</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Register</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__ContactRegisterExtension</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
     <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>

@@ -1,0 +1,149 @@
+<apex:page standardController="CventEvents__Event__c" extensions="CventEvents.EventExtensionController,CventEvents.LightningComponentController">
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, '_colors.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'tachyons/_white-space.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'tachyons/_spacing.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'components/_tooltip.css')}" />
+
+    <apex:includeLightning />
+
+    <style type="text/css">
+        .custPopup {
+            z-index: 9999;
+            left: 33%;
+            padding: 10px;
+            position: absolute;
+            width: 500px;
+            top: 140px;
+        }
+
+        .buttons-container {
+            display: flex;
+        }
+
+        .tooltip-bottom {
+            top: 1.8rem;
+        }
+
+        body .btnDisabled {
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+
+        .form__container {
+            position: relative;
+        }
+    </style>
+
+    <apex:form >
+        <apex:pageBlock mode="maindetail">
+            <apex:detail subject="{!CventEvents__Event__c.Id}" relatedListHover="false" />
+            <apex:pageBlockButtons location="top">
+                <div class="buttons-container">
+                    <apex:outputPanel rendered="{!(isNominationEnabled && (allowNomination || hasNominationTooltip))}">
+                        <div class="tooltip-container mr1">
+                            <apex:outputPanel id="nominateButton">
+                                <apex:commandButton value="{!$Label.cventevents__Nominate}" action="{!showPopup}" rerender="eventManagementPopup, inviteButton, inviteButtonTooltip,
+                        registerButton, registerButtonTooltip, nominateButton, nominateButtonTooltip, modifyButton, modifyButtonTooltip"
+                                    disabled="{!isNominateButtonDisabled}">
+                                    <apex:param name="selAction" value="Nominate" assignTo="{!selectedAction}" />
+                                </apex:commandButton>
+                            </apex:outputPanel>
+                            <apex:outputPanel id="nominateButtonTooltip">
+                                <apex:outputPanel rendered="{!displayNominateButtonTooltip}">
+                                    <span class="tooltip tooltip-bottom nowrap">{!nominateButtonTooltip}</span>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </div>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!(isInvitationEnabled && (allowAddInvitationList || hasInvitationTooltip))}">
+                        <div class="tooltip-container mr1">
+                            <apex:outputPanel id="inviteButton">
+                                <apex:commandButton value="{!$Label.cventevents__Invite}" action="{!showPopup}" rerender="eventManagementPopup, inviteButton, inviteButtonTooltip,
+                                registerButton, registerButtonTooltip, nominateButton, nominateButtonTooltip, modifyButton, modifyButtonTooltip"
+                                    disabled="{!isInviteButtonDisabled}">
+                                    <apex:param name="selAction" value="Invite" assignTo="{!selectedAction}" />
+                                </apex:commandButton>
+                            </apex:outputPanel>
+                            <apex:outputPanel id="inviteButtonTooltip">
+                                <apex:outputPanel rendered="{!displayInviteButtonTooltip}">
+                                    <span class="tooltip tooltip-bottom nowrap">{!inviteButtonTooltip}</span>
+                                </apex:outputPanel>
+
+                            </apex:outputPanel>
+                        </div>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!(isRegistrationEnabled && (allowRegistration || hasRegistrationTooltip))}">
+                        <div class="tooltip-container mr1">
+                            <apex:outputPanel id="registerButton">
+                                <apex:commandButton value="{!$Label.cventevents__Register}" action="{!showPopup}" rerender="eventManagementPopup, inviteButton, inviteButtonTooltip,
+                            registerButton, registerButtonTooltip, nominateButton, nominateButtonTooltip, modifyButton, modifyButtonTooltip"
+                                    disabled="{!isRegisterButtonDisabled}">
+                                    <apex:param name="selAction" value="Register" assignTo="{!selectedAction}" />
+                                </apex:commandButton>
+                            </apex:outputPanel>
+                            <apex:outputPanel id="registerButtonTooltip">
+                                <apex:outputPanel rendered="{!displayRegisterButtonTooltip}">
+                                    <span class="tooltip tooltip-bottom nowrap">{!registerButtonTooltip}</span>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </div>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!(isRegistrationEnabled && (allowModifyCancel || hasModifyCancelTooltip))}">
+                        <div class="tooltip-container">
+                            <apex:outputPanel id="modifyButton">
+                                <apex:commandButton value="{!$Label.cventevents__ModifyCancel}" action="{!showPopup}" rerender="eventManagementPopup, inviteButton, inviteButtonTooltip,
+                            registerButton, registerButtonTooltip, nominateButton, nominateButtonTooltip, modifyButton, modifyButtonTooltip"
+                                    disabled="{!isModifyCancelButtonDisabled}">
+                                    <apex:param name="selAction" value="Modify" assignTo="{!selectedAction}" />
+                                </apex:commandButton>
+                            </apex:outputPanel>
+                            <apex:outputPanel id="modifyButtonTooltip">
+                                <apex:outputPanel rendered="{!displayModifyCancelButtonTooltip}">
+                                    <span class="tooltip tooltip-bottom nowrap">{!modifyCancelButtonTooltip}</span>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </div>
+                    </apex:outputPanel>
+                </div>
+
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <apex:outputPanel id="eventManagementPopup">
+            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+
+                <div id="eventManagementTabContainer">
+                    <div class="slds-scope">
+                        <div id="spinner" class="slds-spinner_container">
+                            <div role="status" class="slds-spinner slds-spinner--small slds-spinner--neutral">
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    const namespace = '{!JSENCODE(namespace)}';
+                    const recordId = '{!JSENCODE($CurrentPage.parameters.id)}';
+                    const action = '{!selectedAction}';
+                    $Lightning.use(namespace + ":ltngDependencyApp",
+                        function () {
+                            $Lightning.createComponent(namespace + ":eventManagementTab",
+                                {
+                                    'recordId': recordId,
+                                    'selectedAction': action
+                                },
+                                "eventManagementTabContainer",
+                                function (component) {
+                                    document.getElementById('spinner').className += ' slds-hide';
+                                });
+                        });
+                </script>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

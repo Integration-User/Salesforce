@@ -1,0 +1,43 @@
+<apex:page sidebar="false" standardController="CventEvents__SurveyProgram__c" extensions="CventEvents.LightningComponentController">
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'components/_spinner.css')}" />
+    <apex:includeLightning />
+
+    <div id="loading-spinner-container" class="spinner__container">
+        <div role="status" class="spinner spinner_small">
+            <div class="spinner__dot-a"></div>
+            <div class="spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <div id="surveyProgramStatusChangeContainer"></div>
+
+    <script>
+
+        const namespace = '{!JSENCODE(namespace)}';
+        const recordId = '{!JSENCODE($CurrentPage.parameters.id)}';
+
+        $Lightning.use(namespace + ":ltngDependencyApp",
+            function () {
+                $Lightning.createComponent(namespace + ":surveyProgramStatusChange",
+                    {
+                        'recordId': recordId,
+                        'isFromVfPage': true
+                    },
+                    "surveyProgramStatusChangeContainer",
+                    function (component) {
+                        const spinnerContainer = document.getElementById("loading-spinner-container");
+                        spinnerContainer.style.display = 'none';
+                    }
+                );
+            });
+    </script>
+    <style>
+        .bodyDiv .outerNoSidebar, .slds-scope {
+            padding: 0;
+        }
+
+        #bodyTable {
+            min-height: calc(5rem + 20px);
+        }
+    </style>
+</apex:page>

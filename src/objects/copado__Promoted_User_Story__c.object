@@ -246,6 +246,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>copado__User_Story__r.CreatedById</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -256,7 +261,7 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>CreatedById</field>
+            <field>CreatedDate</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -267,11 +272,6 @@
         </availableFields>
         <availableFields>
             <field>copado__Promotion__r.CreatedDate</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>CreatedDate</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -346,6 +346,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>copado__User_Story__r.Id</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -356,7 +361,7 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>Id</field>
+            <field>IsDeleted</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -367,11 +372,6 @@
         </availableFields>
         <availableFields>
             <field>copado__Promotion__r.IsDeleted</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>IsDeleted</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -441,17 +441,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>copado__User_Story__r.Name</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
             <field>copado__Promotion__r.Name</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>Name</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -581,12 +581,12 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>copado__Promotion__r.copado__Status__c</field>
+            <field>copado__Status__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>copado__Status__c</field>
+            <field>copado__Promotion__r.copado__Status__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -606,12 +606,12 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>copado__User_Story__r.SystemModstamp</field>
+            <field>copado__Promotion__r.SystemModstamp</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>copado__Promotion__r.SystemModstamp</field>
+            <field>copado__User_Story__r.SystemModstamp</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -711,7 +711,6 @@
     <fields>
         <fullName>copado__Promotion__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Promotion</label>
         <referenceTo>copado__Promotion__c</referenceTo>
         <relationshipLabel>Promoted User Stories</relationshipLabel>
@@ -726,7 +725,6 @@
         <fullName>copado__Status__c</fullName>
         <deprecated>false</deprecated>
         <description>The status Outdated invalidates that this user story got promoted. The user story will be available again for automated promotions and back promotions if applicable.</description>
-        <externalId>false</externalId>
         <label>Active / Outdated</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -751,7 +749,6 @@
     <fields>
         <fullName>copado__User_Story__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>User Story</label>
         <referenceTo>copado__User_Story__c</referenceTo>
         <relationshipLabel>User Story Promotions</relationshipLabel>

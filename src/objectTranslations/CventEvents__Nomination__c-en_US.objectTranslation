@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- The most recent approver comment. --></help>
+        <label><!-- Approver Comment --></label>
+        <name>CventEvents__ApproverComment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attendee Name --></label>
+        <name>CventEvents__AttendeeName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attendee --></label>
+        <name>CventEvents__Attendee__c</name>
+        <relationshipLabel><!-- Nominations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requester Comment --></label>
+        <name>CventEvents__Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>CventEvents__Contact__c</name>
+        <relationshipLabel><!-- Nominations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Current Approver --></label>
+        <name>CventEvents__CurrentApproverName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Approver --></label>
+        <name>CventEvents__CurrentApprover__c</name>
+        <relationshipLabel><!-- Nominations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Event --></label>
+        <name>CventEvents__EventTitle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event --></label>
+        <name>CventEvents__Event__c</name>
+        <relationshipLabel><!-- Nominations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Invitation email/list to be used for automatic invitation after the nomination gets approved. --></help>
+        <label><!-- Invitation Email/List --></label>
+        <name>CventEvents__InvitationConfigurationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores configuration stub to be used for automatic invitation after the nomination gets approved. --></help>
+        <label><!-- Invitation Configuration Stub --></label>
+        <name>CventEvents__InvitationConfigurationStub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>CventEvents__Lead__c</name>
+        <relationshipLabel><!-- Nominations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requester --></label>
+        <name>CventEvents__Requester__c</name>
+        <relationshipLabel><!-- Nominations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether an automatic invitation will take place after the nomination gets approved. --></help>
+        <label><!-- Send Invite On Approve --></label>
+        <name>CventEvents__SendInviteOnApprove__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the nomination requester should be shown as a sender of invitation email. --></help>
+        <label><!-- Send Invite On Behalf Of Requester --></label>
+        <name>CventEvents__SendInviteOnBehalfOfRequester__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>CventEvents__Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <webLinks>
+        <label><!-- Approve --></label>
+        <name>CventEvents__Approve</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Cancel --></label>
+        <name>CventEvents__Cancel</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reject --></label>
+        <name>CventEvents__Reject</name>
+    </webLinks>
+</CustomObjectTranslation>

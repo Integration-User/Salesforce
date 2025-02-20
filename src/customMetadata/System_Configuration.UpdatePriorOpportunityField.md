@@ -7,6 +7,10 @@
         <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
+        <field>List_Of_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>Value__c</field>
         <value xsi:nil="true"/>
     </values>

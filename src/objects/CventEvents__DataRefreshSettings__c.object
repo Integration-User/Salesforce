@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Stores the Cvent sync configuration.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CventEvents__Frequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the frequency of automatic sync.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the frequency of automatic sync.</inlineHelpText>
+        <label>Frequency</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsConfigured__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the automatic sync is configured.</description>
+        <inlineHelpText>Indicates whether the automatic sync is configured.</inlineHelpText>
+        <label>Is Configured</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsPending__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether there is pending sync process.</description>
+        <inlineHelpText>Indicates whether there is pending sync process.</inlineHelpText>
+        <label>Pending Sync</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__LastSyncDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The last date that the synchronization occurred.</description>
+        <inlineHelpText>The last date that the synchronization occurred.</inlineHelpText>
+        <label>Last Synced Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__RunRelatedSync__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the need to run the related sync right after the main sync took place.</description>
+        <inlineHelpText>Indicates whether the need to run the related sync right after the main sync took place.</inlineHelpText>
+        <label>Run Related Sync</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last sync process status.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last sync process status.</inlineHelpText>
+        <label>Status</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__Unit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the unit of automatic sync.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the unit of automatic sync.</inlineHelpText>
+        <label>Unit</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Data Refresh Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

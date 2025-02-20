@@ -1,0 +1,28 @@
+<apex:page showHeader="false" sidebar="false" controller="CventEvents.LightningComponentController">
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'components/_spinner.css')}" />
+    <apex:includeLightning />
+
+    <div id="loading-spinner-container" class="spinner__container">
+        <div role="status" class="spinner spinner_small">
+            <div class="spinner__dot-a"></div>
+            <div class="spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <div id="applicationConfigurationContainer" />
+    <script>
+        const namespace = '{!JSENCODE(namespace)}';
+
+        $Lightning.use(namespace + ":ltngDependencyApp",
+            function () {
+                $Lightning.createComponent(namespace + ":applicationConfiguration",
+                    null,
+                    "applicationConfigurationContainer",
+                    function (component) {
+                        const spinnerContainer = document.getElementById("loading-spinner-container");
+                        spinnerContainer.style.display = 'none';
+                    }
+                );
+            });
+    </script>
+</apex:page>

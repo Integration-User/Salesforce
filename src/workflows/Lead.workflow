@@ -60,12 +60,28 @@
             <type>owner</type>
         </recipients>
         <recipients>
-            <recipient>aling@greenstreet.com</recipient>
-            <type>user</type>
+            <recipient>CAM_Manager</recipient>
+            <type>role</type>
         </recipients>
         <recipients>
-            <recipient>lhewett@greenstreet.com</recipient>
-            <type>user</type>
+            <recipient>UK_Associate_Sales_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>UK_News_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>US_Platform_Sales_Manager_B</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>US_Sales_Manager_C</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Sales_West</recipient>
+            <type>role</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>Referral_Templates/New_Referral</template>

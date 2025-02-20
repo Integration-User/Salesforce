@@ -293,6 +293,11 @@
             <field>HierarchyNumberOfWonOpportunities</field>
             <table>Campaign</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Event_Cost_Centre__c</field>
+            <table>Campaign</table>
+        </columns>
         <masterLabel>Campaigns</masterLabel>
     </sections>
     <sections>
@@ -519,11 +524,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Client_Segment_New__c</field>
-            <table>Campaign.AccountCampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Closed_Sales__c</field>
             <table>Campaign.AccountCampaignMembers</table>
         </columns>
         <columns>
@@ -899,11 +899,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Onboarding_Request_Additional_Training__c</field>
-            <table>Campaign.AccountCampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Open_Opportunities__c</field>
             <table>Campaign.AccountCampaignMembers</table>
         </columns>
         <columns>
@@ -1354,6 +1349,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Sync_to_Netsuite__c</field>
+            <table>Campaign.AccountCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>TA_Relationship__c</field>
+            <table>Campaign.AccountCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>TA_Vertical__c</field>
             <table>Campaign.AccountCampaignMembers</table>
         </columns>
         <columns>
@@ -3029,6 +3034,41 @@
             <field>Renewal_Year_Temp__c</field>
             <table>Campaign.AccountCampaignMembers.Opportunities</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Contact_Name_For_Testing__c</field>
+            <table>Campaign.AccountCampaignMembers.Opportunities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IJ_Global_Events_Related_Event__c</field>
+            <table>Campaign.AccountCampaignMembers.Opportunities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Delinian_Composite_Key__c</field>
+            <table>Campaign.AccountCampaignMembers.Opportunities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Delinian_Id__c</field>
+            <table>Campaign.AccountCampaignMembers.Opportunities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Delinian_Name__c</field>
+            <table>Campaign.AccountCampaignMembers.Opportunities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PO_Number__c</field>
+            <table>Campaign.AccountCampaignMembers.Opportunities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Agency__c</field>
+            <table>Campaign.AccountCampaignMembers.Opportunities</table>
+        </columns>
         <masterLabel>Opportunities</masterLabel>
     </sections>
     <sections>
@@ -3335,6 +3375,11 @@
         <masterLabel>Products</masterLabel>
     </sections>
     <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Delinian_Id__c</field>
+            <table>Campaign.AccountCampaignMembers.Opportunities.OpportunityLineItems</table>
+        </columns>
         <masterLabel>Opportunity Product</masterLabel>
     </sections>
 </ReportType>

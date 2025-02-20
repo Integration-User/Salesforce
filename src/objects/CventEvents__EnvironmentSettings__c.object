@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Stores the SF Environment configuration.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CventEvents__AttendeeSyncPaginationLimit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores attendee sync pagination limit. The limit can vary between 1 and 2000. Invalid or NULL value is treated as a default of 1000.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores attendee sync pagination limit. The limit can vary between 1 and 2000. Invalid or NULL value is treated as a default of 1000.</inlineHelpText>
+        <label>Attendee Sync Pagination Limit</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__BypassContactDupeRulesOnInsert__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Contact creation on data sync bypasses Salesforce duplicate rules if possible.</description>
+        <inlineHelpText>When checked, Contact creation on data sync bypasses Salesforce duplicate rules if possible.</inlineHelpText>
+        <label>Bypass Contact Dupe Rules on Insert</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__BypassContactDupeRulesOnUpdate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Contact update on data sync bypasses Salesforce duplicate rules if possible.</description>
+        <inlineHelpText>When checked, Contact update on data sync bypasses Salesforce duplicate rules if possible.</inlineHelpText>
+        <label>Bypass Contact Dupe Rules on Update</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__BypassLeadDupeRulesOnInsert__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Lead creation on data sync bypasses Salesforce duplicate rules if possible.</description>
+        <inlineHelpText>When checked, Lead creation on data sync bypasses Salesforce duplicate rules if possible.</inlineHelpText>
+        <label>Bypass Lead Dupe Rules on Insert</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__BypassLeadDupeRulesOnUpdate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Lead update on data sync bypasses Salesforce duplicate rules if possible.</description>
+        <inlineHelpText>When checked, Lead update on data sync bypasses Salesforce duplicate rules if possible.</inlineHelpText>
+        <label>Bypass Lead Dupe Rules on Update</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__BypassPersonAccountDupeRulesOnInsert__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Person Account creation on data sync bypasses Salesforce duplicate rules if possible.</description>
+        <inlineHelpText>When checked, Person Account creation on data sync bypasses Salesforce duplicate rules if possible.</inlineHelpText>
+        <label>Bypass PA Dupe Rules on Insert</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__BypassPersonAccountDupeRulesOnUpdate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Person Account update on data sync bypasses Salesforce duplicate rules if possible.</description>
+        <inlineHelpText>When checked, Person Account update on data sync bypasses Salesforce duplicate rules if possible.</inlineHelpText>
+        <label>Bypass PA Dupe Rules on Update</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__DebugMode__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, will show more information in error messages, which would normally be hidden from the user.</description>
+        <inlineHelpText>When checked, will show more information in error messages, which would normally be hidden from the user.</inlineHelpText>
+        <label>Debug Mode</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__EventSyncPaginationLimit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores event sync pagination limit. The limit can vary between 1 and 200. Invalid or NULL value is treated as a default of 200.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores event sync pagination limit. The limit can vary between 1 and 200. Invalid or NULL value is treated as a default of 200.</inlineHelpText>
+        <label>Event Sync Pagination Limit</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsAccountTriggerDisabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Cvent logic for Account Trigger is disabled.</description>
+        <inlineHelpText>When checked, Cvent logic for Account Trigger is disabled.</inlineHelpText>
+        <label>Disable Account Trigger</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsCampaignMemberTriggerDisabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Cvent logic for Campaign Member Trigger is disabled.</description>
+        <inlineHelpText>When checked, Cvent logic for Campaign Member Trigger is disabled.</inlineHelpText>
+        <label>Disable Campaign Member Trigger</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsCampaignTriggerDisabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Cvent logic for Campaign Trigger is disabled.</description>
+        <inlineHelpText>When checked, Cvent logic for Campaign Trigger is disabled.</inlineHelpText>
+        <label>Disable Campaign Trigger</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsContactTriggerDisabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Cvent logic for Contact Trigger is disabled.</description>
+        <inlineHelpText>When checked, Cvent logic for Contact Trigger is disabled.</inlineHelpText>
+        <label>Disable Contact Trigger</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsLeadTriggerDisabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Cvent logic for Lead Trigger is disabled.</description>
+        <inlineHelpText>When checked, Cvent logic for Lead Trigger is disabled.</inlineHelpText>
+        <label>Disable Lead Trigger</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__NowOverride__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Overrides the &quot;now&quot; datetime used by all Aquiva apex code. If this is set, then Today Override is ignored.</description>
+        <inlineHelpText>Overrides the &quot;now&quot; datetime used by all Aquiva apex code. If this is set, then Today Override is ignored.</inlineHelpText>
+        <label>Now Override</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__TodayOverride__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Overrides the &quot;today&quot; date used by all Aquiva apex code. This includes the date portion of the &quot;now&quot; time.</description>
+        <inlineHelpText>Overrides the &quot;today&quot; date used by all Aquiva apex code. This includes the date portion of the &quot;now&quot; time.</inlineHelpText>
+        <label>Today Override</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Environment Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -89,6 +89,11 @@
             <field>StartDate</field>
             <table>ForecastingQuota</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner.IsActive</field>
+            <table>ForecastingQuota</table>
+        </columns>
         <masterLabel>Forecasting Quotas</masterLabel>
     </sections>
     <sections>
@@ -283,6 +288,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>UserUniqueToSplitType</field>
+            <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOppSplits</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SplitOwner.Manager</field>
+            <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOppSplits</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SplitOwner.Manager.Manager</field>
             <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOppSplits</table>
         </columns>
         <masterLabel>Opportunity Splits</masterLabel>

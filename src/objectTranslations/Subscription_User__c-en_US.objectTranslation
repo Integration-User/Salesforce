@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Subscription User</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Subscription Users</value>
+    </caseValues>
+    <fields>
+        <help><!-- Shows if the subscriber should be auto-added to the subscription now --></help>
+        <label><!-- Activate? --></label>
+        <name>Activate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This displays the baseline start date. This is the date on which the baseline subscription duration was established. It is used to calculate the subscription duration for subscriptions that started before the SCRIPT project. --></help>
+        <label><!-- Baseline Start Date --></label>
+        <name>Baseline_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Baseline Subscriber Duration --></label>
+        <name>Baseline_Subscriber_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Acc Equals to Subs Acc --></label>
+        <name>Contact_Acc_Equals_to_Subs_Acc__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this subscription item user relates to a Contact, select the Contact here --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Subscription Users --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CreatedByReadonly --></label>
+        <name>CreatedByReadonly__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shows if the Subscription User is ready for removal --></help>
+        <label><!-- Deactivate? --></label>
+        <name>Deactivate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delinian Id --></label>
+        <name>Delinian_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the End Date for this Subscription --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Links to the initial quarterly order for users who join a quarterly invoiced subscription part way through a quarter --></help>
+        <label><!-- Initial Order --></label>
+        <name>Initial_Order__c</name>
+        <relationshipLabel><!-- Subscription Users --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If this subscription item user relates to a Lead, select the Lead here --></help>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Subscription Users --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If checked the Subscription User will be deleted if the number of subscribers is greater than the renewal number of Subscribers --></help>
+        <label><!-- Marked For Removal? --></label>
+        <name>Marked_For_Removal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of print copies --></help>
+        <label><!-- Number of Copies --></label>
+        <name>Number_of_Copies__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Renewals --></label>
+        <name>Number_of_Renewals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any notes or specific delivery requirements for print copies --></help>
+        <label><!-- Print Copy Notes --></label>
+        <name>Print_Copy_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print Copy --></label>
+        <name>Print_Copy__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Shows the product names for this Subscription --></help>
+        <label><!-- Products --></label>
+        <name>Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- SRP Integration Message --></label>
+        <name>SRP_Integration_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- SRP Integration Status --></label>
+        <name>SRP_Integration_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the Start Date for this Subscription --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the status of the related Subscription --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the duration of this subscriber in years. This is calculated as the difference between the subscription end date and start date, unless the baseline subscription duration is populated, in which case we calculate it as the difference between the end date and the baseline date, and add the baseline duration. --></help>
+        <label><!-- Subscriber Duration --></label>
+        <name>Subscriber_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscriber End Date --></label>
+        <name>Subscriber_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscriber Start Date --></label>
+        <name>Subscriber_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscriber Status --></label>
+        <name>Subscriber_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subscription NG --></label>
+        <name>Subscription_NG__c</name>
+        <relationshipLabel><!-- Subscription Users --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Subscription User ID 18 --></label>
+        <name>Subscription_User_ID_18__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the Type of the related Subscription --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the Country of the related Contact --></help>
+        <label><!-- User Country --></label>
+        <name>User_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays if the user has verified their email in Zephr --></help>
+        <label><!-- Zephr Email Verified? --></label>
+        <name>Zephr_Email_Verified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the sync status of related Zephr records --></help>
+        <label><!-- Zephr Integration Status --></label>
+        <name>Zephr_Integration_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zephr User Account Grant --></label>
+        <name>Zephr_User_Account_Grant__c</name>
+        <relationshipLabel><!-- Subscription Users --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Zephr User Grant --></label>
+        <name>Zephr_User_Grant__c</name>
+        <relationshipLabel><!-- Subscription Users --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Zephr User Id --></label>
+        <name>Zephr_User_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Contact value can&apos;t be changed. --></errorMessage>
+        <name>Prevent_Contact_Modification</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Subscriber End Date must be after the Subscriber Start Date --></errorMessage>
+        <name>Subscriber_End_Date_Must_Be_After_Start</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not able to add this subscriber, because this product requires a postal code for subscribers and the subscriber does not have a postal code entered. --></errorMessage>
+        <name>Subscriber_Must_Have_Postal_Code</name>
+    </validationRules>
+</CustomObjectTranslation>

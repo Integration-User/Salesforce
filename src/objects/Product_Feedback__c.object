@@ -155,7 +155,6 @@
     <fields>
         <fullName>Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Feedback</relationshipLabel>
@@ -176,7 +175,6 @@
     </fields>
     <fields>
         <fullName>Company_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Company Type</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -188,7 +186,6 @@
     </fields>
     <fields>
         <fullName>Competitors__c</fullName>
-        <externalId>false</externalId>
         <label>Competitors</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -365,7 +362,6 @@
         <fullName>Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Contact this piece of feedback is associated with</description>
-        <externalId>false</externalId>
         <label>Contact</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Feedback</relationshipLabel>
@@ -377,7 +373,6 @@
     <fields>
         <fullName>Description_of_Feedback__c</fullName>
         <description>Description of the feedback</description>
-        <externalId>false</externalId>
         <inlineHelpText>Please be as detailed as possible</inlineHelpText>
         <label>Description of Feedback</label>
         <length>32768</length>
@@ -411,7 +406,6 @@
     <fields>
         <fullName>Platform__c</fullName>
         <defaultValue>&quot;WP1&quot;</defaultValue>
-        <externalId>false</externalId>
         <label>Platform</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -438,7 +432,6 @@
         <fullName>Product1__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Trying to tie product feedback to the product</description>
-        <externalId>false</externalId>
         <label>Product</label>
         <referenceTo>Product2</referenceTo>
         <relationshipLabel>Product Feedback</relationshipLabel>
@@ -730,7 +723,6 @@
     </fields>
     <fields>
         <fullName>Region__c</fullName>
-        <externalId>false</externalId>
         <label>Region</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -764,7 +756,6 @@
     </fields>
     <fields>
         <fullName>Report_Publish_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Report Publish Date</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -794,7 +785,6 @@
     </fields>
     <fields>
         <fullName>Type_Feedback__c</fullName>
-        <externalId>false</externalId>
         <label>Type</label>
         <required>true</required>
         <trackTrending>false</trackTrending>
@@ -982,11 +972,6 @@
         <columns>Description_of_Feedback__c</columns>
         <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>CREATEDBY_USER</field>
-            <operation>contains</operation>
-            <value>Sutton</value>
-        </filters>
         <label>All</label>
     </listViews>
     <nameField>
@@ -2961,7 +2946,7 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts />
+    <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>Require_Product_Feedback_Fields</fullName>

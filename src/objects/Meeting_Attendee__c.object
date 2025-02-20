@@ -154,7 +154,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Attendee_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Attendee Type</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -179,7 +178,6 @@
     <fields>
         <fullName>Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Contact</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Meeting Attendees</relationshipLabel>
@@ -191,7 +189,6 @@
     <fields>
         <fullName>Meeting__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Meeting</label>
         <referenceTo>Meeting__c</referenceTo>
         <relationshipLabel>Meeting Attendees</relationshipLabel>

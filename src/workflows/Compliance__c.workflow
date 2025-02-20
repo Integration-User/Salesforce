@@ -109,10 +109,6 @@
         <description>UK CAF Final Approval</description>
         <protected>false</protected>
         <recipients>
-            <recipient>jecusi@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
             <recipient>nkorpal@greenstreet.com</recipient>
             <type>user</type>
         </recipients>

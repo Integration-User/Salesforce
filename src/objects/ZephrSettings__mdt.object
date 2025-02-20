@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>AccessKey__c</fullName>
+        <description>access key for authentication at Zephr API</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>access key for authentication at Zephr API</inlineHelpText>
+        <label>Access key</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApiFieldName_ZephrAccountId__c</fullName>
+        <description>Salesforce api field name for the the zephr account id</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Salesforce api field name for the the zephr account id</inlineHelpText>
+        <label>ApiFieldName ZephrAccountId</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApiFieldName_ZephrCompanyId__c</fullName>
+        <description>Salesforce api field name for the the zephr company id</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Salesforce api field name for the the zephr company id</inlineHelpText>
+        <label>ApiFieldName ZephrCompanyId</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApiFieldName_ZephrGrantId__c</fullName>
+        <description>Salesforce api field name for the the zephr grant id</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Salesforce api field name for the the zephr grant id</inlineHelpText>
+        <label>ApiFieldName ZephrGrantId</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApiFieldName_ZephrUserId__c</fullName>
+        <description>Salesforce api field name for the the zephr user id</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Salesforce api field name for the the zephr user id</inlineHelpText>
+        <label>ApiFieldName ZephrUserId</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Type_Slug__c</fullName>
+        <defaultValue>&apos;company-type&apos;</defaultValue>
+        <description>Zephr Attribute Slug for Company Type</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Zephr Attribute Slug for Company Type</inlineHelpText>
+        <label>Company Type Slug</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Default_Site_Slug__c</fullName>
+        <description>Default site for the tenant. Used in API calls</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Default site for the tenant. Used in API calls.</inlineHelpText>
+        <label>Default Site Slug</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Description</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ProcessName__c</fullName>
+        <description>Name of the process which the metadata record is supposed to be used for</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Name of the process which the metadata record is supposed to be used for</inlineHelpText>
+        <label>Process Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductCode__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Product code</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecordTypeDeveloperNames__c</fullName>
+        <description>Record types which are applicable for the Zephr integration process</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Record types which are applicable for the Zephr integration process</inlineHelpText>
+        <label>Record Type Developer Names</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SecretKey__c</fullName>
+        <description>Secret key for authentication at Zephr API</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Secret key for authentication at Zephr API</inlineHelpText>
+        <label>Secret key</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TrialObjectFieldMapping__c</fullName>
+        <description>Mapping of properties of ZephrIntegrationService.UserGrant to fields of the trial object</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Mapping of properties of ZephrIntegrationService.UserGrant to fields of the trial object</inlineHelpText>
+        <label>Trial Object Field Mapping</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>TrialObjectRecordTypeDevName__c</fullName>
+        <description>Record type of the trial object</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Record type of the trial object</inlineHelpText>
+        <label>Trial Object Record Type DevName</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TrialObject__c</fullName>
+        <description>Name of the sObject which represents trials</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Name of the sObject which represents trials</inlineHelpText>
+        <label>Trial Object</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Describes content of the custom metadata types</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Describes content of the custom metadata types</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product mapping</fullName>
+                    <default>true</default>
+                    <label>Product mapping</label>
+                </value>
+                <value>
+                    <fullName>API access</fullName>
+                    <default>false</default>
+                    <label>API access</label>
+                </value>
+                <value>
+                    <fullName>Process settings</fullName>
+                    <default>false</default>
+                    <label>Process settings</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ZephrEntitlementId__c</fullName>
+        <description>Zephr entitlement Id mapping to the products in Salesforce (as displayed in the Label/DeveloperName of the metadata type record)</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Zephr entitlement Id mapping to the products in Salesforce (as displayed in the Label/DeveloperName of the metadata type record)</inlineHelpText>
+        <label>Zephr EntitlementId</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZephrTenant__c</fullName>
+        <description>Zephr tenant which the metadata is relevant for</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Zephr tenant which the metadata is relevant for</inlineHelpText>
+        <label>Zephr tenant</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Zephr Settings</label>
+    <listViews>
+        <fullName>API_Access</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>ZephrTenant__c</columns>
+        <columns>Default_Site_Slug__c</columns>
+        <columns>AccessKey__c</columns>
+        <columns>SecretKey__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>API access</value>
+        </filters>
+        <label>API Access</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>Type__c</columns>
+        <columns>ProductCode__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <pluralLabel>Zephr Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

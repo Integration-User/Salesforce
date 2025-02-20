@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Subscription Change</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Subscription Changes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Delinian Id --></label>
+        <name>Delinian_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delta Number Of Seats? --></label>
+        <name>Delta_No_Of_Seats__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Seats --></label>
+        <name>Number_of_Seats__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Subscription Changes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Product --></label>
+        <name>Order_Product__c</name>
+        <relationshipLabel><!-- Subscription Changes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- last order that made effect on the subscription --></help>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+        <relationshipLabel><!-- Subscription Changes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Synced</masterLabel>
+            <translation><!-- Synced --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Subscription to which the change is applied to. --></help>
+        <label><!-- Subscription --></label>
+        <name>Subscription__c</name>
+        <relationshipLabel><!-- Subscription Changes --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

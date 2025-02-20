@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>NextGen_Subscription_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>NextGen_Subscription_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>NG_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>NG_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Account__c</fields>
+        <fields>Number_of_Seats__c</fields>
+        <fields>Order__c</fields>
+        <label>NG Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Subscriptions_NG</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Delinian_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>Delinian Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Different_On_Zephr_Account__c</fullName>
+        <formula>(Id !=Zephr_Account__r.Subscription__c) &amp;&amp; (Zephr_Account__c != null)</formula>
+        <label>Different On Zephr Account?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Duration_Years__c</fullName>
+        <externalId>false</externalId>
+        <formula>ROUND((End_Date__c - Start_Date__c)/365,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is calculated as the difference between the start date and end date, in days, divided by 365, rounded to the nearest number of years. This ensures that subscriptions entered for slightly less than a year are treated as a whole year.</inlineHelpText>
+        <label>Duration (Years)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Earliest_Extension_Start_Date__c</fullName>
+        <inlineHelpText>Shows the earliest Start Date on any Subscription Product that is marked as an Extension</inlineHelpText>
+        <label>Earliest Extension Start Date</label>
+        <summarizedField>Subscription_Product__c.Start_Date__c</summarizedField>
+        <summaryFilterItems>
+            <field>Subscription_Product__c.Extension__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Subscription_Product__c.Subscription__c</summaryForeignKey>
+        <summaryOperation>min</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <inlineHelpText>This shows the latest end date of all the products on this subscription</inlineHelpText>
+        <label>End Date</label>
+        <summarizedField>Subscription_Product__c.End_Date__c</summarizedField>
+        <summaryForeignKey>Subscription_Product__c.Subscription__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Extension_End_Date__c</fullName>
+        <inlineHelpText>Shows the latest End Date of any Subscription Product that is marked as an Extension</inlineHelpText>
+        <label>Latest Extension End Date</label>
+        <summarizedField>Subscription_Product__c.End_Date__c</summarizedField>
+        <summaryFilterItems>
+            <field>Subscription_Product__c.Extension__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Subscription_Product__c.Subscription__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_End_Date__c</fullName>
+        <label>New End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Next_Quarterly_Order_Date__c</fullName>
+        <inlineHelpText>This shows the date that will be on the next quarterly Order. Note that the Order will be generated in advance of this date.</inlineHelpText>
+        <label>Next Quarterly Order Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Seats__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Seats</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used for sending email alerts to Opportunity Owner</description>
+        <inlineHelpText>Used for sending email alerts to Opportunity Owner</inlineHelpText>
+        <label>Opportunity Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SubscriptionsOppOwner</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions_NG</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used for capturing Order Product information on subscriptions. Once multiple products will be added to a single subscritpion this needs to be revisited.</description>
+        <label>Order Product</label>
+        <referenceTo>OrderItem</referenceTo>
+        <relationshipLabel>Subscriptions NG</relationshipLabel>
+        <relationshipName>Subscriptions_NG</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>last order that made effect on the subscription</description>
+        <inlineHelpText>last order that made effect on the subscription</inlineHelpText>
+        <label>Order</label>
+        <referenceTo>Order</referenceTo>
+        <relationshipLabel>Subscriptions NG</relationshipLabel>
+        <relationshipName>Subscriptions_NG</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Original_End_Date__c</fullName>
+        <inlineHelpText>This shows the latest End Date for Subscription Products that are NOT marked as an Extension</inlineHelpText>
+        <label>Original End Date</label>
+        <summarizedField>Subscription_Product__c.End_Date__c</summarizedField>
+        <summaryFilterItems>
+            <field>Subscription_Product__c.Extension__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Subscription_Product__c.Subscription__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Changes__c</fullName>
+        <label>Pending Changes</label>
+        <summaryFilterItems>
+            <field>Subscription_Change__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Subscription_Change__c.Subscription__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Print_Copy__c</fullName>
+        <label>Print Copy</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Id__c</fullName>
+        <description>Utility field to enable filtering of subscriptions in flows</description>
+        <externalId>false</externalId>
+        <formula>Order_Product__r.Product2.ZephrEntitlementId__c</formula>
+        <label>Zephr Product Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Products__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field displays all the products that are added to this Subscription</inlineHelpText>
+        <label>Products</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quarterly_Order_Trigger__c</fullName>
+        <description>Used for TD quarterly invoicing and any other brands thta may want to use it.</description>
+        <formula>( Next_Quarterly_Order_Date__c  - TODAY()) &lt;= 3</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is checked automatically when the next quarterly invoice should be generated</inlineHelpText>
+        <label>Quarterly Order Trigger</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rate_per_User_per_Month__c</fullName>
+        <label>Rate per User per Month</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Seats_Allocated__c</fullName>
+        <inlineHelpText>Displays the number of seats allocated for this subscription</inlineHelpText>
+        <label>Seats Allocated</label>
+        <summaryFilterItems>
+            <field>Subscription_User__c.Subscriber_Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Subscription_User__c.Subscription_NG__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Seats_Remaining__c</fullName>
+        <externalId>false</externalId>
+        <formula>Number_of_Seats__c - Seats_Allocated__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the number of seats remaining on this subscription</inlineHelpText>
+        <label>Seats Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <inlineHelpText>This shows the earliest start date of all the products on this subscription</inlineHelpText>
+        <label>Start Date</label>
+        <summarizedField>Subscription_Product__c.Start_Date__c</summarizedField>
+        <summaryForeignKey>Subscription_Product__c.Subscription__c</summaryForeignKey>
+        <summaryOperation>min</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <inlineHelpText>This field is set automatically when creating the Subscription</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Subscription_Statuses</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subscription_Label__c</fullName>
+        <description>This field is used in flow choices</description>
+        <externalId>false</externalId>
+        <formula>Name + &quot; - &quot; +  Products__c + &quot; - &quot; + TEXT(Number_of_Seats__c) + &quot; seats&quot; + &quot; - &quot; +  Opportunity__r.Name</formula>
+        <inlineHelpText>Displays the subscription number as well as product, account etc.</inlineHelpText>
+        <label>Subscription Label</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscription_Management_System__c</fullName>
+        <inlineHelpText>Select the subscription management system that is used for this subscription</inlineHelpText>
+        <label>Subscription Management System</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Subscription_Management_Systems</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Trigger_Subscriber_Activation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>We use this to force a record-triggered flow which activates any subscribers who should be activated and then sync them to Zephr.</description>
+        <inlineHelpText>Triggers the activation of subscription users and sync to Zephr</inlineHelpText>
+        <label>Trigger Subscriber Activation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Subscription_NG_Type</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>View_in_Zephr__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Zephr_Account__c != &apos;&apos;, HYPERLINK(&apos;https://console.zephr.com/b2b/companies-accounts/&apos;+ Zephr_Account__r.Zephr_Id__c , &apos;Open in Zephr&apos; , &apos;_blank&apos;), &apos;&apos;)</formula>
+        <label>View in Zephr</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zephr_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Zephr Account</label>
+        <referenceTo>Zephr_Account__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Zephr_Signup_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>If this box is checked, users added in Zephr will be created as Contacts in Salesforce and added to the Subscription.This field is only editable by administrators and should only be enabled for accounts who have SSO configured in Zephr.</inlineHelpText>
+        <label>Zephr Signup Enabled</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Subscription NG</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Products__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_of_Seats__c</columns>
+        <columns>Seats_Remaining__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Trial_Subscriptions</fullName>
+        <columns>NAME</columns>
+        <columns>Products__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>Individual</value>
+        </filters>
+        <label>Trial Subscriptions</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SUBS-{000000000}</displayFormat>
+        <label>Code</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Subscriptions NG</pluralLabel>
+    <searchLayouts>
+        <listViewButtons>Create_Quarterly_Orders</listViewButtons>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Products__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Number_of_Seats__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Seats_Remaining__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Individual_Can_Only_Have_1_Seat</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(  Type__c , &quot;Individual&quot;) &amp;&amp;
+Number_of_Seats__c &gt; 1</errorConditionFormula>
+        <errorDisplayField>Number_of_Seats__c</errorDisplayField>
+        <errorMessage>An Individual Subscription can only have 1 seat.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Oversubscription</fullName>
+        <active>true</active>
+        <errorConditionFormula>!$Permission.Bypass_Seats_Checks &amp;&amp;
+(Seats_Allocated__c &gt;  Number_of_Seats__c) &amp;&amp; 
+PRIORVALUE( Seats_Remaining__c )&gt; Seats_Remaining__c</errorConditionFormula>
+        <errorDisplayField>Number_of_Seats__c</errorDisplayField>
+        <errorMessage>You cannot add more users than the number of seats on the parent subscription</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Create_Quarterly_Orders</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create Quarterly Orders</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/flow/FPS_Screen_Generate_Quarterly_Orders_for_Subscriptions?retURL=https://nxg.lightning.force.com/lightning/o/Subscription__c/list?filterName=00B1v000009ekLBEAY</url>
+    </webLinks>
+</CustomObject>

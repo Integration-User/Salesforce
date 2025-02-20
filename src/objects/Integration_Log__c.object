@@ -167,7 +167,6 @@
     <fields>
         <fullName>Error_Message__c</fullName>
         <description>Error message from the webservice callout</description>
-        <externalId>false</externalId>
         <label>Error Message</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -187,7 +186,6 @@
     </fields>
     <fields>
         <fullName>Notes__c</fullName>
-        <externalId>false</externalId>
         <label>Notes</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -208,7 +206,6 @@
     <fields>
         <fullName>Request_Body__c</fullName>
         <description>Body of the callout request</description>
-        <externalId>false</externalId>
         <label>Request Body</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -218,7 +215,6 @@
     <fields>
         <fullName>Request_Header__c</fullName>
         <description>Request header from the callout</description>
-        <externalId>false</externalId>
         <label>Request Header</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -228,7 +224,6 @@
     <fields>
         <fullName>Response_Body__c</fullName>
         <description>Body of the response received/sent to/from external system/application</description>
-        <externalId>false</externalId>
         <label>Response Body</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -250,7 +245,6 @@
         <fullName>Success__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Used to determine if the callout was successful or not</description>
-        <externalId>false</externalId>
         <label>Success</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -337,7 +331,12 @@
         <filters>
             <field>CREATED_DATE</field>
             <operation>equals</operation>
-            <value>LAST_N_DAYS:7</value>
+            <value>TODAY,YESTERDAY</value>
+        </filters>
+        <filters>
+            <field>Success__c</field>
+            <operation>equals</operation>
+            <value>0</value>
         </filters>
         <label>NS Logs</label>
     </listViews>

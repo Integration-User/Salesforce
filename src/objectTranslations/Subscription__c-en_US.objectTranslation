@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Subscription NG</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Subscriptions NG</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Subscriptions NG --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Delinian Id --></label>
+        <name>Delinian_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Different On Zephr Account? --></label>
+        <name>Different_On_Zephr_Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is calculated as the difference between the start date and end date, in days, divided by 365, rounded to the nearest number of years. This ensures that subscriptions entered for slightly less than a year are treated as a whole year. --></help>
+        <label><!-- Duration (Years) --></label>
+        <name>Duration_Years__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shows the earliest Start Date on any Subscription Product that is marked as an Extension --></help>
+        <label><!-- Earliest Extension Start Date --></label>
+        <name>Earliest_Extension_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This shows the latest end date of all the products on this subscription --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shows the latest End Date of any Subscription Product that is marked as an Extension --></help>
+        <label><!-- Latest Extension End Date --></label>
+        <name>Latest_Extension_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- New End Date --></label>
+        <name>New_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This shows the date that will be on the next quarterly Order. Note that the Order will be generated in advance of this date. --></help>
+        <label><!-- Next Quarterly Order Date --></label>
+        <name>Next_Quarterly_Order_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Seats --></label>
+        <name>Number_of_Seats__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for sending email alerts to Opportunity Owner --></help>
+        <label><!-- Opportunity Owner --></label>
+        <name>Opportunity_Owner__c</name>
+        <relationshipLabel><!-- Subscriptions NG --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Subscriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Product --></label>
+        <name>Order_Product__c</name>
+        <relationshipLabel><!-- Subscriptions NG --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- last order that made effect on the subscription --></help>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+        <relationshipLabel><!-- Subscriptions NG --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This shows the latest End Date for Subscription Products that are NOT marked as an Extension --></help>
+        <label><!-- Original End Date --></label>
+        <name>Original_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pending Changes --></label>
+        <name>Pending_Changes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print Copy --></label>
+        <name>Print_Copy__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Zephr Product Id --></label>
+        <name>Product_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field displays all the products that are added to this Subscription --></help>
+        <label><!-- Products --></label>
+        <name>Products__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is checked automatically when the next quarterly invoice should be generated --></help>
+        <label><!-- Quarterly Order Trigger --></label>
+        <name>Quarterly_Order_Trigger__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate per User per Month --></label>
+        <name>Rate_per_User_per_Month__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the number of seats allocated for this subscription --></help>
+        <label><!-- Seats Allocated --></label>
+        <name>Seats_Allocated__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the number of seats remaining on this subscription --></help>
+        <label><!-- Seats Remaining --></label>
+        <name>Seats_Remaining__c</name>
+    </fields>
+    <fields>
+        <help><!-- This shows the earliest start date of all the products on this subscription --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is set automatically when creating the Subscription --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the subscription number as well as product, account etc. --></help>
+        <label><!-- Subscription Label --></label>
+        <name>Subscription_Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the subscription management system that is used for this subscription --></help>
+        <label><!-- Subscription Management System --></label>
+        <name>Subscription_Management_System__c</name>
+    </fields>
+    <fields>
+        <help><!-- Triggers the activation of subscription users and sync to Zephr --></help>
+        <label><!-- Trigger Subscriber Activation --></label>
+        <name>Trigger_Subscriber_Activation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- View in Zephr --></label>
+        <name>View_in_Zephr__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zephr Account --></label>
+        <name>Zephr_Account__c</name>
+        <relationshipLabel><!-- Subscriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If this box is checked, users added in Zephr will be created as Contacts in Salesforce and added to the Subscription.This field is only editable by administrators and should only be enabled for accounts who have SSO configured in Zephr. --></help>
+        <label><!-- Zephr Signup Enabled --></label>
+        <name>Zephr_Signup_Enabled__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- An Individual Subscription can only have 1 seat. --></errorMessage>
+        <name>Individual_Can_Only_Have_1_Seat</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot add more users than the number of seats on the parent subscription --></errorMessage>
+        <name>Prevent_Oversubscription</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Quarterly_Orders --></label>
+        <name>Create_Quarterly_Orders</name>
+    </webLinks>
+</CustomObjectTranslation>

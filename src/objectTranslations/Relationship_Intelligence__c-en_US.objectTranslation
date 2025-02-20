@@ -9,76 +9,183 @@
         <value>Relationship Intelligence</value>
     </caseValues>
     <fields>
-        <label></label>
+        <label><!-- Account --></label>
         <name>Account__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Relationship Intelligence --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Active --></label>
         <name>Active__c</name>
     </fields>
     <fields>
-        <label></label>
+        <help><!-- Please include relevant context to budget including: Timing, Owner, and Process. --></help>
+        <label><!-- Budget Details --></label>
+        <name>Budget_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Customers stated budget. If a range is provided, please use an average amount. --></help>
+        <label><!-- Budget --></label>
+        <name>Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Buying Process --></label>
         <name>Buying_Process__c</name>
         <picklistValues>
             <masterLabel>Commit</masterLabel>
-            <translation></translation>
+            <translation><!-- Commit --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Evaluate</masterLabel>
-            <translation></translation>
+            <translation><!-- Evaluate --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Implement</masterLabel>
-            <translation></translation>
+            <translation><!-- Implement --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Plan</masterLabel>
-            <translation></translation>
+            <translation><!-- Plan --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Recognize</masterLabel>
-            <translation></translation>
+            <translation><!-- Recognize --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Search</masterLabel>
-            <translation></translation>
+            <translation><!-- Search --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Select</masterLabel>
-            <translation></translation>
+            <translation><!-- Select --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Track</masterLabel>
-            <translation></translation>
+            <translation><!-- Track --></translation>
         </picklistValues>
     </fields>
     <fields>
-        <help></help>
-        <label></label>
+        <label><!-- Competition --></label>
+        <name>Competition__c</name>
+        <picklistValues>
+            <masterLabel>Axiometrics</masterLabel>
+            <translation><!-- Axiometrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bloomberg</masterLabel>
+            <translation><!-- Bloomberg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broker Provided Information</masterLabel>
+            <translation><!-- Broker Provided Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CBRE (ERIX) and (EA (Econometric Advisors))</masterLabel>
+            <translation><!-- CBRE (ERIX) and (EA (Econometric Advisors)) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CoStar</masterLabel>
+            <translation><!-- CoStar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CompStak</masterLabel>
+            <translation><!-- CompStak --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crexi</masterLabel>
+            <translation><!-- Crexi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Datscha - MSCI</masterLabel>
+            <translation><!-- Datscha - MSCI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moody&apos;s/REIS</masterLabel>
+            <translation><!-- Moody&apos;s/REIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NIC Map</masterLabel>
+            <translation><!-- NIC Map --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oxford Economics</masterLabel>
+            <translation><!-- Oxford Economics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMA</masterLabel>
+            <translation><!-- PMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Week - for news</masterLabel>
+            <translation><!-- Property Week - for news --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RCA/MSCI</masterLabel>
+            <translation><!-- RCA/MSCI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RealPage</masterLabel>
+            <translation><!-- RealPage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sell Side Banks</masterLabel>
+            <translation><!-- Sell Side Banks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Status Quo</masterLabel>
+            <translation><!-- Status Quo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trepp</masterLabel>
+            <translation><!-- Trepp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yardi</masterLabel>
+            <translation><!-- Yardi --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Represents the department(s) that you are extracting relationship insights from. --></help>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+    </fields>
+    <fields>
+        <help><!-- What objectives is the client/prospect trying to achieve? What strategies are in place to achieve objectives and goals? --></help>
+        <label><!-- Goals --></label>
         <name>Goals__c</name>
     </fields>
     <fields>
-        <help></help>
-        <label></label>
+        <help><!-- Represents the primary individual you’re working with through the decision process. --></help>
+        <label><!-- Key Contact --></label>
+        <name>Key_Contact__c</name>
+        <relationshipLabel><!-- Relationship Intelligence --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What does the client/prospect need so they can overcome the challenges/problems/obstacles and achieve the goals and objectives? Hint: This doesn’t have to be a named Green Street product. --></help>
+        <label><!-- Needs --></label>
         <name>Needs__c</name>
     </fields>
     <fields>
-        <help></help>
-        <label></label>
+        <help><!-- If related competitor is unavailable in the “Competition” options, please provide additional insight here. --></help>
+        <label><!-- Other Competition --></label>
+        <name>Other_Competition__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is standing in the way of achieving goals and objectives? Are there obstacles or challenges? --></help>
+        <label><!-- Problems --></label>
         <name>Problems__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Related Opportunity --></label>
         <name>Related_Opportunity__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Relationship Intelligence --></relationshipLabel>
     </fields>
-    <layouts>
-        <layout>Relationship Intelligence Layout</layout>
-        <sections>
-            <label></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please provide additional information of the competitor. --></errorMessage>
+        <name>Require_Other_Competition</name>
+    </validationRules>
 </CustomObjectTranslation>

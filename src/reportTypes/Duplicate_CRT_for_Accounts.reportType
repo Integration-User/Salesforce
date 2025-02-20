@@ -267,16 +267,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Open_Opportunities__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Closed_Sales__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Company_Domain_Name__c</field>
             <table>Account</table>
         </columns>
@@ -391,6 +381,31 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>DuplicateRecordSet</field>
+            <table>Account.DuplicateRecordItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DuplicateRecordSet.Status__c</field>
+            <table>Account.DuplicateRecordItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DuplicateRecordSet.RecordCount</field>
+            <table>Account.DuplicateRecordItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DuplicateRecordSet.Name</field>
+            <table>Account.DuplicateRecordItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DuplicateRecordSet.DuplicateRule</field>
+            <table>Account.DuplicateRecordItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DuplicateRecordSet.Id</field>
             <table>Account.DuplicateRecordItems</table>
         </columns>
         <masterLabel>Duplicate Record Items</masterLabel>

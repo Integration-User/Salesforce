@@ -116,7 +116,6 @@
     <fields>
         <fullName>Advisory__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Advisory</label>
         <type>Checkbox</type>
     </fields>
@@ -133,7 +132,6 @@
     </fields>
     <fields>
         <fullName>Analysts__c</fullName>
-        <externalId>false</externalId>
         <label>Analysts</label>
         <required>false</required>
         <type>MultiselectPicklist</type>
@@ -914,6 +912,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Attendee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Attendee</label>
+        <referenceTo>CventEvents__Attendee__c</referenceTo>
+        <relationshipLabel>Tasks</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Bounced_Salesloft__c</fullName>
         <label>Bounced (Salesloft)</label>
         <required>false</required>
@@ -947,7 +955,6 @@
     <fields>
         <fullName>Campaign__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Campaign</label>
         <referenceTo>Campaign</referenceTo>
         <relationshipLabel>Activities</relationshipLabel>
@@ -964,7 +971,6 @@
     <fields>
         <fullName>Case__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Case</label>
         <referenceTo>Case</referenceTo>
         <relationshipLabel>Activities</relationshipLabel>
@@ -975,7 +981,6 @@
     <fields>
         <fullName>Client_Use_Case__c</fullName>
         <description>This will be a space for the team members to write in information on the use case for that client as discussed in the event</description>
-        <externalId>false</externalId>
         <label>Client Use Case</label>
         <required>false</required>
         <type>TextArea</type>
@@ -983,7 +988,6 @@
     <fields>
         <fullName>Co_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Co-Owner 1</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Activities</relationshipName>
@@ -992,7 +996,6 @@
     </fields>
     <fields>
         <fullName>Comments__c</fullName>
-        <externalId>false</externalId>
         <label>Comments</label>
         <required>false</required>
         <type>TextArea</type>
@@ -1030,7 +1033,6 @@
     <fields>
         <fullName>Date2__c</fullName>
         <description>Custom Date field to use on reports/dashboards</description>
-        <externalId>false</externalId>
         <formula>ActivityDate</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Date*</label>
@@ -1039,7 +1041,6 @@
     </fields>
     <fields>
         <fullName>Diagnostic_Discussion__c</fullName>
-        <externalId>false</externalId>
         <label>Diagnostic Discussion</label>
         <required>false</required>
         <type>Picklist</type>
@@ -1072,13 +1073,21 @@
         <fullName>Event_Audit__c</fullName>
         <defaultValue>false</defaultValue>
         <description>temp field for event audit</description>
-        <externalId>false</externalId>
         <label>Event Audit</label>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Cvent Event Number</label>
+        <referenceTo>CventEvents__Event__c</referenceTo>
+        <relationshipLabel>Tasks</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Feedback_Entered__c</fullName>
-        <externalId>false</externalId>
         <label>Feedback Entered?</label>
         <required>false</required>
         <type>Picklist</type>
@@ -1102,7 +1111,6 @@
     <fields>
         <fullName>GSA_Analyst__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>GSA Analyst</label>
         <lookupFilter>
             <active>true</active>
@@ -1135,7 +1143,6 @@
     <fields>
         <fullName>LID__Date_Sent__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Date Sent</label>
         <required>false</required>
         <type>DateTime</type>
@@ -1143,7 +1150,6 @@
     <fields>
         <fullName>LID__URL__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>URL</label>
         <required>false</required>
         <type>Url</type>
@@ -1172,7 +1178,6 @@
     <fields>
         <fullName>My_Team__c</fullName>
         <description>Allows for reporting based on manager, not just the role hierarchy</description>
-        <externalId>false</externalId>
         <formula>OR(
 Owner:User.Manager.Id =  $User.Id,
 Owner:User.Id =  $User.Id)</formula>
@@ -1187,7 +1192,6 @@ Owner:User.Id =  $User.Id)</formula>
     </fields>
     <fields>
         <fullName>Objective__c</fullName>
-        <externalId>false</externalId>
         <label>Objective</label>
         <required>false</required>
         <type>TextArea</type>
@@ -1209,7 +1213,6 @@ Owner:User.Id =  $User.Id)</formula>
     </fields>
     <fields>
         <fullName>Priority__c</fullName>
-        <externalId>false</externalId>
         <label>Priority</label>
         <required>false</required>
         <type>Picklist</type>
@@ -1443,6 +1446,16 @@ Owner:User.Id =  $User.Id)</formula>
                     <fullName>Green Street News: Europe</fullName>
                     <default>false</default>
                     <label>Green Street News: Europe</label>
+                </value>
+                <value>
+                    <fullName>Silver Package</fullName>
+                    <default>false</default>
+                    <label>Silver Package</label>
+                </value>
+                <value>
+                    <fullName>Exhibitor Package</fullName>
+                    <default>false</default>
+                    <label>Exhibitor Package</label>
                 </value>
                 <value>
                     <fullName>ABAlert</fullName>
@@ -1713,7 +1726,6 @@ SalesLoft1__SalesLoft_Replies_Count__c &gt; 0, 1, NULL)</formula>
     </fields>
     <fields>
         <fullName>Salesloft_Meeting_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Salesloft Meeting Type</label>
         <required>false</required>
         <type>TextArea</type>
@@ -1767,7 +1779,6 @@ SalesLoft1__SalesLoft_Replies_Count__c &gt; 0, 1, NULL)</formula>
     </fields>
     <fields>
         <fullName>Strategy__c</fullName>
-        <externalId>false</externalId>
         <label>Strategy</label>
         <required>false</required>
         <type>TextArea</type>
@@ -1786,7 +1797,6 @@ SalesLoft1__SalesLoft_Replies_Count__c &gt; 0, 1, NULL)</formula>
     </fields>
     <fields>
         <fullName>Training_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Training Type</label>
         <required>false</required>
         <type>Picklist</type>
@@ -1830,7 +1840,6 @@ SalesLoft1__SalesLoft_Replies_Count__c &gt; 0, 1, NULL)</formula>
     <fields>
         <fullName>Web_Demo__c</fullName>
         <description>Choose whether this event is a web demo</description>
-        <externalId>false</externalId>
         <label>Web Demo?</label>
         <required>false</required>
         <type>Picklist</type>
@@ -1864,7 +1873,6 @@ SalesLoft1__SalesLoft_Replies_Count__c &gt; 0, 1, NULL)</formula>
         <fullName>affectlayer__ChorusEngagement__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Engagement</label>
         <referenceTo>affectlayer__Engagement__c</referenceTo>
         <relationshipLabel>Activities</relationshipLabel>
@@ -1893,6 +1901,39 @@ SalesLoft1__SalesLoft_Replies_Count__c &gt; 0, 1, NULL)</formula>
         <required>false</required>
         <type>Text</type>
         <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>maps__BaseObjectId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Maps Base Object</label>
+        <referenceTo>maps__BaseObject__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>BaseObjectIds</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>maps__LayerId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Layer Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>maps__WA_AdvRouteWaypoint__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This is the default lookup to associate the Advanced Route Waypoint</description>
+        <label>Maps Advanced Route Waypoint</label>
+        <referenceTo>maps__AdvRouteWaypoint__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
     </fields>
     <listViews>
         <fullName>MyActivities</fullName>

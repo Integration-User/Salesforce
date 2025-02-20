@@ -1,0 +1,115 @@
+<!--
+  @description       :
+  @author            : Jonathan Fox - Modified for NextGen by David Redshaw
+  @group             :
+  @last modified on  : 15-04-2021
+  @last modified by  : David Redshaw
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   13-04-2021   Jonathan Fox   Initial Version
+  2.0   12-06-2021   David Redshaw  Initial NextGen Version
+
+-->
+<template>
+    <div class="slds-m-bottom_x-small">
+        <lightning-card title="Contacts" icon-name="standard:contact_list">
+            <div slot="actions">
+                <lightning-button variant="brand"
+                                  label="Add"
+                                  icon-name="utility:add"
+                                  icon-position="left"
+                                  onclick={onAddClick}
+                                  disabled={addBtnDisabled}>
+                </lightning-button>
+                <lightning-button label="Cancel" onclick={onCancelClick} class="slds-m-left_x-small"></lightning-button>
+            </div>
+            <lightning-layout class="slds-m-left_medium slds-m-right_medium slds-border_bottom">
+                <lightning-layout-item size="3">
+                    <span class="slds-form-element__label">Available Contacts: </span><span
+                        class="slds-text-title_bold">{_contactOptions.length}</span>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <span class="slds-form-element__label">Selected Contacts: </span><span class="slds-text-title_bold">{selectedContactsCount}</span>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" class="slds-text-align_right">
+                    <span class="slds-form-element__label">Remaining Seats for Subscription: </span><span
+                        class="slds-text-title_bold">{numberOfSeats}</span>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-m-left_medium slds-m-right_medium slds-m-top_medium slds-is-relative">
+                <lightning-spinner if:true={loading}></lightning-spinner>
+                <lightning-layout-item size="5">
+                    <lightning-combobox
+                            variant="label-hidden"
+                            name="pageRecordSize"
+                            label="Table rows:"
+                            value={pageRecordSize}
+                            placeholder="Table size..."
+                            options={recordsPerPagePicklist}
+                            onchange={onRecordsPerPageChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item size="2"></lightning-layout-item>
+                <lightning-layout-item size="5" class="slds-float_right">
+                    <lightning-input type="search" placeholder="Search Contacts" onchange={updateSearch}
+                                     variant="label-hidden">
+                    </lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div class="slds-m-top_small slds-box_border">
+                <lightning-datatable aria-multiselectable="true"
+                                     class="slds-table"
+                                     data={pagedData}
+                                     columns={_contactColumns}
+                                     key-field="Id"
+                                     selected-rows={selectedRows}
+                                     sorted-by={sortBy}
+                                     sorted-direction={sortDirection}
+                                     onsort={handleSortdata}
+                                     onrowselection={onRowSelected}
+                >
+
+                </lightning-datatable>
+            </div>
+            <lightning-layout class="slds-m-top_medium slds-m-right_small">
+                <lightning-layout-item size="4">
+                </lightning-layout-item>
+                <lightning-layout-item size="4">
+                    <div class="slds-align_absolute-center">
+                        <!--Previous button-->
+                        <lightning-button-icon
+                                name="buttonBackwards"
+                                icon-name="utility:back"
+                                onclick={handleButtonPrevious}
+                                class="slds-var-m-right_x-small"
+                                disabled={disabledPreviousButton}>
+                        </lightning-button-icon>
+                        <!--Current Status-->
+                        <span>Showing {currentPage} of {maxPages} results.</span>
+                        <!--Next button-->
+                        <lightning-button-icon
+                                name="buttonForwards"
+                                icon-name="utility:forward"
+                                onclick={handleButtonNext}
+                                class="slds-var-m-left_x-small"
+                                disabled={disabledNextButton}>
+                        </lightning-button-icon>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="4">
+                    <div class="slds-float_right">
+                        <lightning-button variant="brand"
+                                          label="Add"
+                                          icon-name="utility:add"
+                                          icon-position="left"
+                                          onclick={onAddClick}
+                                          disabled={addBtnDisabled}>
+                        </lightning-button>
+                        <lightning-button label="Cancel" onclick={onCancelClick}
+                                          class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </div>
+</template>

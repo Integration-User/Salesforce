@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Stores the configuration for the automatic task creation.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <fields>
+        <fullName>CventEvents__ActivityDateRule__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the logic of population the Task Activity Date field.</description>
+        <inlineHelpText>Indicates the logic of population the Task Activity Date field.</inlineHelpText>
+        <label>Activity Date Rule</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Specific Date</fullName>
+                    <default>false</default>
+                    <label>Specific Date</label>
+                </value>
+                <value>
+                    <fullName>A certain number of days after the object is created</fullName>
+                    <default>false</default>
+                    <label>A certain number of days after the object is created</label>
+                </value>
+                <value>
+                    <fullName>Cvent activity timestamp</fullName>
+                    <default>false</default>
+                    <label>Cvent activity timestamp</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__AssignmentRule__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the assignment rule for the Task owner.</description>
+        <inlineHelpText>Indicates the assignment rule for the Task owner.</inlineHelpText>
+        <label>Assignment Rule</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assign to Lead/Contact&apos;s owner</fullName>
+                    <default>false</default>
+                    <label>Assign to Lead/Contact&apos;s owner</label>
+                </value>
+                <value>
+                    <fullName>Assign to specific User</fullName>
+                    <default>false</default>
+                    <label>Assign to specific User</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the description of the Task Configuration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the description of the Task Configuration.</inlineHelpText>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the Task Configuration is active.</description>
+        <inlineHelpText>Indicates whether the Task Configuration is active.</inlineHelpText>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsExistingRecordScenario__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the Task will be created in case of a single SF prospect has been matched with Cvent contact.</description>
+        <inlineHelpText>Indicates whether the Task will be created in case of a single SF prospect has been matched with Cvent contact.</inlineHelpText>
+        <label>Single Match Scenario</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsMultipleExistingRecordsScenario__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the Task will be created in case of multiple SF prospects has been matched with Cvent contact.</description>
+        <inlineHelpText>Indicates whether the Task will be created in case of multiple SF prospects has been matched with Cvent contact.</inlineHelpText>
+        <label>Multiple Match Scenario</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsNewRecordScenario__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the Task will be created in case of new SF prospect has been created and associated with Cvent contact.</description>
+        <inlineHelpText>Indicates whether the Task will be created in case of new SF prospect has been created and associated with Cvent contact.</inlineHelpText>
+        <label>No Match Scenario</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__NumberOfDays__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the number of days between the Task creation and Task Activity Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the number of days between the Task creation and Task Activity Date.</inlineHelpText>
+        <label>Number Of Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the Salesforce object which triggers automatic task creation. Can be either Attendee__c or AttendeeActivity__c.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the Salesforce object which triggers automatic task creation. Can be either Attendee__c or AttendeeActivity__c.</inlineHelpText>
+        <label>Object</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__RelationRule__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the relation rule for the Task.</description>
+        <inlineHelpText>Indicates the assignment rule for the Task.</inlineHelpText>
+        <label>Related To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Event</fullName>
+                    <default>false</default>
+                    <label>Event</label>
+                </value>
+                <value>
+                    <fullName>Campaign most recently linked to event</fullName>
+                    <default>false</default>
+                    <label>Campaign most recently linked to event</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__TaskActivityDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Activity Date of the Task.</description>
+        <inlineHelpText>Activity Date of the Task.</inlineHelpText>
+        <label>Task Activity Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__TaskDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of the Task.</description>
+        <inlineHelpText>Description of the Task.</inlineHelpText>
+        <label>Task Description</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CventEvents__TaskOwner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Owner of the Task in case of &apos;Assign to specific User&apos; rule.</description>
+        <inlineHelpText>Owner of the Task in case of &apos;Assign to specific User&apos; rule.</inlineHelpText>
+        <label>Task Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TaskConfigurations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__TaskPriority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Priority of the Task.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Priority of the Task.</inlineHelpText>
+        <label>Task Priority</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__TaskStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of the Task.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of the Task.</inlineHelpText>
+        <label>Task Status</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__TaskSubject__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Subject of the Task.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject of the Task.</inlineHelpText>
+        <label>Task Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__Title__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Stores the title of the Task Configuration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the title of the Task Configuration.</inlineHelpText>
+        <label>Title</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Task Configuration</label>
+    <listViews>
+        <fullName>CventEvents__All</fullName>
+        <columns>NAME</columns>
+        <columns>CventEvents__Title__c</columns>
+        <columns>CventEvents__Description__c</columns>
+        <columns>CventEvents__IsActive__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>TC-{00000000}</displayFormat>
+        <label>Task Configuration Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Task Configurations</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <searchResultsAdditionalFields>CventEvents__Title__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CventEvents__Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CventEvents__IsActive__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <description>Add Subscribers NG</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Add Subscribers NG</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <!-- INPUT PARAMETERS --><property name="selectedSubscription_Input" label="Subscription - Input" description="Selected Subscription" type="@salesforce/schema/Subscription__c"/>
+            <property name="listExistingSubscriptionUsers_Input" label="Subscription Users Collection - Input" description="List of existing Subscription Users" type="@salesforce/schema/Subscription_User__c[]"/>
+            <property name="listAccountContacts_Input" label="Contact Collection - Input" description="List of Contacts" type="@salesforce/schema/Contact[]"/>
+            <!-- OUTPUT PARAMETERS --><property name="listSelectedContacts_Output" label="Selected Contacts - Output" type="@salesforce/schema/Contact[]"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -144,7 +144,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Campaign</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -152,7 +152,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Campaign</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -217,7 +217,6 @@
     <fields>
         <fullName>Audience_URL__c</fullName>
         <description>URL to access the webinar</description>
-        <externalId>false</externalId>
         <inlineHelpText>URL to access the webinar</inlineHelpText>
         <label>Audience URL</label>
         <required>false</required>
@@ -232,6 +231,26 @@
     </fields>
     <fields>
         <fullName>CurrencyIsoCode</fullName>
+    </fields>
+    <fields>
+        <fullName>CventEvents__EventStub__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Event Stub</label>
+        <length>36</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__SessionStub__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Session Stub</label>
+        <length>36</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Data_Quality_Description__c</fullName>
@@ -260,6 +279,16 @@
         <fullName>EndDate</fullName>
     </fields>
     <fields>
+        <fullName>Event_Cost_Centre__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>CVENT app field - unique identifier from Salesforce to Netsuite</inlineHelpText>
+        <label>Event Cost Centre</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Event_ID__c</fullName>
         <caseSensitive>false</caseSensitive>
         <description>unique event identifier</description>
@@ -273,7 +302,6 @@
     <fields>
         <fullName>Event_Time__c</fullName>
         <description>This is the published date/time of the event.  e.g., Thu, 30 Apr 2009 12:19 PDT</description>
-        <externalId>false</externalId>
         <label>Event Time</label>
         <required>false</required>
         <type>DateTime</type>
@@ -281,7 +309,6 @@
     <fields>
         <fullName>Event_Title__c</fullName>
         <description>The main tagline or title for the event. Typically under 100 characters.</description>
-        <externalId>false</externalId>
         <label>Event Title</label>
         <required>true</required>
         <type>TextArea</type>
@@ -1211,6 +1238,60 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>FullAccess</sharingModel>
+    <webLinks>
+        <fullName>CventEvents__AutomatedInvitation</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Automated Invitation</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__CampaignAutoInviteConfigurationTab</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>CventEvents__LinkEventsToCampaign</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Link Cvent Events</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__CampaignManagementSettingsTab</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>CventEvents__SendInvitation</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Send Invitation</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__CampaignManagementTab</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
     <webLinks>
         <fullName>ViewAllCampaignMembers</fullName>
         <availability>online</availability>

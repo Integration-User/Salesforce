@@ -1,0 +1,51 @@
+<apex:page standardController="CventEvents__Nomination__c" recordSetvar="nominations" extensions="CventEvents.NominationBulkApproveRejectController">
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, '_colors.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'components/_toast.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'tachyons/_spacing.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'tachyons/_flexbox.css')}" />
+
+    <apex:slds />
+    <apex:includeLightning />
+
+    <div class="slds-scope">
+        <div id="lcNominationBulkApproveBody" class="slds-col slds-align-middle">
+            <div id="lcNominationBulkApproveSpinner" class="slds-spinner_container">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner--neutral">
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+        <a id="linkToViewList" href="#"></a>
+    </div>
+
+    <script type="text/javascript">
+
+        document.getElementById('lcNominationBulkApproveBody').addEventListener("redirectTo", event => {
+            event.stopImmediatePropagation();
+            const link = document.getElementById("linkToViewList");
+            link.href = event.detail.data;
+            link.click();
+        });
+
+        const namespace = '{!JSENCODE(namespace)}';
+
+        const nominationIds = [];
+        <apex:repeat value="{!selectedNominations}" var="nomination">
+            nominationIds.push('{!JSENCODE(nomination.Id)}');
+        </apex:repeat>
+
+            $Lightning.use(namespace + ":ltngDependencyApp",
+                function () {
+                    $Lightning.createComponent(namespace + ":bulkApproveRejectNomination",
+                        {
+                            'nominationIds': nominationIds,
+                            'action': 'approveNominations'
+                        },
+                        "lcNominationBulkApproveBody",
+                        function () {
+                            document.getElementById('lcNominationBulkApproveSpinner').className += ' slds-hide';
+                        });
+                });
+    </script>
+</apex:page>

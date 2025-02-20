@@ -60,10 +60,10 @@
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>My_Opportunity_Split__c</fullName>
-        <externalId>false</externalId>
         <formula>SplitOwnerId = $User.Id</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>My Opportunity Split</label>
+        <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
@@ -76,6 +76,7 @@
         <formula>Id</formula>
         <label>Opportunity Split ID</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -84,6 +85,7 @@
     </fields>
     <fields>
         <fullName>SplitNote</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>SplitOwnerId</fullName>
@@ -91,6 +93,7 @@
     </fields>
     <fields>
         <fullName>SplitPercentage</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>SplitTypeId</fullName>

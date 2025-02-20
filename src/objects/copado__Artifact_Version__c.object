@@ -167,7 +167,6 @@
     <fields>
         <fullName>copado__Artifact__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Package</label>
         <referenceTo>copado__Artifact__c</referenceTo>
         <relationshipLabel>Package Versions</relationshipLabel>
@@ -193,7 +192,6 @@
     <fields>
         <fullName>copado__Data_JSON__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Data JSON</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -215,7 +213,6 @@
         <fullName>copado__Is_released__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Package versions are being created as beta and you can promote them to be released. When a version is released this checkbox will be checked.</inlineHelpText>
         <label>Is released</label>
         <trackTrending>false</trackTrending>
@@ -273,7 +270,6 @@
         <fullName>copado__Release__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Release</label>
         <referenceTo>copado__Release__c</referenceTo>
         <relationshipName>Artifact_Versions</relationshipName>
@@ -297,7 +293,6 @@
     <fields>
         <fullName>copado__Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Draft indicates that a placeholder record has been created.
 
 Pre-Release indicates a package version that has been generated but not yet promoted or is not ready for release. 
@@ -381,7 +376,6 @@ Open, Locked and Cancelled are used for packages related to User Story bundles.<
         <fullName>copado__User_Story__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>User Story</label>
         <referenceTo>copado__User_Story__c</referenceTo>
         <relationshipLabel>Bundle Versions</relationshipLabel>

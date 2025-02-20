@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Maps 2 figure ISO codes to 3 figure ISO codes and Numeric codes. Example can be found here - https://www.iban.com/country-codes</description>
+    <fields>
+        <fullName>Country_Name__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Country Name</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Numeric_ISO_Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Numeric ISO Code</label>
+        <length>3</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>X2_Fig_ISO_Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>2 Fig ISO Code</label>
+        <length>2</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>X3_Fig_ISO_Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>3 Fig ISO Code</label>
+        <length>3</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>ISO Map</label>
+    <listViews>
+        <fullName>All_Countries</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>Country_Name__c</columns>
+        <columns>X2_Fig_ISO_Code__c</columns>
+        <columns>X3_Fig_ISO_Code__c</columns>
+        <columns>Numeric_ISO_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Countries</label>
+    </listViews>
+    <pluralLabel>ISO Maps</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,50 @@
+<apex:page sidebar="false" standardController="CventEvents__SurveyProgram__c" extensions="CventEvents.LightningComponentController">
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'components/_spinner.css')}"/>
+    <apex:includeLightning />
+
+    <div id="loading-spinner-container" class="spinner__container">
+        <div role="status" class="spinner spinner_small">
+            <div class="spinner__dot-a"></div>
+            <div class="spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <div id="surveyProgramDeletionContainer"></div>
+    <a id="linkToViewList" href="#"></a>
+    <script>
+
+        document.getElementById('surveyProgramDeletionContainer').addEventListener("redirectTo", event => {
+            event.stopImmediatePropagation();
+            const link = document.getElementById("linkToViewList");
+            link.href = event.detail.data;
+            link.click();
+        });
+
+        const namespace = '{!JSENCODE(namespace)}';
+        const recordId = '{!JSENCODE($CurrentPage.parameters.id)}';
+        $Lightning.use(namespace + ":ltngDependencyApp",
+            function () {
+                $Lightning.createComponent(namespace + ":surveyProgramDeletion",
+                    {
+                        'recordId': recordId,
+                    },
+                    "surveyProgramDeletionContainer",
+                    function (component) {
+                        const spinnerContainer = document.getElementById("loading-spinner-container");
+                        spinnerContainer.style.display = 'none';
+                    }
+                );
+            });
+    </script>
+
+    <style>
+        html body.sfdcBody, .bodyDiv .outerNoSidebar, .slds-scope {
+            padding: 0;
+        }
+
+        #loading-spinner-container {
+            position: relative;
+            min-height: 5rem;
+        }
+    </style>
+</apex:page>

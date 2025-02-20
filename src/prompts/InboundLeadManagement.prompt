@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Inbound Lead Management</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>View Training</actionButtonLabel>
+        <actionButtonLink>https://greenst.sharepoint.com/:p:/r/sites/Commercial/Shared%20Documents/All%20Sales%20Team%20Library/Commercial%20Enablement/Salesforce/Administration/Trainings/New%202024%20Lead%20Management%20Process.pptx?d=w46f084aa4bfd49bdb8ca8f935f032c3a&amp;csf=1&amp;web=1&amp;e=4PeAf8</actionButtonLink>
+        <body>&lt;p&gt;Welcome to February AND a brand new lead management process that will help us engage better with prospective clients, stay organized as we work across teams and gain clarity into success metrics! Those impacted have been trained, but please feel free to review the documentation below if you&apos;d like to understand the overall changes/impact. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Happy Prospecting :)&lt;/p&gt;</body>
+        <customApplication>Green_Street_Advisors</customApplication>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Changes are LIVE!</header>
+        <isPublished>true</isPublished>
+        <masterLabel>Inbound Lead Management</masterLabel>
+        <publishedDate>2024-02-01</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2024-01-31</startDate>
+        <targetPageKey1>home</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>New Inbound Lead Management</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Id}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>00ef4000001FJbxAAG</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_gsa sales user</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

@@ -165,7 +165,6 @@
     <fields>
         <fullName>Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Trip Book Meetings</relationshipLabel>
@@ -176,7 +175,6 @@
     </fields>
     <fields>
         <fullName>Conversation__c</fullName>
-        <externalId>false</externalId>
         <label>Conversation</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -185,7 +183,6 @@
     </fields>
     <fields>
         <fullName>Key_Themes__c</fullName>
-        <externalId>false</externalId>
         <label>Key Themes</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -194,7 +191,6 @@
     </fields>
     <fields>
         <fullName>Last_Visit_Notes__c</fullName>
-        <externalId>false</externalId>
         <label>Last Visit Notes</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -223,7 +219,6 @@
     </fields>
     <fields>
         <fullName>Meeting_Completed__c</fullName>
-        <externalId>false</externalId>
         <formula>Meeting_Date_Time__c &lt; NOW()</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Meeting Completed</label>
@@ -232,7 +227,6 @@
     </fields>
     <fields>
         <fullName>Meeting_Date_Time__c</fullName>
-        <externalId>false</externalId>
         <label>Meeting Date/Time</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -262,7 +256,6 @@
     <fields>
         <fullName>Trip_Book__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Trip Book</label>
         <referenceTo>Trip_Books__c</referenceTo>
         <relationshipLabel>Meetings</relationshipLabel>

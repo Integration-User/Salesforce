@@ -242,7 +242,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -250,7 +250,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Lead_Record_Page</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -275,7 +275,7 @@
             <default>true</default>
         </values>
         <values>
-            <fullName>Sales Qualified</fullName>
+            <fullName>Sales_Qualified</fullName>
             <default>false</default>
         </values>
         <values>
@@ -300,16 +300,17 @@
             <default>true</default>
         </values>
         <values>
-            <fullName>Sales Qualified</fullName>
+            <fullName>Sales_Qualified</fullName>
             <default>false</default>
         </values>
     </businessProcesses>
-    <compactLayoutAssignment>Leads_Custom_Compact_Layout</compactLayoutAssignment>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <compactLayouts>
         <fullName>Leads_Custom_Compact_Layout</fullName>
         <fields>Name</fields>
         <fields>Company</fields>
         <fields>Title</fields>
+        <fields>Phone</fields>
         <fields>LeadSource</fields>
         <fields>Lead_Classification__c</fields>
         <fields>HasOptedOutOfEmail</fields>
@@ -341,7 +342,6 @@
         <fullName>Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Leads associated with this account.</description>
-        <externalId>false</externalId>
         <label>Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Leads</relationshipLabel>
@@ -350,6 +350,20 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActionCadenceAssigneeId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActionCadenceId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActionCadenceState</fullName>
+    </fields>
+    <fields>
+        <fullName>ActiveTrackerCount</fullName>
     </fields>
     <fields>
         <fullName>Address</fullName>
@@ -363,7 +377,6 @@
     </fields>
     <fields>
         <fullName>Assigned_Date__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Capture the date/time of when a lead was moved out of a queue</inlineHelpText>
         <label>Assigned Date</label>
         <required>false</required>
@@ -502,7 +515,6 @@
     <fields>
         <fullName>BDR_Referred_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>BDR Referred By</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Leads_2</relationshipName>
@@ -514,7 +526,6 @@
     <fields>
         <fullName>Blog_and_Market_Currents_Newsletter__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Blog and Market Currents Newsletter</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -522,7 +533,6 @@
     </fields>
     <fields>
         <fullName>CRE_Exposure__c</fullName>
-        <externalId>false</externalId>
         <label>CRE Exposure</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -604,7 +614,6 @@
     <fields>
         <fullName>Campaign__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Campaign</label>
         <referenceTo>Campaign</referenceTo>
         <relationshipLabel>Leads</relationshipLabel>
@@ -621,7 +630,6 @@
     </fields>
     <fields>
         <fullName>Company_Segment__c</fullName>
-        <externalId>false</externalId>
         <label>Company Segment</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -634,7 +642,6 @@
     </fields>
     <fields>
         <fullName>Company_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Company Typeold</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -647,7 +654,6 @@
     </fields>
     <fields>
         <fullName>Company_Type_new__c</fullName>
-        <externalId>false</externalId>
         <label>Company Type</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -662,7 +668,6 @@
         <fullName>Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>For Referral Process</description>
-        <externalId>false</externalId>
         <label>Main Contact</label>
         <lookupFilter>
             <active>true</active>
@@ -699,6 +704,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CventEvents__ContactStub__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Cvent Contact Stub</label>
+        <length>36</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>DOZISF__ZoomInfo_Company_ID__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -713,7 +730,6 @@
     <fields>
         <fullName>DOZISF__ZoomInfo_Enrich_Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>ZoomInfo Enrich Status</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -749,7 +765,6 @@
         <fullName>DOZISF__ZoomInfo_First_Updated__c</fullName>
         <deprecated>false</deprecated>
         <description>Date and time when the record was first created or updated by ZoomInfo</description>
-        <externalId>false</externalId>
         <label>ZoomInfo First Updated</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -784,7 +799,6 @@
         <fullName>DOZISF__ZoomInfo_Last_Updated__c</fullName>
         <deprecated>false</deprecated>
         <description>Date and time when the record was last created or updated by ZoomInfo</description>
-        <externalId>false</externalId>
         <label>ZoomInfo Last Updated</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -857,7 +871,6 @@
     </fields>
     <fields>
         <fullName>Disqualified_Context__c</fullName>
-        <externalId>false</externalId>
         <label>Disqualified Context</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -873,7 +886,6 @@
         <fullName>EU__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Shows if Sales Region team is Europe</description>
-        <externalId>false</externalId>
         <inlineHelpText>Is Sales Team EU?</inlineHelpText>
         <label>EU</label>
         <trackFeedHistory>false</trackFeedHistory>
@@ -889,7 +901,6 @@
     <fields>
         <fullName>European_CPPI__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>European CPPI</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -898,7 +909,6 @@
     <fields>
         <fullName>European_Webinars_and_Featured_Insights__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>European Webinars and Featured Insights</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -912,7 +922,6 @@
     </fields>
     <fields>
         <fullName>Firm_AUM_Portfolio_Size_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>What is your firm’s AUM (Assets Under Management)/portfolio size?</inlineHelpText>
         <label>Firm AUM/Portfolio Size Mktg Identified.</label>
         <required>false</required>
@@ -957,6 +966,12 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>FirstCallDateTime</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstEmailDateTime</fullName>
+    </fields>
+    <fields>
         <fullName>FitScore__c</fullName>
         <description>Receives FitScore from HubSpot</description>
         <externalId>false</externalId>
@@ -971,7 +986,6 @@
     </fields>
     <fields>
         <fullName>Former_Client__c</fullName>
-        <externalId>false</externalId>
         <label>Former Client?</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -996,7 +1010,6 @@
     </fields>
     <fields>
         <fullName>GS_Relationship__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Determines the matched account’s client status</inlineHelpText>
         <label>GS Relationship</label>
         <required>false</required>
@@ -1058,7 +1071,6 @@
     </fields>
     <fields>
         <fullName>Geographic_Exposure__c</fullName>
-        <externalId>false</externalId>
         <label>Geographic Exposure</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1071,7 +1083,6 @@
     </fields>
     <fields>
         <fullName>Geographies_of_Interest_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which geographic regions are of interest to you? Check all that apply.</inlineHelpText>
         <label>Geographies of Interest Mktg Identified.</label>
         <required>false</required>
@@ -1154,7 +1165,6 @@
     </fields>
     <fields>
         <fullName>Inbound_Lead__c</fullName>
-        <externalId>false</externalId>
         <formula>IF( ISPICKVAL(LeadSource , &quot;Marketing Qualified&quot;) , TRUE,
 IF( ISPICKVAL(LeadSource , &quot;Inquiry&quot;) , TRUE,
 IF( ISPICKVAL(LeadSource , &quot;Digital Campaign&quot;) , TRUE,
@@ -1184,7 +1194,6 @@ FALSE))))))))))</formula>
     </fields>
     <fields>
         <fullName>Inquiry_Type__c</fullName>
-        <externalId>false</externalId>
         <label>Inquiry Type</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1204,7 +1213,6 @@ FALSE))))))))))</formula>
     </fields>
     <fields>
         <fullName>Interest__c</fullName>
-        <externalId>false</externalId>
         <label>Interest</label>
         <required>false</required>
         <trackFeedHistory>true</trackFeedHistory>
@@ -1255,7 +1263,6 @@ FALSE))))))))))</formula>
     </fields>
     <fields>
         <fullName>Last_Page_Seen__c</fullName>
-        <externalId>false</externalId>
         <label>Last Page Seen</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1291,7 +1298,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Lead_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Lead Contact</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Leads (Lead Contact)</relationshipLabel>
@@ -1368,7 +1374,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>LinkedIn_URL__c</fullName>
-        <externalId>false</externalId>
         <label>LinkedIn URL</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1388,7 +1393,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Marketing_Identified_Country_lead__c</fullName>
-        <externalId>false</externalId>
         <label>Marketing Identified Country</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2583,7 +2587,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Marketing_Identified_State_lead__c</fullName>
-        <externalId>false</externalId>
         <label>Marketing Identified State</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2923,7 +2926,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Minimum_Advisory_Fee_50k__c</fullName>
-        <externalId>false</externalId>
         <label>Typical Advisory Minimum (6-figures)</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2974,7 +2976,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Most_Recent_Marketing_Activity__c</fullName>
         <description>Pulled in from Hubspot</description>
-        <externalId>false</externalId>
         <label>Most Recent Marketing Activity</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2983,7 +2984,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>My_Referral__c</fullName>
-        <externalId>false</externalId>
         <formula>$User.Id =  Referred_By_Lead__r.Id</formula>
         <label>My Referral</label>
         <trackHistory>false</trackHistory>
@@ -2993,7 +2993,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <fullName>NA__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Shows if Sales Region Team is Norht America</description>
-        <externalId>false</externalId>
         <inlineHelpText>Is Sales Team NA?</inlineHelpText>
         <label>NA</label>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3003,7 +3002,7 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>Needs__c</fullName>
@@ -3016,7 +3015,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Next_Outreach_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Next Outreach Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3030,7 +3028,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Number_of_Acq_Disp_Executed_Per_Year__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>How many acquisitions/dispositions does your firm typically execute in a year?</inlineHelpText>
         <label>Number of Acq/Disp Executed Per Year.</label>
         <required>false</required>
@@ -3084,7 +3081,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Other_Contact_Champion__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Other Contact/Champion</label>
         <lookupFilter>
             <active>true</active>
@@ -3124,7 +3120,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Part_of_Renewal__c</fullName>
-        <externalId>false</externalId>
         <label>Part of Renewal?</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3159,7 +3154,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Person_Stage__c</fullName>
         <description>Populated through SalesLoft Person Stage field</description>
-        <externalId>false</externalId>
         <label>Person Stage</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3226,7 +3220,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Portfolio_Turnover_Per_Year__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>If you have greater than 0 acquisitions/dispositions, how much of your portfolio do you turn over each year?</inlineHelpText>
         <label>Portfolio Turnover Per Year.</label>
         <required>false</required>
@@ -3273,11 +3266,63 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Press_Releases__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Press Releases</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Brand_Group__c</fullName>
+        <description>To match Opportunity defintions.</description>
+        <inlineHelpText>Primary brand group for this Lead (will be transferred to the opportunity once converted)</inlineHelpText>
+        <label>Primary Brand Group</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Primary_Business_Unit__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>Brand_Groups</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>MI</controllingFieldValue>
+                <controllingFieldValue>AMS</controllingFieldValue>
+                <valueName>IJGlobal</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Primary_Brand__c</fullName>
+        <description>To match Opportunity defintions.</description>
+        <inlineHelpText>Primary brand for this Lead (will be transferred to the opportunity once converted)</inlineHelpText>
+        <label>Primary Brand</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Primary_Brand_Group__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>Brands</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>IJGlobal</controllingFieldValue>
+                <valueName>IJGlobal</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Primary_Business_Unit__c</fullName>
+        <description>To match Opportunity defintions.</description>
+        <inlineHelpText>Primary business unit for this Lead (will be transferred to the opportunity once converted)</inlineHelpText>
+        <label>Primary Business Unit</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Business_Units</valueSetName>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Problems__c</fullName>
@@ -3291,7 +3336,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Product_Interest_1__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Product Interest 1</label>
         <lookupFilter>
             <active>true</active>
@@ -3318,7 +3362,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Product_Interest_2__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Product Interest 2</label>
         <lookupFilter>
             <active>true</active>
@@ -3344,7 +3387,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Product_Interest_Marketing__c</fullName>
-        <externalId>false</externalId>
         <label>Product Interest</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3420,7 +3462,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Product_Interest__c</fullName>
-        <externalId>false</externalId>
         <label>Product Interest</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3469,7 +3510,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Professional_Function__c</fullName>
-        <externalId>false</externalId>
         <label>Professional Function</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3526,7 +3566,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Publicly_Traded__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Publicly Traded?</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -3534,7 +3573,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Qualified_Date__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Populates when the lead status is moved to disqualified or qualified</inlineHelpText>
         <label>Qualified Date</label>
         <required>false</required>
@@ -3672,7 +3710,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Questions_Comments__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>This field maps to the Opportunity on conversion of the lead.</inlineHelpText>
         <label>Questions &amp; Comments</label>
         <length>131000</length>
@@ -3689,7 +3726,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Reason_Disqualified__c</fullName>
-        <externalId>false</externalId>
         <label>Reason Disqualified</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3849,7 +3885,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>Referral_Reason__c</fullName>
         <description>What is the compelling reason for this referral.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Compelling reason for referral.</inlineHelpText>
         <label>Referral Reason</label>
         <length>32768</length>
@@ -3905,7 +3940,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Research_Data_in_Role_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which of the following describe how you use real estate research/data in your role?  Check all that apply.</inlineHelpText>
         <label>Research/Data in Role Mktg Identified.</label>
         <required>false</required>
@@ -3957,12 +3991,19 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Revisit_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Revisit Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SDO_Conversion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SDO Conversion</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>SalesLoft1__Active_Lead__c</fullName>
@@ -3996,7 +4037,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <fullName>SalesLoft1__Most_Recent_Cadence_Next_Step_Due_Date__c</fullName>
         <deprecated>false</deprecated>
         <description>Next SalesLoft step due date.</description>
-        <externalId>false</externalId>
         <label>Most Recent Cadence - Next Step Due Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4019,7 +4059,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Sales_Type_for_ReferralOpps__c</fullName>
-        <externalId>false</externalId>
         <label>Sales Type for ReferralOpps</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4058,6 +4097,9 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         </valueSet>
     </fields>
     <fields>
+        <fullName>ScheduledResumeDateTime</fullName>
+    </fields>
+    <fields>
         <fullName>Sector_Interests_Lead__c</fullName>
         <label>Sector Interests</label>
         <required>false</required>
@@ -4072,7 +4114,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Sectors_of_Interest_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which property sectors are of interest to you?  Check all that apply.</inlineHelpText>
         <label>Sectors of Interest Mktg Identified.</label>
         <required>false</required>
@@ -4158,8 +4199,110 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Seniority__c</fullName>
+        <label>Seniority</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Associate</fullName>
+                    <default>false</default>
+                    <label>Associate</label>
+                </value>
+                <value>
+                    <fullName>Executive</fullName>
+                    <default>false</default>
+                    <label>Executive</label>
+                </value>
+                <value>
+                    <fullName>Junior</fullName>
+                    <default>false</default>
+                    <label>Junior</label>
+                </value>
+                <value>
+                    <fullName>CEO / Head of Organisation</fullName>
+                    <default>false</default>
+                    <label>CEO / Head of Organisation</label>
+                </value>
+                <value>
+                    <fullName>Consultant</fullName>
+                    <default>false</default>
+                    <label>Consultant</label>
+                </value>
+                <value>
+                    <fullName>Head of / Director / Senior Mgmt</fullName>
+                    <default>false</default>
+                    <label>Head of / Director / Senior Mgmt</label>
+                </value>
+                <value>
+                    <fullName>President</fullName>
+                    <default>false</default>
+                    <label>President</label>
+                </value>
+                <value>
+                    <fullName>Manager</fullName>
+                    <default>false</default>
+                    <label>Manager</label>
+                </value>
+                <value>
+                    <fullName>Middle Manager</fullName>
+                    <default>false</default>
+                    <label>Middle Manager</label>
+                </value>
+                <value>
+                    <fullName>Assistant Manager</fullName>
+                    <default>false</default>
+                    <label>Assistant Manager</label>
+                </value>
+                <value>
+                    <fullName>Junior Management</fullName>
+                    <default>false</default>
+                    <label>Junior Management</label>
+                </value>
+                <value>
+                    <fullName>Non Management</fullName>
+                    <default>false</default>
+                    <label>Non Management</label>
+                </value>
+                <value>
+                    <fullName>CEO / Managing Director / C-Suite</fullName>
+                    <default>false</default>
+                    <label>CEO / Managing Director / C-Suite</label>
+                </value>
+                <value>
+                    <fullName>Board / President / Partner / Owner</fullName>
+                    <default>false</default>
+                    <label>Board / President / Partner / Owner</label>
+                </value>
+                <value>
+                    <fullName>VP / Head of Department / Director</fullName>
+                    <default>false</default>
+                    <label>VP / Head of Department / Director</label>
+                </value>
+                <value>
+                    <fullName>Manager / Lead / Specialist</fullName>
+                    <default>false</default>
+                    <label>Manager / Lead / Specialist</label>
+                </value>
+                <value>
+                    <fullName>Non - Managerial</fullName>
+                    <default>false</default>
+                    <label>Non - Managerial</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Sourced_By__c</fullName>
-        <externalId>false</externalId>
         <label>Sourced By</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4199,7 +4342,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Subscribe_to_Competitors_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <label>Subscribe to Competitors Mktg Identifie.</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4256,7 +4398,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Team__c</fullName>
-        <externalId>false</externalId>
         <label>Team</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4316,7 +4457,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Timing_to_Subscribe_to_Next_RE_Provider__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>When do you anticipate subscribing to your next research provider?</inlineHelpText>
         <label>Timing to Subscribe to Next RE Provider</label>
         <required>false</required>
@@ -4362,7 +4502,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>UK_Markets_of_Interest_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which markets within United Kingdom/Continental Europe are you interested in? (Check all that apply)</inlineHelpText>
         <label>UK Markets of Interest Mktg Identified.</label>
         <required>false</required>
@@ -4394,7 +4533,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>US_Markets_of_Interest_Mktg_Identified__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Which markets within the U.S and Canada are you interested in? (Check all that apply)</inlineHelpText>
         <label>US Markets of Interest Mktg Identified.</label>
         <required>false</required>
@@ -4439,7 +4577,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>U_S_CPPI__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>U.S. CPPI</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -4448,7 +4585,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>U_S_Webinars_and_Featured_Insights__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>U.S. Webinars and Featured Insights</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -4461,7 +4597,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>Where_is_Current_RE_Research_Lacking__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Where do you feel your current real estate research is lacking? Check all that apply.</inlineHelpText>
         <label>Where is Current RE Research Lacking.</label>
         <required>false</required>
@@ -4529,7 +4664,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_Country_Code_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company Country Code</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4538,7 +4672,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_Description_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company Description</label>
         <length>32768</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4559,7 +4692,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_NAICS_Code_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company NAICS Code</label>
         <length>131000</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4569,7 +4701,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_Name_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company Name</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4578,7 +4709,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_Phone_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company Phone</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4609,7 +4739,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_SIC_Code_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company SIC Code</label>
         <length>131000</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4630,7 +4759,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_Street_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company Street</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4639,7 +4767,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Company_Ticker_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Company Ticker</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4670,7 +4797,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Education_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Education</label>
         <length>32768</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4680,7 +4806,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Email_Address_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Email Address</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4700,7 +4825,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Employment_History_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Employment History</label>
         <length>32768</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4721,7 +4845,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Job_Title_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Job Title</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4752,7 +4875,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Management_Level_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Management Level</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4783,7 +4905,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Person_ID_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Person ID</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4792,7 +4913,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Person_State_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Person State</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4801,7 +4921,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Person_Street_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Person Street</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4821,7 +4940,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Technology_Products_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Technology Products</label>
         <length>131072</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4831,7 +4949,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     </fields>
     <fields>
         <fullName>ZoomInfo_Website_Lead__c</fullName>
-        <externalId>false</externalId>
         <label>ZoomInfo Website</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4863,7 +4980,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>eContacts__Business_Card__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Image Data Only</label>
         <length>131072</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4875,7 +4991,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <fullName>eContacts__Created_By_eContacts__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Created By eContacts</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -4897,7 +5012,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <fullName>eContacts__Location__c</fullName>
         <deprecated>false</deprecated>
         <displayLocationInDecimal>true</displayLocationInDecimal>
-        <externalId>false</externalId>
         <label>Location</label>
         <required>false</required>
         <scale>15</scale>
@@ -4908,7 +5022,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>eContacts__Secondary_Image__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Image Data2 Only</label>
         <length>131072</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4917,8 +5030,20 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>maps__AssignmentRule__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Maps Assignment Rule</label>
+        <referenceTo>maps__AssignmentRule__c</referenceTo>
+        <relationshipLabel>Leads</relationshipLabel>
+        <relationshipName>Leads</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>of_Paid_RE_Subscription_Services_Used__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>How many paid real estate research/data subscription services do you currently use?</inlineHelpText>
         <label># of Paid RE Subscription Services Used.</label>
         <required>false</required>
@@ -5014,7 +5139,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <fullName>zisf__ZoomInfo_Last_Clean_Run__c</fullName>
         <deprecated>false</deprecated>
         <description>Date/time refers to last time ZoomInfo Clean ran for record.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Date/time refers to last time ZoomInfo Clean ran for record.</inlineHelpText>
         <label>ZoomInfo Last Clean Run</label>
         <required>false</required>
@@ -5041,7 +5165,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <description>When this value is set to &quot;True&quot;, an incoming Lead with blank fields will be automatically appended with available data by ZoomInfo.</description>
-        <externalId>false</externalId>
         <inlineHelpText>When this value is set to &quot;True&quot;, an incoming Lead with blank fields will be automatically appended with available data by ZoomInfo.</inlineHelpText>
         <label>ZoomInfo Trigger</label>
         <trackFeedHistory>false</trackFeedHistory>
@@ -5051,7 +5174,6 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
     <fields>
         <fullName>zisf__Zoom_Clean_Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>ZoomInfo Clean Status</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -5123,7 +5245,6 @@ Stored as Long on Solr.</description>
         <fullName>zisf__zoom_lastupdated__c</fullName>
         <deprecated>false</deprecated>
         <description>Last updated from ZoomInfo timestamp</description>
-        <externalId>false</externalId>
         <label>ZoomInfo Last Updated</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -5171,7 +5292,21 @@ Stored as Long on Solr.</description>
             <operation>equals</operation>
             <value>Open,Working</value>
         </filters>
+        <filters>
+            <field>LEAD.LEAD_SOURCE</field>
+            <operation>equals</operation>
+            <value>Marketing Qualified,Inquiry,Slide Request,New Alert Trial,Demo Request</value>
+        </filters>
         <label>All Open Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>Commercial_Advisory_ARR_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Commercial + Advisory ARR</label>
+        <queue>Commercial_Advisory_ARR</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Disqualified_Leads</fullName>
@@ -5200,6 +5335,15 @@ Stored as Long on Solr.</description>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>IJGlobal_Lead_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>IJGlobal</label>
+        <queue>IJGlobal_Lead</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>Lead_Queue_Lead</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -5211,6 +5355,7 @@ Stored as Long on Solr.</description>
         <columns>CREATEDBY_USER.ALIAS</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <columns>LEAD.STATUS</columns>
+        <columns>Referred_by_Role_Lead__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>LEAD.RECORDTYPE</field>
@@ -6147,11 +6292,51 @@ Stored as Long on Solr.</description>
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
+                <fullName>6sense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apollo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cognism</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference%2FEvent</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Demo Request</fullName>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6167,6 +6352,14 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>LDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Locatus</fullName>
                 <default>false</default>
             </values>
@@ -6179,11 +6372,47 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>News Subscription Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-News%2FEvent Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Previous Client%2FContact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Sales Trip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Strategic Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Paid Acquisition</fullName>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Previous Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Proactive Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6192,6 +6421,22 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Indirect-Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Indirect-Law Firm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Past Client Introduction</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6207,7 +6452,19 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Upsell Opportunity</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Virtual Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zoominfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7750,6 +8007,31 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Primary_Brand_Group__c</picklist>
+            <values>
+                <fullName>IJGlobal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_Brand__c</picklist>
+            <values>
+                <fullName>IJGlobal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_Business_Unit__c</picklist>
+            <values>
+                <fullName>AMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Product_Interest_Marketing__c</picklist>
             <values>
                 <fullName>Data Delivery %28Includes Standardized Downloads%2C DataLink%2C %26 API%29</fullName>
@@ -8280,6 +8562,81 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Seniority__c</picklist>
+            <values>
+                <fullName>Assistant Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board %2F President %2F Partner %2F Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO %2F Head of Organisation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO %2F Managing Director %2F C-Suite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of %2F Director %2F Senior Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Junior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Junior Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager %2F Lead %2F Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non - Managerial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP %2F Head of Department %2F Director</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9270,7 +9627,179 @@ Stored as Long on Solr.</description>
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
+                <fullName>6sense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apollo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cognism</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference%2FEvent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Qualified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Alert Trial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News Subscription Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-News%2FEvent Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Previous Client%2FContact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Sales Trip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Strategic Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previous Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proactive Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React %26 US News Ecomm Inquiries</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Indirect-Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Indirect-Law Firm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Past Client Introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slide Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell Opportunity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zoominfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10825,6 +11354,82 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Primary_Brand_Group__c</picklist>
+            <values>
+                <fullName>IJGlobal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_Brand__c</picklist>
+            <values>
+                <fullName>IJGlobal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_Business_Unit__c</picklist>
+            <values>
+                <fullName>AMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Interest_Marketing__c</picklist>
+            <values>
+                <fullName>Data Delivery %28Includes Standardized Downloads%2C DataLink%2C %26 API%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detailed NAV and Earnings Models</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Data Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Data Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Portfolio Tools %28Includes AVM %26 Portfolio Analytics%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Rent Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Sales Comps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Product_Interest__c</picklist>
             <values>
                 <fullName>Advisory Services</fullName>
@@ -10856,6 +11461,37 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>eREA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Professional_Function__c</picklist>
+            <values>
+                <fullName>Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C Suite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit%2FLending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vice President</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11253,6 +11889,81 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Seniority__c</picklist>
+            <values>
+                <fullName>Assistant Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board %2F President %2F Partner %2F Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO %2F Head of Organisation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO %2F Managing Director %2F C-Suite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of %2F Director %2F Senior Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Junior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Junior Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager %2F Lead %2F Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non - Managerial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP %2F Head of Department %2F Director</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sourced_By__c</picklist>
             <values>
                 <fullName>Account Manager</fullName>
@@ -11524,7 +12235,7 @@ ISPICKVAL( Status , &quot;Sales Qualified&quot;))
     </validationRules>
     <validationRules>
         <fullName>Mandatory_Opportunity_Creation</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Blocks leads from being converted without creating or associating to an opportunity</description>
         <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 AND (
@@ -11574,7 +12285,7 @@ AND(
     </validationRules>
     <validationRules>
         <fullName>Require_GS_Relationship</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Input GS Relationship when lead is marked as Disqualified</description>
         <errorConditionFormula>AND(
 $RecordType.Name = &quot;Marketing&quot;,
@@ -11635,6 +12346,78 @@ ISBLANK(Text(Team__c))
 ))</errorConditionFormula>
         <errorMessage>You must designate a Team in order to send a referral to Advisory.</errorMessage>
     </validationRules>
+    <webLinks>
+        <fullName>CventEvents__InviteLeadToEvent</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Invite</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__LeadInviteExtension</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>CventEvents__ModifyCancelLeadToEvent</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Modify/Cancel</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__LeadModifyCancelExtension</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>CventEvents__NominateLeadToEvent</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Nominate</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__LeadNominateExtension</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>CventEvents__RegisterLeadToEvent</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Register</masterLabel>
+        <openType>newWindow</openType>
+        <page>CventEvents__LeadRegisterExtension</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
     <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>

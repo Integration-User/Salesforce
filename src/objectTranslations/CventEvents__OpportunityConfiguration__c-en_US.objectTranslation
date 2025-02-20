@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Indicates the Account assignment rule for the Opportunity. --></help>
+        <label><!-- Account Assignment Rule --></label>
+        <name>CventEvents__AccountAssignmentRule__c</name>
+        <picklistValues>
+            <masterLabel>Assign to Contact&apos;s Account</masterLabel>
+            <translation><!-- Assign to Contact&apos;s Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assign to specific Account</masterLabel>
+            <translation><!-- Assign to specific Account --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates what action should be taken on opportunity. --></help>
+        <label><!-- Action Type --></label>
+        <name>CventEvents__ActionType__c</name>
+        <picklistValues>
+            <masterLabel>Create New</masterLabel>
+            <translation><!-- Create New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Existing</masterLabel>
+            <translation><!-- Update Existing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates the Campaign assignment rule for the Opportunity Primary Campaign Source. --></help>
+        <label><!-- Campaign Assignment Rule --></label>
+        <name>CventEvents__CampaignAssignmentRule__c</name>
+        <picklistValues>
+            <masterLabel>Assign to specific Campaign</masterLabel>
+            <translation><!-- Assign to specific Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign most recently linked to event</masterLabel>
+            <translation><!-- Campaign most recently linked to event --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates the logic of population the Opportunity Close Date field. --></help>
+        <label><!-- Close Date Rule --></label>
+        <name>CventEvents__CloseDateRule__c</name>
+        <picklistValues>
+            <masterLabel>A certain number of days after the object is created</masterLabel>
+            <translation><!-- A certain number of days after the object is created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specific Date</masterLabel>
+            <translation><!-- Specific Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates the Contact assignment rule for the Opportunity Contact Role. --></help>
+        <label><!-- Contact Assignment Rule --></label>
+        <name>CventEvents__ContactAssignmentRule__c</name>
+        <picklistValues>
+            <masterLabel>Assign to Attendee&apos;s Contact</masterLabel>
+            <translation><!-- Assign to Attendee&apos;s Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assign to specific Contact</masterLabel>
+            <translation><!-- Assign to specific Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Do not create a contact role</masterLabel>
+            <translation><!-- Do not create a contact role --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the Opportunity Configuration is active. --></help>
+        <label><!-- Is Active --></label>
+        <name>CventEvents__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the Opportunity will be created in case of a single SF prospect has been matched with Cvent contact. --></help>
+        <label><!-- Single Match Scenario --></label>
+        <name>CventEvents__IsExistingRecordScenario__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the Opportunity will be created in case of multiple SF prospects has been matched with Cvent contact. --></help>
+        <label><!-- Multiple Match Scenario --></label>
+        <name>CventEvents__IsMultipleExistingRecordsScenario__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the Opportunity will be created in case of new SF prospect has been created and associated with Cvent contact. --></help>
+        <label><!-- No Match Scenario --></label>
+        <name>CventEvents__IsNewRecordScenario__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores the number of days between the Opportunity creation and Opportunity Close Date. --></help>
+        <label><!-- Number Of Days --></label>
+        <name>CventEvents__NumberOfDays__c</name>
+    </fields>
+    <fields>
+        <help><!-- Account of the Opportunity in case of &apos;Assign to specific Account&apos; rule. --></help>
+        <label><!-- Opportunity Account --></label>
+        <name>CventEvents__OpportunityAccount__c</name>
+        <relationshipLabel><!-- Opportunity Configurations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Amount value of the Opportunity. --></help>
+        <label><!-- Opportunity Amount --></label>
+        <name>CventEvents__OpportunityAmountString__c</name>
+    </fields>
+    <fields>
+        <help><!-- Primary Campaign Source value of the Opportunity. --></help>
+        <label><!-- Opportunity Campaign --></label>
+        <name>CventEvents__OpportunityCampaign__c</name>
+        <relationshipLabel><!-- Opportunity Configurations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Close Date of the Opportunity. --></help>
+        <label><!-- Opportunity Close Date --></label>
+        <name>CventEvents__OpportunityCloseDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Role of the Opportunity Contact Role. --></help>
+        <label><!-- Opportunity Contact Role --></label>
+        <name>CventEvents__OpportunityContactRole__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contact of the Opportunity Contact Role in case of &apos;Assign to specific Contact&apos; rule. --></help>
+        <label><!-- Opportunity Contact --></label>
+        <name>CventEvents__OpportunityContact__c</name>
+        <relationshipLabel><!-- Opportunity Configurations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Description of the Opportunity. --></help>
+        <label><!-- Opportunity Description --></label>
+        <name>CventEvents__OpportunityDescription__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is Private value of the Opportunity. --></help>
+        <label><!-- Opportunity Is Private --></label>
+        <name>CventEvents__OpportunityIsPrivate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lead Source of the Opportunity. --></help>
+        <label><!-- Lead Source --></label>
+        <name>CventEvents__OpportunityLeadSource__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Opportunity. --></help>
+        <label><!-- Opportunity Name --></label>
+        <name>CventEvents__OpportunityName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Owner of the Opportunity in case of &apos;Assign to specific User&apos; rule. --></help>
+        <label><!-- Opportunity Owner --></label>
+        <name>CventEvents__OpportunityOwner__c</name>
+        <relationshipLabel><!-- Opportunity Configurations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Stage of the Opportunity. --></help>
+        <label><!-- Opportunity Stage --></label>
+        <name>CventEvents__OpportunityStage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of the Opportunity. --></help>
+        <label><!-- Opportunity Type --></label>
+        <name>CventEvents__OpportunityType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the assignment rule for the Opportunity owner. --></help>
+        <label><!-- Owner Assignment Rule --></label>
+        <name>CventEvents__OwnerAssignmentRule__c</name>
+        <picklistValues>
+            <masterLabel>Assign to Contact&apos;s owner</masterLabel>
+            <translation><!-- Assign to Contact&apos;s owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assign to specific User</masterLabel>
+            <translation><!-- Assign to specific User --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

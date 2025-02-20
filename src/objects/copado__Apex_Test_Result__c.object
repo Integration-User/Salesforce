@@ -157,7 +157,6 @@
     <fields>
         <fullName>copado__Details__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Details</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -179,7 +178,6 @@
     <fields>
         <fullName>copado__Org__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Credential</label>
         <referenceTo>copado__Org__c</referenceTo>
         <relationshipLabel>Apex Test Results</relationshipLabel>
@@ -193,7 +191,6 @@
     <fields>
         <fullName>copado__Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -217,7 +214,6 @@
     <fields>
         <fullName>copado__Successes__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <formula>if(copado__Tests_run__c==0,0,(copado__Tests_run__c-copado__Failures__c)/copado__Tests_run__c)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Successes (%)</label>
@@ -256,7 +252,6 @@
         <fullName>copado__User_Story__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>User Story</label>
         <referenceTo>copado__User_Story__c</referenceTo>
         <relationshipLabel>Apex Test Results</relationshipLabel>
@@ -280,8 +275,8 @@
         <customTabListAdditionalFields>copado__Failures__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>copado__Total_time__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <lookupDialogsAdditionalFields>copado__Org__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Status__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Tests_run__c</lookupDialogsAdditionalFields>

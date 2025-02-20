@@ -17,9 +17,100 @@
         <startsWith>Consonant</startsWith>
     </fields>
     <fields>
+        <label><!-- AM Referrer --></label>
+        <name>AM_Referrer__c</name>
+        <relationshipLabel><!-- Leads (AM Referrer) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Account --></label>
         <name>Account__c</name>
         <relationshipLabel><!-- Leads --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Capture the date/time of when a lead was moved out of a queue --></help>
+        <label><!-- Assigned Date --></label>
+        <name>Assigned_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Initial Team this lead was assigned to --></help>
+        <label><!-- Assigned Team --></label>
+        <name>Assignment_Team__c</name>
+        <picklistValues>
+            <masterLabel>Banks</masterLabel>
+            <translation><!-- Banks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EU SDR Inbound</masterLabel>
+            <translation><!-- EU SDR Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansion Equity</masterLabel>
+            <translation><!-- Expansion Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansion React</masterLabel>
+            <translation><!-- Expansion React --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansion US Core</masterLabel>
+            <translation><!-- Expansion US Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greco</masterLabel>
+            <translation><!-- Greco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Head of SDR&apos;s</masterLabel>
+            <translation><!-- Head of SDR&apos;s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ling</masterLabel>
+            <translation><!-- Ling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maude</masterLabel>
+            <translation><!-- Maude --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>React News</masterLabel>
+            <translation><!-- React News --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SDR Outbound</masterLabel>
+            <translation><!-- SDR Outbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Souter</masterLabel>
+            <translation><!-- Souter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UK Sales</masterLabel>
+            <translation><!-- UK Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US News</masterLabel>
+            <translation><!-- US News --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Research</masterLabel>
+            <translation><!-- US Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US SDR Inbound</masterLabel>
+            <translation><!-- US SDR Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walburger</masterLabel>
+            <translation><!-- Walburger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White</masterLabel>
+            <translation><!-- White --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- BDR Referred By --></label>
@@ -106,6 +197,10 @@
         <name>Current_RE_Research_Lacking_Other__c</name>
     </fields>
     <fields>
+        <label><!-- Cvent Contact Stub --></label>
+        <name>CventEvents__ContactStub__c</name>
+    </fields>
+    <fields>
         <label><!-- ZoomInfo Company ID --></label>
         <name>DOZISF__ZoomInfo_Company_ID__c</name>
     </fields>
@@ -166,6 +261,10 @@
         <name>Digital_Source__c</name>
     </fields>
     <fields>
+        <label><!-- Disqualified Context --></label>
+        <name>Disqualified_Context__c</name>
+    </fields>
+    <fields>
         <help><!-- Is Sales Team EU? --></help>
         <label><!-- EU --></label>
         <name>EU__c</name>
@@ -224,6 +323,43 @@
         </picklistValues>
     </fields>
     <fields>
+        <help><!-- Determines the matched account’s client status --></help>
+        <label><!-- GS Relationship --></label>
+        <name>GS_Relationship__c</name>
+        <picklistValues>
+            <masterLabel>Client</masterLabel>
+            <translation><!-- Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client + Trial</masterLabel>
+            <translation><!-- Client + Trial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Favor</masterLabel>
+            <translation><!-- Favor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Former</masterLabel>
+            <translation><!-- Former --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent</masterLabel>
+            <translation><!-- Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect</masterLabel>
+            <translation><!-- Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trial</masterLabel>
+            <translation><!-- Trial --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Geographic Exposure --></label>
         <name>Geographic_Exposure__c</name>
     </fields>
@@ -261,6 +397,18 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Goals --></label>
+        <name>Goals__c</name>
+    </fields>
+    <fields>
+        <label><!-- HubSpot Score --></label>
+        <name>HubSpot_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound Lead? --></label>
+        <name>Inbound_Lead__c</name>
+    </fields>
+    <fields>
         <label><!-- Inquiry Type --></label>
         <name>Inquiry_Type__c</name>
         <picklistValues>
@@ -281,6 +429,20 @@
         <name>LID__LinkedIn_Member_Token__c</name>
     </fields>
     <fields>
+        <label><!-- Last Page Seen --></label>
+        <name>Last_Page_Seen__c</name>
+    </fields>
+    <fields>
+        <help><!-- Classification based on the lead source --></help>
+        <label><!-- Lead Classification --></label>
+        <name>Lead_Classification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Contact --></label>
+        <name>Lead_Contact__c</name>
+        <relationshipLabel><!-- Leads (Lead Contact) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Lead Priority --></label>
         <name>Lead_Priority__c</name>
     </fields>
@@ -294,6 +456,14 @@
         <picklistValues>
             <masterLabel>Advisory</masterLabel>
             <translation><!-- Advisory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial + Advisory ARR</masterLabel>
+            <translation><!-- Commercial + Advisory ARR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IJGlobal</masterLabel>
+            <translation><!-- IJGlobal --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Sales</masterLabel>
@@ -1521,7 +1691,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Typical Advisory Minimum ($100K/£100) --></label>
+        <label><!-- Typical Advisory Minimum (6-figures) --></label>
         <name>Minimum_Advisory_Fee_50k__c</name>
         <picklistValues>
             <masterLabel>N.A.</masterLabel>
@@ -1548,6 +1718,10 @@
         <help><!-- Is Sales Team NA? --></help>
         <label><!-- NA --></label>
         <name>NA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Needs --></label>
+        <name>Needs__c</name>
     </fields>
     <fields>
         <label><!-- Next Outreach Date --></label>
@@ -1577,6 +1751,10 @@
             <masterLabel>6-10</masterLabel>
             <translation><!-- 6-10 --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Original HubSpot Score --></label>
+        <name>Original_HubSpot_Score__c</name>
     </fields>
     <fields>
         <label><!-- Other Contact/Champion --></label>
@@ -1669,6 +1847,25 @@
         <name>Press_Releases__c</name>
     </fields>
     <fields>
+        <help><!-- Primary brand group for this Lead (will be transferred to the opportunity once converted) --></help>
+        <label><!-- Primary Brand Group --></label>
+        <name>Primary_Brand_Group__c</name>
+    </fields>
+    <fields>
+        <help><!-- Primary brand for this Lead (will be transferred to the opportunity once converted) --></help>
+        <label><!-- Primary Brand --></label>
+        <name>Primary_Brand__c</name>
+    </fields>
+    <fields>
+        <help><!-- Primary business unit for this Lead (will be transferred to the opportunity once converted) --></help>
+        <label><!-- Primary Business Unit --></label>
+        <name>Primary_Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Problems --></label>
+        <name>Problems__c</name>
+    </fields>
+    <fields>
         <label><!-- Product Interest 1 --></label>
         <name>Product_Interest_1__c</name>
         <relationshipLabel><!-- Leads --></relationshipLabel>
@@ -1680,11 +1877,181 @@
     </fields>
     <fields>
         <label><!-- Product Interest --></label>
+        <name>Product_Interest_Marketing__c</name>
+        <picklistValues>
+            <masterLabel>Data Delivery (Includes Standardized Downloads, DataLink, &amp; API)</masterLabel>
+            <translation><!-- Data Delivery (Includes Standardized Downloads, DataLink, &amp; API) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Detailed NAV and Earnings Models</masterLabel>
+            <translation><!-- Detailed NAV and Earnings Models --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>European Sales Comps</masterLabel>
+            <translation><!-- European Sales Comps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pan-European Data Analytics</masterLabel>
+            <translation><!-- Pan-European Data Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pan-European React News</masterLabel>
+            <translation><!-- Pan-European React News --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pan-European Research</masterLabel>
+            <translation><!-- Pan-European Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Data Analytics</masterLabel>
+            <translation><!-- U.S. Data Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. News</masterLabel>
+            <translation><!-- U.S. News --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Portfolio Tools (Includes AVM &amp; Portfolio Analytics)</masterLabel>
+            <translation><!-- U.S. Portfolio Tools (Includes AVM &amp; Portfolio Analytics) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Rent Comps</masterLabel>
+            <translation><!-- U.S. Rent Comps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Research</masterLabel>
+            <translation><!-- U.S. Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Sales Comps</masterLabel>
+            <translation><!-- U.S. Sales Comps --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Interest --></label>
         <name>Product_Interest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Professional Function --></label>
+        <name>Professional_Function__c</name>
+        <picklistValues>
+            <masterLabel>Acquisition</masterLabel>
+            <translation><!-- Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Manager</masterLabel>
+            <translation><!-- Asset Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C Suite</masterLabel>
+            <translation><!-- C Suite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit/Lending</masterLabel>
+            <translation><!-- Credit/Lending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portfolio Manager</masterLabel>
+            <translation><!-- Portfolio Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vice President</masterLabel>
+            <translation><!-- Vice President --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Publicly Traded? --></label>
         <name>Publicly_Traded__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populates when the lead status is moved to disqualified or qualified --></help>
+        <label><!-- Qualified Date --></label>
+        <name>Qualified_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Team name of the lead owner when moved to converted state --></help>
+        <label><!-- Qualified Team --></label>
+        <name>Qualifying_Team__c</name>
+        <picklistValues>
+            <masterLabel>Banks</masterLabel>
+            <translation><!-- Banks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EU SDR Inbound</masterLabel>
+            <translation><!-- EU SDR Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansion Equity</masterLabel>
+            <translation><!-- Expansion Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansion React</masterLabel>
+            <translation><!-- Expansion React --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansion US Core</masterLabel>
+            <translation><!-- Expansion US Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greco</masterLabel>
+            <translation><!-- Greco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Head of SDR&apos;s</masterLabel>
+            <translation><!-- Head of SDR&apos;s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ling</masterLabel>
+            <translation><!-- Ling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maude</masterLabel>
+            <translation><!-- Maude --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>React News</masterLabel>
+            <translation><!-- React News --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SDR Outbound</masterLabel>
+            <translation><!-- SDR Outbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Souter</masterLabel>
+            <translation><!-- Souter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UK Sales</masterLabel>
+            <translation><!-- UK Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US News</masterLabel>
+            <translation><!-- US News --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Research</masterLabel>
+            <translation><!-- US Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US SDR Inbound</masterLabel>
+            <translation><!-- US SDR Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walburger</masterLabel>
+            <translation><!-- Walburger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White</masterLabel>
+            <translation><!-- White --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <help><!-- This field maps to the Opportunity on conversion of the lead. --></help>
@@ -1779,12 +2146,36 @@
             <translation><!-- No Interest --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>No Research Budget</masterLabel>
+            <translation><!-- No Research Budget --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Not Responsive</masterLabel>
             <translation><!-- Not Responsive --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Fit</masterLabel>
+            <translation><!-- Product Fit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student/non-buying EDU/Media/non-viable contact</masterLabel>
+            <translation><!-- Student/non-buying EDU/Media/non-viable contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timing</masterLabel>
+            <translation><!-- Timing --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Unqualified</masterLabel>
             <translation><!-- Unqualified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unreachable</masterLabel>
+            <translation><!-- Unreachable --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -1793,9 +2184,14 @@
         <name>Referral_Reason__c</name>
     </fields>
     <fields>
-        <label><!-- AM Referred By --></label>
+        <label><!-- Referred By --></label>
         <name>Referred_By_Lead__c</name>
-        <relationshipLabel><!-- Leads (AM Referred By) --></relationshipLabel>
+        <relationshipLabel><!-- Leads (Referred By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Referred By --></label>
+        <name>Referred_By__c</name>
+        <relationshipLabel><!-- Leads (Referred By) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Referred by Role --></label>
@@ -1837,6 +2233,14 @@
             <masterLabel>Underwriting</masterLabel>
             <translation><!-- Underwriting --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Revisit Date --></label>
+        <name>Revisit_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDO Conversion --></label>
+        <name>SDO_Conversion__c</name>
     </fields>
     <fields>
         <label><!-- Active Lead --></label>
@@ -1944,6 +2348,82 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Seniority --></label>
+        <name>Seniority__c</name>
+        <picklistValues>
+            <masterLabel>Assistant Manager</masterLabel>
+            <translation><!-- Assistant Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associate</masterLabel>
+            <translation><!-- Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board / President / Partner / Owner</masterLabel>
+            <translation><!-- Board / President / Partner / Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CEO / Head of Organisation</masterLabel>
+            <translation><!-- CEO / Head of Organisation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CEO / Managing Director / C-Suite</masterLabel>
+            <translation><!-- CEO / Managing Director / C-Suite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consultant</masterLabel>
+            <translation><!-- Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive</masterLabel>
+            <translation><!-- Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Head of / Director / Senior Mgmt</masterLabel>
+            <translation><!-- Head of / Director / Senior Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Junior</masterLabel>
+            <translation><!-- Junior --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Junior Management</masterLabel>
+            <translation><!-- Junior Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager</masterLabel>
+            <translation><!-- Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager / Lead / Specialist</masterLabel>
+            <translation><!-- Manager / Lead / Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Middle Manager</masterLabel>
+            <translation><!-- Middle Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non - Managerial</masterLabel>
+            <translation><!-- Non - Managerial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Management</masterLabel>
+            <translation><!-- Non Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>President</masterLabel>
+            <translation><!-- President --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VP / Head of Department / Director</masterLabel>
+            <translation><!-- VP / Head of Department / Director --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Sourced By --></label>
         <name>Sourced_By__c</name>
         <picklistValues>
@@ -1998,6 +2478,16 @@
             <masterLabel>US</masterLabel>
             <translation><!-- US --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Calculates the (Assigned Date - Created Date) in Minutes --></help>
+        <label><!-- Time to Assigned --></label>
+        <name>Time_to_Assignment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates the (Qualified Date - Created Date) in Minutes --></help>
+        <label><!-- Time to Qualified --></label>
+        <name>Time_to_Conversion__c</name>
     </fields>
     <fields>
         <help><!-- When do you anticipate subscribing to your next research provider? --></help>
@@ -2108,6 +2598,138 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- ZoomInfo Company City --></label>
+        <name>ZoomInfo_Company_City_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company Country Code --></label>
+        <name>ZoomInfo_Company_Country_Code_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company Description --></label>
+        <name>ZoomInfo_Company_Description_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company ID --></label>
+        <name>ZoomInfo_Company_ID_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company NAICS Code --></label>
+        <name>ZoomInfo_Company_NAICS_Code_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company Name --></label>
+        <name>ZoomInfo_Company_Name_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company Phone --></label>
+        <name>ZoomInfo_Company_Phone_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company Revenue --></label>
+        <name>ZoomInfo_Company_Revenue_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company Revenue Range --></label>
+        <name>ZoomInfo_Company_Revenue_Range_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company SIC Code --></label>
+        <name>ZoomInfo_Company_SIC_Code_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company State --></label>
+        <name>ZoomInfo_Company_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company Street --></label>
+        <name>ZoomInfo_Company_Street_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company Ticker --></label>
+        <name>ZoomInfo_Company_Ticker_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company Zip Code --></label>
+        <name>ZoomInfo_Company_Zip_Code_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Direct Phone --></label>
+        <name>ZoomInfo_Direct_Phone_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Education --></label>
+        <name>ZoomInfo_Education_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Email Address --></label>
+        <name>ZoomInfo_Email_Address_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Employee Count --></label>
+        <name>ZoomInfo_Employee_Count_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Employment History --></label>
+        <name>ZoomInfo_Employment_History_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo First Name --></label>
+        <name>ZoomInfo_First_Name_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Job Title --></label>
+        <name>ZoomInfo_Job_Title_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Last Name --></label>
+        <name>ZoomInfo_Last_Name_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Last Updated Date --></label>
+        <name>ZoomInfo_Last_Updated_Date_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Management Level --></label>
+        <name>ZoomInfo_Management_Level_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Person City --></label>
+        <name>ZoomInfo_Person_City_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Person Country --></label>
+        <name>ZoomInfo_Person_Country_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Person ID --></label>
+        <name>ZoomInfo_Person_ID_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Person State --></label>
+        <name>ZoomInfo_Person_State_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Person Street --></label>
+        <name>ZoomInfo_Person_Street_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Person Zip Code --></label>
+        <name>ZoomInfo_Person_Zip_Code_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Technology Products --></label>
+        <name>ZoomInfo_Technology_Products_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Website --></label>
+        <name>ZoomInfo_Website_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Within EU --></label>
+        <name>ZoomInfo_Within_EU_Lead__c</name>
+    </fields>
+    <fields>
         <label><!-- AffectLayer --></label>
         <name>affectlayer__AffectLayer_Notes__c</name>
     </fields>
@@ -2130,6 +2752,11 @@
     <fields>
         <label><!-- Image Data2 Only --></label>
         <name>eContacts__Secondary_Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maps Assignment Rule --></label>
+        <name>maps__AssignmentRule__c</name>
+        <relationshipLabel><!-- Leads --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- How many paid real estate research/data subscription services do you currently use? --></help>
@@ -2238,6 +2865,10 @@
         <name>Referrals</name>
     </recordTypes>
     <validationRules>
+        <errorMessage><!-- Please assign this lead to a user before moving the status. --></errorMessage>
+        <name>Assign_Lead_Owner_To_User</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Please Provide Feedback in the Questions &amp; Comments Section before disqualifying this referral --></errorMessage>
         <name>Comments_Required_to_Close_Referral</name>
     </validationRules>
@@ -2254,16 +2885,28 @@
         <name>Mandatory_Opportunity_Creation</name>
     </validationRules>
     <validationRules>
-        <errorMessage><!-- Please ensure Typical Advisory Minimum ($100K/£100) is populated before saving this Lead. --></errorMessage>
+        <errorMessage><!-- Please ensure Typical Advisory Minimum (6-figures) is populated before saving this Lead. --></errorMessage>
         <name>Require_Advisory_Minimum</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide Disqualified Context. --></errorMessage>
+        <name>Require_Disqualified_Context</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- You must enter an Email or Phone number to qualify a lead or convert it (stage 2). --></errorMessage>
         <name>Require_Email_OR_Phone_to_Sales_Qualify</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Please provide GS Relationship before disqualifying this lead --></errorMessage>
+        <name>Require_GS_Relationship</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Provide Lead Source and a Reason for Disqualification. --></errorMessage>
         <name>Require_Reason_Disqualified</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide Revisit Date. --></errorMessage>
+        <name>Require_Revisit_Date</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Provide Lead Source and Company type for conversion. --></errorMessage>
@@ -2273,6 +2916,22 @@
         <errorMessage><!-- You must designate a Team in order to send a referral to Advisory. --></errorMessage>
         <name>Team_Designation_for_Advisory_Referrals</name>
     </validationRules>
+    <webLinks>
+        <label><!-- InviteLeadToEvent --></label>
+        <name>CventEvents__InviteLeadToEvent</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ModifyCancelLeadToEvent --></label>
+        <name>CventEvents__ModifyCancelLeadToEvent</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- NominateLeadToEvent --></label>
+        <name>CventEvents__NominateLeadToEvent</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- RegisterLeadToEvent --></label>
+        <name>CventEvents__RegisterLeadToEvent</name>
+    </webLinks>
     <webLinks>
         <label><!-- GoogleMaps --></label>
         <name>GoogleMaps</name>

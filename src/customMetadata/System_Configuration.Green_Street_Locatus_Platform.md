@@ -7,6 +7,10 @@
         <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
+        <field>List_Of_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>Value__c</field>
         <value xsi:type="xsd:string">Locatus: Retail Data;Locatus: Footfall Data;Locatus: Housing Plans Data;Locatus: Office Data;Locatus: Retail Risk Index;Locatus: One-Time Data;Locatus: DISC Data;Locatus: Other;Locatus: News</value>
     </values>

@@ -247,7 +247,6 @@
     <fields>
         <fullName>copado__Changes__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Changes</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -258,7 +257,6 @@
         <fullName>copado__Commit_Date__c</fullName>
         <defaultValue>now()</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Commit Date</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -279,7 +277,6 @@
     <fields>
         <fullName>copado__Commit_Message__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Commit Message</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -289,7 +286,6 @@
         <fullName>copado__Git_Backup__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Git Snapshot</label>
         <referenceTo>copado__Git_Backup__c</referenceTo>
         <relationshipName>Git_Org_Commits</relationshipName>
@@ -301,7 +297,6 @@
         <fullName>copado__Git_Operation__c</fullName>
         <deprecated>false</deprecated>
         <description>The Git operation executed by the Copado.</description>
-        <externalId>false</externalId>
         <inlineHelpText>The Git operation executed by the Copado.</inlineHelpText>
         <label>Git Operation</label>
         <required>false</required>
@@ -326,7 +321,6 @@
     <fields>
         <fullName>copado__Org__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Credential</label>
         <referenceTo>copado__Org__c</referenceTo>
         <relationshipLabel>Snapshot Commits</relationshipLabel>
@@ -341,7 +335,6 @@
         <fullName>copado__Status__c</fullName>
         <deprecated>false</deprecated>
         <description>The status of the commit. This value is updating automatically by Copado.</description>
-        <externalId>false</externalId>
         <inlineHelpText>The status of the commit. This value is updating automatically by Copado.</inlineHelpText>
         <label>Status</label>
         <required>false</required>

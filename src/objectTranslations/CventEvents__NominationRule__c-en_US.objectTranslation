@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Stores the Group Id in case of &apos;Public Group&apos; type. --></help>
+        <label><!-- Group Id --></label>
+        <name>CventEvents__GroupId__c</name>
+    </fields>
+    <fields>
+        <help><!-- In case of &apos;Public Group&apos; type indicates whether the single approve sufficient for the entire level. --></help>
+        <label><!-- Is Single Approve Sufficient --></label>
+        <name>CventEvents__IsSingleApproveSufficient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the Nomination Rule level. --></help>
+        <label><!-- Level --></label>
+        <name>CventEvents__Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores Nomination Filter to be applied for the rule. --></help>
+        <label><!-- Nomination Filter --></label>
+        <name>CventEvents__NominationFilter__c</name>
+        <relationshipLabel><!-- Nomination Rules --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates the Nomination Rule order on the level. --></help>
+        <label><!-- Sort Order --></label>
+        <name>CventEvents__SortOrder__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the Nomination Rule type. --></help>
+        <label><!-- Type --></label>
+        <name>CventEvents__Type__c</name>
+        <picklistValues>
+            <masterLabel>Account Owner</masterLabel>
+            <translation><!-- Account Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Group</masterLabel>
+            <translation><!-- Public Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Record Owner</masterLabel>
+            <translation><!-- Record Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Stores the User in case of &apos;User&apos; type. --></help>
+        <label><!-- User --></label>
+        <name>CventEvents__User__c</name>
+        <relationshipLabel><!-- Nomination Rules --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

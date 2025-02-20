@@ -54,9 +54,6 @@
                 <field>ArticleType</field>
             </layoutItems>
             <layoutItems>
-                <field>ValidationStatus</field>
-            </layoutItems>
-            <layoutItems>
                 <field>VersionNumber</field>
             </layoutItems>
             <layoutItems>
@@ -174,6 +171,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>RestoreKnowledgeArticleVersion</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>PublishKnowledgeArticleVersion</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
@@ -198,19 +200,7 @@
             <actionType>StandardButton</actionType>
             <sortOrder>5</sortOrder>
         </platformActionListItems>
-        <platformActionListItems>
-            <actionName>RestoreKnowledgeArticleVersion</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
     </platformActionList>
-    <relatedLists>
-        <fields>Query</fields>
-        <relatedList>KavSearchPromotionRuleRelatedList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <relatedList>KnowledgeArticleVersionFilesRelatedList</relatedList>
-    </relatedLists>
     <relatedLists>
         <fields>CreatedDate</fields>
         <fields>StepStatus</fields>

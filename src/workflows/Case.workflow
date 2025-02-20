@@ -45,6 +45,10 @@
             <type>owner</type>
         </recipients>
         <recipients>
+            <recipient>adillard@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
             <recipient>carora@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
@@ -58,10 +62,6 @@
         <recipients>
             <recipient>Opportunity Owner</recipient>
             <type>opportunityTeam</type>
-        </recipients>
-        <recipients>
-            <recipient>jecusi@greenstreet.com</recipient>
-            <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Trial_Deactivation_Access_Template</template>
@@ -149,6 +149,26 @@
         <protected>false</protected>
         <recipients>
             <recipient>adillard@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>cmarks@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gkumar@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>njagodilla@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>praj@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vsethuraman@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>noreply@greenstreet.com</senderAddress>

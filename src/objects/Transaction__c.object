@@ -130,7 +130,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Transaction_Record_Page1</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -138,7 +138,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Transaction_Record_Page1</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -170,7 +170,6 @@
     <fields>
         <fullName>Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Transactions</relationshipLabel>
@@ -182,7 +181,6 @@
     </fields>
     <fields>
         <fullName>Amount_Remaining__c</fullName>
-        <externalId>false</externalId>
         <label>Amount Remaining</label>
         <precision>18</precision>
         <required>false</required>
@@ -193,7 +191,6 @@
     </fields>
     <fields>
         <fullName>Amount__c</fullName>
-        <externalId>false</externalId>
         <label>Amount</label>
         <precision>18</precision>
         <required>false</required>
@@ -221,7 +218,6 @@ IF(NOT(ISBLANK(Account__r.BillingCountry)), Account__r.BillingCountry, NULL)</fo
     <fields>
         <fullName>Billing_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Billing Contact</label>
         <referenceTo>Contact</referenceTo>
         <relationshipName>Invoices</relationshipName>
@@ -232,7 +228,6 @@ IF(NOT(ISBLANK(Account__r.BillingCountry)), Account__r.BillingCountry, NULL)</fo
     </fields>
     <fields>
         <fullName>Close_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Close Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -241,7 +236,6 @@ IF(NOT(ISBLANK(Account__r.BillingCountry)), Account__r.BillingCountry, NULL)</fo
     </fields>
     <fields>
         <fullName>Contract_Amount__c</fullName>
-        <externalId>false</externalId>
         <label>Contract Amount</label>
         <precision>18</precision>
         <required>false</required>
@@ -269,7 +263,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     </fields>
     <fields>
         <fullName>Department__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Set up by integration to NetSuite</inlineHelpText>
         <label>Department</label>
         <required>false</required>
@@ -455,7 +448,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     </fields>
     <fields>
         <fullName>End_Date__c</fullName>
-        <externalId>false</externalId>
         <label>End Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -465,7 +457,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Exclude_Collection__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Exclude Collection</label>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -487,7 +478,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Fifth_Notice__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Fifth Notice</label>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -496,7 +486,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>First_Notice__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>First Notice</label>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -505,7 +494,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Fourth_Notice__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Fourth Notice</label>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -524,7 +512,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     </fields>
     <fields>
         <fullName>Invoice_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Invoice Date</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -533,7 +520,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     </fields>
     <fields>
         <fullName>Invoice_Due_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Invoice Due Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -543,7 +529,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Invoice_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Invoice Owner</label>
         <lookupFilter>
             <active>true</active>
@@ -564,7 +549,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Invoice__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Invoice</label>
         <referenceTo>Transaction__c</referenceTo>
         <relationshipLabel>Transactions</relationshipLabel>
@@ -588,7 +572,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     </fields>
     <fields>
         <fullName>Notes__c</fullName>
-        <externalId>false</externalId>
         <label>Notes</label>
         <length>32768</length>
         <trackHistory>true</trackHistory>
@@ -599,7 +582,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Opportunity__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Opportunity</label>
         <referenceTo>Opportunity</referenceTo>
         <relationshipName>Invoices</relationshipName>
@@ -610,7 +592,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     </fields>
     <fields>
         <fullName>Outreach_Status__c</fullName>
-        <externalId>false</externalId>
         <label>Outreach Status</label>
         <required>false</required>
         <trackHistory>true</trackHistory>
@@ -696,7 +677,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     </fields>
     <fields>
         <fullName>Payment_Received_Date__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>This field will be updated when Status is changed to Paid In Full</inlineHelpText>
         <label>Payment Received Date</label>
         <required>false</required>
@@ -718,7 +698,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Second_Notice__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Second Notice</label>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -727,7 +706,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Seventh_Notice__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Seventh Notice</label>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -736,7 +714,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Sixth_Notice__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Sixth Notice</label>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -744,7 +721,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     </fields>
     <fields>
         <fullName>Start_Date__c</fullName>
-        <externalId>false</externalId>
         <label>Start Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -754,7 +730,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Status__c</fullName>
         <description>NetSuite transaction status</description>
-        <externalId>false</externalId>
         <inlineHelpText>Set up by integration</inlineHelpText>
         <label>Status</label>
         <required>false</required>
@@ -815,7 +790,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Third_Notice__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Third Notice</label>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -824,7 +798,6 @@ Payment_Received_Date__c - Invoice_Due_Date__c)</formula>
     <fields>
         <fullName>Transaction_Type__c</fullName>
         <description>Transaction type from NetSuite</description>
-        <externalId>false</externalId>
         <inlineHelpText>Set by integration script</inlineHelpText>
         <label>Transaction Type</label>
         <required>false</required>

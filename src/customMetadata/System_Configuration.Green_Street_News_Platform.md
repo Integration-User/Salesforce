@@ -7,6 +7,10 @@
         <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
+        <field>List_Of_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>Value__c</field>
         <value xsi:type="xsd:string">Green Street News: Canada;Green Street News: Europe;React News</value>
     </values>

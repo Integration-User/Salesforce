@@ -1,0 +1,35 @@
+<apex:page sidebar="false" standardController="CventEvents__SurveyProgram__c" extensions="CventEvents.LightningComponentController">
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, '_colors.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'components/_toast.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'tachyons/_spacing.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'tachyons/_flexbox.css')}" />
+    <apex:slds />
+    <apex:includeLightning />
+
+    <div id="loading-spinner-container" class="spinner__container">
+        <div role="status" class="spinner spinner_small">
+            <div class="spinner__dot-a"></div>
+            <div class="spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <div id="classicSurveyProgramDataTransferContainer"></div>
+
+    <script>
+        const namespace = '{!JSENCODE(namespace)}';
+        const recordId = '{!JSENCODE($CurrentPage.parameters.id)}';
+        $Lightning.use(namespace + ":ltngDependencyApp",
+            function () {
+                $Lightning.createComponent(namespace + ":surveyProgramDataTransferReadOnly",
+                    {
+                        'recordId': recordId,
+                    },
+                    "classicSurveyProgramDataTransferContainer",
+                    function (component) {
+                        const spinnerContainer = document.getElementById("loading-spinner-container");
+                        spinnerContainer.style.display = 'none';
+                    }
+                );
+            });
+    </script>
+</apex:page>

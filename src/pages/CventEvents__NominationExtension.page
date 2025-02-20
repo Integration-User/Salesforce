@@ -1,0 +1,106 @@
+<apex:page standardController="CventEvents__Nomination__c" extensions="CventEvents.NominationExtensionController,CventEvents.LightningComponentController" action="{!initPage}">
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, '_colors.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'components/_toast.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CventEvents__cssStyles, 'tachyons/_spacing.css')}" />
+
+    <apex:includeLightning />
+
+    <style type="text/css">
+        body .btnDisabled {
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function onCommentRejectModalCancelHandler() {
+            enableAllButtons();
+            window.removeEventListener('commentRejectModalCancel', onCommentRejectModalCancelHandler);
+        }
+
+        function onConfirmModalCancelHandler() {
+            enableAllButtons();
+            window.removeEventListener('confirmModalCancel', onConfirmModalCancelHandler);
+        }
+
+        function enableAllButtons() {
+            enableButton(document.getElementById('{!$Component.nominationExtension.layout.buttons.approve}'));
+            enableButton(document.getElementById('{!$Component.nominationExtension.layout.buttons.reject}'));
+            enableButton(document.getElementById('{!$Component.nominationExtension.layout.buttons.cancel}'));
+        }
+
+        function disableOnClick() {
+            disableButton(document.getElementById('{!$Component.nominationExtension.layout.buttons.approve}'));
+            disableButton(document.getElementById('{!$Component.nominationExtension.layout.buttons.reject}'));
+            disableButton(document.getElementById('{!$Component.nominationExtension.layout.buttons.cancel}'));
+        }
+
+        function enableButton(btn) {
+            if (btn) {
+                btn.disabled = null;
+                btn.classList.remove('btnDisabled');
+            }
+        }
+
+        function disableButton(btn) {
+            if (btn) {
+                btn.disabled = 'disabled';
+                btn.classList.add('btnDisabled');
+            }
+        }
+    </script>
+
+    <apex:form id="nominationExtension">
+
+        <apex:pageblock id="layout" mode="maindetail">
+
+            <apex:pageMessages />
+
+            <apex:pageblockbuttons id="buttons" location="top" rendered="{!isButtonsAvailable}">
+
+                <apex:commandbutton rendered="{!isApproveRejectAvailable}" id="approve" styleClass="mr2" value="{!$Label.cventevents__Approve}" action="{!process}" rerender="actionCaller" onclick="disableOnClick();">
+                    <apex:param name="actionName" value="approveNomination" assignTo="{!actionName}" />
+                </apex:commandbutton>
+
+                <apex:commandbutton rendered="{!isApproveRejectAvailable}" id="reject" value="{!$Label.cventevents__Reject}" action="{!process}" rerender="actionCaller" onclick="disableOnClick();">
+                    <apex:param name="actionName" value="rejectNomination" assignTo="{!actionName}" />
+                </apex:commandbutton>
+
+                <apex:commandbutton rendered="{!isCancelAvailable}" id="cancel" value="{!$Label.cventevents__CancelNomination}" action="{!process}" rerender="actionCaller" onclick="disableOnClick();">
+                    <apex:param name="actionName" value="cancelNomination" assignTo="{!actionName}" />
+                </apex:commandbutton>
+            </apex:pageBlockButtons>
+
+            <apex:detail subject="{!CventEvents__Nomination__c.Id}" relatedListHover="false" />
+        </apex:pageBlock>
+
+        <apex:outputPanel id="actionCaller">
+            <apex:outputPanel layout="block" rendered="{!isProcessing}">
+
+                <div id="recordIdActionCallerContainer" />
+
+                <script>
+                    const namespace = '{!JSENCODE(namespace)}';
+                    const recordId = '{!JSENCODE($CurrentPage.parameters.id)}';
+                    const action = '{!actionName}';
+                    $Lightning.use(namespace + ":ltngDependencyApp",
+                        function () {
+                            $Lightning.createComponent(namespace + ":approveRejectNomination",
+                                {
+                                    'recordId': recordId,
+                                    'action': action,
+                                    'withoutMarkup': true
+                                },
+                                "recordIdActionCallerContainer",
+                                function () {
+                                    window.addEventListener('commentRejectModalCancel', onCommentRejectModalCancelHandler);
+                                    window.addEventListener('confirmModalCancel', onConfirmModalCancelHandler);
+                                });
+                        });
+                </script>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:form>
+
+</apex:page>

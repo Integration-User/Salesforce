@@ -15,53 +15,75 @@
     <defaultCaseUser>ksantos@greenstreet.com</defaultCaseUser>
     <emailToCase>
         <enableE2CAttachmentAsFile>true</enableE2CAttachmentAsFile>
+        <enableE2CDeduplicateAttachments>false</enableE2CDeduplicateAttachments>
+        <enableE2CExternalServer>false</enableE2CExternalServer>
         <enableE2CSourceTracking>true</enableE2CSourceTracking>
         <enableEmailToCase>true</enableEmailToCase>
         <enableHtmlEmail>true</enableHtmlEmail>
+        <enableNewToReadTriggers>false</enableNewToReadTriggers>
         <enableOnDemandEmailToCase>true</enableOnDemandEmailToCase>
-        <enableThreadIDInBody>true</enableThreadIDInBody>
-        <enableThreadIDInSubject>false</enableThreadIDInSubject>
+        <enableThreadTokenInBody>true</enableThreadTokenInBody>
+        <enableThreadTokenInSubject>false</enableThreadTokenInSubject>
+        <movingEmailEnabled>false</movingEmailEnabled>
         <notifyOwnerOnNewCaseEmail>true</notifyOwnerOnNewCaseEmail>
         <overEmailLimitAction>Bounce</overEmailLimitAction>
         <preQuoteSignature>false</preQuoteSignature>
+        <replyWithNewContentOnly>false</replyWithNewContentOnly>
         <routingAddresses>
             <addressType>EmailToCase</addressType>
-            <caseOrigin>Email</caseOrigin>
+            <caseOrigin>Customer Success</caseOrigin>
             <caseOwner>Help_Desk</caseOwner>
             <caseOwnerType>Queue</caseOwnerType>
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>clientrequest@greenstreet.com</emailAddress>
             <emailServicesAddress>clientrequest@2vnexcdkywta12ti5gih5nteqzosupoxqdi1hb4qhecunhejro.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <routingName>Client Requests</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>
         </routingAddresses>
         <routingAddresses>
             <addressType>EmailToCase</addressType>
-            <caseOrigin>Email</caseOrigin>
+            <caseOrigin>Customer Success</caseOrigin>
+            <caseOwner>Help_Desk</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>clientsupport@greenstreet.com</emailAddress>
+            <emailServicesAddress>support@joirbsjsbi9lpfste6aasg6x5s6bnust8lrhkppjgkjslnivc.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
+            <isVerified>true</isVerified>
+            <routingName>Client Support</routingName>
+            <saveEmailHeaders>true</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Client Support News</caseOrigin>
+            <caseOwner>Help_Desk</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>clientsupport@greenstreetnews.com</emailAddress>
+            <emailServicesAddress>clientsupport@8-17q31rhz4qhk1hharqjghwcyj9oon66dr6lu4xpieb18c0u47g.f4-3azjreas.usa740.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
+            <isVerified>true</isVerified>
+            <routingName>Client Support News</routingName>
+            <saveEmailHeaders>true</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Customer Success</caseOrigin>
             <caseOwner>Help_Desk</caseOwner>
             <caseOwnerType>Queue</caseOwnerType>
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>success@greenstreet.com</emailAddress>
             <emailServicesAddress>success@1-fpq6k6wxw9w2tn460uu83pvvwdlmn5i98hh9rsuxawghgjilq.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <routingName>Customer Success</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>
-        </routingAddresses>
-        <routingAddresses>
-            <addressType>EmailToCase</addressType>
-            <caseOrigin>External Data Support</caseOrigin>
-            <caseOwner>EU_Data_Support</caseOwner>
-            <caseOwnerType>Queue</caseOwnerType>
-            <casePriority>Medium</casePriority>
-            <createTask>false</createTask>
-            <emailAddress>datasupport.europe@greenstreet.com</emailAddress>
-            <emailServicesAddress>datasupport.europe@183a0ez5k9fby2r0qkd3h8nrti20usnd4yno1yz6bhh8tprb5e.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
-            <isVerified>true</isVerified>
-            <routingName>EU Data Support</routingName>
-            <saveEmailHeaders>true</saveEmailHeaders>
         </routingAddresses>
         <routingAddresses>
             <addressType>EmailToCase</addressType>
@@ -72,35 +94,66 @@
             <createTask>false</createTask>
             <emailAddress>ukresearchrequest@greenstreet.com</emailAddress>
             <emailServicesAddress>ukresearchrequest@ku9xy7bzadk2lp0809fafbmj3bwn6rrtpqm80e189wlr7wut8.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <routingName>EU Data Support</routingName>
             <saveEmailHeaders>true</saveEmailHeaders>
         </routingAddresses>
         <routingAddresses>
             <addressType>EmailToCase</addressType>
-            <caseOrigin>Email</caseOrigin>
+            <caseOrigin>EU External Data Support</caseOrigin>
             <caseOwner>Help_Desk</caseOwner>
             <caseOwnerType>Queue</caseOwnerType>
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
-            <emailAddress>clientsupport@greenstreet.com</emailAddress>
-            <emailServicesAddress>support@joirbsjsbi9lpfste6aasg6x5s6bnust8lrhkppjgkjslnivc.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <emailAddress>datasupport.europe@greenstreet.com</emailAddress>
+            <emailServicesAddress>datasupport.europe@183a0ez5k9fby2r0qkd3h8nrti20usnd4yno1yz6bhh8tprb5e.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
-            <routingName>Help Desk</routingName>
+            <routingName>EU Data Support</routingName>
             <saveEmailHeaders>true</saveEmailHeaders>
         </routingAddresses>
         <routingAddresses>
             <addressType>EmailToCase</addressType>
-            <caseOrigin>Email</caseOrigin>
-            <caseOwner>React_News</caseOwner>
+            <caseOrigin>Media/Press Inquiry</caseOrigin>
+            <caseOwner>Help_Desk</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>media@greenstreet.com</emailAddress>
+            <emailServicesAddress>media@f-2z5icxszhsoz99252n26aywfq4t99cajgykmprpzb715lvnrlt.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
+            <isVerified>true</isVerified>
+            <routingName>Press Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Client Support News</caseOrigin>
+            <caseOwner>Help_Desk</caseOwner>
             <caseOwnerType>Queue</caseOwnerType>
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>requests@reactnews.com</emailAddress>
             <emailServicesAddress>requests@k-2zmv0g9yap8x54qjzrr0imoii5mozck6mrswb1zarzbgayi3rh.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <routingName>React News</routingName>
             <saveEmailHeaders>true</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>External Data Support</caseOrigin>
+            <caseOwner>Help_Desk</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>datasupport@greenstreet.com</emailAddress>
+            <emailServicesAddress>datasupport@w-clrdpbfb2kiag0djvevn49ll8uu6wyke2gjb4z7ih1ixv1n2i.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
+            <isVerified>true</isVerified>
+            <routingName>US Data Support</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
         </routingAddresses>
         <routingAddresses>
             <addressType>EmailToCase</addressType>
@@ -111,19 +164,7 @@
             <createTask>false</createTask>
             <emailAddress>irr@greenstreet.com</emailAddress>
             <emailServicesAddress>irr@h-276qbxvcf0qar9mt2v6njkdum9epq8kgfllxlwu3083j3312g4.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
-            <isVerified>true</isVerified>
-            <routingName>US Data Support</routingName>
-            <saveEmailHeaders>false</saveEmailHeaders>
-        </routingAddresses>
-        <routingAddresses>
-            <addressType>EmailToCase</addressType>
-            <caseOrigin>External Data Support</caseOrigin>
-            <caseOwner>US_Data_Support</caseOwner>
-            <caseOwnerType>Queue</caseOwnerType>
-            <casePriority>Medium</casePriority>
-            <createTask>false</createTask>
-            <emailAddress>datasupport@greenstreet.com</emailAddress>
-            <emailServicesAddress>datasupport@w-clrdpbfb2kiag0djvevn49ll8uu6wyke2gjb4z7ih1ixv1n2i.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <routingName>US Data Support</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>
@@ -137,14 +178,15 @@
             <createTask>false</createTask>
             <emailAddress>greenstreetuserlistrequest@greenstreet.com</emailAddress>
             <emailServicesAddress>greenstreetuserlistrequest@9-2uv9mhij13yvw3zeo73b0s3r943nrh6vrkmw4cm3iklmh9akus.f4-3azjreas.na153.case.salesforce.com</emailServicesAddress>
+            <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <routingName>User List</routingName>
             <saveEmailHeaders>true</saveEmailHeaders>
         </routingAddresses>
         <unauthorizedSenderAction>Discard</unauthorizedSenderAction>
+        <useEmailHeadersForThreading>true</useEmailHeadersForThreading>
     </emailToCase>
     <enableCaseFeed>false</enableCaseFeed>
-    <enableCaseSwarming>false</enableCaseSwarming>
     <enableCollapseEmailThread>false</enableCollapseEmailThread>
     <enableEarlyEscalationRuleTriggers>false</enableEarlyEscalationRuleTriggers>
     <enableEscalateQfiToCaseInternal>false</enableEscalateQfiToCaseInternal>
@@ -154,9 +196,6 @@
     <enableSolutionCategory>false</enableSolutionCategory>
     <enableSolutionInlineCategory>true</enableSolutionInlineCategory>
     <enableSolutionShortSummary>true</enableSolutionShortSummary>
-    <enableSuggestedArticlesApplication>false</enableSuggestedArticlesApplication>
-    <enableSuggestedArticlesCustomerPortal>false</enableSuggestedArticlesCustomerPortal>
-    <enableSuggestedArticlesPartnerPortal>false</enableSuggestedArticlesPartnerPortal>
     <enableSuggestedSolutions>true</enableSuggestedSolutions>
     <escalateCaseBefore>false</escalateCaseBefore>
     <keepCaseMergeRecords>true</keepCaseMergeRecords>

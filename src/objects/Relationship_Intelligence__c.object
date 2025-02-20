@@ -154,7 +154,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Account__c</fullName>
-        <externalId>false</externalId>
         <label>Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Relationship Intelligence</relationshipLabel>
@@ -168,14 +167,12 @@
     <fields>
         <fullName>Active__c</fullName>
         <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
         <label>Active</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Budget_Details__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Please include relevant context to budget including: Timing, Owner, and Process.</inlineHelpText>
         <label>Budget Details</label>
         <length>131072</length>
@@ -185,7 +182,6 @@
     </fields>
     <fields>
         <fullName>Budget__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Customers stated budget. If a range is provided, please use an average amount.</inlineHelpText>
         <label>Budget</label>
         <precision>18</precision>
@@ -196,7 +192,6 @@
     </fields>
     <fields>
         <fullName>Buying_Process__c</fullName>
-        <externalId>false</externalId>
         <label>Buying Process</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -375,7 +370,6 @@
     </fields>
     <fields>
         <fullName>Goals__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>What objectives is the client/prospect trying to achieve? What strategies are in place to achieve objectives and goals?</inlineHelpText>
         <label>Goals</label>
         <length>131072</length>
@@ -386,7 +380,6 @@
     <fields>
         <fullName>Key_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <inlineHelpText>Represents the primary individual you’re working with through the decision process.</inlineHelpText>
         <label>Key Contact</label>
         <referenceTo>Contact</referenceTo>
@@ -398,7 +391,6 @@
     </fields>
     <fields>
         <fullName>Needs__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>What does the client/prospect need so they can overcome the challenges/problems/obstacles and achieve the goals and objectives? Hint: This doesn’t have to be a named Green Street product.</inlineHelpText>
         <label>Needs</label>
         <length>131072</length>
@@ -408,7 +400,6 @@
     </fields>
     <fields>
         <fullName>Other_Competition__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>If related competitor is unavailable in the “Competition” options, please provide additional insight here.</inlineHelpText>
         <label>Other Competition</label>
         <length>131072</length>
@@ -418,7 +409,6 @@
     </fields>
     <fields>
         <fullName>Problems__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>What is standing in the way of achieving goals and objectives? Are there obstacles or challenges?</inlineHelpText>
         <label>Problems</label>
         <length>131072</length>
@@ -429,7 +419,6 @@
     <fields>
         <fullName>Related_Opportunity__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
-        <externalId>false</externalId>
         <label>Related Opportunity</label>
         <referenceTo>Opportunity</referenceTo>
         <relationshipLabel>Relationship Intelligence</relationshipLabel>
@@ -445,7 +434,7 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Relationship Intelligence</pluralLabel>
-    <searchLayouts />
+    <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>Require_Other_Competition</fullName>

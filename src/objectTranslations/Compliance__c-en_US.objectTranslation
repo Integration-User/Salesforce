@@ -58,7 +58,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Call Verification --></label>
+        <label><!-- Verification --></label>
         <name>Call_Verification__c</name>
     </fields>
     <fields>
@@ -73,6 +73,10 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case Error --></label>
+        <name>Case_Error__c</name>
     </fields>
     <fields>
         <help><!-- Contact that provided the change information --></help>
@@ -125,6 +129,10 @@
     <fields>
         <label><!-- Contract Start Date --></label>
         <name>Contract_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
     </fields>
     <fields>
         <help><!-- Is this a new client, a lost client, or just an address change? --></help>
@@ -180,6 +188,14 @@
         <label><!-- Engagement Wall Sitter --></label>
         <name>Engagement_Wall_Sitter__c</name>
         <relationshipLabel><!-- Compliance (Engagement Wall Sitter) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Error Reason --></label>
+        <name>Error_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Transition Delay</masterLabel>
+            <translation><!-- Transition Delay --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <help><!-- If yes, a favor opportunity will be created for you to activate and permission users. --></help>
@@ -286,6 +302,10 @@
         <name>Is_Public__c</name>
     </fields>
     <fields>
+        <label><!-- KYC --></label>
+        <name>KYC__c</name>
+    </fields>
+    <fields>
         <help><!-- Letter sent to client verifying the change information --></help>
         <label><!-- Letter Sent --></label>
         <name>Letter_Sent__c</name>
@@ -333,6 +353,10 @@
     <fields>
         <label><!-- Opportunity Stage --></label>
         <name>Opportunity_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Error Reason --></label>
+        <name>Other_Error_Reason__c</name>
     </fields>
     <fields>
         <label><!-- Owner --></label>
@@ -550,6 +574,10 @@
         <label><!-- Website --></label>
         <name>Website__c</name>
     </fields>
+    <recordTypes>
+        <label><!-- UK Subscription --></label>
+        <name>UK_Subscription</name>
+    </recordTypes>
     <recordTypes>
         <description><!-- To be used for US Advisory Clients --></description>
         <label><!-- US Advisory --></label>
