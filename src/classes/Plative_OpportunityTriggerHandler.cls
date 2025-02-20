@@ -55,6 +55,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
         Boolean perDesignatedARR = false;
         List<Opportunity> setOppoChangedPer = new List<Opportunity>();
         List<Opportunity> designatedOppARR = new List<Opportunity>();
+        List<Id> closedOppIds = new List<Id>();
 
         if (!Plative_OpportunityTriggerHandler.afterUpdateRun) {
             Plative_OpportunityTriggerHelper.syncRecordsToNS(triggerNewMap, triggerOldMap);
@@ -70,6 +71,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
                    && (recordTypeName == 'Sales Opportunity - Closed' || recordTypeName == 'Sales Opportunity' || ((recordTypeName == 'Renewal' || recordTypeName == 'Renewal - Closed') && triggeredOpp.Automatic_Renewal__c == false))){
                     closedSalesOpportunities.add(triggeredOpp);
                 }
+                if(triggeredOpp.stageName != oldOppo.stageName && (triggeredOpp.stageName == 'Closed Won' || triggeredOpp.stageName == 'Closed Lost')) closedOppIds.add(triggeredOpp.Id);
                 // Check if any opportunity has changed the % value
                 if(triggeredOpp.This_Year_Increase__c != null && oldOppo.This_Year_Increase__c != triggeredOpp.This_Year_Increase__c){
                     perIncreaseChanged = true;
@@ -80,6 +82,11 @@ public without sharing class Plative_OpportunityTriggerHandler {
                     perDesignatedARR = true;
                     designatedOppARR.add(triggeredOpp);
                 }
+            }
+            // SF-1389
+            if(!closedOppIds.isEmpty() && closedOppIds.size() > 0 && !System.isFuture() && !System.isBatch()) {
+                UpdateAccountProductOnOppCloseWonBatch updateAccount = new UpdateAccountProductOnOppCloseWonBatch(closedOppIds);
+                Database.executeBatch(updateAccount, 5);
             }
             if(closedSalesOpportunities.size() > 0){
                 Plative_OpportunityRenewalHelper.handleClosedWonRenewalOpp(closedSalesOpportunities);
