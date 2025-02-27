@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>AM_Referral_Alert_Email</fullName>
+        <description>AM Referral Alert Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>adillard@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>bmarenholz@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carora@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>llesce@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mfernandez@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mkerbs@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nhigdem@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>olivia.houlder@reactnews.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>osawkins@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>peager@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Templates/New_Referral</template>
+    </alerts>
+    <alerts>
         <fullName>CAM_Referral</fullName>
         <description>CAM Referral</description>
         <protected>false</protected>

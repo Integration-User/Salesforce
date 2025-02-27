@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>AM_Referral_Email_Alert</name>
+        <label>AM Referral Email Alert</label>
+        <locationX>842</locationX>
+        <locationY>431</locationY>
+        <actionName>Lead.AM_Referral_Alert_Email</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.AM_Referral_Alert_Email</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
         <name>New_Advisory_Email_Alert</name>
         <label>New Advisory Email Alert</label>
         <locationX>578</locationX>
@@ -15,6 +32,7 @@
             </value>
         </inputParameters>
         <nameSegment>Lead.New_Advisory_Referral_Alert_Email</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Send_Commercial_Advisory_Email</name>
@@ -31,6 +49,7 @@
             </value>
         </inputParameters>
         <nameSegment>Lead.New_Referral_Commercial_and_Advisory_Alert_Email</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Send_Referral_Alert_Email</name>
@@ -47,12 +66,14 @@
             </value>
         </inputParameters>
         <nameSegment>Lead.New_Referral_Alert_Email</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Commercial_Advisory</name>
         <label>Commercial + Advisory</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -79,7 +100,7 @@
         </rules>
         <rules>
             <name>Not_Commercial_Advisory</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -89,16 +110,16 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Lead_Type__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Commercial + Advisory ARR</stringValue>
+                    <stringValue>Sales</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Lead_Type__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Advisory</stringValue>
+                    <stringValue>IJGlobal</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -128,6 +149,28 @@
             </connector>
             <label>Send to Advisory Only</label>
         </rules>
+        <rules>
+            <name>AM_Referral_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Management</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referrals</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AM_Referral_Email_Alert</targetReference>
+            </connector>
+            <label>AM Referral Email</label>
+        </rules>
     </decisions>
     <environments>Default</environments>
     <interviewLabel>Send Lead Referral Email Alert {!$Flow.CurrentDateTime}</interviewLabel>
@@ -152,7 +195,7 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>320</locationX>
+        <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Commercial_Advisory</targetReference>
