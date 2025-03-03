@@ -245,7 +245,33 @@ public class Plative_OpportunityTriggerTest {
         Test.stopTest();
     } 
 
-
+    @isTest
+    static void deleteOppLineItem(){
+        Test.startTest();
+        Opportunity opptyTemp = [Select Id,AccountId,Name  from Opportunity  LIMIT 1];
+        Product2 iJproduct = new Product2();
+        iJproduct.Name = 'IJGlobal: News + IJ Investor';
+        iJproduct.IsActive = true;
+        iJproduct.ProductCode = 'DDS11DDS12DDS2';
+        insert iJproduct;
+        PricebookEntry ijEntry = new PricebookEntry();
+        ijEntry.IsActive = true;
+        ijEntry.Pricebook2Id = Test.getStandardPricebookId();
+        ijEntry.Product2Id = iJproduct.Id;
+        ijEntry.UnitPrice = 0;
+        insert ijEntry;
+        OpportunityLineItem opptyLineItem1 = new OpportunityLineItem();
+        opptyLineItem1.OpportunityId = opptyTemp.Id;
+        opptyLineItem1.PricebookEntryId = ijEntry.Id;
+        opptyLineItem1.UnitPrice = 15000;
+        opptyLineItem1.Quantity = 1;
+        opptyLineItem1.Start_Date__c = System.today();
+        opptyLineItem1.End_Date__c = System.today().addMonths(1);
+        opptyLineItem1.Product_External_Id__c = 401;
+        insert opptyLineItem1; 
+        delete opptyLineItem1;
+        Test.stopTest();
+    }
     @isTest
     static void opptyProjectTest(){ 
 
