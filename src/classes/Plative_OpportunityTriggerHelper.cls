@@ -30,6 +30,7 @@ public without sharing class Plative_OpportunityTriggerHelper {
                              System.label.Sales_Opportunity).getRecordTypeId();
         Id existingBusinessRT = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(
                                 System.label.Existing_Business_RT).getRecordTypeId();
+        Id eventsRT = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Events').getRecordTypeId();
         
         //check if status is set to closed won
         for (Opportunity oppty : mapNewOppty.values()) {
@@ -37,7 +38,7 @@ public without sharing class Plative_OpportunityTriggerHelper {
             if (oppty.IsWon && !mapOldOppty.get(oppty.Id).IsWon &&
                (oppty.RecordTypeId == advisoryRT ||
                 oppty.RecordTypeId == salesOpptyRT || 
-                oppty.RecordTypeId == existingBusinessRT )) {
+                oppty.RecordTypeId == existingBusinessRT || oppty.RecordTypeId == eventsRT)) {
                 oppty.Trigger_Real_time_Sync__c = true;
             } 
         }
