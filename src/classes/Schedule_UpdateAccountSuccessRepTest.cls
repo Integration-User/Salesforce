@@ -30,6 +30,7 @@ public class Schedule_UpdateAccountSuccessRepTest {
         accnt.BillingState = 'New York';
         accnt.BillingStreet = 'Madison Avenue';
         accnt.Account_Status__c = 'Active';
+        accnt.Type = 'Client + Trial';
         insert accnt;
     }
     
