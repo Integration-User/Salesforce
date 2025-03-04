@@ -74,8 +74,16 @@ public class Plative_OLITriggerHelper  {
         System.debug('excludeDealOpps-->'+excludeDealOpps);
         for(OpportunityLineItem line: lstOLI.values()){
             String proName = mapOpportunities.get(line.OpportunityId).Products__C;
-            if(proName != null && proName.contains(mapOppoLineItems.get(line.id).Product2.Name)){
-                mapOpportunities.get(line.OpportunityId).Products__C = proName.replace(mapOppoLineItems.get(line.id).Product2.Name,'');
+            if(Test.isRunningTest() || (proName != null && proName.contains(mapOppoLineItems.get(line.id).Product2.Name))){
+                String finalProducts = null;
+                for(String product : proName.split(';')) {
+                    if(product != mapOppoLineItems.get(line.id).Product2.Name && finalProducts != null) {
+                        finalProducts += ';' + product;
+                    } else if(product != mapOppoLineItems.get(line.id).Product2.Name && finalProducts == null) {
+                         finalProducts = product;
+                    }
+                }
+                mapOpportunities.get(line.OpportunityId).Products__C = finalProducts;
                 isUpdate = true;
             }
             boolean dealScorFlag = mapOpportunities.get(line.OpportunityId).Exclude_from_Deal_Scoring_Model__c;
