@@ -16055,11 +16055,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Became_Client_Research__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Account.Became_Client__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -18704,11 +18699,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.ClosedOnCreate</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Comments__c</field>
         <readable>true</readable>
@@ -21150,11 +21140,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ContactPointConsent.ContactPointTypeConsentId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>ContactPointConsent.DataUsePurposeId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -21377,26 +21362,6 @@
         <editable>true</editable>
         <field>Contact_Email_Distribution__c.Soft_Launch__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact_Email_Distribution__c_hd.Account__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact_Email_Distribution__c_hd.Account__c_hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact_Email_Distribution__c_hd.Contact__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact_Email_Distribution__c_hd.Contact__c_hst</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -24580,21 +24545,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>DataUsePurpose.IsMaintainablePerContactPoint</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DataUsePurpose.IsMaintainablePerParty</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DataUsePurpose.IsMaintainablePerType</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>DataUsePurpose.LegalBasisId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -25099,126 +25049,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.AmountWithoutAdjustments__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.AmountWithoutAdjustments__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.AmountWithoutManagerAdjustment__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.AmountWithoutManagerAdjustment__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.ForecastAmount__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.ForecastAmount__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.ForecastQuantity__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.ForecastQuantity__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OverriddenRollupMgrView__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OverriddenRollupMgrView__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OverriddenRollupOwnerView__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OverriddenRollupOwnerView__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OwnerOnlyAmount__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OwnerOnlyAmount__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OwnerOnlyQuantity__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OwnerOnlyQuantity__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.QuantityWithoutAdjustments__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.QuantityWithoutAdjustments__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.QuantityWithoutManagerAdjustment__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.QuantityWithoutManagerAdjustment__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.RawOwnerOnly__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.RawOwnerOnly__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.RawRollup__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.RawRollup__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>HubSpot_Inc__HubSpot_Intelligence__c.HubSpot_Inc__Average_Page_Views__c</field>
         <readable>true</readable>
@@ -25376,31 +25206,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>HubSpot_Inc__HubSpot_Intelligence__c.HubSpot_Inc__Website_Visits__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>HubSpot_Inc__HubSpot_Intelligence__c_hd.HubSpot_Inc__First_Visit__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>HubSpot_Inc__HubSpot_Intelligence__c_hd.HubSpot_Inc__First_Visit__c_hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>HubSpot_Inc__HubSpot_Intelligence__c_hd.HubSpot_Inc__Total_Page_Views__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>HubSpot_Inc__HubSpot_Intelligence__c_hd.HubSpot_Inc__Total_Page_Views__c_hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Idea.Attachment</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -26806,11 +26611,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>MessagingEndUser.HasInitialResponseSent</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>MessagingEndUser.IsOptedOut</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -28827,76 +28627,6 @@
         <editable>true</editable>
         <field>OpportunityTeamMember.Core__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Amount__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Amount__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.CloseDate__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.CloseDate__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Contract_Type__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Contract_Type__c_hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.ForecastCategoryName__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.ForecastCategoryName__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Probability__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Probability__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.StageName__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.StageName__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.X2nd_Year_Amount_in_USD__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.X2nd_Year_Amount_in_USD__c_hst</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -47833,9 +47563,6 @@
         <layout>Account_Product_Line__c-Account Product Line Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ActionCadence-Cadence Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Alert__mdt-Alert Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -48078,9 +47805,6 @@
         <layout>ContactRequest-Contact Request Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ContactSuggestionInsight-Einstein Contact Suggestion Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Contact_Email_Distribution__c-Contact Email Distribution Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -48199,12 +47923,6 @@
         <layout>NS_Picklist_Internal_Id__mdt-NS Picklist Internal Id Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>OperatingHours-Operating Hours Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>OperatingHoursHoliday-Operating Hours Holiday Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Opportunity-Advertising</layout>
         <recordType>Opportunity.Advertising</recordType>
     </layoutAssignments>
@@ -48261,9 +47979,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>OpportunityContactRole-Opportunity Contact Role Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>OpportunityContactRoleSuggestionInsight-Einstein Opportunity Contact Role Suggestion Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>OpportunityLineItem-Opportunity Product Layout</layout>
@@ -48374,9 +48089,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SharingRecordCollection-Record Collection Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>SiqExchangeConnection-Exchange Connection Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
@@ -49117,15 +48829,6 @@
         <modifyAllRecords>true</modifyAllRecords>
         <object>Contact_Email_Distribution__c</object>
         <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Contact_Email_Distribution__c_hd</object>
-        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -49979,15 +49682,6 @@
         <allowEdit>false</allowEdit>
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>ForecastingItem__hd</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
         <object>GSA_Platform__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -49999,15 +49693,6 @@
         <modifyAllRecords>true</modifyAllRecords>
         <object>HubSpot_Inc__HubSpot_Intelligence__c</object>
         <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>HubSpot_Inc__HubSpot_Intelligence__c_hd</object>
-        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -50368,15 +50053,6 @@
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>OpportunityTeamMember</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Opportunity__hd</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -55768,11 +55444,6 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
         <default>true</default>
         <recordType>Knowledge__kav.Knowledge</recordType>
         <visible>true</visible>
@@ -56865,10 +56536,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-BusinessBrand</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Campaign</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -56889,36 +56556,12 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-CommSubscription</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-CommSubscriptionChannelType</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-CommSubscriptionConsent</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-CommSubscriptionTiming</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Contact</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-ContactPointConsent</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-ContactPointTypeConsent</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ContactRequest</tab>
-        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ContentNote</tab>
@@ -56927,10 +56570,6 @@
     <tabVisibilities>
         <tab>standard-Contract</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-Customer</tab>
-        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Dashboard</tab>
@@ -56967,10 +56606,6 @@
     <tabVisibilities>
         <tab>standard-EmailTemplate</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-EngagementChannelType</tab>
-        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-EnhancedLetterhead</tab>
@@ -57017,14 +56652,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-Image</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-Individual</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-JourneyHome</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -57039,10 +56666,6 @@
     <tabVisibilities>
         <tab>standard-LightningBoltHome</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-LightningQuickText</tab>
-        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ListEmail</tab>
@@ -57085,10 +56708,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-PartyConsent</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Pricebook2</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
@@ -57125,10 +56744,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-Recommendation</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-SalesAIRelationshipGraph</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -57151,10 +56766,6 @@
     <tabVisibilities>
         <tab>standard-Scorecard</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-Seller</tab>
-        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-SharingRecordCollection</tab>
@@ -57876,10 +57487,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SendCustomNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
