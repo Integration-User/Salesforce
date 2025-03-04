@@ -2209,9 +2209,9 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Demo Request</fullName>
+                    <fullName>Bing</fullName>
                     <default>false</default>
-                    <label>Demo Request</label>
+                    <label>Bing</label>
                 </value>
                 <value>
                     <fullName>Contact Us</fullName>
@@ -2219,44 +2219,19 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                     <label>Contact Us</label>
                 </value>
                 <value>
+                    <fullName>Content Request</fullName>
+                    <default>false</default>
+                    <label>Content Request</label>
+                </value>
+                <value>
+                    <fullName>Demo Request</fullName>
+                    <default>false</default>
+                    <label>Demo Request</label>
+                </value>
+                <value>
                     <fullName>Direct Call</fullName>
                     <default>false</default>
                     <label>Direct Call</label>
-                </value>
-                <value>
-                    <fullName>Inbound Email</fullName>
-                    <default>false</default>
-                    <label>Inbound Email</label>
-                </value>
-                <value>
-                    <fullName>Trial Request</fullName>
-                    <default>false</default>
-                    <label>Trial Request</label>
-                </value>
-                <value>
-                    <fullName>Subscription Request</fullName>
-                    <default>false</default>
-                    <label>Subscription Request</label>
-                </value>
-                <value>
-                    <fullName>Webinar</fullName>
-                    <default>false</default>
-                    <label>Webinar</label>
-                </value>
-                <value>
-                    <fullName>In Person Event</fullName>
-                    <default>false</default>
-                    <label>In Person Event</label>
-                </value>
-                <value>
-                    <fullName>Sponsored Event</fullName>
-                    <default>false</default>
-                    <label>Sponsored Event</label>
-                </value>
-                <value>
-                    <fullName>LinkedIn</fullName>
-                    <default>false</default>
-                    <label>LinkedIn</label>
                 </value>
                 <value>
                     <fullName>Google</fullName>
@@ -2264,44 +2239,19 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                     <label>Google</label>
                 </value>
                 <value>
-                    <fullName>Content Request</fullName>
-                    <default>false</default>
-                    <label>Content Request</label>
-                </value>
-                <value>
-                    <fullName>Scored Lead</fullName>
-                    <default>false</default>
-                    <label>Scored Lead</label>
-                </value>
-                <value>
-                    <fullName>ZoomInfo</fullName>
-                    <default>false</default>
-                    <label>ZoomInfo</label>
-                </value>
-                <value>
-                    <fullName>Linkedin Sales Nav</fullName>
-                    <default>false</default>
-                    <label>Linkedin Sales Nav</label>
-                </value>
-                <value>
-                    <fullName>Self-Reported</fullName>
-                    <default>false</default>
-                    <label>Self-Reported</label>
-                </value>
-                <value>
-                    <fullName>PERE</fullName>
-                    <default>false</default>
-                    <label>PERE</label>
-                </value>
-                <value>
                     <fullName>Green Street</fullName>
                     <default>false</default>
                     <label>Green Street</label>
                 </value>
                 <value>
-                    <fullName>React</fullName>
+                    <fullName>Inbound Email</fullName>
                     <default>false</default>
-                    <label>React</label>
+                    <label>Inbound Email</label>
+                </value>
+                <value>
+                    <fullName>In Person Event</fullName>
+                    <default>false</default>
+                    <label>In Person Event</label>
                 </value>
                 <value>
                     <fullName>LDC</fullName>
@@ -2309,24 +2259,14 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                     <label>LDC</label>
                 </value>
                 <value>
-                    <fullName>Other</fullName>
+                    <fullName>LinkedIn</fullName>
                     <default>false</default>
-                    <label>Other</label>
+                    <label>LinkedIn</label>
                 </value>
                 <value>
-                    <fullName>Personal Network</fullName>
+                    <fullName>Linkedin Sales Nav</fullName>
                     <default>false</default>
-                    <label>Personal Network</label>
-                </value>
-                <value>
-                    <fullName>Referral</fullName>
-                    <default>false</default>
-                    <label>Referral</label>
-                </value>
-                <value>
-                    <fullName>Target List</fullName>
-                    <default>false</default>
-                    <label>Target List</label>
+                    <label>Linkedin Sales Nav</label>
                 </value>
                 <value>
                     <fullName>Non-Green Street Sponsored Event</fullName>
@@ -2334,9 +2274,34 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                     <label>Non-Green Street Sponsored Event</label>
                 </value>
                 <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>PERE</fullName>
+                    <default>false</default>
+                    <label>PERE</label>
+                </value>
+                <value>
+                    <fullName>Personal Network</fullName>
+                    <default>false</default>
+                    <label>Personal Network</label>
+                </value>
+                <value>
                     <fullName>Preqin</fullName>
                     <default>false</default>
                     <label>Preqin</label>
+                </value>
+                <value>
+                    <fullName>React</fullName>
+                    <default>false</default>
+                    <label>React</label>
+                </value>
+                <value>
+                    <fullName>Referral</fullName>
+                    <default>false</default>
+                    <label>Referral</label>
                 </value>
                 <value>
                     <fullName>Salesforce</fullName>
@@ -2344,9 +2309,49 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                     <label>Salesforce</label>
                 </value>
                 <value>
+                    <fullName>Scored Lead</fullName>
+                    <default>false</default>
+                    <label>Scored Lead</label>
+                </value>
+                <value>
+                    <fullName>Self-Reported</fullName>
+                    <default>false</default>
+                    <label>Self-Reported</label>
+                </value>
+                <value>
+                    <fullName>Sponsored Event</fullName>
+                    <default>false</default>
+                    <label>Sponsored Event</label>
+                </value>
+                <value>
+                    <fullName>Subscription Request</fullName>
+                    <default>false</default>
+                    <label>Subscription Request</label>
+                </value>
+                <value>
+                    <fullName>Target List</fullName>
+                    <default>false</default>
+                    <label>Target List</label>
+                </value>
+                <value>
+                    <fullName>Trial Request</fullName>
+                    <default>false</default>
+                    <label>Trial Request</label>
+                </value>
+                <value>
                     <fullName>Upsell</fullName>
                     <default>false</default>
                     <label>Upsell</label>
+                </value>
+                <value>
+                    <fullName>Webinar</fullName>
+                    <default>false</default>
+                    <label>Webinar</label>
+                </value>
+                <value>
+                    <fullName>ZoomInfo</fullName>
+                    <default>false</default>
+                    <label>ZoomInfo</label>
                 </value>
             </valueSetDefinition>
             <valueSettings>
@@ -2357,16 +2362,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
             <valueSettings>
                 <controllingFieldValue>Former User</controllingFieldValue>
                 <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>ZoomInfo</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
                 <valueName>Linkedin Sales Nav</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <valueName>Self-Reported</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Former User</controllingFieldValue>
@@ -2377,6 +2373,19 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Former User</controllingFieldValue>
                 <controllingFieldValue>Cold Outreach</controllingFieldValue>
                 <valueName>Personal Network</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Former User</controllingFieldValue>
+                <valueName>Self-Reported</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Former User</controllingFieldValue>
+                <controllingFieldValue>Cold Outreach</controllingFieldValue>
+                <valueName>ZoomInfo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <valueName>Bing</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Paid Social</controllingFieldValue>
@@ -2390,11 +2399,11 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Former Account</controllingFieldValue>
-                <valueName>React</valueName>
+                <valueName>LDC</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Former Account</controllingFieldValue>
-                <valueName>LDC</valueName>
+                <valueName>React</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Cold Outreach</controllingFieldValue>
@@ -2418,11 +2427,11 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>Webinar</valueName>
+                <valueName>In Person Event</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>In Person Event</valueName>
+                <valueName>Non-Green Street Sponsored Event</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Events</controllingFieldValue>
@@ -2430,15 +2439,15 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>Non-Green Street Sponsored Event</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Demo Request</valueName>
+                <valueName>Webinar</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Inquiry</controllingFieldValue>
                 <valueName>Contact Us</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inquiry</controllingFieldValue>
+                <valueName>Demo Request</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Inquiry</controllingFieldValue>
@@ -2450,12 +2459,12 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Trial Request</valueName>
+                <controllingFieldValue>Ecommerce</controllingFieldValue>
+                <valueName>Subscription Request</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Inquiry</controllingFieldValue>
-                <controllingFieldValue>Ecommerce</controllingFieldValue>
-                <valueName>Subscription Request</valueName>
+                <valueName>Trial Request</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Inquiry</controllingFieldValue>
