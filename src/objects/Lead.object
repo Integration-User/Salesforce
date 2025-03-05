@@ -339,6 +339,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Account_Billing_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.BillingCity + &quot;, &quot; + Account__r.BillingState + &quot;, &quot; + Account__r.BillingCountry</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Billing Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Leads associated with this account.</description>
