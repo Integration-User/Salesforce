@@ -62,6 +62,7 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
                     years.sort();
                     Set<String> uniqueYears = new Set<String>(years);
                     String priorOpportunity = '';
+                    String futureOpportunity = '';
                     set<String> convertedyear = new Set<String>();
                     List<Opportunity> updateList = new List<Opportunity>();
                     for (Opportunity renewOpp : renewOppList) {
@@ -73,7 +74,14 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
                                 } else {
                                     priorOpportunity = renewOpp.Sales_Opportunity__c; 
                                 }
+                                Integer nextYear = Integer.valueof(renewOpp.Close_Year__c) + 1;
+                                if(updateOppMap.containsKey(renewOpp.Sales_Opportunity__c + '-' + nextYear)) {
+                                    futureOpportunity = updateOppMap.get(renewOpp.Sales_Opportunity__c + '-' + nextYear).Id;
+                                } else {
+                                    futureOpportunity = null;
+                                }
                                 renewOpp.Prior_Opportunity__c = priorOpportunity;
+                                renewOpp.Future_Renewal__c = futureOpportunity;
                                 System.debug('renewOpp-' + renewOpp);
                                 updateList.add(renewOpp);
                                 convertedyear.add(key);
@@ -83,7 +91,27 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
                     }
                     System.debug(updateList);
                     if(!updateList.isEmpty()) {
-                        update updateList;
+                        // update updateList;
+                        String errorDetails ='Id, Message\n';
+                        boolean isupdatefailed = false;
+                        List<Database.SaveResult> results = Database.update(updateList, false);
+                        for (Database.SaveResult result : results) {
+                            if (!result.isSuccess()){
+                                for (Database.Error err : result.getErrors()){
+                                    System.debug('Error: '+ err.getStatusCode() + ' ' + err.getMessage());
+                                    String fileRow = result.getId() + ',' + err.getMessage();
+                                    errorDetails +=  fileRow + '\n';
+                                    isupdatefailed = true;
+                                }
+                            }
+                        }
+                        if(isupdatefailed) {
+                            Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
+                            email.setSubject('Future and Prior Opportunity Updates are failer');
+                            email.setToAddresses(new String[]{'mgupta@greenstreet.com', 'mbonyab@greenstreet.com', 'jecusi@greenstreet.com'});
+                             email.setPlainTextBody('Records are: \n' + errorDetails);
+                            Messaging.SendEmailResult[] r = Messaging.sendEmail(new Messaging.SingleEmailMessage[]{email});
+                        }
                     }
                 }
                 // End New reference field for Previous Opp
