@@ -109,7 +109,7 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
                             Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
                             email.setSubject('Future and Prior Opportunity Updates are failer');
                             email.setToAddresses(new String[]{'mgupta@greenstreet.com', 'mbonyab@greenstreet.com', 'jecusi@greenstreet.com'});
-                            email.setPlainTextBody('Records Are \n: ' + errorDetails);
+                             email.setPlainTextBody('Records are: \n' + errorDetails);
                             Messaging.SendEmailResult[] r = Messaging.sendEmail(new Messaging.SingleEmailMessage[]{email});
                         }
                     }
