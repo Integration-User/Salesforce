@@ -274,6 +274,7 @@ public without sharing class Plative_OpportunityTriggerHelper {
                              System.label.Sales_Opportunity).getRecordTypeId();
         Id existingBusinessRT = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(
                                 System.label.Existing_Business_RT).getRecordTypeId();
+        Id eventsRT = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Events').getRecordTypeId();
 
         Set<Id> setOpptyIds = new Set<Id>();
         Set<Id> setOpptyLineIds = new Set<Id>();
@@ -285,7 +286,7 @@ public without sharing class Plative_OpportunityTriggerHelper {
             if (oppty.StageName == '6 - Verbal Win and Finalizing Contract' && 
                (oppty.StageName != mapOldOppty.get(oppty.Id).StageName) &&
                (oppty.RecordTypeId == salesOpptyRT || 
-                oppty.RecordTypeId == existingBusinessRT)){
+                oppty.RecordTypeId == existingBusinessRT || oppty.RecordTypeId == eventsRT)){
                   setOpptyIds.add(oppty.Id);
                   hasOpptyinVerbalWin = true;
             }
