@@ -1,74 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <name>Get_Product_Names</name>
-        <label>Get Product Names</label>
-        <locationX>302</locationX>
-        <locationY>313</locationY>
+        <name>List_Of_Products</name>
+        <label>List Of Products</label>
+        <locationX>264</locationX>
+        <locationY>503</locationY>
         <assignmentItems>
-            <assignToReference>ProductNames</assignToReference>
+            <assignToReference>productList</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Opportunity.Products__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Description</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Opportunity.Product_Description__c</elementReference>
+                <elementReference>getProductName</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Get_All_Product_Line</targetReference>
+            <targetReference>Loop_through_all_records</targetReference>
         </connector>
     </assignments>
-    <assignments>
-        <name>Other_Product_for_same_name_avail</name>
-        <label>Other Product for same name avail</label>
-        <locationX>745</locationX>
-        <locationY>156</locationY>
-        <assignmentItems>
-            <assignToReference>Available</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-    </assignments>
-    <decisions>
-        <name>check_if_same_product_name_with_different_Id</name>
-        <label>check if same product name with different Id</label>
-        <locationX>740</locationX>
-        <locationY>304</locationY>
-        <defaultConnector>
-            <targetReference>Loop_through_all_records</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>check_if_same_product_name_with_different_Id_condition</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Product2.Name</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Loop_through_all_records.Product2.Name</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Id</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>Loop_through_all_records.Id</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Other_Product_for_same_name_avail</targetReference>
-            </connector>
-            <label>check if same product name with different Id condition</label>
-        </rules>
-    </decisions>
+    <environments>Default</environments>
     <formulas>
         <name>FinalDescription</name>
         <dataType>String</dataType>
@@ -79,17 +29,22 @@
         <dataType>String</dataType>
         <expression>SUBSTITUTE({!ProductNames}, {!$Record.Product2.Name}, &quot;&quot;)</expression>
     </formulas>
+    <formulas>
+        <name>getProductName</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!productList}), {!Loop_through_all_records.Product2.Name}, {!productList} &amp; &apos;;&apos; &amp; {!Loop_through_all_records.Product2.Name} )</expression>
+    </formulas>
     <interviewLabel>Delete Product Name on Opportunity {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Delete Product Name on Opportunity</label>
     <loops>
         <name>Loop_through_all_records</name>
         <label>Loop through all records</label>
-        <locationX>502</locationX>
-        <locationY>302</locationY>
+        <locationX>176</locationX>
+        <locationY>395</locationY>
         <collectionReference>Get_All_Product_Line</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>check_if_same_product_name_with_different_Id</targetReference>
+            <targetReference>List_Of_Products</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Remove_Product_name</targetReference>
@@ -104,7 +59,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -117,8 +72,8 @@
     <recordLookups>
         <name>Get_All_Product_Line</name>
         <label>Get All Product Line</label>
-        <locationX>301</locationX>
-        <locationY>473</locationY>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_through_all_records</targetReference>
@@ -131,6 +86,13 @@
                 <elementReference>$Record.OpportunityId</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>OpportunityLineItem</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -138,8 +100,8 @@
     <recordUpdates>
         <name>Remove_Product_name</name>
         <label>Remove Product name</label>
-        <locationX>505</locationX>
-        <locationY>485</locationY>
+        <locationX>176</locationX>
+        <locationY>695</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -151,16 +113,16 @@
         <inputAssignments>
             <field>Products__c</field>
             <value>
-                <elementReference>FinalProductName</elementReference>
+                <elementReference>productList</elementReference>
             </value>
         </inputAssignments>
         <object>Opportunity</object>
     </recordUpdates>
     <start>
-        <locationX>181</locationX>
-        <locationY>50</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Product_Names</targetReference>
+            <targetReference>Get_All_Product_Line</targetReference>
         </connector>
         <object>OpportunityLineItem</object>
         <recordTriggerType>Delete</recordTriggerType>
@@ -193,6 +155,13 @@
     </variables>
     <variables>
         <name>DescriptionRichText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>productList</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
