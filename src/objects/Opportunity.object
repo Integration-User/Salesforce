@@ -45706,7 +45706,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-RecordType.Name &lt;&gt; &quot;Events&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
 RecordType.Name &lt;&gt; &quot;Favour - Closed&quot;,
 ISPICKVAL(StageName,&quot;Closed Won&quot;),
@@ -46722,6 +46721,7 @@ OR(
  ISPICKVAL(  Billing_Schedule__c  , &quot;&quot;)),
 OR(
  RecordType.Name = &quot;Renewal&quot;,
+ RecordType.Name = &quot;Events&quot;,
  RecordType.Name = &quot;Sales Opportunity&quot;)
 )</errorConditionFormula>
         <errorMessage>Please enter Contract Start and End Date, Billing contact and Billing schedule in order to save this Opportunity as a Verbal Win.</errorMessage>
