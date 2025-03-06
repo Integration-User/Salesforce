@@ -30,13 +30,14 @@ public class Schedule_UpdateAccountSuccessRepTest {
         accnt.BillingState = 'New York';
         accnt.BillingStreet = 'Madison Avenue';
         accnt.Account_Status__c = 'Active';
+        accnt.Type = 'Client + Trial';
         insert accnt;
     }
     
     
     @isTest
     static void fetchAccount(){
-        Account acc = [Select Id from Account LIMIT 1];
+        Account acc = [Select Id from Account where Name = 'Test Accnt' LIMIT 1];
         User u = [Select id from User where profile.name like '%System%' and isactive = true limit 1];
         acc.Force_Owner_Update__c = true;
         update acc;
