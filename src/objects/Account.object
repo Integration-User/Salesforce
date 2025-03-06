@@ -13016,6 +13016,16 @@ Stored as Long on Solr.</description>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
     <validationRules>
+        <fullName>Change_Account_Priority</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT($Permission.Bypass_Account_Priority),
+ISCHANGED(Priority__c) 
+)</errorConditionFormula>
+        <errorMessage>You cannot modify the Priority.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Client_Name_Change</fullName>
         <active>true</active>
         <description>Compliance is the only team allowed to change the name of a client in Salesforce</description>
