@@ -2993,6 +2993,7 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <fullName>Lead_Classification__c</fullName>
         <externalId>false</externalId>
         <formula>CASE(Lead_Type__c,
+&quot;Upsell&quot;, &quot;Hot&quot;,
 &quot;Demo Request&quot;, &quot;Hot&quot;,
 &quot;Bing&quot;, &quot;Hot&quot;,
 &quot;Contact Us&quot;, &quot;Hot&quot;,
