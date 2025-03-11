@@ -13636,6 +13636,7 @@ Stored as Long on Solr.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 NOT($Permission.Bypass_Account_Priority),
+PRIORVALUE(Priority__c)!=NULL,
 ISCHANGED(Priority__c) 
 )</errorConditionFormula>
         <errorMessage>You cannot modify the Priority.</errorMessage>
