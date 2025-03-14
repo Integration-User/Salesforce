@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Canceled_No_Show_Date_Decision</name>
         <label>Canceled / No Show Date Decision</label>
@@ -165,14 +166,22 @@
     </decisions>
     <environments>Default</environments>
     <formulas>
+        <name>In_Person_Virtual_Meeting_Formula</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;In-Person Sales Visit&quot;), &quot;In-Person&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Sales Visit&quot;), &quot;Virtual&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Visit&quot;), &quot;Virtual&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Training&quot;), &quot;Virtual&quot;, &quot;&quot;))))</expression>
+    </formulas>
+    <formulas>
         <name>Salesloft_Type_Formula</name>
         <dataType>String</dataType>
         <expression>IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Account Handoff&quot;), &quot;Account Handoff&quot;,
-IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;In-Person Sales Visit&quot;), &quot;In-Person Sales Visit&quot;,
-IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Sales Visit&quot;), &quot;Virtual Sales Visit&quot;,
-IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Visit&quot;), &quot;Virtual Visit&quot;,
-IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Pre-Renewal / Pricing Visit&quot;), &quot;Virtual Pre-Renewal / Pricing Visit&quot;,
-IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Training&quot;), &quot;Virtual Training&quot;, TEXT({!$Record.Type})))))))</expression>
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;In-Person Sales Visit&quot;), &quot;Sales Visit&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Sales Visit&quot;), &quot;Sales Visit&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Visit&quot;), &quot;Visit&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Renewal Discussion&quot;), &quot;Renewal Discussion&quot;,
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Training&quot;), &quot;Product Training / Methodology&quot;, TEXT({!$Record.Type})))))))</expression>
     </formulas>
     <interviewLabel>Salesloft Meeting Type {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Sync Salesloft Meeting Type on Event</label>
@@ -279,6 +288,12 @@ IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Training&quot;),
         <connector>
             <targetReference>Canceled_No_Show_Date_Decision</targetReference>
         </connector>
+        <inputAssignments>
+            <field>In_Person_or_Virtual_Meeting__c</field>
+            <value>
+                <elementReference>In_Person_Virtual_Meeting_Formula</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Type</field>
             <value>
