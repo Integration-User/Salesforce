@@ -5179,7 +5179,7 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>LID__cannot_edit_Priority_on_Linkedin_Tasks</fullName>
@@ -5216,7 +5216,7 @@ ISBLANK(Model_Count__c))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Require_Task_Objective_Strategy</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
 $UserRole.Name &lt;&gt; &quot;Research&quot;,
 $UserRole.Name &lt;&gt; &quot;EU REA&quot;,
