@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
@@ -13,6 +14,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Type</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>In_Person_or_Virtual_Meeting__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -71,14 +76,6 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Diagnostic_Discussion__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Web_Demo__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Feedback_Entered__c</field>
             </layoutItems>
             <layoutItems>
@@ -88,6 +85,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Model_Count__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CS_AM_Client_Event_Origin__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
