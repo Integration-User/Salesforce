@@ -8599,6 +8599,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -12119,6 +12123,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -13628,6 +13636,7 @@ Stored as Long on Solr.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 NOT($Permission.Bypass_Account_Priority),
+PRIORVALUE(Priority__c)!=NULL,
 ISCHANGED(Priority__c) 
 )</errorConditionFormula>
         <errorMessage>You cannot modify the Priority.</errorMessage>
