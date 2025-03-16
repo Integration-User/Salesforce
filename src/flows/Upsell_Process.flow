@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <description>Whenever a product is listed on an Sale opportunity RT and the “upsell/cross-sell” checkbox is checked, ensure the opportunity is Sales Type = Upsell.</description>
         <name>Check_upsell_cross_Sell_Condition</name>
         <label>Check upsell/cross Sell Condition</label>
         <locationX>314</locationX>
-        <locationY>887</locationY>
+        <locationY>287</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_Upsells_value_for_Opp</name>
@@ -47,95 +48,17 @@
                     <numberValue>0.0</numberValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sales_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Upsell</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>New_Sales_Type_Update_on_Opp</targetReference>
             </connector>
             <label>Check Upsells Less than 1 for Opp</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>SAO_Date_Check</name>
-        <label>SAO Date Check</label>
-        <locationX>314</locationX>
-        <locationY>587</locationY>
-        <defaultConnector>
-            <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Date_update_Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>3 - Qualifying</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record__Prior.StageName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>2 - Conducting Needs Analysis​</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record__Prior.BDR_Referred_By__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.SAO_Date__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>SAO_Date_On_Opportunity</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>SAO_Owner_Check</name>
-        <label>SAO Owner Check</label>
-        <locationX>314</locationX>
-        <locationY>287</locationY>
-        <defaultConnector>
-            <targetReference>SAO_Date_Check</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.BDR_Referred_By__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record__Prior</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Owner.UserRole.Name</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>BDR</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>SAO_Tracking_On_Opportunity</targetReference>
-            </connector>
-            <label>Yes</label>
         </rules>
     </decisions>
     <description>This will ensure upsell tagging accurately</description>
@@ -165,7 +88,7 @@
         <name>New_Sales_Type_Update_on_Opp</name>
         <label>New Sales Type Update on Opp</label>
         <locationX>314</locationX>
-        <locationY>995</locationY>
+        <locationY>395</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -183,42 +106,10 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>SAO_Date_On_Opportunity</name>
-        <label>SAO Date On Opportunity</label>
-        <locationX>182</locationX>
-        <locationY>695</locationY>
-        <connector>
-            <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>SAO_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>SAO_Tracking_On_Opportunity</name>
-        <label>SAO Tracking On Opportunity</label>
-        <locationX>182</locationX>
-        <locationY>395</locationY>
-        <connector>
-            <targetReference>SAO_Date_Check</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>BDR_Referred_By__c</field>
-            <value>
-                <elementReference>$Record.OwnerId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>Upsell_Update_Opp_Process</name>
         <label>Upsell Update Opp Process</label>
         <locationX>50</locationX>
-        <locationY>995</locationY>
+        <locationY>395</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -239,7 +130,7 @@
         <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>SAO_Owner_Check</targetReference>
+            <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
         </connector>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
