@@ -15,17 +15,35 @@
             </value>
         </inputParameters>
         <nameSegment>Opportunity.SDO_Sales_Owner_for_Review_Email_Alert</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>update_Sales_Type</name>
+        <label>update Sales Type</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>salesType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Upsell</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Record_Type</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Convert_SDO</name>
         <label>Convert SDO?</label>
-        <locationX>446</locationX>
+        <locationX>600</locationX>
         <locationY>539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND (3 OR 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -47,8 +65,15 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Create_New_Renewal_Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Get_Record_Type</targetReference>
+                <targetReference>Is_Renewal_Checked</targetReference>
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes</label>
@@ -57,7 +82,7 @@
     <decisions>
         <name>Is_Oppty_an_SDO</name>
         <label>Is Oppty an SDO?</label>
-        <locationX>545</locationX>
+        <locationX>671</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -77,9 +102,41 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Renewal_Checked</name>
+        <label>Is Renewal Checked</label>
+        <locationX>446</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Get_Record_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Renewal_Checked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Create_New_Renewal_Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Create_New_Sales_Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_Sales_Type</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>SDO_Move_to_In_Review</name>
         <label>SDO Move to In Review?</label>
-        <locationX>248</locationX>
+        <locationX>325</locationX>
         <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Convert_SDO</targetReference>
@@ -145,8 +202,8 @@
     <recordCreates>
         <name>Create_Sales_Opportunity</name>
         <label>Create Sales Opportunity</label>
-        <locationX>314</locationX>
-        <locationY>755</locationY>
+        <locationX>446</locationX>
+        <locationY>1055</locationY>
         <assignRecordIdToReference>sales_OppId_Var</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Sales_Oppty_Field</targetReference>
@@ -218,6 +275,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Sales_Type__c</field>
+            <value>
+                <elementReference>salesType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>StageName</field>
             <value>
                 <stringValue>1 - Introducing</stringValue>
@@ -228,8 +291,8 @@
     <recordLookups>
         <name>Get_Record_Type</name>
         <label>Get Record Type</label>
-        <locationX>314</locationX>
-        <locationY>647</locationY>
+        <locationX>446</locationX>
+        <locationY>947</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Sales_Opportunity</targetReference>
@@ -249,8 +312,8 @@
     <recordUpdates>
         <name>Update_Sales_Oppty_Field</name>
         <label>Update Sales Oppty Field</label>
-        <locationX>314</locationX>
-        <locationY>863</locationY>
+        <locationX>446</locationX>
+        <locationY>1163</locationY>
         <inputAssignments>
             <field>New_Sales_Opportunity__c</field>
             <value>
@@ -266,7 +329,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>419</locationX>
+        <locationX>545</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Is_Oppty_an_SDO</targetReference>
@@ -282,6 +345,13 @@
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>salesType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
 </Flow>
