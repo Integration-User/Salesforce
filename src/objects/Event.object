@@ -981,6 +981,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>CS_AM_Client_Event_Origin__c</picklist>
+            <values>
+                <fullName>Client Support Case Queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Customer Inquiry to AM %2F CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proactive Outreach</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Diagnostic_Discussion__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -1168,19 +1183,27 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>In-Person Analyst Visit</fullName>
+                <fullName>Analyst Visit</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>In-Person Sales Visit</fullName>
+                <fullName>Corporate Access</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>In-Person Training</fullName>
+                <fullName>Green Street 101 Webinar</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>In-Person Visit</fullName>
+                <fullName>Issue Resolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Training %2F Methodology</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1188,27 +1211,19 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Virtual Analyst Visit</fullName>
+                <fullName>Relationship Management</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Virtual Corporate Access</fullName>
+                <fullName>Renewal Discussion</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Virtual Pre-Renewal %2F Pricing Visit</fullName>
+                <fullName>Sales Visit</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Virtual Sales Visit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Visit</fullName>
+                <fullName>Visit</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1224,7 +1239,7 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>Fields_Required_Status_Completed</fullName>
