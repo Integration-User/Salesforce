@@ -156,6 +156,18 @@
         <template>Process_Notifications/New_Client_Onboarding_Request</template>
     </alerts>
     <alerts>
+        <fullName>New_Referral_Opportunity_Alert</fullName>
+        <description>New Referral Opportunity Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jecusi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>greenstreet-newbusinesssales@greenstreetadvisors.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opportunity_Referral_Email</template>
+    </alerts>
+    <alerts>
         <fullName>New_Subscription_Client_Onboarding_Request</fullName>
         <description>New Subscription Client - Onboarding Request</description>
         <protected>false</protected>
