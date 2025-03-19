@@ -161,6 +161,24 @@
         <template>Referral_Templates/Commercial_Advisory_ARR_Template_Email</template>
     </alerts>
     <alerts>
+        <fullName>Referral_Assigned_to_User</fullName>
+        <description>Referral Assigned to User</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Referred_By_Lead__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Referred_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Templates/New_Referral_Reassignment</template>
+    </alerts>
+    <alerts>
         <fullName>Referral_Assignment</fullName>
         <description>Referral Assignment</description>
         <protected>false</protected>
