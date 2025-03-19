@@ -75,7 +75,6 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
                                     priorOpportunity = renewOpp.Sales_Opportunity__c; 
                                 }
                                 Integer nextYear = Integer.valueof(renewOpp.Close_Year__c) + 1;
-                                System.debug('nextYear-' + nextYear);
                                 if(updateOppMap.containsKey(renewOpp.Sales_Opportunity__c + '-' + nextYear)) {
                                     futureOpportunity = updateOppMap.get(renewOpp.Sales_Opportunity__c + '-' + nextYear).Id;
                                 } else {
@@ -92,7 +91,6 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
                     }
                     System.debug(updateList);
                     if(!updateList.isEmpty()) {
-                        // update updateList;
                         String errorDetails ='Id, Message\n';
                         boolean isupdatefailed = false;
                         List<Database.SaveResult> results = Database.update(updateList, false);
@@ -110,7 +108,7 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
                             Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
                             email.setSubject('Future and Prior Opportunity Updates are failer');
                             email.setToAddresses(new String[]{'mgupta@greenstreet.com', 'mbonyab@greenstreet.com', 'jecusi@greenstreet.com'});
-                            email.setPlainTextBody('Records Are \n: ' + errorDetails);
+                            email.setPlainTextBody('Records are: \n' + errorDetails);
                             Messaging.SendEmailResult[] r = Messaging.sendEmail(new Messaging.SingleEmailMessage[]{email});
                         }
                     }
