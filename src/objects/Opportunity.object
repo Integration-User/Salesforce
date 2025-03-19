@@ -2470,6 +2470,18 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Future_Renewal__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Future Renewal</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Future Renewal)</relationshipLabel>
+        <relationshipName>Future_Renewal</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>GSA_Subsidairy__c</fullName>
         <description>Used for routing on-boarding and compliance alert</description>
         <externalId>false</externalId>
