@@ -1115,11 +1115,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <label>Fit</label>
                 </value>
                 <value>
-                    <fullName>Interest - Check Back Later</fullName>
-                    <default>false</default>
-                    <label>Interest - Check Back Later</label>
-                </value>
-                <value>
                     <fullName>Lost Product Line(s)</fullName>
                     <default>false</default>
                     <label>Lost Product Line(s)</label>
@@ -1150,11 +1145,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <label>New Research Client</label>
                 </value>
                 <value>
-                    <fullName>No Budget</fullName>
-                    <default>false</default>
-                    <label>No Budget</label>
-                </value>
-                <value>
                     <fullName>Non-contracted</fullName>
                     <default>false</default>
                     <label>Non-contracted</label>
@@ -1163,11 +1153,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <fullName>Non-coverage</fullName>
                     <default>false</default>
                     <label>Non-coverage</label>
-                </value>
-                <value>
-                    <fullName>Non-responsive</fullName>
-                    <default>false</default>
-                    <label>Non-responsive</label>
                 </value>
                 <value>
                     <fullName>Online Order</fullName>
@@ -1235,11 +1220,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <label>Product Fit</label>
                 </value>
                 <value>
-                    <fullName>Other</fullName>
-                    <default>false</default>
-                    <label>Other</label>
-                </value>
-                <value>
                     <fullName>Student/non-buying EDU/Media/non-viable contact</fullName>
                     <default>false</default>
                     <label>Student/non-buying EDU/Media/non-viable contact</label>
@@ -1266,10 +1246,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Product Fit</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Disqualified</controllingFieldValue>
-                <valueName>Other</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1342,10 +1318,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
-                <valueName>Interest - Check Back Later</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Lost</controllingFieldValue>
                 <valueName>Lost Product Line(s)</valueName>
             </valueSettings>
             <valueSettings>
@@ -1366,15 +1338,7 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
-                <valueName>No Budget</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Lost</controllingFieldValue>
                 <valueName>Non-coverage</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Closed Lost</controllingFieldValue>
-                <valueName>Non-responsive</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
@@ -2444,6 +2408,38 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Existing_Renewal_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Existing Renewal Opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Please Select Existing Renewal Opportunity For This lookup</errorMessage>
+            <filterItems>
+                <field>Opportunity.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Renewal</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.StageName</field>
+                <operation>equals</operation>
+                <value>2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.Sales_Type__c</field>
+                <operation>equals</operation>
+                <value>Renewal</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Existing Renewal Opportunity)</relationshipLabel>
+        <relationshipName>Existing_Renewal_Opportunity</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>ExpectedRevenue</fullName>
         <securityClassification>Confidential</securityClassification>
     </fields>
@@ -2468,6 +2464,18 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
             <valueSetName>Interests_Products</valueSetName>
         </valueSet>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Future_Renewal__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Future Renewal</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Future Renewal)</relationshipLabel>
+        <relationshipName>Future_Renewal</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>GSA_Subsidairy__c</fullName>
@@ -2981,6 +2989,7 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <fullName>Lead_Classification__c</fullName>
         <externalId>false</externalId>
         <formula>CASE(Lead_Type__c,
+&quot;Upsell&quot;, &quot;Hot&quot;,
 &quot;Demo Request&quot;, &quot;Hot&quot;,
 &quot;Bing&quot;, &quot;Hot&quot;,
 &quot;Contact Us&quot;, &quot;Hot&quot;,
@@ -5500,6 +5509,30 @@ NULL))))</formula>
         <trackHistory>false</trackHistory>
         <type>Html</type>
         <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_Interest_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Product Interest 1</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Product Interest 1</relationshipLabel>
+        <relationshipName>ProductInterest1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Interest_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Product Interest 2</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Opportunities (Product Interest 2)</relationshipLabel>
+        <relationshipName>ProductInterest2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Product_Types__c</fullName>
@@ -10877,6 +10910,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -14044,6 +14081,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -17147,6 +17188,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -20191,6 +20236,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Australia</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23441,15 +23490,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23589,6 +23630,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -23597,39 +23642,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJ Global%3A Award Add-on</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Award Sponsorship</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Award Table</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Event Sponsorship</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Events Registration</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26948,6 +26965,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -29735,6 +29756,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -32430,6 +32455,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -35004,6 +35033,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Financial%2FStrategic Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Australia</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -38095,6 +38128,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Australia</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -41403,6 +41440,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Australia</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44777,6 +44818,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -47996,6 +48041,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -48957,7 +49006,9 @@ ISCHANGED(StageName),
 ISPICKVAL(StageName, &quot;Qualified&quot;),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
 Create_New_Sales_Opportunity__c = FALSE,
-ISBLANK(New_Sales_Opportunity__c)
+Create_New_Renewal_Opportunity__c = FALSE,
+ISBLANK(New_Sales_Opportunity__c),
+ISBLANK(Existing_Renewal_Opportunity__c)
 )</errorConditionFormula>
         <errorMessage>Either “New Sales Opportunity” or “Create New Sales Opportunity” should be checked at this stage.</errorMessage>
     </validationRules>

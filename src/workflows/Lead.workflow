@@ -93,6 +93,16 @@
         <template>Process_Notifications/Referral</template>
     </alerts>
     <alerts>
+        <fullName>IJGlobal_Referral_Email_Alert</fullName>
+        <description>IJGlobal Referral Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Templates/New_Referral</template>
+    </alerts>
+    <alerts>
         <fullName>New_Advisory_Referral_Alert_Email</fullName>
         <description>New Advisory Referral Alert Email</description>
         <protected>false</protected>
@@ -149,6 +159,24 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>Referral_Templates/Commercial_Advisory_ARR_Template_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_Assigned_to_User</fullName>
+        <description>Referral Assigned to User</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Referred_By_Lead__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Referred_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Templates/New_Referral_Reassignment</template>
     </alerts>
     <alerts>
         <fullName>Referral_Assignment</fullName>

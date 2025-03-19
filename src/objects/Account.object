@@ -247,6 +247,17 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <fields>
+        <fullName>AM_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <inlineHelpText>The manager of the Account Manager who owns this Account</inlineHelpText>
+        <label>AM Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Accounts7</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>API__c</fullName>
         <defaultValue>false</defaultValue>
         <inlineHelpText>Check if client is actively using the API.</inlineHelpText>
@@ -739,12 +750,12 @@ IF (LEN( BillingCountry) = 0, 0,1)</formula>
         <fullName>Business_Days_to_Onboarding_Completion__c</fullName>
         <externalId>false</externalId>
         <formula>IF(
-  AND(NOT(ISBLANK(Account_Handoff_Date__c )), NOT(ISBLANK(Became_Client__c))),
+  AND(NOT(ISBLANK(Account_Handoff_Date__c )), NOT(ISBLANK( Became_Client_Research__c ))),
 ( 
-    ((Account_Handoff_Date__c - Became_Client__c) + 
-    (CASE( MOD( Became_Client__c- DATE(1900, 1, 1), 7) , 6 , 1, 0) 
+    ((Account_Handoff_Date__c - Became_Client_Research__c ) + 
+    (CASE( MOD( Became_Client_Research__c - DATE(1900, 1, 1), 7) , 6 , 1, 0) 
     + CASE( MOD( Account_Handoff_Date__c - DATE(1900, 1, 1), 7), 6 , 1, 0)) ) / 7 * 5),0)</formula>
-        <inlineHelpText>Number of business days between the Became Client Date, and the completion of the Onboarding handoff event.</inlineHelpText>
+        <inlineHelpText>Number of business days between the Became Client (Research) Date, and the completion of the Onboarding handoff event.</inlineHelpText>
         <label>Business Days to Onboarding Completion</label>
         <precision>18</precision>
         <required>false</required>
@@ -3956,6 +3967,17 @@ Owner.Id = $User.Id)</formula>
         <fullName>OperatingHoursId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Original_Account_Priority__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account Priority assigned to this Account when they became a client</inlineHelpText>
+        <label>Original Account Priority</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Original_Date__c</fullName>
@@ -8599,6 +8621,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -12119,6 +12145,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News%3A Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
@@ -13628,6 +13658,7 @@ Stored as Long on Solr.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 NOT($Permission.Bypass_Account_Priority),
+PRIORVALUE(Priority__c)!=NULL,
 ISCHANGED(Priority__c) 
 )</errorConditionFormula>
         <errorMessage>You cannot modify the Priority.</errorMessage>
