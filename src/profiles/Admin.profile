@@ -15930,6 +15930,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.AM_Manager__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.API__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16581,6 +16586,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Number_of_Subscriptions__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Original_Account_Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
