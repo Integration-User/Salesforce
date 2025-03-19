@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <choices>
+        <name>FirstCondition</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;New Sales Opportunity&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>New Sales Opportunity</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>SecondCondition</name>
+        <choiceText>Upsell/Renewal Opportunity</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Upsell/Renewal Opportunity</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Check_Selection</name>
+        <label>Check Selection</label>
+        <locationX>1964</locationX>
+        <locationY>350</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>First</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Conversion_Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Sales Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Convert_Opportunity_Screen</targetReference>
+            </connector>
+            <label>First</label>
+        </rules>
+        <rules>
+            <name>Second</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Conversion_Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Upsell/Renewal Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Renewal_Convert_Opportunity_Screen</targetReference>
+            </connector>
+            <label>Second</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Qualify_Oppty</name>
         <label>Qualify Oppty?</label>
         <locationX>710</locationX>
-        <locationY>242</locationY>
+        <locationY>566</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>New_Oppty</name>
@@ -74,6 +128,86 @@
             <label>Validation Rule Screen</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Renewal_Qualify_Oppty</name>
+        <label>Renewal Qualify Oppty?</label>
+        <locationX>2294</locationX>
+        <locationY>566</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_Renewal_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Create_New_Upsell_Opportunity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Existing_Renewal.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opportunity.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_New_Upsell_Opportunity_Checkbox</targetReference>
+            </connector>
+            <label>New Renewal Opportunity</label>
+        </rules>
+        <rules>
+            <name>Renewal_Existing_Oppty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Existing_Renewal.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Create_New_Upsell_Opportunity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_New_Renewal_Lookup</targetReference>
+            </connector>
+            <label>Renewal Existing Oppty</label>
+        </rules>
+        <rules>
+            <name>Renewal_Validation_Rule_Screen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>New_Sales_Oppty.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Create_New_Sales_Opportunity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Cannot_Convert</targetReference>
+            </connector>
+            <label>Renewal Validation Rule Screen</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>SDO Convert Opportunity Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SDO Convert New Sales Screen Flow</label>
@@ -96,11 +230,77 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordLookups>
+        <name>Opportunity</name>
+        <label>Opportunity</label>
+        <locationX>1964</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Selection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_New_Renewal_Lookup</name>
+        <label>Update New Renewal Lookup</label>
+        <locationX>2162</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Success_Screen_Existing_Renewal_Oppty</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Renewal_Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Create_New_Renewal_Opportunity__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Create_New_Sales_Opportunity__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Existing_Renewal_Opportunity__c</field>
+            <value>
+                <elementReference>Existing_Renewal.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Qualified</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
     <recordUpdates>
         <name>Update_New_Sales_Lookup</name>
         <label>Update New Sales Lookup</label>
         <locationX>578</locationX>
-        <locationY>350</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Success_Screen_Existing_Oppty</targetReference>
         </connector>
@@ -116,6 +316,18 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Create_New_Renewal_Opportunity__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Create_New_Sales_Opportunity__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>New_Sales_Opportunity__c</field>
             <value>
                 <elementReference>New_Sales_Oppty.recordId</elementReference>
@@ -130,10 +342,49 @@
         <object>Opportunity</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_New_Upsell_Opportunity_Checkbox</name>
+        <label>Update New Upsell Opportunity Checkbox</label>
+        <locationX>1634</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Success_Renewal_Screen_New_Oppty</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>New_Renewal_Oppty_Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Create_New_Renewal_Opportunity__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Create_New_Sales_Opportunity__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Qualified</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Oppty_New_Oppty_Checkbox</name>
         <label>Update Oppty New Oppty Checkbox</label>
         <locationX>50</locationX>
-        <locationY>350</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Success_Screen_New_Oppty</targetReference>
         </connector>
@@ -148,6 +399,12 @@
                 <elementReference>recordId</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Create_New_Renewal_Opportunity__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Create_New_Sales_Opportunity__c</field>
             <value>
@@ -166,7 +423,7 @@
         <name>Cannot_Convert</name>
         <label>Cannot Convert</label>
         <locationX>1106</locationX>
-        <locationY>350</locationY>
+        <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
         <allowPause>false</allowPause>
@@ -180,13 +437,39 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>Convert_Opportunity_Screen</name>
-        <label>Convert Opportunity Screen</label>
-        <locationX>710</locationX>
+        <name>Convert</name>
+        <label>Convert</label>
+        <locationX>1964</locationX>
         <locationY>134</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Opportunity</targetReference>
+        </connector>
+        <fields>
+            <name>Conversion_Type</name>
+            <choiceReferences>FirstCondition</choiceReferences>
+            <choiceReferences>SecondCondition</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Conversion Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Convert_Opportunity_Screen</name>
+        <label>Convert Opportunity Screen</label>
+        <locationX>710</locationX>
+        <locationY>458</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Back</backButtonLabel>
         <connector>
             <targetReference>Qualify_Oppty</targetReference>
         </connector>
@@ -239,10 +522,27 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Copy_1_of_Cannot_Convert</name>
+        <label>Copy 1 of Cannot Convert</label>
+        <locationX>2690</locationX>
+        <locationY>674</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Back</backButtonLabel>
+        <fields>
+            <name>RenewalValidationText</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;﻿You cannot convert an opportunity if both fields are populated.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>842</locationX>
-        <locationY>458</locationY>
+        <locationY>782</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
         <allowPause>false</allowPause>
@@ -259,7 +559,7 @@
         <name>New_Oppty_Error_Screen</name>
         <label>New Oppty Error Screen</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>782</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
         <allowPause>false</allowPause>
@@ -273,16 +573,142 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>New_Renewal_Oppty_Error_Screen</name>
+        <label>New Renewal Oppty Error Screen</label>
+        <locationX>1898</locationX>
+        <locationY>782</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Back</backButtonLabel>
+        <fields>
+            <name>Copy_1_of_NewOppty_ErrorText</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(244, 0, 0); font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Unable&amp;nbsp;to&amp;nbsp;Process Your Request. Please contact your system administrator for more information.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Renewal_Convert_Opportunity_Screen</name>
+        <label>Renewal Convert Opportunity Screen</label>
+        <locationX>2294</locationX>
+        <locationY>458</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Back</backButtonLabel>
+        <connector>
+            <targetReference>Renewal_Qualify_Oppty</targetReference>
+        </connector>
+        <fields>
+            <name>Copy_1_of_Guided_Text</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(23, 43, 77); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;&quot;&gt;Please select this year’s Renewal Opportunity in “Existing Renewal” if you are converting into an existing Renewal. If you want to create an upsell opportunity, check &quot;Create New Upsell Opportunity&quot;&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Existing_Renewal</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>Existing_Renewal_Opportunity__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Existing Renewal</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Opportunity</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Renewal_OR_Display_Text</name>
+            <fieldText>&lt;p&gt;Or&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Create_New_Upsell_Opportunity</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Create New Upsell Opportunity</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Convert</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Renewal_Error_Screen</name>
+        <label>Renewal Error Screen</label>
+        <locationX>2426</locationX>
+        <locationY>782</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Back</backButtonLabel>
+        <fields>
+            <name>Copy_1_of_ErrorText</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0); font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Please select an Opportunity that is related to the Account. If the problem persists, please contact your system administrator.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Success_Renewal_Screen_New_Oppty</name>
+        <label>Success Renewal Screen New Oppty</label>
+        <locationX>1634</locationX>
+        <locationY>782</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_1_of_Success_Text</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(10, 144, 10); font-size: 14px;&quot;&gt;Opportunity has been converted.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Success_Screen_Existing_Oppty</name>
         <label>Success Screen Existing Oppty</label>
         <locationX>578</locationX>
-        <locationY>458</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Link_SDO_Success_Text</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Sales Opportunity has been linked.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(65, 157, 12);&quot;&gt;Sales Opportunity has been linked.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Success_Screen_Existing_Renewal_Oppty</name>
+        <label>Success Screen Existing Renewal Oppty</label>
+        <locationX>2162</locationX>
+        <locationY>782</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Renewal_Link_SDO_Success_Text</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(83, 157, 23);&quot;&gt;Renewal Opportunity has been linked.&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -292,23 +718,23 @@
         <name>Success_Screen_New_Oppty</name>
         <label>Success Screen New Oppty</label>
         <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>Success_Text</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Opportunity has been converted.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(21, 150, 25);&quot;&gt;Opportunity has been converted.&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>584</locationX>
+        <locationX>1838</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Convert_Opportunity_Screen</targetReference>
+            <targetReference>Convert</targetReference>
         </connector>
     </start>
     <status>Active</status>

@@ -953,6 +953,33 @@
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>CS_AM_Client_Event_Origin__c</fullName>
+        <label>CS &amp; AM Client Event Origin</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Client Support Case Queue</fullName>
+                    <default>false</default>
+                    <label>Client Support Case Queue</label>
+                </value>
+                <value>
+                    <fullName>Direct Customer Inquiry to AM / CS</fullName>
+                    <default>false</default>
+                    <label>Direct Customer Inquiry to AM / CS</label>
+                </value>
+                <value>
+                    <fullName>Proactive Outreach</fullName>
+                    <default>false</default>
+                    <label>Proactive Outreach</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Campaign__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>Campaign</label>
@@ -1141,6 +1168,28 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>In_Person_or_Virtual_Meeting__c</fullName>
+        <label>In-Person or Virtual Meeting</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In-Person</fullName>
+                    <default>false</default>
+                    <label>In-Person</label>
+                </value>
+                <value>
+                    <fullName>Virtual</fullName>
+                    <default>false</default>
+                    <label>Virtual</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>LID__Date_Sent__c</fullName>
         <deprecated>false</deprecated>
         <label>Date Sent</label>
@@ -1158,6 +1207,7 @@
         <fullName>Minutes_Spent__c</fullName>
         <description>How many minutes did Data Support spend on this client call/project</description>
         <externalId>false</externalId>
+        <inlineHelpText>Total time spent on meeting including prep time, travel time, and time with client</inlineHelpText>
         <label>Minutes Spent</label>
         <precision>10</precision>
         <required>false</required>
