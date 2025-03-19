@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Account_Priority_Change</name>
         <label>Account Priority Change</label>
         <locationX>182</locationX>
-        <locationY>587</locationY>
+        <locationY>887</locationY>
         <defaultConnector>
             <targetReference>Check_Account_Priority</targetReference>
         </defaultConnector>
@@ -44,7 +45,7 @@
         <name>CAM_Owner_Change</name>
         <label>CAM Owner Change</label>
         <locationX>182</locationX>
-        <locationY>287</locationY>
+        <locationY>587</locationY>
         <defaultConnector>
             <targetReference>Account_Priority_Change</targetReference>
         </defaultConnector>
@@ -83,7 +84,7 @@
         <name>Check_Account_Priority</name>
         <label>Check Account Priority</label>
         <locationX>182</locationX>
-        <locationY>887</locationY>
+        <locationY>1187</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Update_Budgeted_Priority</name>
@@ -115,6 +116,46 @@
             <label>Update Budgeted Priority</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Set_Original_Account_Priority</name>
+        <label>Set Original Account Priority</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>CAM_Owner_Change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Set_Static_Original_Priority</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Original_Account_Priority__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Original_Account_Priority</targetReference>
+            </connector>
+            <label>Set Static Original Priority</label>
+        </rules>
+    </decisions>
+    <description>Added Node to set Set Original Account Priority</description>
     <environments>Default</environments>
     <formulas>
         <name>OwnerName</name>
@@ -146,7 +187,7 @@
         <name>Update_Budgeted_Account_Owner</name>
         <label>Update Budgeted Account Owner</label>
         <locationX>50</locationX>
-        <locationY>395</locationY>
+        <locationY>695</locationY>
         <connector>
             <targetReference>Account_Priority_Change</targetReference>
         </connector>
@@ -162,7 +203,7 @@
         <name>Update_Budgeted_Priority_Field</name>
         <label>Update Budgeted Priority Field</label>
         <locationX>50</locationX>
-        <locationY>995</locationY>
+        <locationY>1295</locationY>
         <inputAssignments>
             <field>Budgeted_Priority__c</field>
             <value>
@@ -172,10 +213,26 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Original_Account_Priority</name>
+        <label>Update Original Account Priority</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>CAM_Owner_Change</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Original_Account_Priority__c</field>
+            <value>
+                <elementReference>$Record.Priority__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Priority</name>
         <label>Update Priority</label>
         <locationX>50</locationX>
-        <locationY>695</locationY>
+        <locationY>995</locationY>
         <connector>
             <targetReference>Check_Account_Priority</targetReference>
         </connector>
@@ -191,7 +248,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>CAM_Owner_Change</targetReference>
+            <targetReference>Set_Original_Account_Priority</targetReference>
         </connector>
         <object>Account</object>
         <recordTriggerType>Update</recordTriggerType>
