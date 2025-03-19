@@ -739,12 +739,12 @@ IF (LEN( BillingCountry) = 0, 0,1)</formula>
         <fullName>Business_Days_to_Onboarding_Completion__c</fullName>
         <externalId>false</externalId>
         <formula>IF(
-  AND(NOT(ISBLANK(Account_Handoff_Date__c )), NOT(ISBLANK(Became_Client__c))),
+  AND(NOT(ISBLANK(Account_Handoff_Date__c )), NOT(ISBLANK( Became_Client_Research__c ))),
 ( 
-    ((Account_Handoff_Date__c - Became_Client__c) + 
-    (CASE( MOD( Became_Client__c- DATE(1900, 1, 1), 7) , 6 , 1, 0) 
+    ((Account_Handoff_Date__c - Became_Client_Research__c ) + 
+    (CASE( MOD( Became_Client_Research__c - DATE(1900, 1, 1), 7) , 6 , 1, 0) 
     + CASE( MOD( Account_Handoff_Date__c - DATE(1900, 1, 1), 7), 6 , 1, 0)) ) / 7 * 5),0)</formula>
-        <inlineHelpText>Number of business days between the Became Client Date, and the completion of the Onboarding handoff event.</inlineHelpText>
+        <inlineHelpText>Number of business days between the Became Client (Research) Date, and the completion of the Onboarding handoff event.</inlineHelpText>
         <label>Business Days to Onboarding Completion</label>
         <precision>18</precision>
         <required>false</required>
