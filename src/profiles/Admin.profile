@@ -27417,6 +27417,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Existing_Renewal_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.ExpectedRevenue</field>
         <readable>true</readable>
@@ -27429,6 +27434,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Further_Interest__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Future_Renewal__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

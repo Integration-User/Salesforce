@@ -2444,6 +2444,38 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Existing_Renewal_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Existing Renewal Opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Please Select Existing Renewal Opportunity For This lookup</errorMessage>
+            <filterItems>
+                <field>Opportunity.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Renewal</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.StageName</field>
+                <operation>equals</operation>
+                <value>2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.Sales_Type__c</field>
+                <operation>equals</operation>
+                <value>Renewal</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Existing Renewal Opportunity)</relationshipLabel>
+        <relationshipName>Existing_Renewal_Opportunity</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>ExpectedRevenue</fullName>
         <securityClassification>Confidential</securityClassification>
     </fields>
@@ -2468,6 +2500,18 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
             <valueSetName>Interests_Products</valueSetName>
         </valueSet>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Future_Renewal__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Future Renewal</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Future Renewal)</relationshipLabel>
+        <relationshipName>Future_Renewal</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>GSA_Subsidairy__c</fullName>
@@ -48998,7 +49042,9 @@ ISCHANGED(StageName),
 ISPICKVAL(StageName, &quot;Qualified&quot;),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
 Create_New_Sales_Opportunity__c = FALSE,
-ISBLANK(New_Sales_Opportunity__c)
+Create_New_Renewal_Opportunity__c = FALSE,
+ISBLANK(New_Sales_Opportunity__c),
+ISBLANK(Existing_Renewal_Opportunity__c)
 )</errorConditionFormula>
         <errorMessage>Either “New Sales Opportunity” or “Create New Sales Opportunity” should be checked at this stage.</errorMessage>
     </validationRules>
