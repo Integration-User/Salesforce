@@ -21,7 +21,7 @@
     <actionCalls>
         <name>ClientTrialActivationEmailAlert</name>
         <label>ClientTrialActivationEmailAlert</label>
-        <locationX>512</locationX>
+        <locationX>522</locationX>
         <locationY>2100</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
@@ -58,7 +58,7 @@
     <actionCalls>
         <name>TrialActivationEmailAlert</name>
         <label>TrialActivationEmailAlert</label>
-        <locationX>248</locationX>
+        <locationX>258</locationX>
         <locationY>2100</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
@@ -93,6 +93,7 @@
         <offset>0</offset>
     </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>GS_Case_Assignment</name>
         <label>GS Case Assignment</label>
@@ -503,7 +504,7 @@
     <decisions>
         <name>Activation_Decision</name>
         <label>Activation Decision</label>
-        <locationX>512</locationX>
+        <locationX>522</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -643,7 +644,7 @@
     <decisions>
         <name>Compliance_Creation</name>
         <label>Compliance Creation</label>
-        <locationX>512</locationX>
+        <locationX>522</locationX>
         <locationY>2292</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -781,7 +782,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Green_Street_Check</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
                 <operator>IsNull</operator>
@@ -810,6 +811,13 @@
                     <stringValue>React News</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Green Street News: Australia</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>New_Product_Case_Assignment</targetReference>
             </connector>
@@ -819,7 +827,7 @@
     <decisions>
         <name>GSA_Relation_Decision</name>
         <label>GSA Relation Decision</label>
-        <locationX>512</locationX>
+        <locationX>522</locationX>
         <locationY>1884</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1179,7 +1187,7 @@
     <recordCreates>
         <name>Create_UK_Compliance_Record</name>
         <label>Create UK Compliance Record</label>
-        <locationX>512</locationX>
+        <locationX>522</locationX>
         <locationY>2400</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
@@ -1229,7 +1237,7 @@
     <recordCreates>
         <name>Create_US_Compliance_Record</name>
         <label>Create US Compliance Record</label>
-        <locationX>248</locationX>
+        <locationX>258</locationX>
         <locationY>2400</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
@@ -1310,7 +1318,7 @@
     <recordUpdates>
         <name>Update_Account_GSA_Relation_To_Client_Trial</name>
         <label>Update Account GSA Relation To Client + Trial</label>
-        <locationX>512</locationX>
+        <locationX>522</locationX>
         <locationY>1992</locationY>
         <connector>
             <targetReference>ClientTrialActivationEmailAlert</targetReference>
@@ -1341,7 +1349,7 @@
     <recordUpdates>
         <name>Update_Account_GSA_Relation_To_Trial</name>
         <label>Update Account GSA Relation To Trial</label>
-        <locationX>248</locationX>
+        <locationX>258</locationX>
         <locationY>1992</locationY>
         <connector>
             <targetReference>TrialActivationEmailAlert</targetReference>
@@ -1370,7 +1378,7 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>1079</locationX>
+        <locationX>1080</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Activation_Decision</targetReference>
