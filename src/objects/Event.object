@@ -981,6 +981,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>CS_AM_Client_Event_Origin__c</picklist>
+            <values>
+                <fullName>Client Support Case Queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Customer Inquiry to AM %2F CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proactive Outreach</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Diagnostic_Discussion__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -999,6 +1014,17 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>In_Person_or_Virtual_Meeting__c</picklist>
+            <values>
+                <fullName>In-Person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1168,19 +1194,27 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>In-Person Analyst Visit</fullName>
+                <fullName>Analyst Visit</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>In-Person Sales Visit</fullName>
+                <fullName>Corporate Access</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>In-Person Training</fullName>
+                <fullName>Green Street 101 Webinar</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>In-Person Visit</fullName>
+                <fullName>Issue Resolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Training %2F Methodology</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1188,27 +1222,19 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Virtual Analyst Visit</fullName>
+                <fullName>Relationship Management</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Virtual Corporate Access</fullName>
+                <fullName>Renewal Discussion</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Virtual Pre-Renewal %2F Pricing Visit</fullName>
+                <fullName>Sales Visit</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Virtual Sales Visit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Visit</fullName>
+                <fullName>Visit</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1224,7 +1250,7 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>Fields_Required_Status_Completed</fullName>
@@ -1235,13 +1261,11 @@
  ISPICKVAL (Status__c,&quot;Completed&quot;),
  $UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
 OR (
- ISPICKVAL(Web_Demo__c, &quot;&quot;),
  ISBLANK( Description ),
- ISBLANK(Minutes_Spent__c),
  ISBLANK( Client_Use_Case__c),
  ISBLANK( Products_Discussed__c),
  ISBLANK(TEXT(Feedback_Entered__c))))</errorConditionFormula>
-        <errorMessage>Please fill out the mandatory fields Minutes Spent, Web Demo, Products Discussed, Description (?) ,Feedback Entered?, Client Use Case.</errorMessage>
+        <errorMessage>Please fill out the mandatory fields Products Discussed, Description (?) ,Feedback Entered?, Client Use Case.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Priority_Required_for_Training_Events</fullName>
@@ -1255,7 +1279,7 @@ ISPICKVAL(Priority__c, &quot;&quot;))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Require_Event_Objective_Strategy</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
 $UserRole.Name &lt;&gt; &quot;Research&quot;,
 $UserRole.Name &lt;&gt; &quot;EU REA&quot;,
@@ -1279,12 +1303,11 @@ ISPICKVAL(Type,&quot;In-Person Sales Visit&quot;)))</errorConditionFormula>
         <fullName>Visit_Or_Training_Require_Feedback</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(Status__c,&quot;Completed&quot;),
 OR(
-ISPICKVAL(Type,&quot;Virtual Visit&quot;),
-ISPICKVAL(Type,&quot;In-Person Visit&quot;),
-ISPICKVAL(Type,&quot;In-Person Training&quot;),
-ISPICKVAL(Type,&quot;Virtual Training&quot;)),
+ISPICKVAL(Type,&quot;Visit&quot;),
+ISPICKVAL(Type,&quot;Product Training / Methodology&quot;)),
 ISBLANK(TEXT(Feedback_Entered__c)))</errorConditionFormula>
         <errorDisplayField>Feedback_Entered__c</errorDisplayField>
         <errorMessage>Please fill in Feedback Entered for Visit/Training Events.</errorMessage>
