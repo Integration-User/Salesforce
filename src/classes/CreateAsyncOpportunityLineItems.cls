@@ -91,7 +91,6 @@ public class CreateAsyncOpportunityLineItems implements Queueable {
                     }
                     System.debug(updateList);
                     if(!updateList.isEmpty()) {
-                        // update updateList;
                         String errorDetails ='Id, Message\n';
                         boolean isupdatefailed = false;
                         List<Database.SaveResult> results = Database.update(updateList, false);
