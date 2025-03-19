@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Referral_Lead_Reassignment</name>
+        <label>Referral Lead Reassignment</label>
+        <locationX>1106</locationX>
+        <locationY>431</locationY>
+        <actionName>Lead.Referral_Assigned_to_User</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Referral_Assigned_to_User</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <constants>
         <description>EU SDR Inbound Lead Queue</description>
         <name>EU_SDR_Inbound_Queue</name>
@@ -34,8 +52,8 @@
     <decisions>
         <name>Lead_Conversion</name>
         <label>Lead Conversion</label>
-        <locationX>537</locationX>
-        <locationY>408</locationY>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
         <defaultConnector>
             <targetReference>Get_Account</targetReference>
         </defaultConnector>
@@ -59,8 +77,8 @@
     <decisions>
         <name>Update_Lead</name>
         <label>Update Lead</label>
-        <locationX>872</locationX>
-        <locationY>404</locationY>
+        <locationX>776</locationX>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_Lead_Converted</name>
@@ -150,6 +168,42 @@
             </connector>
             <label>Removed from Queue</label>
         </rules>
+        <rules>
+            <name>Referral_Removed_from_Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <elementReference>UserIDInitial</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referrals</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <elementReference>QueueID</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Referral_Lead_Reassignment</targetReference>
+            </connector>
+            <label>Referral Removed from Queue</label>
+        </rules>
     </decisions>
     <description>SF-546: Added Qualifying Team Update
 Added Assignment Team
@@ -166,7 +220,7 @@ GS Client ID mapping</description>
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -179,8 +233,8 @@ GS Client ID mapping</description>
     <recordLookups>
         <name>Get_Account</name>
         <label>Get Account</label>
-        <locationX>345</locationX>
-        <locationY>427</locationY>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Lead_GS_Relationship</targetReference>
@@ -200,8 +254,8 @@ GS Client ID mapping</description>
     <recordUpdates>
         <name>Update_Assigned_Team_and_Date</name>
         <label>Update Assigned Team and Date</label>
-        <locationX>883</locationX>
-        <locationY>606</locationY>
+        <locationX>842</locationX>
+        <locationY>431</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -227,8 +281,8 @@ GS Client ID mapping</description>
     <recordUpdates>
         <name>Update_GSA_Relationship</name>
         <label>Update GSA Relationship</label>
-        <locationX>509</locationX>
-        <locationY>239</locationY>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -248,8 +302,8 @@ GS Client ID mapping</description>
     <recordUpdates>
         <name>Update_Lead_GS_Relationship</name>
         <label>Update Lead GS Relationship</label>
-        <locationX>345</locationX>
-        <locationY>629</locationY>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
         <inputAssignments>
             <field>GS_Relationship__c</field>
             <value>
@@ -261,8 +315,8 @@ GS Client ID mapping</description>
     <recordUpdates>
         <name>Update_Qualified_Date_and_Qualifying_Team</name>
         <label>Update Qualified Date and Qualifying Team</label>
-        <locationX>1146</locationX>
-        <locationY>408</locationY>
+        <locationX>578</locationX>
+        <locationY>431</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -288,8 +342,8 @@ GS Client ID mapping</description>
     <recordUpdates>
         <name>Update_Qualifying_Status</name>
         <label>Update Qualifying Status</label>
-        <locationX>686</locationX>
-        <locationY>406</locationY>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Lead_Conversion</targetReference>
         </connector>
@@ -316,8 +370,8 @@ GS Client ID mapping</description>
         <object>Lead</object>
     </recordUpdates>
     <start>
-        <locationX>756</locationX>
-        <locationY>48</locationY>
+        <locationX>650</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Update_Lead</targetReference>
         </connector>
