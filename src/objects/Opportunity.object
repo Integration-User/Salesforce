@@ -49031,7 +49031,8 @@ ISPICKVAL(StageName, &quot;Qualified&quot;),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
 Create_New_Sales_Opportunity__c = FALSE,
 Create_New_Renewal_Opportunity__c = FALSE,
-ISBLANK(New_Sales_Opportunity__c)
+ISBLANK(New_Sales_Opportunity__c),
+ISBLANK(Existing_Renewal_Opportunity__c)
 )</errorConditionFormula>
         <errorMessage>Either “New Sales Opportunity” or “Create New Sales Opportunity” should be checked at this stage.</errorMessage>
     </validationRules>
