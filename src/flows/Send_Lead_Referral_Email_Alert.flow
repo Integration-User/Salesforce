@@ -18,6 +18,23 @@
         <offset>0</offset>
     </actionCalls>
     <actionCalls>
+        <name>IJGlobal_Referral_Alert</name>
+        <label>IJGlobal Referral Alert</label>
+        <locationX>1106</locationX>
+        <locationY>431</locationY>
+        <actionName>Lead.IJGlobal_Referral_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.IJGlobal_Referral_Email_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
         <name>New_Advisory_Email_Alert</name>
         <label>New Advisory Email Alert</label>
         <locationX>578</locationX>
@@ -73,7 +90,7 @@
     <decisions>
         <name>Commercial_Advisory</name>
         <label>Commercial + Advisory</label>
-        <locationX>578</locationX>
+        <locationX>710</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -100,7 +117,7 @@
         </rules>
         <rules>
             <name>Not_Commercial_Advisory</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -115,17 +132,10 @@
                     <stringValue>Sales</stringValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.Lead_Type__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>IJGlobal</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>Send_Referral_Alert_Email</targetReference>
             </connector>
-            <label>Not Commercial Advisory</label>
+            <label>Send to Sales</label>
         </rules>
         <rules>
             <name>Send_to_Advisory_Only</name>
@@ -171,6 +181,28 @@
             </connector>
             <label>AM Referral Email</label>
         </rules>
+        <rules>
+            <name>Send_to_IJGlobal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referrals</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Lead_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IJGlobal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IJGlobal_Referral_Alert</targetReference>
+            </connector>
+            <label>Send to IJGlobal</label>
+        </rules>
     </decisions>
     <environments>Default</environments>
     <interviewLabel>Send Lead Referral Email Alert {!$Flow.CurrentDateTime}</interviewLabel>
@@ -195,7 +227,7 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>452</locationX>
+        <locationX>584</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Commercial_Advisory</targetReference>
