@@ -129,14 +129,14 @@
         <processMetadataValues>
             <name>emailAlertSelection</name>
             <value>
-                <stringValue>Won_Opp_alert</stringValue>
+                <stringValue>Events_Won_Opp_Alert</stringValue>
             </value>
         </processMetadataValues>
         <name>myRule_34_A1</name>
-        <label>Send Won Opp Alert</label>
+        <label>Send Event Won Opp Alert</label>
         <locationX>3400</locationX>
         <locationY>200</locationY>
-        <actionName>Opportunity.Won_Opp_alert</actionName>
+        <actionName>Opportunity.Events_Won_Opp_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
             <targetReference>myDecision35</targetReference>
@@ -148,7 +148,7 @@
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
         </inputParameters>
-        <nameSegment>Opportunity.Won_Opp_alert</nameSegment>
+        <nameSegment>Opportunity.Events_Won_Opp_Alert</nameSegment>
     </actionCalls>
     <actionCalls>
         <processMetadataValues>
@@ -1721,7 +1721,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_34_A1</targetReference>
+                <targetReference>myRule_34_pmetdec</targetReference>
             </connector>
             <label>Events Opp Closed Won</label>
         </rules>
@@ -3172,7 +3172,7 @@
                 <leftValueReference>myVariable_current.Last_Stage_Change__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_11_myRule_8_7017352265</elementReference>
+                    <elementReference>formula_11_myRule_8_6797099848</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -4213,6 +4213,132 @@
             </conditions>
             <connector>
                 <targetReference>myDecision33</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_34_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>3400</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_34_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_34_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_34_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_34_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Events</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Amount</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision35</targetReference>
             </connector>
             <label>Previously Met - Prev</label>
         </rules>
@@ -5260,7 +5386,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_8_7017352265</name>
+        <name>formula_11_myRule_8_6797099848</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -5271,7 +5397,7 @@
                 <stringValue>[Opportunity].Contract_Start_Date__c + 364</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_1206230472</name>
+        <name>formula_4_myRule_1_A1_7034655283</name>
         <dataType>Date</dataType>
         <expression>{!myVariable_current.Contract_Start_Date__c} + 364</expression>
     </formulas>
@@ -5309,7 +5435,7 @@ ISNEW(),
 {!myVariable_old.AM_Referrer__c} !=NULL
 )</expression>
     </formulas>
-    <interviewLabel>Opportunity_Processes-71_InterviewLabel</interviewLabel>
+    <interviewLabel>Opportunity_Processes-72_InterviewLabel</interviewLabel>
     <label>Opportunity Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -6803,7 +6929,7 @@ ISNEW(),
             </processMetadataValues>
             <field>End_Date__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_1206230472</elementReference>
+                <elementReference>formula_4_myRule_1_A1_7034655283</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
