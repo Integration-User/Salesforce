@@ -24353,6 +24353,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.CS_AM_Client_Event_Origin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Campaign__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -24439,6 +24444,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Event.Hours_Spent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.In_Person_or_Virtual_Meeting__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -30423,6 +30433,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Task.CS_AM_Client_Event_Origin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Task.Campaign__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -30509,6 +30524,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Task.Hours_Spent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.In_Person_or_Virtual_Meeting__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
