@@ -755,8 +755,8 @@ IF (LEN( BillingCountry) = 0, 0,1)</formula>
     ((Account_Handoff_Date__c - Became_Client_Research__c ) + 
     (CASE( MOD( Became_Client_Research__c - DATE(1900, 1, 1), 7) , 6 , 1, 0) 
     + CASE( MOD( Account_Handoff_Date__c - DATE(1900, 1, 1), 7), 6 , 1, 0)) ) / 7 * 5),0)</formula>
-        <inlineHelpText>Number of business days between the Became Client (Research) Date, and the completion of the Onboarding handoff event.</inlineHelpText>
-        <label>Business Days to Onboarding Completion</label>
+        <inlineHelpText>Number of business days between the Became Client (Research) Date, and the completion of the Account Handoff event.</inlineHelpText>
+        <label>Business Days to Account Handoff</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
