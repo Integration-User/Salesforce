@@ -27329,6 +27329,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.IJ_Global_Events_Event_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.IJ_Global_Events_Event_Profit_Centre__c</field>
         <readable>true</readable>
