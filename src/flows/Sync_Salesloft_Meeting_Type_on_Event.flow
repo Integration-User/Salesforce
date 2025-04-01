@@ -171,7 +171,7 @@
         <expression>IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;In-Person Sales Visit&quot;), &quot;In-Person&quot;,
 IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Sales Visit&quot;), &quot;Virtual&quot;,
 IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Visit&quot;), &quot;Virtual&quot;,
-IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Training&quot;), &quot;Virtual&quot;, &quot;&quot;))))</expression>
+IF(CONTAINS({!$Record.Salesloft_Meeting_Type__c}, &quot;Virtual Training&quot;), &quot;Virtual&quot;, TEXT({!$Record.In_Person_or_Virtual_Meeting__c})))))</expression>
     </formulas>
     <formulas>
         <name>Salesloft_Type_Formula</name>
