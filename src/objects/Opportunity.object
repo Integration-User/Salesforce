@@ -49047,14 +49047,17 @@ NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Renewal&quot;,
-ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
 ISCHANGED(StageName),
+OR(
+ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
+ISPICKVAL(Activation_Deactivation_Needs__c , &quot;None&quot;)
+),
 OR(
 ISPICKVAL(StageName, &quot;Closed Lost&quot;),
 ISPICKVAL(StageName, &quot;Suspended&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(Win_Validation__c, &quot;Pending Review&quot;),
-ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;)
-)
+ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;))
 )</errorConditionFormula>
         <errorDisplayField>Activation_Deactivation_Needs__c</errorDisplayField>
         <errorMessage>This field must be completed prior to Submitting for review or closing as lost/suspended.</errorMessage>
