@@ -4777,6 +4777,17 @@ Owner.Id = $User.Id)</formula>
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>Region_Global_Value__c</fullName>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Region</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Region__c</fullName>
         <label>Region</label>
         <required>false</required>
@@ -9845,6 +9856,29 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Region_Global_Value__c</picklist>
+            <values>
+                <fullName>AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Region__c</picklist>
             <values>
                 <fullName>Africa</fullName>
@@ -13397,6 +13431,29 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Workspace Provider</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region_Global_Value__c</picklist>
+            <values>
+                <fullName>AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USA</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
