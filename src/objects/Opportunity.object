@@ -2440,6 +2440,32 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Existing_Sales_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Existing Sales Opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Opportunity.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Sales_Opportunity</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.StageName</field>
+                <operation>equals</operation>
+                <value>1 - Introducing, 2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Existing Sales Opportunity)</relationshipLabel>
+        <relationshipName>Existing_Sales_Opportunity</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>ExpectedRevenue</fullName>
         <securityClassification>Confidential</securityClassification>
     </fields>
@@ -4946,7 +4972,7 @@ OwnerId  = $User.Id)</formula>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>New Sales Opportunity</label>
         <lookupFilter>
-            <active>true</active>
+            <active>false</active>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -23533,7 +23559,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23693,11 +23727,39 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>IJ Global%3A Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global%3A Events Registration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A Data Delivery %2B News %2B IJ Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>IJGlobal%3A IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>IJGlobal%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal%3A News %2B IJ Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27184,7 +27246,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rankings</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29974,6 +30044,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>US Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Qualified_Team__c</picklist>
@@ -32643,6 +32717,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -38358,7 +38436,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rankings</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -41515,6 +41601,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Green Street News%3A Australia Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48292,7 +48382,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rankings</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48949,14 +49047,17 @@ NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Renewal&quot;,
-ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
 ISCHANGED(StageName),
+OR(
+ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
+ISPICKVAL(Activation_Deactivation_Needs__c , &quot;None&quot;)
+),
 OR(
 ISPICKVAL(StageName, &quot;Closed Lost&quot;),
 ISPICKVAL(StageName, &quot;Suspended&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(Win_Validation__c, &quot;Pending Review&quot;),
-ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;)
-)
+ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;))
 )</errorConditionFormula>
         <errorDisplayField>Activation_Deactivation_Needs__c</errorDisplayField>
         <errorMessage>This field must be completed prior to Submitting for review or closing as lost/suspended.</errorMessage>
