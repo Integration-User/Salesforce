@@ -289,6 +289,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>New_Sales_Opportunity__c</field>
+            <value>
+                <elementReference>Existing_Renewal.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>StageName</field>
             <value>
                 <stringValue>Qualified</stringValue>
@@ -325,6 +331,12 @@
             <field>Create_New_Sales_Opportunity__c</field>
             <value>
                 <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Existing_Sales_Opportunity__c</field>
+            <value>
+                <elementReference>New_Sales_Oppty.recordId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -485,7 +497,7 @@
             <inputParameters>
                 <name>fieldApiName</name>
                 <value>
-                    <stringValue>New_Sales_Opportunity__c</stringValue>
+                    <stringValue>Existing_Sales_Opportunity__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
