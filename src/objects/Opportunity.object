@@ -2440,6 +2440,32 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Existing_Sales_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Existing Sales Opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Opportunity.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Sales_Opportunity</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.StageName</field>
+                <operation>equals</operation>
+                <value>1 - Introducing, 2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Existing Sales Opportunity)</relationshipLabel>
+        <relationshipName>Existing_Sales_Opportunity</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>ExpectedRevenue</fullName>
         <securityClassification>Confidential</securityClassification>
     </fields>
@@ -4935,7 +4961,7 @@ OwnerId  = $User.Id)</formula>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>New Sales Opportunity</label>
         <lookupFilter>
-            <active>true</active>
+            <active>false</active>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
