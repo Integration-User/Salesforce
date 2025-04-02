@@ -2613,6 +2613,17 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>IJ_Global_Events_Event_Name__c</fullName>
+        <description>Pulls in the Title from IJ Global Related Events</description>
+        <externalId>false</externalId>
+        <formula>IJ_Global_Events_Related_Event__r.CventEvents__pkg_Title__c</formula>
+        <label>IJ Global Events - Event Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>IJ_Global_Events_Event_Profit_Centre__c</fullName>
         <externalId>false</externalId>
         <label>IJ Global Events - Event Profit Centre</label>
