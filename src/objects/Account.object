@@ -4777,6 +4777,17 @@ Owner.Id = $User.Id)</formula>
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>Region_Global_Value__c</fullName>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Region</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Region__c</fullName>
         <label>Region</label>
         <required>false</required>
@@ -5296,6 +5307,11 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
                     <fullName>22.3 Belgium</fullName>
                     <default>false</default>
                     <label>22.3 Belgium</label>
+                </value>
+                <value>
+                    <fullName>24 GSA Australia Ltd</fullName>
+                    <default>false</default>
+                    <label>24 GSA Australia Ltd</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -9840,6 +9856,29 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Region_Global_Value__c</picklist>
+            <values>
+                <fullName>AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Region__c</picklist>
             <values>
                 <fullName>Africa</fullName>
@@ -12257,7 +12296,15 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>REIT Data - Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rankings</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13388,6 +13435,29 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Region_Global_Value__c</picklist>
+            <values>
+                <fullName>AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Region__c</picklist>
             <values>
                 <fullName>Africa</fullName>
@@ -13528,6 +13598,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>22%2E3 Belgium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24 GSA Australia Ltd</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

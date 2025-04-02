@@ -16432,6 +16432,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Region_Global_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Region__c</field>
         <readable>false</readable>
@@ -18613,6 +18618,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Report_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20054,6 +20064,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.React_id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -27208,6 +27223,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.IJ_Global_Events_Event_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.IJ_Global_Events_Event_Profit_Centre__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -27709,6 +27729,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Referred_by_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -28984,6 +29009,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Product_Feedback__c.Product1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Product_Feedback__c.Region_Global_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
