@@ -26437,6 +26437,36 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>OppSnap__c.Account_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Amount_Converted__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Close_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Current_Month__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Opportunity_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Stage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.ADV_PPD_Sent__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -47710,6 +47740,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>NS_Picklist_Internal_Id__mdt-NS Picklist Internal Id Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>OppSnap__c-OppSnap Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Advertising</layout>
