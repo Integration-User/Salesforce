@@ -16484,6 +16484,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Region_Global_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Region__c</field>
         <readable>false</readable>
@@ -18665,6 +18670,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Report_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20106,6 +20116,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.React_id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -26619,6 +26634,36 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Account_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Amount_Converted__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Close_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Current_Month__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Opportunity_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Stage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.ADV_PPD_Sent__c</field>
         <readable>false</readable>
@@ -27767,6 +27812,11 @@
         <editable>false</editable>
         <field>Opportunity.Referred_by_Role__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Region__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -29042,6 +29092,11 @@
         <editable>false</editable>
         <field>Product_Feedback__c.Product1__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Product_Feedback__c.Region_Global_Value__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -47796,6 +47851,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>OperatingHoursHoliday-Operating Hours Holiday Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>OppSnap__c-OppSnap Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Advertising</layout>
