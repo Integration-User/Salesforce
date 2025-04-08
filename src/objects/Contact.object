@@ -381,6 +381,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>AVM_Freemium_Usage_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of free properties client has run through AVM</inlineHelpText>
+        <label>AVM Freemium Usage Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>AccountId</fullName>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
@@ -7838,6 +7850,22 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>X10th_AVM_Freemium_Usage_Date__c</fullName>
+        <inlineHelpText>Date at which they used their last free property run for AVM Freemium</inlineHelpText>
+        <label>10th AVM Freemium Usage Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X1st_AVM_Freemium_Usage_Date__c</fullName>
+        <inlineHelpText>Date of first engagement with AVM Freemium</inlineHelpText>
+        <label>1st AVM Freemium Usage Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>X3x3_Level__c</fullName>
         <inlineHelpText>Executive: Responsible for the strategizing and decision-making that contributes to the success of a company or organization.
 
@@ -7870,6 +7898,14 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
             </valueSetDefinition>
         </valueSet>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>X5th_AVM_Freemium_Usage_Date__c</fullName>
+        <inlineHelpText>Date of 5th usage of AVM Freemium</inlineHelpText>
+        <label>5th AVM Freemium Usage Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>ZoomInfo_B2B_contact__c</fullName>
