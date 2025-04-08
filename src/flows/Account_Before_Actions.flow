@@ -149,13 +149,20 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Prospect</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Original_Account_Priority</targetReference>
             </connector>
             <label>Set Static Original Priority</label>
         </rules>
     </decisions>
-    <description>Added Node to set Set Original Account Priority</description>
+    <description>Added Node to only set Set Original Account Priority if prior value was prospect</description>
     <environments>Default</environments>
     <formulas>
         <name>OwnerName</name>
