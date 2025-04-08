@@ -19302,6 +19302,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.AVM_Freemium_Usage_Count__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.AccountId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -19858,6 +19863,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Last_Login_Date_standard__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Last_Seen__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20422,7 +20432,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.X10th_AVM_Freemium_Usage_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.X1st_AVM_Freemium_Usage_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.X3x3_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.X5th_AVM_Freemium_Usage_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
