@@ -24385,6 +24385,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Event.Activity_Type_Events__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Event.Advisory__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -30522,6 +30527,11 @@
         <editable>false</editable>
         <field>Task.ActivityDate</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Task.Activity_Type_Events__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
