@@ -828,6 +828,16 @@ IF (LEN( BillingCountry) = 0, 0,1)</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Change_in_Usage_QoQ__c</fullName>
+        <inlineHelpText>Percent change in clicks over trailing three months relative to prior three months</inlineHelpText>
+        <label>Change in Usage QoQ</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>Client_Segment_New__c</fullName>
         <externalId>false</externalId>
         <formula>IF(ISPICKVAL(Company_Type__c, &quot;Accountant&quot;), &quot;Accountant / Consultant / Law Firm&quot;,
@@ -5398,6 +5408,30 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>TTM_Clicks_Per_User__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Trailing twelve month clicks over trailing twelve month unique users</inlineHelpText>
+        <label>TTM Clicks Per User</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TTM_Cost_Per_Click__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Annual ARR over trailing twelve months Click</inlineHelpText>
+        <label>TTM Cost Per Click</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>TTM_Rollup__c</fullName>
