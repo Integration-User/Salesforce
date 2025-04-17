@@ -19669,6 +19669,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.First_Training_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Former_Client__c</field>
         <readable>false</readable>
@@ -28906,6 +28911,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Product2.Billing_Contact_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Product2.Bundle__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
