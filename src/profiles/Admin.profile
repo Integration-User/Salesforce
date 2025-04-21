@@ -27988,6 +27988,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Sales_Leader_Forecast_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Sales_Opportunity__c</field>
         <readable>true</readable>
     </fieldPermissions>
