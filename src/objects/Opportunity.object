@@ -6145,6 +6145,11 @@ NULL))))</formula>
                     <default>false</default>
                     <label>Pipeline</label>
                 </value>
+                <value>
+                    <fullName>Forecast</fullName>
+                    <default>false</default>
+                    <label>Forecast</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -6330,6 +6335,41 @@ NULL))))</formula>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Leader_Forecast_Category__c</fullName>
+        <inlineHelpText>Used to override the rep forecast field if a sales manager feels differently than the seller.</inlineHelpText>
+        <label>Sales Leader Forecast Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Commit</fullName>
+                    <default>false</default>
+                    <label>Commit</label>
+                </value>
+                <value>
+                    <fullName>Best Case</fullName>
+                    <default>false</default>
+                    <label>Best Case</label>
+                </value>
+                <value>
+                    <fullName>Pipeline</fullName>
+                    <default>false</default>
+                    <label>Pipeline</label>
+                </value>
+                <value>
+                    <fullName>Forecast</fullName>
+                    <default>false</default>
+                    <label>Forecast</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Sales_Opportunity__c</fullName>
@@ -10919,6 +10959,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data License Directory</fullName>
                 <default>false</default>
             </values>
@@ -11100,6 +11144,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11382,6 +11430,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
@@ -11409,6 +11461,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14133,6 +14204,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data License Directory</fullName>
                 <default>false</default>
             </values>
@@ -14314,6 +14389,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14596,6 +14675,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
@@ -14623,6 +14706,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17287,6 +17389,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data License Directory</fullName>
                 <default>false</default>
             </values>
@@ -17464,6 +17570,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17741,6 +17851,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Commit</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Repeat_Client__c</picklist>
@@ -17765,6 +17879,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -20381,6 +20514,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data License Directory</fullName>
                 <default>false</default>
             </values>
@@ -20558,6 +20695,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20835,6 +20976,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Commit</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Repeat_Client__c</picklist>
@@ -20859,6 +21004,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -23747,6 +23911,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Collection</fullName>
                 <default>false</default>
             </values>
@@ -24044,6 +24212,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24402,6 +24574,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
@@ -24429,6 +24605,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -27201,6 +27396,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Collection</fullName>
                 <default>false</default>
             </values>
@@ -27410,6 +27609,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27720,6 +27923,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
@@ -27747,6 +27954,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -30453,6 +30679,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Commit</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Repeat_Client__c</picklist>
@@ -30477,6 +30707,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -33151,6 +33400,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Commit</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Repeat_Client__c</picklist>
@@ -33175,6 +33428,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -35767,6 +36039,21 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -38515,6 +38802,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Collection</fullName>
                 <default>false</default>
             </values>
@@ -38724,6 +39015,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -39034,6 +39329,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
@@ -39061,6 +39360,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -41850,6 +42168,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Collection</fullName>
                 <default>false</default>
             </values>
@@ -42123,6 +42445,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>PDF Viewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -42489,6 +42815,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
@@ -42516,6 +42846,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -45268,6 +45617,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -45293,6 +45646,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -45345,6 +45702,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -45504,6 +45865,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -45605,6 +45970,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -45791,6 +46160,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
@@ -45818,6 +46191,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -48518,6 +48910,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -48543,6 +48939,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48599,6 +48999,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48758,6 +49162,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pan-Euro Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -48867,6 +49275,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49057,6 +49469,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
@@ -49084,6 +49500,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Leader_Forecast_Category__c</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
