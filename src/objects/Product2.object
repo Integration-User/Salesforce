@@ -168,6 +168,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Bundle__c</fullName>
+        <label>Bundle</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Product_Bundle</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Campaign__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>When set all the Leads generated based on the Zephr Webhook processing will be associated to the Campaign pointed to by this Lookup</description>
