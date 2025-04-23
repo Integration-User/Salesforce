@@ -1112,6 +1112,22 @@ ARR_Formula__c ))))))</formula>
         <label>Test List View</label>
     </listViews>
     <validationRules>
+        <fullName>Cannot_have_Start_Date_for_an_Upsell</fullName>
+        <active>true</active>
+        <description>Start date will also need to be blocked - IF upsell is blank AND record type is renewal
+
+IF start date is blank, allow edits. if not is blank prevent edits</description>
+        <errorConditionFormula>AND(
+    NOT(ISBLANK(PRIORVALUE(Start_Date__c))),
+    Upsell_Cross_sell__c = FALSE,
+    Opportunity.RecordType.DeveloperName = &quot;Existing_Business&quot;,
+    ISCHANGED(Start_Date__c),
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;
+)</errorConditionFormula>
+        <errorDisplayField>Start_Date__c</errorDisplayField>
+        <errorMessage>Existing products on renewals cannot have their start dates changed. If you need to make changes, please speak with the head of Account Management</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Cannot_have_Starting_Price_for_an_Upsell</fullName>
         <active>true</active>
         <errorConditionFormula>AND( 
@@ -1158,6 +1174,19 @@ ISPICKVAL(Delivery_Method__c, &apos;API&apos;)
  )
 )</errorConditionFormula>
         <errorMessage>&quot;Delivery method&quot; is required for data delivery products</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_StartingPrice_Update</fullName>
+        <active>true</active>
+        <description>IF Starting price ISNULL False then prevent editing of starting price. across all types of opportunities</description>
+        <errorConditionFormula>AND(
+    ISCHANGED(Starting_Price__c),
+    NOT(ISBLANK(PRIORVALUE(Starting_Price__c))), 
+    PRIORVALUE(Starting_Price__c) &gt; 0,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;
+)</errorConditionFormula>
+        <errorDisplayField>Starting_Price__c</errorDisplayField>
+        <errorMessage>Starting price cannot be edited. If you need to make changes, please speak with the head of Account Management</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Product_Delivery_Method_Validation</fullName>
