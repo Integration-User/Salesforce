@@ -56,6 +56,23 @@
         <offset>0</offset>
     </actionCalls>
     <actionCalls>
+        <name>Order_Support_Untouched_Cases</name>
+        <label>Order Support Untouched Cases</label>
+        <locationX>2162</locationX>
+        <locationY>384</locationY>
+        <actionName>Case.OTC_Untouched_Cases_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.OTC_Untouched_Cases_Email_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
         <name>TrialActivationEmailAlert</name>
         <label>TrialActivationEmailAlert</label>
         <locationX>258</locationX>
@@ -984,12 +1001,12 @@
     <decisions>
         <name>Untouched_Case_For_2_Hours_Decision</name>
         <label>Untouched Case For 2 Hours Decision</label>
-        <locationX>1898</locationX>
+        <locationX>2030</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Case_Untouched_For_2_Hours</name>
-            <conditionLogic>1 AND (2 OR 6) AND 7 AND 3 AND (4 OR 5)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 6) AND (7 OR 8) AND 3 AND (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.IsClosed</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1037,6 +1054,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Customer Success</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Origin</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IJGlobal</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1093,6 +1117,49 @@
                 <targetReference>GS_News_Untouched_Cases_Alert</targetReference>
             </connector>
             <label>GS News Case Untouched For 2 Hours</label>
+        </rules>
+        <rules>
+            <name>OTC_Untouched_Cases_Alert</name>
+            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Order_Support</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner:Group.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>OTC_Support</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Submitted_Day__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Saturday</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Submitted_Day__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sunday</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Order_Support_Untouched_Cases</targetReference>
+            </connector>
+            <label>OTC Untouched Cases Alert</label>
         </rules>
     </decisions>
     <decisions>
@@ -1378,7 +1445,7 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>1080</locationX>
+        <locationX>1150</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Activation_Decision</targetReference>
