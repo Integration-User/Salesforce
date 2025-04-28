@@ -221,6 +221,18 @@
         <template>unfiled$public/New_Salesforce_Request_Internal_Comment</template>
     </alerts>
     <alerts>
+        <fullName>OTC_Untouched_Cases_Email_Alert</fullName>
+        <description>OTC Untouched Cases Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jblanden@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@greenstreet.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Untouched_Help_Desk_Cases</template>
+    </alerts>
+    <alerts>
         <fullName>Salesforce</fullName>
         <description>Salesforce Request Status Update</description>
         <protected>false</protected>
