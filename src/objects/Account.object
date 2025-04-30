@@ -3092,6 +3092,54 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Fintrx_Classification__c</fullName>
+        <label>Fintrx Classification</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Dataset__c</fullName>
+        <externalId>false</externalId>
+        <label>Fintrx Dataset</label>
+        <length>64</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Firm_CRD_ID__c</fullName>
+        <description>This field can be used to store the synced entity CRD ID from Fintrx</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field can be used to store the synced entity CRD ID from Fintrx</inlineHelpText>
+        <label>Fintrx Firm CRD ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Total_AUM__c</fullName>
+        <label>Fintrx Total AUM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Url__c</fullName>
+        <description>This field can be used to store the Fintrx link to the synced entity</description>
+        <inlineHelpText>This field can be used to store the Fintrx link to the synced entity</inlineHelpText>
+        <label>Fintrx Url</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>First_Renewal_Year_Research__c</fullName>
         <externalId>false</externalId>
         <label>First Renewal Year (Research)</label>
