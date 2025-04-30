@@ -2301,6 +2301,26 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>Dynamic_Forecast_Category__c</fullName>
+        <description>Shows static Forecast Category based on the current stage.</description>
+        <externalId>false</externalId>
+        <formula>CASE(
+StageName,
+&apos;1 - Introducing&apos;, &apos;Pipeline&apos;,
+&apos;2 - Conducting Needs Analysis&apos;, &apos;Pipeline&apos;,
+&apos;3 - Qualifying&apos;, &apos;Pipeline&apos;,
+&apos;4 - Recommending&apos;, &apos;Best Case&apos;,
+&apos;5 - Negotiation and Agreement Sent&apos;, &apos;Forecast&apos;,
+&apos;6 - Verbal Win and Finalizing Contract&apos;, &apos;Commit&apos;,
+&apos;Closed Won&apos;, &apos;Closed&apos;,
+&apos;Closed Lost&apos;, &apos;Omitted&apos;, &apos;&apos;)</formula>
+        <label>Forecast Category*</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>EL_Compliance_Status__c</fullName>
         <inlineHelpText>EL must be sent to Compliance and approved before to sending to the client.</inlineHelpText>
         <label>EL Compliance Status</label>
