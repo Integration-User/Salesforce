@@ -690,15 +690,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <description>For Referral Process</description>
         <label>Main Contact</label>
-        <lookupFilter>
-            <active>true</active>
-            <filterItems>
-                <field>Contact.AccountId</field>
-                <operation>equals</operation>
-                <valueField>$Source.Account__c</valueField>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Leads</relationshipLabel>
         <relationshipName>Leads</relationshipName>
