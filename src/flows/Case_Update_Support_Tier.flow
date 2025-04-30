@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Help_Desk_Case_Decision</name>
         <label>Help Desk Case Decision</label>
@@ -9,7 +10,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Help_Desk_Case</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 OR 3) AND 2</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -24,20 +25,34 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Order_Support</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Support_Tier</targetReference>
             </connector>
-            <label>Help Desk Case</label>
+            <label>Help Desk + OTC Case</label>
         </rules>
     </decisions>
-    <description>SF-638</description>
+    <description>SF-638
+SF-1519: Added new criteria for OTC Support</description>
     <environments>Default</environments>
     <formulas>
         <name>SupportTierFormula</name>
         <dataType>String</dataType>
         <expression>CASE(
 {!$Record.Type},
+&apos;Activation&apos;, &apos;Tier 1 - Order Support&apos;,
+&apos;Deactivation&apos;, &apos;Tier 3 - Order Support&apos;,
+&apos;Trial Extension/Revision&apos;, &apos;Tier 1 - Order Support&apos;,
+&apos;Contract Review&apos;, &apos;Tier 2 - Order Support&apos;,
+&apos;Order Review&apos;, &apos;Tier 2 - Order Support&apos;,
 &apos;Analyst Visit / Request&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;IJGlobal&apos;, &apos;Tier 1 - Client Support&apos;,
 &apos;Backup Data&apos;, &apos;Tier 1 - Client Support&apos;,
 &apos;Administrative&apos;, &apos;Tier 1 - Client Support&apos;,
 &apos;Email Preferences&apos;, &apos;Tier 1 - Client Support&apos;,
