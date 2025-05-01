@@ -16064,6 +16064,31 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Fintrx_Classification__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Fintrx_Dataset__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Fintrx_Firm_CRD_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Fintrx_Total_AUM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Fintrx_Url__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.First_Renewal_Year_Research__c</field>
         <readable>true</readable>
@@ -19661,6 +19686,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Fax</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Fintrx_Contact_CRD_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Fintrx_Dataset__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Fintrx_Url__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -27202,6 +27242,11 @@
         <editable>false</editable>
         <field>Opportunity.Discounts_over_10_Count__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Dynamic_Forecast_Category__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -47823,6 +47868,10 @@
         <recordType>Case.Help_Desk</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Case-OTC Case Layout</layout>
+        <recordType>Case.Order_Support</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Case-Opportunity Review Case Layout</layout>
         <recordType>Case.Opportunity_Review</recordType>
     </layoutAssignments>
@@ -50362,6 +50411,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Case.Opportunity_Review</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Case.Order_Support</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
