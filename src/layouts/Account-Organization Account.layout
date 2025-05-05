@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -336,14 +334,6 @@
                 <behavior>Readonly</behavior>
                 <field>CreatedById</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Protected_By_Last_Change__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Protected_By_Age__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -414,10 +404,7 @@
         <fields>ACCCONRELATION.ROLES</fields>
         <fields>CONTACT.LAST_ACTIVITY</fields>
         <fields>CONTACT.CORE.USERS.ALIAS</fields>
-        <fields>Advisory_Contact__c</fields>
         <fields>CONTACT.ACCOUNT_NAME</fields>
-        <fields>Contact_Status__c</fields>
-        <fields>Usage_Status__c</fields>
         <relatedList>RelatedAccountContactRelationList</relatedList>
         <sortField>CONTACT.FULL_NAME</sortField>
         <sortOrder>Asc</sortOrder>
