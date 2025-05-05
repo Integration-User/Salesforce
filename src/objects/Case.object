@@ -905,6 +905,16 @@
                     <default>false</default>
                     <label>Client Support Manager</label>
                 </value>
+                <value>
+                    <fullName>OTC Manager</fullName>
+                    <default>false</default>
+                    <label>OTC Manager</label>
+                </value>
+                <value>
+                    <fullName>Accounts Receivable</fullName>
+                    <default>false</default>
+                    <label>Accounts Receivable</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -14529,6 +14539,63 @@ FALSE)))))))))))</formula>
         </picklistValues>
     </recordTypes>
     <recordTypes>
+        <fullName>Order_Support</fullName>
+        <active>true</active>
+        <businessProcess>User List Request</businessProcess>
+        <description>For OTC Support Cases</description>
+        <label>Order Support</label>
+        <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTC Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Activation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial Extension%2FRevision</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>Salesforce_Request</fullName>
         <active>true</active>
         <businessProcess>Salesforce Request Process</businessProcess>
@@ -17324,6 +17391,35 @@ RecordType.DeveloperName = &quot;Help_Desk&quot;,
 NOT(ISPICKVAL(Support_Type__c, &quot;User List Request&quot;))))
 )</errorConditionFormula>
         <errorMessage>Green Street is not allowed on this type of Case. Please choose a different account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OTC_Require_Comments</fullName>
+        <active>true</active>
+        <description>Require comments when status is On Hold, Escalated, Cancelled.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.DeveloperName=&apos;Order_Support&apos;,
+ISBLANK(Comments__c),
+OR(
+ISPICKVAL(Status,&quot;On Hold&quot;),
+ISPICKVAL(Status,&quot;Escalated&quot;),
+ISPICKVAL(Status,&quot;Cancelled&quot;)
+))</errorConditionFormula>
+        <errorDisplayField>Comments__c</errorDisplayField>
+        <errorMessage>Please provide the details in the comments section.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OTC_Require_Solution_Notes</fullName>
+        <active>true</active>
+        <description>Require solution notes before closing the case.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.DeveloperName=&apos;Order_Support&apos;,
+ISBLANK(Solution_Notes__c),
+ISPICKVAL(Status,&quot;Closed&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Solution_Notes__c</errorDisplayField>
+        <errorMessage>Please provide the solution notes when closing the case.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Escalated_To</fullName>
