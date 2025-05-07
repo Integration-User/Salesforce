@@ -915,6 +915,11 @@
                     <default>false</default>
                     <label>Accounts Receivable</label>
                 </value>
+                <value>
+                    <fullName>Commercial Sales Manager</fullName>
+                    <default>false</default>
+                    <label>Commercial Sales Manager</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -13014,10 +13019,6 @@ FALSE)))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Internal Research Request</fullName>
                 <default>false</default>
             </values>
@@ -14732,7 +14733,7 @@ FALSE)))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Client Support Manager</fullName>
+                <fullName>Commercial Sales Manager</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17661,6 +17662,7 @@ OR(
 ISPICKVAL(Support_Type__c,&quot;Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;Green Street News Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;User List Request&quot;),
+ISPICKVAL(Support_Type__c,&quot;IJGlobal Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;US Data Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;EU Data Support&quot;)),
 OR(
