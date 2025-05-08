@@ -4972,6 +4972,34 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Risk_Score__c</fullName>
+        <label>Risk Score</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>SAM_Amount__c</fullName>
         <label>SAM Amount</label>
         <precision>18</precision>
