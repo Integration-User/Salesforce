@@ -13908,6 +13908,21 @@ ISCHANGED(Name))</errorConditionFormula>
         <errorMessage>You cannot change the name of this Account.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_Billing_Address</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    OR(
+        ISBLANK(BillingCity),
+        ISBLANK(BillingState),
+        ISBLANK(BillingCountry)
+    )
+)</errorConditionFormula>
+        <errorDisplayField>BillingCity</errorDisplayField>
+        <errorMessage>Billing City, State, and Country must be filled out on every Account record</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Entitlement_Guidance</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -13948,6 +13963,22 @@ RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
 )</errorConditionFormula>
         <errorDisplayField>Re_visit_Date__c</errorDisplayField>
         <errorMessage>Prospect Category cannot be blank when Date is entered</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Website</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
+
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+
+OR(
+ISBLANK( Website),
+Website = &apos;N/A&apos;
+)
+)</errorConditionFormula>
+        <errorDisplayField>Website</errorDisplayField>
+        <errorMessage>Accounts must have Website filled out</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>CventEvents__InviteAccountToEvent</fullName>
