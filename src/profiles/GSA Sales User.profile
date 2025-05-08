@@ -16033,7 +16033,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Delinian_Id__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -16528,6 +16528,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Restrict_Download__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Risk_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
