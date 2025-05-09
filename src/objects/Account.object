@@ -5020,6 +5020,34 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Risk_Score__c</fullName>
+        <label>Risk Score</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>SAM_Amount__c</fullName>
         <label>SAM Amount</label>
         <precision>18</precision>
@@ -10012,6 +10040,21 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Risk_Score__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Strategic_Segment__c</picklist>
             <values>
                 <fullName>Asia</fullName>
@@ -13611,6 +13654,21 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Risk_Score__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Strategic_Segment__c</picklist>
             <values>
                 <fullName>Asia</fullName>
@@ -13938,6 +13996,21 @@ ISCHANGED(Name))</errorConditionFormula>
         <errorMessage>You cannot change the name of this Account.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_Billing_Address</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    OR(
+        ISBLANK(BillingCity),
+        ISBLANK(BillingState),
+        ISBLANK(BillingCountry)
+    )
+)</errorConditionFormula>
+        <errorDisplayField>BillingCity</errorDisplayField>
+        <errorMessage>Billing City, State, and Country must be filled out on every Account record</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Entitlement_Guidance</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -13978,6 +14051,22 @@ RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
 )</errorConditionFormula>
         <errorDisplayField>Re_visit_Date__c</errorDisplayField>
         <errorMessage>Prospect Category cannot be blank when Date is entered</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Website</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
+
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+
+OR(
+ISBLANK( Website),
+Website = &apos;N/A&apos;
+)
+)</errorConditionFormula>
+        <errorDisplayField>Website</errorDisplayField>
+        <errorMessage>Accounts must have Website filled out</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>CventEvents__InviteAccountToEvent</fullName>
