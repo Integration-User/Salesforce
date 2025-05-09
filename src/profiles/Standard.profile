@@ -18670,6 +18670,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Reason_for_Hold_Escalation_Cancellation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Reason_for_Request__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -47853,6 +47858,10 @@
         <recordType>Case.Help_Desk</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Case-OTC Case Layout</layout>
+        <recordType>Case.Order_Support</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Case-Opportunity Review Case Layout</layout>
         <recordType>Case.Opportunity_Review</recordType>
     </layoutAssignments>
@@ -50635,6 +50644,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Case.Opportunity_Review</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Case.Order_Support</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

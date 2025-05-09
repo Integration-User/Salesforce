@@ -18617,6 +18617,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Reason_for_Hold_Escalation_Cancellation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Case.Reason_for_Request__c</field>
         <readable>false</readable>
@@ -47637,6 +47642,10 @@
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>Case-OTC Case Layout</layout>
+        <recordType>Case.Order_Support</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ISO_Map__mdt-ISO Map Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -49434,6 +49443,11 @@
         <default>false</default>
         <recordType>Case.Opportunity_Review</recordType>
         <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Case.Order_Support</recordType>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
