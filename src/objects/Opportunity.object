@@ -50385,6 +50385,19 @@ New_Sales_Opportunity__r.Account.Id &lt;&gt; Account.Id
         <errorMessage>CompanyId should be a numeric value</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Lead_Source_Required</fullName>
+        <active>true</active>
+        <description>Lead Source field is required for Sales Record type Opportunities</description>
+        <errorConditionFormula>AND(
+    RecordTypeId = &quot;012f4000001Dq7r&quot;,
+    ISBLANK(TEXT(LeadSource)),
+    CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;
+)</errorConditionFormula>
+        <errorDisplayField>LeadSource</errorDisplayField>
+        <errorMessage>Please fill out the Lead Source field for this Opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Lock_SDO_Lead_Attributions</fullName>
         <active>false</active>
         <description>SF-1092: Ensure Salesforce users (sales reps, etc.) cannot update lead attribution values for inbound SDOs</description>
@@ -50413,6 +50426,15 @@ ISCHANGED(UTM_Campaign__c)
 Account.Lock_Opportunities__c=TRUE,
 IsClosed=TRUE)</errorConditionFormula>
         <errorMessage>There is a pending Subsidiary change approval on the Account. You cannot close the Opportunity until the Subsidiary change is approved or rejected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Opps_under_IJ_Placeholder</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    RecordTypeId = &quot;012f4000001Dq7rAAC&quot;,
+    AccountId = &quot;001Vy00000HXRHRIA5&quot;
+)</errorConditionFormula>
+        <errorMessage>Please do not create Opportunities in this placeholder account. Please associate your SDO to another Account before converting it</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Only_BDR_Can_Own_SDOs</fullName>
