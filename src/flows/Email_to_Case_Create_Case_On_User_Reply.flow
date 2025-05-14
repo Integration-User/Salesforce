@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Help_Desk_Case_Decision</name>
         <label>Help Desk Case Decision</label>
-        <locationX>578</locationX>
+        <locationX>710</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -73,7 +74,7 @@
         </rules>
         <rules>
             <name>Closed_Help_Desk_US_Client_Support</name>
-            <conditionLogic>(1 OR 5) AND 2 AND (3 OR 4 OR 6 OR 7) AND NOT (8 OR 9)</conditionLogic>
+            <conditionLogic>(1 OR 5) AND 2 AND (3 OR 4 OR 6 OR 7 OR 10) AND NOT (8 OR 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Parent.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -135,6 +136,13 @@
                 <operator>Contains</operator>
                 <rightValue>
                     <stringValue>clientsupport@greenstreetnews.com</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Parent.Support_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IJGlobal Client Support</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -234,6 +242,32 @@
                 <targetReference>Create_Follow_Up_Case_for_User_List_Request</targetReference>
             </connector>
             <label>Closed User List Case</label>
+        </rules>
+        <rules>
+            <name>Closed_Help_Desk_IJGlobal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Parent.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Parent.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Parent.Origin</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IJGlobal</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Closed Help Desk IJGlobal</label>
         </rules>
     </decisions>
     <description>Email2Case: Create new case when user replies on Help Desk Closed Case.</description>
@@ -537,7 +571,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <start>
-        <locationX>452</locationX>
+        <locationX>584</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Help_Desk_Case_Decision</targetReference>
