@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_Flow_Error</name>
+        <label>Post Flow Error</label>
+        <locationX>314</locationX>
+        <locationY>468</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>errorTemplateGeneral</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Record.Subscription_NG__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Check if Zephr records exist. Also make sure they are not production records in the Sandbox</description>
+        <name>Process_Zephr_Records</name>
+        <label>Process Zephr Records</label>
+        <locationX>314</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>(1 AND NOT(2))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Zephr_User_Account_Grant__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Zephr_User_Account_Grant__r.Zephr_Account__r.Zephr_Id__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>PROD</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Deactivates Subscription Users on their Subscriber End Date
+        V11 - Sets SRP status to blank value so we can report, because we no longer have the SRP trigger
+        V10
+
+        Added SRP support
+
+        V9
+
+        Updated to just update status - the Subscription User update trigger handles removing the Zephr records</description>
+    <environments>Default</environments>
+    <interviewLabel>FPS - Scheduled Remove Subscription Users {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FPS - Scheduled - Subscription Users - Deactivate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>We change the Status to Inactive which causes the Before Update trigger to remove the Zephr User Account Grant</description>
+        <name>Update_Status</name>
+        <label>Update Status</label>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
+        <faultConnector>
+            <targetReference>Post_Flow_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SRP_Integration_Status__c</field>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subscriber_Status__c</field>
+            <value>
+                <stringValue>Inactive</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Subscription_User__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Process_Zephr_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Deactivate__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Subscription_User__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2022-08-23</startDate>
+            <startTime>23:45:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>errorTemplateGeneral</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>There was a problem removing Subscription User {!$Record.Name} ({!$Record.Zephr_User_Account_Grant__r.Zephr_User__r.Email_Address__c}). The error message was:
+            {!$Flow.FaultMessage}</text>
+    </textTemplates>
+</Flow>
