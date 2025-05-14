@@ -915,6 +915,11 @@
                     <default>false</default>
                     <label>Accounts Receivable</label>
                 </value>
+                <value>
+                    <fullName>Commercial Sales Manager</fullName>
+                    <default>false</default>
+                    <label>Commercial Sales Manager</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -2026,6 +2031,113 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Hold_Escalation_Cancellation__c</fullName>
+        <label>Reason for Hold/Escalation/Cancellation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User List</fullName>
+                    <default>false</default>
+                    <label>User List</label>
+                </value>
+                <value>
+                    <fullName>No Contract</fullName>
+                    <default>false</default>
+                    <label>No Contract</label>
+                </value>
+                <value>
+                    <fullName>Trial Expired</fullName>
+                    <default>false</default>
+                    <label>Trial Expired</label>
+                </value>
+                <value>
+                    <fullName>Product Discrepancy</fullName>
+                    <default>false</default>
+                    <label>Product Discrepancy</label>
+                </value>
+                <value>
+                    <fullName>Order Error</fullName>
+                    <default>false</default>
+                    <label>Order Error</label>
+                </value>
+                <value>
+                    <fullName>Pending Leadership Review</fullName>
+                    <default>false</default>
+                    <label>Pending Leadership Review</label>
+                </value>
+                <value>
+                    <fullName>Tech Issue</fullName>
+                    <default>false</default>
+                    <label>Tech Issue</label>
+                </value>
+                <value>
+                    <fullName>Duplicate</fullName>
+                    <default>false</default>
+                    <label>Duplicate</label>
+                </value>
+                <value>
+                    <fullName>Submitted in Error</fullName>
+                    <default>false</default>
+                    <label>Submitted in Error</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>User List</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>No Contract</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>Trial Expired</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>Product Discrepancy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>Order Error</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <controllingFieldValue>Escalated</controllingFieldValue>
+                <controllingFieldValue>Cancelled</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Escalated</controllingFieldValue>
+                <valueName>Pending Leadership Review</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Escalated</controllingFieldValue>
+                <valueName>Tech Issue</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cancelled</controllingFieldValue>
+                <valueName>Duplicate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cancelled</controllingFieldValue>
+                <valueName>Submitted in Error</valueName>
+            </valueSettings>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Reason_for_Request__c</fullName>
@@ -12581,6 +12693,45 @@ FALSE)))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Reason_for_Hold_Escalation_Cancellation__c</picklist>
+            <values>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Leadership Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User List</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Reason_for_Request__c</picklist>
             <values>
                 <fullName>Favor Account</fullName>
@@ -12891,10 +13042,6 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Error</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14592,7 +14739,7 @@ FALSE)))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Client Support Manager</fullName>
+                <fullName>Commercial Sales Manager</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14644,6 +14791,49 @@ FALSE)))))))))))</formula>
             </values>
             <values>
                 <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Hold_Escalation_Cancellation__c</picklist>
+            <values>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Leadership Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User List</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17481,6 +17671,7 @@ OR(
 ISPICKVAL(Support_Type__c,&quot;Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;Green Street News Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;User List Request&quot;),
+ISPICKVAL(Support_Type__c,&quot;IJGlobal Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;US Data Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;EU Data Support&quot;)),
 OR(
@@ -17521,6 +17712,7 @@ NOT(ISPICKVAL(Support_Type__c, &quot;User List Request&quot;))))
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.DeveloperName=&apos;Order_Support&apos;,
+ISPICKVAL( Reason_for_Hold_Escalation_Cancellation__c ,&quot;Other&quot;),
 ISBLANK(Comments__c),
 OR(
 ISPICKVAL(Status,&quot;On Hold&quot;),
@@ -17528,7 +17720,22 @@ ISPICKVAL(Status,&quot;Escalated&quot;),
 ISPICKVAL(Status,&quot;Cancelled&quot;)
 ))</errorConditionFormula>
         <errorDisplayField>Comments__c</errorDisplayField>
-        <errorMessage>Please provide the details in the comments section.</errorMessage>
+        <errorMessage>Please provide the reason in the comments section.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OTC_Require_Reason</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.DeveloperName=&apos;Order_Support&apos;,
+ISBLANK(TEXT(Reason_for_Hold_Escalation_Cancellation__c)),
+OR(
+ISPICKVAL(Status,&quot;On Hold&quot;),
+ISPICKVAL(Status,&quot;Escalated&quot;),
+ISPICKVAL(Status,&quot;Cancelled&quot;)
+))</errorConditionFormula>
+        <errorDisplayField>Reason_for_Hold_Escalation_Cancellation__c</errorDisplayField>
+        <errorMessage>Please provide the reason for Hold/Escalation/Cancellation.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>OTC_Require_Solution_Notes</fullName>
@@ -17547,11 +17754,14 @@ ISPICKVAL(Status,&quot;Closed&quot;)
         <fullName>Require_Escalated_To</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(Status),
 ISPICKVAL(Status,&quot;Escalated&quot;),
 ISPICKVAL(Escalated_To__c, &quot;&quot;),
-RecordType.DeveloperName = &quot;Help_Desk&quot;
-)</errorConditionFormula>
+OR(
+RecordType.DeveloperName = &quot;Help_Desk&quot;,
+RecordType.DeveloperName = &quot;Order_Support&quot;
+))</errorConditionFormula>
         <errorMessage>Please provide the &quot;Escalated To&quot; before moving the status to escalated.</errorMessage>
     </validationRules>
     <validationRules>
