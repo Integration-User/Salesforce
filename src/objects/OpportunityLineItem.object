@@ -796,6 +796,11 @@ IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
                     <label>React</label>
                 </value>
                 <value>
+                    <fullName>IJGlobal</fullName>
+                    <default>false</default>
+                    <label>IJGlobal</label>
+                </value>
+                <value>
                     <fullName>HFA</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
@@ -1123,7 +1128,8 @@ IF start date is blank, allow edits. if not is blank prevent edits</description>
     Opportunity.RecordType.DeveloperName = &quot;Existing_Business&quot;,
     ISCHANGED(Start_Date__c),
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;
+    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;,
+    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Joyce Blanden&quot;
 )</errorConditionFormula>
         <errorDisplayField>Start_Date__c</errorDisplayField>
         <errorMessage>Existing products on renewals cannot have their start dates changed. If you need to make changes, please speak with the head of Account Management</errorMessage>
@@ -1185,7 +1191,8 @@ ISPICKVAL(Delivery_Method__c, &apos;API&apos;)
     NOT(ISBLANK(PRIORVALUE(Starting_Price__c))), 
     PRIORVALUE(Starting_Price__c) &gt; 0,
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;
+    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;,
+    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Joyce Blanden&quot;
 )</errorConditionFormula>
         <errorDisplayField>Starting_Price__c</errorDisplayField>
         <errorMessage>Starting price cannot be edited. If you need to make changes, please speak with the head of Account Management</errorMessage>

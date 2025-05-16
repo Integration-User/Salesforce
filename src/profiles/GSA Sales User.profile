@@ -16006,7 +16006,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Delinian_Id__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -16506,6 +16506,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Restrict_Download__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Risk_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -18661,6 +18666,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Reason</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Reason_for_Hold_Escalation_Cancellation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
