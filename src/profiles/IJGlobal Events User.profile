@@ -51014,12 +51014,12 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.Advertising</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.Advertising_Closed</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
