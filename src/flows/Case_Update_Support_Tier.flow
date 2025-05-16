@@ -5,7 +5,7 @@
     <decisions>
         <name>Help_Desk_Case_Decision</name>
         <label>Help Desk Case Decision</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -33,14 +33,48 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Support_Tier</targetReference>
+                <targetReference>Update_Help_Desk_Support_Tier</targetReference>
             </connector>
             <label>Help Desk + OTC Case</label>
+        </rules>
+        <rules>
+            <name>OTC_Case_Support_Tier</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Order_Support</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_OTC_Support_Tier</targetReference>
+            </connector>
+            <label>OTC Case Support Tier</label>
         </rules>
     </decisions>
     <description>SF-638
 SF-1519: Added new criteria for OTC Support</description>
     <environments>Default</environments>
+    <formulas>
+        <name>OTCSupportTierFormula</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+{!$Record.Type},
+&apos;Activation&apos;, &apos;Tier 1 - Order Support&apos;,
+&apos;Deactivation&apos;, &apos;Tier 3 - Order Support&apos;,
+&apos;Trial Extension/Revision&apos;, &apos;Tier 1 - Order Support&apos;,
+&apos;Contract Review&apos;, &apos;Tier 2 - Order Support&apos;,
+&apos;Order Review&apos;, &apos;Tier 2 - Order Support&apos;,
+&apos;Other&apos;, &apos;Tier 2 - Order Support&apos;, &apos; &apos;)</expression>
+    </formulas>
     <formulas>
         <name>SupportTierFormula</name>
         <dataType>String</dataType>
@@ -100,8 +134,8 @@ SF-1519: Added new criteria for OTC Support</description>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Update_Support_Tier</name>
-        <label>Update Support Tier</label>
+        <name>Update_Help_Desk_Support_Tier</name>
+        <label>Update Help Desk Support Tier</label>
         <locationX>50</locationX>
         <locationY>431</locationY>
         <inputAssignments>
@@ -112,8 +146,21 @@ SF-1519: Added new criteria for OTC Support</description>
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_OTC_Support_Tier</name>
+        <label>Update OTC Support Tier</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Support_Tier__c</field>
+            <value>
+                <elementReference>OTCSupportTierFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Help_Desk_Case_Decision</targetReference>
