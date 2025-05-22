@@ -16008,6 +16008,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.F60D_MD_Ds_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.F60D_News_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.F60D_REIT_Data_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.F60D_Research_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.FTRX5YearAUMHigh__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -16242,6 +16262,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.First_60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.First_Renewal_Year_Research__c</field>
         <readable>true</readable>
@@ -16357,6 +16382,26 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.L6M_MD_Ds_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.L6M_News_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.L6M_REIT_Data_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.L6M_Research_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.LDC_Industry__c</field>
         <readable>true</readable>
@@ -16364,6 +16409,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.LID__LinkedIn_Company_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Last_6M_Usage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16428,6 +16478,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Monthly_Active_Users__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.My_Expansion_Account__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -16464,6 +16519,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.News_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.News_Usage_L60D__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16569,6 +16629,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Prior_12_Mo_Rollup__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Prior_6M_Usage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -17175,6 +17240,11 @@
         <editable>false</editable>
         <field>Account.maps__AssignmentRule__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.of_Monthly_Active_Users__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
