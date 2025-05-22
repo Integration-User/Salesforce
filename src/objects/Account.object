@@ -3088,6 +3088,54 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>F60D_MD_Ds_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Market Data &amp; Deals platform clicks for this account over the first 60 days since contract start date</inlineHelpText>
+        <label>F60D MD&amp;Ds Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F60D_News_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>News email + platform clicks for this account over the first 60 days since contract start date</inlineHelpText>
+        <label>F60D News Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F60D_REIT_Data_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>REIT Data platform clicks for this account over the first 60 days since contract start date</inlineHelpText>
+        <label>F60D REIT Data Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F60D_Research_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Research email + platform clicks for this account over the first 60 days since contract start date</inlineHelpText>
+        <label>F60D Research Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>FTRX5YearAUMHigh__c</fullName>
         <label>FTRX 5 Year AUM High</label>
         <precision>18</precision>
@@ -3601,6 +3649,18 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>First_60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total platform clicks for this account over the first 60 days since contract start date (excluding Excel, SNF, API)</inlineHelpText>
+        <label>First 60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>First_Renewal_Year_Research__c</fullName>
@@ -4154,6 +4214,54 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>L6M_MD_Ds_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>MD&amp;Ds platform clicks for this account over the last 6 months</inlineHelpText>
+        <label>L6M MD&amp;Ds Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L6M_News_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>News email + platform clicks for this account over the last 6 months</inlineHelpText>
+        <label>L6M News Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L6M_REIT_Data_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>REIT Data platform clicks for this account over the last 6 months</inlineHelpText>
+        <label>L6M REIT Data Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L6M_Research_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Research email + platform clicks for this account over the last 6 months</inlineHelpText>
+        <label>L6M Research Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>LDC_Industry__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>migrated from LDC&apos;s Hubsppot</inlineHelpText>
@@ -4174,6 +4282,18 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_6M_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total platform clicks for this account over the last 6 months (excluding Excel, SNF, API)</inlineHelpText>
+        <label>Last 6M Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -4344,6 +4464,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Monthly_Active_Users__c</fullName>
+        <inlineHelpText>% of unique monthly active users (from Amplitude) divided by the # of activated users within SFDC</inlineHelpText>
+        <label>% Monthly Active Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>My_Expansion_Account__c</fullName>
         <formula>IF(US_Expansion_Owner__r.Id = $User.Id, TRUE,
 IF(EU_Expansion_Owner__r.Id = $User.Id, TRUE,
@@ -4426,6 +4556,18 @@ Owner.Id = $User.Id)</formula>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>News_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>News email + platform clicks for this account over the last 60 days</inlineHelpText>
+        <label>News Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Next_Steps_Account__c</fullName>
@@ -4780,6 +4922,18 @@ Owner.Id = $User.Id)</formula>
         <externalId>false</externalId>
         <inlineHelpText>Total platform clicks for this account between 366-730 days ago (does not include Excel, SNF, API)</inlineHelpText>
         <label>Prior 12 Mo. Rollup</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prior_6M_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total platform clicks for this account over the last 6 months, offset by 6 months – days 180-365 (excluding Excel, SNF, API)</inlineHelpText>
+        <label>Prior 6M Usage</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -6666,6 +6820,18 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>of_Monthly_Active_Users__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText># of unique monthly active users in Amplitude</inlineHelpText>
+        <label># of Monthly Active Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>rh2__Describe__c</fullName>
