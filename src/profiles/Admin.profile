@@ -57498,14 +57498,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AppFrameworkManageApp</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>AppFrameworkManageTemplate</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ApprovalAdmin</name>
     </userPermissions>
     <userPermissions>
