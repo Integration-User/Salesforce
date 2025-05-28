@@ -6572,6 +6572,16 @@ NULL))))</formula>
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Sales_Owner_Manager__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Owner__r.Manager.FirstName + &quot; &quot; + Sales_Owner__r.Manager.LastName</formula>
+        <label>Sales Owner Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Sales_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>Sales Owner</label>
