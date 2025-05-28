@@ -28252,6 +28252,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Role_Static__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.SAO_Date__c</field>
         <readable>true</readable>
@@ -28284,6 +28289,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Sales_Owner_Manager__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
