@@ -2968,6 +2968,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>OpportunityActivityBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>OpportunityActivityBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>OpportunityOwnerChangeBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -15897,6 +15905,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Count_of_open_SDO__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Country__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -27073,6 +27086,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Contract_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Count_of_Calls_last_30__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Count_of_Emails_last_30__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Count_of_Meetings_last_30__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

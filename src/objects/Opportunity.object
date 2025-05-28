@@ -1604,6 +1604,42 @@ TEXT(YEAR(Contract_Start_Date__c))</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Count_of_Calls_last_30__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Calls last 30</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count_of_Emails_last_30__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Emails last 30</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count_of_Meetings_last_30__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Meetings last 30</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Create_New_Renewal_Opportunity__c</fullName>
         <defaultValue>true</defaultValue>
         <description>This field is used to determine whether a new renewal Opportunity must be created after the current renewal opportunity is closed.</description>
@@ -11071,10 +11107,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -11103,10 +11135,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Data License Directory</fullName>
                 <default>false</default>
             </values>
@@ -11132,10 +11160,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11291,10 +11315,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -11380,10 +11400,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14320,10 +14336,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -14352,10 +14364,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Data License Directory</fullName>
                 <default>false</default>
             </values>
@@ -14381,10 +14389,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14540,10 +14544,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -14629,10 +14629,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17513,10 +17509,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -17538,10 +17530,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17570,10 +17558,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17725,10 +17709,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -17814,10 +17794,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -20642,10 +20618,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -20667,10 +20639,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20699,10 +20667,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20854,10 +20818,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -20943,10 +20903,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -24039,10 +23995,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -24068,10 +24020,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24168,10 +24116,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24375,10 +24319,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -24520,10 +24460,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -27528,10 +27464,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -27557,10 +27489,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27613,10 +27541,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27776,10 +27700,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -27889,10 +27809,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -38938,10 +38854,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -38967,10 +38879,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -39023,10 +38931,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -39186,10 +39090,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -39299,10 +39199,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -42360,10 +42256,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -42385,10 +42277,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -42465,10 +42353,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -42668,10 +42552,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -42805,10 +42685,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -45889,10 +45765,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -45918,10 +45790,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -45974,10 +45842,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -46137,10 +46001,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -46242,10 +46102,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49186,10 +49042,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -49215,10 +49067,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -49275,10 +49123,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -49438,10 +49282,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -49551,10 +49391,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Tertiary Market Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
