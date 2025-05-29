@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Final_Analyst_Hours_For_Account</name>
         <label>Final Analyst Hours For Account</label>
-        <locationX>138</locationX>
-        <locationY>1655</locationY>
+        <locationX>270</locationX>
+        <locationY>1955</locationY>
         <assignmentItems>
             <assignToReference>AnalystHoursForAccount</assignToReference>
             <operator>Add</operator>
@@ -20,8 +21,8 @@
     <assignments>
         <name>Total_Analyst_Hours_For_Account</name>
         <label>Total Analyst Hours For Account</label>
-        <locationX>138</locationX>
-        <locationY>1247</locationY>
+        <locationX>270</locationX>
+        <locationY>1547</locationY>
         <assignmentItems>
             <assignToReference>AnalystHoursForAccount</assignToReference>
             <operator>Add</operator>
@@ -36,8 +37,8 @@
     <decisions>
         <name>Is_Related_To_Empty_On_Task</name>
         <label>Is Related To Empty On Task</label>
-        <locationX>182</locationX>
-        <locationY>623</locationY>
+        <locationX>314</locationX>
+        <locationY>923</locationY>
         <defaultConnector>
             <targetReference>Task_Should_be_Completed</targetReference>
         </defaultConnector>
@@ -82,8 +83,8 @@
     <decisions>
         <name>Salesloft_Task_Bounce</name>
         <label>Salesloft Task Bounce</label>
-        <locationX>182</locationX>
-        <locationY>323</locationY>
+        <locationX>314</locationX>
+        <locationY>623</locationY>
         <defaultConnector>
             <targetReference>Is_Related_To_Empty_On_Task</targetReference>
         </defaultConnector>
@@ -105,10 +106,72 @@
         </rules>
     </decisions>
     <decisions>
+        <description>SF-1530: Create automation that update the Task Type based on the Subject</description>
+        <name>Task_Email_Type</name>
+        <label>Task Email Type</label>
+        <locationX>314</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Salesloft_Task_Bounce</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Task_Contains_Email</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Email</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Reply</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Type_Email</targetReference>
+            </connector>
+            <label>Task Contains Email</label>
+        </rules>
+        <rules>
+            <name>Task_Contains_LinkedIn</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>LinkedIn</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Type_LinkedIn</targetReference>
+            </connector>
+            <label>Task Contains LinkedIn</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Task_Should_be_Completed</name>
         <label>Task Should be Completed</label>
-        <locationX>182</locationX>
-        <locationY>923</locationY>
+        <locationX>314</locationX>
+        <locationY>1223</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Checking_Task_Status</name>
@@ -139,13 +202,20 @@
         <dataType>Date</dataType>
         <expression>( {!$Flow.CurrentDate} - 365 )</expression>
     </formulas>
+    <formulas>
+        <name>TaskTypeFormula</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!$Record.Subject}, &quot;LinkedIn Sales Navigator: Connection Request&quot;), &quot;LinkedIn Sales Navigator: Connection Request&quot;,
+IF(CONTAINS({!$Record.Subject}, &quot;LinkedIn Sales Navigator: Research&quot;), &quot;LinkedIn Sales Navigator: Research&quot;,
+IF(CONTAINS({!$Record.Subject}, &quot;LinkedIn Sales Navigator: InMail&quot;), &quot;LinkedIn Sales Navigator: InMail&quot;, TEXT({!$Record.Type}))))</expression>
+    </formulas>
     <interviewLabel>Analyst Hours {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Total Analyst Hours For Account on Task</label>
     <loops>
         <name>Iterate_All_Tasks</name>
         <label>Iterate All Tasks</label>
-        <locationX>50</locationX>
-        <locationY>1139</locationY>
+        <locationX>182</locationX>
+        <locationY>1439</locationY>
         <collectionReference>Get_Tasks_For_Account</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -158,8 +228,8 @@
     <loops>
         <name>Iterate_Event_Analyst_Hours_Count</name>
         <label>Iterate Event Analyst Hours Count</label>
-        <locationX>50</locationX>
-        <locationY>1547</locationY>
+        <locationX>182</locationX>
+        <locationY>1847</locationY>
         <collectionReference>Get_All_Completed_Events_For_Account</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -191,8 +261,8 @@
     <recordLookups>
         <name>Get_All_Completed_Events_For_Account</name>
         <label>Get All Completed Events For Account</label>
-        <locationX>50</locationX>
-        <locationY>1439</locationY>
+        <locationX>182</locationX>
+        <locationY>1739</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Iterate_Event_Analyst_Hours_Count</targetReference>
@@ -235,8 +305,8 @@
     <recordLookups>
         <name>Get_Tasks_For_Account</name>
         <label>Get Tasks For Account</label>
-        <locationX>50</locationX>
-        <locationY>1031</locationY>
+        <locationX>182</locationX>
+        <locationY>1331</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Iterate_All_Tasks</targetReference>
@@ -277,8 +347,8 @@
     <recordUpdates>
         <name>Update_Account_For_Analyst_Hours</name>
         <label>Update Account For Analyst Hours</label>
-        <locationX>50</locationX>
-        <locationY>1847</locationY>
+        <locationX>182</locationX>
+        <locationY>2147</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -298,8 +368,8 @@
     <recordUpdates>
         <name>Update_Bounce_Contact</name>
         <label>Update Bounce Contact</label>
-        <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
         <connector>
             <targetReference>Is_Related_To_Empty_On_Task</targetReference>
         </connector>
@@ -322,8 +392,8 @@
     <recordUpdates>
         <name>Update_Related_To_Field_On_Task</name>
         <label>Update Related To Field On Task</label>
-        <locationX>50</locationX>
-        <locationY>731</locationY>
+        <locationX>182</locationX>
+        <locationY>1031</locationY>
         <connector>
             <targetReference>Task_Should_be_Completed</targetReference>
         </connector>
@@ -335,11 +405,43 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <start>
-        <locationX>56</locationX>
-        <locationY>0</locationY>
+    <recordUpdates>
+        <name>Update_Type_Email</name>
+        <label>Update Type Email</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Salesloft_Task_Bounce</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Outgoing Email</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Type_LinkedIn</name>
+        <label>Update Type LinkedIn</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Salesloft_Task_Bounce</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <elementReference>TaskTypeFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Task_Email_Type</targetReference>
         </connector>
         <object>Task</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
