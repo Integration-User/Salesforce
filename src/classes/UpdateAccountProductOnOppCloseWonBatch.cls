@@ -27,9 +27,12 @@ public class UpdateAccountProductOnOppCloseWonBatch implements Database.Batchabl
                     if(opp.account.Current_Products__c != null && !opp.account.Current_Products__c.contains(oli.Product2.name)) {
                         Account acc = new Account(id = opp.AccountId, Current_Products__c = opp.account.Current_Products__c + ';' + oli.Product2.name);
                         accountUpdates.put(opp.AccountId, acc);
-                    } else {
-                         Account acc = new Account(id = opp.AccountId, Current_Products__c = oli.Product2.name);
+                    } else if(opp.account.Current_Products__c == null || !opp.account.Current_Products__c.contains(oli.Product2.name)) {
+                        Account acc = new Account(id = opp.AccountId);
+                        if(opp.account.Current_Products__c != null) acc.Current_Products__c = opp.account.Current_Products__c + ';' + oli.Product2.name;
+                        else acc.Current_Products__c = oli.Product2.name;
                         accountUpdates.put(opp.AccountId, acc);
+                        
                     }   
                 }
             }

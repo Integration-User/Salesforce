@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Customer_Channel__c</field>
-        <value xsi:type="xsd:string">Contracted - PSI</value>
+        <value xsi:type="xsd:string">Non-Contracted - PSI</value>
     </values>
     <values>
         <field>Netsuite_Internal_Id__c</field>
