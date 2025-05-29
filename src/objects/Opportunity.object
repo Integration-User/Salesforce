@@ -1604,6 +1604,42 @@ TEXT(YEAR(Contract_Start_Date__c))</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Count_of_Calls_last_30__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Calls last 30</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count_of_Emails_last_30__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Emails last 30</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count_of_Meetings_last_30__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Meetings last 30</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Create_New_Renewal_Opportunity__c</fullName>
         <defaultValue>true</defaultValue>
         <description>This field is used to determine whether a new renewal Opportunity must be created after the current renewal opportunity is closed.</description>
@@ -6403,6 +6439,18 @@ NULL))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Role_Static__c</fullName>
+        <description>Fetches the opportunity owner role when the opportunity is Closed Won.</description>
+        <externalId>false</externalId>
+        <label>Role(Static)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>SAO_Date__c</fullName>
