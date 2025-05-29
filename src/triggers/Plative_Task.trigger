@@ -9,6 +9,8 @@ trigger Plative_Task on Task (after insert, after update, before insert)  {
     Trigger_Control_Setting__c setting = Trigger_Control_Setting__c.getOrgDefaults();
 
     if(setting.Task__c && Trigger.isInsert && Trigger.isAfter){
+        if(System.Label.Skip_Count_Of_Calls_Email_Meeting_For_Opportunity == 'False')
+        TaskTriggerHandler.updateCountOfCallOrEmailLast30Days(Trigger.new); //SF-1565
 		System.enqueueJob(new Plative_ActivitySecurityUtil(trigger.newMap,'Task'));
     }
     //If update and if owner is changed
