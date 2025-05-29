@@ -1036,6 +1036,25 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
+        <fullName>Count_of_open_SDO__c</fullName>
+        <description>Count the number of open SDOs</description>
+        <label>Count of open SDO</label>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Development</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Disqualified, Qualified</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Country__c</fullName>
         <label>Country</label>
         <required>false</required>
@@ -3088,6 +3107,517 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>F60D_MD_Ds_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Market Data &amp; Deals platform clicks for this account over the first 60 days since contract start date</inlineHelpText>
+        <label>F60D MD&amp;Ds Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F60D_News_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>News email + platform clicks for this account over the first 60 days since contract start date</inlineHelpText>
+        <label>F60D News Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F60D_REIT_Data_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>REIT Data platform clicks for this account over the first 60 days since contract start date</inlineHelpText>
+        <label>F60D REIT Data Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F60D_Research_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Research email + platform clicks for this account over the first 60 days since contract start date</inlineHelpText>
+        <label>F60D Research Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRX5YearAUMHigh__c</fullName>
+        <label>FTRX 5 Year AUM High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTRX5YearAUMLow__c</fullName>
+        <label>FTRX 5 Year AUM Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTRXAUMRange__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX AUM Range</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXActiveInCoinvestments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays a &apos;yes&apos; value if the family office is active in co-investments with other family offices.</inlineHelpText>
+        <label>FTRX Active In Coinvestments</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXDateofLastUpdate__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Date of Last Update</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Email</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXFamilyNameWealthOrigin__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Family Name Wealth Origin</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXFamilyOfficeType__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Family Office Type</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXFamilyOfficeYearFounded__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Family Office Year Founded</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXHQCity__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX HQ City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXHQCountry__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX HQ Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXHQState__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX HQ State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXHQZipCode__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX HQ Zip Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXNumAdditionalOffices__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Num Additional Offices</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXNumEmployeesAdvFunc__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Shows the number of employees providing advisory functions.</inlineHelpText>
+        <label>FTRX Num Employees Adv Func</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXNumberofAccounts5YearHigh__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Number of Accounts 5 Year High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXNumberofAccounts5YearLow__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Number of Accounts 5 Year Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXNumberofAccounts__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Number of Accounts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXPhone__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Phone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXRegion__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Region</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXSECRegisteredStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX SEC Registered Status</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXTotalAmountofHNWIAssets__c</fullName>
+        <inlineHelpText>Denotes the total assets under management associated with high-net-worth individual clients.</inlineHelpText>
+        <label>FTRX Total Amount of HNWI Assets</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTRXTotalClients__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Total Clients</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXTotalIndividualsAssets__c</fullName>
+        <label>FTRX Total Individuals Assets</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTRXTotalNumberofDirectTransactions__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Total Number of Direct Transactions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXTotalNumberofEmployees__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Total Number of Employees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXTotalNumberofHNWIClients__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes the total count of high-net-worth individual clients.</inlineHelpText>
+        <label>FTRX Total Number of HNWI Clients</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRXTotalNumberofIndividualClients__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX Total Number of Individual Clients</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRX_5_Year_AUM_Growth__c</fullName>
+        <label>FTRX 5 Year AUM % Growth</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTRX_AVG_Account_Size__c</fullName>
+        <label>FTRX AVG Account Size ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTRX_AVG_Client_Size__c</fullName>
+        <label>FTRX AVG Client Size ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTRX_AdditionalOffices__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Shows the number of additional offices the firm has.</inlineHelpText>
+        <label>FTRX # Additional Offices</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRX_Advisory_Activities__c</fullName>
+        <inlineHelpText>Describes advisory activities provided by the firm.</inlineHelpText>
+        <label>FTRX Advisory Activities</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Allocation_Preferences__c</fullName>
+        <inlineHelpText>Details investment areas of interest for the family office, in bullet point format.</inlineHelpText>
+        <label>FTRX Allocation Preferences</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Allocator_Intel_Bullet_Points__c</fullName>
+        <inlineHelpText>Provides bullet-point information about the firm&apos;s investments and allocation preferences.</inlineHelpText>
+        <label>FTRX Allocator Intel Bullet Points</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Alternatives_Used__c</fullName>
+        <label>FTRX Alternatives Used</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Asset_Allocation__c</fullName>
+        <label>FTRX Asset Allocation</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Asset_Class_Focus__c</fullName>
+        <inlineHelpText>Details the asset classes the family office invests in.</inlineHelpText>
+        <label>FTRX Asset Class Focus</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Associated_Synced_Lists__c</fullName>
+        <inlineHelpText>Lists the name(s) of synced lists that contain the firm.</inlineHelpText>
+        <label>FTRX Associated Synced Lists*</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Test List</fullName>
+                    <default>false</default>
+                    <label>Test List</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Bus_Activities__c</fullName>
+        <inlineHelpText>Details the business activities the firm engages in.</inlineHelpText>
+        <label>FTRX Business Activities</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Employees__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the total number of employees at the firm.</inlineHelpText>
+        <label>FTRX # Employees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTRX_Family_Office_Profile__c</fullName>
+        <label>FTRX Family Office Profile</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_HQ_Address_Full__c</fullName>
+        <label>FTRX HQ Address Full</label>
+        <length>256</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Investor_Profile__c</fullName>
+        <label>FTRX Investor Profile</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_Private_Funds_Advised__c</fullName>
+        <label>FTRX Private Funds Advised</label>
+        <length>30000</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTRX_SEC_Year_Reg__c</fullName>
+        <externalId>false</externalId>
+        <label>FTRX SEC Year Reg</label>
+        <length>16</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -3138,6 +3668,18 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>First_60D_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total platform clicks for this account over the first 60 days since contract start date (excluding Excel, SNF, API)</inlineHelpText>
+        <label>First 60D Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>First_Renewal_Year_Research__c</fullName>
@@ -3691,6 +4233,54 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>L6M_MD_Ds_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>MD&amp;Ds platform clicks for this account over the last 6 months</inlineHelpText>
+        <label>L6M MD&amp;Ds Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L6M_News_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>News email + platform clicks for this account over the last 6 months</inlineHelpText>
+        <label>L6M News Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L6M_REIT_Data_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>REIT Data platform clicks for this account over the last 6 months</inlineHelpText>
+        <label>L6M REIT Data Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L6M_Research_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Research email + platform clicks for this account over the last 6 months</inlineHelpText>
+        <label>L6M Research Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>LDC_Industry__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>migrated from LDC&apos;s Hubsppot</inlineHelpText>
@@ -3711,6 +4301,18 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_6M_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total platform clicks for this account over the last 6 months (excluding Excel, SNF, API)</inlineHelpText>
+        <label>Last 6M Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -3881,6 +4483,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Monthly_Active_Users__c</fullName>
+        <inlineHelpText>% of unique monthly active users (from Amplitude) divided by the # of activated users within SFDC</inlineHelpText>
+        <label>% Monthly Active Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>My_Expansion_Account__c</fullName>
         <formula>IF(US_Expansion_Owner__r.Id = $User.Id, TRUE,
 IF(EU_Expansion_Owner__r.Id = $User.Id, TRUE,
@@ -3963,6 +4575,18 @@ Owner.Id = $User.Id)</formula>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>News_Usage_L60D__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>News email + platform clicks for this account over the last 60 days</inlineHelpText>
+        <label>News Usage L60D</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Next_Steps_Account__c</fullName>
@@ -4317,6 +4941,18 @@ Owner.Id = $User.Id)</formula>
         <externalId>false</externalId>
         <inlineHelpText>Total platform clicks for this account between 366-730 days ago (does not include Excel, SNF, API)</inlineHelpText>
         <label>Prior 12 Mo. Rollup</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prior_6M_Usage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total platform clicks for this account over the last 6 months, offset by 6 months – days 180-365 (excluding Excel, SNF, API)</inlineHelpText>
+        <label>Prior 6M Usage</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -6203,6 +6839,18 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>of_Monthly_Active_Users__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText># of unique monthly active users in Amplitude</inlineHelpText>
+        <label># of Monthly Active Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>rh2__Describe__c</fullName>
@@ -8671,10 +9319,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -8700,10 +9344,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8744,10 +9384,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8895,10 +9531,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -8980,10 +9612,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12273,10 +12901,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -12290,10 +12914,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Commercial Mortgage Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12346,10 +12966,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12453,10 +13069,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -12518,10 +13130,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
