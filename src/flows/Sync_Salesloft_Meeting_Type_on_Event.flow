@@ -150,12 +150,19 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Meeting_Type_Check</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Salesloft_Meeting_Type__c</leftValueReference>
+                <leftValueReference>$Record__Prior.Salesloft_Meeting_Type__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Salesloft_Meeting_Type__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
