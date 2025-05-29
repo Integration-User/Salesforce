@@ -13,6 +13,7 @@ trigger Plative_Event on Event (after insert, after update)  {
         System.enqueueJob(new Plative_ActivitySecurityUtil(trigger.newMap,'Event'));    
         updateContactTrainingDate();  
         updateAccountLastTrainingDate(); // SF-917
+        if(System.Label.Skip_Count_Of_Calls_Email_Meeting_For_Opportunity == 'False') updateCountOfMeetingsFromLast30Days(); // SF-1565
     }
 
     //If update
@@ -29,6 +30,7 @@ trigger Plative_Event on Event (after insert, after update)  {
         }
         updateContactTrainingDate();
         updateAccountLastTrainingDate(); // SF-917
+        if(System.Label.Skip_Count_Of_Calls_Email_Meeting_For_Opportunity == 'False') updateCountOfMeetingsFromLast30Days(); // SF-1565
     }
     public void updateAccountLastTrainingDate(){
         //SF-917 Last Training Date - Account
@@ -71,5 +73,34 @@ trigger Plative_Event on Event (after insert, after update)  {
             
         }
         
+    }
+    /* SF-1565
+     * “Count of Meetings last 30” (Events with Status = Completed” + Cancelled Date = null, no show is FALSE) 
+	*/
+    public void updateCountOfMeetingsFromLast30Days(){
+        Set<Id> oppIds = new Set<Id>();
+        DateTime thirtyDaysAhead = System.now().addDays(30);
+        // Collect Opportunity IDs from Event WhatId
+        for (Event e : Trigger.new) {
+            Event oldEvent = Trigger.oldMap != null ? Trigger.oldMap.get(e.Id) : null;
+            if ((Trigger.isInsert || (oldEvent != null && oldEvent.Status__c != e.Status__c && e.StartDateTime <= thirtyDaysAhead)) 
+                && e.Status__c == 'Completed' && e.Canceled_Date__c == NULL && e.No_Show_Date__c == FALSE
+                && e.WhatId != null && e.WhatId.getSObjectType().getDescribe().getName() == 'Opportunity') {
+                oppIds.add(e.WhatId);
+            }
+        }
+        
+        if (!oppIds.isEmpty()) {
+            // Query all Opportunities at once
+            Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>([SELECT Id, Count_of_Meetings_Last_30__c FROM Opportunity WHERE Id IN :oppIds]);
+            // Update Opportunity counts
+            for (Event e : Trigger.new) {
+                if (oppMap.containsKey(e.WhatId)) {
+                    Opportunity opp = oppMap.get(e.WhatId);
+                    opp.Count_of_Meetings_Last_30__c = (opp.Count_of_Meetings_Last_30__c != null) ? opp.Count_of_Meetings_Last_30__c + 1 : 1;
+                }
+            }
+            update oppMap.values(); // Bulk update
+        }
     }
 }
