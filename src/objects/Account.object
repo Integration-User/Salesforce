@@ -1036,6 +1036,25 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
+        <fullName>Count_of_open_SDO__c</fullName>
+        <description>Count the number of open SDOs</description>
+        <label>Count of open SDO</label>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Development</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Disqualified, Qualified</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Country__c</fullName>
         <label>Country</label>
         <required>false</required>
@@ -9300,10 +9319,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -9329,10 +9344,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9373,10 +9384,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9524,10 +9531,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -9609,10 +9612,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12902,10 +12901,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -12919,10 +12914,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Commercial Mortgage Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12975,10 +12966,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13082,10 +13069,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -13147,10 +13130,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
