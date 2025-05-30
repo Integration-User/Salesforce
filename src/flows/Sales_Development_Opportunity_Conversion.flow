@@ -269,6 +269,18 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Qualified_Role__c</field>
+            <value>
+                <elementReference>$Record.Owner.UserRole.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualified_Team__c</field>
+            <value>
+                <elementReference>$Record.Owner.Sales_Team__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>RecordTypeId</field>
             <value>
                 <elementReference>Get_Record_Type.Id</elementReference>
