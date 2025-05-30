@@ -345,6 +345,34 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Account_Groupings__c</fullName>
+        <label>Account Groupings</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Single Sector/Market</fullName>
+                    <default>false</default>
+                    <label>Single Sector/Market</label>
+                </value>
+                <value>
+                    <fullName>One Off</fullName>
+                    <default>false</default>
+                    <label>One Off</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Account_Handoff_Date__c</fullName>
         <inlineHelpText>The date when an Event of type &quot;Account Handoff&quot; was marked &quot;Completed&quot;</inlineHelpText>
         <label>Account Handoff Date</label>
@@ -3085,6 +3113,13 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Explanatory_Use_Case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Explanatory Use-Case</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Export_Activated_Users__c</fullName>
         <externalId>false</externalId>
         <formula>HYPERLINK(&apos;/00O5G000007wRTHUA2?pv0=&apos;+X18_digit_Account_ID__c+&apos;&amp;export=1&amp;enc=UTF-8&amp;xf=xlsx&amp;isdtp=p1&apos;,Text(Activated_Users__c))</formula>
@@ -4092,6 +4127,13 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Individual_Users__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Individual Users</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Industry</fullName>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -4333,6 +4375,34 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <summaryOperation>max</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Last_Risk_Score__c</fullName>
+        <label>Last Risk Score</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Last_Training_Date__c</fullName>
