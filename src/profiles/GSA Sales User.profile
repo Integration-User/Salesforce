@@ -27979,6 +27979,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Qualified_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Qualified_Team__c</field>
         <readable>true</readable>
@@ -28176,6 +28181,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Reviewed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Sales_Team_Static__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
