@@ -15650,7 +15650,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.Account_Groupings__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16015,7 +16015,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.Explanatory_Use_Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16380,7 +16380,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.Individual_Users__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -28100,6 +28100,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Qualified_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Qualified_Team__c</field>
         <readable>true</readable>
@@ -28297,6 +28302,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Reviewed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Sales_Team_Static__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
