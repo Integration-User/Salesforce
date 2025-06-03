@@ -5770,6 +5770,19 @@ NULL))))</formula>
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>Qualified_Role__c</fullName>
+        <description>User: Role on the SDO when it is moved to converted</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Role of the User/Opportunity Owner who converted the SDO</inlineHelpText>
+        <label>Qualified Role</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Qualified_Team__c</fullName>
         <inlineHelpText>Team name of the opportunity owner when moved to converted state.</inlineHelpText>
         <label>Qualified Team</label>
@@ -6599,6 +6612,87 @@ NULL))))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Team_Static__c</fullName>
+        <description>Sales Team from the Opportunity owner when opp is closed won</description>
+        <inlineHelpText>Sales Team of the User/Opportunity owner who closed won this opportunity</inlineHelpText>
+        <label>Sales Team (Static)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>White</fullName>
+                    <default>false</default>
+                    <label>White</label>
+                </value>
+                <value>
+                    <fullName>UK Sales</fullName>
+                    <default>false</default>
+                    <label>UK Sales</label>
+                </value>
+                <value>
+                    <fullName>Head of SDR&apos;s</fullName>
+                    <default>false</default>
+                    <label>Head of SDR&apos;s</label>
+                </value>
+                <value>
+                    <fullName>SDR</fullName>
+                    <default>false</default>
+                    <label>SDR</label>
+                </value>
+                <value>
+                    <fullName>AM: Enterprise</fullName>
+                    <default>false</default>
+                    <label>AM: Enterprise</label>
+                </value>
+                <value>
+                    <fullName>AM: Core</fullName>
+                    <default>false</default>
+                    <label>AM: Core</label>
+                </value>
+                <value>
+                    <fullName>AM: Strategic</fullName>
+                    <default>false</default>
+                    <label>AM: Strategic</label>
+                </value>
+                <value>
+                    <fullName>AM: Non-Platform</fullName>
+                    <default>false</default>
+                    <label>AM: Non-Platform</label>
+                </value>
+                <value>
+                    <fullName>US Sales: West</fullName>
+                    <default>false</default>
+                    <label>US Sales: West</label>
+                </value>
+                <value>
+                    <fullName>European Sales</fullName>
+                    <default>false</default>
+                    <label>European Sales</label>
+                </value>
+                <value>
+                    <fullName>Global Sales: News</fullName>
+                    <default>false</default>
+                    <label>Global Sales: News</label>
+                </value>
+                <value>
+                    <fullName>US Sales: East</fullName>
+                    <default>false</default>
+                    <label>US Sales: East</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Sales_Type_NS_Internal_ID__c</fullName>
@@ -43015,6 +43109,61 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sales_Team_Static__c</picklist>
+            <values>
+                <fullName>AM%3A Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Non-Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Strategic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Sales%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A West</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sales_Type__c</picklist>
             <values>
                 <fullName>Favor</fullName>
@@ -46110,7 +46259,43 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Qualified_Team__c</picklist>
             <values>
+                <fullName>AM%3A Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Non-Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Strategic</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion US Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Sales%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -46123,6 +46308,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -46143,6 +46332,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A West</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -46340,6 +46537,61 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Team_Static__c</picklist>
+            <values>
+                <fullName>AM%3A Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Non-Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Strategic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Sales%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A West</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49633,6 +49885,61 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Team_Static__c</picklist>
+            <values>
+                <fullName>AM%3A Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Non-Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Strategic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Sales%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A West</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
