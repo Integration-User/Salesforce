@@ -15650,7 +15650,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.Account_Groupings__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16015,7 +16015,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.Explanatory_Use_Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16380,7 +16380,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.Individual_Users__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20217,6 +20217,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Locatus_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Locatus_Opt_in_Items__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
