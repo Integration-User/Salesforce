@@ -2606,6 +2606,55 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Locatus_Opt_in_Items__c</fullName>
+        <label>Locatus Opt-in Items</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Nieuwsbrief</fullName>
+                    <default>false</default>
+                    <label>Nieuwsbrief</label>
+                </value>
+                <value>
+                    <fullName>Blog</fullName>
+                    <default>false</default>
+                    <label>Blog</label>
+                </value>
+                <value>
+                    <fullName>Service LOL</fullName>
+                    <default>false</default>
+                    <label>Service LOL</label>
+                </value>
+                <value>
+                    <fullName>NieuwsbriefFR</fullName>
+                    <default>false</default>
+                    <label>NieuwsbriefFR</label>
+                </value>
+                <value>
+                    <fullName>PermissieLOL-EN</fullName>
+                    <default>false</default>
+                    <label>PermissieLOL-EN</label>
+                </value>
+                <value>
+                    <fullName>Service woningbouw</fullName>
+                    <default>false</default>
+                    <label>Service woningbouw</label>
+                </value>
+                <value>
+                    <fullName>BlogEN</fullName>
+                    <default>false</default>
+                    <label>BlogEN</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>MailingAddress</fullName>
         <trackHistory>true</trackHistory>
     </fields>
