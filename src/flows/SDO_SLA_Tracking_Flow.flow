@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <constants>
         <name>IU_Email</name>
         <dataType>String</dataType>
@@ -11,7 +12,7 @@
     <decisions>
         <name>Qualification</name>
         <label>Qualification</label>
-        <locationX>578</locationX>
+        <locationX>710</locationX>
         <locationY>503</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -79,11 +80,40 @@
             </connector>
             <label>Moved to In Review</label>
         </rules>
+        <rules>
+            <name>Move_to_Qualified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Qualified</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Qualified_Role</targetReference>
+            </connector>
+            <label>Move to Qualified</label>
+        </rules>
     </decisions>
     <decisions>
         <name>Removed_from_Integration_User</name>
         <label>Removed from Integration User</label>
-        <locationX>314</locationX>
+        <locationX>380</locationX>
         <locationY>395</locationY>
         <defaultConnector>
             <targetReference>Qualification</targetReference>
@@ -242,9 +272,22 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Qualified_Role</name>
+        <label>Update Qualified Role</label>
+        <locationX>842</locationX>
+        <locationY>611</locationY>
+        <inputAssignments>
+            <field>Qualified_Role__c</field>
+            <value>
+                <elementReference>$Record.Owner.UserRole.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_SDO_Name</name>
         <label>Update SDO Name</label>
-        <locationX>314</locationX>
+        <locationX>380</locationX>
         <locationY>287</locationY>
         <connector>
             <targetReference>Removed_from_Integration_User</targetReference>
@@ -258,7 +301,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>188</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Update_SDO_Name</targetReference>
