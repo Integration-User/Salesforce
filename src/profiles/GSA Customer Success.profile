@@ -16768,11 +16768,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.Open_SDOs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Account.Original_Account_Priority__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -18372,11 +18367,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>CampaignMember.Current_ARR__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>CampaignMember.Email_Address__c</field>
         <readable>true</readable>
@@ -18962,11 +18952,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.ClosedOnCreate</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Comments__c</field>
         <readable>true</readable>
@@ -19174,11 +19159,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Reason</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Reason_for_Hold_Escalation_Cancellation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20473,11 +20453,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Contact.Locatus_Opt_in_Items__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Contact.MailingAddress</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -21493,11 +21468,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ContactPointConsent.ContactPointTypeConsentId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>ContactPointConsent.DataUsePurposeId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -21720,26 +21690,6 @@
         <editable>true</editable>
         <field>Contact_Email_Distribution__c.Soft_Launch__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact_Email_Distribution__c_hd.Account__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact_Email_Distribution__c_hd.Account__c_hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact_Email_Distribution__c_hd.Contact__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact_Email_Distribution__c_hd.Contact__c_hst</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -24923,21 +24873,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>DataUsePurpose.IsMaintainablePerContactPoint</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DataUsePurpose.IsMaintainablePerParty</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DataUsePurpose.IsMaintainablePerType</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>DataUsePurpose.LegalBasisId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -25458,166 +25393,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ForecastSnapShot__c.Close_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>ForecastSnapShot__c.Contract_Start_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>ForecastSnapShot__c.Opportunity_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>ForecastSnapShot__c.Opportunity__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>ForecastSnapShot__c.Rep_Forecast_Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>ForecastSnapShot__c.Sales_Leader_Forecast_Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>ForecastSnapShot__c.Status_Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>ForecastSnapShot__c.Total_ARR_Converted__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.AmountWithoutAdjustments__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.AmountWithoutAdjustments__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.AmountWithoutManagerAdjustment__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.AmountWithoutManagerAdjustment__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.ForecastAmount__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.ForecastAmount__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.ForecastQuantity__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.ForecastQuantity__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OverriddenRollupMgrView__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OverriddenRollupMgrView__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OverriddenRollupOwnerView__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OverriddenRollupOwnerView__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OwnerOnlyAmount__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OwnerOnlyAmount__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OwnerOnlyQuantity__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.OwnerOnlyQuantity__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.QuantityWithoutAdjustments__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.QuantityWithoutAdjustments__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.QuantityWithoutManagerAdjustment__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.QuantityWithoutManagerAdjustment__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.RawOwnerOnly__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.RawOwnerOnly__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.RawRollup__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ForecastingItem__hd.RawRollup__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>HubSpot_Inc__HubSpot_Intelligence__c.HubSpot_Inc__Average_Page_Views__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -25775,31 +25550,6 @@
         <editable>true</editable>
         <field>HubSpot_Inc__HubSpot_Intelligence__c.HubSpot_Inc__Website_Visits__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>HubSpot_Inc__HubSpot_Intelligence__c_hd.HubSpot_Inc__First_Visit__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>HubSpot_Inc__HubSpot_Intelligence__c_hd.HubSpot_Inc__First_Visit__c_hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>HubSpot_Inc__HubSpot_Intelligence__c_hd.HubSpot_Inc__Total_Page_Views__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>HubSpot_Inc__HubSpot_Intelligence__c_hd.HubSpot_Inc__Total_Page_Views__c_hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Idea.Attachment</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -27212,11 +26962,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>MessagingEndUser.IsOptedOut</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>MessagingEndUser.Language</field>
         <readable>false</readable>
@@ -28412,11 +28157,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Qualified_Role__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Qualified_Team__c</field>
         <readable>true</readable>
@@ -28619,11 +28359,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Reviewed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Sales_Team_Static__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -29337,11 +29072,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>OpportunitySplit.ForecastSnapShot__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>OpportunitySplit.My_Opportunity_Split__c</field>
         <readable>true</readable>
@@ -29355,76 +29085,6 @@
         <editable>true</editable>
         <field>OpportunityTeamMember.Core__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Amount__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Amount__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.CloseDate__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.CloseDate__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Contract_Type__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Contract_Type__c_hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.ForecastCategoryName__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.ForecastCategoryName__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Probability__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.Probability__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.StageName__hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.StageName__hst</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.X2nd_Year_Amount_in_USD__c_hpr</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity__hd.X2nd_Year_Amount_in_USD__c_hst</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -49043,9 +48703,6 @@
         <layout>FlowInterview-Flow Interview Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ForecastSnapShot__c-ForecastSnapShot Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Global-Global Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -49275,9 +48932,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SharingRecordCollection-Record Collection Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>SiqExchangeConnection-Exchange Connection Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
@@ -50064,15 +49718,6 @@
         <object>Contact_Email_Distribution__c</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Contact_Email_Distribution__c_hd</object>
-        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -50923,24 +50568,6 @@
         <allowEdit>false</allowEdit>
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>ForecastSnapShot__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>ForecastingItem__hd</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
         <object>GSA_Platform__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -50952,15 +50579,6 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>HubSpot_Inc__HubSpot_Intelligence__c</object>
         <viewAllFields>false</viewAllFields>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>HubSpot_Inc__HubSpot_Intelligence__c_hd</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -51323,15 +50941,6 @@
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>OpportunityTeamMember</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Opportunity__hd</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -56787,11 +56396,6 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
         <default>true</default>
         <recordType>Knowledge__kav.Knowledge</recordType>
         <visible>true</visible>
@@ -57895,10 +57499,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-BusinessBrand</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Campaign</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
@@ -57919,36 +57519,12 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-CommSubscription</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-CommSubscriptionChannelType</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-CommSubscriptionConsent</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-CommSubscriptionTiming</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Contact</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-ContactPointConsent</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-ContactPointTypeConsent</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ContactRequest</tab>
-        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ContentNote</tab>
@@ -57957,10 +57533,6 @@
     <tabVisibilities>
         <tab>standard-Contract</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-Customer</tab>
-        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Dashboard</tab>
@@ -57997,10 +57569,6 @@
     <tabVisibilities>
         <tab>standard-EmailTemplate</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-EngagementChannelType</tab>
-        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-EnhancedLetterhead</tab>
@@ -58047,14 +57615,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-Image</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-Individual</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-JourneyHome</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -58069,10 +57629,6 @@
     <tabVisibilities>
         <tab>standard-LightningBoltHome</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-LightningQuickText</tab>
-        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ListEmail</tab>
@@ -58119,10 +57675,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-PartyConsent</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Pricebook2</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
@@ -58159,10 +57711,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-Recommendation</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-SalesAIRelationshipGraph</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -58185,10 +57733,6 @@
     <tabVisibilities>
         <tab>standard-Scorecard</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-Seller</tab>
-        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-SharingRecordCollection</tab>
@@ -59442,10 +58986,6 @@
     <userPermissions>
         <enabled>false</enabled>
         <name>SalesConsole</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>SalesforceForecastingUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
