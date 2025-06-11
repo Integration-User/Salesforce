@@ -18219,6 +18219,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>CampaignMember.Current_ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>CampaignMember.Email_Address__c</field>
         <readable>true</readable>
