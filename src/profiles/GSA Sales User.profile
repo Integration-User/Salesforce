@@ -18217,6 +18217,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>CampaignMember.Current_ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>CampaignMember.Email_Address__c</field>
         <readable>true</readable>
@@ -27083,7 +27088,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>OppSnap__c.Rep_Forecast_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Sales_Leader_Forecast_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>OppSnap__c.Stage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Status_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
