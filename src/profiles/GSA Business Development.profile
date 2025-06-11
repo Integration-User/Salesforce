@@ -3,9 +3,22 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
-        <field>CampaignMember.Current_ARR__c</field>
+        <field>OppSnap__c.Rep_Forecast_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Sales_Leader_Forecast_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OppSnap__c.Status_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <layoutAssignments>
+        <layout>OppSnap__c-OppSnap Layout</layout>
+    </layoutAssignments>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
