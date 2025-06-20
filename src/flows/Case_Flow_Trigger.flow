@@ -28,6 +28,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <description>Updated Account related contact owner where contact fetching condition will be : 
@@ -54,9 +55,11 @@ Contact_Account_Owners_Match__c = FALSE</description>
             </value>
         </inputParameters>
         <nameSegment>UpdateContactOwner</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>55.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Check_Account_Manager_Case_User</name>
         <label>Check Account Manager Case User</label>
@@ -158,6 +161,12 @@ Contact_Account_Owners_Match__c = FALSE</description>
                 <elementReference>$Record.AccountId</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>AM_Manager__c</field>
+            <value>
+                <elementReference>$Record.Account_Manager__r.ManagerId</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Is_Customer_Rep_Changed__c</field>
             <value>
