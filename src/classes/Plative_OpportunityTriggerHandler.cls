@@ -119,10 +119,14 @@ public without sharing class Plative_OpportunityTriggerHandler {
         if (!Plative_OpportunityTriggerHandler.beforeUpdateRun) { 
             //SF-1064 Add Validation to Update Product: SKU Detail before moving to Stage 6 - Verbal Win and Finalizing Contract
             beforeUpdateValidations(triggerNewMap, triggerOldMap); 
+            Set<String> subsidiaryList = new Set<String>();
+            for (Opportunity opp : [SELECT Account.Subsidiary__c FROM Opportunity WHERE Id IN :triggerNewMap.keySet()]) {
+                subsidiaryList.add(opp.Account.Subsidiary__c);
+            }
             
             // SF-768 - 3X3 Contact Levels
             Set<Id> x3x3opportunities = new Set<Id>();
-            for (OpportunityContactRole ocr : [SELECT Id, OpportunityId FROM OpportunityContactRole WHERE Contact.X3x3_Level__c != null AND OpportunityId IN :triggerNewMap.keySet()]) {
+            for (OpportunityContactRole ocr : [SELECT Id, OpportunityId, Opportunity.Account.Subsidiary__c FROM OpportunityContactRole WHERE Contact.X3x3_Level__c != null AND OpportunityId IN :triggerNewMap.keySet()]) {
                 x3x3opportunities.add(ocr.OpportunityId);
             }
             List<String> stageNames = new List<String>{'1 - Introducing', '2 - Conducting Needs Analysis', '3 - Qualifying', 'Closed Lost'};
@@ -185,7 +189,8 @@ public without sharing class Plative_OpportunityTriggerHandler {
                 }
                 // END SF-768 - 3X3 Contact Levels
                 //SF-770 Changes
-                if(oldOppty.StageName != oppty.StageName && (!relIntelligenceOpp.containsKey(oppty.id) || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) < 1))
+                if(!subsidiaryList.contains('22.1 Locatus') && !subsidiaryList.contains('22.3 Belgium') &&
+                   oldOppty.StageName != oppty.StageName && (!relIntelligenceOpp.containsKey(oppty.id) || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) < 1))
                    && ((oppty.recordTypeId == renewalRecordTypeId && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won'))
                        || (oppty.recordTypeId == salesRecordTypeId && !stageNames.contains(oppty.StageName))
                        || (oppty.recordTypeId == salesDevRecordTypeId && (oppty.StageName == 'In Review' || oppty.StageName == 'Qualified')))) {
@@ -193,7 +198,9 @@ public without sharing class Plative_OpportunityTriggerHandler {
                 }
                 // END SF-770 Changes
                 // SF-771 Changes
-                if((oppty.Win_Validation__c == 'Pending Review' && oldOppty.Win_Validation__c != oppty.Win_Validation__c)
+                // SF-1616 - Skip Relationship Intelligence Validation for Account Subsidiary as Belgium 22.3 OR Locatus 22.1
+                if(!subsidiaryList.contains('22.1 Locatus') && !subsidiaryList.contains('22.3 Belgium') && 
+                   (oppty.Win_Validation__c == 'Pending Review' && oldOppty.Win_Validation__c != oppty.Win_Validation__c)
                    && (!relIntelligenceOpp.containsKey(oppty.id) || !relIntelligenceWinOpp.containsKey(oppty.id) 
                        || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceWinOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) != relIntelligenceWinOpp.get(oppty.id)))
                    && ((oppty.recordTypeId == renewalRecordTypeId && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won'))
