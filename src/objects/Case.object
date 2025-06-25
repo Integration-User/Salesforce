@@ -2881,13 +2881,16 @@ IF (ISPICKVAL(Type, &quot;Methodology&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;Problem&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Platform Functionality&quot;), TRUE, 
 IF (ISPICKVAL(Type, &quot;Backup Data&quot;), TRUE, 
-IF (ISPICKVAL(Type, &quot;Subscription&quot;), TRUE, 
+IF (ISPICKVAL(Type, &quot;Subscription - Activation&quot;), TRUE,
+IF (ISPICKVAL(Type, &quot;Subscription - Deactivation&quot;), TRUE,
+IF (ISPICKVAL(Type, &quot;Subscription - User List&quot;), TRUE,
+IF (ISPICKVAL(Type, &quot;Subscription - Account Questions&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;Email Preferences&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;Research Request&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;“Go Fish” / Miscellaneous&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;Advanced Back Up Data&quot;), TRUE,
 IF (ISPICKVAL(Type, &quot;Complex Methodology&quot;), TRUE,
-FALSE)))))))))))</formula>
+FALSE))))))))))))))</formula>
         <label>Type to Trigger Survey</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
