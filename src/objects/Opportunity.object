@@ -35985,10 +35985,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Company Diagnostics</fullName>
                 <default>false</default>
             </values>
@@ -36013,10 +36009,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>EURO Research</fullName>
                 <default>false</default>
             </values>
@@ -36029,15 +36021,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Canada Advertising</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -36134,10 +36118,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -50506,17 +50486,14 @@ NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Renewal&quot;,
-ISCHANGED(StageName),
-OR(
 ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
-ISPICKVAL(Activation_Deactivation_Needs__c , &quot;None&quot;)
-),
+ISCHANGED(StageName),
 OR(
 ISPICKVAL(StageName, &quot;Closed Lost&quot;),
 ISPICKVAL(StageName, &quot;Suspended&quot;),
-ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 ISPICKVAL(Win_Validation__c, &quot;Pending Review&quot;),
-ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;))
+ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;)
+)
 )</errorConditionFormula>
         <errorDisplayField>Activation_Deactivation_Needs__c</errorDisplayField>
         <errorMessage>This field must be completed prior to Submitting for review or closing as lost/suspended.</errorMessage>
