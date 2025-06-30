@@ -3143,10 +3143,9 @@ ISBLANK(Contact__c))</errorConditionFormula>
         <errorConditionFormula>AND(
 ISPICKVAL(Feedback_Type__c,&quot;Report Feedback&quot;),
 OR(
-NOT(ISBLANK(Contact__c)),
 ISBLANK(Report_Title__c),
 ISBLANK(Report_Publish_Date__c )))</errorConditionFormula>
-        <errorMessage>You must fill in Report Title and Report Publish Date and Contact must be blank for Report Feedback.</errorMessage>
+        <errorMessage>You must fill in Report Title and Report Publish Date for Report Feedback.</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
