@@ -4384,6 +4384,15 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>Last_Risk_Score__c</fullName>
+        <label>Last Risk Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>Last_Training_Date__c</fullName>
         <label>Last Training Date</label>
         <required>false</required>
@@ -7448,18 +7457,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - AUS</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - CAN</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11048,6 +11045,18 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
