@@ -905,6 +905,21 @@
                     <default>false</default>
                     <label>Client Support Manager</label>
                 </value>
+                <value>
+                    <fullName>OTC Manager</fullName>
+                    <default>false</default>
+                    <label>OTC Manager</label>
+                </value>
+                <value>
+                    <fullName>Accounts Receivable</fullName>
+                    <default>false</default>
+                    <label>Accounts Receivable</label>
+                </value>
+                <value>
+                    <fullName>Commercial Sales Manager</fullName>
+                    <default>false</default>
+                    <label>Commercial Sales Manager</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -2016,6 +2031,113 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Hold_Escalation_Cancellation__c</fullName>
+        <label>Reason for Hold/Escalation/Cancellation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User List</fullName>
+                    <default>false</default>
+                    <label>User List</label>
+                </value>
+                <value>
+                    <fullName>No Contract</fullName>
+                    <default>false</default>
+                    <label>No Contract</label>
+                </value>
+                <value>
+                    <fullName>Trial Expired</fullName>
+                    <default>false</default>
+                    <label>Trial Expired</label>
+                </value>
+                <value>
+                    <fullName>Product Discrepancy</fullName>
+                    <default>false</default>
+                    <label>Product Discrepancy</label>
+                </value>
+                <value>
+                    <fullName>Order Error</fullName>
+                    <default>false</default>
+                    <label>Order Error</label>
+                </value>
+                <value>
+                    <fullName>Pending Leadership Review</fullName>
+                    <default>false</default>
+                    <label>Pending Leadership Review</label>
+                </value>
+                <value>
+                    <fullName>Tech Issue</fullName>
+                    <default>false</default>
+                    <label>Tech Issue</label>
+                </value>
+                <value>
+                    <fullName>Duplicate</fullName>
+                    <default>false</default>
+                    <label>Duplicate</label>
+                </value>
+                <value>
+                    <fullName>Submitted in Error</fullName>
+                    <default>false</default>
+                    <label>Submitted in Error</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>User List</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>No Contract</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>Trial Expired</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>Product Discrepancy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <valueName>Order Error</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>On Hold</controllingFieldValue>
+                <controllingFieldValue>Escalated</controllingFieldValue>
+                <controllingFieldValue>Cancelled</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Escalated</controllingFieldValue>
+                <valueName>Pending Leadership Review</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Escalated</controllingFieldValue>
+                <valueName>Tech Issue</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cancelled</controllingFieldValue>
+                <valueName>Duplicate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cancelled</controllingFieldValue>
+                <valueName>Submitted in Error</valueName>
+            </valueSettings>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Reason_for_Request__c</fullName>
@@ -4830,10 +4952,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -4851,10 +4969,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4886,10 +5000,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>EURO Research</fullName>
                 <default>false</default>
             </values>
@@ -4899,6 +5009,18 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5038,10 +5160,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -5131,10 +5249,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6549,10 +6663,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -6562,10 +6672,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6585,11 +6691,19 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
+                <fullName>EURO Research</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EURO Research</fullName>
+                <fullName>GSN API - AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6713,10 +6827,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Portfolio Tools</fullName>
                 <default>false</default>
             </values>
@@ -6750,10 +6860,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8111,15 +8217,7 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8135,11 +8233,19 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+			<values>
+                <fullName>GSN API - AUS</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EURO Research</fullName>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8259,10 +8365,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Portfolio Tools</fullName>
                 <default>false</default>
             </values>
@@ -8276,10 +8378,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9418,10 +9516,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -9439,10 +9533,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9490,10 +9580,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>EURO Research</fullName>
                 <default>false</default>
             </values>
@@ -9503,6 +9589,18 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+			<values>
+                <fullName>GSN API - AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9674,10 +9772,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -9783,10 +9877,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10848,10 +10938,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -10861,10 +10947,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10888,11 +10970,19 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+			<values>
+                <fullName>GSN API - AUS</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EURO Research</fullName>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11016,10 +11106,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Portfolio Tools</fullName>
                 <default>false</default>
             </values>
@@ -11045,10 +11131,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12175,15 +12257,7 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12207,15 +12281,23 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>EURO Research</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+			<values>
+                <fullName>GSN API - AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12355,10 +12437,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Portfolio Tools</fullName>
                 <default>false</default>
             </values>
@@ -12412,10 +12490,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12714,6 +12788,45 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Hold_Escalation_Cancellation__c</picklist>
+            <values>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Leadership Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User List</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13028,10 +13141,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Error</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13822,10 +13931,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -13835,10 +13940,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Canada Research %2B REIT Data</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13858,11 +13959,19 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+			<values>
+                <fullName>GSN API - AUS</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EURO Research</fullName>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13986,10 +14095,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Portfolio Tools</fullName>
                 <default>false</default>
             </values>
@@ -14015,10 +14120,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14755,6 +14856,29 @@ FALSE))))))))))))))</formula>
         <description>For OTC Support Cases</description>
         <label>Order Support</label>
         <picklistValues>
+            <picklist>Escalated_To__c</picklist>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Sales Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTC Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Origin</picklist>
             <values>
                 <fullName>Client Support News</fullName>
@@ -14794,6 +14918,49 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Hold_Escalation_Cancellation__c</picklist>
+            <values>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Leadership Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User List</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14855,6 +15022,10 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Order Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15483,10 +15654,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -15503,10 +15670,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Debt Databases</fullName>
                 <default>false</default>
             </values>
@@ -15519,10 +15682,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>EURO Research</fullName>
                 <default>false</default>
             </values>
@@ -15532,6 +15691,18 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>GSI</fullName>
+                <default>false</default>
+            </values>
+			<values>
+                <fullName>GSN API - AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15659,10 +15830,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Portfolio Analytics</fullName>
                 <default>false</default>
             </values>
@@ -15712,10 +15879,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16893,15 +17056,7 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Research %2B Market Data %26 Deals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16921,11 +17076,19 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
+                <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+			<values>
+                <fullName>GSN API - AUS</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EURO Research</fullName>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17049,10 +17212,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Portfolio Tools</fullName>
                 <default>false</default>
             </values>
@@ -17070,10 +17229,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17675,6 +17830,7 @@ OR(
 ISPICKVAL(Support_Type__c,&quot;Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;Green Street News Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;User List Request&quot;),
+ISPICKVAL(Support_Type__c,&quot;IJGlobal Client Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;US Data Support&quot;),
 ISPICKVAL(Support_Type__c,&quot;EU Data Support&quot;)),
 OR(
@@ -17709,14 +17865,62 @@ NOT(ISPICKVAL(Support_Type__c, &quot;User List Request&quot;))))
         <errorMessage>Green Street is not allowed on this type of Case. Please choose a different account.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>OTC_Require_Comments</fullName>
+        <active>true</active>
+        <description>Require comments when status is On Hold, Escalated, Cancelled.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.DeveloperName=&apos;Order_Support&apos;,
+ISPICKVAL( Reason_for_Hold_Escalation_Cancellation__c ,&quot;Other&quot;),
+ISBLANK(Comments__c),
+OR(
+ISPICKVAL(Status,&quot;On Hold&quot;),
+ISPICKVAL(Status,&quot;Escalated&quot;),
+ISPICKVAL(Status,&quot;Cancelled&quot;)
+))</errorConditionFormula>
+        <errorDisplayField>Comments__c</errorDisplayField>
+        <errorMessage>Please provide the reason in the comments section.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OTC_Require_Reason</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.DeveloperName=&apos;Order_Support&apos;,
+ISBLANK(TEXT(Reason_for_Hold_Escalation_Cancellation__c)),
+OR(
+ISPICKVAL(Status,&quot;On Hold&quot;),
+ISPICKVAL(Status,&quot;Escalated&quot;),
+ISPICKVAL(Status,&quot;Cancelled&quot;)
+))</errorConditionFormula>
+        <errorDisplayField>Reason_for_Hold_Escalation_Cancellation__c</errorDisplayField>
+        <errorMessage>Please provide the reason for Hold/Escalation/Cancellation.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OTC_Require_Solution_Notes</fullName>
+        <active>true</active>
+        <description>Require solution notes before closing the case.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.DeveloperName=&apos;Order_Support&apos;,
+ISBLANK(Solution_Notes__c),
+ISPICKVAL(Status,&quot;Closed&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Solution_Notes__c</errorDisplayField>
+        <errorMessage>Please provide the solution notes when closing the case.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Escalated_To</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(Status),
 ISPICKVAL(Status,&quot;Escalated&quot;),
 ISPICKVAL(Escalated_To__c, &quot;&quot;),
-RecordType.DeveloperName = &quot;Help_Desk&quot;
-)</errorConditionFormula>
+OR(
+RecordType.DeveloperName = &quot;Help_Desk&quot;,
+RecordType.DeveloperName = &quot;Order_Support&quot;
+))</errorConditionFormula>
         <errorMessage>Please provide the &quot;Escalated To&quot; before moving the status to escalated.</errorMessage>
     </validationRules>
     <validationRules>

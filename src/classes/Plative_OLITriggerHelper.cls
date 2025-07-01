@@ -21,7 +21,7 @@ public class Plative_OLITriggerHelper  {
         }
         
         //Query product names
-        Map<Id, Product2> mapProducts = new Map<Id, Product2>([SELECT Id, Name FROM Product2]);
+        Map<Id, Product2> mapProducts = new Map<Id, Product2>([SELECT Id, Name, ExternalId FROM Product2]);
         for(OpportunityLineItem oli : lstOLI){
             for(SF_to_NS_Product_Mapping__mdt mdt : lstMdt){
                 System.debug('Prod Name '+mapProducts.get(oli.Product2Id).Name);
@@ -34,6 +34,9 @@ public class Plative_OLITriggerHelper  {
                    oli.Product_External_Id__c = mdt.Netsuite_Internal_Id__c;
                    break;
                 }
+            }
+            if(oli.Product_External_Id__c == null && mapProducts.containskey(oli.Product2Id) && mapProducts.get(oli.Product2Id).ExternalId != null) {
+                 oli.Product_External_Id__c = Decimal.ValueOf(mapProducts.get(oli.Product2Id).ExternalId);
             }
 
             // Get Opportunity Records
