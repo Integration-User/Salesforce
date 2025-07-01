@@ -4386,30 +4386,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     <fields>
         <fullName>Last_Risk_Score__c</fullName>
         <label>Last Risk Score</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>High</fullName>
-                    <default>false</default>
-                    <label>High</label>
-                </value>
-                <value>
-                    <fullName>Medium</fullName>
-                    <default>false</default>
-                    <label>Medium</label>
-                </value>
-                <value>
-                    <fullName>Low</fullName>
-                    <default>false</default>
-                    <label>Low</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Percent</type>
     </fields>
     <fields>
         <fullName>Last_Training_Date__c</fullName>
@@ -5735,30 +5716,11 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>Risk_Score__c</fullName>
         <label>Risk Score</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>High</fullName>
-                    <default>false</default>
-                    <label>High</label>
-                </value>
-                <value>
-                    <fullName>Medium</fullName>
-                    <default>false</default>
-                    <label>Medium</label>
-                </value>
-                <value>
-                    <fullName>Low</fullName>
-                    <default>false</default>
-                    <label>Low</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Percent</type>
     </fields>
     <fields>
         <fullName>SAM_Amount__c</fullName>
@@ -9411,10 +9373,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -9440,10 +9398,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Customized Sector%2FMarket Research</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9484,10 +9438,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>EUR Sales Comps</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EUR Sales Comps API</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9647,10 +9597,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -9732,10 +9678,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10193,21 +10135,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Towers</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Last_Risk_Score__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10811,21 +10738,6 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Risk_Score__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Strategic_Segment__c</picklist>
             <values>
                 <fullName>Asia</fullName>
@@ -11103,6 +11015,18 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13055,10 +12979,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CAN Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Canada Detailed NAV</fullName>
                 <default>false</default>
             </values>
@@ -13072,10 +12992,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Commercial Mortgage Alert</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data - Sale - Pan-Euro Retail</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13131,23 +13047,7 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps API</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Edge - Project work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - AUS</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - CAN</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13247,10 +13147,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pan-Euro Retail Analytics Pro</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Pan-European Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
@@ -13312,10 +13208,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>US Tertiary Market Forecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USA Sales Comp API</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13773,21 +13665,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Towers</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Last_Risk_Score__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14467,21 +14344,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>United Kingdom</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Risk_Score__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
