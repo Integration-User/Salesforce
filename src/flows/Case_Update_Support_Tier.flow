@@ -3,6 +3,7 @@
     <apiVersion>58.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
+        <description>For OTC Case Support Tier</description>
         <name>Help_Desk_Case_Decision</name>
         <label>Help Desk Case Decision</label>
         <locationX>314</locationX>
@@ -10,7 +11,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Help_Desk_Case</name>
-            <conditionLogic>(1 OR 3) AND 2</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -25,17 +26,10 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Order_Support</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>Update_Help_Desk_Support_Tier</targetReference>
             </connector>
-            <label>Help Desk + OTC Case</label>
+            <label>Help Desk Case</label>
         </rules>
         <rules>
             <name>OTC_Case_Support_Tier</name>
@@ -80,12 +74,11 @@ SF-1519: Added new criteria for OTC Support</description>
         <dataType>String</dataType>
         <expression>CASE(
 {!$Record.Type},
-&apos;Activation&apos;, &apos;Tier 1 - Order Support&apos;,
-&apos;Deactivation&apos;, &apos;Tier 3 - Order Support&apos;,
-&apos;Trial Extension/Revision&apos;, &apos;Tier 1 - Order Support&apos;,
-&apos;Contract Review&apos;, &apos;Tier 2 - Order Support&apos;,
-&apos;Order Review&apos;, &apos;Tier 2 - Order Support&apos;,
 &apos;Analyst Visit / Request&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Subscription - Activation&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Subscription - Deactivation&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Subscription - User List&apos;, &apos;Tier 1 - Client Support&apos;,
+&apos;Subscription - Account Questions&apos;, &apos;Tier 1 - Client Support&apos;,
 &apos;IJGlobal&apos;, &apos;Tier 1 - Client Support&apos;,
 &apos;Backup Data&apos;, &apos;Tier 1 - Client Support&apos;,
 &apos;Administrative&apos;, &apos;Tier 1 - Client Support&apos;,

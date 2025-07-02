@@ -345,6 +345,34 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Account_Groupings__c</fullName>
+        <label>Account Groupings</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Single Sector/Market</fullName>
+                    <default>false</default>
+                    <label>Single Sector/Market</label>
+                </value>
+                <value>
+                    <fullName>One Off</fullName>
+                    <default>false</default>
+                    <label>One Off</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Account_Handoff_Date__c</fullName>
         <inlineHelpText>The date when an Event of type &quot;Account Handoff&quot; was marked &quot;Completed&quot;</inlineHelpText>
         <label>Account Handoff Date</label>
@@ -3085,6 +3113,13 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Explanatory_Use_Case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Exploratory Use-Case</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Export_Activated_Users__c</fullName>
         <externalId>false</externalId>
         <formula>HYPERLINK(&apos;/00O5G000007wRTHUA2?pv0=&apos;+X18_digit_Account_ID__c+&apos;&amp;export=1&amp;enc=UTF-8&amp;xf=xlsx&amp;isdtp=p1&apos;,Text(Activated_Users__c))</formula>
@@ -3618,6 +3653,13 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>FTRX_Website_URL__c</fullName>
+        <label>FTRX Website URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -4092,6 +4134,13 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Individual_Users__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Individual Users</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Industry</fullName>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -4333,6 +4382,15 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <summaryOperation>max</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Last_Risk_Score__c</fullName>
+        <label>Last Risk Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
     </fields>
     <fields>
         <fullName>Last_Training_Date__c</fullName>
@@ -5658,30 +5716,11 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>Risk_Score__c</fullName>
         <label>Risk Score</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>High</fullName>
-                    <default>false</default>
-                    <label>High</label>
-                </value>
-                <value>
-                    <fullName>Medium</fullName>
-                    <default>false</default>
-                    <label>Medium</label>
-                </value>
-                <value>
-                    <fullName>Low</fullName>
-                    <default>false</default>
-                    <label>Low</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Percent</type>
     </fields>
     <fields>
         <fullName>SAM_Amount__c</fullName>
@@ -7837,6 +7876,21 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Account_Groupings__c</picklist>
+            <values>
+                <fullName>One Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Sector%2FMarket</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Status__c</picklist>
             <values>
                 <fullName>Active</fullName>
@@ -9399,6 +9453,18 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>GSN API - AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Green Street News%3A Australia</fullName>
                 <default>false</default>
             </values>
@@ -10672,21 +10738,6 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Risk_Score__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Strategic_Segment__c</picklist>
             <values>
                 <fullName>Asia</fullName>
@@ -10964,6 +11015,18 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - AUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - CAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11379,6 +11442,21 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Trade Association</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Account_Groupings__c</picklist>
+            <values>
+                <fullName>One Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Sector%2FMarket</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14266,21 +14344,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>United Kingdom</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Risk_Score__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
