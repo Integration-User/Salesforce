@@ -3191,7 +3191,7 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <trackHistory>true</trackHistory>
         <type>Picklist</type>
         <valueSet>
-            <controllingField>Lead_Channel__c</controllingField>
+            <controllingField>LeadSource</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -3340,130 +3340,204 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                     <default>false</default>
                     <label>ZoomInfo</label>
                 </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Call</fullName>
+                    <default>false</default>
+                    <label>Call</label>
+                </value>
+                <value>
+                    <fullName>SalesNav</fullName>
+                    <default>false</default>
+                    <label>SalesNav</label>
+                </value>
+                <value>
+                    <fullName>Fintrex</fullName>
+                    <default>false</default>
+                    <label>Fintrex</label>
+                </value>
+                <value>
+                    <fullName>Green Street News</fullName>
+                    <default>false</default>
+                    <label>Green Street News</label>
+                </value>
+                <value>
+                    <fullName>Content Download</fullName>
+                    <default>false</default>
+                    <label>Content Download</label>
+                </value>
+                <value>
+                    <fullName>Internal Referral</fullName>
+                    <default>false</default>
+                    <label>Internal Referral</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
                 <controllingFieldValue>Paid Search</controllingFieldValue>
-                <controllingFieldValue>Paid Ads</controllingFieldValue>
-                <valueName>Google</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Linkedin Sales Nav</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>PERE</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Personal Network</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <valueName>Self-Reported</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>ZoomInfo</valueName>
-            </valueSettings>
-            <valueSettings>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
                 <controllingFieldValue>Paid Social</controllingFieldValue>
-                <valueName>Bing</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Paid Social</controllingFieldValue>
-                <controllingFieldValue>Paid Ads</controllingFieldValue>
-                <valueName>LinkedIn</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former Account</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Green Street</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former Account</controllingFieldValue>
-                <valueName>LDC</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former Account</controllingFieldValue>
-                <valueName>React</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Other</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Preqin</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Salesforce</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Referral</controllingFieldValue>
-                <valueName>Referral</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Target List</controllingFieldValue>
-                <valueName>Target List</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>In Person Event</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>Non-Green Street Sponsored Event</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>Sponsored Event</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>Webinar</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
                 <valueName>Contact Us</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
                 <valueName>Demo Request</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Direct Call</valueName>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Referral</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Inbound Email</valueName>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Scored Lead</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <controllingFieldValue>Ecommerce</controllingFieldValue>
-                <valueName>Subscription Request</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
                 <valueName>Trial Request</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Upsell</valueName>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Email</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
-                <valueName>Content Request</valueName>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Call</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
-                <valueName>Scored Lead</valueName>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Content Download</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Google</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Preqin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>ZoomInfo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>SalesNav</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Fintrex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Green Street News</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Internal Referral</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -9299,307 +9373,51 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9649,7 +9467,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9665,11 +9491,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9714,6 +9552,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12528,307 +12370,51 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12878,7 +12464,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12894,11 +12488,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12943,6 +12549,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15785,307 +15395,51 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16135,7 +15489,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16151,11 +15513,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16200,6 +15574,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18894,307 +18272,51 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19244,7 +18366,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19260,11 +18390,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19309,6 +18451,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22139,307 +21285,51 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -22501,7 +21391,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22517,11 +21415,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22570,6 +21480,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25668,223 +24582,55 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Event</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25892,83 +24638,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -26030,7 +24700,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26046,6 +24724,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -26054,11 +24740,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26095,6 +24789,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -28937,7 +27635,51 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -28987,7 +27729,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29003,11 +27753,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29052,6 +27814,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -31690,7 +30456,51 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -31740,7 +30550,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -31756,11 +30574,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -31805,6 +30635,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37038,223 +35872,55 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Event</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37262,83 +35928,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -37400,7 +35990,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37416,6 +36014,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -37424,11 +36030,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37465,6 +36079,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -40380,223 +38998,55 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Event</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -40604,83 +39054,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -40742,7 +39116,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -40758,6 +39140,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -40766,11 +39156,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -40811,6 +39209,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -43996,223 +42398,55 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Event</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44220,83 +42454,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -44358,7 +42516,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44374,6 +42540,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -44382,11 +42556,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44427,6 +42609,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -47384,223 +45570,55 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
-                <fullName>6sense</fullName>
+                <fullName>Awards</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>AM Referral</fullName>
+                <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Apollo</fullName>
+                <fullName>Direct Traffic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Canada</fullName>
+                <fullName>Email Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cognism</fullName>
+                <fullName>Event</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Conference%2FEvent</fullName>
+                <fullName>Inbound Call</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Demo Request</fullName>
+                <fullName>Inbound Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Digital Campaign</fullName>
+                <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street</fullName>
+                <fullName>Organic Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street Event</fullName>
+                <fullName>Outbound Prospecting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News</fullName>
+                <fullName>Paid Search</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Australia</fullName>
+                <fullName>Paid Social</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJGlobal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Industry Marketing Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LDC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Locatus</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Calendly</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Chili Piper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Contact Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - LinkedIn Lead Gen</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Pack Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Media Partnership</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Newsletter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Podcast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Subscription Interest Form</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Survey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Auto-Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Marketing Qualified</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Alert Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>News Subscription Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-News%2FEvent Driven</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Previous Client%2FContact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Sales Trip</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound-Strategic Account</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previous Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Proactive Outreach</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rankings Submission</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>React %26 US News Ecomm Inquiries</fullName>
+                <fullName>Partner Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -47608,83 +45626,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Referral%3A Board Member</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Indirect-Law Firm</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral%3A Past Client Introduction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Report Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Customer Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Editorial Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Inbound Tel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Insider Support Inbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - LinkedIn</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Outbound Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Sales - Zoominfo</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Slide Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Snowflake</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Upsell Opportunity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virtual Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Zoominfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -47746,7 +45688,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -47762,6 +45712,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -47770,11 +45728,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -47811,6 +45777,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
