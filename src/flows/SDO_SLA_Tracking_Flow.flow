@@ -185,7 +185,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     <formulas>
         <name>SDO_Oppty_Name_Formula</name>
         <dataType>String</dataType>
-        <expression>TEXT({!$Record.Lead_Channel__c}) + &quot; &quot; + &quot;-&quot; + &quot; &quot; + {!$Record.Account.Name} + &quot;:&quot; + &quot; &quot; + {!$Record.Lead_Contact__r.FirstName} + &quot; &quot; + {!$Record.Lead_Contact__r.LastName} + &quot; &quot; + {!Get_Month_Text} + &quot; &quot; + TEXT(YEAR(DATEVALUE({!$Record.CreatedDate})))</expression>
+        <expression>TEXT({!$Record.LeadSource}) + &quot; &quot; + &quot;-&quot; + &quot; &quot; + {!$Record.Account.Name} + &quot;:&quot; + &quot; &quot; + {!$Record.Lead_Contact__r.FirstName} + &quot; &quot; + {!$Record.Lead_Contact__r.LastName} + &quot; &quot; + {!Get_Month_Text} + &quot; &quot; + TEXT(YEAR(DATEVALUE({!$Record.CreatedDate})))</expression>
     </formulas>
     <interviewLabel>SDO SLA Tracking {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SDO SLA Tracking on Opportunity</label>
