@@ -245,12 +245,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Lead_Channel__c</field>
-            <value>
-                <elementReference>$Record.Lead_Channel__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Lead_Type__c</field>
             <value>
                 <elementReference>$Record.Lead_Type__c</elementReference>
@@ -284,6 +278,18 @@
             <field>RecordTypeId</field>
             <value>
                 <elementReference>Get_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SDO_SDR_Referred_By__c</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Development_Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
