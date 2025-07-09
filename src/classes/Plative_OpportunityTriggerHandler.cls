@@ -12,6 +12,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
     public static Boolean beforeUpdateRun = false;
     public static Boolean beforeInsertRun = false;
     public static Boolean afterInsertRun = false;
+    public static Boolean skipValidationForBatch = false;
 	public static Id renewalRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Renewal').getRecordTypeId();
    	public static Id salesRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Sales Opportunity').getRecordTypeId();
     public static Id salesDevRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByDeveloperName().get('Sales_Development').getRecordTypeId();
@@ -126,7 +127,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
             
             // SF-768 - 3X3 Contact Levels
             Set<Id> x3x3opportunities = new Set<Id>();
-            for (OpportunityContactRole ocr : [SELECT Id, OpportunityId FROM OpportunityContactRole WHERE Contact.X3x3_Level__c != null AND OpportunityId IN :triggerNewMap.keySet()]) {
+            for (OpportunityContactRole ocr : [SELECT Id, OpportunityId, Opportunity.Account.Subsidiary__c FROM OpportunityContactRole WHERE Contact.X3x3_Level__c != null AND OpportunityId IN :triggerNewMap.keySet()]) {
                 x3x3opportunities.add(ocr.OpportunityId);
             }
             List<String> stageNames = new List<String>{'1 - Introducing', '2 - Conducting Needs Analysis', '3 - Qualifying', 'Closed Lost'};
@@ -182,14 +183,14 @@ public without sharing class Plative_OpportunityTriggerHandler {
 
             for (Opportunity oppty : triggerNewMap.values()) {
                 Opportunity oldOppty = triggerOldMap.get(oppty.Id);
-                if ((oppty.recordTypeId == renewalRecordTypeId || oppty.recordTypeId == salesRecordTypeId)
+                if (!skipValidationForBatch && (oppty.recordTypeId == renewalRecordTypeId || oppty.recordTypeId == salesRecordTypeId)
                     && oppty.StageName != null && oldOppty.StageName != oppty.StageName 
                     && !stageNames.contains(oppty.StageName) && !x3x3opportunities.contains(oppty.Id)) {
                         oppty.addError('One contact must have a 3x3 Level designated before moving to Stage 4.');
                 }
                 // END SF-768 - 3X3 Contact Levels
                 //SF-770 Changes
-                if(!subsidiaryList.contains('22.1 Locatus') && !subsidiaryList.contains('22.3 Belgium') &&
+                if(!skipValidationForBatch && !subsidiaryList.contains('22.1 Locatus') && !subsidiaryList.contains('22.3 Belgium') &&
                    oldOppty.StageName != oppty.StageName && (!relIntelligenceOpp.containsKey(oppty.id) || (relIntelligenceOpp.containsKey(oppty.id) && relIntelligenceOpp.get(oppty.id) < 1))
                    && ((oppty.recordTypeId == renewalRecordTypeId && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won'))
                        || (oppty.recordTypeId == salesRecordTypeId && !stageNames.contains(oppty.StageName))
