@@ -4460,6 +4460,94 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
+        <fullName>Lead_Type__c</fullName>
+        <label>Lead Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contact Us</fullName>
+                    <default>false</default>
+                    <label>Contact Us</label>
+                </value>
+                <value>
+                    <fullName>Demo Request</fullName>
+                    <default>false</default>
+                    <label>Demo Request</label>
+                </value>
+                <value>
+                    <fullName>Content Download</fullName>
+                    <default>false</default>
+                    <label>Content Download</label>
+                </value>
+                <value>
+                    <fullName>Trial Request</fullName>
+                    <default>false</default>
+                    <label>Trial Request</label>
+                </value>
+                <value>
+                    <fullName>Scored Lead</fullName>
+                    <default>false</default>
+                    <label>Scored Lead</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Call</fullName>
+                    <default>false</default>
+                    <label>Call</label>
+                </value>
+                <value>
+                    <fullName>Referral</fullName>
+                    <default>false</default>
+                    <label>Referral</label>
+                </value>
+                <value>
+                    <fullName>ZoomInfo</fullName>
+                    <default>false</default>
+                    <label>ZoomInfo</label>
+                </value>
+                <value>
+                    <fullName>SalesNav</fullName>
+                    <default>false</default>
+                    <label>SalesNav</label>
+                </value>
+                <value>
+                    <fullName>Fintrex</fullName>
+                    <default>false</default>
+                    <label>Fintrex</label>
+                </value>
+                <value>
+                    <fullName>Preqin</fullName>
+                    <default>false</default>
+                    <label>Preqin</label>
+                </value>
+                <value>
+                    <fullName>Google</fullName>
+                    <default>false</default>
+                    <label>Google</label>
+                </value>
+                <value>
+                    <fullName>Green Street News</fullName>
+                    <default>false</default>
+                    <label>Green Street News</label>
+                </value>
+                <value>
+                    <fullName>Internal Referral</fullName>
+                    <default>false</default>
+                    <label>Internal Referral</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>List_Membership_Account__c</fullName>
         <description>List membership for this account</description>
         <inlineHelpText>ie &quot;hot prospect&quot;</inlineHelpText>
@@ -10227,6 +10315,69 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preqin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scored Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZoomInfo</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Location_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -13764,6 +13915,69 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preqin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scored Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZoomInfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
