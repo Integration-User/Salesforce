@@ -4431,6 +4431,40 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Persona__c</fullName>
+        <inlineHelpText>Assumed persona of the contact based on the page they converted on, using marketing’s mapped logic.</inlineHelpText>
+        <label>Persona</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Investor</fullName>
+                    <default>false</default>
+                    <label>Investor</label>
+                </value>
+                <value>
+                    <fullName>Analyst</fullName>
+                    <default>false</default>
+                    <label>Analyst</label>
+                </value>
+                <value>
+                    <fullName>Lender</fullName>
+                    <default>false</default>
+                    <label>Lender</label>
+                </value>
+                <value>
+                    <fullName>Broker</fullName>
+                    <default>false</default>
+                    <label>Broker</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Phone</fullName>
         <securityClassification>Confidential</securityClassification>
         <trackHistory>true</trackHistory>
@@ -4714,6 +4748,13 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Re_engaged_Lead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Re-engaged Lead</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>React_Client__c</fullName>
         <formula>Account.React_Client__c</formula>
         <label>React Client</label>
@@ -4730,6 +4771,14 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Reference__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Customer contacts that can be used in marketing references (e.g., for case studies or testimonials)</inlineHelpText>
+        <label>Reference</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Region__c</fullName>
@@ -7506,6 +7555,20 @@ days</inlineHelpText>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Title_Group__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(Title, &quot;Chief&quot;), &quot;C-Level&quot;,
+IF(CONTAINS(Title, &quot;VP&quot;), &quot;VP&quot;,
+IF(CONTAINS(Title, &quot;Vice President&quot;), &quot;VP&quot;,
+IF(CONTAINS(Title, &quot;Director&quot;), &quot;Director&quot;,
+IF(CONTAINS(Title, &quot;Analyst&quot;), &quot;Analyst&quot;,&quot;&quot;)))))</formula>
+        <label>Title Group</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>To_Deactivate_On__c</fullName>

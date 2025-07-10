@@ -3,6 +3,31 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Last_Campaign_Touchpoint__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Persona__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Re_engaged_Lead__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Reference__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Title_Group__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>OppSnap__c.Rep_Forecast_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16,8 +41,24 @@
         <field>OppSnap__c.Status_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Web_Form_Comments_Questions__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Winback_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <layoutAssignments>
+        <layout>Contact-Contact Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>OppSnap__c-OppSnap Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-New Business</layout>
     </layoutAssignments>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
