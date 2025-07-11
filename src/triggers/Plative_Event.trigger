@@ -83,21 +83,24 @@ trigger Plative_Event on Event (after insert, after update)  {
         // Collect Opportunity IDs from Event WhatId
         for (Event e : Trigger.new) {
             Event oldEvent = Trigger.oldMap != null ? Trigger.oldMap.get(e.Id) : null;
-            if ((Trigger.isInsert || (oldEvent != null && oldEvent.Status__c != e.Status__c && e.StartDateTime <= thirtyDaysAhead)) 
-                && e.Status__c == 'Completed' && e.Canceled_Date__c == NULL && e.No_Show_Date__c == FALSE
-                && e.WhatId != null && e.WhatId.getSObjectType().getDescribe().getName() == 'Opportunity') {
+            if ((Trigger.isInsert || (oldEvent != null && oldEvent.Status__c != e.Status__c)) 
+                && e.Status__c == 'Completed' && e.WhatId != null && e.WhatId.getSObjectType().getDescribe().getName() == 'Opportunity') {
                 oppIds.add(e.WhatId);
             }
         }
         
         if (!oppIds.isEmpty()) {
             // Query all Opportunities at once
-            Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>([SELECT Id, Count_of_Meetings_Last_30__c FROM Opportunity WHERE Id IN :oppIds]);
+            Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>([SELECT Id, Count_of_Meetings_Last_30__c,Count_of_Meeting_Attended_Last_120_Days__c FROM Opportunity WHERE Id IN :oppIds]);
             // Update Opportunity counts
             for (Event e : Trigger.new) {
                 if (oppMap.containsKey(e.WhatId)) {
                     Opportunity opp = oppMap.get(e.WhatId);
-                    opp.Count_of_Meetings_Last_30__c = (opp.Count_of_Meetings_Last_30__c != null) ? opp.Count_of_Meetings_Last_30__c + 1 : 1;
+                    if(e.StartDateTime <= thirtyDaysAhead && e.Canceled_Date__c == NULL && e.No_Show_Date__c == FALSE) {
+                        opp.Count_of_Meetings_Last_30__c = (opp.Count_of_Meetings_Last_30__c != null) ? opp.Count_of_Meetings_Last_30__c + 1 : 1;
+                    }
+                    //SF-1641
+                    opp.Count_of_Meeting_Attended_Last_120_Days__c = (opp.Count_of_Meeting_Attended_Last_120_Days__c != null) ? opp.Count_of_Meeting_Attended_Last_120_Days__c + 1 : 1;
                 }
             }
             update oppMap.values(); // Bulk update
