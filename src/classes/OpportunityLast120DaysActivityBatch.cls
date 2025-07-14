@@ -3,8 +3,7 @@ global class OpportunityLast120DaysActivityBatch implements Database.Batchable<s
     global Iterable<sObject> start(Database.BatchableContext bc) {
         List<sObject> records = new List<sObject>();
         // Fetch Tasks (Calls)
-        records.addAll([SELECT Id, Subject, WhatId, Type FROM Task WHERE Type = 'Call' AND (SalesLoft1__Call_Disposition__c ='Connected' OR Disposition__c ='Connected') 
-                        AND CreatedDate >= LAST_N_DAYS:120 AND WhatId !=null]);
+        records.addAll([SELECT Id, Subject, WhatId, Type FROM Task WHERE Type = 'Call' AND SalesLoft1__Call_Disposition__c ='Connected' AND CreatedDate >= LAST_N_DAYS:120 AND WhatId !=null]);
         // Fetch Tasks (Emails)
         records.addAll([SELECT Id, Subject, WhatId, Type FROM Task WHERE Type = 'Email' AND SalesLoft1__SalesLoft_Replies_Count__c > 0 AND CreatedDate >= LAST_N_DAYS:120 AND WhatId !=null]);
         // Fetch Events (Meetings)
