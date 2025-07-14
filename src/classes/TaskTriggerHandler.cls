@@ -107,7 +107,7 @@ public without sharing class TaskTriggerHandler {
                         opp.Count_of_Emails_Last_30__c = (opp.Count_of_Emails_Last_30__c != null) ? opp.Count_of_Emails_Last_30__c + 1 : 1;
                     } 
                     // SF-1641
-                    if(t.Type == 'Call' && (t.SalesLoft1__Call_Disposition__c =='Connected' || t.Disposition__c =='Connected')) {
+                    if(t.Type == 'Call' && t.SalesLoft1__Call_Disposition__c =='Connected') {
                         opp.Count_of_Connected_Calls_Last_120_Days__c = (opp.Count_of_Connected_Calls_Last_120_Days__c != null) ? opp.Count_of_Connected_Calls_Last_120_Days__c + 1 : 1;
                     }
                     if(t.Type == 'Email' && t.SalesLoft1__SalesLoft_Replies_Count__c > 0) {
