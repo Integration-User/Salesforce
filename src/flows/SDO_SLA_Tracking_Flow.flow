@@ -33,13 +33,6 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record__Prior.StageName</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>In Review</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>$Record.StageName</leftValueReference>
                 <operator>IsChanged</operator>
                 <rightValue>
