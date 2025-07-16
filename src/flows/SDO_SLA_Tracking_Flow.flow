@@ -233,9 +233,15 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>578</locationX>
         <locationY>611</locationY>
         <inputAssignments>
-            <field>Qualified_Date__c</field>
+            <field>In_Review_Timestamp__c</field>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>In_Review__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -258,15 +264,21 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>314</locationX>
         <locationY>611</locationY>
         <inputAssignments>
-            <field>Qualified_Date__c</field>
+            <field>Disqualified__c</field>
             <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Qualified_Team__c</field>
             <value>
                 <elementReference>$Record.Owner.Sales_Team__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SQL_Qualified_Timestamp__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -277,9 +289,21 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>842</locationX>
         <locationY>611</locationY>
         <inputAssignments>
+            <field>Qualified_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Qualified_Role__c</field>
             <value>
                 <elementReference>$Record.Owner.UserRole.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SQL_Qualified__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
