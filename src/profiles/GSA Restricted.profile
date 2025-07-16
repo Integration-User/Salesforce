@@ -28148,6 +28148,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Primary_Campaign_Source_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.Prior_Opportunity__c</field>
         <readable>false</readable>
     </fieldPermissions>
