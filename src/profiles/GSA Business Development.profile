@@ -48351,6 +48351,11 @@
         <field>zisf__zicCleanJob__c.zisf__logs__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Primary_Campaign_Source_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>API_Settings__mdt-API Settings Layout</layout>
     </layoutAssignments>
