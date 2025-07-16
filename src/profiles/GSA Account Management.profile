@@ -16,6 +16,11 @@
         <field>OppSnap__c.Status_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Primary_Campaign_Source_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>OppSnap__c-OppSnap Layout</layout>
     </layoutAssignments>
