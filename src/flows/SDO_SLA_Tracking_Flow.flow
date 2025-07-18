@@ -10,6 +10,42 @@
         </value>
     </constants>
     <decisions>
+        <name>Check_Qualification</name>
+        <label>Check Qualification</label>
+        <locationX>710</locationX>
+        <locationY>839</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Checkbox_is_True</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.In_Review__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SQL_Qualified__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Disqualified__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Related_Contact</targetReference>
+            </connector>
+            <label>Checkbox is True</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Qualification</name>
         <label>Qualification</label>
         <locationX>710</locationX>
@@ -226,7 +262,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>578</locationX>
         <locationY>647</locationY>
         <connector>
-            <targetReference>Update_Related_Contact</targetReference>
+            <targetReference>Check_Qualification</targetReference>
         </connector>
         <inputAssignments>
             <field>In_Review_Timestamp__c</field>
@@ -260,7 +296,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>314</locationX>
         <locationY>647</locationY>
         <connector>
-            <targetReference>Update_Related_Contact</targetReference>
+            <targetReference>Check_Qualification</targetReference>
         </connector>
         <inputAssignments>
             <field>Disqualified__c</field>
@@ -288,7 +324,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>842</locationX>
         <locationY>647</locationY>
         <connector>
-            <targetReference>Update_Related_Contact</targetReference>
+            <targetReference>Check_Qualification</targetReference>
         </connector>
         <inputAssignments>
             <field>Qualified_Date__c</field>
@@ -313,8 +349,8 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     <recordUpdates>
         <name>Update_Related_Contact</name>
         <label>Update Related Contact</label>
-        <locationX>710</locationX>
-        <locationY>839</locationY>
+        <locationX>578</locationX>
+        <locationY>947</locationY>
         <inputAssignments>
             <field>Contact_Qualified_Date__c</field>
             <value>
