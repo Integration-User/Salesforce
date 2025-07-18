@@ -228,7 +228,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <inputAssignments>
             <field>Qualified_Date__c</field>
             <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
+                <elementReference>$Record.Qualified_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -349,15 +349,6 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         </connector>
         <inputAssignments>
             <field>Qualified_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Qualified_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
         </inputAssignments>
         <inputAssignments>
             <field>Qualified_Role__c</field>
