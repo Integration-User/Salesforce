@@ -351,22 +351,24 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <label>Update Related Contact</label>
         <locationX>578</locationX>
         <locationY>947</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Lead_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Contact_Qualified_Date__c</field>
+            <value>
+                <elementReference>$Record.Qualified_Date__c</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Disqualified__c</field>
             <value>
-                <elementReference>$Record.Disqualified__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>In_Review_Timestamp__c</field>
-            <value>
-                <elementReference>$Record.In_Review_Timestamp__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>In_Review__c</field>
-            <value>
-                <elementReference>$Record.In_Review__c</elementReference>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -375,13 +377,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
                 <elementReference>$Record.SQL_Qualified_Timestamp__c</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <field>SQL_Qualified__c</field>
-            <value>
-                <elementReference>$Record.SQL_Qualified__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record.Lead_Contact__r</inputReference>
+        <object>Contact</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_SDO_Name</name>
@@ -411,4 +407,12 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>LeadContact</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
 </Flow>
