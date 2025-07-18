@@ -327,12 +327,6 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             <targetReference>Check_Qualification</targetReference>
         </connector>
         <inputAssignments>
-            <field>Qualified_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Qualified_Role__c</field>
             <value>
                 <elementReference>$Record.Owner.UserRole.Name</elementReference>
