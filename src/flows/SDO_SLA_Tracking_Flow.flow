@@ -316,6 +316,12 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>710</locationX>
         <locationY>839</locationY>
         <inputAssignments>
+            <field>Contact_Qualified_Date__c</field>
+            <value>
+                <elementReference>$Record.Qualified_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Disqualified__c</field>
             <value>
                 <elementReference>$Record.Disqualified__c</elementReference>
@@ -331,12 +337,6 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             <field>In_Review__c</field>
             <value>
                 <elementReference>$Record.In_Review__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Qualified_Date__c</field>
-            <value>
-                <elementReference>$Record.Qualified_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
