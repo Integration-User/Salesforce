@@ -202,63 +202,6 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Disqualify_Related_Contact</name>
-        <label>Disqualify Related Contact</label>
-        <locationX>314</locationX>
-        <locationY>755</locationY>
-        <inputAssignments>
-            <field>Disqualified__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>SQL_Qualified_Timestamp__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record.Lead_Contact__r</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Qualify_Related_Contact</name>
-        <label>Qualify Related Contact</label>
-        <locationX>842</locationX>
-        <locationY>755</locationY>
-        <inputAssignments>
-            <field>Qualified_Date__c</field>
-            <value>
-                <elementReference>$Record.Qualified_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>SQL_Qualified__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record.Lead_Contact__r</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Review_Related_Contact</name>
-        <label>Review Related Contact</label>
-        <locationX>578</locationX>
-        <locationY>755</locationY>
-        <inputAssignments>
-            <field>In_Review_Timestamp__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>In_Review__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record.Lead_Contact__r</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>Time_Stamp_Assigned_Date</name>
         <label>Time Stamp Assigned Date</label>
         <locationX>50</locationX>
@@ -283,7 +226,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>578</locationX>
         <locationY>647</locationY>
         <connector>
-            <targetReference>Review_Related_Contact</targetReference>
+            <targetReference>Update_Related_Contact</targetReference>
         </connector>
         <inputAssignments>
             <field>In_Review_Timestamp__c</field>
@@ -317,7 +260,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>314</locationX>
         <locationY>647</locationY>
         <connector>
-            <targetReference>Disqualify_Related_Contact</targetReference>
+            <targetReference>Update_Related_Contact</targetReference>
         </connector>
         <inputAssignments>
             <field>Disqualified__c</field>
@@ -345,10 +288,13 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>842</locationX>
         <locationY>647</locationY>
         <connector>
-            <targetReference>Qualify_Related_Contact</targetReference>
+            <targetReference>Update_Related_Contact</targetReference>
         </connector>
         <inputAssignments>
             <field>Qualified_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
         </inputAssignments>
         <inputAssignments>
             <field>Qualified_Role__c</field>
@@ -363,6 +309,49 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Related_Contact</name>
+        <label>Update Related Contact</label>
+        <locationX>710</locationX>
+        <locationY>839</locationY>
+        <inputAssignments>
+            <field>Disqualified__c</field>
+            <value>
+                <elementReference>$Record.Disqualified__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>In_Review_Timestamp__c</field>
+            <value>
+                <elementReference>$Record.In_Review_Timestamp__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>In_Review__c</field>
+            <value>
+                <elementReference>$Record.In_Review__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualified_Date__c</field>
+            <value>
+                <elementReference>$Record.Qualified_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SQL_Qualified_Timestamp__c</field>
+            <value>
+                <elementReference>$Record.SQL_Qualified_Timestamp__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SQL_Qualified__c</field>
+            <value>
+                <elementReference>$Record.SQL_Qualified__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Lead_Contact__r</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_SDO_Name</name>
