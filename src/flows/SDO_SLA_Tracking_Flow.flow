@@ -76,7 +76,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Time_Stamp_S</targetReference>
+                <targetReference>Time_Stamp_Disqualification</targetReference>
             </connector>
             <label>Moved to Disqualified</label>
         </rules>
@@ -105,7 +105,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Time_Stamp_Qualified_SDO</targetReference>
+                <targetReference>Time_Stamp_In_Review</targetReference>
             </connector>
             <label>Moved to In Review</label>
         </rules>
@@ -134,7 +134,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Qualified_Role</targetReference>
+                <targetReference>Time_Stamp_Qualification</targetReference>
             </connector>
             <label>Move to Qualified</label>
         </rules>
@@ -257,8 +257,36 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Time_Stamp_Qualified_SDO</name>
-        <label>Time Stamp Reviewed SDO</label>
+        <name>Time_Stamp_Disqualification</name>
+        <label>Time Stamp Disqualification</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Check_Qualification</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Disqualified__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualified_Team__c</field>
+            <value>
+                <elementReference>$Record.Owner.Sales_Team__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SQL_Qualified_Timestamp__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Time_Stamp_In_Review</name>
+        <label>Time Stamp In Review</label>
         <locationX>578</locationX>
         <locationY>647</locationY>
         <connector>
@@ -291,36 +319,8 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Time_Stamp_S</name>
-        <label>Time Stamp Disqualified SDO</label>
-        <locationX>314</locationX>
-        <locationY>647</locationY>
-        <connector>
-            <targetReference>Check_Qualification</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Disqualified__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Qualified_Team__c</field>
-            <value>
-                <elementReference>$Record.Owner.Sales_Team__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>SQL_Qualified_Timestamp__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Qualified_Role</name>
-        <label>Update Qualified Role</label>
+        <name>Time_Stamp_Qualification</name>
+        <label>Time Stamp Qualification</label>
         <locationX>842</locationX>
         <locationY>647</locationY>
         <connector>
