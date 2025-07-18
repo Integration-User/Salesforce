@@ -360,12 +360,6 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             </value>
         </filters>
         <inputAssignments>
-            <field>Contact_Qualified_Date__c</field>
-            <value>
-                <elementReference>$Record.Qualified_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Disqualified__c</field>
             <value>
                 <booleanValue>true</booleanValue>
