@@ -13,7 +13,7 @@
         <name>Qualification</name>
         <label>Qualification</label>
         <locationX>710</locationX>
-        <locationY>503</locationY>
+        <locationY>539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Moved_to_Disqualified</name>
@@ -107,7 +107,7 @@
         <name>Removed_from_Integration_User</name>
         <label>Removed from Integration User</label>
         <locationX>380</locationX>
-        <locationY>395</locationY>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Qualification</targetReference>
         </defaultConnector>
@@ -205,7 +205,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_Assigned_Date</name>
         <label>Time Stamp Assigned Date</label>
         <locationX>50</locationX>
-        <locationY>503</locationY>
+        <locationY>539</locationY>
         <inputAssignments>
             <field>Assigned_Date__c</field>
             <value>
@@ -224,7 +224,10 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_Qualified_SDO</name>
         <label>Time Stamp Reviewed SDO</label>
         <locationX>578</locationX>
-        <locationY>611</locationY>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Related_Contact</targetReference>
+        </connector>
         <inputAssignments>
             <field>In_Review_Timestamp__c</field>
             <value>
@@ -255,7 +258,10 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_S</name>
         <label>Time Stamp Disqualified SDO</label>
         <locationX>314</locationX>
-        <locationY>611</locationY>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Related_Contact</targetReference>
+        </connector>
         <inputAssignments>
             <field>Disqualified__c</field>
             <value>
@@ -280,7 +286,16 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Update_Qualified_Role</name>
         <label>Update Qualified Role</label>
         <locationX>842</locationX>
-        <locationY>611</locationY>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Related_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Qualified_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Qualified_Date__c</field>
             <value>
@@ -302,10 +317,53 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Related_Contact</name>
+        <label>Update Related Contact</label>
+        <locationX>710</locationX>
+        <locationY>839</locationY>
+        <inputAssignments>
+            <field>Contact_Qualified_Date__c</field>
+            <value>
+                <elementReference>$Record.Qualified_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Disqualified__c</field>
+            <value>
+                <elementReference>$Record.Disqualified__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>In_Review_Timestamp__c</field>
+            <value>
+                <elementReference>$Record.In_Review_Timestamp__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>In_Review__c</field>
+            <value>
+                <elementReference>$Record.In_Review__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SQL_Qualified_Timestamp__c</field>
+            <value>
+                <elementReference>$Record.SQL_Qualified_Timestamp__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SQL_Qualified__c</field>
+            <value>
+                <elementReference>$Record.SQL_Qualified__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Lead_Contact__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_SDO_Name</name>
         <label>Update SDO Name</label>
         <locationX>380</locationX>
-        <locationY>287</locationY>
+        <locationY>323</locationY>
         <connector>
             <targetReference>Removed_from_Integration_User</targetReference>
         </connector>
@@ -326,7 +384,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <filterFormula>{!$Record.RecordType.DeveloperName} = &apos;Sales_Development&apos;</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
-        <triggerType>RecordBeforeSave</triggerType>
+        <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
 </Flow>
