@@ -23,7 +23,7 @@
         <name>update_Sales_Type</name>
         <label>update Sales Type</label>
         <locationX>314</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>salesType</assignToReference>
             <operator>Assign</operator>
@@ -31,14 +31,21 @@
                 <stringValue>Upsell</stringValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AMSDOReferredby</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
-            <targetReference>Get_Record_Type</targetReference>
+            <targetReference>Create_Upsell_Opportunity</targetReference>
         </connector>
     </assignments>
     <decisions>
         <name>Convert_SDO</name>
         <label>Convert SDO?</label>
-        <locationX>600</locationX>
+        <locationX>644</locationX>
         <locationY>539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -73,7 +80,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Is_Renewal_Checked</targetReference>
+                <targetReference>Get_Record_Type</targetReference>
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes</label>
@@ -82,7 +89,7 @@
     <decisions>
         <name>Is_Oppty_an_SDO</name>
         <label>Is Oppty an SDO?</label>
-        <locationX>671</locationX>
+        <locationX>726</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -105,9 +112,9 @@
         <name>Is_Renewal_Checked</name>
         <label>Is Renewal Checked</label>
         <locationX>446</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <defaultConnector>
-            <targetReference>Get_Record_Type</targetReference>
+            <targetReference>Create_Sales_Opportunity</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -136,7 +143,7 @@
     <decisions>
         <name>SDO_Move_to_In_Review</name>
         <label>SDO Move to In Review?</label>
-        <locationX>325</locationX>
+        <locationX>347</locationX>
         <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Convert_SDO</targetReference>
@@ -202,16 +209,28 @@
     <recordCreates>
         <name>Create_Sales_Opportunity</name>
         <label>Create Sales Opportunity</label>
-        <locationX>446</locationX>
-        <locationY>1055</locationY>
+        <locationX>578</locationX>
+        <locationY>863</locationY>
         <assignRecordIdToReference>sales_OppId_Var</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Sales_Oppty_Field</targetReference>
         </connector>
         <inputAssignments>
+            <field>AM_SDO_Referred_By__c</field>
+            <value>
+                <elementReference>AMSDOReferredby</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>AccountId</field>
             <value>
                 <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Awards__c</field>
+            <value>
+                <elementReference>$Record.Awards__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -245,15 +264,15 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Lead_Channel__c</field>
-            <value>
-                <elementReference>$Record.Lead_Channel__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Lead_Type__c</field>
             <value>
                 <elementReference>$Record.Lead_Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Marketing_Event__c</field>
+            <value>
+                <elementReference>$Record.Marketing_Event__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -287,6 +306,18 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>SDO_SDR_Referred_By__c</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Development_Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Sales_Type__c</field>
             <value>
                 <elementReference>salesType</elementReference>
@@ -298,16 +329,147 @@
                 <stringValue>1 - Introducing</stringValue>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Webinar__c</field>
+            <value>
+                <elementReference>$Record.Webinar__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Upsell_Opportunity</name>
+        <label>Create Upsell Opportunity</label>
+        <locationX>314</locationX>
+        <locationY>971</locationY>
+        <assignRecordIdToReference>sales_OppId_Var</assignRecordIdToReference>
+        <connector>
+            <targetReference>Update_Sales_Oppty_Field</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AM_SDO_Referred_By__c</field>
+            <value>
+                <elementReference>AMSDOReferredby</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Awards__c</field>
+            <value>
+                <elementReference>$Record.Awards__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>$Record.CampaignId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <elementReference>Add_90_Days</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CurrencyIsoCode</field>
+            <value>
+                <elementReference>$Record.CurrencyIsoCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Inbound__c</field>
+            <value>
+                <elementReference>$Record.Inbound__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadSource</field>
+            <value>
+                <elementReference>$Record.LeadSource</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Lead_Type__c</field>
+            <value>
+                <elementReference>$Record.Lead_Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Marketing_Event__c</field>
+            <value>
+                <elementReference>$Record.Marketing_Event__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Account.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Sales_Owner__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualified_Role__c</field>
+            <value>
+                <elementReference>$Record.Owner.UserRole.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualified_Team__c</field>
+            <value>
+                <elementReference>$Record.Owner.Sales_Team__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Development_Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Type__c</field>
+            <value>
+                <elementReference>salesType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>1 - Introducing</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Webinar__c</field>
+            <value>
+                <elementReference>$Record.Webinar__c</elementReference>
+            </value>
+        </inputAssignments>
         <object>Opportunity</object>
     </recordCreates>
     <recordLookups>
         <name>Get_Record_Type</name>
         <label>Get Record Type</label>
         <locationX>446</locationX>
-        <locationY>947</locationY>
+        <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_Sales_Opportunity</targetReference>
+            <targetReference>Is_Renewal_Checked</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -334,14 +496,11 @@
         </inputAssignments>
         <inputAssignments>
             <field>SAO_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>545</locationX>
+        <locationX>600</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Is_Oppty_an_SDO</targetReference>
@@ -352,6 +511,13 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>AMSDOReferredby</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>sales_OppId_Var</name>
         <dataType>String</dataType>
