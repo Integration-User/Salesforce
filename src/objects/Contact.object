@@ -938,6 +938,18 @@ NOT(ISBLANK(AccountId))
         </valueSet>
     </fields>
     <fields>
+        <fullName>Competition__c</fullName>
+        <label>Competition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Competition</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>ContactSource</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -4386,6 +4398,13 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Other_Competition__c</fullName>
+        <label>Other Competition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
@@ -4643,6 +4662,18 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                     <label>Primary Market Monitor</label>
                 </value>
             </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_of_Interest__c</fullName>
+        <label>Product of Interest</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Product_of_Interest</valueSetName>
         </valueSet>
         <visibleLines>4</visibleLines>
     </fields>
