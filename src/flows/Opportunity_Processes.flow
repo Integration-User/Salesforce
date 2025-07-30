@@ -1783,6 +1783,37 @@
                     <stringValue>Ecommerce</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Total_ARR__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>myRule_35_pmetdec</targetReference>
             </connector>
@@ -3383,7 +3414,7 @@
                 <leftValueReference>myVariable_current.Last_Stage_Change__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_12_myRule_9_6152993856</elementReference>
+                    <elementReference>formula_12_myRule_9_1842977495</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -4451,6 +4482,37 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Ecommerce</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Currency</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Total_ARR__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -5628,7 +5690,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_12_myRule_9_6152993856</name>
+        <name>formula_12_myRule_9_1842977495</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -5639,7 +5701,7 @@
                 <stringValue>[Opportunity].Contract_Start_Date__c + 364</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_7566963313</name>
+        <name>formula_4_myRule_1_A1_6512254140</name>
         <dataType>Date</dataType>
         <expression>{!myVariable_current.Contract_Start_Date__c} + 364</expression>
     </formulas>
@@ -5677,7 +5739,7 @@ ISNEW(),
 {!myVariable_old.AM_Referrer__c} !=NULL
 )</expression>
     </formulas>
-    <interviewLabel>Opportunity_Processes-89_InterviewLabel</interviewLabel>
+    <interviewLabel>Opportunity_Processes-90_InterviewLabel</interviewLabel>
     <label>Opportunity Processes</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -7184,7 +7246,7 @@ ISNEW(),
             </processMetadataValues>
             <field>End_Date__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_7566963313</elementReference>
+                <elementReference>formula_4_myRule_1_A1_6512254140</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
