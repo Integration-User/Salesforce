@@ -1,10 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Notification_To_Account_Owner_For_Email_change</name>
+        <label>Send Notification To Account Owner For Email change</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Status_Registrant</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Account.Owner.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>noreply@greenstreet.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>{!$Record.Full_Name__c}&apos;s Email Changed</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailTempletBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
     <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>ContactEmailChanged</name>
         <label>ContactEmailChanged</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>623</locationY>
         <defaultConnector>
             <targetReference>Status_Registrant</targetReference>
@@ -29,7 +81,7 @@
     <decisions>
         <name>Do_Not_Call_Trigger</name>
         <label>Do Not Call Trigger</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>323</locationY>
         <defaultConnector>
             <targetReference>ContactEmailChanged</targetReference>
@@ -53,10 +105,42 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Email_changed_for_Active_Contact</name>
+        <label>Is Email changed for Active Contact?</label>
+        <locationX>182</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>Status_Registrant</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Email_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contact_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Email_Username_Misaligned</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Notification_To_Account_Owner_For_Email_change</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Status_New_User_or_News_Only_Qualified</name>
         <label>Status: New User or News Only Qualified</label>
-        <locationX>182</locationX>
-        <locationY>1223</locationY>
+        <locationX>336</locationX>
+        <locationY>1523</locationY>
         <defaultConnector>
             <targetReference>Status_Qualified</targetReference>
         </defaultConnector>
@@ -87,8 +171,8 @@
     <decisions>
         <name>Status_Qualified</name>
         <label>Status: Qualified</label>
-        <locationX>182</locationX>
-        <locationY>1631</locationY>
+        <locationX>336</locationX>
+        <locationY>1931</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Qualified_Yes_1</name>
@@ -123,8 +207,8 @@
     <decisions>
         <name>Status_Registrant</name>
         <label>Status: Registrant</label>
-        <locationX>182</locationX>
-        <locationY>923</locationY>
+        <locationX>336</locationX>
+        <locationY>1223</locationY>
         <defaultConnector>
             <targetReference>Status_New_User_or_News_Only_Qualified</targetReference>
         </defaultConnector>
@@ -149,9 +233,19 @@
     <description>Moving Logic from Process Builder - &quot;Contact Updates + Linkedin Updates&quot; process builder to flow</description>
     <environments>Default</environments>
     <formulas>
+        <name>ContactUrl</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Api.Partner_Server_URL_340}, FIND(&quot;/services&quot;, {!$Api.Partner_Server_URL_340})) &amp; &quot;/&quot; &amp;{!$Record.Id}</expression>
+    </formulas>
+    <formulas>
         <name>Email</name>
         <dataType>String</dataType>
         <expression>&quot;donotcall&quot;+ {!$Record.Email}</expression>
+    </formulas>
+    <formulas>
+        <name>Email_Username_Misaligned</name>
+        <dataType>Boolean</dataType>
+        <expression>LOWER({!$Record.Email}) = LOWER({!$Record.Username__c})</expression>
     </formulas>
     <formulas>
         <name>LastName</name>
@@ -182,8 +276,8 @@
     <recordUpdates>
         <name>From_Registrant_News_Only_Qualified</name>
         <label>From Registrant (News Only) Qualified</label>
-        <locationX>50</locationX>
-        <locationY>1439</locationY>
+        <locationX>204</locationX>
+        <locationY>1739</locationY>
         <connector>
             <targetReference>Status_Qualified</targetReference>
         </connector>
@@ -227,8 +321,8 @@
     <recordUpdates>
         <name>From_Registrant_not_News_Only</name>
         <label>From Registrant (not News Only)</label>
-        <locationX>50</locationX>
-        <locationY>1331</locationY>
+        <locationX>204</locationX>
+        <locationY>1631</locationY>
         <connector>
             <targetReference>From_Registrant_News_Only_Qualified</targetReference>
         </connector>
@@ -271,8 +365,8 @@
     <recordUpdates>
         <name>Qualified_User_Status</name>
         <label>Qualified User Status</label>
-        <locationX>50</locationX>
-        <locationY>1739</locationY>
+        <locationX>204</locationX>
+        <locationY>2039</locationY>
         <inputAssignments>
             <field>Onboarding_Status__c</field>
             <value>
@@ -284,8 +378,8 @@
     <recordUpdates>
         <name>Registrant_Status</name>
         <label>Registrant Status</label>
-        <locationX>50</locationX>
-        <locationY>1031</locationY>
+        <locationX>204</locationX>
+        <locationY>1331</locationY>
         <connector>
             <targetReference>Status_New_User_or_News_Only_Qualified</targetReference>
         </connector>
@@ -314,7 +408,7 @@
     <recordUpdates>
         <name>Update_Name_w_DNC</name>
         <label>Update Name w/ DNC</label>
-        <locationX>50</locationX>
+        <locationX>204</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>ContactEmailChanged</targetReference>
@@ -334,7 +428,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>210</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Do_Not_Call_Trigger</targetReference>
@@ -411,10 +505,10 @@
     <subflows>
         <name>ContactEmailChange</name>
         <label>Contact Email Change</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>731</locationY>
         <connector>
-            <targetReference>Status_Registrant</targetReference>
+            <targetReference>Is_Email_changed_for_Active_Contact</targetReference>
         </connector>
         <flowName>Contact_UpdateAPEmailifEmailChange</flowName>
         <inputAssignments>
@@ -425,4 +519,22 @@
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
+    <textTemplates>
+        <name>EmailTempletBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!$Record.Account.Owner.FirstName},
+
+This is a notification to let you know that this Contact’s email has changed.
+
+Account Name : {!$Record.Account.Name}
+Contact Name : {!$Record.Full_Name__c}
+Old Email : {!$Record__Prior.Email}
+Updated Email : {!$Record.Email}
+Username: {!$Record.Username__c}
+Link to Contact : {!ContactUrl}
+
+This is an automated Salesforce notification. If you have any questions or concerns please reach out to your Salesforce Administrator.
+
+Thank You!</text>
+    </textTemplates>
 </Flow>
