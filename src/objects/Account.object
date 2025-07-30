@@ -14678,16 +14678,34 @@ ISCHANGED(Name))</errorConditionFormula>
         <fullName>Require_Billing_Address</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
-    CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
+    CreatedDate &gt; DATETIMEVALUE(&quot;2025-07-12 00:00:00&quot;),
+     Count_of_open_SDO__c &lt;1,
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     OR(
+        BillingCountry = &quot;United States&quot;,
+        BillingCountry = &quot;United Kingdom&quot;,
+        BillingCountry = &quot;Canada&quot;,
+        BillingCountry = &quot;Australia&quot;
+    ),
+    OR(
         ISBLANK(BillingCity),
-        ISBLANK(BillingState),
-        ISBLANK(BillingCountry)
+        ISBLANK(BillingState)
     )
 )</errorConditionFormula>
         <errorDisplayField>BillingCity</errorDisplayField>
         <errorMessage>Billing City, State, and Country must be filled out on every Account record</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Billing_Country</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    CreatedDate &gt; DATETIMEVALUE(&quot;2025-07-17 00:00:00&quot;),
+    Count_of_open_SDO__c &lt;1,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISBLANK(BillingCountry)
+)</errorConditionFormula>
+        <errorDisplayField>BillingCountry</errorDisplayField>
+        <errorMessage>Billing Country is required on all Accounts</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Entitlement_Guidance</fullName>
@@ -14735,9 +14753,10 @@ RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
         <fullName>Require_Website</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
-CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
-
+CreatedDate &gt; DATETIMEVALUE(&quot;2025-07-17 00:00:00&quot;),
+Count_of_open_SDO__c &lt;1,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+
 
 OR(
 ISBLANK( Website),
