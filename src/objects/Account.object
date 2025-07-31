@@ -393,6 +393,17 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Account_Source__c</fullName>
+        <label>Account Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Lead_Source</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Account_Status__c</fullName>
         <label>Account Status</label>
         <required>false</required>
@@ -3744,6 +3755,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>First_Upsell_Source__c</fullName>
+        <label>First Upsell Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Lead_Source</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Force_Owner_Update__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Force Owner Update</label>
@@ -4400,6 +4422,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Last_Upsell_Source__c</fullName>
+        <label>Last Upsell Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Lead_Source</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>List_Membership_Account__c</fullName>
         <description>List membership for this account</description>
         <inlineHelpText>ie &quot;hot prospect&quot;</inlineHelpText>
@@ -4707,6 +4740,17 @@ Owner.Id = $User.Id)</formula>
         <fullName>OperatingHoursId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Source__c</fullName>
+        <label>Opportunity Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Lead_Source</valueSetName>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Original_Account_Priority__c</fullName>
@@ -7891,6 +7935,81 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Account_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Status__c</picklist>
             <values>
                 <fullName>Active</fullName>
@@ -9712,6 +9831,81 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>First_Upsell_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Geographic_Exposure__c</picklist>
             <values>
                 <fullName>International</fullName>
@@ -10158,6 +10352,81 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Last_Upsell_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Location_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -10188,6 +10457,81 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>ROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11479,6 +11823,81 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Account_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13264,6 +13683,81 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>First_Upsell_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Geographic_Exposure__c</picklist>
             <values>
                 <fullName>International</fullName>
@@ -13710,6 +14204,81 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Last_Upsell_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Location_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -13740,6 +14309,81 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>ROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

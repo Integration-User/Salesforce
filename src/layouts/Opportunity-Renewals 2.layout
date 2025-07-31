@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
@@ -70,6 +69,14 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Renewal_Year__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Sales_Team_Static__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Qualified_Role__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -157,6 +164,18 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Winback__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Winback_Opportunity__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>AM_SDO_Referred_By__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SDO_SDR_Referred_By__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

@@ -443,6 +443,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Account_Source__c</fullName>
+        <label>Account Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Lead_Source</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Activation_Deactivation_Needs__c</fullName>
         <label>Activation/Deactivation Needs</label>
         <required>false</required>
@@ -5241,6 +5253,18 @@ TODAY() - DATEVALUE(CreatedDate))</formula>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Source__c</fullName>
+        <label>Opportunity Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Lead_Source</valueSetName>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Opt_Out__c</fullName>
@@ -25266,6 +25290,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Renewal</businessProcess>
         <label>Renewal</label>
         <picklistValues>
+            <picklist>Account_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
                 <fullName>Add Upsold Products</fullName>
@@ -27346,6 +27445,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Only Terms</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -36684,6 +36858,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Renewal</businessProcess>
         <label>Renewal - Closed</label>
         <picklistValues>
+            <picklist>Account_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
                 <fullName>Add Upsold Products</fullName>
@@ -38764,6 +39013,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Opportunity_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Other_Vendors__c</picklist>
             <values>
                 <fullName>22V</fullName>
@@ -40001,6 +40325,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Development</businessProcess>
         <compactLayoutAssignment>Sales_Development</compactLayoutAssignment>
         <label>Sales Development</label>
+        <picklistValues>
+            <picklist>Account_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
@@ -42170,6 +42569,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Opportunity_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Other_Vendors__c</picklist>
             <values>
                 <fullName>22V</fullName>
@@ -43685,6 +44159,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <active>true</active>
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Sales Opportunity</label>
+        <picklistValues>
+            <picklist>Account_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
@@ -45778,6 +46327,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Opportunity_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Other_Vendors__c</picklist>
             <values>
                 <fullName>22V</fullName>
@@ -47109,6 +47733,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <active>true</active>
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Sales Opportunity - Closed</label>
+        <picklistValues>
+            <picklist>Account_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Activation_Deactivation_Needs__c</picklist>
             <values>
@@ -49178,6 +49877,81 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React Only Terms</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity_Source__c</picklist>
+            <values>
+                <fullName>Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Derived Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
