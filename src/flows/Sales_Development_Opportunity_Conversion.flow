@@ -89,7 +89,7 @@
     <decisions>
         <name>Is_Oppty_an_SDO</name>
         <label>Is Oppty an SDO?</label>
-        <locationX>726</locationX>
+        <locationX>990</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -102,10 +102,89 @@
                     <stringValue>Sales_Development</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.New_Sales_Opportunity__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>SDO_Move_to_In_Review</targetReference>
             </connector>
             <label>Sales Development RT</label>
+        </rules>
+        <rules>
+            <name>Existing_Sales_NOT_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Create_New_Sales_Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Existing_Sales_Opportunity__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Existing_Sales_Opportunity__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Sales_SDO_Referral</targetReference>
+            </connector>
+            <label>Existing Sales NOT Blank</label>
+        </rules>
+        <rules>
+            <name>Existing_Renewal_NOT_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Create_New_Renewal_Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Existing_Renewal_Opportunity__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Existing_Renewal_Opportunity__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_AM_SDO_Referral</targetReference>
+            </connector>
+            <label>Existing Renewal NOT Blank</label>
         </rules>
     </decisions>
     <decisions>
@@ -484,6 +563,41 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Update_AM_SDO_Referral</name>
+        <label>Update AM SDO Referral</label>
+        <locationX>1370</locationX>
+        <locationY>431</locationY>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Existing_Renewal_Opportunity__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Sales_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Renewal</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Sales_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Upsell</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AM_SDO_Referred_By__c</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Sales_Oppty_Field</name>
         <label>Update Sales Oppty Field</label>
         <locationX>446</locationX>
@@ -496,11 +610,42 @@
         </inputAssignments>
         <inputAssignments>
             <field>SAO_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Sales_SDO_Referral</name>
+        <label>Update Sales SDO Referral</label>
+        <locationX>1106</locationX>
+        <locationY>431</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.New_Sales_Opportunity__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Sales_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SDO_SDR_Referred_By__c</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
     <start>
-        <locationX>600</locationX>
+        <locationX>864</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Is_Oppty_an_SDO</targetReference>
