@@ -33,8 +33,8 @@
         </connector>
     </assignments>
     <decisions>
-        <name>Former_GSA_Relationship</name>
-        <label>Former GSA Relationship</label>
+        <name>Former_Account</name>
+        <label>Former Account</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
@@ -42,7 +42,7 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>GSA_Former_Account</name>
+            <name>Is_Account_Former</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Account.Type</leftValueReference>
@@ -51,17 +51,10 @@
                     <stringValue>Former</stringValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record__Prior</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
             <connector>
-                <targetReference>Set_Winback_True</targetReference>
+                <targetReference>Update_New_Winback</targetReference>
             </connector>
-            <label>GSA Former Account</label>
+            <label>Is Account Former?</label>
         </rules>
     </decisions>
     <decisions>
@@ -110,13 +103,6 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Closed Won</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Account.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Former</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -197,10 +183,13 @@
         <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordUpdates>
-        <name>Set_Winback_True</name>
-        <label>Set Winback True</label>
+        <name>Update_New_Winback</name>
+        <label>Update New Winback</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Non_Winback_Opportunity</targetReference>
+        </connector>
         <inputAssignments>
             <field>Winback_Opportunity__c</field>
             <value>
@@ -220,7 +209,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Former_GSA_Relationship</targetReference>
+            <targetReference>Former_Account</targetReference>
         </connector>
         <filterFormula>OR(
 {!$Record.RecordType.DeveloperName} = &apos;Sales_Opportunity&apos;,
