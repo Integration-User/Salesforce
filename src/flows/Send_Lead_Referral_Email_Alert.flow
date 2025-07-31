@@ -18,6 +18,23 @@
         <offset>0</offset>
     </actionCalls>
     <actionCalls>
+        <name>College_House_Email_Alert</name>
+        <label>College House Email Alert</label>
+        <locationX>1370</locationX>
+        <locationY>431</locationY>
+        <actionName>Lead.College_House_Referral_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.College_House_Referral_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
         <name>IJGlobal_Referral_Alert</name>
         <label>IJGlobal Referral Alert</label>
         <locationX>1106</locationX>
@@ -90,7 +107,7 @@
     <decisions>
         <name>Commercial_Advisory</name>
         <label>Commercial + Advisory</label>
-        <locationX>710</locationX>
+        <locationX>842</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -203,6 +220,28 @@
             </connector>
             <label>Send to IJGlobal</label>
         </rules>
+        <rules>
+            <name>Send_to_College_House</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>College House</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referrals</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>College_House_Email_Alert</targetReference>
+            </connector>
+            <label>Send to College House</label>
+        </rules>
     </decisions>
     <environments>Default</environments>
     <interviewLabel>Send Lead Referral Email Alert {!$Flow.CurrentDateTime}</interviewLabel>
@@ -227,7 +266,7 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>584</locationX>
+        <locationX>716</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Commercial_Advisory</targetReference>
