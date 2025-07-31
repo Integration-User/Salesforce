@@ -70,6 +70,17 @@
         <template>Process_Notifications/Referral</template>
     </alerts>
     <alerts>
+        <fullName>College_House_Referral_Alert</fullName>
+        <description>College House Referral Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jecusi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Referral_Templates/New_Referral</template>
+    </alerts>
+    <alerts>
         <fullName>EAM_Referral</fullName>
         <description>EAM Referral</description>
         <protected>false</protected>
