@@ -14,6 +14,12 @@
         <inputParameters>
             <name>emailAddresses</name>
             <value>
+                <stringValue>clientsupport@greenstreet.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccRecipientAddressList</name>
+            <value>
                 <elementReference>$Record.Account.Owner.Email</elementReference>
             </value>
         </inputParameters>
@@ -38,7 +44,7 @@
         <inputParameters>
             <name>emailSubject</name>
             <value>
-                <stringValue>{!$Record.Full_Name__c}&apos;s Email Changed</stringValue>
+                <stringValue>Contact Email Update: {!$Record.Full_Name__c}</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
