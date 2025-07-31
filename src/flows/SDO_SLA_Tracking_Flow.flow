@@ -360,6 +360,12 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             </value>
         </filters>
         <inputAssignments>
+            <field>Competition__c</field>
+            <value>
+                <elementReference>$Record.Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Contact_Qualified_Date__c</field>
             <value>
                 <elementReference>$Record.Qualified_Date__c</elementReference>
@@ -381,6 +387,18 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             <field>In_Review__c</field>
             <value>
                 <elementReference>$Record.In_Review__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Other_Competition__c</field>
+            <value>
+                <elementReference>$Record.Other_Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Product_of_Interest__c</field>
+            <value>
+                <elementReference>$Record.Product_of_Interest__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
