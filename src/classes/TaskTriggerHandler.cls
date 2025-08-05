@@ -88,7 +88,7 @@ public without sharing class TaskTriggerHandler {
         
         // Collect Opportunity IDs from Task WhatId
         for (Task t : newList) {
-            if (t.WhatId != null && t.WhatId.getSObjectType().getDescribe().getName() == 'Opportunity' 
+            if (t.WhatId != null && t.WhatId.getSObjectType().getDescribe().getName() == 'Opportunity' && t.Subject != null
                 && (t.Subject.contains('Call: Connected') || t.Subject.startsWith('Reply'))) {
                 oppIds.add(t.WhatId);
             }
