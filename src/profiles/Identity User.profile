@@ -15864,6 +15864,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.College_House_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Company_Domain_Name__c</field>
         <readable>true</readable>
@@ -19497,6 +19502,11 @@
         <editable>false</editable>
         <field>Contact.Client_Segment_Contact__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.College_House_Id__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -27186,6 +27196,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Closed_Opportunity_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.College_House_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
