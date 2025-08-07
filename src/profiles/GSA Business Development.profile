@@ -425,6 +425,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CloneOpportunityForAccountsBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CloneOpportunityForAccountsBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ConsolidatedOpportunity</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2978,6 +2986,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>OpportunityActivityBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>OpportunityLast120DaysActivityBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -12817,6 +12829,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>maps__FlexPolylineDecoder</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>maps__Functions</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16450,6 +16466,11 @@
         <editable>false</editable>
         <field>Account.FTRX_SEC_Year_Reg__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.FTRX_Website_URL__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -28484,7 +28505,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Primary_Campaign_Source_ID__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -48827,6 +48848,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>AAKCS__AAkonsult_Settings__mdt-AAKCS__AAkonsult Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>AAKCS__Campaign_Status_Default_Value__c-AAKCS__Campaign Status Default Value Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>AAKCS__Campaign_Status_Default__c-AAKCS__Campaign Status Default Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>AAKCS__Error_Log__c-AAKCS__Error Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>API_Settings__mdt-API Settings Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -48903,6 +48936,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>BusinessBrand-Business Brand Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CMTD__EnhancedRelatedList__mdt-CMTD__Enhanced Related List Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Campaign-Content%2FAdvertising</layout>
@@ -49135,6 +49171,111 @@
         <layout>Customer-Customer Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>CventEvents__AttendeeActionStatusMap__mdt-CventEvents__Attendee Action Status Map Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__AttendeeActivity__c-CventEvents__Cvent Attendee Activity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__AttendeeStatusMapping__c-CventEvents__Attendee Status Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__AttendeeTemp__c-CventEvents__Attendee Temp Record Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__Attendee__c-CventEvents__Attendee Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__Currency__mdt-CventEvents__Currency Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__CustomField__c-CventEvents__Cvent Custom Field Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__DataTransferConfiguration__c-CventEvents__Data Transfer Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__DataTransferFilter__c-CventEvents__Data Transfer Filter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__DataTransferMapping__c-CventEvents__Data Transfer Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__DefaultAttendeeStatusMapping__c-CventEvents__Default Attendee Status Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__EventActionStatusMap__mdt-CventEvents__Event Action Status Map Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__EventCampaignEntry__c-CventEvents__Event Campaign Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__EventInvitationConfiguration__c-CventEvents__Event Invitation Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__EventSharingCondition__c-CventEvents__Event Sharing Condition Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__EventSharingRule__c-CventEvents__Event Sharing Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__Event__c-CventEvents__Cvent Event Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__LogConnector__c-CventEvents__Log Connector Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__Log__c-CventEvents__Cvent Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__NominationApprover__c-CventEvents__Nomination Approver Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__NominationCommentConfiguration__c-CventEvents__Nomination Comment Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__NominationCondition__c-CventEvents__Nomination Condition Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__NominationFilter__c-CventEvents__Nomination Filter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__NominationRule__c-CventEvents__Nomination Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__Nomination__c-CventEvents__Nomination Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__OpportunityConfigurationCondition__c-CventEvents__Opportunity Configuration Condition Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__OpportunityConfiguration__c-CventEvents__Opportunity Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__RespondentTemp__c-CventEvents__Respondent Temp Record Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__Respondent__c-CventEvents__Respondent Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__ServiceEndpoint__mdt-CventEvents__Service Endpoint Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__SurveyAnswer__c-CventEvents__Survey Answer Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__SurveyProgram__c-CventEvents__Cvent Survey Program Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__SurveyQuestion__c-CventEvents__Survey Question Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__TaskConfigurationCondition__c-CventEvents__Task Configuration Condition Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CventEvents__TaskConfiguration__c-CventEvents__Task Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>DDS_FormulaPredictor__mdt-DDS - Formula Predictor Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -49145,6 +49286,30 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>DDS_YoYSegmentation__mdt-DDS - YoY Segmentation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DOZISF__JWT_Setting__mdt-DOZISF__JWT Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DOZISF__ZoomInfo_Intent__c-DOZISF__ZoomInfo Intent Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DOZISF__ZoomInfo_Scoop__c-DOZISF__ZoomInfo Scoop Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DOZISF__ZoomInfo__c-DOZISF__ZoomInfo Company</layout>
+        <recordType>DOZISF__ZoomInfo__c.DOZISF__Company</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DOZISF__ZoomInfo__c-DOZISF__ZoomInfo Contact</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DOZISF__ZoomInfo__c-DOZISF__ZoomInfo Contact</layout>
+        <recordType>DOZISF__ZoomInfo__c.DOZISF__Contact</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DOZISF__ZoomInfo__c-DOZISF__ZoomInfo Contact</layout>
+        <recordType>DOZISF__ZoomInfo__c.DOZISF__ZoomInfo</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>DuplicateRecordItem-Duplicate Record Item Layout</layout>
@@ -49175,10 +49340,22 @@
         <layout>Field_Mapping__mdt-Field Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Field_Trip__Field_Analysis__c-Field_Trip__Field Analysis Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Field_Trip__Field_Analytic_Config__c-Field_Trip__Field Analytic Config Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Field_Trip__Object_Analysis__c-Field_Trip__Object Analysis Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>FlowInterview-Flow Interview Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Global-Global Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>HubSpot_Inc__HubSpot_Intelligence__c-HubSpot_Inc__HubSpot Intelligence Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ISO_Map__mdt-ISO Map Layout</layout>
@@ -49201,6 +49378,21 @@
     <layoutAssignments>
         <layout>Knowledge__kav-Knowledge Layout</layout>
         <recordType>Knowledge__kav.Knowledge</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LID__Error_Log__c-LID__Error Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LID__Log__c-LID__Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LID__Sales_Navigator_Setting__mdt-LID__Data Validation Token Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LID__Setup_Data__c-LID__Setup Data Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LID__User_OAuth__c-LID__User OAuth Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lead-Marketing Lead Layout</layout>
@@ -49543,6 +49735,48 @@
         <layout>WorkThanks-Thanks Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>XFILES__Application_Exception_Audit__c-XFILES__Application Exception Audit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Cloud_Storage_Provider__c-XFILES__Cloud Storage Provider Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Custom_Folder_Info__c-XFILES__Custom Folder Info Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__External_Content_Detail__c-XFILES__External Content Detail Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Folder_Info__c-XFILES__Folder Info Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Import__c-XFILES__Data Import Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Link_Activity_History__c-XFILES__Link Activity History Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Link_Delivery__c-XFILES__Link Delivery Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Link__c-XFILES__Link Detail Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Site_Details__mdt-XFILES__Site Details Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Template_Structure__mdt-XFILES__Template Structure Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Topic__c-XFILES__Topic Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__XfilePro_Util__c-XFILES__XfilePro Util Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>XFILES__Xfilespro_Audit_Log__c-XFILES__Xfilespro Audit Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ZephrProcessError__c-Zephr Process Error Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -49574,6 +49808,906 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Zephr_Webhook_Data__c-Zephr Webhook Data Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>affectlayer__AffectLayer_Admin_Setting__c-affectlayer__AffectLayer Admin Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>affectlayer__AffectLayer_User_Setting__c-affectlayer__AffectLayer User Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>affectlayer__AffectLayer__c-affectlayer__AffectLayer Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>affectlayer__ChorusAiSetting__mdt-affectlayer__ChorusAiSetting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>affectlayer__ChorusEngagementContact__c-affectlayer__Chorus Engagement Contact Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>affectlayer__ChorusEngagementUser__c-affectlayer__Chorus Engagement User Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>affectlayer__Engagement__c-affectlayer__Engagement Layout v3</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>affectlayer__Moment__c-affectlayer__Moment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>asknicely__AskNicely_CustomData__c-asknicely__AskNicely Response Tag Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>asknicely__NPS__c-asknicely__Asknicely Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Apex_Test_Result__c-copado__Apex Test Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Application_Feature__c-copado__Feature Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Application__c-copado__Application Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Artifact_Dependency__c-copado__Artifact Dependency Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Artifact_Version__c-copado__Artifact Version Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Artifact__c-copado__Artifact Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Artifact__c-copado__Artifact Layout</layout>
+        <recordType>copado__Artifact__c.copado__Git_Artifact</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Artifact__c-copado__Artifact Layout</layout>
+        <recordType>copado__Artifact__c.copado__Package_Artifact</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Artifact__c-copado__Artifact Layout</layout>
+        <recordType>copado__Artifact__c.copado__User_Story_Bundle</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Automation_Event__c-copado__MC Automation Event Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Automation_Rule__c-copado__Automation Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__AuxiliaryObject__c-copado__AuxiliaryObject Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Branch_Management_Permission__c-copado__Branch Management Permission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Build_Task__c-copado__Build Task Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Bundled_Story__c-copado__Bundled Story Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Bundled_UserStory__c-copado__Bundle User Story Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Burndown_Item__c-copado__Burndown Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Finding__c-copado__Compliance Finding Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Finding__c-copado__Compliance Finding Layout</layout>
+        <recordType>copado__Compliance_Finding__c.copado__Copado</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Finding__c-copado__Compliance Finding Layout</layout>
+        <recordType>copado__Compliance_Finding__c.copado__Other</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Rule_Criteria__c-copado__Compliance Rule Criteria Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Rule_Group_Item__c-copado__Compliance Rule Group Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Rule_Group__c-copado__Compliance Rule Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Rule__c-copado__Compliance Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Rule__c-copado__Compliance Rule Layout</layout>
+        <recordType>copado__Compliance_Rule__c.copado__Copado</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Rule__c-copado__Compliance Rule Layout</layout>
+        <recordType>copado__Compliance_Rule__c.copado__Other</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Scan_Result__c-copado__Compliance Scan Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Scan_Result__c-copado__Compliance Scan Result Layout</layout>
+        <recordType>copado__Compliance_Scan_Result__c.copado__Copado</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Compliance_Scan_Result__c-copado__Compliance Scan Result Layout</layout>
+        <recordType>copado__Compliance_Scan_Result__c.copado__Other</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Connection_Behavior__c-copado__Connection Behavior Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Continuous_Integration_Permission__c-copado__Continuous Integration Permission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Continuous_Integration__c-copado__Continuous Integration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Copado_Feature__c-copado__Feature Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Copado_Notification__c-copado__Copado Notification Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Copado_Protected_Settiing__mdt-copado__Copado key Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Copado_Setting__mdt-copado__Copado Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Copado_Smart_Help__mdt-copado__Copado Smart Help Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Data_Set__c-copado__Data Set Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Data_Template_Setup__mdt-copado__Data Template Setup Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Data_Template__c-copado__Data Template Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment_Flow_Step__c-copado__Deployment Flow Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment_Flow__c-copado__Pipeline Layout V%2E17</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment_History__c-copado__Copado Deployment History Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment_Job__c-copado__Deployment Job Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment_Task__c-copado__Deployment Task Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment__c-copado__Advanced %28Multi Step%29</layout>
+        <recordType>copado__Deployment__c.copado__Advanced_multi_step</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment__c-copado__Automation Template</layout>
+        <recordType>copado__Deployment__c.copado__Automation_Template</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment__c-copado__Data Deployment</layout>
+        <recordType>copado__Deployment__c.copado__Data_Deployment</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment__c-copado__Deployment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment__c-copado__Metadata Deployment</layout>
+        <recordType>copado__Deployment__c.copado__Metadata_Deployment</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Destination_Org__c-copado__Destination Org Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Environment__c-copado__Environment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Environmental_Variable__c-copado__Environment Variable Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Epic__c-copado__Epic Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__ExtensionConfiguration__c-copado__Extension Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__ExtensionKeyValueSetting__mdt-copado__Extension Key Value Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__ExtensionPackageConfiguration__mdt-copado__Extension Package Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__External_CI_Job_Result__c-copado__External CI Job Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__External_CI_Job__c-copado__External CI Job Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__External_CI_Setting__c-copado__External CI Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Filter__c-copado__Filter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Function__c-copado__Function Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Git_Backup__c-copado__Git Backup Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Git_Commit__c-copado__Git Commit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Git_Org_Commit__c-copado__Git Org Commit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Git_Repository__c-copado__Git Server Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Installed_Artifact_Version__c-copado__Installed Package Version Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__JobExecution__c-copado__Job Execution Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__JobStep__c-copado__Job Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__JobTemplate__c-copado__Job Template Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Kanban_Board_View__c-copado__Kanban Board View Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Kanban_Board__c-copado__Kanban Board Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__MC_Custom_Job_Step__mdt-copado__MC Custom Job Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__MC_Notification__mdt-copado__MC Notification Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Metadata_Group_Item__c-copado__Metadata Group Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Metadata_Group__c-copado__Metadata Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__MultiCloudAutomation__mdt-copado__MultiCloudAutomationMap Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Notification_Default_Channels__c-copado__Notification Default Channel Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Notification_Subscription__c-copado__Notification Subscription Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__OrgDiff__c-copado__OrgDiff Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Org__c-copado__Org Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Persona_Permission__c-copado__Persona Permission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Persona__c-copado__Persona Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Pipeline_Action__c-copado__Pipeline Action Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Project__c-copado__Project Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Promoted_User_Story__c-copado__Promoted User Story Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Promotion__c-copado__Promotion Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Pull_Request_Review__c-copado__Pull Request Review Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Pull_Request__c-copado__Pull Request Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Quality_Gate_Rule_Condition__c-copado__Quality Gate Rule Condition Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Quality_Gate_Rule__c-copado__Quality Gate Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Quality_Gate__c-copado__Quality Gate Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Record_Matching_Formula__c-copado__Record Matching Formula Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Release__c-copado__Release Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Result__c-copado__Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Scheduled_Job_Run__c-copado__Scheduled Job Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Scheduled_Job__c-copado__Scheduled Job Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Scratch_Org_Definition__c-copado__Scratch Org Definition Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Scratch_Org_Project_Template__c-copado__Scratch Org Artifacts Template Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Group_Org_Credential__c-copado__Selenium Group Org Credential Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Group_Test_Suite__c-copado__Selenium Group Test Suite Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Group_Variable__c-copado__Selenium Group Variable Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Locator_Reference__c-copado__Selenium Locator Reference Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Locator__c-copado__Selenium Locator Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Settings__c-copado__Selenium Settings Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Test_Case_Per_Suite__c-copado__Selenium Test Case per Suite Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Test_Case__c-copado__Selenium Test Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Test_Group__c-copado__Selenium Test Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Test_Result__c-copado__Selenium Test Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Test_Run__c-copado__Salesforce Selenium Test Run Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Test_Run__c-copado__Salesforce Selenium Test Run Layout</layout>
+        <recordType>copado__Selenium_Test_Run__c.copado__Salesforce</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Test_Run__c-copado__Web App Selenium Test Run Layout</layout>
+        <recordType>copado__Selenium_Test_Run__c.copado__Generic_Web_Application</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Selenium_Test_Suite__c-copado__Selenium Test Suite Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__SensitiveProperty__mdt-copado__Sensitive Property Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Snapshot_Difference__c-copado__Snapshot Difference Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Sprint__c-copado__Sprint Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Stage_Connection__c-copado__Stage Connection Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Stage__c-copado__Stage Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__StandardResources__mdt-copado__StandardResources Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Result__c-copado__Static Code Analysis Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Result__c-copado__Static Code Analysis Result Layout</layout>
+        <recordType>copado__Static_Code_Analysis_Result__c.copado__CodeScan</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Result__c-copado__Static Code Analysis Result Layout</layout>
+        <recordType>copado__Static_Code_Analysis_Result__c.copado__PMD</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Rule__c-copado__Static Code Analysis Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Settings__c-copado__Static Code Analysis Settings Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Settings__c-copado__Static Code Analysis Settings Layout</layout>
+        <recordType>copado__Static_Code_Analysis_Settings__c.copado__CodeScan</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Settings__c-copado__Static Code Analysis Settings Layout</layout>
+        <recordType>copado__Static_Code_Analysis_Settings__c.copado__PMD</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Violation__c-copado__Static Code Analysis Violation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Violation__c-copado__Static Code Analysis Violation Layout</layout>
+        <recordType>copado__Static_Code_Analysis_Violation__c.copado__CodeScan</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Static_Code_Analysis_Violation__c-copado__Static Code Analysis Violation Layout</layout>
+        <recordType>copado__Static_Code_Analysis_Violation__c.copado__PMD</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Step__c-copado__Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Streaming_Setting__mdt-copado__Streaming Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__SupportedObject__mdt-copado__Supported Object Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__System_Property__c-copado__System Property Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Team_Dependency__c-copado__User Story Dependency Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Team_Member__c-copado__Team Member Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Team__c-copado__Team Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__TestTool__mdt-copado__Test Tool Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__TestType__mdt-copado__Test Type Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Test_Run_Step__c-copado__Test Execution Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Test_Run__c-copado__Test Execution Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Test_Script_Step__c-copado__Script Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Test_Script__c-copado__Test Script Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Test_Suite_Script__c-copado__Test Suite Script Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Test__c-copado__Test Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Theme__c-copado__Theme Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__UISection__mdt-copado__UISection Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Persona_Assignment__c-copado__User Persona Assignment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story_Bundle__c-copado__User Story Bundle Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story_Commit__c-copado__User Story Commit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story_Data_Commit__c-copado__User Story Data Commit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story_Metadata__c-copado__User Story Metadata Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story_Selenium_Test__c-copado__User Story Selenium Test Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story_Task__c-copado__User Story Task Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story__c-copado__User Story Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story__c-copado__User Story Layout</layout>
+        <recordType>copado__User_Story__c.copado__Bug</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story__c-copado__User Story Layout</layout>
+        <recordType>copado__User_Story__c.copado__Investigation</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story__c-copado__User Story Layout</layout>
+        <recordType>copado__User_Story__c.copado__User_Story</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story__c-copado__User Story Layout</layout>
+        <recordType>copado__User_Story__c.copado__Utility</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copadoconnect__Copado_Integration__c-copadoconnect__Copado Integration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copadoconnect__FieldMapping__c-copadoconnect__Field Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copadoconnect__Field_Value_Mapping__c-copadoconnect__Field Value Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copadoconnect__Integration_Log__c-copadoconnect__Integration Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copadoconnect__ObjectMapping__c-copadoconnect__Object Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>dlrs__LookupChildAReallyReallyReallyBigBigName__c-dlrs__Lookup Child Big Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>dlrs__LookupChild__c-dlrs__Lookup Child Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>dlrs__LookupParent__c-dlrs__Lookup Parent Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>dlrs__LookupRollupCalculateJob__c-dlrs__Lookup Rollup Calculate Job Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>dlrs__LookupRollupSummary2__mdt-dlrs__Lookup Rollup Summary Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>dlrs__LookupRollupSummaryLog__c-dlrs__Lookup Rollup Summary Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>dlrs__LookupRollupSummaryScheduleItems__c-dlrs__Lookup Rollup Summary Queue Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>dlrs__LookupRollupSummary__c-dlrs__Lookup Rollup Summary Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>eContacts__Forms__c-eContacts__Forms Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>eContacts__Question__c-eContacts__Question Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>eContacts__Queue_Item__c-eContacts__Queue Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>eContacts__Responses__c-eContacts__Responses Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteContinuousTravel__c-maps__Maps Advanced Route Continuous Travel Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteDataSet__c-maps__Maps Advanced Route Data Set Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteDefaultValue__c-maps__Maps Advanced Default Value Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteDefaultValuesGrouping__c-maps__Maps Advanced Default Values Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteOffDays__c-maps__Maps Advanced Route Off Days Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteOutputType__c-maps__Maps Advanced Route Output Type Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRoutePriority__c-maps__Maps Advanced Route Priority Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRoutePromotionalPeriodConfiguration__c-maps__Maps Advanced Promotional Period Config Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteQueryFilterGrouping__c-maps__Maps Advanced Route Query Filter Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteQueryFilter__c-maps__Maps Advanced Route Query Filter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteRoutableObject__c-maps__Maps Advanced Route Routable Object Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteSettings__c-maps__Maps Advanced Route Settings Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteTemplateUser__c-maps__Maps Advanced Route Template User Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteTemplate__c-maps__Maps Advanced Route Template Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteVisitWindows__c-maps__Maps Advanced Route Visit Windows Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRouteWaypoint__c-maps__Maps Advanced Route Waypoint Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AdvRoute__c-maps__Maps Advanced Route Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Analytic__c-maps__Maps Analytic Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__ArcGISBatchPushLog__c-maps__Maps ArcGIS Batch Push Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__ArcGISBatchPushSetting__c-maps__Maps ArcGIS Batch Push Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__ArcGISBatchPushTest__c-maps__Maps ArcGIS Batch Push Test Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AssignmentPlanRun__c-maps__Assignment Plan Run</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AssignmentPlan__c-maps__Maps Assignment Plan Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__AssignmentRule__c-maps__Maps Assignment Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__BaseObject__c-maps__Base Object Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__ButtonSet__c-maps__Button Set Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__CalEventBaseObj__c-maps__Maps Calendar Event Base Object Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__CalEventLookup__c-maps__Maps Calendar Event Lookup Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__CalendarResourceShift__c-maps__Maps Calendar Resource Shift Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Click2Create__c-maps__Click-2-Create Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__CustomAction__c-maps__Custom Action Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__DataLayerSetting__c-maps__Data Layer Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__DebugLog__c-maps__Maps Debug Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__DriveProfile__c-maps__Drive Profile Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__FolderPermission__c-maps__Folder Permission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Folder__c-maps__Folder Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Layer__c-maps__Layer Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveAssetDailySummaryEvent__c-maps__Maps Live Asset Daily Summary Event Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveAssetDailySummary__c-maps__Maps Live Asset Daily Summary Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveAsset__c-maps__Maps Live Asset Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveAsyncError__c-maps__Maps Live Async Error Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveDailyDriveTrip__c-maps__Maps Live Daily Drive Trip Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveDailySummaryConfig__c-maps__Maps Live Daily Summary Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveDriverAssignment__c-maps__Maps Live Driver Assignment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveDriver__c-maps__Maps Live Driver Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveEventAssociation__c-maps__Maps Live Event Association Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveEvent__c-maps__Maps Live Event Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveHolidayRelationship__c-maps__Maps Live Holiday Relationship Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveHolidayTime__c-maps__Maps Live Holiday Time Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveIoTDevice__c-maps__Maps Live IoT Device Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveSummaryStateMileage__c-maps__Maps Live Summary State Mileage Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveSummaryStopRelationshipConfig__c-maps__Maps Live Summary Stop Relationship Config Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__LiveWorkingHours__c-maps__Maps Live Working Hours Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Location__c-maps__Location Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__MarkerLayerComponent__c-maps__Maps Marker Layer Component Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__MarkerLayerRelatedList__c-maps__Maps Marker Layer Related List Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__MarkerLayer__c-maps__Maps Marker Layer Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Metadata__mdt-maps__Maps Metadata Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__MiniMapSetting__c-maps__MiniMap Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Route__c-maps__Route Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__ScheduledJob__c-maps__Scheduled Job Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__SettingsGroupAssignment__c-maps__Settings Group Assignment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__SettingsGroup__c-maps__Settings Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__ShapeLayerGeometry__c-maps__Maps Shape Layer Geometry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__ShapeLayer__c-maps__Maps Shape Layer Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TPAlignment__c-maps__Territory Planning Alignment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TPArea__c-maps__Territory Planning Area Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TPComment__c-maps__Territory Planning Comment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TPDataSet__c-maps__Territory Planning Data Set Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TPHistory__c-maps__Alignment History Record Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TPRole__c-maps__Territory Planning Role Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TPUnitAssignment__c-maps__Territory Planning Unit Assignment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TPUserPreference__c-maps__Territory Planning User Preference Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TerritoryAggregationSetting__c-maps__Territory Aggregation Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TerritoryAggregation__c-maps__Territory Aggregation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__TerritoryNode__c-maps__Territory Node Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Timesheet_Activity__c-maps__Timesheet Activity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Timesheet_Period__c-maps__Timesheet Period Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Timesheet_Rule__c-maps__Timesheet Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Timesheet_Travel__c-maps__Timesheet Travel Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Timesheet__c-maps__Timesheet Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>maps__Waypoint__c-maps__Waypoint Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>prqnconnmvpb__PreqinData__c-prqnconnmvpb__Preqin Data Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__Filter__c-rh2__Filter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__HS_Filter__c-rh2__Filter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_Describe__c-rh2__Describe Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_Exception__c-rh2__Rollup Helper Exception Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_Export_Rollups__c-rh2__Rollup Export Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_OAuth_Configuration__mdt-rh2__Rollup Helper OAuth Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_Queue__c-rh2__Rollup Helper Queue Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_Rollup_Audit__c-rh2__Rollup Audit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_Rollup_Conditions__c-rh2__Rollup Condition Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_Rollup_Dummy__c-rh2__Rollup Dummy Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_Rollup_Group__c-rh2__Rollup Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__PS_Use_Case_Library__mdt-rh2__PS Use Case Library Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>rh2__RH_Job__c-rh2__Rollup Job Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__FmcDefaultValue__c-zisf__FmcDefaultValue Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__ZoomInfo_Clean_Settings__c-zisf__ZoomInfo Clean Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__ZoomInfo_Custom_Settings__c-zisf__ZoomInfo Custom Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__ZoomInfo_Inbound_Settings__c-zisf__ZoomInfo Inbound Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__ZoomInfo__c-zisf__ZoomInfo Company Layout</layout>
+        <recordType>zisf__ZoomInfo__c.zisf__ZoomInfo_Company</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__ZoomInfo__c-zisf__ZoomInfo Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__ZoomInfo__c-zisf__ZoomInfo Person Layout</layout>
+        <recordType>zisf__ZoomInfo__c.zisf__ZoomInfo_Person</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__ZoomSessions__c-zisf__ZoomSessions Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__Zoom_Scheduler__c-zisf__Zoom Scheduler Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>zisf__zicCleanJob__c-zisf__Clean Job Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -51201,6 +52335,24 @@
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Log_Setting__mdt</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>LoginAnomalyEvent</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>LoginAnomalyEventStore</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -58306,20 +59458,124 @@
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>AICreateInsightObjects</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AIViewInsightObjects</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessBankingRelationshipAssistance</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessBankingServiceAgent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessCMC</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessContentBuilder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessDisputePrompts</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessPolicyAgent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessServiceEinstein</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessSfDrive</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessToComplaintMgmt</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessToDisputeManagement</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessToServiceProcess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccessWealthAdvisorAgent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AccountSwitcherUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ActivateContract</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ActivateOrder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ActivateSystemModeFlows</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ActivitiesAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AddAnalyticsRemoteConnections</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>AddDirectMessageMembers</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>AddWaveNotificationRecipients</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AdminAnalyticsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AdvancedCsvDataImportUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AgentforceServiceAgentUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AllowERIBasicAccess</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>AllowEmailIC</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>AllowLightningLogin</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>AllowViewEditConvertedLeads</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AnalyticsQueryServiceConsumer</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58330,16 +59586,168 @@
         <name>ApiEnabled</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ApiUserOnly</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AppFrameworkManageApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AppFrameworkManageTemplate</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AppFrameworkViewApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ApprovalAdmin</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ApprovalDesigner</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AssignPermissionSets</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>AssignTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AttributionModelUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AuthorApex</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AutomaticActivityCapture</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>B2BMarketingAnalyticsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>BotManageBots</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>BotManageBotsTrainingData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>BulkApiHardDelete</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>BulkMacrosAllowed</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>BypassMFAForUiLogins</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CMSECEAuthoringAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CallCoachingUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CampaignInfluence2</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanAccessCE</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanApproveFeedPost</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanDoActAsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanEditDataPrepRecipe</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanEditPrompts</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanInitiateMessagingSessions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanInsertFeedSystemFields</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanManageMaps</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanRunAnalysis</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanSendInitialSMSToIndividual</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanUpdateEmailMessage</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanUseNewDashboardBuilder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanVerifyComment</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CanViewDataPrepRecipe</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CdcReportingCreateReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CdcReportingManageFolders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CdcReportingViewReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChangeDashboardColors</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterComposeUiCodesnippet</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ChatterEditOwnPost</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterEditOwnRecordPost</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58358,12 +59766,52 @@
         <name>ChatterOwnGroups</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ClientSecretRotation</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CloseConversations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ConfigCustomRecs</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ConfigureDataspaceScope</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ConnectOrgToEnvironmentHub</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ConsentApiUpdate</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ContactInspectorUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ContentAdministrator</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ContentHubUser</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ContentWorkspaces</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ConvertLeads</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateAuditFields</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58386,6 +59834,10 @@
         <name>CreateLtngTempFolder</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateLtngTempInPub</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>CreateReportFolders</name>
     </userPermissions>
@@ -58394,12 +59846,100 @@
         <name>CreateReportInLightning</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateWorkBadgeDefinition</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateWorkspaces</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CustomAppsOnFSMobile</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CustomMobileAppsAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CustomSidebarOnAllPages</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>CustomizeApplication</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>DataExport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DataPipelinesAppConsumer</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DebugApex</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DelegatedTwoFactor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DeleteActivatedContract</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DeleteCrMemoAndInvoice</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DeleteTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DigitalLendingAdminUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DigitalLendingEditReadOnly</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DigitalLendingUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DigitalLendingWorkbench</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>DistributeFromPersWksp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DownloadPackageVersionZips</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditActivatedOrders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditBillingInfo</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditBrandTemplates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditCaseComments</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58422,8 +59962,28 @@
         <name>EditOppLineItemUnitPrice</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>EditPublicDocuments</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditPublicFilters</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditPublicTemplates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditReadonlyFields</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>EditTask</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditTopics</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58434,16 +59994,176 @@
         <name>EmailSingle</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>EmbeddedMessagingAgent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EnableBCTransactionPolling</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EnableIPFSUpload</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>EnableNotifications</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EngagementConfigUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EnhancedSalesMobileExp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EventLogReadAccess</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ExportReport</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ExternalClientAppAdmin</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ExternalClientAppDeveloper</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ExternalClientAppViewer</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>FSCArcGraphCommunityUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>FSCComprehensiveUserAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>FeedPinning</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ForceTwoFactor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>FreezeUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>GiveRecognitionBadge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>GovernNetworks</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HasUnlimitedErbScoringRequests</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HasUnlimitedNBAExecutions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HeadlessCMSAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HeadlessPublishNudges</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>HideReadByList</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IdentityConnect</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IdentityEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ImportCustomObjects</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ImportLeads</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ImportPersonal</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InboundMigrationToolsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppAdmin</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppDashboardEditor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppEltEditor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppUploadUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsAppUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>InsightsCreateApplication</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IsotopeAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IsotopeCToCUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>IsotopeLEX</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LMEndMessagingSessionUserPerm</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LMOutboundMessagingUserPerm</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LeadInspectorUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LeadScoreResultPublisher</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LeadScoreUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58458,28 +60178,460 @@
         <name>ListEmailSend</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>LobbyManagementUserAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LtngPromoReserved01UserPerm</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>MCPMetadataApi</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageAccessPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageAgentforceServiceAgent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageAnalyticSnapshots</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageAuthProviders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageBusinessHourHolidays</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageC360AConnections</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCMS</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCallCenters</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCases</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCdpMlModels</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCertificates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCertificatesExpiration</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageChatterMessages</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageContentPermissions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageContentProperties</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageContentTaxonomy</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageContentTypes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCustomDomains</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ManageCustomPermissions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageCustomReportTypes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDashbdsInPubFolders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDataCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDataIntegrations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDataspaceScope</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDevSandboxes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageDynamicDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageEmailClientConfig</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageEncryptionKeys</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageExchangeConfig</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageExternalConnections</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageFilesAndAttachments</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageForecastingCustomData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageHealthCheck</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageHerokuAppLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageHubConnections</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageIntegrationConnections</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageInteraction</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageInternalUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageIpAddresses</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageLeads</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageLoginAccessPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageMobile</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageNamedCredentials</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageNetworks</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageOrchInstsAndWorkItems</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageOrchestrationRuns</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManagePasswordPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageProfilesPermissionsets</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManagePropositions</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ManagePvtRptsAndDashbds</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageQuotas</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageRecommendationStrategies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageReleaseUpdates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageRemoteAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageReportsInPubFolders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageRoles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSandboxes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSessionPermissionSets</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSharing</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSolutions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSubscriptions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSurveys</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageSynonyms</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageTemplatedApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageTrustMeasures</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageTwoFactor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageUnlistedGroups</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ManageUsers</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>MassInlineEdit</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>MergeTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>MetadataStudioUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>MngBenVerfForAssistiveAgnt</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>MobileMessagingAgent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModerateChatter</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModerateNetworkUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModifyAccessAllowPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModifyAccessDenyPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModifyAllData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModifyAllPolicyCenterPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModifyDataClassification</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ModifyMetadata</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>MonitorLoginHistory</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>NativeWebviewScrolling</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>NewReportBuilder</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>OpportunityScoreUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>OrgPerformanceAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>OutboundMigrationToolsUser</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>OverrideForecasts</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>Packaging2</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>Packaging2Delete</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PasswordNeverExpires</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PerformanceAnalysisAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PersonalizationDecisioningUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PersonalizationIntelUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PersonalizationPlatform</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PersonalizedFinanceUserAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PipelineInspectorUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PreventClassicExperience</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PrismBackofficeUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PrismPlaygroundUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PrivacyDataAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>PrmExtIntPrtnrAdminUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>QueryAllFiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>QueryNonVetoedFiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>QuipMetricsAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>QuipUserEngagementMetrics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ReassignOrchestrationWorkItems</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>RecordVisibilityAPI</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>RemoveDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ResetPasswords</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58490,12 +60642,64 @@
         <name>RunReports</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>SCEViewAllData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesActionPlansUserAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesConsole</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesInsightsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesforceForecastingUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesforceIQInbox</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesforceIQInternal</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SalesforceMeetingsUserPerm</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SandboxTestingInCommunityApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ScheduleJob</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ScheduleReports</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>SegmentIntelligenceUser</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SendAnnouncementEmails</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SendCustomNotifications</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58508,6 +60712,30 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ShowCompanyNameAsUserBadge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SimpleCsvDataImportUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SkipIdentityConfirmation</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SolutionImport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SonicConsumer</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>StageManagementDesignUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>StdAutomaticActivityCapture</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58542,24 +60770,216 @@
         <name>SubscribeToLightningReports</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>TerritoryOperations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TraceXdsQueries</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TransactionSecurityExempt</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>TransactionalEmailSend</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TransferAnyCase</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>TransferAnyEntity</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>TransferAnyLead</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TwoFactorApi</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UpdateReportTypeReferences</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UpdateWithInactiveOwner</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseAssistantDialog</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseInboxSchedulingOnBehalfOf</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseMySearch</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseQuerySuggestions</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseServicePartReturn</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseSubscriptionEmails</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseTeamReassignWizards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseTemplatedApp</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UserCanDeployStore</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>VideoConferenceMeetUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>VideoConferenceTeamsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>VideoConferenceZoomUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAccessPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllActivities</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllCalls</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllCustomSettings</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllFieldsGlobal</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllForecasts</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllForeignKeyNames</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllPolicyCenterPolicies</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllProfiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAllUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewAnomalyEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewClientSecret</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewContent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewContentTaxonomy</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDataAssessment</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDataCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDataLeakageEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDeveloperName</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewEncryptedData</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewEventLogFiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewForecastingPredictive</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewHealthCheck</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewHelpLink</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewMLModels</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ViewMyTeamsDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewOnlyEmbeddedAppUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewOrchestrationsInAutomApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewPlatformEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewPrivateStaticResources</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58570,11 +60990,43 @@
         <name>ViewPublicReports</name>
     </userPermissions>
     <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewRecommendations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewRestrictionAndScopingRules</name>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ViewRoles</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewTrustMeasures</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewUserPII</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>WaveCommunityUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>WaveManagePrivateAssetsUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>WaveTabularDownload</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>YourAccountCDAPublishEvents</name>
     </userPermissions>
 </Profile>
