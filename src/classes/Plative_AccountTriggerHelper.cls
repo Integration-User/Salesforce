@@ -233,16 +233,17 @@ public class Plative_AccountTriggerHelper  {
             update renewalOwnerChanges;
         }
         // Step 1: Get Account details
-        List<Account> accounts = [SELECT Id, OwnerId, Customer_Success_Rep__c FROM Account WHERE Id IN :accIds];
+        List<Account> accounts = [SELECT Id, OwnerId,Owner.name, Customer_Success_Rep__c FROM Account WHERE Id IN :accIds];
         // Step 2: Get Owner IDs
         Set<Id> ownerIds = new Set<Id>();
         for (Account acc : accounts) {
             ownerIds.add(acc.OwnerId);
         }
+        system.debug('ownerIds-->' + ownerIds);
         
         Map<Id, Boolean> ownerHasCSRole = new Map<Id, Boolean>();
-        for (UserAccountTeamMember uatm : [SELECT UserId, TeamMemberRole FROM UserAccountTeamMember WHERE UserId IN :ownerIds AND TeamMemberRole = 'Customer Success']) {
-            ownerHasCSRole.put(uatm.UserId, true);
+        for (UserAccountTeamMember uatm : [SELECT OwnerId, TeamMemberRole FROM UserAccountTeamMember WHERE OwnerId IN :ownerIds AND TeamMemberRole = 'Customer Success']) {
+            ownerHasCSRole.put(uatm.OwnerId, true);
         }
 
         // Account Team 
@@ -255,10 +256,9 @@ public class Plative_AccountTriggerHelper  {
                     if(atm.AccountId == acc.Id) teamMembersToDelete.add(atm);
                 }
                 // Nullify Customer_Success_Rep__c field
-               customerRepToAccount.add(new Account(Id = acc.Id, Customer_Success_Rep__c = null));
+               if(acc.Customer_Success_Rep__c != null) customerRepToAccount.add(new Account(Id = acc.Id, Customer_Success_Rep__c = null));
             } else {
                 for (AccountTeamMember atm: accountTeamMemberList) {
-                    system.debug('atm-->' + atm);
                     if(atm.AccountId == acc.Id && atm.Account.Customer_Success_Rep__c != atm.User.name) {
                         customerRepToAccount.add(new Account(Id = atm.AccountId, Customer_Success_Rep__c = atm.User.name));
                     }
