@@ -232,20 +232,49 @@ public class Plative_AccountTriggerHelper  {
         if(!renewalOwnerChanges.isEmpty()) {
             update renewalOwnerChanges;
         }
+        // Step 1: Get Account details
+        List<Account> accounts = [SELECT Id, OwnerId, Customer_Success_Rep__c FROM Account WHERE Id IN :accIds];
+        // Step 2: Get Owner IDs
+        Set<Id> ownerIds = new Set<Id>();
+        for (Account acc : accounts) {
+            ownerIds.add(acc.OwnerId);
+        }
+        
+        Map<Id, Boolean> ownerHasCSRole = new Map<Id, Boolean>();
+        for (UserAccountTeamMember uatm : [SELECT UserId, TeamMemberRole FROM UserAccountTeamMember WHERE UserId IN :ownerIds AND TeamMemberRole = 'Customer Success']) {
+            ownerHasCSRole.put(uatm.UserId, true);
+        }
+
         // Account Team 
         List<Account> customerRepToAccount = New List<Account>();
-        for (AccountTeamMember atm: [SELECT AccountId, Account.Customer_Success_Rep__c,User.name FROM AccountTeamMember WHERE TeamMemberRole = 'Customer Success' AND AccountId IN :accIds ORDER BY LastModifiedDate DESC]) {
-            system.debug('atm-->' + atm);
-            if(atm.Account.Customer_Success_Rep__c != atm.User.name) {
-                customerRepToAccount.add(new Account(Id = atm.AccountId, Customer_Success_Rep__c = atm.User.name));
+        List<AccountTeamMember> teamMembersToDelete = new List<AccountTeamMember>();
+        List<AccountTeamMember> accountTeamMemberList = [SELECT AccountId, Account.Customer_Success_Rep__c,User.name FROM AccountTeamMember WHERE TeamMemberRole = 'Customer Success' AND AccountId IN :accIds ORDER BY LastModifiedDate DESC];
+        for (Account acc : accounts) {
+            if (!ownerHasCSRole.containsKey(acc.OwnerId)) {
+                for (AccountTeamMember atm : accountTeamMemberList) {
+                    if(atm.AccountId == acc.Id) teamMembersToDelete.add(atm);
+                }
+                // Nullify Customer_Success_Rep__c field
+               customerRepToAccount.add(new Account(Id = acc.Id, Customer_Success_Rep__c = null));
+            } else {
+                for (AccountTeamMember atm: accountTeamMemberList) {
+                    system.debug('atm-->' + atm);
+                    if(atm.AccountId == acc.Id && atm.Account.Customer_Success_Rep__c != atm.User.name) {
+                        customerRepToAccount.add(new Account(Id = atm.AccountId, Customer_Success_Rep__c = atm.User.name));
+                    }
+                }
             }
         }
+
         system.debug('customerRepToAccount-->' + customerRepToAccount);
         
         if(!customerRepToAccount.isEmpty()) {
             Plative_AccountTriggerHandler.isAccountTriggerSkip = true;
             update customerRepToAccount;
         }
+                // Step 5: DML Operations
+        if (!teamMembersToDelete.isEmpty()) {
+            delete teamMembersToDelete;
+        }
     }
-
 }
