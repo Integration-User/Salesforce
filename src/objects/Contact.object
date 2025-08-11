@@ -10317,6 +10317,18 @@ ISBLANK(Event__c)
         <errorMessage>Please provide the event details.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_LeadSource_LeadType</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISNEW(),
+OR(
+ISBLANK(TEXT(LeadSource)),
+ISBLANK(TEXT(Lead_Type__c)))
+)</errorConditionFormula>
+        <errorMessage>Please provide the lead source and lead type.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Webinar</fullName>
         <active>true</active>
         <errorConditionFormula>AND(

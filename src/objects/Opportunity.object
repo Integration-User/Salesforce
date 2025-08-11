@@ -55468,6 +55468,33 @@ ISPICKVAL(Renewal_Risk__c,&quot;Power User / VIP left the Firm&quot;)))</errorCo
         <errorMessage>Please fill in the Risk Type if Renewal Risk is populated.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Sales_Outbound_LeadSource</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISNEW()),
+RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
+ISCHANGED(LeadSource),
+NOT(ISBLANK(PRIORVALUE(LeadSource))),
+TEXT(PRIORVALUE(LeadSource)) &lt;&gt; &quot;Outbound Prospecting&quot;,
+TEXT(LeadSource) &lt;&gt; &quot;Outbound Prospecting&quot;
+)</errorConditionFormula>
+        <errorMessage>You cannot update an inbound lead source.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Outbound_Prospecting</fullName>
+        <active>true</active>
+        <description>Prevent lead source to Outbound Prospecting.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
+ISCHANGED(LeadSource),
+NOT(ISBLANK(PRIORVALUE(LeadSource))),
+TEXT(LeadSource) = &quot;Outbound Prospecting&quot;
+)</errorConditionFormula>
+        <errorMessage>You cannot update an inbound lead source to Outbound Prospecting.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Tracking_Consolidated_Opportunities</fullName>
         <active>true</active>
         <errorConditionFormula>AND(

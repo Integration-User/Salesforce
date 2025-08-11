@@ -15192,6 +15192,30 @@ ISCHANGED(Priority__c)
         <errorMessage>You cannot modify the Priority.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Change_Account_Source</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISNEW()),
+ISCHANGED(AccountSource),
+NOT(ISBLANK(PRIORVALUE(AccountSource))),
+TEXT(PRIORVALUE(AccountSource)) &lt;&gt; &quot;Outbound Prospecting&quot;,
+TEXT(AccountSource) &lt;&gt; &quot;Outbound Prospecting&quot;
+)</errorConditionFormula>
+        <errorMessage>You cannot update an inbound lead source.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Change_Account_Source_Outbound</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(AccountSource),
+NOT(ISBLANK(PRIORVALUE(AccountSource))),
+TEXT(AccountSource) = &quot;Outbound Prospecting&quot;
+)</errorConditionFormula>
+        <errorMessage>You cannot update an inbound lead source to Outbound Prospecting.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Client_Name_Change</fullName>
         <active>true</active>
         <description>Compliance is the only team allowed to change the name of a client in Salesforce</description>
@@ -15252,6 +15276,18 @@ Id=&quot;001f400000dzfxV&quot;,
 Id=&quot;001f400000dzfxU&quot;),
 ISCHANGED(Name))</errorConditionFormula>
         <errorMessage>You cannot change the name of this Account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_AccountSource_LeadType</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISNEW(),
+OR(
+ISBLANK(TEXT(AccountSource)),
+ISBLANK(TEXT(Lead_Type__c)))
+)</errorConditionFormula>
+        <errorMessage>Please provide the account source and lead type.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Billing_Address</fullName>
