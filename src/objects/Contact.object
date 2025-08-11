@@ -10047,6 +10047,18 @@ ISPICKVAL(Timezone__c, &apos;&apos;) || ISBLANK( Manager__c ) )</errorConditionF
         <errorMessage>CompanyId should be a numeric value</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_LeadSource_LeadType</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISNEW(),
+OR(
+ISBLANK(TEXT(LeadSource)),
+ISBLANK(TEXT(Lead_Type__c)))
+)</errorConditionFormula>
+        <errorMessage>Please provide the lead source and lead type.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Restrict_GS_Compliance_DNC</fullName>
         <active>true</active>
         <description>Restrict greenstreet-compliance@greenstreetadvisors.com and emails that contain “donotcall“</description>
