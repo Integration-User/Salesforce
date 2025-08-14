@@ -6,7 +6,7 @@
         <name>Update_Contact_Acc_Name</name>
         <label>Update Contact Acc Name</label>
         <locationX>721</locationX>
-        <locationY>2063</locationY>
+        <locationY>1763</locationY>
         <assignmentItems>
             <assignToReference>Contact.Id</assignToReference>
             <operator>Assign</operator>
@@ -38,7 +38,7 @@
         <locationX>534</locationX>
         <locationY>1031</locationY>
         <defaultConnector>
-            <targetReference>Lost_Client_Decision</targetReference>
+            <targetReference>Protected_By_field_update</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -75,7 +75,7 @@
         <name>Change_in_Current_Product_Decision</name>
         <label>Change in Current Product Decision</label>
         <locationX>831</locationX>
-        <locationY>1739</locationY>
+        <locationY>1439</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Current_Product_Change</name>
@@ -201,42 +201,10 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Lost_Client_Decision</name>
-        <label>Lost Client Decision</label>
-        <locationX>534</locationX>
-        <locationY>1331</locationY>
-        <defaultConnector>
-            <targetReference>Protected_By_field_update</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Became_Lost_Client</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Account_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Inactive</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Account_Status__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Lost_Client_Renewal_Yr</targetReference>
-            </connector>
-            <label>Became Lost Client</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Protected_By_field_update</name>
         <label>Protected By field update</label>
         <locationX>534</locationX>
-        <locationY>1631</locationY>
+        <locationY>1331</locationY>
         <defaultConnector>
             <targetReference>Change_in_Current_Product_Decision</targetReference>
         </defaultConnector>
@@ -261,7 +229,7 @@
         <name>Update_Contact_List_Not_Empty</name>
         <label>Update Contact List Not Empty</label>
         <locationX>633</locationX>
-        <locationY>2255</locationY>
+        <locationY>1955</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -310,7 +278,7 @@ SF-775: PB Migration</description>
         <name>Loop_Through_Contacts</name>
         <label>Loop Through Contacts</label>
         <locationX>633</locationX>
-        <locationY>1955</locationY>
+        <locationY>1655</locationY>
         <collectionReference>Get_All_Contacts</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -343,7 +311,7 @@ SF-775: PB Migration</description>
         <name>Get_All_Contacts</name>
         <label>Get All Contacts</label>
         <locationX>633</locationX>
-        <locationY>1847</locationY>
+        <locationY>1547</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Through_Contacts</targetReference>
@@ -410,7 +378,7 @@ SF-775: PB Migration</description>
         <locationX>402</locationX>
         <locationY>1139</locationY>
         <connector>
-            <targetReference>Lost_Client_Decision</targetReference>
+            <targetReference>Protected_By_field_update</targetReference>
         </connector>
         <inputAssignments>
             <field>Became_Client_Research__c</field>
@@ -453,33 +421,17 @@ SF-775: PB Migration</description>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Lost_Client_Renewal_Yr</name>
-        <label>Update Lost Client Renewal Yr</label>
-        <locationX>402</locationX>
-        <locationY>1439</locationY>
-        <connector>
-            <targetReference>Protected_By_field_update</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>First_Renewal_Year_Research__c</field>
-        </inputAssignments>
-        <inputAssignments>
-            <field>First_Renewal_Year__c</field>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Product_Name_On_Contact</name>
         <label>Update Product Name On Contact</label>
         <locationX>501</locationX>
-        <locationY>2363</locationY>
+        <locationY>2063</locationY>
         <inputReference>ContactList</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Protected_By_Last_Change</name>
         <label>Update Protected By Last Change</label>
         <locationX>237</locationX>
-        <locationY>1739</locationY>
+        <locationY>1439</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -518,7 +470,7 @@ SF-775: PB Migration</description>
         <connector>
             <targetReference>Get_Opportunity</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+		<filterLogic>and</filterLogic>
         <filters>
             <field>Active_Subscription_Count__c</field>
             <operator>IsChanged</operator>
