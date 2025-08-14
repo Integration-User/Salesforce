@@ -465,6 +465,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Active_Subscription_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Active Subscriptions(IJ)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Advisory_Last_Interaction_Date__c</fullName>
         <label>Advisory Last Interaction Date</label>
         <required>false</required>
@@ -1027,6 +1038,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>College_House_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>College House Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
     </fields>
     <fields>
         <fullName>Company_Domain_Name__c</fullName>
@@ -6074,6 +6096,11 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
                     <default>false</default>
                     <label>24 GSA Australia Ltd</label>
                 </value>
+                <value>
+                    <fullName>27 College House</fullName>
+                    <default>false</default>
+                    <label>27 College House</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -10893,6 +10920,10 @@ Stored as Long on Solr.</description>
                 <fullName>22%2E3 Belgium</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>27 College House</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>TA_Vertical__c</picklist>
@@ -14549,6 +14580,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>24 GSA Australia Ltd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27 College House</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
