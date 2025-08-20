@@ -357,7 +357,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ActiveSubscriptionCountBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ActiveSubscriptionCountBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AddOrRemoveBillingContact</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AggregateResultIterable</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3350,6 +3362,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SubscriptionNGHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SubscriptionTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15788,6 +15804,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Active_Favor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Active_Subscription_Count__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
