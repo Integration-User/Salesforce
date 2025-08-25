@@ -47,7 +47,7 @@ global class OpportunityLast120DaysActivityBatch implements Database.Batchable<s
     }
     // Implement Schedulable Interface
     global void execute(SchedulableContext sc) {
-        OpportunityActivityBatch batch = new OpportunityActivityBatch();
+        OpportunityLast120DaysActivityBatch batch = new OpportunityLast120DaysActivityBatch();
         Database.executeBatch(batch, 5);
     }
 }
