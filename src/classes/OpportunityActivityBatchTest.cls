@@ -139,6 +139,7 @@ private class OpportunityActivityBatchTest {
         }
         insert events;
         events[0].Status__c = 'Completed';
+        events[0].Salesloft_Meeting_Type__c = 'test';
         update events;
     }
 
