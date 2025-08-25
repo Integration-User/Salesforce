@@ -127,7 +127,7 @@ private class OpportunityActivityBatchTest {
         List<Task> tasks = new List<Task>();
         for (Opportunity opp : opps) {
             tasks.add(new Task(whoId = ct1.Id, Type = 'Call', Disposition__c ='Connected', WhatId = opp.Id, Subject = 'Call: Connected', CreatedDate = System.today().addDays(-10)));
-            tasks.add(new Task( whoId = ct1.Id, Type = 'Email',SalesLoft1__SalesLoft_Replies_Count__c =1,  WhatId = opp.Id, Subject = 'Reply: email', CreatedDate = System.today().addDays(-5)));
+            tasks.add(new Task( whoId = ct1.Id, Type = 'Email',SalesLoft1__SalesLoft_Replies_Count__c =1, WhatId = opp.Id, Subject = 'Reply: email', CreatedDate = System.today().addDays(-5)));
         }
         insert tasks;
 
