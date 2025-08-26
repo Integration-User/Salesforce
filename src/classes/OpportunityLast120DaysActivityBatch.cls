@@ -35,6 +35,7 @@ global class OpportunityLast120DaysActivityBatch implements Database.Batchable<s
                 if (record instanceof Event) {
                     opp.Count_of_Meeting_Attended_Last_120_Days__c = (opp.Count_of_Meeting_Attended_Last_120_Days__c != null) ? opp.Count_of_Meeting_Attended_Last_120_Days__c + 1 : 1;
                 }
+                oppUpdates.put(oppId, new Opportunity(Id = oppId));
             }
             
         }
