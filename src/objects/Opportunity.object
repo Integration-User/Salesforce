@@ -1513,6 +1513,19 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Competition__c</fullName>
+        <label>Competition</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Competition</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Consolidated_To__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>Consolidated To</label>
@@ -5380,6 +5393,14 @@ TODAY() - DATEVALUE(CreatedDate))</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Other_Competition__c</fullName>
+        <label>Other Competition</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Other_Invoice_Frequency__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Please specify the payment terms if &quot;Other&quot; is selected</inlineHelpText>
@@ -5885,6 +5906,19 @@ NULL))))</formula>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_of_Interest__c</fullName>
+        <label>Product of Interest</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Product_of_Interest</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
     </fields>
     <fields>
         <fullName>Products_Associated__c</fullName>
@@ -9373,6 +9407,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Contract_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -11371,6 +11488,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12567,6 +12823,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Contract_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -14565,6 +14904,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15789,6 +16267,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Contract_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -17703,6 +18264,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18863,6 +19563,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Contract_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -20777,6 +21560,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -22069,6 +22991,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -24115,6 +25120,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -25575,6 +26719,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Contract_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -27573,6 +28800,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -28833,6 +30199,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Contract_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -30751,6 +32200,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -31811,6 +33399,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Contract_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -33733,6 +35404,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Products__c</picklist>
             <values>
                 <fullName>API</fullName>
@@ -34750,6 +36560,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Validating Investment Thesis</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -36549,6 +38442,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Products__c</picklist>
             <values>
                 <fullName>Activist Situations</fullName>
@@ -37549,6 +39581,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -39551,6 +41666,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -40880,6 +43134,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Unreachable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -42942,6 +45279,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -44513,6 +46989,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Contract_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -46507,6 +49066,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Products__c</picklist>
             <values>
                 <fullName>API</fullName>
@@ -47890,6 +50588,89 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competition__c</picklist>
+            <values>
+                <fullName>Bisnow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campus Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoStar News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect CRE Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crexi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estate Gazette %28EG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moody%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Capital Analytics %28RCA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RealPage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storeys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Real Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trepp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yardi Matrix</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49876,6 +52657,145 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research %26 News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_of_Interest__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Add-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Retail Analytics Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Advisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Debt Database</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US News Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Private Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Public Market Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales Comps</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -51815,6 +54735,18 @@ Product_Count__c =0
         <errorMessage>You must add Products to the Opportunity before Closing.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Provide_Other_Competition</fullName>
+        <active>true</active>
+        <description>Require other competition when &quot;Other&quot; competition is selected.</description>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName =&apos;Sales_Development&apos;,
+ISBLANK(Other_Competition__c),
+INCLUDES(Competition__c, &quot;Other&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Other_Competition__c</errorDisplayField>
+        <errorMessage>Please provide the other competition.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Awards</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -51866,6 +54798,19 @@ $RecordType.DeveloperName = &quot;Renewal_Closed&quot;
         <errorMessage>Closed Opportunity Notes is required when Opportunity is Closed Lost.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_Competition</fullName>
+        <active>true</active>
+        <description>Require competition for SDO when moving to In Review.</description>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName =&apos;Sales_Development&apos;,
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &quot;In Review&quot;),
+ISBLANK(Competition__c)
+)</errorConditionFormula>
+        <errorDisplayField>Competition__c</errorDisplayField>
+        <errorMessage>Fill out the Competition before moving to In Review.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Event</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -51901,6 +54846,19 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
 )
 )</errorConditionFormula>
         <errorMessage>Lead Type cannot be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Product_of_Interest</fullName>
+        <active>true</active>
+        <description>Require Product of Interest for SDO when moving to In Review.</description>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName =&apos;Sales_Development&apos;,
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &quot;In Review&quot;),
+ISBLANK(Product_of_Interest__c)
+)</errorConditionFormula>
+        <errorDisplayField>Product_of_Interest__c</errorDisplayField>
+        <errorMessage>Fill out the Product of Interest before moving to In Review.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Rep_Forecast_Category_Change</fullName>
