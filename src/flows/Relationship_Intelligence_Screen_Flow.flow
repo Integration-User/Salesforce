@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <choices>
         <name>No</name>
         <choiceText>No</choiceText>
@@ -20,8 +21,8 @@
     <decisions>
         <name>Form_Decision</name>
         <label>Form Decision</label>
-        <locationX>182</locationX>
-        <locationY>974</locationY>
+        <locationX>314</locationX>
+        <locationY>1214</locationY>
         <defaultConnector>
             <targetReference>Completed_All_Forms_Screen</targetReference>
         </defaultConnector>
@@ -42,7 +43,7 @@
     <decisions>
         <name>GPN_Decision</name>
         <label>GPN Decision</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>458</locationY>
         <defaultConnector>
             <targetReference>Success_Screen_without_GPN</targetReference>
@@ -81,11 +82,6 @@
         <picklistObject>Relationship_Intelligence__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
-    <formulas>
-        <name>formulaCompetition</name>
-        <dataType>Boolean</dataType>
-        <expression>ISBLANK({!Other_Competition})</expression>
-    </formulas>
     <interviewLabel>Relationship Intelligence Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Relationship Intelligence Screen Flow</label>
     <processMetadataValues>
@@ -110,8 +106,8 @@
     <recordCreates>
         <name>Create_Relationship_Intelligence</name>
         <label>Create Relationship Intelligence</label>
-        <locationX>182</locationX>
-        <locationY>866</locationY>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Form_Decision</targetReference>
         </connector>
@@ -156,9 +152,6 @@
         </inputAssignments>
         <inputAssignments>
             <field>Department__c</field>
-            <value>
-                <elementReference>Department</elementReference>
-            </value>
         </inputAssignments>
         <inputAssignments>
             <field>Goals__c</field>
@@ -199,10 +192,102 @@
         <object>Relationship_Intelligence__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordCreates>
+        <name>Create_Relationship_Intelligence_w_o_GPN</name>
+        <label>Create Relationship Intelligence w/o GPN</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Form_Decision</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Screen_w_o_GPN</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Get_Opportunity.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Active__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Budget_Details__c</field>
+            <value>
+                <elementReference>Budget_Details</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Budget__c</field>
+            <value>
+                <elementReference>Budget</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Buying_Process__c</field>
+            <value>
+                <elementReference>Buying_Process_Stage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Competition__c</field>
+            <value>
+                <elementReference>Get_Opportunity.Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Department__c</field>
+            <value>
+                <elementReference>Department</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Goals__c</field>
+            <value>
+                <elementReference>Goals</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Key_Contact__c</field>
+            <value>
+                <elementReference>KeyContact.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Needs__c</field>
+            <value>
+                <elementReference>Needs</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Other_Competition__c</field>
+            <value>
+                <elementReference>Get_Opportunity.Other_Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Problems__c</field>
+            <value>
+                <elementReference>Problems</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Related_Opportunity__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Relationship_Intelligence__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <name>Get_Opportunity</name>
         <label>Get Opportunity</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -241,23 +326,53 @@
                     <name>CompetitionText</name>
                     <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;What other options/competitors are being used or considered?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>Competition</name>
                     <choiceReferences>CompetitionChoice</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Get_Opportunity.Competition__c</elementReference>
+                    </defaultValue>
                     <fieldText>Competition</fieldText>
                     <fieldType>MultiSelectPicklist</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>Other_Competition</name>
+                    <defaultValue>
+                        <stringValue>{!Get_Opportunity.Other_Competition__c}</stringValue>
+                    </defaultValue>
                     <fieldText>Other Competition</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <helpText>&lt;p&gt;If related competitor is unavailable in the “Competition” options, please provide additional insight here.&lt;/p&gt;</helpText>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -279,6 +394,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Additional_RI_Information_Section2</name>
@@ -290,6 +413,14 @@
                     <name>BudgetText</name>
                     <fieldText>&lt;p&gt;What investment/budget has the prospect/client set aside to solve this problem/achieve this goal?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>Budget</name>
@@ -300,6 +431,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -311,6 +450,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Additional_RI_Information_Section3</name>
@@ -322,6 +469,14 @@
                     <name>BudgetDetailsText</name>
                     <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;What additional budget details has your key contact shared, i.e. timing of budget, owner of the budget, allocation of the budget?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>Budget_Details</name>
@@ -330,6 +485,14 @@
                     <helpText>&lt;p&gt;Please include relevant context to budget including: Timing, Owner, and Process&lt;/p&gt;</helpText>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -341,6 +504,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Finish</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -349,7 +520,7 @@
     <screens>
         <name>Buying_Process</name>
         <label>Buying Process</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>242</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -361,6 +532,14 @@
             <name>Buying_Process_Text</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Customer&apos;s Decision Process&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Plan: Establish Goals and Objectives&lt;/li&gt;&lt;li&gt;Recognize: Identify Problems and Obstacles&lt;/li&gt;&lt;li&gt;Search: Determine options, needs&lt;/li&gt;&lt;li&gt;Evaluate: Narrow options to short list&lt;/li&gt;&lt;li&gt;Select: Select best solutions/partner&lt;/li&gt;&lt;li&gt;Commit: Negotiation and reach Contractual Agreement&lt;/li&gt;&lt;li&gt;Implement: Implement solution to meet needs, solve problems and achieve goals&lt;/li&gt;&lt;li&gt;Track: Track results of solution and goal/objectives progress&lt;/li&gt;&lt;/ul&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Buying_Process_Stage</name>
@@ -370,6 +549,14 @@
             <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -378,8 +565,8 @@
     <screens>
         <name>Completed_All_Forms_Screen</name>
         <label>Completed All Forms Screen</label>
-        <locationX>314</locationX>
-        <locationY>1082</locationY>
+        <locationX>446</locationX>
+        <locationY>1322</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -387,6 +574,14 @@
             <name>Success_DisplayTxt</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;A Relationship Intelligence record has been created for this opportunity.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -394,7 +589,7 @@
     <screens>
         <name>Contact_and_Department</name>
         <label>Contact and Department</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -412,6 +607,14 @@
                     <name>KeyContactText</name>
                     <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Who is your primary contact for this opportunity?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>KeyContact</name>
@@ -438,6 +641,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -449,6 +660,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Contact_and_Department_Section2</name>
@@ -460,6 +679,14 @@
                     <name>DepartmentText</name>
                     <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;What department/function is your primary contact in?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>Department</name>
@@ -469,6 +696,14 @@
                     <helpText>&lt;p&gt;Represents the department(s) that you are extracting relationship insights from.&lt;/p&gt;</helpText>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -480,11 +715,27 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Define_GPN</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Have you identified the customer&apos;s goals, problems, and needs?&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>GPN_Choice</name>
@@ -495,6 +746,14 @@
             <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -503,8 +762,8 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>578</locationX>
-        <locationY>974</locationY>
+        <locationX>314</locationX>
+        <locationY>890</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -512,6 +771,38 @@
             <name>ErrorText</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; color: rgb(255, 0, 0);&quot;&gt;An error has occurred. Please contact your system administrator.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Screen_w_o_GPN</name>
+        <label>Error Screen w/o GPN</label>
+        <locationX>842</locationX>
+        <locationY>782</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_2_of_ErrorText</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; color: rgb(255, 0, 0);&quot;&gt;An error has occurred. Please contact your system administrator.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -537,6 +828,14 @@
                     <name>Goals_Display_Text</name>
                     <fieldText>&lt;p&gt;What objectives is the client/prospect trying to achieve? What strategies are in place to achieve objectives and goals?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>Goals</name>
@@ -547,6 +846,14 @@
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -558,6 +865,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Relationship_Intelligence_Section2</name>
@@ -569,6 +884,14 @@
                     <name>Problems_Display_Text</name>
                     <fieldText>&lt;p&gt;What is standing in the way of achieving goals and objectives? Are there obstacles or challenges?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>Problems</name>
@@ -579,6 +902,14 @@
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -590,6 +921,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Relationship_Intelligence_Section3</name>
@@ -601,6 +940,14 @@
                     <name>Needs_Help_Text</name>
                     <fieldText>&lt;p&gt;What does the client/prospect need so they can overcome the challenges/problems/obstacles and achieve the goals and objectives?&lt;/p&gt;&lt;p&gt;Hint: This doesn’t have to be a named Green Street product.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>Needs</name>
@@ -611,6 +958,14 @@
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -622,6 +977,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -630,25 +993,33 @@
     <screens>
         <name>Success_Screen_without_GPN</name>
         <label>Success Screen without GPN</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Relationship_Intelligence</targetReference>
+            <targetReference>Create_Relationship_Intelligence_w_o_GPN</targetReference>
         </connector>
         <fields>
             <name>WithoutGPN</name>
             <fieldText>&lt;p&gt;A Relationship Intelligence record has been created for this opportunity. Please work to identify goal, problems, needs, and other surrounding intelligence prior to submitting the opportunity for review.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Finish</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Opportunity</targetReference>
@@ -661,5 +1032,25 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>var_SDO_Competition</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>Get_Opportunity.Competition__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>var_SDO_OtherCompetition</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>Get_Opportunity.Other_Competition__c</elementReference>
+        </value>
     </variables>
 </Flow>
