@@ -3347,7 +3347,6 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <trackHistory>true</trackHistory>
         <type>Picklist</type>
         <valueSet>
-            <controllingField>Lead_Channel__c</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -3496,131 +3495,42 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                     <default>false</default>
                     <label>ZoomInfo</label>
                 </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Call</fullName>
+                    <default>false</default>
+                    <label>Call</label>
+                </value>
+                <value>
+                    <fullName>SalesNav</fullName>
+                    <default>false</default>
+                    <label>SalesNav</label>
+                </value>
+                <value>
+                    <fullName>Fintrex</fullName>
+                    <default>false</default>
+                    <label>Fintrex</label>
+                </value>
+                <value>
+                    <fullName>Green Street News</fullName>
+                    <default>false</default>
+                    <label>Green Street News</label>
+                </value>
+                <value>
+                    <fullName>Content Download</fullName>
+                    <default>false</default>
+                    <label>Content Download</label>
+                </value>
+                <value>
+                    <fullName>Internal Referral</fullName>
+                    <default>false</default>
+                    <label>Internal Referral</label>
+                </value>
             </valueSetDefinition>
-            <valueSettings>
-                <controllingFieldValue>Paid Search</controllingFieldValue>
-                <controllingFieldValue>Paid Ads</controllingFieldValue>
-                <valueName>Google</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Linkedin Sales Nav</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>PERE</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Personal Network</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <valueName>Self-Reported</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former User</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>ZoomInfo</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Paid Social</controllingFieldValue>
-                <valueName>Bing</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Paid Social</controllingFieldValue>
-                <controllingFieldValue>Paid Ads</controllingFieldValue>
-                <valueName>LinkedIn</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former Account</controllingFieldValue>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Green Street</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former Account</controllingFieldValue>
-                <valueName>LDC</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Former Account</controllingFieldValue>
-                <valueName>React</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Other</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Preqin</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Cold Outreach</controllingFieldValue>
-                <valueName>Salesforce</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Referral</controllingFieldValue>
-                <valueName>Referral</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Target List</controllingFieldValue>
-                <valueName>Target List</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>In Person Event</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>Non-Green Street Sponsored Event</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>Sponsored Event</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Events</controllingFieldValue>
-                <valueName>Webinar</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Contact Us</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Demo Request</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Direct Call</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Inbound Email</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <controllingFieldValue>Ecommerce</controllingFieldValue>
-                <valueName>Subscription Request</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Trial Request</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Inquiry</controllingFieldValue>
-                <valueName>Upsell</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Derived Intent</controllingFieldValue>
-                <valueName>Content Request</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Derived Intent</controllingFieldValue>
-                <valueName>Scored Lead</valueName>
-            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -9795,7 +9705,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9811,11 +9729,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9860,6 +9790,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12985,7 +12919,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13001,11 +12943,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13050,6 +13004,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16203,7 +16161,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16219,11 +16185,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16268,6 +16246,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19273,7 +19255,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19289,11 +19279,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19338,6 +19340,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22491,7 +22497,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22507,11 +22521,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22560,6 +22586,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25997,7 +26027,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26013,6 +26051,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -26021,11 +26067,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26062,6 +26116,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29211,7 +29269,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29227,11 +29293,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29276,6 +29354,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -32153,7 +32235,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -32169,11 +32259,23 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Green Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -32218,6 +32320,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37907,7 +38013,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37923,6 +38037,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -37931,11 +38053,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37972,6 +38102,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -41222,7 +41356,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -41238,6 +41380,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -41246,11 +41396,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -41291,6 +41449,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44803,7 +44965,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44819,6 +44989,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -44827,11 +45005,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44872,6 +45058,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48176,7 +48366,15 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Contact Us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Download</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48192,6 +48390,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fintrex</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Google</fullName>
                 <default>false</default>
             </values>
@@ -48200,11 +48406,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Green Street News</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>In Person Event</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Referral</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48241,6 +48455,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SalesNav</fullName>
                 <default>false</default>
             </values>
             <values>
