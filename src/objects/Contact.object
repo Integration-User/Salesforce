@@ -1572,6 +1572,13 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Disqualified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Disqualified</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>DoNotCall</fullName>
         <inlineHelpText>This contact has requested to NOT be contacted in any way and/or is on compliance’s Do Not Call list.</inlineHelpText>
         <trackHistory>true</trackHistory>
@@ -2309,7 +2316,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     <fields>
         <fullName>Lead_Message__c</fullName>
         <label>Lead Message</label>
-        <length>32768</length>
+        <length>5000</length>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
@@ -4957,7 +4964,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
     </fields>
     <fields>
         <fullName>SQL_Qualified_Timestamp__c</fullName>
-        <label>SQL / Qualified Timestamp</label>
+        <label>Disqualified Timestamp</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>DateTime</type>
@@ -8095,6 +8102,14 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Web_Form_Comments_Questions__c</fullName>
+        <label>Web Form Comments &amp; Questions</label>
+        <length>27912</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Webinar__c</fullName>
         <externalId>false</externalId>
         <label>Webinar</label>
@@ -10223,6 +10238,20 @@ ISPICKVAL(Timezone__c, &apos;&apos;) || ISBLANK( Manager__c ) )</errorConditionF
 )</errorConditionFormula>
         <errorDisplayField>LID__LinkedIn_Company_Id__c</errorDisplayField>
         <errorMessage>CompanyId should be a numeric value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Reference</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$UserRole.Name &lt;&gt; &quot;CAM&quot;,
+$UserRole.Name &lt;&gt; &quot;CAM Manager&quot;,
+$UserRole.Name &lt;&gt; &quot;Customer Success&quot;,
+$UserRole.Name &lt;&gt; &quot;Customer Success Manager&quot;,
+ISCHANGED(Reference__c)
+)</errorConditionFormula>
+        <errorDisplayField>Reference__c</errorDisplayField>
+        <errorMessage>You cannot modify the reference checkbox.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Awards</fullName>
