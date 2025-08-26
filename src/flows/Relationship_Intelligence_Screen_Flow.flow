@@ -21,8 +21,8 @@
     <decisions>
         <name>Form_Decision</name>
         <label>Form Decision</label>
-        <locationX>182</locationX>
-        <locationY>974</locationY>
+        <locationX>314</locationX>
+        <locationY>1214</locationY>
         <defaultConnector>
             <targetReference>Completed_All_Forms_Screen</targetReference>
         </defaultConnector>
@@ -43,7 +43,7 @@
     <decisions>
         <name>GPN_Decision</name>
         <label>GPN Decision</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>458</locationY>
         <defaultConnector>
             <targetReference>Success_Screen_without_GPN</targetReference>
@@ -82,11 +82,6 @@
         <picklistObject>Relationship_Intelligence__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
-    <formulas>
-        <name>formulaCompetition</name>
-        <dataType>Boolean</dataType>
-        <expression>ISBLANK({!Other_Competition})</expression>
-    </formulas>
     <interviewLabel>Relationship Intelligence Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Relationship Intelligence Screen Flow</label>
     <processMetadataValues>
@@ -111,8 +106,8 @@
     <recordCreates>
         <name>Create_Relationship_Intelligence</name>
         <label>Create Relationship Intelligence</label>
-        <locationX>182</locationX>
-        <locationY>866</locationY>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Form_Decision</targetReference>
         </connector>
@@ -157,9 +152,6 @@
         </inputAssignments>
         <inputAssignments>
             <field>Department__c</field>
-            <value>
-                <elementReference>Department</elementReference>
-            </value>
         </inputAssignments>
         <inputAssignments>
             <field>Goals__c</field>
@@ -200,10 +192,102 @@
         <object>Relationship_Intelligence__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordCreates>
+        <name>Create_Relationship_Intelligence_w_o_GPN</name>
+        <label>Create Relationship Intelligence w/o GPN</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Form_Decision</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Screen_w_o_GPN</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Get_Opportunity.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Active__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Budget_Details__c</field>
+            <value>
+                <elementReference>Budget_Details</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Budget__c</field>
+            <value>
+                <elementReference>Budget</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Buying_Process__c</field>
+            <value>
+                <elementReference>Buying_Process_Stage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Competition__c</field>
+            <value>
+                <elementReference>Get_Opportunity.Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Department__c</field>
+            <value>
+                <elementReference>Department</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Goals__c</field>
+            <value>
+                <elementReference>Goals</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Key_Contact__c</field>
+            <value>
+                <elementReference>KeyContact.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Needs__c</field>
+            <value>
+                <elementReference>Needs</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Other_Competition__c</field>
+            <value>
+                <elementReference>Get_Opportunity.Other_Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Problems__c</field>
+            <value>
+                <elementReference>Problems</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Related_Opportunity__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Relationship_Intelligence__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <name>Get_Opportunity</name>
         <label>Get Opportunity</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -436,7 +520,7 @@
     <screens>
         <name>Buying_Process</name>
         <label>Buying Process</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>242</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -481,8 +565,8 @@
     <screens>
         <name>Completed_All_Forms_Screen</name>
         <label>Completed All Forms Screen</label>
-        <locationX>314</locationX>
-        <locationY>1082</locationY>
+        <locationX>446</locationX>
+        <locationY>1322</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -505,7 +589,7 @@
     <screens>
         <name>Contact_and_Department</name>
         <label>Contact and Department</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -678,13 +762,37 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>578</locationX>
-        <locationY>974</locationY>
+        <locationX>314</locationX>
+        <locationY>890</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>ErrorText</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; color: rgb(255, 0, 0);&quot;&gt;An error has occurred. Please contact your system administrator.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Screen_w_o_GPN</name>
+        <label>Error Screen w/o GPN</label>
+        <locationX>842</locationX>
+        <locationY>782</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_2_of_ErrorText</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; color: rgb(255, 0, 0);&quot;&gt;An error has occurred. Please contact your system administrator.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
@@ -885,13 +993,13 @@
     <screens>
         <name>Success_Screen_without_GPN</name>
         <label>Success Screen without GPN</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Relationship_Intelligence</targetReference>
+            <targetReference>Create_Relationship_Intelligence_w_o_GPN</targetReference>
         </connector>
         <fields>
             <name>WithoutGPN</name>
@@ -911,7 +1019,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Opportunity</targetReference>
@@ -924,5 +1032,25 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>var_SDO_Competition</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>Get_Opportunity.Competition__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>var_SDO_OtherCompetition</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>Get_Opportunity.Other_Competition__c</elementReference>
+        </value>
     </variables>
 </Flow>
