@@ -8,6 +8,9 @@
         <label>Help Desk Case Decision</label>
         <locationX>314</locationX>
         <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Request_to_Unlock_Case</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Help_Desk_Case</name>
@@ -52,6 +55,42 @@
                 <targetReference>Update_OTC_Support_Tier</targetReference>
             </connector>
             <label>OTC Case Support Tier</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Request_to_Unlock_Case</name>
+        <label>Request to Unlock Case</label>
+        <locationX>314</locationX>
+        <locationY>623</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Unlock_Request_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Request to Unlock Product</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case_Owner</targetReference>
+            </connector>
+            <label>Unlock Request Case</label>
         </rules>
     </decisions>
     <description>SF-638
@@ -127,10 +166,26 @@ SF-1519: Added new criteria for OTC Support</description>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <name>Update_Case_Owner</name>
+        <label>Update Case Owner</label>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Account.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Help_Desk_Support_Tier</name>
         <label>Update Help Desk Support Tier</label>
         <locationX>50</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>Request_to_Unlock_Case</targetReference>
+        </connector>
         <inputAssignments>
             <field>Support_Tier__c</field>
             <value>
@@ -144,6 +199,9 @@ SF-1519: Added new criteria for OTC Support</description>
         <label>Update OTC Support Tier</label>
         <locationX>314</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>Request_to_Unlock_Case</targetReference>
+        </connector>
         <inputAssignments>
             <field>Support_Tier__c</field>
             <value>
