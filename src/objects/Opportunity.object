@@ -3557,6 +3557,11 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                     <default>false</default>
                     <label>Internal Referral</label>
                 </value>
+                <value>
+                    <fullName>Bulk List</fullName>
+                    <default>false</default>
+                    <label>Bulk List</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -9790,6 +9795,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -9863,6 +9872,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Bulk List</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Call</fullName>
                 <default>false</default>
@@ -11176,11 +11189,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11200,11 +11221,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13230,6 +13259,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -13303,6 +13336,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Bulk List</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Call</fullName>
                 <default>false</default>
@@ -14616,11 +14653,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14640,11 +14685,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16698,6 +16751,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -16771,6 +16828,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Bulk List</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Call</fullName>
                 <default>false</default>
@@ -18000,11 +18061,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18024,11 +18093,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20018,6 +20095,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -20091,6 +20172,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Bulk List</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Call</fullName>
                 <default>false</default>
@@ -21320,11 +21405,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21344,11 +21437,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23474,6 +23575,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -23557,6 +23662,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Lead_Type__c</picklist>
             <values>
                 <fullName>Bing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulk List</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24884,11 +24993,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24908,11 +25025,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27230,6 +27355,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -27321,6 +27450,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Lead_Type__c</picklist>
             <values>
                 <fullName>Bing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulk List</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -28641,6 +28774,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Upload</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -30746,6 +30883,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -30819,6 +30960,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Bulk List</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Call</fullName>
                 <default>false</default>
@@ -32056,11 +32201,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -32080,11 +32233,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -33962,6 +34123,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -34035,6 +34200,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Lead_Type__c</picklist>
+            <values>
+                <fullName>Bulk List</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Call</fullName>
                 <default>false</default>
@@ -35272,11 +35441,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -35296,11 +35473,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -38334,11 +38519,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Backlink Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Derived Intent</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Direct Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -38358,11 +38551,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Organic Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Campaigns</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -40180,6 +40381,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -40271,6 +40476,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Lead_Type__c</picklist>
             <values>
                 <fullName>Bing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulk List</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -41591,6 +41800,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Upload</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -43785,6 +43998,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -43876,6 +44093,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Lead_Type__c</picklist>
             <values>
                 <fullName>Bing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulk List</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -45236,6 +45457,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Upload</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -47664,6 +47889,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -47755,6 +47984,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Lead_Type__c</picklist>
             <values>
                 <fullName>Bing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulk List</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -49083,6 +49316,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Upload</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -51315,6 +51552,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Offline Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Organic Search</fullName>
                 <default>false</default>
             </values>
@@ -51406,6 +51647,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Lead_Type__c</picklist>
             <values>
                 <fullName>Bing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulk List</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -52726,6 +52971,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Upload</fullName>
                 <default>false</default>
             </values>
             <values>
