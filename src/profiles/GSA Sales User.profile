@@ -18865,6 +18865,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Bug_Category__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.BusinessHoursId</field>
         <readable>true</readable>
@@ -19007,6 +19012,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.IsEscalated</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Link_to_JIRA__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20057,7 +20067,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Delinian_Id__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -20282,7 +20292,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.IJ_Global_Events_UID__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
