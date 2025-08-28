@@ -517,6 +517,35 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Bug_Category__c</fullName>
+        <label>Bug Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User Error</fullName>
+                    <default>false</default>
+                    <label>User Error</label>
+                </value>
+                <value>
+                    <fullName>Guidance needed</fullName>
+                    <default>false</default>
+                    <label>Guidance needed</label>
+                </value>
+                <value>
+                    <fullName>System Error</fullName>
+                    <default>false</default>
+                    <label>System Error</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>BusinessHoursId</fullName>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -952,6 +981,15 @@
         <fullName>IsEscalated</fullName>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Link_to_JIRA__c</fullName>
+        <label>Link to JIRA</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
     </fields>
     <fields>
         <fullName>Links_Screenshots_Attachments__c</fullName>
