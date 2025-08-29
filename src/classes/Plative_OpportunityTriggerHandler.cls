@@ -56,6 +56,8 @@ public without sharing class Plative_OpportunityTriggerHandler {
         Boolean perDesignatedARR = false;
         List<Opportunity> setOppoChangedPer = new List<Opportunity>();
         List<Opportunity> designatedOppARR = new List<Opportunity>();
+        Set<Id> closedWonUpsellAccountIds = new Set<Id>();
+        Set<Id> closedWonUpsellOppIds = new Set<Id>();
         List<Id> closedOppIds = new List<Id>();
 
         if (!Plative_OpportunityTriggerHandler.afterUpdateRun) {
@@ -83,6 +85,12 @@ public without sharing class Plative_OpportunityTriggerHandler {
                     perDesignatedARR = true;
                     designatedOppARR.add(triggeredOpp);
                 }
+                // SF-1707 - AM Assignment- upsells
+                if (triggeredOpp.Sales_Type__c == 'Upsell' && triggeredOpp.StageName == 'Closed Won' && oldOppo.StageName != 'Closed Won' 
+                    && (recordTypeName == 'Sales Opportunity - Closed' || recordTypeName == 'Sales Opportunity')) {
+                        closedWonUpsellAccountIds.add(triggeredOpp.AccountId);
+                        closedWonUpsellOppIds.add(triggeredOpp.Id);
+                }
             }
             // SF-1389
             if(!closedOppIds.isEmpty() && closedOppIds.size() > 0 && !System.isFuture() && !System.isBatch()) {
@@ -103,6 +111,8 @@ public without sharing class Plative_OpportunityTriggerHandler {
             if(perDesignatedARR) {
                 Plative_OpportunityRenewalHelper.updateOpportunityAllocatedAmount(designatedOppARR);
             }
+            // SF-1707 - AM Assignment- upsells
+            if(closedWonUpsellAccountIds.size() > 0 && !System.isBatch() && !System.isFuture()) updateUpsellNewRenewalOppOwners(closedWonUpsellAccountIds, closedWonUpsellOppIds);
             
             //SF-964 - Create Multiple Client Access Cases
             Plative_OpportunityRenewalHelper.CreateDeActivationCases(lstOppty, triggerOldMap);
@@ -266,5 +276,38 @@ public without sharing class Plative_OpportunityTriggerHandler {
                }
         }
 		// END - SF-1064
+    }
+    // SF-1707 AM Assignment- upsells
+    @future
+    public static void updateUpsellNewRenewalOppOwners(Set<Id> accountIds, Set<Id> oppIds) {
+        List<Opportunity> renewalOwnerChanges = new List<Opportunity>();
+        Set<Id> excludedIds = new Set<Id>();
+        List<String> excludedStage = new List<String> {'Quota, Prior Year', 'Closed Won', 'Closed Lost', 'Active', 'Deactivated', 'Consolidated', 'Suspended'};
+        for (Opportunity salesOpp:  [Select Id, Account.OwnerId, (Select Id FROM OpportunityLineItems Where Product2.Family = 'Research'),
+                                     (Select Id, ownerId from Renewals__r) opps FROM Opportunity WHERE Id IN :oppIds]) {
+            list<OpportunityLineItem> oliList = salesOpp.OpportunityLineItems;
+            if (oliList != null && oliList.size() > 0) {
+                for (Opportunity renewalOpp : salesOpp.Renewals__r) {
+                    if (renewalOpp.ownerId != salesOpp.Account.OwnerId) {
+                        renewalOpp.OwnerId = salesOpp.Account.OwnerId;
+                        renewalOwnerChanges.add(renewalOpp); 
+                        excludedIds.add(renewalOpp.Id);
+                    }
+                }
+            }
+        }
+        for(Opportunity opp: [Select Id, Name, AccountId, Account.OwnerId, ownerId, (Select Id FROM OpportunityLineItems Where Product2.Family = 'Research') FROM Opportunity 
+                              WHERE RecordType.DeveloperName = 'Existing_Business' AND ID NOT IN :excludedIds
+                              AND AccountId IN :accountIds AND StageName NOT IN :excludedStage]) {
+            list<OpportunityLineItem> oliList = opp.OpportunityLineItems;  
+            if (oliList != null && oliList.size() > 0 && opp.ownerId != opp.Account.OwnerId) {
+                opp.OwnerId = opp.Account.OwnerId;
+                renewalOwnerChanges.add(opp); 
+            }
+        }
+        system.debug('renewalOwnerChanges-->' + renewalOwnerChanges.size());
+        if(!renewalOwnerChanges.isEmpty()) {
+            update renewalOwnerChanges;
+        }
     }
 }
