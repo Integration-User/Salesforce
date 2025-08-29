@@ -89,14 +89,14 @@ public without sharing class TaskTriggerHandler {
         // Collect Opportunity IDs from Task WhatId
         for (Task t : newList) {
             if (t.WhatId != null && t.WhatId.getSObjectType().getDescribe().getName() == 'Opportunity' && t.Subject != null
-                && (t.Subject.contains('Call: Connected') || t.Subject.startsWith('Reply'))) {
+                && (t.Subject.contains('Call: Connected') || t.Subject.startsWith('Reply') || t.Type == 'Call' || t.Type == 'Email')) {
                 oppIds.add(t.WhatId);
             }
         }
          System.debug('oppIds->' + oppIds);
         if (!oppIds.isEmpty()) {
             // Query all Opportunities at once
-            Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>([SELECT Id, Count_of_Calls_Last_30__c, Count_of_Emails_Last_30__c FROM Opportunity WHERE Id IN :oppIds]);           
+            Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>([SELECT Id, Count_of_Calls_Last_30__c, Count_of_Emails_Last_30__c, Count_of_Connected_Calls_Last_120_Days__c, Count_of_Email_Replies_Last_120_Days__c FROM Opportunity WHERE Id IN :oppIds]);           
             // Update Opportunity counts
             for (Task t : newList) {
                 if (oppMap.containsKey(t.WhatId)) {
@@ -105,6 +105,13 @@ public without sharing class TaskTriggerHandler {
                         opp.Count_of_Calls_Last_30__c = (opp.Count_of_Calls_Last_30__c != null) ? opp.Count_of_Calls_Last_30__c + 1 : 1;
                     } else if (t.Subject.startsWith('Reply')) {
                         opp.Count_of_Emails_Last_30__c = (opp.Count_of_Emails_Last_30__c != null) ? opp.Count_of_Emails_Last_30__c + 1 : 1;
+                    } 
+                    // SF-1641
+                    if(t.Type == 'Call' && t.SalesLoft1__Call_Disposition__c =='Connected') {
+                        opp.Count_of_Connected_Calls_Last_120_Days__c = (opp.Count_of_Connected_Calls_Last_120_Days__c != null) ? opp.Count_of_Connected_Calls_Last_120_Days__c + 1 : 1;
+                    }
+                    if(t.Type == 'Email' && t.SalesLoft1__SalesLoft_Replies_Count__c > 0) {
+                        opp.Count_of_Email_Replies_Last_120_Days__c = (opp.Count_of_Email_Replies_Last_120_Days__c != null) ? opp.Count_of_Connected_Calls_Last_120_Days__c + 1 : 1;
                     }
                 }
             }

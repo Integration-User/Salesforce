@@ -206,7 +206,11 @@
         <fullName>Salesforce Request Process</fullName>
         <isActive>true</isActive>
         <values>
-            <fullName>Backlog</fullName>
+            <fullName>Blocked - Pending Feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blocked - System Issue</fullName>
             <default>false</default>
         </values>
         <values>
@@ -218,11 +222,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Due Diligence</fullName>
+            <fullName>Escalated</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Merged</fullName>
+            <fullName>In Progress</fullName>
             <default>false</default>
         </values>
         <values>
@@ -231,10 +235,6 @@
         </values>
         <values>
             <fullName>Testing</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Working</fullName>
             <default>false</default>
         </values>
     </businessProcesses>
@@ -515,6 +515,35 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Bug_Category__c</fullName>
+        <label>Bug Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User Error</fullName>
+                    <default>false</default>
+                    <label>User Error</label>
+                </value>
+                <value>
+                    <fullName>Guidance needed</fullName>
+                    <default>false</default>
+                    <label>Guidance needed</label>
+                </value>
+                <value>
+                    <fullName>System Error</fullName>
+                    <default>false</default>
+                    <label>System Error</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>BusinessHoursId</fullName>
@@ -952,6 +981,15 @@
         <fullName>IsEscalated</fullName>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Link_to_JIRA__c</fullName>
+        <label>Link to JIRA</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
     </fields>
     <fields>
         <fullName>Links_Screenshots_Attachments__c</fullName>
@@ -2201,6 +2239,7 @@
         <fullName>Request_Category__c</fullName>
         <label>Request Category</label>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -2209,64 +2248,9 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Process Improvement</fullName>
-                    <default>true</default>
-                    <label>Process Improvement</label>
-                </value>
-                <value>
-                    <fullName>General Customization</fullName>
-                    <default>false</default>
-                    <label>General Customization</label>
-                </value>
-                <value>
-                    <fullName>Reports &amp; Dashboards</fullName>
-                    <default>false</default>
-                    <label>Reports &amp; Dashboards</label>
-                </value>
-                <value>
                     <fullName>Bug / Broken Feature</fullName>
                     <default>false</default>
                     <label>Bug / Broken Feature</label>
-                </value>
-                <value>
-                    <fullName>Deal Scoring Feedback</fullName>
-                    <default>false</default>
-                    <label>Deal Scoring Feedback</label>
-                </value>
-                <value>
-                    <fullName>Data Cleanup</fullName>
-                    <default>false</default>
-                    <label>Data Cleanup</label>
-                </value>
-                <value>
-                    <fullName>Data Upload</fullName>
-                    <default>false</default>
-                    <label>Data Upload</label>
-                </value>
-                <value>
-                    <fullName>Training</fullName>
-                    <default>false</default>
-                    <label>Training</label>
-                </value>
-                <value>
-                    <fullName>New Employee - SFDC Seat Request</fullName>
-                    <default>false</default>
-                    <label>New Employee - SFDC Seat Request</label>
-                </value>
-                <value>
-                    <fullName>User Deactivation</fullName>
-                    <default>false</default>
-                    <label>User Deactivation</label>
-                </value>
-                <value>
-                    <fullName>Roadmap</fullName>
-                    <default>false</default>
-                    <label>Roadmap</label>
-                </value>
-                <value>
-                    <fullName>Other</fullName>
-                    <default>false</default>
-                    <label>Other</label>
                 </value>
                 <value>
                     <fullName>Bug/Issue</fullName>
@@ -2279,20 +2263,75 @@
                     <label>Chart/Training</label>
                 </value>
                 <value>
+                    <fullName>Data Cleanup</fullName>
+                    <default>false</default>
+                    <label>Data Cleanup</label>
+                </value>
+                <value>
+                    <fullName>Data Upload</fullName>
+                    <default>false</default>
+                    <label>Data Upload</label>
+                </value>
+                <value>
+                    <fullName>Deal Scoring Feedback</fullName>
+                    <default>false</default>
+                    <label>Deal Scoring Feedback</label>
+                </value>
+                <value>
+                    <fullName>General Customization</fullName>
+                    <default>false</default>
+                    <label>General Customization</label>
+                </value>
+                <value>
+                    <fullName>New Employee - SFDC Seat Request</fullName>
+                    <default>false</default>
+                    <label>New Employee - SFDC Seat Request</label>
+                </value>
+                <value>
                     <fullName>Platform Feedback/Wishlist</fullName>
                     <default>false</default>
                     <label>Platform Feedback/Wishlist</label>
                 </value>
+                <value>
+                    <fullName>Process Improvement</fullName>
+                    <default>false</default>
+                    <label>Process Improvement</label>
+                </value>
+                <value>
+                    <fullName>Reports &amp; Dashboards</fullName>
+                    <default>false</default>
+                    <label>Reports &amp; Dashboards</label>
+                </value>
+                <value>
+                    <fullName>Roadmap</fullName>
+                    <default>false</default>
+                    <label>Roadmap</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>User Deactivation</fullName>
+                    <default>false</default>
+                    <label>User Deactivation</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Chorus</controllingFieldValue>
+                <controllingFieldValue>HubSpot</controllingFieldValue>
+                <controllingFieldValue>Linkedin Sales Nav</controllingFieldValue>
                 <controllingFieldValue>Salesforce</controllingFieldValue>
-                <valueName>General Customization</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Chorus</controllingFieldValue>
-                <controllingFieldValue>Salesforce</controllingFieldValue>
-                <valueName>Reports &amp; Dashboards</valueName>
+                <controllingFieldValue>SalesLoft</controllingFieldValue>
+                <controllingFieldValue>Amplitude</controllingFieldValue>
+                <controllingFieldValue>ZoomInfo</controllingFieldValue>
+                <valueName>Bug/Issue</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Chorus</controllingFieldValue>
@@ -2302,6 +2341,16 @@
                 <controllingFieldValue>SalesLoft</controllingFieldValue>
                 <controllingFieldValue>ZoomInfo</controllingFieldValue>
                 <valueName>Data Cleanup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Chorus</controllingFieldValue>
+                <controllingFieldValue>Salesforce</controllingFieldValue>
+                <valueName>General Customization</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Chorus</controllingFieldValue>
+                <controllingFieldValue>Salesforce</controllingFieldValue>
+                <valueName>Reports &amp; Dashboards</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Chorus</controllingFieldValue>
@@ -2322,16 +2371,6 @@
                 <valueName>Other</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Chorus</controllingFieldValue>
-                <controllingFieldValue>HubSpot</controllingFieldValue>
-                <controllingFieldValue>Linkedin Sales Nav</controllingFieldValue>
-                <controllingFieldValue>Salesforce</controllingFieldValue>
-                <controllingFieldValue>SalesLoft</controllingFieldValue>
-                <controllingFieldValue>Amplitude</controllingFieldValue>
-                <controllingFieldValue>ZoomInfo</controllingFieldValue>
-                <valueName>Bug/Issue</valueName>
-            </valueSettings>
-            <valueSettings>
                 <controllingFieldValue>HubSpot</controllingFieldValue>
                 <controllingFieldValue>Linkedin Sales Nav</controllingFieldValue>
                 <controllingFieldValue>Salesforce</controllingFieldValue>
@@ -2341,11 +2380,11 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Salesforce</controllingFieldValue>
-                <valueName>Deal Scoring Feedback</valueName>
+                <valueName>Data Upload</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Salesforce</controllingFieldValue>
-                <valueName>Data Upload</valueName>
+                <valueName>Deal Scoring Feedback</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Salesforce</controllingFieldValue>
@@ -2628,6 +2667,7 @@
     </fields>
     <fields>
         <fullName>Status</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -3022,41 +3062,32 @@ FALSE))))))))))))))</formula>
         <fullName>Urgency__c</fullName>
         <label>Urgency</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Immediate</fullName>
-                    <default>false</default>
-                    <label>Immediate</label>
-                </value>
-                <value>
-                    <fullName>1-2 Weeks</fullName>
-                    <default>false</default>
-                    <label>1-2 Weeks</label>
-                </value>
-                <value>
-                    <fullName>2-4 Weeks</fullName>
-                    <default>false</default>
-                    <label>2-4 Weeks</label>
-                </value>
-                <value>
-                    <fullName>1-3 Months</fullName>
-                    <default>false</default>
-                    <label>1-3 Months</label>
-                </value>
-                <value>
-                    <fullName>3-6 Months</fullName>
-                    <default>false</default>
-                    <label>3-6 Months</label>
-                </value>
-                <value>
                     <fullName>Dream State</fullName>
                     <default>false</default>
                     <label>Dream State</label>
+                </value>
+                <value>
+                    <fullName>Urgent</fullName>
+                    <default>false</default>
+                    <label>Urgent</label>
+                </value>
+                <value>
+                    <fullName>24 hours is ok</fullName>
+                    <default>false</default>
+                    <label>24 hours is ok</label>
+                </value>
+                <value>
+                    <fullName>This can wait</fullName>
+                    <default>false</default>
+                    <label>This can wait</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -15913,6 +15944,21 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Bug_Category__c</picklist>
+            <values>
+                <fullName>Guidance needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Business_Impact__c</picklist>
             <values>
                 <fullName>High</fullName>
@@ -17192,27 +17238,15 @@ FALSE))))))))))))))</formula>
         <picklistValues>
             <picklist>Urgency__c</picklist>
             <values>
-                <fullName>1-2 Weeks</fullName>
+                <fullName>24 hours is ok</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>1-3 Months</fullName>
+                <fullName>This can wait</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>2-4 Weeks</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3-6 Months</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Dream State</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Immediate</fullName>
+                <fullName>Urgent</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18692,6 +18726,17 @@ ISBLANK ( Duplicate_Account__c )
         <errorMessage>Inaccurate data combination. (Ex: if Type = Account, you may only enter data into the Account fields below)</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>CTR_Require_Bug_Category</fullName>
+        <active>true</active>
+        <description>Require Bug Category when Closing a CTR and Request Category is Bug/Issue.</description>
+        <errorConditionFormula>AND(
+ISPICKVAL(Status, &apos;Closed&apos;),
+TEXT(Request_Category__c) =&apos;Bug/Issue&apos;,
+TEXT(Bug_Category__c) =&apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Bug_Category__c</errorDisplayField>
+        <errorMessage>Please provide the Bug Category.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Check_Case_Account_Manager_Field_Update</fullName>
         <active>true</active>
         <description>Create a lookup field to the user object called “Account Manager” on the case record. Restrict the values in the field to only users with role containing “CAM”</description>
@@ -18865,8 +18910,10 @@ RecordType.DeveloperName = &quot;Opportunity_Review&quot;)
 $RecordType.DeveloperName = &quot;Salesforce_Request&quot;,
 ISPICKVAL( Application__c, &quot;Salesforce&quot;),
 LEN(Outline_Requirements_Business_Value__c) = 0,
-NOT(ISPICKVAL( Request_Category__c , &quot;Training&quot;)),
-NOT(ISPICKVAL( Request_Category__c , &quot;Deal Scoring Feedback&quot;))
+OR(
+ISPICKVAL( Request_Category__c , &quot;Process Improvement&quot;),
+ISPICKVAL( Request_Category__c , &quot;Reports &amp; Dashboards&quot;)
+)
 )</errorConditionFormula>
         <errorMessage>Please provide fill out the Outline Requirements &amp; Business Value</errorMessage>
     </validationRules>
