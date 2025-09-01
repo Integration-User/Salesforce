@@ -31,9 +31,11 @@ global class OpportunityLast120DaysActivityBatch implements Database.Batchable<s
                     } else if (((Task) record).Type == 'Email') {
                         opp.Count_of_Email_Replies_Last_120_Days__c = (opp.Count_of_Email_Replies_Last_120_Days__c != null) ? opp.Count_of_Email_Replies_Last_120_Days__c + 1 : 1;
                     }
-                } else if (record instanceof Event) {
+                } 
+                if (record instanceof Event) {
                     opp.Count_of_Meeting_Attended_Last_120_Days__c = (opp.Count_of_Meeting_Attended_Last_120_Days__c != null) ? opp.Count_of_Meeting_Attended_Last_120_Days__c + 1 : 1;
                 }
+                oppUpdates.put(oppId, new Opportunity(Id = oppId));
             }
             
         }
@@ -47,7 +49,7 @@ global class OpportunityLast120DaysActivityBatch implements Database.Batchable<s
     }
     // Implement Schedulable Interface
     global void execute(SchedulableContext sc) {
-        OpportunityActivityBatch batch = new OpportunityActivityBatch();
+        OpportunityLast120DaysActivityBatch batch = new OpportunityLast120DaysActivityBatch();
         Database.executeBatch(batch, 5);
     }
 }
