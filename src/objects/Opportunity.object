@@ -369,6 +369,30 @@
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
     <fields>
+        <fullName>ACH_Auto_debit__c</fullName>
+        <label>ACH Auto-debit</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>ADV_PPD_Sent__c</fullName>
         <label>PPD Sent</label>
         <required>false</required>
@@ -26674,6 +26698,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Renewal</businessProcess>
         <label>Renewal</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -39704,6 +39739,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Renewal</businessProcess>
         <label>Renewal - Closed</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -47208,6 +47254,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Sales Opportunity</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -50882,6 +50939,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <active>true</active>
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Sales Opportunity - Closed</label>
+        <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
@@ -55392,6 +55460,23 @@ INCLUDES(Competition__c, &quot;Other&quot;)
 )</errorConditionFormula>
         <errorDisplayField>Other_Competition__c</errorDisplayField>
         <errorMessage>Please provide the other competition.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_ACH_AutoDebit</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISPICKVAL(ACH_Auto_debit__c ,&quot;&quot;),
+OR(
+RecordType.Name = &quot;Sales Opportunity&quot;,
+RecordType.Name = &quot;Renewal&quot;,
+RecordType.Name = &quot;Renewal - Closed&quot;,
+RecordType.Name = &quot;Sales Opportunity - Closed&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>ACH_Auto_debit__c</errorDisplayField>
+        <errorMessage>ACH Auto-debit is required upon closing an opportunity.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Awards</fullName>
