@@ -73,6 +73,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.ACH_Auto_debit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.College_House_Id__c</field>
         <readable>true</readable>
@@ -85,6 +90,45 @@
     <layoutAssignments>
         <layout>OppSnap__c-OppSnap Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-New Business</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-New Business</layout>
+        <recordType>Opportunity.Sales_Opportunity</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-New Business - Closed</layout>
+        <recordType>Opportunity.Sales_Opportunity_Closed</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Renewals - Closed</layout>
+        <recordType>Opportunity.Renewal_Closed</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Renewals 2</layout>
+        <recordType>Opportunity.Existing_Business</recordType>
+    </layoutAssignments>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.Existing_Business</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.Renewal_Closed</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Opportunity.Sales_Opportunity</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.Sales_Opportunity_Closed</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
