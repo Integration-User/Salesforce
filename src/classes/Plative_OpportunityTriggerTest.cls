@@ -196,6 +196,7 @@ public class Plative_OpportunityTriggerTest {
         oppty.ID_Request__c = 'Not Applicable';
         oppty.Win_Validation__c = 'Pending Review';
         oppty.Products__c = 'Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
+        oppty.Sales_Type__c = 'Upsell'; 
         //oppty.Win_Validation__c = 'Opportunity Reviewed';
         Test.startTest();
         //For creating Renewal Opportunities from Sales Opportunity
