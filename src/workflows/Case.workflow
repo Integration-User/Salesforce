@@ -257,6 +257,18 @@
         <template>unfiled$public/Salesforce_Request_Case_Closed</template>
     </alerts>
     <alerts>
+        <fullName>Transaction_Support_Email_Alert</fullName>
+        <description>Transaction Support Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jecusi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@greenstreet.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Transaction_Support_Email</template>
+    </alerts>
+    <alerts>
         <fullName>Trial_Activation_Email_Alert</fullName>
         <description>Trial Activation Email Alert</description>
         <protected>false</protected>
