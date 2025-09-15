@@ -15918,6 +15918,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Cost_Per_Click__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Count_of_open_SDO__c</field>
         <readable>true</readable>
@@ -16548,6 +16553,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Last_Cost_Per_Click__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Last_Renewal_Opp__c</field>
         <readable>false</readable>
@@ -16910,6 +16920,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Risk_Score__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Risk_Scorecard_Month_to_Renewal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Risk_Tier__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
