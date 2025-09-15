@@ -15832,6 +15832,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Cost_Per_Click__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Country__c</field>
         <readable>false</readable>
@@ -16174,6 +16179,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.LID__LinkedIn_Company_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Last_Cost_Per_Click__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16525,6 +16535,16 @@
         <editable>false</editable>
         <field>Account.Risk_Score__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Risk_Scorecard_Month_to_Renewal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Risk_Tier__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
