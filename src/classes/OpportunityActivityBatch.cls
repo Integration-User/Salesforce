@@ -2,14 +2,22 @@ global class OpportunityActivityBatch implements Database.Batchable<sObject>, Sc
     
     global Iterable<sObject> start(Database.BatchableContext bc) {
         List<sObject> records = new List<sObject>();
-        // Fetch Tasks (Calls)
-        records.addAll([SELECT Id, Subject, WhatId FROM Task WHERE Subject LIKE '%Call: Connected%' AND CreatedDate >= LAST_N_DAYS:30 AND WhatId !=null]);
-        // Fetch Tasks (Emails)
-        records.addAll([SELECT Id, Subject, WhatId FROM Task WHERE Subject LIKE 'Reply%' AND CreatedDate >= LAST_N_DAYS:30 AND WhatId !=null]);
+                // Fetch Tasks (Calls) & Tasks (Emails)
+        for (Task tsk : [SELECT Id, Subject, WhatId, Type FROM Task 
+                         WHERE (Subject LIKE '%Call: Connected%' OR Subject LIKE 'Reply%') AND CreatedDate >= LAST_N_DAYS:30 AND WhatId !=null AND What.Type= 'Opportunity']) {
+            String oppId = tsk.WhatId;
+            if(oppId.startsWith('006')) {
+                records.add(tsk);   
+            }             
+        }
         // Fetch Events (Meetings)
-        records.addAll([SELECT Id, Status__c, WhatId FROM Event WHERE Status__c = 'Completed' AND Canceled_Date__c = NULL AND No_Show_Date__c = FALSE AND StartDateTime >= LAST_N_DAYS:30 AND WhatId !=null]);
-        
-        return records;
+        for (Event evt : [SELECT Id, Status__c, WhatId FROM Event WHERE Status__c = 'Completed' AND Canceled_Date__c = NULL AND No_Show_Date__c = FALSE AND StartDateTime >= LAST_N_DAYS:30 AND WhatId !=null AND What.Type= 'Opportunity']) {
+            String oppId = evt.WhatId;
+            if(oppId.startsWith('006')) {
+                records.add(evt);   
+            } 
+        }
+        return records;        
     }
     
     global void execute(Database.BatchableContext bc, List<sObject> scope) {
@@ -48,6 +56,6 @@ global class OpportunityActivityBatch implements Database.Batchable<sObject>, Sc
     // Implement Schedulable Interface
     global void execute(SchedulableContext sc) {
         OpportunityActivityBatch batch = new OpportunityActivityBatch();
-        Database.executeBatch(batch, 5);
+        Database.executeBatch(batch, 10);
     }
 }
