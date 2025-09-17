@@ -269,6 +269,18 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>AP_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>AP Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>AccountId</fullName>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -517,6 +529,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Billing_Schedule__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity__r.Billing_Schedule__c)</formula>
+        <label>Billing Schedule</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Bug_Category__c</fullName>
         <label>Bug Category</label>
         <required>false</required>
@@ -690,6 +713,26 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contract_End_Date__c</fullName>
+        <description>For Transaction Support to reference the Opportunity Contract End Date.</description>
+        <formula>Opportunity__r.Contract_End_Date__c</formula>
+        <label>Contract End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Start_Date__c</fullName>
+        <description>For Transaction Support to reference the Opportunity Contract Start Date.</description>
+        <formula>Opportunity__r.Contract_Start_Date__c</formula>
+        <label>Contract Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>CurrencyIsoCode</fullName>
@@ -1519,6 +1562,18 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Amount__c</fullName>
+        <formula>Opportunity__r.Amount</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Opportunity_Record_Type__c</fullName>
@@ -2798,6 +2853,7 @@ null))</formula>
         <fullName>Support_Tier__c</fullName>
         <label>Support Tier</label>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -2835,6 +2891,11 @@ null))</formula>
                     <default>false</default>
                     <label>Tier 3 - Order Support</label>
                 </value>
+                <value>
+                    <fullName>Tier 1 - Transaction Support</fullName>
+                    <default>false</default>
+                    <label>Tier 1 - Transaction Support</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -2842,6 +2903,7 @@ null))</formula>
         <fullName>Support_Type__c</fullName>
         <label>Support Type</label>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -2893,6 +2955,11 @@ null))</formula>
                     <fullName>IJGlobal Client Support</fullName>
                     <default>false</default>
                     <label>IJGlobal Client Support</label>
+                </value>
+                <value>
+                    <fullName>Transaction Support</fullName>
+                    <default>false</default>
+                    <label>Transaction Support</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3019,6 +3086,17 @@ null))</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Terms__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity__r.Terms__c)</formula>
+        <label>Terms</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Transaction__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>Transaction</label>
@@ -3032,6 +3110,7 @@ null))</formula>
     </fields>
     <fields>
         <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -17466,6 +17545,33 @@ FALSE))))))))))))))</formula>
         </picklistValues>
     </recordTypes>
     <recordTypes>
+        <fullName>Transaction_Support</fullName>
+        <active>true</active>
+        <businessProcess>User List Request</businessProcess>
+        <label>Transaction Support</label>
+        <picklistValues>
+            <picklist>Support_Tier__c</picklist>
+            <values>
+                <fullName>Tier 1 - Transaction Support</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Type__c</picklist>
+            <values>
+                <fullName>Transaction Support</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Set up Auto-Debit</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>User_List_Requests</fullName>
         <active>true</active>
         <businessProcess>User List Request</businessProcess>
@@ -19020,5 +19126,17 @@ ISPICKVAL( Request_Category__c , &quot;Reports &amp; Dashboards&quot;)
 )
 )</errorConditionFormula>
         <errorMessage>Please provide fill out the Outline Requirements &amp; Business Value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Transaction_Support_Comments</fullName>
+        <active>true</active>
+        <description>Require&quot; Comments&quot; to be filled out before close</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.DeveloperName=&apos;Transaction_Support&apos;,
+ISPICKVAL(Status, &quot;Closed&quot;),
+ISBLANK(Comments__c)
+)</errorConditionFormula>
+        <errorMessage>Please provide a comment before closing the transaction case.</errorMessage>
     </validationRules>
 </CustomObject>
