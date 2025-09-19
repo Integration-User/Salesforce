@@ -3926,6 +3926,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>ICP__c</fullName>
+        <externalId>false</externalId>
+        <label>ICP</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>IJ_Company_Type__c</fullName>
         <label>IJ Company Type</label>
         <required>false</required>
@@ -4774,6 +4784,26 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>NAICS_National_Industry__c</fullName>
+        <externalId>false</externalId>
+        <label>NAICS National Industry</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NAICS_Sector__c</fullName>
+        <externalId>false</externalId>
+        <label>NAICS Sector</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>NS_Company_Internal_ID__c</fullName>
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
@@ -4884,6 +4914,18 @@ Owner.Id = $User.Id)</formula>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Properties__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For the College House Acquisition</inlineHelpText>
+        <label>Number of Properties</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Number_of_Subscriptions__c</fullName>
@@ -5916,6 +5958,15 @@ Owner.Id = $User.Id)</formula>
         <label>Restrict Download</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Size__c</fullName>
+        <label>Revenue Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Risk_Score__c</fullName>
