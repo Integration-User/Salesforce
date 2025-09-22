@@ -20046,6 +20046,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Customer_Profile_Type_CH__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Customer_Timestamp__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -26337,6 +26342,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Lead.Current_RE_Research_Lacking_Other__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lead.Customer_Profile_Type_CH__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
