@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -26,6 +26,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Lead_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Customer_Profile_Type_CH__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
