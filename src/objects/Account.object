@@ -1107,6 +1107,15 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
+        <fullName>Cost_Per_Click__c</fullName>
+        <label>Cost Per Click</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Count_of_open_SDO__c</fullName>
         <description>Count the number of open SDOs</description>
         <label>Count of open SDO</label>
@@ -3917,6 +3926,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>ICP__c</fullName>
+        <externalId>false</externalId>
+        <label>ICP</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>IJ_Company_Type__c</fullName>
         <label>IJ Company Type</label>
         <required>false</required>
@@ -4436,6 +4455,15 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Last_Cost_Per_Click__c</fullName>
+        <label>Last Cost Per Click</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Last_Renewal_Opp__c</fullName>
         <label>Last Renewal Opp</label>
         <summarizedField>Opportunity.Contract_Start_Date__c</summarizedField>
@@ -4456,7 +4484,7 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     </fields>
     <fields>
         <fullName>Last_Risk_Score__c</fullName>
-        <label>Last Risk Score</label>
+        <label>Last Attrition Probability</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
@@ -4751,6 +4779,26 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>NAICS_National_Industry__c</fullName>
+        <externalId>false</externalId>
+        <label>NAICS National Industry</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NAICS_Sector__c</fullName>
+        <externalId>false</externalId>
+        <label>NAICS Sector</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>NS_Company_Internal_ID__c</fullName>
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
@@ -4861,6 +4909,18 @@ Owner.Id = $User.Id)</formula>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Properties__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For the College House Acquisition</inlineHelpText>
+        <label>Number of Properties</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Number_of_Subscriptions__c</fullName>
@@ -5895,13 +5955,42 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Revenue_Size__c</fullName>
+        <label>Revenue Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Risk_Score__c</fullName>
-        <label>Risk Score</label>
+        <label>Attrition Probability</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Risk_Scorecard_Month_to_Renewal__c</fullName>
+        <externalId>false</externalId>
+        <label>Risk Scorecard Month to Renewal</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Risk_Tier__c</fullName>
+        <externalId>false</externalId>
+        <label>Risk Tier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>SAM_Amount__c</fullName>
@@ -9400,6 +9489,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Detailed NAV</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13181,6 +13274,10 @@ Stored as Long on Solr.</description>
             <picklist>Current_Products__c</picklist>
             <values>
                 <fullName>Asset-Backed Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia Detailed NAV</fullName>
                 <default>false</default>
             </values>
             <values>

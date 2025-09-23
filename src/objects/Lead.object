@@ -766,6 +766,93 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Customer_Profile_Type_CH__c</fullName>
+        <inlineHelpText>For College House</inlineHelpText>
+        <label>Customer Profile Type (CH)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Lead_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Broker</fullName>
+                    <default>false</default>
+                    <label>Broker</label>
+                </value>
+                <value>
+                    <fullName>Developer</fullName>
+                    <default>false</default>
+                    <label>Developer</label>
+                </value>
+                <value>
+                    <fullName>Investor</fullName>
+                    <default>false</default>
+                    <label>Investor</label>
+                </value>
+                <value>
+                    <fullName>Lender</fullName>
+                    <default>false</default>
+                    <label>Lender</label>
+                </value>
+                <value>
+                    <fullName>Manager</fullName>
+                    <default>false</default>
+                    <label>Manager</label>
+                </value>
+                <value>
+                    <fullName>Owner/Operator</fullName>
+                    <default>false</default>
+                    <label>Owner/Operator</label>
+                </value>
+                <value>
+                    <fullName>Owner</fullName>
+                    <default>false</default>
+                    <label>Owner</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Broker</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Developer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Investor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Lender</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Manager</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Owner/Operator</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Owner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>CventEvents__ContactStub__c</fullName>
         <deprecated>false</deprecated>
         <externalId>true</externalId>
@@ -9630,6 +9717,41 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Vendor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_Profile_Type_CH__c</picklist>
+            <values>
+                <fullName>Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner%2FOperator</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
