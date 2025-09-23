@@ -368,6 +368,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BatchCloneRenewalOpportunities</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>BatchCloneRenewalOpportunitiesTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Batch_UpdateBillingContactCategory</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -31103,6 +31111,61 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Account_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Are_the_products_already_on_the_renewal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Contract_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Contract_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Open_Renewal_Product_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Open_Renewal_Product_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Opportunity_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.US_Detailed_NAV__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.US_Portfolio_Tool__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.US_Tertiary_Data__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Subscription_Change__c.Delinian_Id__c</field>
         <readable>false</readable>
@@ -49343,6 +49406,9 @@
         <layout>Staging_Data_Upload__c-Staging Data Upload Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Staging_Opportunity_Data__c-Staging Opportunity Data Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Subscription_Change__c-Subscription Change Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -51738,6 +51804,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Staging_Data_Upload__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Staging_Opportunity_Data__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
