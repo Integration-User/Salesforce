@@ -20,15 +20,18 @@ public class BatchCloneRenewalOpportunities implements Database.Batchable<SObjec
     public void execute(Database.BatchableContext bc, List<SObject> scope) {
         Map<Id, Staging_Opportunity_Data__c> oppToStagingMap = new Map<Id, Staging_Opportunity_Data__c>();
         Set<Id> oppIds = new Set<Id>();
-        for (SObject s : scope) {
-            Staging_Opportunity_Data__c sod = (Staging_Opportunity_Data__c) s;
-            if (sod.Opportunity_Id__c != null && sod.Account_Id__c != null) {
-                oppIds.add(sod.Opportunity_Id__c);
-                oppToStagingMap.put(sod.Opportunity_Id__c, sod);
+        Savepoint sp;
+        try {
+            sp = Database.setSavepoint();
+            for (SObject s : scope) {
+                Staging_Opportunity_Data__c sod = (Staging_Opportunity_Data__c) s;
+                if (sod.Opportunity_Id__c != null && sod.Account_Id__c != null) {
+                    oppIds.add(sod.Opportunity_Id__c);
+                    oppToStagingMap.put(sod.Opportunity_Id__c, sod);
+                }
             }
-        }
-        if (!oppIds.isEmpty()) {
-            try {
+            system.debug('oppIds->' + oppIds);
+            if (!oppIds.isEmpty()) {
                 Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>([
                     SELECT Id, Name, StageName, Amount, RecordTypeId, AccountId, OwnerId, Description, CurrencyIsoCode, Pricebook2Id,
                     Company_Type_Opp__c, CloseDate, Create_New_Renewal_Opportunity__c, Current_Contract_Year__c, 
@@ -36,6 +39,7 @@ public class BatchCloneRenewalOpportunities implements Database.Batchable<SObjec
                     Department__c, Department_Id__c,Class__c,Currency_NS_Internal_Id__c, Account.OwnerId, Account.CurrencyIsoCode
                     FROM Opportunity WHERE Id IN :oppIds
                 ]);
+                system.debug('oppMap->' + oppMap);
 
                 Id renewalRTId = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Renewal').getRecordTypeId();
                 Map<String, Id> productNameToId = new Map<String, Id>();
@@ -208,12 +212,13 @@ public class BatchCloneRenewalOpportunities implements Database.Batchable<SObjec
                 for (Staging_Opportunity_Data__c sod : (List<Staging_Opportunity_Data__c>)scope) {
                     results.add(new ResultRow(sod.Id, 'Success', 'Line items added to existing and renewal opportunities'));
                 }
-            } catch (Exception e) {
-                // Mark all as failed in this scope
-                for (SObject s : scope) {
-                    Staging_Opportunity_Data__c sod = (Staging_Opportunity_Data__c)s;
-                    results.add(new ResultRow(sod.Id, 'Failed', e.getMessage()));
-                }
+            }
+        } catch (Exception e) {
+            Database.rollback(sp);
+            // Mark all as failed in this scope
+            for (SObject s : scope) {
+                Staging_Opportunity_Data__c sod = (Staging_Opportunity_Data__c)s;
+                results.add(new ResultRow(sod.Id, 'Failed', e.getMessage()));
             }
         }
     }
@@ -234,13 +239,13 @@ public class BatchCloneRenewalOpportunities implements Database.Batchable<SObjec
 
         // Send email
         Messaging.EmailFileAttachment attachment = new Messaging.EmailFileAttachment();
-        attachment.setFileName('BatchResults.csv');
+        attachment.setFileName('SF-1737_BatchResults.csv');
         attachment.setBody(Blob.valueOf(csv));
         attachment.setContentType('text/csv');
 
         Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
         mail.setToAddresses(new String[] {'mgupta@greenstreet.com'}); // TODO: Set to actual recipient
-        mail.setSubject('BatchCloneRenewalOpportunities Results');
+        mail.setSubject('SF-1737 : Batch Clone Renewal Opportunities Results');
         mail.setPlainTextBody('Please find attached the batch results.');
         mail.setFileAttachments(new Messaging.EmailFileAttachment[] {attachment});
         Messaging.sendEmail(new Messaging.SingleEmailMessage[] {mail});
