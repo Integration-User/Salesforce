@@ -16456,6 +16456,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.ICP__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.IJ_Company_Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -16646,6 +16651,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.NAICS_National_Industry__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.NAICS_Sector__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.NS_Company_Internal_ID__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -16692,6 +16707,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Number_of_Open_Sales_Opportunities__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Number_of_Properties__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16908,6 +16928,11 @@
         <editable>false</editable>
         <field>Account.Restrict_Download__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Revenue_Size__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -19996,6 +20021,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Customer_Profile_Type_CH__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Customer_Timestamp__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20742,6 +20772,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Reference__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Referrer_URL__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -26276,6 +26311,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Lead.Customer_Profile_Type_CH__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Lead.CventEvents__ContactStub__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -28673,6 +28713,11 @@
         <editable>false</editable>
         <field>Opportunity.Referred_by_Role__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Referrer_URL__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
