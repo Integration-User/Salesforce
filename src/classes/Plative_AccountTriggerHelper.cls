@@ -233,13 +233,13 @@ public class Plative_AccountTriggerHelper  {
             update renewalOwnerChanges;
         }
         // Step 1: Get Account details
-        List<Account> accounts = [SELECT Id, OwnerId,Owner.name, Customer_Success_Rep__c FROM Account WHERE Id IN :accIds];
+        List<Account> accounts = [SELECT Id, OwnerId, Customer_Success_Rep__c, owner.Name FROM Account WHERE Id IN :accIds];
         // Step 2: Get Owner IDs
         Set<Id> ownerIds = new Set<Id>();
         for (Account acc : accounts) {
+            system.debug('acc-->' + acc.owner.Name);
             ownerIds.add(acc.OwnerId);
         }
-        system.debug('ownerIds-->' + ownerIds);
         
         Map<Id, Boolean> ownerHasCSRole = new Map<Id, Boolean>();
         for (UserAccountTeamMember uatm : [SELECT OwnerId, TeamMemberRole FROM UserAccountTeamMember WHERE OwnerId IN :ownerIds AND TeamMemberRole = 'Customer Success']) {
@@ -249,18 +249,20 @@ public class Plative_AccountTriggerHelper  {
         // Account Team 
         List<Account> customerRepToAccount = New List<Account>();
         List<AccountTeamMember> teamMembersToDelete = new List<AccountTeamMember>();
-        List<AccountTeamMember> accountTeamMemberList = [SELECT AccountId, Account.Customer_Success_Rep__c,User.name FROM AccountTeamMember WHERE TeamMemberRole = 'Customer Success' AND AccountId IN :accIds ORDER BY LastModifiedDate DESC];
+        List<AccountTeamMember> accountTeamMemberList = [SELECT AccountId, Account.Customer_Success_Rep__c,User.name, UserId FROM AccountTeamMember WHERE TeamMemberRole = 'Customer Success' AND AccountId IN :accIds ORDER BY LastModifiedDate DESC];
+
         for (Account acc : accounts) {
             if (!ownerHasCSRole.containsKey(acc.OwnerId)) {
                 for (AccountTeamMember atm : accountTeamMemberList) {
                     if(atm.AccountId == acc.Id) teamMembersToDelete.add(atm);
                 }
                 // Nullify Customer_Success_Rep__c field
-               if(acc.Customer_Success_Rep__c != null) customerRepToAccount.add(new Account(Id = acc.Id, Customer_Success_Rep__c = null));
+               customerRepToAccount.add(new Account(Id = acc.Id, Customer_Success_Rep__c = null, Customer_Success_Rep_ID__c = null));
             } else {
                 for (AccountTeamMember atm: accountTeamMemberList) {
+                    system.debug('atm-->' + atm);
                     if(atm.AccountId == acc.Id && atm.Account.Customer_Success_Rep__c != atm.User.name) {
-                        customerRepToAccount.add(new Account(Id = atm.AccountId, Customer_Success_Rep__c = atm.User.name));
+                        customerRepToAccount.add(new Account(Id = atm.AccountId, Customer_Success_Rep__c = atm.User.name, Customer_Success_Rep_ID__c = atm.UserId));
                     }
                 }
             }

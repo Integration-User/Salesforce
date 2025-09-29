@@ -15853,6 +15853,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Customer_Success_Rep_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Customer_Success_Rep__c</field>
         <readable>false</readable>
     </fieldPermissions>
