@@ -130,6 +130,7 @@ public class BatchCloneRenewalOpportunities implements Database.Batchable<SObjec
                         newOpp.Current_Contract_Year__c = null;
                         newOpp.OwnerId = origOpp.Account.OwnerId;
                         newopp.CurrencyIsoCode = origOpp.Account.CurrencyIsoCode;
+                        newopp.Activation_Deactivation_Needs__c = 'Full Account Activation';
                         newOpps.add(newOpp);
                         stagingIdToNewOpp.put(sod.Id, newOpp);  
                     }
