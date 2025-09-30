@@ -33,7 +33,7 @@ public class BatchCloneRenewalOpportunities implements Database.Batchable<SObjec
             system.debug('oppIds->' + oppIds);
             if (!oppIds.isEmpty()) {
                 Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>([
-                    SELECT Id, Name, StageName, Amount, RecordTypeId, AccountId, OwnerId, Description, CurrencyIsoCode, Pricebook2Id,
+                    SELECT Id, Name, StageName, Amount, RecordTypeId, AccountId, OwnerId, Description, CurrencyIsoCode, Pricebook2Id, Account_Name__c,
                     Company_Type_Opp__c, CloseDate, Create_New_Renewal_Opportunity__c, Current_Contract_Year__c, 
                     Exclude_from_Deal_Scoring_Model__c, Customer_Channel_New__c, Sectors_Sold__c, Contract_Start_Date__c,Contract_End_Date__c,Sales_Type__c,
                     Department__c, Department_Id__c,Class__c,Currency_NS_Internal_Id__c, Account.OwnerId, Account.CurrencyIsoCode
@@ -135,10 +135,10 @@ public class BatchCloneRenewalOpportunities implements Database.Batchable<SObjec
                         stagingIdToNewOpp.put(sod.Id, newOpp);  
                     }
                 }
-                System.debug('newOpps-?' + newOpps);
                 if (!newOpps.isEmpty()) {
                     insert newOpps;
                 }
+                System.debug('newOpps->' + newOpps);
                 for (Staging_Opportunity_Data__c sod : (List<Staging_Opportunity_Data__c>)scope) {
                     Opportunity newOpp = stagingIdToNewOpp.get(sod.Id);
                     if (newOpp == null) continue;
@@ -202,13 +202,25 @@ public class BatchCloneRenewalOpportunities implements Database.Batchable<SObjec
                     insert oliToInsert;
                 }
                 List<Opportunity> toClose = new List<Opportunity>();
-                for (Opportunity o : newOpps) {
-                    o.StageName = 'Closed Won';
-                    toClose.add(o);
+                List<Case> caseList = new List<Case>();
+                Id recordTypeId = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Client_Access').getRecordTypeId();
+                Group groupInfo = [Select Id, name from Group where DeveloperName = 'Client_Deactivation' AND Type = 'Queue' LIMIT 1];
+                for (Opportunity opp : newOpps) {
+                    opp.StageName = 'Closed Won';
+                    toClose.add(opp);
+                    Case activationCase = new Case(BusinessHoursId = System.Label.Default_Business_Hours_Id, recordTypeId = recordTypeId,
+                                                   AccountId = opp.AccountId, ActivationDeactivation_Needs__c = opp.Activation_Deactivation_Needs__c,
+                                                   CurrencyIsoCode = 'USD', Due_Date__c = opp.Contract_Start_Date__c, Minutes_Spent_Cases__c = 3,
+                                                   Opportunity__c = opp.Id, Origin = 'Automation', ownerId = groupInfo.Id, Priority = 'High', 
+                                                   Status = 'New', Subject = Opp.Account_Name__c +' - '+ opp.Activation_Deactivation_Needs__c, Platform__c = 'Green Street');
+                    caseList.add(activationCase);
                 }
                 if (!toClose.isEmpty()) {
                     update toClose;
+                    system.debug('caseList->' + caseList);
+                    if(!caseList.isEmpty() && caseList.size() > 0) insert caseList;
                 }
+                
                 // Success for all in scope
                 for (Staging_Opportunity_Data__c sod : (List<Staging_Opportunity_Data__c>)scope) {
                     results.add(new ResultRow(sod.Id, 'Success', 'Line items added to existing and renewal opportunities'));
