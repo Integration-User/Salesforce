@@ -74,9 +74,10 @@ public class UpdateAccountOwner implements Database.Batchable<sObject>, Database
             }
         }
         for (Account acc : scope) {
-            if(customerSuccessMap.containsKey(acc.id))
-            acc.Customer_Success_Rep__c = customerSuccessMap.get(acc.id).User.name;
-            acc.Customer_Success_Rep_ID__c = customerSuccessMap.get(acc.id).UserId;
+            if(customerSuccessMap.containsKey(acc.id)) {
+                acc.Customer_Success_Rep__c = customerSuccessMap.get(acc.id).User.name;
+                acc.Customer_Success_Rep_ID__c = customerSuccessMap.get(acc.id).UserId;
+            }
         }
         update scope;
         
