@@ -62,10 +62,10 @@ public class UpdateAccountOwner implements Database.Batchable<sObject>, Database
         
         // Create AccountTeamMember records
         List<AccountTeamMember> accountTeamMembers = new List<AccountTeamMember>();
-        map<Id, String> customerSuccessMap =  new map<Id, String>();
+        map<Id, UserAccountTeamMember> customerSuccessMap =  new map<Id, UserAccountTeamMember>();
         for (UserAccountTeamMember  defaultMember : defaultTeamMembers) {
             for (Id accId : accountIds) {
-                if(defaultMember.TeamMemberRole == 'Customer Success') customerSuccessMap.put(accId, defaultMember.User.name);
+                if(defaultMember.TeamMemberRole == 'Customer Success') customerSuccessMap.put(accId, defaultMember);
                 AccountTeamMember teamMember = new AccountTeamMember();
                 teamMember.AccountId = accId;
                 teamMember.UserId = defaultMember.UserId;
@@ -75,7 +75,8 @@ public class UpdateAccountOwner implements Database.Batchable<sObject>, Database
         }
         for (Account acc : scope) {
             if(customerSuccessMap.containsKey(acc.id))
-            acc.Customer_Success_Rep__c = customerSuccessMap.get(acc.id);
+            acc.Customer_Success_Rep__c = customerSuccessMap.get(acc.id).User.name;
+            acc.Customer_Success_Rep_ID__c = customerSuccessMap.get(acc.id).UserId;
         }
         update scope;
         
