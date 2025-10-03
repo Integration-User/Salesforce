@@ -147,6 +147,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Customer_Success_Rep_ID__c</field>
+            <value>
+                <elementReference>$Record.UserId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Customer_Success_Rep__c</field>
             <value>
                 <elementReference>CustomerSuccessName</elementReference>
@@ -170,7 +176,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>CustomerSuccessName</name>
         <dataType>String</dataType>
