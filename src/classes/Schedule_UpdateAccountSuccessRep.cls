@@ -13,8 +13,8 @@ public without sharing class Schedule_UpdateAccountSuccessRep Implements Schedul
 
     public void updateAccountSuccessRepField(){
         
-        Map<Id,Account> mapAccounts = new Map<Id,Account>([Select id,Customer_Success_Rep__c,Is_Customer_Rep_Changed__c from Account where Is_Customer_Rep_Changed__c = true]);
-        List<AccountTeamMember> listAccountMembers = [SELECT AccountId,Account.Customer_Success_Rep__c,TeamMemberRole,Title,User.name FROM AccountTeamMember 
+        Map<Id,Account> mapAccounts = new Map<Id,Account>([Select id,Customer_Success_Rep__c, Customer_Success_Rep_ID__c, Is_Customer_Rep_Changed__c from Account where Is_Customer_Rep_Changed__c = true]);
+        List<AccountTeamMember> listAccountMembers = [SELECT AccountId,Account.Customer_Success_Rep__c,TeamMemberRole,Title,User.name,userId FROM AccountTeamMember 
                                       WHERE TeamMemberRole = 'Customer Success' AND Account.Type IN ('Client', 'Client + Trial')
                                       AND Account.Is_Customer_Rep_Changed__c = true ORDER BY LastModifiedDate DESC];
     
@@ -23,6 +23,7 @@ public without sharing class Schedule_UpdateAccountSuccessRep Implements Schedul
             if(Test.isRunningTest() || (accMember.Account.Customer_Success_Rep__c != accMember.User.name && !updateAccounts.containsKey(accMember.AccountId))){
                 Account acc = mapAccounts.get(accMember.AccountId);
                 acc.Customer_Success_Rep__c = accMember.User.name;
+                acc.Customer_Success_Rep_ID__c = accMember.userId;
                 acc.Is_Customer_Rep_Changed__c = false;
                 updateAccounts.put(accMember.AccountId, acc);
             }
