@@ -56623,10 +56623,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AccessOrchestrationObjects</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ActivateContract</name>
     </userPermissions>
     <userPermissions>
@@ -57232,10 +57228,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>PublishPackaging</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>QrCodeGeneratorMobilePublisherPlayground</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
