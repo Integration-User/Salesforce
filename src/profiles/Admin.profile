@@ -368,6 +368,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BatchCloneRenewalOpportunities</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>BatchCloneRenewalOpportunitiesTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Batch_UpdateBillingContactCategory</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -16079,6 +16087,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Annual_Revenue_Range__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Annual_Revenue_USD__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Approved_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16249,6 +16267,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Customer_Success_Rep_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Customer_Success_Rep__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16365,6 +16388,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.EU_Expansion_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Employee_Count_Range__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16768,6 +16796,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.ICP__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.IJ_Company_Type__c</field>
         <readable>true</readable>
@@ -16959,6 +16992,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.NAICS_National_Industry__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.NAICS_Sector__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.NS_Company_Internal_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17005,6 +17048,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Number_of_Open_Sales_Opportunities__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Number_of_Properties__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -17210,6 +17258,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Restrict_Download__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Revenue_Size__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -21070,6 +21123,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Reference__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Referrer_URL__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -28824,6 +28882,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Referrer_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -31020,6 +31083,61 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Staging_Data_Upload__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Account_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Are_the_products_already_on_the_renewal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Contract_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Contract_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Open_Renewal_Product_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Open_Renewal_Product_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Opportunity_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.US_Detailed_NAV__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.US_Portfolio_Tool__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.US_Tertiary_Data__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -49253,6 +49371,9 @@
         <layout>Staging_Data_Upload__c-Staging Data Upload Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Staging_Opportunity_Data__c-Staging Opportunity Data Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Subscription_Change__c-Subscription Change Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -51648,6 +51769,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Staging_Data_Upload__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Staging_Opportunity_Data__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

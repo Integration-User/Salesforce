@@ -561,6 +561,74 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Annual_Revenue_Range__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+Annual_Revenue_USD__c = 0, &quot;Revenue unavailable&quot;,
+IF(
+  Annual_Revenue_USD__c &lt; 1000000, &quot;&lt; $1M&quot;,
+  IF(
+    Annual_Revenue_USD__c &lt; 5000000, &quot;$1M–$5M&quot;,
+    IF(
+      Annual_Revenue_USD__c &lt; 10000000, &quot;$5M–$10M&quot;,
+      IF(
+        Annual_Revenue_USD__c &lt; 50000000, &quot;$10M–$50M&quot;,
+        IF(
+          Annual_Revenue_USD__c &lt; 100000000, &quot;$50M–$100M&quot;,
+          IF(
+            Annual_Revenue_USD__c &lt; 200000000, &quot;$100M–$200M&quot;,
+            IF(
+              Annual_Revenue_USD__c &lt; 500000000, &quot;$200M–$500M&quot;,
+              IF(
+                Annual_Revenue_USD__c &lt; 1000000000, &quot;$500M–$1B&quot;,
+                IF(
+                  Annual_Revenue_USD__c &lt; 2000000000, &quot;$1B–$2B&quot;,
+                  IF(
+                    Annual_Revenue_USD__c &lt; 5000000000, &quot;$2B–$5B&quot;,
+                    IF(
+                      Annual_Revenue_USD__c &lt; 10000000000, &quot;$5B–$10B&quot;,
+                      &quot;$10B+&quot;
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+)
+)</formula>
+        <label>Annual Revenue Range</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Revenue_USD__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(
+    CurrencyIsoCode,
+    &quot;USD&quot;, AnnualRevenue,
+    &quot;AUD&quot;, AnnualRevenue * 0.6702,
+    &quot;CAD&quot;, AnnualRevenue * 0.7300,
+    &quot;EUR&quot;, AnnualRevenue * 1.0699,
+    &quot;GBP&quot;, AnnualRevenue * 1.2300,
+   0  
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>converts the Annual Revenue to USD</inlineHelpText>
+        <label>Annual Revenue USD</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Approved_Category__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Approved Category</label>
@@ -2831,6 +2899,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Customer_Success_Rep_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Customer Success Rep ID</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Customer_Success_Reps</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Customer_Success_Rep__c</fullName>
         <externalId>false</externalId>
         <label>Customer Success Rep</label>
@@ -3122,6 +3200,47 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <required>false</required>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Count_Range__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+    VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 9, &quot;1–9&quot;,
+    IF(
+        VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 49, &quot;10–49&quot;,
+        IF(
+            VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 99, &quot;50–99&quot;,
+            IF(
+                VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 199, &quot;100–199&quot;,
+                IF(
+                    VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 499, &quot;200–499&quot;,
+                    IF(
+                        VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 999, &quot;500–999&quot;,
+                        IF(
+                            VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 1999, &quot;1,000–1,999&quot;,
+                            IF(
+                                VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 4999, &quot;2,000–4,999&quot;,
+                                IF(
+                                    VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 9999, &quot;5,000–9,999&quot;,
+                                    IF(
+                                        VALUE(ZoomInfo_Employee_Count_account__c) &gt;= 10000, &quot;10,000+&quot;,
+                                        &quot;Unknown&quot;
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)</formula>
+        <inlineHelpText>Based on ZoomInfo Employee Count</inlineHelpText>
+        <label>Employee Count Range</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Entitlement_Guidance_Notes__c</fullName>
@@ -3924,6 +4043,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <label>High Value Target</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ICP__c</fullName>
+        <externalId>false</externalId>
+        <label>ICP</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>IJ_Company_Type__c</fullName>
@@ -4774,6 +4903,26 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>NAICS_National_Industry__c</fullName>
+        <externalId>false</externalId>
+        <label>NAICS National Industry</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NAICS_Sector__c</fullName>
+        <externalId>false</externalId>
+        <label>NAICS Sector</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>NS_Company_Internal_ID__c</fullName>
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
@@ -4884,6 +5033,18 @@ Owner.Id = $User.Id)</formula>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Properties__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For the College House Acquisition</inlineHelpText>
+        <label>Number of Properties</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Number_of_Subscriptions__c</fullName>
@@ -5916,6 +6077,15 @@ Owner.Id = $User.Id)</formula>
         <label>Restrict Download</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Size__c</fullName>
+        <label>Revenue Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Risk_Score__c</fullName>
