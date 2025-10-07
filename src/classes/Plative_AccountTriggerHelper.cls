@@ -257,7 +257,7 @@ public class Plative_AccountTriggerHelper  {
                     if(atm.AccountId == acc.Id) teamMembersToDelete.add(atm);
                 }
                 // Nullify Customer_Success_Rep__c field
-               customerRepToAccount.add(new Account(Id = acc.Id, Customer_Success_Rep__c = null, Customer_Success_Rep_ID__c = null));
+               if(acc.Customer_Success_Rep__c != null)  customerRepToAccount.add(new Account(Id = acc.Id, Customer_Success_Rep__c = null, Customer_Success_Rep_ID__c = null));
             } else {
                 for (AccountTeamMember atm: accountTeamMemberList) {
                     system.debug('atm-->' + atm);
