@@ -15804,6 +15804,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Annual_Revenue_Range__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Annual_Revenue_USD__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Approved_Category__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -16096,6 +16106,11 @@
         <editable>false</editable>
         <field>Account.EU_Expansion_Owner__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Employee_Count_Range__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -31730,6 +31745,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Trip_Books__c.Trip_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User.Acquisition__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
