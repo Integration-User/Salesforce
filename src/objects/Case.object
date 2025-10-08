@@ -6824,7 +6824,7 @@ FALSE))))))))))))))</formula>
                 <fullName>Australia Detailed NAV</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>Australia Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -8430,7 +8430,7 @@ FALSE))))))))))))))</formula>
                 <fullName>Australia Detailed NAV</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>Australia Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -11259,7 +11259,7 @@ FALSE))))))))))))))</formula>
                 <fullName>Australia Detailed NAV</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>Australia Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -14360,7 +14360,7 @@ FALSE))))))))))))))</formula>
                 <fullName>Australia Detailed NAV</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>Australia Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -18150,7 +18150,7 @@ FALSE))))))))))))))</formula>
                 <fullName>Australia Detailed NAV</fullName>
                 <default>false</default>
             </values>
-			<values>
+            <values>
                 <fullName>Australia Research %2B REIT Data</fullName>
                 <default>false</default>
             </values>
@@ -18949,9 +18949,10 @@ TEXT(Bug_Category__c) =&apos;&apos;)</errorConditionFormula>
     <validationRules>
         <fullName>Check_Case_Account_Manager_Field_Update</fullName>
         <active>true</active>
-        <description>Create a lookup field to the user object called “Account Manager” on the case record. Restrict the values in the field to only users with role containing “CAM”</description>
+        <description>Create a lookup field to the user object called “Account Manager” on the case record. Restrict the values in the field to only users with role containing “CAM”
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+
 NOT(
 OR(
 CONTAINS(&apos;UK Associate Sales Manager&apos;,Account_Manager__r.UserRole.Name),
@@ -18959,6 +18960,21 @@ CONTAINS(&apos;US Associate Sales Manager&apos;,Account_Manager__r.UserRole.Name
 CONTAINS(&apos;UK Sales&apos;,Account_Manager__r.UserRole.Name),
 CONTAINS(&apos;US Sales&apos;,Account_Manager__r.UserRole.Name),
 CONTAINS(&apos;Sales Manager&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM Manager: Core&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM: Core&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM Manager: Enterprise&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM: Enterprise&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM Manager: Non-Platform&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM Manager: EU News&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM: EU News&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM Manager: IJGlobal&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM: IJGlobal&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM Manager: LDC&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM: LDC&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM Manager: Locatus&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM: Locatus&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM Manager: Strategic&apos;,Account_Manager__r.UserRole.Name),
+CONTAINS(&apos;AM: Strategic&apos;,Account_Manager__r.UserRole.Name),
 CONTAINS(&apos;CAM&apos;,Account_Manager__r.UserRole.Name),
 CONTAINS(&apos;CAM Manager&apos;,Account_Manager__r.UserRole.Name))),
 RecordType.DeveloperName = &quot;Account_Assignment&quot; 
