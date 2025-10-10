@@ -2686,6 +2686,7 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <label>Existing Renewal Opportunity</label>
         <lookupFilter>
             <active>true</active>
+            <booleanFilter>((1 AND 3) OR 4) AND 2</booleanFilter>
             <errorMessage>Please Select Existing Renewal Opportunity For This lookup</errorMessage>
             <filterItems>
                 <field>Opportunity.RecordTypeId</field>
@@ -2701,6 +2702,11 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
                 <field>Opportunity.Sales_Type__c</field>
                 <operation>equals</operation>
                 <value>Renewal</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Advertising</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -2718,6 +2724,7 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <label>Existing Sales Opportunity</label>
         <lookupFilter>
             <active>true</active>
+            <booleanFilter>(1 OR 3) AND 2</booleanFilter>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -2727,6 +2734,11 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
                 <field>Opportunity.StageName</field>
                 <operation>equals</operation>
                 <value>1 - Introducing, 2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Advertising</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
