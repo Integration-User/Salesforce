@@ -4369,9 +4369,19 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Apartment</label>
                 </value>
                 <value>
+                    <fullName>Cold Storage</fullName>
+                    <default>false</default>
+                    <label>Cold Storage</label>
+                </value>
+                <value>
                     <fullName>Data Center</fullName>
                     <default>false</default>
                     <label>Data Center</label>
+                </value>
+                <value>
+                    <fullName>Debt</fullName>
+                    <default>false</default>
+                    <label>Debt</label>
                 </value>
                 <value>
                     <fullName>Gaming</fullName>
@@ -4379,9 +4389,19 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Gaming</label>
                 </value>
                 <value>
+                    <fullName>Ground Lease</fullName>
+                    <default>false</default>
+                    <label>Ground Lease</label>
+                </value>
+                <value>
                     <fullName>Industrial</fullName>
                     <default>false</default>
                     <label>Industrial</label>
+                </value>
+                <value>
+                    <fullName>Land</fullName>
+                    <default>false</default>
+                    <label>Land</label>
                 </value>
                 <value>
                     <fullName>Life Science</fullName>
@@ -4399,6 +4419,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Mall</label>
                 </value>
                 <value>
+                    <fullName>Manufactured Home Park</fullName>
+                    <default>false</default>
+                    <label>Manufactured Home Park</label>
+                </value>
+                <value>
                     <fullName>Manufactured Housing</fullName>
                     <default>false</default>
                     <label>Manufactured Housing</label>
@@ -4407,6 +4432,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <fullName>Medical Office Building</fullName>
                     <default>false</default>
                     <label>Medical Office Building</label>
+                </value>
+                <value>
+                    <fullName>Mortgage Reit</fullName>
+                    <default>false</default>
+                    <label>Mortgage Reit</label>
                 </value>
                 <value>
                     <fullName>Multi-Sector</fullName>
@@ -4422,6 +4452,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <fullName>Office</fullName>
                     <default>false</default>
                     <label>Office</label>
+                </value>
+                <value>
+                    <fullName>Real Assets</fullName>
+                    <default>false</default>
+                    <label>Real Assets</label>
                 </value>
                 <value>
                     <fullName>Residential</fullName>
@@ -4444,6 +4479,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Senior Housing</label>
                 </value>
                 <value>
+                    <fullName>Single-Family Rental</fullName>
+                    <default>false</default>
+                    <label>Single-Family Rental</label>
+                </value>
+                <value>
                     <fullName>Single Family Rentals</fullName>
                     <default>false</default>
                     <label>Single Family Rentals</label>
@@ -4462,6 +4502,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <fullName>Student Housing</fullName>
                     <default>false</default>
                     <label>Student Housing</label>
+                </value>
+                <value>
+                    <fullName>Tower</fullName>
+                    <default>false</default>
+                    <label>Tower</label>
                 </value>
                 <value>
                     <fullName>Towers</fullName>
@@ -10468,7 +10513,15 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10476,7 +10529,15 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10492,11 +10553,19 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Manufactured Home Park</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Manufactured Housing</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10509,6 +10578,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10532,6 +10605,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Skilled Nursing Facility</fullName>
                 <default>false</default>
             </values>
@@ -10541,6 +10618,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tower</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14255,7 +14336,15 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14263,7 +14352,15 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14279,11 +14376,19 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Manufactured Home Park</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Manufactured Housing</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14296,6 +14401,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14319,6 +14428,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Single-Family Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Skilled Nursing Facility</fullName>
                 <default>false</default>
             </values>
@@ -14328,6 +14441,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tower</fullName>
                 <default>false</default>
             </values>
             <values>
