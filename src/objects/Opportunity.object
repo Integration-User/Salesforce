@@ -56106,6 +56106,21 @@ NOT(ISPICKVAL(StageName, &quot;Open&quot;))
         <errorMessage>Please move this opportunity into your name, before trying to move stages.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Prevent_Update_Oppty_Amount</fullName>
+        <active>true</active>
+        <description>Do not allow Sales and AM team members or leaders to edit closed won opportunities except Commercial Operations and System Admins.</description>
+        <errorConditionFormula>AND(
+$UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
+$UserRole.Name &lt;&gt; &quot;Commercial Operations&quot;,
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISCHANGED( Amount ),
+OR(
+$User.Department = &apos;Sales&apos;,
+$User.Department = &apos;Account Management&apos;)
+)</errorConditionFormula>
+        <errorMessage>You may not edit a closed won opportunity. If you need adjustments made please speak with the OTC team and your system administrator.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Products_Required_to_Save_at_Stage_4</fullName>
         <active>true</active>
         <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 4 or higher.</description>
