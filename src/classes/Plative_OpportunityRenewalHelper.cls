@@ -314,7 +314,7 @@ public class Plative_OpportunityRenewalHelper {
         newOpp.Billing_Contact__c = Opp.Billing_Contact__c;
         newOpp.Terms__c = Opp.Terms__c;
         newOpp.AccountId = Opp.AccountId;
-        newOpp.CampaignId = Opp.CampaignId; 
+        // SF-1743 : newOpp.CampaignId = Opp.CampaignId; 
         newOpp.Non_Standard_Paperwork__c = Opp.Non_Standard_Paperwork__c; 
 
         if(Opp.Evergreen_Contract__c == true){
