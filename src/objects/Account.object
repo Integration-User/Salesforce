@@ -15625,18 +15625,6 @@ ISCHANGED(Name))</errorConditionFormula>
         <errorMessage>You cannot change the name of this Account.</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>Require_AccountSource_LeadType</fullName>
-        <active>true</active>
-        <errorConditionFormula>AND(
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-ISNEW(),
-OR(
-ISBLANK(TEXT(AccountSource)),
-ISBLANK(TEXT(Lead_Type__c)))
-)</errorConditionFormula>
-        <errorMessage>Please provide the account source and lead type.</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>Require_Billing_Address</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
