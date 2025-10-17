@@ -4369,9 +4369,19 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Apartment</label>
                 </value>
                 <value>
+                    <fullName>Cold Storage</fullName>
+                    <default>false</default>
+                    <label>Cold Storage</label>
+                </value>
+                <value>
                     <fullName>Data Center</fullName>
                     <default>false</default>
                     <label>Data Center</label>
+                </value>
+                <value>
+                    <fullName>Debt</fullName>
+                    <default>false</default>
+                    <label>Debt</label>
                 </value>
                 <value>
                     <fullName>Gaming</fullName>
@@ -4379,9 +4389,24 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Gaming</label>
                 </value>
                 <value>
+                    <fullName>Ground Lease</fullName>
+                    <default>false</default>
+                    <label>Ground Lease</label>
+                </value>
+                <value>
+                    <fullName>Health Care</fullName>
+                    <default>false</default>
+                    <label>Health Care</label>
+                </value>
+                <value>
                     <fullName>Industrial</fullName>
                     <default>false</default>
                     <label>Industrial</label>
+                </value>
+                <value>
+                    <fullName>Land</fullName>
+                    <default>false</default>
+                    <label>Land</label>
                 </value>
                 <value>
                     <fullName>Life Science</fullName>
@@ -4409,6 +4434,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Medical Office Building</label>
                 </value>
                 <value>
+                    <fullName>Mortgage Reit</fullName>
+                    <default>false</default>
+                    <label>Mortgage Reit</label>
+                </value>
+                <value>
                     <fullName>Multi-Sector</fullName>
                     <default>false</default>
                     <label>Multi-Sector</label>
@@ -4419,9 +4449,19 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Net Lease</label>
                 </value>
                 <value>
+                    <fullName>Niche</fullName>
+                    <default>false</default>
+                    <label>Niche</label>
+                </value>
+                <value>
                     <fullName>Office</fullName>
                     <default>false</default>
                     <label>Office</label>
+                </value>
+                <value>
+                    <fullName>Real Assets</fullName>
+                    <default>false</default>
+                    <label>Real Assets</label>
                 </value>
                 <value>
                     <fullName>Residential</fullName>
@@ -10476,7 +10516,15 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10484,7 +10532,19 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10508,6 +10568,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Multi-Sector</fullName>
                 <default>false</default>
             </values>
@@ -10516,7 +10580,15 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14271,7 +14343,15 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14279,7 +14359,19 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14303,6 +14395,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Multi-Sector</fullName>
                 <default>false</default>
             </values>
@@ -14311,7 +14407,15 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
                 <default>false</default>
             </values>
             <values>
