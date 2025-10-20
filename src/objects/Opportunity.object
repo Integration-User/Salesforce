@@ -2500,6 +2500,15 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Description_History__c</fullName>
+        <label>Description History</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Designated_ARR__c</fullName>
         <label>Updated ARR</label>
         <precision>18</precision>
@@ -2834,7 +2843,7 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
     <fields>
         <fullName>Goals__c</fullName>
         <label>Goals</label>
-        <length>131072</length>
+        <length>32000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
@@ -5243,7 +5252,7 @@ OwnerId  = $User.Id)</formula>
     <fields>
         <fullName>Needs__c</fullName>
         <label>Needs</label>
-        <length>131072</length>
+        <length>32000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
@@ -5873,7 +5882,7 @@ NULL))))</formula>
     <fields>
         <fullName>Problems__c</fullName>
         <label>Problems</label>
-        <length>131072</length>
+        <length>32000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
