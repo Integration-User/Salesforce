@@ -321,7 +321,7 @@
     </fields>
     <fields>
         <fullName>AccountSource</fullName>
-        <trackHistory>true</trackHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -391,17 +391,6 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Account_Source__c</fullName>
-        <label>Account Source</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>Lead_Source</valueSetName>
-        </valueSet>
     </fields>
     <fields>
         <fullName>Account_Status__c</fullName>
@@ -474,17 +463,6 @@
         <label>Active Favor</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Active_Subscription_Count__c</fullName>
-        <externalId>false</externalId>
-        <label>Count of Active Subscriptions(IJ)</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Advisory_Last_Interaction_Date__c</fullName>
@@ -561,74 +539,6 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>Annual_Revenue_Range__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF(
-Annual_Revenue_USD__c = 0, &quot;Revenue unavailable&quot;,
-IF(
-  Annual_Revenue_USD__c &lt; 1000000, &quot;&lt; $1M&quot;,
-  IF(
-    Annual_Revenue_USD__c &lt; 5000000, &quot;$1M–$5M&quot;,
-    IF(
-      Annual_Revenue_USD__c &lt; 10000000, &quot;$5M–$10M&quot;,
-      IF(
-        Annual_Revenue_USD__c &lt; 50000000, &quot;$10M–$50M&quot;,
-        IF(
-          Annual_Revenue_USD__c &lt; 100000000, &quot;$50M–$100M&quot;,
-          IF(
-            Annual_Revenue_USD__c &lt; 200000000, &quot;$100M–$200M&quot;,
-            IF(
-              Annual_Revenue_USD__c &lt; 500000000, &quot;$200M–$500M&quot;,
-              IF(
-                Annual_Revenue_USD__c &lt; 1000000000, &quot;$500M–$1B&quot;,
-                IF(
-                  Annual_Revenue_USD__c &lt; 2000000000, &quot;$1B–$2B&quot;,
-                  IF(
-                    Annual_Revenue_USD__c &lt; 5000000000, &quot;$2B–$5B&quot;,
-                    IF(
-                      Annual_Revenue_USD__c &lt; 10000000000, &quot;$5B–$10B&quot;,
-                      &quot;$10B+&quot;
-                    )
-                  )
-                )
-              )
-            )
-          )
-        )
-      )
-    )
-  )
-)
-)</formula>
-        <label>Annual Revenue Range</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Annual_Revenue_USD__c</fullName>
-        <externalId>false</externalId>
-        <formula>CASE(
-    CurrencyIsoCode,
-    &quot;USD&quot;, AnnualRevenue,
-    &quot;AUD&quot;, AnnualRevenue * 0.6702,
-    &quot;CAD&quot;, AnnualRevenue * 0.7300,
-    &quot;EUR&quot;, AnnualRevenue * 1.0699,
-    &quot;GBP&quot;, AnnualRevenue * 1.2300,
-   0  
-)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>converts the Annual Revenue to USD</inlineHelpText>
-        <label>Annual Revenue USD</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Approved_Category__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Approved Category</label>
@@ -650,16 +560,6 @@ IF(
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>4</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Awards__c</fullName>
-        <externalId>false</externalId>
-        <label>Awards</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Became_Client_Research__c</fullName>
@@ -1129,17 +1029,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
-        <fullName>College_House_Id__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <externalId>true</externalId>
-        <label>College House Id</label>
-        <length>18</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
         <fullName>Company_Domain_Name__c</fullName>
         <description>Receives Company Domain Name from HubSpot</description>
         <externalId>false</externalId>
@@ -1173,15 +1062,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
             <restricted>true</restricted>
             <valueSetName>Company_Type</valueSetName>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Cost_Per_Click__c</fullName>
-        <label>Cost Per Click</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Count_of_open_SDO__c</fullName>
@@ -2899,16 +2779,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Customer_Success_Rep_ID__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <label>Customer Success Rep ID</label>
-        <referenceTo>User</referenceTo>
-        <relationshipName>Customer_Success_Reps</relationshipName>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Customer_Success_Rep__c</fullName>
         <externalId>false</externalId>
         <label>Customer Success Rep</label>
@@ -3202,47 +3072,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Employee_Count_Range__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF(
-    VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 9, &quot;1–9&quot;,
-    IF(
-        VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 49, &quot;10–49&quot;,
-        IF(
-            VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 99, &quot;50–99&quot;,
-            IF(
-                VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 199, &quot;100–199&quot;,
-                IF(
-                    VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 499, &quot;200–499&quot;,
-                    IF(
-                        VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 999, &quot;500–999&quot;,
-                        IF(
-                            VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 1999, &quot;1,000–1,999&quot;,
-                            IF(
-                                VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 4999, &quot;2,000–4,999&quot;,
-                                IF(
-                                    VALUE(ZoomInfo_Employee_Count_account__c) &lt;= 9999, &quot;5,000–9,999&quot;,
-                                    IF(
-                                        VALUE(ZoomInfo_Employee_Count_account__c) &gt;= 10000, &quot;10,000+&quot;,
-                                        &quot;Unknown&quot;
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-            )
-        )
-    )
-)</formula>
-        <inlineHelpText>Based on ZoomInfo Employee Count</inlineHelpText>
-        <label>Employee Count Range</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Entitlement_Guidance_Notes__c</fullName>
         <label>Entitlement Guidance Notes</label>
         <required>false</required>
@@ -3271,16 +3100,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Event__c</fullName>
-        <externalId>false</externalId>
-        <label>Event</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Excel_Add_In_Users__c</fullName>
@@ -3925,17 +3744,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>First_Upsell_Source__c</fullName>
-        <label>First Upsell Source</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>Lead_Source</valueSetName>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Force_Owner_Update__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Force Owner Update</label>
@@ -4043,16 +3851,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <label>High Value Target</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>ICP__c</fullName>
-        <externalId>false</externalId>
-        <label>ICP</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>IJ_Company_Type__c</fullName>
@@ -4336,13 +4134,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
-        <fullName>Inbound__c</fullName>
-        <defaultValue>false</defaultValue>
-        <label>Inbound?</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Individual_Users__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Individual Users</label>
@@ -4369,19 +4160,9 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Apartment</label>
                 </value>
                 <value>
-                    <fullName>Cold Storage</fullName>
-                    <default>false</default>
-                    <label>Cold Storage</label>
-                </value>
-                <value>
                     <fullName>Data Center</fullName>
                     <default>false</default>
                     <label>Data Center</label>
-                </value>
-                <value>
-                    <fullName>Debt</fullName>
-                    <default>false</default>
-                    <label>Debt</label>
                 </value>
                 <value>
                     <fullName>Gaming</fullName>
@@ -4389,24 +4170,9 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Gaming</label>
                 </value>
                 <value>
-                    <fullName>Ground Lease</fullName>
-                    <default>false</default>
-                    <label>Ground Lease</label>
-                </value>
-                <value>
-                    <fullName>Health Care</fullName>
-                    <default>false</default>
-                    <label>Health Care</label>
-                </value>
-                <value>
                     <fullName>Industrial</fullName>
                     <default>false</default>
                     <label>Industrial</label>
-                </value>
-                <value>
-                    <fullName>Land</fullName>
-                    <default>false</default>
-                    <label>Land</label>
                 </value>
                 <value>
                     <fullName>Life Science</fullName>
@@ -4434,11 +4200,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Medical Office Building</label>
                 </value>
                 <value>
-                    <fullName>Mortgage Reit</fullName>
-                    <default>false</default>
-                    <label>Mortgage Reit</label>
-                </value>
-                <value>
                     <fullName>Multi-Sector</fullName>
                     <default>false</default>
                     <label>Multi-Sector</label>
@@ -4449,19 +4210,9 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Net Lease</label>
                 </value>
                 <value>
-                    <fullName>Niche</fullName>
-                    <default>false</default>
-                    <label>Niche</label>
-                </value>
-                <value>
                     <fullName>Office</fullName>
                     <default>false</default>
                     <label>Office</label>
-                </value>
-                <value>
-                    <fullName>Real Assets</fullName>
-                    <default>false</default>
-                    <label>Real Assets</label>
                 </value>
                 <value>
                     <fullName>Residential</fullName>
@@ -4614,15 +4365,6 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Last_Cost_Per_Click__c</fullName>
-        <label>Last Cost Per Click</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>Last_Renewal_Opp__c</fullName>
         <label>Last Renewal Opp</label>
         <summarizedField>Opportunity.Contract_Start_Date__c</summarizedField>
@@ -4643,34 +4385,7 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     </fields>
     <fields>
         <fullName>Last_Risk_Score__c</fullName>
-        <label>Last Attrition Probability</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Last_Training_Date__c</fullName>
-        <label>Last Training Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Last_Upsell_Source__c</fullName>
-        <label>Last Upsell Source</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>Lead_Source</valueSetName>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Lead_Type__c</fullName>
-        <label>Lead Type</label>
+        <label>Last Risk Score</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -4679,87 +4394,29 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Contact Us</fullName>
+                    <fullName>High</fullName>
                     <default>false</default>
-                    <label>Contact Us</label>
+                    <label>High</label>
                 </value>
                 <value>
-                    <fullName>Demo Request</fullName>
+                    <fullName>Medium</fullName>
                     <default>false</default>
-                    <label>Demo Request</label>
+                    <label>Medium</label>
                 </value>
                 <value>
-                    <fullName>Content Download</fullName>
+                    <fullName>Low</fullName>
                     <default>false</default>
-                    <label>Content Download</label>
-                </value>
-                <value>
-                    <fullName>Trial Request</fullName>
-                    <default>false</default>
-                    <label>Trial Request</label>
-                </value>
-                <value>
-                    <fullName>Scored Lead</fullName>
-                    <default>false</default>
-                    <label>Scored Lead</label>
-                </value>
-                <value>
-                    <fullName>Email</fullName>
-                    <default>false</default>
-                    <label>Email</label>
-                </value>
-                <value>
-                    <fullName>Call</fullName>
-                    <default>false</default>
-                    <label>Call</label>
-                </value>
-                <value>
-                    <fullName>Referral</fullName>
-                    <default>false</default>
-                    <label>Referral</label>
-                </value>
-                <value>
-                    <fullName>ZoomInfo</fullName>
-                    <default>false</default>
-                    <label>ZoomInfo</label>
-                </value>
-                <value>
-                    <fullName>SalesNav</fullName>
-                    <default>false</default>
-                    <label>SalesNav</label>
-                </value>
-                <value>
-                    <fullName>Fintrex</fullName>
-                    <default>false</default>
-                    <label>Fintrex</label>
-                </value>
-                <value>
-                    <fullName>Preqin</fullName>
-                    <default>false</default>
-                    <label>Preqin</label>
-                </value>
-                <value>
-                    <fullName>Google</fullName>
-                    <default>false</default>
-                    <label>Google</label>
-                </value>
-                <value>
-                    <fullName>Green Street News</fullName>
-                    <default>false</default>
-                    <label>Green Street News</label>
-                </value>
-                <value>
-                    <fullName>Internal Referral</fullName>
-                    <default>false</default>
-                    <label>Internal Referral</label>
-                </value>
-                <value>
-                    <fullName>Bulk List</fullName>
-                    <default>false</default>
-                    <label>Bulk List</label>
+                    <label>Low</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Last_Training_Date__c</fullName>
+        <label>Last Training Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>List_Membership_Account__c</fullName>
@@ -4943,26 +4600,6 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>NAICS_National_Industry__c</fullName>
-        <externalId>false</externalId>
-        <label>NAICS National Industry</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>NAICS_Sector__c</fullName>
-        <externalId>false</externalId>
-        <label>NAICS Sector</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>NS_Company_Internal_ID__c</fullName>
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
@@ -5075,18 +4712,6 @@ Owner.Id = $User.Id)</formula>
         <type>Summary</type>
     </fields>
     <fields>
-        <fullName>Number_of_Properties__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>For the College House Acquisition</inlineHelpText>
-        <label>Number of Properties</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Number_of_Subscriptions__c</fullName>
         <externalId>false</externalId>
         <label>Number of Subscriptions</label>
@@ -5101,17 +4726,6 @@ Owner.Id = $User.Id)</formula>
         <fullName>OperatingHoursId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Opportunity_Source__c</fullName>
-        <label>Opportunity Source</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>Lead_Source</valueSetName>
-        </valueSet>
     </fields>
     <fields>
         <fullName>Original_Account_Priority__c</fullName>
@@ -6119,42 +5733,32 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Revenue_Size__c</fullName>
-        <label>Revenue Size</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>Risk_Score__c</fullName>
-        <label>Attrition Probability</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Risk_Scorecard_Month_to_Renewal__c</fullName>
-        <externalId>false</externalId>
-        <label>Risk Scorecard Month to Renewal</label>
-        <length>255</length>
+        <label>Risk Score</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Risk_Tier__c</fullName>
-        <externalId>false</externalId>
-        <label>Risk Tier</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>SAM_Amount__c</fullName>
@@ -6508,11 +6112,6 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
                     <default>false</default>
                     <label>24 GSA Australia Ltd</label>
                 </value>
-                <value>
-                    <fullName>27 College House</fullName>
-                    <default>false</default>
-                    <label>27 College House</label>
-                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -6794,13 +6393,6 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Upsell__c</fullName>
-        <defaultValue>false</defaultValue>
-        <label>Upsell</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Usage_Change__c</fullName>
         <formula>(TTM_Rollup__c-Prior_12_Mo_Rollup__c ) /Prior_12_Mo_Rollup__c</formula>
         <inlineHelpText>YOY Usage % Change</inlineHelpText>
@@ -6832,16 +6424,6 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <length>255</length>
         <required>false</required>
         <trackHistory>true</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Webinar__c</fullName>
-        <externalId>false</externalId>
-        <label>Webinar</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -7872,71 +7454,319 @@ Stored as Long on Solr.</description>
         <picklistValues>
             <picklist>AccountSource</picklist>
             <values>
-                <fullName>Awards</fullName>
+                <fullName>6sense</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Backlink Referral</fullName>
+                <fullName>AM Referral</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Derived Intent</fullName>
+                <fullName>Apollo</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Direct Traffic</fullName>
+                <fullName>Canada</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Display</fullName>
+                <fullName>Cognism</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Email Campaign</fullName>
+                <fullName>Conference%2FEvent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Inbound Call</fullName>
+                <fullName>Demo Request</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Inbound Email</fullName>
+                <fullName>Digital Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Offline Upload</fullName>
+                <fullName>Green Street</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Organic Search</fullName>
+                <fullName>Green Street Event</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Organic Social</fullName>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other Campaigns</fullName>
+                <fullName>GSN API - AUS</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Outbound Prospecting</fullName>
+                <fullName>GSN API - CAN</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Paid Search</fullName>
+                <fullName>GSN API - EUR</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Paid Social</fullName>
+                <fullName>Green Street News%3A Australia</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Partner Referral</fullName>
+                <fullName>Green Street News%3A Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Street News%3A Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJ Global</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IJGlobal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Calendly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Chili Piper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Contact Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - LinkedIn Lead Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Media Pack Download</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Media Partnership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Newsletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Podcast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Subscription Interest Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Trial Auto-Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Trial Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Zoominfo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Qualified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Alert Trial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News Subscription Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-News%2FEvent Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Previous Client%2FContact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Sales Trip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Strategic Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previous Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proactive Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rankings Submission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React %26 US News Ecomm Inquiries</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Indirect-Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Indirect-Law Firm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Past Client Introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Customer Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Editorial Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Inbound Tel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Insider Support Inbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - LinkedIn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Outbound Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Zoominfo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slide Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell Opportunity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zoominfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8107,81 +7937,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Standard</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Account_Source__c</picklist>
-            <values>
-                <fullName>Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Backlink Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Derived Intent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Direct Traffic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Display</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email Campaign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other Campaigns</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound Prospecting</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8478,10 +8233,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Lender - Real Estate</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Long Only</fullName>
                 <default>false</default>
             </values>
@@ -8547,10 +8298,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Real Estate Company</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Real Estate Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10011,85 +9758,6 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>First_Upsell_Source__c</picklist>
-            <values>
-                <fullName>Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Backlink Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Derived Intent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Direct Traffic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Display</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email Campaign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Offline Upload</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other Campaigns</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound Prospecting</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Geographic_Exposure__c</picklist>
             <values>
                 <fullName>International</fullName>
@@ -10440,15 +10108,7 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cold Storage</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Data Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Debt</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10456,19 +10116,7 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ground Lease</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Health Care</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Industrial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Land</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10492,10 +10140,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Mortgage Reit</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Multi-Sector</fullName>
                 <default>false</default>
             </values>
@@ -10504,15 +10148,7 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Niche</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Office</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Real Assets</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10568,152 +10204,6 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Last_Upsell_Source__c</picklist>
-            <values>
-                <fullName>Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Backlink Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Derived Intent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Direct Traffic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Display</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email Campaign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Offline Upload</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other Campaigns</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound Prospecting</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Lead_Type__c</picklist>
-            <values>
-                <fullName>Bulk List</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Contact Us</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Content Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fintrex</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Google</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Internal Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Preqin</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SalesNav</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Scored Lead</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>ZoomInfo</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Location_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -10744,85 +10234,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>ROW</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Opportunity_Source__c</picklist>
-            <values>
-                <fullName>Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Backlink Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Derived Intent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Direct Traffic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Display</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email Campaign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Offline Upload</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other Campaigns</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound Prospecting</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11518,10 +10929,6 @@ Stored as Long on Solr.</description>
                 <fullName>22%2E3 Belgium</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>27 College House</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
         <picklistValues>
             <picklist>TA_Vertical__c</picklist>
@@ -11579,16 +10986,8 @@ Stored as Long on Solr.</description>
         <picklistValues>
             <picklist>Type</picklist>
             <values>
-                <fullName>Former - Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Parent</fullName>
                 <default>true</default>
-            </values>
-            <values>
-                <fullName>Suspended - Nonpayment</fullName>
-                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -11655,71 +11054,223 @@ Stored as Long on Solr.</description>
         <picklistValues>
             <picklist>AccountSource</picklist>
             <values>
-                <fullName>Awards</fullName>
+                <fullName>6sense</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Backlink Referral</fullName>
+                <fullName>AM Referral</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Derived Intent</fullName>
+                <fullName>Apollo</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Direct Traffic</fullName>
+                <fullName>Canada</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Display</fullName>
+                <fullName>Cognism</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Email Campaign</fullName>
+                <fullName>Conference%2FEvent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Event</fullName>
+                <fullName>Demo Request</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Inbound Call</fullName>
+                <fullName>Digital Campaign</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Inbound Email</fullName>
+                <fullName>Green Street</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Offline Upload</fullName>
+                <fullName>Green Street Event</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Organic Search</fullName>
+                <fullName>Green Street News</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Organic Social</fullName>
+                <fullName>Green Street News%3A Australia</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other Campaigns</fullName>
+                <fullName>Green Street News%3A Canada</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Outbound Prospecting</fullName>
+                <fullName>Green Street News%3A Europe</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Paid Search</fullName>
+                <fullName>IJ Global</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Paid Social</fullName>
+                <fullName>IJGlobal</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Partner Referral</fullName>
+                <fullName>Industry Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Calendly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Chili Piper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Contact Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - LinkedIn Lead Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Media Pack Download</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Media Partnership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Newsletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Podcast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Subscription Interest Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Trial Auto-Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Trial Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing - Zoominfo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Qualified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Alert Trial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News Subscription Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Conference%2FSpeaker%2FWebinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-News%2FEvent Driven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Previous Client%2FContact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Sales Trip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound-Strategic Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previous Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proactive Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rankings Submission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>React %26 US News Ecomm Inquiries</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11727,7 +11278,83 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Referral%3A Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Indirect-Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Indirect-Law Firm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral%3A Past Client Introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Customer Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Editorial Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Inbound Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Inbound Tel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Insider Support Inbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - LinkedIn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Outbound Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales - Zoominfo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slide Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowflake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell Opportunity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zoominfo</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11898,81 +11525,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Standard</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Account_Source__c</picklist>
-            <values>
-                <fullName>Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Backlink Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Derived Intent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Direct Traffic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Display</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email Campaign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other Campaigns</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound Prospecting</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12321,10 +11873,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Lender - Real Estate</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Long Only</fullName>
                 <default>false</default>
             </values>
@@ -12390,10 +11938,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Real Estate Company</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Real Estate Investor</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13762,85 +13306,6 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>First_Upsell_Source__c</picklist>
-            <values>
-                <fullName>Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Backlink Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Derived Intent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Direct Traffic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Display</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email Campaign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Offline Upload</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other Campaigns</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound Prospecting</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Geographic_Exposure__c</picklist>
             <values>
                 <fullName>International</fullName>
@@ -14191,15 +13656,7 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Cold Storage</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Data Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Debt</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14207,19 +13664,7 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ground Lease</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Health Care</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Industrial</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Land</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14243,10 +13688,6 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Mortgage Reit</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Multi-Sector</fullName>
                 <default>false</default>
             </values>
@@ -14255,15 +13696,7 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Niche</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Office</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Real Assets</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14319,152 +13752,6 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Last_Upsell_Source__c</picklist>
-            <values>
-                <fullName>Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Backlink Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Derived Intent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Direct Traffic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Display</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email Campaign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Offline Upload</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other Campaigns</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound Prospecting</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Lead_Type__c</picklist>
-            <values>
-                <fullName>Bulk List</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Contact Us</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Content Download</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Demo Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fintrex</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Google</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Green Street News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Internal Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Preqin</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SalesNav</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Scored Lead</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Trial Request</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>ZoomInfo</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Location_Type__c</picklist>
             <values>
                 <fullName>Advisory</fullName>
@@ -14495,85 +13782,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>ROW</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Opportunity_Source__c</picklist>
-            <values>
-                <fullName>Awards</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Backlink Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Derived Intent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Direct Traffic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Display</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email Campaign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inbound Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Offline Upload</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Organic Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other Campaigns</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outbound Prospecting</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Search</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paid Social</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15353,10 +14561,6 @@ Stored as Long on Solr.</description>
                 <fullName>24 GSA Australia Ltd</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>27 College House</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
         <picklistValues>
             <picklist>TA_Vertical__c</picklist>
@@ -15426,19 +14630,11 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Former - Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Prospect</fullName>
                 <default>true</default>
             </values>
             <values>
                 <fullName>Suspended</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Suspended - Nonpayment</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15580,34 +14776,16 @@ ISCHANGED(Name))</errorConditionFormula>
         <fullName>Require_Billing_Address</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
-    CreatedDate &gt; DATETIMEVALUE(&quot;2025-07-12 00:00:00&quot;),
-     Count_of_open_SDO__c &lt;1,
+    CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     OR(
-        BillingCountry = &quot;United States&quot;,
-        BillingCountry = &quot;United Kingdom&quot;,
-        BillingCountry = &quot;Canada&quot;,
-        BillingCountry = &quot;Australia&quot;
-    ),
-    OR(
         ISBLANK(BillingCity),
-        ISBLANK(BillingState)
+        ISBLANK(BillingState),
+        ISBLANK(BillingCountry)
     )
 )</errorConditionFormula>
         <errorDisplayField>BillingCity</errorDisplayField>
         <errorMessage>Billing City, State, and Country must be filled out on every Account record</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>Require_Billing_Country</fullName>
-        <active>true</active>
-        <errorConditionFormula>AND(
-    CreatedDate &gt; DATETIMEVALUE(&quot;2025-07-17 00:00:00&quot;),
-    Count_of_open_SDO__c &lt;1,
-    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-    ISBLANK(BillingCountry)
-)</errorConditionFormula>
-        <errorDisplayField>BillingCountry</errorDisplayField>
-        <errorMessage>Billing Country is required on all Accounts</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Entitlement_Guidance</fullName>
@@ -15655,10 +14833,9 @@ RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
         <fullName>Require_Website</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
-CreatedDate &gt; DATETIMEVALUE(&quot;2025-07-17 00:00:00&quot;),
-Count_of_open_SDO__c &lt;1,
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
 
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 
 OR(
 ISBLANK( Website),
