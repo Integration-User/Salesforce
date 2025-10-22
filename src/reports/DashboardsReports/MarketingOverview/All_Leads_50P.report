@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_80458467</developerName>
+        <masterLabel>Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>LEAD_OWNER</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Damon Scott</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristen Angle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Seth Laughlin</sourceValue>
+            </sourceValues>
+            <value>Account Management</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Aaron Ling</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alistair Bush</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ben Perkins</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ben Sutton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Elizabeth Steiner</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kevin Johnson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kris Hoffman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matt Souter</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mike Potter</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Murray Banks</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paul Eager</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>William Morrow</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristen Santos</sourceValue>
+            </sourceValues>
+            <value>New Sales</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Carolina Paini</sourceValue>
+            </sourceValues>
+            <value>Advisory</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_51857254</developerName>
+        <masterLabel>Team Role</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>OWNER_ROLE</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>CAM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CAM Manager</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EAM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EAM Manager</sourceValue>
+            </sourceValues>
+            <value>Account Managment</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BDR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BDR Manager</sourceValue>
+            </sourceValues>
+            <value>Sales</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Advisory</sourceValue>
+            </sourceValues>
+            <value>Advisory</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>OWNER_ROLE</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>CON_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>LAST_ACTIVITY</field>
+    </columns>
+    <columns>
+        <field>Lead.Company_Type__c</field>
+    </columns>
+    <columns>
+        <field>CONVERTED</field>
+    </columns>
+    <columns>
+        <field>Lead.Reason_Disqualified__c</field>
+    </columns>
+    <columns>
+        <field>OPP_ACCT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPP_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>OPP_NAME</field>
+    </columns>
+    <columns>
+        <field>LEAD_ID</field>
+    </columns>
+    <columns>
+        <field>LEAD_OWNER</field>
+    </columns>
+    <currency>USD</currency>
+    <description>All Lead and Opp Data Combined</description>
+    <filter>
+        <criteriaItems>
+            <column>LEAD_SOURCE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Marketing Qualified,Inquiry,Digital Campaign,Conference/Event,Slide Request,Targeted Campaign</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>LEAD_SOURCE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_51857254</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>All Marketing Leads</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityLead</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LAST_ACTIVITY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

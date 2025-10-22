@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Chris Grembowiec</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>FlowStone Partners,Cambridge International Securities,Brown Gibbons Lang &amp; Company,VantageScore Solutions,LLC,Timbercreek Capital,Bar Harbor Bank &amp; Trust,The Washington Trust Company,Knighthead Funding,Devotio Capital Management,RCN Capital LLC,Equitas Capital Group (Dupe),Goodman Real Estate Services Group,Interactive Capital,Midland Atlantic Properties,BlackGate Partners,Clark St Capital,Gries Financial Partners,SPH Group,Beacon Hill Investment Advisory,Armada ETF Advisors LLC,Verition Group LLC,Wexford Capital,L.P. (NA),Bridgewater Associates,One River Asset Management,Point72 Asset Management - Frausin Team,Chilton Investment Company,Sequoia Financial Group,Beirne Wealth Consulting,American Financial Group,W. R. Berkley Coporation,PG Law,Amica Mutual Insurance Company,Jadian Capital (NA),SG Capital Partners,Diamond Hill Capital Management,Inc. (NA),Fort Washington Investment Advisors,The Ohio State University - Endowment,Employees Retirement System of Rhode Island,Bowdoin College,OhioHealth Corporation,University Of Cincinnati,Wheelock Street Capital,LLC (NA),Union Capital Corp,KCVS Partners,First Reserve,White Oak Partners,Astatine Investment Partners,NewLake Capital,Westport Capital Partners LLC (NA),Post Road Group</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Contrarian Capital Management,Carnegie Capital Asset Management,Pepper Pike Capital Partners,Core Real Estate Capital LLC,Chase Properties,CASTO,Athena Real Estate,TreeVine Capital,Black Diamond Capital Management,Colter Lewis Investment Partners LLC,L Catterton,Forstone Capital LLC,Rockbridge,Hoya Capital Real Estate LLC,Industrial Commercial Properties,Vinebrook Homes,Fairbridge Asset Management,Vision &amp; Beyond,Workforce Partners,Riverside Realty Capital,Logistix Property Group,Zaremba Group,LLC,Spoke Real Estate Capital,Flex Real Estate,Stark Enterprises,PILOT Real Estate Group,Alder View Capital,Ashforth Co,North American Properties,Commercial Development Company,BBI Real Estate,Brady Sullivan Properties LLC,Range Light Investment Partners,Post Road Residential,DRK &amp; Company,Bluedog Capital Partners,The Mid-America Management Corporation,Elm Grove Companies,Anchor Associates,Eagle Realty Group,Stuart Acquisitions,Shelter Growth Capital Partners LLC,Minyum,Dalzell Capital Partners,Towne Properties,Ten Capital Management,RockBridge Capital,Premier Development Partners,Kaufman Development,OneWall Partners,First Hartford,Al Neyer Inc,LRC Realty,Brenton Point,OceanPort Realty Capital,Connect Real Estate,Carnegie Companies,Inc.</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>The Cooper Commercial Investment Group,East Capital Partners,Lifestyle Communities,The Pizzuti Companies,Twenty Lake Holdings,Spinnaker Trust,Building and Land Technology,Cedarwood Companies,Brand Street Properties,Alterra Real Estate Advisors,Rieth Jones Advisors,Welltower Inc.,Brown University</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 CGC</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

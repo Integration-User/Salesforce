@@ -1,9 +1,9 @@
 public class UpdateProductsOnOpportunityBatch implements Database.Batchable<Opportunity>, Database.Stateful{
     public String generatedCSVFile ='Id, Name, Old products__c, New products__c, Old Product Type, New Product Type\n';
     public Iterable<Opportunity> start(Database.BatchableContext BC) {
-        Set<Opportunity> diffOpp = new Set<Opportunity>(); 
+        Set<Opportunity> diffOpp = new Set<Opportunity>(); //, 'Renewal_Closed','Sales_Opportunity_Closed'
         for (Opportunity opp : [SELECT id, name, products__c, Product_Types__c, (SELECT product2.Name FROM OpportunityLineItems WHERE Lost_Product__c = false) 
-                                FROM Opportunity Where RecordType.DeveloperName IN ('Existing_Business', 'Renewal_Closed', 'Sales_Opportunity', 'Sales_Opportunity_Closed')]) {
+                                FROM Opportunity Where RecordType.DeveloperName IN ('Existing_Business', 'Sales_Opportunity')]) {
             /*List<String> oppProducts = new List<String>();
             if (String.isNotBlank(opp.products__c)) {
                 oppProducts = opp.products__c.split(';');

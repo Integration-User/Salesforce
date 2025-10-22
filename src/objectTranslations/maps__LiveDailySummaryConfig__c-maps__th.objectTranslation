@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>การกำหนดค่าการสรุปรายวันแบบสดใน Maps</value>
+    </caseValues>
+    <fields>
+        <help><!-- Total number of active devices associated with the DeviceLayer on this Summary --></help>
+        <label>จำนวนอุปกรณ์ที่ทำงาน</label>
+        <name>maps__ActiveDevicesCount__c</name>
+    </fields>
+    <fields>
+        <label>ทำงาน</label>
+        <name>maps__Active__c</name>
+    </fields>
+    <fields>
+        <label>สร้างเร็กคอร์ดแบตเตอรี่ของอุปกรณ์</label>
+        <name>maps__CreateDeviceBatteryRecord__c</name>
+    </fields>
+    <fields>
+        <label>สร้างเร็กคอร์ดการเร่งความเร็วอย่างรุนแรง</label>
+        <name>maps__CreateHardAccelRecord__c</name>
+    </fields>
+    <fields>
+        <label>สร้างเร็กคอร์ดการเบรคอย่างรุนแรง</label>
+        <name>maps__CreateHardBrakeRecord__c</name>
+    </fields>
+    <fields>
+        <label>สร้างเร็กคอร์ดความเร็ว</label>
+        <name>maps__CreateSpeedRecord__c</name>
+    </fields>
+    <fields>
+        <label>สร้างเร็กคอร์ดเกณฑ์ความเร็ว</label>
+        <name>maps__CreateSpeedThresholdRecord__c</name>
+    </fields>
+    <fields>
+        <label>สร้างเร็กคอร์ดระยะทางสะสมของรัฐ</label>
+        <name>maps__CreateStateMileageRecord__c</name>
+    </fields>
+    <fields>
+        <label>สร้างเร็กคอร์ดจุดแวะพัก</label>
+        <name>maps__CreateStopRecord__c</name>
+    </fields>
+    <fields>
+        <label>คำอธิบาย</label>
+        <name>maps__Description__c</name>
+    </fields>
+    <fields>
+        <label>เลเยอร์การถ่ายทอดสด</label>
+        <name>maps__DeviceLayer__c</name>
+        <relationshipLabel>การกำหนดค่าการสรุปรายวันแบบสด</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ค่าของระยะทาง</label>
+        <name>maps__DistanceValue__c</name>
+    </fields>
+    <fields>
+        <label>การปรับปรุงทริปการขับ</label>
+        <name>maps__DriveTripOptimization__c</name>
+        <picklistValues>
+            <masterLabel>Mobile Tracking</masterLabel>
+            <translation><!-- Mobile Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle Tracking</masterLabel>
+            <translation><!-- Vehicle Tracking --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The current job id of the running Summary batch job associated with this config --></help>
+        <label>รหัสประจำงาน</label>
+        <name>maps__JobId__c</name>
+    </fields>
+    <fields>
+        <label>วัน/เวลาสิ้นสุดแบตช์ล่าสุด</label>
+        <name>maps__LastBatchEndDateTime__c</name>
+    </fields>
+    <fields>
+        <label>รหัสประจำแบตช์ล่าสุด</label>
+        <name>maps__LastBatchId__c</name>
+    </fields>
+    <fields>
+        <label>วัน/เวลาเริ่มต้นแบตช์ล่าสุด</label>
+        <name>maps__LastBatchStartDateTime__c</name>
+    </fields>
+    <fields>
+        <label>วัดระยะทาง</label>
+        <name>maps__MeasureOfDistance__c</name>
+        <picklistValues>
+            <masterLabel>Feet</masterLabel>
+            <translation><!-- Feet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meters</masterLabel>
+            <translation><!-- Meters --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>ระยะเวลาทำความเร็ว</label>
+        <name>maps__SpeedAmtOfTime__c</name>
+    </fields>
+    <fields>
+        <label>เกินขีดจำกัดความเร็ว</label>
+        <name>maps__SpeedLimitOver__c</name>
+    </fields>
+    <fields>
+        <label>เพิ่มเวลาจำกัดความเร็ว</label>
+        <name>maps__SpeedLimitTimeIncrement__c</name>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minutes</masterLabel>
+            <translation><!-- Minutes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>เวลาของการจำกัดความเร็ว</label>
+        <name>maps__SpeedLimitTime__c</name>
+    </fields>
+    <fields>
+        <label>หน่วยของการจำกัดความเร็ว</label>
+        <name>maps__SpeedLimitUnits__c</name>
+        <picklistValues>
+            <masterLabel>kph</masterLabel>
+            <translation><!-- kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mph</masterLabel>
+            <translation><!-- mph --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>เหตุการณ์ของเกณฑ์ความเร็วที่ทำงานอยู่</label>
+        <name>maps__SpeedThresholdEventActive__c</name>
+    </fields>
+    <fields>
+        <label>เวลาของเกณฑ์ความเร็ว</label>
+        <name>maps__SpeedThresholdTime__c</name>
+    </fields>
+    <fields>
+        <label>หน่วยของเกณฑ์ความเร็ว</label>
+        <name>maps__SpeedThresholdUnits__c</name>
+        <picklistValues>
+            <masterLabel>Kph</masterLabel>
+            <translation><!-- Kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mph</masterLabel>
+            <translation><!-- Mph --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>เกณฑ์ความเร็ว</label>
+        <name>maps__SpeedThreshold__c</name>
+    </fields>
+    <fields>
+        <label>ค่าความเร็ว</label>
+        <name>maps__SpeedValue__c</name>
+    </fields>
+    <fields>
+        <label>เหตุการณ์การเร่งความเร็วที่ทำงานอยู่</label>
+        <name>maps__SpeedingEventActive__c</name>
+    </fields>
+    <fields>
+        <label>เหตุการณ์ที่จุดแวะพักที่ทำงานอยู่</label>
+        <name>maps__StopEventActive__c</name>
+    </fields>
+    <fields>
+        <label>ค่าของเวลาที่จุดแวะพัก</label>
+        <name>maps__StopTimeValue__c</name>
+    </fields>
+    <fields>
+        <label>หน่วยของความเร็ว</label>
+        <name>maps__UnitOfSpeed__c</name>
+        <picklistValues>
+            <masterLabel>kph</masterLabel>
+            <translation><!-- kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mph</masterLabel>
+            <translation><!-- mph --></translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel>ชื่อการกำหนดค่าการสรุปรายวันแบบสดใน Maps</nameFieldLabel>
+</CustomObjectTranslation>

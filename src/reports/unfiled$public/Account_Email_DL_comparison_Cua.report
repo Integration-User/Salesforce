@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Email_Distribution__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Id</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Email_Distribution__r$Id</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Email_Distribution__r$Email_Distribution__c</field>
+    </columns>
+    <columns>
+        <field>Account$X18_digit_Account_ID__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>For Roy to compare for WP1 Conversion</description>
+    <format>Tabular</format>
+    <name>Account Email DL comparison</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Email_Distibution__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

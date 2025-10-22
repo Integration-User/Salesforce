@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact.Full_Name__c</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_ID</field>
+    </columns>
+    <columns>
+        <field>OWNER_FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Current_Status__c</field>
+    </columns>
+    <columns>
+        <field>Account.Current_Products__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(1 OR 2 OR 3) AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>NSW Treasury Corporation (NA),CC Real,EQT Exeter Advisors UK Ltd,Kuwait Fund for Arab Economic Dev. (NA),Public Officials Benefit Association,Foresight Group LLP (EU),Civitas Investment Management,China Investment Corporation,AVENTOS Capital Markets GmbH &amp; Co. KG.,MEAG MUNICH ERGO AssetManagement GmbH (NA),Mn Services (EU),Super Investment Management Pty Ltd (NA),Smartwin Capital,Mirvac (EU),Public Investment Fund (Saudi Arabia),Tryg Invest,Prologis (NA),National Pension Service of Korea,Artisan Partners,Vision Capital Corporation (NA),T. Rowe Price Associates (NA),Wellington Management Company (NA),Aberdeen Standard Investments Inc.,HG Vora Capital Management,LLC (NA),Eventide Asset Management,Robeco Asset Management (EU),Coronation Fund Managers,Reitway Global Pty Ltd. (NA),Newmark,Heitman/PRA Securities (NA),Elliott Management Corporation (NA),Claire&apos;s Boutiques,Inc. (NA),Bigman Holdings,Sesfikile Capital South Africa (NA),Union Equity Investments Diversified LLC,Diamond Hill Capital Management,Janus Henderson,Massachusetts Financial Services Company (MFS) (NA),Land &amp; Buildings Investment Management,LLC,Régimes de Retraite Société de Transport de Montréal RRSTM (1992) and RRSTM (CSN),Landscape Capital Management,Ranger Global Real Estate Advisors</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Moore Capital Management (NA),Rush Island Management,Varde Management,L.P. (NA),Wisayah (EU),MAS Real Estate (EU),Keppel Capital,Fidelity Management &amp; Research (FMR),Weiss Multi-Strategy Advisers,LLC,First Sentier Investors,American Century Investment Management,Catalyst Fund Managers (NA),HGI Capital Management,LLC (NA),Clearance Capital (EU),Wilhelm Capital (NA),V3 Capital Management,LP (NA),STANLIB Asset Management,LTD,Millennium International - Markus Scheufler Pod,Skagen (NA),Schonfeld Strategic Advisors - Tom Youn Team,Temasek International (USA),Tokio Marine Holdings,Inc,Tudor Investment Corporation (EU),Davidson Kempner (NA),Permodalan Nasional Berhad,DigitalBridge Group,Inc.,FitzWalter Capital Limited,Jefferies LLC (NA),TD Greystone Asset Management,Cohen &amp; Steers Capital Management (NA),Principal Global Investors (NA),APG Asset Management US Inc. (EU),Nuveen Asset Management (NA),Wells Fargo - CIB Commercial Real Estate,Nuveen Services,Pricewaterhouse Coopers LLP (NA),UBS Asset Management (NA),Canada Pension Plan Investment Board,National Financial Services (FMR - Enterprise Services Alternatives),Industrial Alliance Securities Inc,BDP Realty Holdings LP (NA),Teacher Retirement System of Texas (NA),Pennsylvania Public School Employees Retirement System,Aon Service Corporation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AIG Asset Management (U.S.),LLC,Olayan America and Olayan Europe Limited,Cadillac Fairview Corp. Ltd.,BlackRock Advisors (NA),Caisse de dépôt et placement du Québec (CDPQ),Oxford Properties Group (NA),Ares Management,PSP Investments (NA),Goldman Sachs Group,Inc.,The (NA),Abu Dhabi Investment Authority (NA),Invesco Real Estate (Trading) (NA),Kempen Capital Management (EU),Norges Bank Investment Management (NA),Macquarie Investment Management (NA),Revantage Corporate Services,CyrusOne (NA),Kadens Capital</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>EMAIL</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Current_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Active</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>EU 30 Markets Outreach - Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

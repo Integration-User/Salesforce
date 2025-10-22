@@ -141,6 +141,20 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>ResumeBilling</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ResumeBilling</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ResumeBilling</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -165,6 +179,20 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>SmsHighlightAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SuspendBilling</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SuspendBilling</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SuspendBilling</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -4675,6 +4703,7 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
+            <controllingField>AccountSource</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -4759,6 +4788,197 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <label>Bulk List</label>
                 </value>
             </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Contact Us</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Demo Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Content Download</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Trial Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Scored Lead</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Email</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Call</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Referral</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>ZoomInfo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>SalesNav</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Fintrex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Preqin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Google</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Green Street News</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Internal Referral</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Offline Upload</controllingFieldValue>
+                <valueName>Bulk List</valueName>
+            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -7672,7 +7892,6 @@ Stored as Long on Solr.</description>
         <columns>ACCOUNT.PHONE1</columns>
         <columns>ACCOUNT.TYPE</columns>
         <columns>CORE.USERS.ALIAS</columns>
-        <columns>Client_Segment__c</columns>
         <columns>Company_Type__c</columns>
         <columns>ACCOUNT.LAST_ACTIVITY</columns>
         <columns>Analyst_Access__c</columns>
@@ -7758,6 +7977,27 @@ Stored as Long on Solr.</description>
             <value>News Upsell</value>
         </filters>
         <label>News Upsell SPIF Accounts</label>
+    </listViews>
+    <listViews>
+        <fullName>Nontexas</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.ADDRESS1_CITY</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Company_Type__c</columns>
+        <columns>ACCOUNT.LAST_ACTIVITY</columns>
+        <columns>Analyst_Access__c</columns>
+        <columns>Detailed_NAV_Models__c</columns>
+        <columns>High_Value_Data_Sets__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACCOUNT.ADDRESS1_STATE_CODE</field>
+            <operation>notEqual</operation>
+            <value>TX</value>
+        </filters>
+        <label>JC-Edison New accounts play</label>
     </listViews>
     <listViews>
         <fullName>Phase_1_Target</fullName>
@@ -9784,11 +10024,11 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Sales Comps</fullName>
+                <fullName>EUR Retail Database Pro</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>EUR Retail Database Pro</fullName>
+                <fullName>EUR Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10083,6 +10323,13 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Restricted - See Notes Field</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FTRX_Associated_Synced_Lists__c</picklist>
+            <values>
+                <fullName>Test List</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10625,21 +10872,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Towers</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Last_Risk_Score__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11464,21 +11696,6 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>United Kingdom</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Risk_Score__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13922,6 +14139,13 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Restricted - See Notes Field</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FTRX_Associated_Synced_Lists__c</picklist>
+            <values>
+                <fullName>Test List</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

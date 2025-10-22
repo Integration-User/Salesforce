@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Maps ライブ納入商品日次サマリー</value>
+    </caseValues>
+    <fields>
+        <help><!-- Average duration of user-defined stop events, in hours. --></help>
+        <label>平均停止時間 (時間)</label>
+        <name>maps__AverageStopTimeHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Average duration of user-defined stop events, in minutes. --></help>
+        <label>平均停止時間 (分)</label>
+        <name>maps__AverageStopTimeMinutes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the device battery on events recorded that day, as defined in the daily summary configuration --></help>
+        <label>イベント数 - デバイスバッテリーオン</label>
+        <name>maps__CountOfEventsDeviceBatteryOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the speed threshold events recorded that day, as defined in the daily summary configuration --></help>
+        <label>イベント数 - 速度しきい値</label>
+        <name>maps__CountOfEventsSpeedThreshold__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the speeding events recorded that day, as defined in the daily summary configuration --></help>
+        <label>イベント数 - 速度超過</label>
+        <name>maps__CountOfSummaryEventsSpeeding__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the stop events recorded that day, as defined in the daily summary configuration --></help>
+        <label>イベント数 - 停止</label>
+        <name>maps__CountOfSummaryEventsStops__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that this summary applies to --></help>
+        <label>サマリーの日付</label>
+        <name>maps__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device Vendor concatenated with Device ID --></help>
+        <label>デバイス ID</label>
+        <name>maps__DeviceId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total time spent moving with engine on, in hours --></help>
+        <label>運転時間 (時間)</label>
+        <name>maps__DriveTimeHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total time spent moving with engine on, in minutes --></help>
+        <label>運転時間 (分)</label>
+        <name>maps__DriveTimeMinutes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if a trip took place within denoted holiday off --></help>
+        <label>休日中の運転</label>
+        <name>maps__DrivingDuringHolidayOff__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if a trip took place outside of denoted working hours --></help>
+        <label>勤務時間外の運転</label>
+        <name>maps__DrivingOutsideWorkingHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the full data content of the first point received by aws for the day. --></help>
+        <label>最初のメッセージコンテンツ</label>
+        <name>maps__FirstMessageContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the date and time of the first point received by aws for the day. --></help>
+        <label>最初のメッセージタイムスタンプ</label>
+        <name>maps__FirstMessageTimestamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of device messages indicating a quick acceleration event that day (when available) --></help>
+        <label>急加速イベントの数</label>
+        <name>maps__HardAccelerationCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of device messages indicating a hard braking event that day (when available) --></help>
+        <label>急減速イベントの数</label>
+        <name>maps__HardBrakingCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the full data content of the last point received by aws for the day. --></help>
+        <label>最後のメッセージコンテンツ</label>
+        <name>maps__LastMessageContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the date and time of the last point received by aws for the day. --></help>
+        <label>最後のメッセージタイムスタンプ</label>
+        <name>maps__LastMessageTimestamp__c</name>
+    </fields>
+    <fields>
+        <label>ライブ納入商品</label>
+        <name>maps__LiveAsset__c</name>
+        <relationshipLabel>Maps ライブ納入商品日次サマリー</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to the summary configuration that this summary is based on --></help>
+        <label>ライブ日次サマリー設定</label>
+        <name>maps__LiveDailySummaryConfig__c</name>
+        <relationshipLabel>Maps ライブ納入商品日次サマリー</relationshipLabel>
+    </fields>
+    <fields>
+        <label>運転者</label>
+        <name>maps__LiveDriver__c</name>
+        <relationshipLabel>Maps ライブ納入商品日次サマリー</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ライブ IoT デバイス</label>
+        <name>maps__LiveIoTDevice__c</name>
+        <relationshipLabel>Maps ライブ納入商品日次サマリー</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Maximum single speed value received that day (in KPH) --></help>
+        <label>最大速度 (KPH)</label>
+        <name>maps__MaximumSpeedKPH__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum single speed value received that day (in MPH) --></help>
+        <label>最大速度 (MPH)</label>
+        <name>maps__MaximumSpeedMPH__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading of the day, in kilometers --></help>
+        <label>走行距離計 (km)</label>
+        <name>maps__OdometerKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading of the day, in miles --></help>
+        <label>走行距離計 (マイル)</label>
+        <name>maps__OdometerMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in kilometers --></help>
+        <label>合計距離 (km)</label>
+        <name>maps__TripDistanceKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in miles --></help>
+        <label>合計距離 (マイル)</label>
+        <name>maps__TripDistanceMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User that is assigned to the associated Device at the time that the Summary was created --></help>
+        <label>ユーザー</label>
+        <name>maps__User__c</name>
+        <relationshipLabel><!-- Maps Live Asset Daily Summaries --></relationshipLabel>
+    </fields>
+    <nameFieldLabel>Maps ライブ納入商品日次サマリー名</nameFieldLabel>
+</CustomObjectTranslation>

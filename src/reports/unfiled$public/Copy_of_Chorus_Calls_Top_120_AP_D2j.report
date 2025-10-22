@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Shayan Emtiaz</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Centerlane Capital,Clear Blue,Flagship Healthcare Properties LLC,Beauxwright,10 Federal,3H Group,Abacus Capital,Alpha Investing,American Residential,APG Advisors,APG Capital,Barnett Properties,Beacon Partners,BNA Associates,Boveda Asset Management,Brookside Properties,C.F. Smith Property Group,Carolinas Investment Consulting LLC,Catalyst Capital Partners,CBL Properties,Centaur Equities LLC,Chartwell Property Group,Chaucer Creek Capital,Claritas Capital,Clear Path Asset Management,Craig Davis Properties,Crews &amp; Associates,Crosland,Crosland Southeast,Curi,Eagle Point Capital,Eagleview Capital,Equis Residential,Front Street Capital,Ginkgo Residential,Hawthorne Residential Partners,Hawthorne Retail Partners,InSite Property Group,Integrated Asset Advisors,Kinloch Partners LLC,Lexington Asset Management,Liberty Investment Partners,MACC Venture Partners,Madison Capital Group,Montecito Medical,Natural Capital Management LLC,OakPoint Real Estate,Panorama Holdings,Pharos Hospitality LLC,Preiss Company,Proffitt Dixon Partners,LLC,Prudent Growth Partners,QC Capital,Ramston Capital,Rand Partners,Realcore Applications,Red Hill Ventures,Reiles Capital Group,Royster Commerical Real Estate,Safe Harbor Family Capital,Selwyn Property Group,Seward Capital</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>SilverCap Partners,South Street Partners,StepStone Global (EU),Strata SFR LLC,Summit Properties International,SunCap Property Group,Tectonic,Tempus Realty Partners,The Carroll Companies,The Keith Corporation,The Magnolia Companies,The Mainland Companies,The Parkes Companies,Inc.,Tribute Companies,Trinity Capital Advisors,Tri Properties,Inc,Unum,ViewPoint,Wedgewood Avenue,Faison,Ferncroft Capital,Disciplina Group LLC,Doma Vida Capital,Dominion Development Group,LLC,Dominion Partners,25 Capital,621 Capital,Barings Asset Management (UK) (EU),Bluegrass Capital Group,Brookwood Capital Partners,C.B. Ragland Company,Capstone Development Parnets,Carolina Capital,Carroll Family Partners,Carter-Haston Holdings,CA South Development,Cherokee Fund,Collett Capital LLC,Conformity,Cooper Communities,Dewitt Carolinas,Earnings Capital LLC,Eller Capital Partners,Equitas Management Group,Fogelman Properties,Gorelick Brothers Capital,Grubb Properties,Hall Emery,High House Capital,Inman Equities,Lee-Moore Capital,Four Oaks Capital,5050 Storage Partners,Arcos Properties,Blue Heron Asset Management,Covenant Capital Group,Crescent Communities,Grubb Ventures</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 SE</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Drew Koch</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Addo Investor Relations,Clarity Real Estate Advisors,Sanli Pastore &amp; Hill,Inc.,Sidney Inc,Munger,Tolles &amp; Olson LLP,HC Global,KopenTech,Santa Clara County Assessors,Qtative,Mullen &amp; Henzell L.L.P,Agglobal Capital Inc,Gorman &amp; Miller,Novogradac &amp; Company LLP,Mattel,Geraci Law Firm,Poline Search Partners,McDermott &amp; Bull,Alo Yoga,Mandri Capital,Eigen 10 Advisors LLC,Verdani Partners,Peer Street Inc,BBAM Aircraft Leasing and Management,SoCal Real Estate Ventures,FAT Brands Inc,Alias Intelligence,Sweetgreen Inc,Vervent,DealVector Inc,Social Finance Inc,SunPower Corporation,Vuori Clothing,GoodLeap,Hyundai Capital America,Zonda,Diversified Financing Solutions,Kiavi,United Auto Credit Corp,BellOak Advisors,Lineage Asset Advisors,Mulligan Funding,Measurabl,Db&amp;r Marketing Communications,LendSpark,Swell Energy,O&apos;Connor Cochran LLP,Alpha Strategies Investment Consulting,Deodate Corporation,Lubin Olson &amp; Niewiadomski,E3 Advisors,Ghidotti Berger,Raines Feldman LLP,Bangerter Financial Services,Peter Schendel,L33 Capital,Meriwest Credit Union,Greenoaks,Broadway Capital Partners,El Pollo Loco,Bespoke Real Estate Advisors,Taco Bell,Qdoba,Air Lease Corporation,Marin County,Three Vectors Capital,MAMRAMIM,LLC,Nossaman,Sutton Pakfar &amp; Courtney</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Mendocino Farms,Steve Pratt,Strategic Property Analytics,Inc,Big 5 Sporting Goods,Applebee&apos;s,Gaynor Law Group,Del Taco,Property Tax Resources,Gensler,Safeway,Inc.,Tillys,BJ&apos;s Restaurants,INC. (NA),Canterbury Consulting,Fox Racing,Bard Consulting,Hot Topic,Point Digital Finance,The Cheesecake Factory,Hanson Bridgett,Procopio,Forever 21,Guess?,Sephora USA,Experian,Oakley,Williams-Sonoma,Ross Stores,SSL Law Firm LLP,Coblentz,Patch,Duffy &amp; Bass LLP,Greenberg Glusker,Kennerly,Lamishaw &amp; Rossi LLP,Shartsis Friese LLP,California Pizza Kitchen,Iaffaldano,Shaw &amp; Young LLP,Juniper Square,Quantinal Capital Advisors,Blaze Pizza,Fabletics,Alameda County Government,Solheim Research,Ervin Cohen and Jessup LLP,NVIDIA Corporation,Cooley LLP,Manatt,Phelps &amp; Phillips,LLP,Cole-Frieman &amp; Mallon LLP,Buchalter,Allbirds Inc</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 DKH</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_41927975</developerName>
+        <masterLabel>Lead Owners</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>LEAD_OWNER</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Matt Souter</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ben Perkins</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Will Morrow</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Fady Labib</sourceValue>
+            </sourceValues>
+            <value>Matt Souter, Ben Perkins, Will Morrow, Fady Labib</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Madeline Hector</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jackson Knowles</sourceValue>
+            </sourceValues>
+            <value>Madeline Hector, Jackson Knowles</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>PHONE</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>&quot;2022 IMN Winter Forum, Laguna Beach&quot;,IMN 2022: Sorry We Missed You</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_41927975</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>IMN Leads</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLead</reportType>
+    <scope>orgAll</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

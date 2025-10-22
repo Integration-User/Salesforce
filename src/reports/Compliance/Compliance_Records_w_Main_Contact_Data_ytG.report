@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Compliance__c$Name</field>
+    </columns>
+    <columns>
+        <field>Compliance__c$Compliance_Main_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Compliance__c$Compliance_Main_Contact__c.Email</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>Compliance Records w Main Contact Data</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Compliance_Records__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Compliance__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

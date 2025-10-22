@@ -4,10 +4,6 @@
     <category>accounts</category>
     <deployed>true</deployed>
     <description>Contact Email Distribution History</description>
-    <join>
-        <outerJoin>false</outerJoin>
-        <relationship>Contact_Email_Distribution__c_hd</relationship>
-    </join>
     <label>Contact Email Distribution History</label>
     <sections>
         <columns>
@@ -83,16 +79,6 @@
         <masterLabel>Contact Email Distributions</masterLabel>
     </sections>
     <sections>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Account__c_hst</field>
-            <table>Contact_Email_Distribution__c.Contact_Email_Distribution__c_hd</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Contact__c_hst</field>
-            <table>Contact_Email_Distribution__c.Contact_Email_Distribution__c_hd</table>
-        </columns>
         <masterLabel>Contact Email Distribution (Historical)</masterLabel>
     </sections>
 </ReportType>
