@@ -49043,6 +49043,11 @@
         <field>zisf__zicCleanJob__c.zisf__logs__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Q4_rate_cut_promotion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>AAKCS__AAkonsult_Settings__mdt-AAKCS__AAkonsult Setting Layout</layout>
     </layoutAssignments>
