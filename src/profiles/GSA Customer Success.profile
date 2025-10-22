@@ -17673,6 +17673,41 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Snapshot__c.Account_Manager__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Snapshot__c.Account_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Snapshot__c.Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Snapshot__c.CS_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Snapshot__c.Current_Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Snapshot__c.GSA_Relationship__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Snapshot__c.Number_of_Activated_Users__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Alert__mdt.Alert__c</field>
         <readable>false</readable>
@@ -48770,6 +48805,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Account_Product_Line__c-Account Product Line Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account_Snapshot__c-Account Snapshot Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Alert__mdt-Alert Layout</layout>
