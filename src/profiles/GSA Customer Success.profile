@@ -205,6 +205,11 @@
         <field>Opportunity.Primary_Campaign_Source_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Q4_rate_cut_promotion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
     </layoutAssignments>
