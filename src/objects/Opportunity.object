@@ -1352,6 +1352,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Current Client</label>
                 </value>
+                <value>
+                    <fullName>Spam</fullName>
+                    <default>false</default>
+                    <label>Spam</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1377,6 +1382,10 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Current Client</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Disqualified</controllingFieldValue>
+                <valueName>Spam</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
@@ -2677,6 +2686,7 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <label>Existing Renewal Opportunity</label>
         <lookupFilter>
             <active>true</active>
+            <booleanFilter>((1 AND 3) OR 4) AND 2</booleanFilter>
             <errorMessage>Please Select Existing Renewal Opportunity For This lookup</errorMessage>
             <filterItems>
                 <field>Opportunity.RecordTypeId</field>
@@ -2692,6 +2702,11 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
                 <field>Opportunity.Sales_Type__c</field>
                 <operation>equals</operation>
                 <value>Renewal</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Advertising</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -2709,6 +2724,7 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <label>Existing Sales Opportunity</label>
         <lookupFilter>
             <active>true</active>
+            <booleanFilter>(1 OR 3) AND 2</booleanFilter>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -2718,6 +2734,11 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
                 <field>Opportunity.StageName</field>
                 <operation>equals</operation>
                 <value>1 - Introducing, 2 - Conducting Needs Analysis, 3 - Qualifying, 4 - Recommending, 5 - Negotiation and Agreement Sent, 6 - Verbal Win and Finalizing Contract</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Advertising</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -44204,11 +44225,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Product Fit</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Product Fit</fullName>
+                <fullName>Spam</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55373,6 +55394,7 @@ ISBLANK(Existing_Renewal_Opportunity__c)
     <validationRules>
         <fullName>Check_SDO_Disqualified_Account_Fields</fullName>
         <active>true</active>
+        <description>$UserRole.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
 $UserRole.DeveloperName &lt;&gt; &quot;Subscription_Manager&quot;,
 $UserRole.DeveloperName &lt;&gt; &quot;Subscription_Operations&quot;,
@@ -55380,8 +55402,10 @@ $UserRole.DeveloperName &lt;&gt; &quot;Subscription_Sales&quot;,
 $UserRole.DeveloperName &lt;&gt; &quot;Event_Manager&quot;,
 $UserRole.DeveloperName &lt;&gt; &quot;Event_Operations&quot;,
 $UserRole.DeveloperName &lt;&gt; &quot;Event_User&quot;,
+
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
+NOT(ISPICKVAL(Close_Reason__c, &quot;Spam&quot;)),
 ISCHANGED(StageName),
 OR(
 ISBLANK(TEXT(Account.Company_Type__c)),
