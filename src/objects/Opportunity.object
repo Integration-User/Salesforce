@@ -351,6 +351,7 @@
         <fields>DDS_ApprovalProcessStatus__c</fields>
         <fields>AccountId</fields>
         <fields>CloseDate</fields>
+        <fields>IqScore</fields>
         <fields>RecordTypeId</fields>
         <label>New Awesome Compact Layout</label>
     </compactLayouts>
@@ -361,6 +362,7 @@
         <fields>AccountId</fields>
         <fields>Lead_Contact__c</fields>
         <fields>Inbound__c</fields>
+        <fields>IqScore</fields>
         <fields>Lead_Classification__c</fields>
         <fields>Lead_Type__c</fields>
         <label>Sales Development</label>
@@ -2497,7 +2499,7 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
     <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>Description_History__c</fullName>
@@ -2770,6 +2772,40 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Contact_CRD_ID__c</fullName>
+        <description>This field can be used to store the synced contact CRD ID from Fintrx</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field can be used to store the synced contact CRD ID from Fintrx</inlineHelpText>
+        <label>Fintrx Contact CRD ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Dataset__c</fullName>
+        <externalId>false</externalId>
+        <label>Fintrx Dataset</label>
+        <length>64</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Url__c</fullName>
+        <description>This field can be used to store the Fintrx link to the synced contact</description>
+        <inlineHelpText>This field can be used to store the Fintrx link to the synced contact</inlineHelpText>
+        <label>Fintrx Url</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
     </fields>
     <fields>
         <fullName>First_Campaign_Touchpoint_Date__c</fullName>
@@ -3433,6 +3469,7 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <trackHistory>true</trackHistory>
         <type>Picklist</type>
         <valueSet>
+            <controllingField>LeadSource</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -3622,6 +3659,197 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                     <label>Bulk List</label>
                 </value>
             </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Contact Us</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Demo Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Referral</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Scored Lead</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Trial Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Email</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Call</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Content Download</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Offline Upload</controllingFieldValue>
+                <valueName>Bulk List</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Google</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Preqin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>ZoomInfo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>SalesNav</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Fintrex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Green Street News</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Internal Referral</valueName>
+            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -5293,7 +5521,7 @@ OwnerId  = $User.Id)</formula>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>New Sales Opportunity</label>
         <lookupFilter>
-            <active>false</active>
+            <active>true</active>
             <filterItems>
                 <field>Opportunity.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -5371,6 +5599,7 @@ OwnerId  = $User.Id)</formula>
         <fullName>NextStep</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
     </fields>
     <fields>
         <fullName>Next_Outreach_Date__c</fullName>
@@ -7021,6 +7250,11 @@ NULL))))</formula>
                     <default>false</default>
                     <label>College House</label>
                 </value>
+                <value>
+                    <fullName>Hewett Research</fullName>
+                    <default>false</default>
+                    <label>Hewett Research</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -8204,8 +8438,47 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <columns>OPPORTUNITY.CLOSE_DATE</columns>
         <columns>OPPORTUNITY.CREATED_DATE</columns>
         <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>Total_ARR__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Existing_Business,Opportunity.Renewal_Closed</value>
+        </filters>
         <label>All Opportunities</label>
+    </listViews>
+    <listViews>
+        <fullName>All_IJ_Event_Inbound_SDOs_for_Assignment</fullName>
+        <columns>Marketing_Identified_Country__c</columns>
+        <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Lead_Contact__c</columns>
+        <columns>Contact_Name_For_Testing__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Lead_Type__c</columns>
+        <columns>Lead_Channel__c</columns>
+        <columns>Submission_Notes_New__c</columns>
+        <columns>Lead_Classification__c</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Sales_Development</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.FULL_NAME</field>
+            <operation>equals</operation>
+            <value>Integration User</value>
+        </filters>
+        <filters>
+            <field>Lead_Type__c</field>
+            <operation>equals</operation>
+            <value>In Person Event</value>
+        </filters>
+        <label>In-Person Event Inb. SDOs for Assignment</label>
     </listViews>
     <listViews>
         <fullName>All_Open_IJ_Global_Inbound_SDOs</fullName>
@@ -8231,11 +8504,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <value>Opportunity.Sales_Development</value>
         </filters>
         <filters>
-            <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <operation>equals</operation>
-            <value>IJGlobal</value>
-        </filters>
-        <filters>
             <field>CORE.USERS.ALIAS</field>
             <operation>equals</operation>
             <value>iuser</value>
@@ -8249,6 +8517,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <sharedTo>
             <group>IJ_Global_Inbound_SDOs</group>
             <role>Commercial_Operations</role>
+            <role>Event_Operations</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -8259,8 +8528,9 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <columns>Contact_Name_For_Testing__c</columns>
         <columns>OPPORTUNITY.STAGE_NAME</columns>
         <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+        <columns>Product_of_Interest__c</columns>
+        <columns>Submission_Page_URL__c</columns>
         <columns>Lead_Type__c</columns>
-        <columns>Lead_Channel__c</columns>
         <columns>Lead_Classification__c</columns>
         <columns>Days_Stalled__c</columns>
         <columns>Marketing_Identified_Country__c</columns>
@@ -8464,6 +8734,35 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <label>Expired Favor Opportunities</label>
     </listViews>
     <listViews>
+        <fullName>Fety_All_Opportunities</fullName>
+        <columns>Account_Owner__c</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>Rep_Forecast_Category__c</columns>
+        <columns>Pipeline_Category__c</columns>
+        <columns>Sales_Leader_Forecast_Category__c</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>contains</operation>
+            <value>CFety</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Sales_Opportunity,Opportunity.Sales_Opportunity_Closed</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>contains</operation>
+            <value>1 - Introducing,2 - Conducting Needs Analysis,3 - Qualifying,4 - Recommending,5 - Negotiation and Agreement Sent,6 - Verbal Win and Finalizing Contract</value>
+        </filters>
+        <label>Fety - All Opportunities</label>
+    </listViews>
+    <listViews>
         <fullName>KS_View</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>OPPORTUNITY.STAGE_NAME</columns>
@@ -8538,12 +8837,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <value>Open,Working,In Review</value>
         </filters>
         <label>My Open SDO’s</label>
-        <sharedTo>
-            <group>EU_BDR</group>
-            <role>BDR</role>
-            <role>BDR_Manager</role>
-            <role>Inbound_BDR</role>
-        </sharedTo>
     </listViews>
     <listViews>
         <fullName>MyOpportunities</fullName>
@@ -8592,8 +8885,8 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </filters>
         <label>My Approved Opportunities</label>
         <sharedTo>
-            <roleAndSubordinates>CAM_Manager</roleAndSubordinates>
-            <roleAndSubordinates>Sales_Manager</roleAndSubordinates>
+            <roleAndSubordinatesInternal>CAM_Manager</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>Sales_Manager</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -8611,7 +8904,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <columns>Marketing_Identified_Country__c</columns>
         <columns>OPPORTUNITY.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
-        <filterScope>Mine</filterScope>
+        <filterScope>Everything</filterScope>
         <filters>
             <field>OPPORTUNITY.RECORDTYPE</field>
             <operation>equals</operation>
@@ -8889,7 +9182,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
     </listViews>
     <listViews>
         <fullName>Sales_Orders_to_Review</fullName>
-        <booleanFilter>(1 AND 2 AND 3 AND 4) OR (1 AND 2 AND 5)</booleanFilter>
+        <booleanFilter>(1 AND 2 AND 3 AND 4 AND 6) OR (1 AND 2 AND 5 AND 6)</booleanFilter>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
         <columns>GSA_Subsidairy__c</columns>
@@ -8927,6 +9220,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <field>CORE.USERS.FIRST_NAME</field>
             <operation>contains</operation>
             <value>Olivia,Jamie,Izzy,Tori,Mona</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>notContain</operation>
+            <value>AFowl</value>
         </filters>
         <label>Sales Orders to Review- REACT &amp; UK</label>
         <sharedTo>
@@ -9074,18 +9372,20 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
     </listViews>
     <listViews>
         <fullName>US_SDO_s</fullName>
+        <columns>OPPORTUNITY.AGE_IN_DAYS</columns>
+        <columns>Marketing_Product_of_Interest__c</columns>
+        <columns>Referrer_URL__c</columns>
+        <columns>Submission_Page_URL__c</columns>
+        <columns>Marketing_Identified_Country__c</columns>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
         <columns>Lead_Contact__c</columns>
         <columns>Contact_Name_For_Testing__c</columns>
-        <columns>OPPORTUNITY.STAGE_NAME</columns>
         <columns>OPPORTUNITY.LEAD_SOURCE</columns>
         <columns>Lead_Type__c</columns>
-        <columns>Lead_Channel__c</columns>
-        <columns>Lead_Classification__c</columns>
-        <columns>Marketing_Identified_Country__c</columns>
+        <columns>Submission_Notes_New__c</columns>
+        <columns>Tell_Us_About_Your_Needs__c</columns>
         <columns>OPPORTUNITY.CREATED_DATE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>OPPORTUNITY.RECORDTYPE</field>
@@ -9097,16 +9397,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <operation>equals</operation>
             <value>Integration User</value>
         </filters>
-        <filters>
-            <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <operation>notContain</operation>
-            <value>Green Street News,Green Street News: Europe,IJGlobal,React</value>
-        </filters>
         <label>All Open Inbound SDO’s</label>
-        <sharedTo>
-            <role>Marketing</role>
-            <roleAndSubordinates>BDR_Manager</roleAndSubordinates>
-        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Won</fullName>
@@ -9126,11 +9417,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <field>OPPORTUNITY.STAGE_NAME</field>
             <operation>equals</operation>
             <value>Closed Won</value>
-        </filters>
-        <filters>
-            <field>OPPORTUNITY.CLOSE_DATE</field>
-            <operation>greaterOrEqual</operation>
-            <value>1/1/2018</value>
         </filters>
         <label>Won</label>
     </listViews>
@@ -9166,9 +9452,8 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </filters>
         <label>90 day Forecast Category</label>
         <sharedTo>
-            <roleAndSubordinates>Associate_Sales_Manager</roleAndSubordinates>
-            <roleAndSubordinates>Sales_Manager</roleAndSubordinates>
-            <roleAndSubordinates>UK_Associate_Sales_Manager</roleAndSubordinates>
+            <roleAndSubordinatesInternal>Sales_Manager</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>UK_Associate_Sales_Manager</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
@@ -9178,6 +9463,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <active>true</active>
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Advertising</label>
+        <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
@@ -9430,10 +9726,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Lost Product Line%28s%29</fullName>
                 <default>false</default>
             </values>
@@ -9458,19 +9750,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Non-contracted</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Non-coverage</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9695,6 +9979,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12453,6 +12741,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hewett Research</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12806,6 +13098,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Advertising - Closed</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -13017,10 +13320,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Market Conditions</fullName>
                 <default>false</default>
             </values>
@@ -13030,10 +13329,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>New Research Client</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13242,6 +13537,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16000,6 +16299,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hewett Research</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16369,6 +16672,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Advisory</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -16576,10 +16890,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Made New Client</fullName>
                 <default>false</default>
             </values>
@@ -16597,10 +16907,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Non-contracted</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16817,6 +17123,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19475,6 +19785,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hewett Research</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19800,6 +20114,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Advisory - Closed</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -20003,10 +20328,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Made New Client</fullName>
                 <default>false</default>
             </values>
@@ -20024,10 +20345,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Non-contracted</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20244,6 +20561,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22905,6 +23226,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SDR</fullName>
                 <default>false</default>
             </values>
@@ -23227,6 +23552,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Opportunity</businessProcess>
         <label>Events</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -23506,10 +23842,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Lost Product Line%28s%29</fullName>
                 <default>false</default>
             </values>
@@ -23538,10 +23870,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>No Research Budget</fullName>
                 <default>false</default>
             </values>
@@ -23558,15 +23886,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Non-responsive</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Online Order</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23807,6 +24127,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26808,6 +27132,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SDR</fullName>
                 <default>false</default>
             </values>
@@ -27684,6 +28012,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Omitted</fullName>
                 <default>false</default>
             </values>
@@ -30510,6 +30842,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SDR</fullName>
                 <default>false</default>
             </values>
@@ -30836,6 +31172,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Favor Opportunities</businessProcess>
         <label>Favor</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -31063,10 +31410,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Made New Client</fullName>
                 <default>false</default>
             </values>
@@ -31079,15 +31422,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Non-coverage</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -31292,6 +31627,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -33366,18 +33705,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>GSN API - AUS</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - CAN</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - EUR</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Green Street News%3A Australia</fullName>
                 <default>false</default>
             </values>
@@ -33813,6 +34140,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SDR</fullName>
                 <default>false</default>
             </values>
@@ -34139,6 +34470,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Favor Opportunities</businessProcess>
         <label>Favour - Closed</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -34366,10 +34708,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Made New Client</fullName>
                 <default>false</default>
             </values>
@@ -34382,15 +34720,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Non-coverage</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -34595,6 +34925,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -36665,18 +36999,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>GSN API - AUS</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - CAN</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GSN API - EUR</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Green Street News%3A Australia</fullName>
                 <default>false</default>
             </values>
@@ -37084,6 +37406,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SDR</fullName>
                 <default>false</default>
             </values>
@@ -37411,6 +37737,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <description>This is for sales quotas/booking targets.</description>
         <label>Quota</label>
         <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
                 <fullName>Awards</fullName>
@@ -37634,10 +37971,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Made New Client</fullName>
                 <default>false</default>
             </values>
@@ -37650,15 +37983,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Non-coverage</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37863,6 +38188,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -40111,6 +40440,61 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Team_Static__c</picklist>
+            <values>
+                <fullName>AM%3A Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Non-Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Strategic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Sales%3A News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head of SDR%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A West</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -40946,6 +41330,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Omitted</fullName>
                 <default>false</default>
             </values>
@@ -43772,6 +44160,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SDR</fullName>
                 <default>false</default>
             </values>
@@ -44102,6 +44494,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <businessProcess>Sales Development</businessProcess>
         <compactLayoutAssignment>Sales_Development</compactLayoutAssignment>
         <label>Sales Development</label>
+        <picklistValues>
+            <picklist>ACH_Auto_debit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Account_Source__c</picklist>
             <values>
@@ -44643,6 +45046,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -47696,6 +48103,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SDR</fullName>
                 <default>false</default>
             </values>
@@ -48336,10 +48747,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Lost Product Line%28s%29</fullName>
                 <default>false</default>
             </values>
@@ -48356,19 +48763,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Non-coverage</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Non-payment</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48589,6 +48988,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -51442,6 +51845,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SDR</fullName>
                 <default>false</default>
             </values>
@@ -52050,10 +52457,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>Interest - Check Back Later</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Lost Product Line%28s%29</fullName>
                 <default>false</default>
             </values>
@@ -52066,19 +52469,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>No Budget</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Non-coverage</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Non-payment</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Non-responsive</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -52291,6 +52686,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forecast</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55100,6 +55499,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hewett Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SDR</fullName>
                 <default>false</default>
             </values>
@@ -55460,6 +55863,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <searchResultsAdditionalFields>Starting_Price_Opp__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>OPPORTUNITY.AMOUNT</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY_SCORE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Products__c</searchResultsAdditionalFields>
         <searchResultsCustomButtons>New_Opportunity</searchResultsCustomButtons>
@@ -55816,7 +56220,7 @@ ISPICKVAL( StageName , &quot;Closed Won&quot;))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>DDScore_MissingApproval</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Prevents change the status from Conducting Needs Analysis (3) or Qualified Prospect (2) to any following open stages, including Closed Won when the score has not been approved. Allow changes w/o approval when &quot;Lead Source&quot; is &quot;News Subscription Request&quot;</description>
         <errorConditionFormula>AND(
 OR(
@@ -56247,6 +56651,7 @@ ISCHANGED(UTM_Campaign__c)
         <errorConditionFormula>AND(
 Account.Lock_Opportunities__c=TRUE,
 IsClosed=TRUE)</errorConditionFormula>
+        <errorDisplayField>X6Sense_Segment_Names__c</errorDisplayField>
         <errorMessage>There is a pending Subsidiary change approval on the Account. You cannot close the Opportunity until the Subsidiary change is approved or rejected.</errorMessage>
     </validationRules>
     <validationRules>
@@ -56308,8 +56713,9 @@ NOT(ISPICKVAL(StageName, &quot;Open&quot;))
         <errorConditionFormula>AND(
 $UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
 $UserRole.Name &lt;&gt; &quot;Commercial Operations&quot;,
+$User.LastName &lt;&gt; &quot;Fernandez&quot;,
+$User.LastName &lt;&gt; &quot;Eager&quot;,
 ISPICKVAL(StageName, &quot;Closed Won&quot;),
-ISCHANGED( Amount ),
 OR(
 $User.Department = &apos;Sales&apos;,
 $User.Department = &apos;Account Management&apos;)

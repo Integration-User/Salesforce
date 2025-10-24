@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Priority__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Status__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>ACRE Solutions,AEW Capital Management,Alan Biller and Associates,Alaska Electrical Trust Funds,Alaska Permanent Fund Corp,Alberta Investment Management Company,Alliance Global Advisors,AllianceBernstein,Almanac Realty Investors,Alpine Grove Partners,American Landmark,American Realty Advisors,Amherst Capital,Anderson Financial,Gordon and Company (NA),Apollo Global Management,Appfolio,World Bank,Wilshire Associates,Willett Advisors LLC,Western National Realty Advisors,Walton Street Capital (NA),Utah Retirement Systems,USAA Real Estate,Upshot,UPS,UBS Realty Investors LLC (NA),Triton Pacific Capital,TPG (NA),Townsend Group (NA),Torchlight Investors (NA),Tishman Speyer,The Michelson Organization,TGM Associates L.P.,Textron,Ardian,Ares Management,Argosy Real Estate,Arizona State Retirement System,Artemis Real Estate Partners,Ascentris,Avanath Capital,Avanti Properties,Avrio,Bailard,Ballast Investments (NA),Banyan Street Capital,Bard Consulting,Blue Vista LLC,Bouwinvest Real Estate Investors (NA),BRASA Real Estate LLC,Brennan Investment Group,Bridge Industrial,Brookfield Asset Management,CA Ventures,Callan Associates (NA),CalSTRS,Cambridge Associates,Canterbury Consulting,Canyon Partners Real Estate,CapitaLand International,CBRE Investment Management,Chevron</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>CenterSquare,Cerberus,Christian Brothers Investment Services Inc,Church Pension Fund,Citymark Capital,Cliffwater,Covenant Capital Group,Dermody Properties (NA),Deutsche Invest Immobilien GmbH,Elion Partners,Elysium Capital,Employees Retirement System of Rhode Island,Encore Capital Management,Equus Capital Partners,Evercore,FCP,FirstKey Homes,FPA Multifamily,FrontRange Capital Partners,G3 Ventures,GEM Realty Capital,Graceada Partners,Grosvenor Capital,Hamilton Lane,High Street Logistics,Hillcrest Finance LLC,Hines,Howard Hull,IDR Investment Management,Illinois Municipal Retirement Fund,Institutional Real Estate,Institutional Real Estate Inc.,Juniper Square,Kaiser Permanente,Landmark Properties,Lincoln Investment Advisors,Los Angeles City Employee Retirement System,Los Angeles Fire &amp; Police Pensions (NA),Lubert-Adler,Madsen Advisors,Marcus Partners,Marquette Associates,Meadow Partners,Meiji Yasuda Realty USA,Meketa,Merrimac Corp,Mesa West Capital,Mitsubishi HC,Moss Adams,NAREIT,National Real Estate Advisors,North Carolina Retirement System (NA),New York State Common Retirement,NIAM,Nippon,Noble Investment Group,Northern Trust,NREP,Orange County Employee Retirement System,Oregon State Treasury</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Parmenter,Pension Boards United Church of Christ Inc</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>VIP Americas List</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

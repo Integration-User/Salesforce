@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>地图实时每日摘要配置</value>
+    </caseValues>
+    <fields>
+        <help><!-- Total number of active devices associated with the DeviceLayer on this Summary --></help>
+        <label>活动设备计数</label>
+        <name>maps__ActiveDevicesCount__c</name>
+    </fields>
+    <fields>
+        <label>活动</label>
+        <name>maps__Active__c</name>
+    </fields>
+    <fields>
+        <label>创建设备电池记录</label>
+        <name>maps__CreateDeviceBatteryRecord__c</name>
+    </fields>
+    <fields>
+        <label>创建硬加速记录</label>
+        <name>maps__CreateHardAccelRecord__c</name>
+    </fields>
+    <fields>
+        <label>创建硬制动记录</label>
+        <name>maps__CreateHardBrakeRecord__c</name>
+    </fields>
+    <fields>
+        <label>创建速度记录</label>
+        <name>maps__CreateSpeedRecord__c</name>
+    </fields>
+    <fields>
+        <label>创建速度阈值记录</label>
+        <name>maps__CreateSpeedThresholdRecord__c</name>
+    </fields>
+    <fields>
+        <label>创建州/省里程记录</label>
+        <name>maps__CreateStateMileageRecord__c</name>
+    </fields>
+    <fields>
+        <label>创建停靠记录</label>
+        <name>maps__CreateStopRecord__c</name>
+    </fields>
+    <fields>
+        <label>描述</label>
+        <name>maps__Description__c</name>
+    </fields>
+    <fields>
+        <label>实时图层</label>
+        <name>maps__DeviceLayer__c</name>
+        <relationshipLabel>实时每日摘要配置</relationshipLabel>
+    </fields>
+    <fields>
+        <label>距离值</label>
+        <name>maps__DistanceValue__c</name>
+    </fields>
+    <fields>
+        <label>驾驶行程优化</label>
+        <name>maps__DriveTripOptimization__c</name>
+        <picklistValues>
+            <masterLabel>Mobile Tracking</masterLabel>
+            <translation><!-- Mobile Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle Tracking</masterLabel>
+            <translation><!-- Vehicle Tracking --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The current job id of the running Summary batch job associated with this config --></help>
+        <label>作业 ID</label>
+        <name>maps__JobId__c</name>
+    </fields>
+    <fields>
+        <label>上次批处理结束日期/时间</label>
+        <name>maps__LastBatchEndDateTime__c</name>
+    </fields>
+    <fields>
+        <label>上次批处理 ID</label>
+        <name>maps__LastBatchId__c</name>
+    </fields>
+    <fields>
+        <label>上次批处理开始日期/时间</label>
+        <name>maps__LastBatchStartDateTime__c</name>
+    </fields>
+    <fields>
+        <label>测量距离</label>
+        <name>maps__MeasureOfDistance__c</name>
+        <picklistValues>
+            <masterLabel>Feet</masterLabel>
+            <translation><!-- Feet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meters</masterLabel>
+            <translation><!-- Meters --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>时间的速度 Amt</label>
+        <name>maps__SpeedAmtOfTime__c</name>
+    </fields>
+    <fields>
+        <label>超过速度限值</label>
+        <name>maps__SpeedLimitOver__c</name>
+    </fields>
+    <fields>
+        <label>速度限值时间增量</label>
+        <name>maps__SpeedLimitTimeIncrement__c</name>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minutes</masterLabel>
+            <translation><!-- Minutes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>速度限值时间</label>
+        <name>maps__SpeedLimitTime__c</name>
+    </fields>
+    <fields>
+        <label>速度限值单位</label>
+        <name>maps__SpeedLimitUnits__c</name>
+        <picklistValues>
+            <masterLabel>kph</masterLabel>
+            <translation><!-- kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mph</masterLabel>
+            <translation><!-- mph --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>速度阈值事件激活</label>
+        <name>maps__SpeedThresholdEventActive__c</name>
+    </fields>
+    <fields>
+        <label>速度阈值时间</label>
+        <name>maps__SpeedThresholdTime__c</name>
+    </fields>
+    <fields>
+        <label>速度阈值单位</label>
+        <name>maps__SpeedThresholdUnits__c</name>
+        <picklistValues>
+            <masterLabel>Kph</masterLabel>
+            <translation><!-- Kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mph</masterLabel>
+            <translation><!-- Mph --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>速度阈值</label>
+        <name>maps__SpeedThreshold__c</name>
+    </fields>
+    <fields>
+        <label>速度值</label>
+        <name>maps__SpeedValue__c</name>
+    </fields>
+    <fields>
+        <label>加速事件活动</label>
+        <name>maps__SpeedingEventActive__c</name>
+    </fields>
+    <fields>
+        <label>停靠事件活动</label>
+        <name>maps__StopEventActive__c</name>
+    </fields>
+    <fields>
+        <label>停靠时间值</label>
+        <name>maps__StopTimeValue__c</name>
+    </fields>
+    <fields>
+        <label>速度单位</label>
+        <name>maps__UnitOfSpeed__c</name>
+        <picklistValues>
+            <masterLabel>kph</masterLabel>
+            <translation><!-- kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mph</masterLabel>
+            <translation><!-- mph --></translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel>地图实时每日摘要配置名称</nameFieldLabel>
+</CustomObjectTranslation>

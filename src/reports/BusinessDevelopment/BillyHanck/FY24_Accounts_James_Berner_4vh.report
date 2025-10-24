@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Prospect_Category__c</field>
+    </columns>
+    <columns>
+        <field>Account.Prospect_Notes__c</field>
+    </columns>
+    <columns>
+        <field>Account.Interests__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.DDS_CREAUM__c</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE_CODE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Number_of_Open_Opportunities__c</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.US_Expansion_Owner__c</field>
+    </columns>
+    <columns>
+        <field>Account.Protected_By__c</field>
+    </columns>
+    <columns>
+        <field>URL</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(1 OR 2) AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <column>USERS.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>James Berner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.US_Expansion_Owner__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>James Berner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Prospect_Category__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Not Viable Now,Not Viable</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Company_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Bank - Investment,Bank - Lender,Commercial Broker,Family Office,Hedge Fund - Dedicated,&quot;Hedge Fund - Dedicated, Event Driven&quot;,Hedge Fund - Generalist,&quot;Hedge Fund - Generalist, Dedicated Sponsor&quot;,&quot;Hedge Fund - Generalist, Dedicated Sponsor, Event Driven&quot;,&quot;Hedge Fund - Generalist, Event Driven&quot;,High Net Worth - RIA,Institutional Consultant,Insurance,Long Only,Long Only- Dedicated,Long Only- Generalist,&quot;Long Only- Generalist, Dedicated Sponsor&quot;,Non-Contracted Hedge Fund-dedicated,Non-Contracted Hedge Fund-generalist,Non-Contracted Long Only-dedicated,Non-Contracted Long Only-generalist,Pension Fund/Endowment,Private Equity - Dedicated,Private Equity - Diversified,REIT - Coverage Universe,REIT - Non Coverage Universe,Rating Agency,Real Estate Company,Sovereign Wealth Fund,Trading Only</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Company_Type__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>FY24 Accounts -James Berner</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

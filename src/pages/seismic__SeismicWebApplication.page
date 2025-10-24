@@ -1,0 +1,48 @@
+<apex:page title="{!TabLabel}" controller="seismic.SeismicWebApplicationController" action="{!Init}" showHeader="true" sidebar="false">
+<apex:includeScript value="{!JSENCODE(CanvasSDKControllerUrlString)}" />
+ <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Seismic Web Application</title>
+	<style type="text/css">
+		html, body { height: 100%; margin: 0; padding: 0; }
+		body #contentWrapper .bodyDiv .outerNoSidebar .noSidebarCell { padding: 0; }
+		body #contentWrapper #bodyTable { padding: 0; }
+ 		body #contentWrapper #bodyTable #docCenterIFrame { height: 850px !important; }
+		/* to fix inline=1 (in SF touch)*/
+		body.sfdcBody { padding: 0 !important; }
+		body.sfdcBody.apexPageInline { margin: 0; }
+	</style>
+	<script type="text/javascript">
+		function refreshSeismic()
+        {
+            window.location.reload();
+        }
+		function setupPostMessage() {
+			Sfdc.canvas.controller.subscribe({name : 'refresh', onData : function (e) {
+				refreshSeismic();
+			}});
+		}
+        
+		function resize() {
+			var body = document.body, html = document.documentElement;
+			var containerHeight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+			Sfdc.canvas.controller.resize( {height : containerHeight+ "px"});
+		}  
+
+		setupPostMessage();
+	</script>
+</head>
+<body>
+	<apex:pageMessages id="messages" escape="false" rendered="{!HasInvalidSubscription}"/>
+	<apex:canvasApp developerName="SeismicCanvasApp"
+		namespacePrefix="seismic"
+		applicationName="SeismicCanvasApp"
+		width="100%"
+		scrolling="auto"
+		parameters="{!CanvasParams}" 
+		onCanvasAppLoad="resize"
+		rendered="{!IF(HasInvalidSubscription,false,true)}"/>
+</body>
+</apex:page>

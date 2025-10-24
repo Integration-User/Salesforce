@@ -5,7 +5,7 @@
         <description>Potential Advisory Lead Email Alert</description>
         <protected>false</protected>
         <recipients>
-            <recipient>npagdades@greenstreet.com</recipient>
+            <recipient>gchong@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>

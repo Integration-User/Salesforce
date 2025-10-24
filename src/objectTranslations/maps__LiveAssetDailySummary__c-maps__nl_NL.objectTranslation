@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Dagelijkse samenvatting van Maps Live-activum</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dagelijkse samenvattingen van Maps Live-activa</value>
+    </caseValues>
+    <fields>
+        <help><!-- Average duration of user-defined stop events, in hours. --></help>
+        <label>Gemiddelde stoptijd (uren)</label>
+        <name>maps__AverageStopTimeHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Average duration of user-defined stop events, in minutes. --></help>
+        <label>Gemiddelde stoptijd (minuten)</label>
+        <name>maps__AverageStopTimeMinutes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the device battery on events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Aantal gebeurtenissen - Apparaataccu aan</label>
+        <name>maps__CountOfEventsDeviceBatteryOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the speed threshold events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Aantal gebeurtenissen - Drempel snelheid</label>
+        <name>maps__CountOfEventsSpeedThreshold__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the speeding events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Aantal gebeurtenissen - Te snel rijden</label>
+        <name>maps__CountOfSummaryEventsSpeeding__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the stop events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Aantal gebeurtenissen - Stops</label>
+        <name>maps__CountOfSummaryEventsStops__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that this summary applies to --></help>
+        <label>Overzichtsdatum</label>
+        <name>maps__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device Vendor concatenated with Device ID --></help>
+        <label>Apparaat-ID</label>
+        <name>maps__DeviceId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total time spent moving with engine on, in hours --></help>
+        <label>Rijtijd (uren)</label>
+        <name>maps__DriveTimeHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total time spent moving with engine on, in minutes --></help>
+        <label>Rijtijd (minuten)</label>
+        <name>maps__DriveTimeMinutes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if a trip took place within denoted holiday off --></help>
+        <label>Rijden tijdens vakantie</label>
+        <name>maps__DrivingDuringHolidayOff__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if a trip took place outside of denoted working hours --></help>
+        <label>Rijden buiten werktijd om</label>
+        <name>maps__DrivingOutsideWorkingHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the full data content of the first point received by aws for the day. --></help>
+        <label>Inhoud eerste bericht</label>
+        <name>maps__FirstMessageContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the date and time of the first point received by aws for the day. --></help>
+        <label>Tijdstempel eerste bericht</label>
+        <name>maps__FirstMessageTimestamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of device messages indicating a quick acceleration event that day (when available) --></help>
+        <label>Aantal keer snel accelereren</label>
+        <name>maps__HardAccelerationCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of device messages indicating a hard braking event that day (when available) --></help>
+        <label>Aantal keer hard remmen</label>
+        <name>maps__HardBrakingCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the full data content of the last point received by aws for the day. --></help>
+        <label>Inhoud laatste bericht</label>
+        <name>maps__LastMessageContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the date and time of the last point received by aws for the day. --></help>
+        <label>Tijdstempel laatste bericht</label>
+        <name>maps__LastMessageTimestamp__c</name>
+    </fields>
+    <fields>
+        <label>Live activum</label>
+        <name>maps__LiveAsset__c</name>
+        <relationshipLabel>Dagelijkse overzichten live activum Maps</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to the summary configuration that this summary is based on --></help>
+        <label>Configuratie dagelijks live overzicht</label>
+        <name>maps__LiveDailySummaryConfig__c</name>
+        <relationshipLabel>Dagelijkse overzichten live activum Maps</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Bestuurder</label>
+        <name>maps__LiveDriver__c</name>
+        <relationshipLabel>Dagelijkse overzichten live activum Maps</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Live IoT-apparaat</label>
+        <name>maps__LiveIoTDevice__c</name>
+        <relationshipLabel>Dagelijkse overzichten live activum Maps</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Maximum single speed value received that day (in KPH) --></help>
+        <label>Maximale snelheid (km/h)</label>
+        <name>maps__MaximumSpeedKPH__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum single speed value received that day (in MPH) --></help>
+        <label>Maximale snelheid (mp/h)</label>
+        <name>maps__MaximumSpeedMPH__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading of the day, in kilometers --></help>
+        <label>Kilometerteller (km)</label>
+        <name>maps__OdometerKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading of the day, in miles --></help>
+        <label>Kilometerteller (mijl)</label>
+        <name>maps__OdometerMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in kilometers --></help>
+        <label>Totale afstand (km)</label>
+        <name>maps__TripDistanceKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in miles --></help>
+        <label>Totale afstand (mijl)</label>
+        <name>maps__TripDistanceMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User that is assigned to the associated Device at the time that the Summary was created --></help>
+        <label>Gebruiker</label>
+        <name>maps__User__c</name>
+        <relationshipLabel><!-- Maps Live Asset Daily Summaries --></relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Naam van dagelijks overzicht live activu</nameFieldLabel>
+</CustomObjectTranslation>

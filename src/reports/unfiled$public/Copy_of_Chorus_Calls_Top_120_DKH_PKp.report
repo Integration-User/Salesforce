@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Jared Turner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Five Guys,PBMares,Mauldin &amp; Jenkins,Grant Thornton LLP (NA),Whitley Penn,HORNE,Kaufman Rossin,VantageScore Solutions,LLC,Revantage Corporate Services,Gaedeke Group,Revision Real Estate Partners,Mount Street LLP (NA),Alvarez and Marsal Real Estate Advisory Services,Incubation Capital Partners,CDH Wealth Management,Mosaic Property Valuations,WhiteStar Advisors,MFD Advisory,Gallagher &amp; Mohan,Crewe Capital LLC,SB Friedman,DFPG Investments,Statesman Business Advisors,Ryan,Real Estate Counselors International,RCM Wealth Advisors,JMA Financial Advisors,Longview Senior Housing Advisors,Alkaline Advisors,Dorset Mountain Partners,Nelson Financial Planning,Glenbrook Capital Advisors,Triangle Wealth Management,Hoffman Strategy Group (NA),Global Apartment Advisors (NA),Avior Wealth Management,Arkadios Capital,Pear Partners LLC,Boardwalk Capital Management,Centaur Capital Partners,Riveron,Mariner Wealth Advisors,Ankura Capital Advisors,Gravel Road Partners,Sequence Financial Solutions,Family Wealth Alliance,Eightfold Real Estate Capital (NA),PPM America,Inc. (NA),OFS Capital Corporation,SMS Financial LLC,Florida Development Finance,Broward County Property Appraiser,Third Line Capital,Ballast Point Capital,King and Spalding (NA),Haynes Boone,LLP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Akin Gump Strauss Hauer &amp; Feld LLP,Stinson LLP,Nelson Mullins Riley &amp; Scarborough LLP,Winstead PC (NA),Frost Brown Todd LLC,McGuireWoods LLP,Polsinelli,Greenspoon Marder,Jenner &amp; Block LLP,Adams and Reese LLP,Holland &amp; Hart LLP,Snell &amp; Wilmer,Baker &amp; McKenzie (NA),Balch &amp; Bingham,Baker Botts L.L.P.,Baker,Donelson,Bearman,Caldwell &amp; Berkowitz,PC,SG Capital Partners,LLC,The Trump Group,Built Technologies,Kapitus,Oracle Corporation,Verano,Muddy Waters Capital,Reiferson Dee,Infinity Capital Partners,AirDNA,AFC Gamma,Seva Capital,TransUnion,Contra Investments LLC,Guidehouse,Hensel Phelps,Equifax,Mesa Capital Partners,Hull Property Group,Sol-REIT,City of Arlington,Post Road Group,Greenwich Group International,Prescott Group,Rockbridge,Apple,Inc. (NA),Tailored Brands,Psycho Bunny,Container Store,GameStop,The LISA App,LCC,Bridgestone Americas,Cinnabon,ALDI Inc,National Vision,Helzberg Diamonds (NA),Mrs.Fields/TCBY/Pretzelmaker,McDonald&apos;s,Build-A-Bear Workshop,Inc.,Dave &amp; Buster’s Entertainment,Duke University,University of Nebraska,University of Arizona,University of Kansas,Real Estate Society at USF,Wake Forest University,Northwestern University,RiskSpan,Blue Vault Partners LLC</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 JTR</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

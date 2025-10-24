@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Trajet en voiture quotidien live Maps</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Trajets en voiture quotidiens live Maps</value>
+    </caseValues>
+    <fields>
+        <help><!-- AM/PM is determined based on the Timezone of the device --></help>
+        <label>Trajet en voiture matin ou après-midi</label>
+        <name>maps__AMorPMDriveTrip__c</name>
+        <picklistValues>
+            <masterLabel>AM</masterLabel>
+            <translation><!-- AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AM/PM</masterLabel>
+            <translation><!-- AM/PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM</masterLabel>
+            <translation><!-- PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- City where the start of the trip took place --></help>
+        <label>Ville de départ du trajet</label>
+        <name>maps__BeginTripCity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Country where the start of the trip took place --></help>
+        <label>Pays de départ du trajet</label>
+        <name>maps__BeginTripCountry__c</name>
+    </fields>
+    <fields>
+        <help><!-- Time when this trip started --></help>
+        <label>Date/heure de début du trajet</label>
+        <name>maps__BeginTripDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Address where the start of the trip took place --></help>
+        <label>Adresse complète de départ du trajet</label>
+        <name>maps__BeginTripFullAddress__c</name>
+    </fields>
+    <fields>
+        <help><!-- Postal Code where the start of the trip took place --></help>
+        <label>Code postal de départ du trajet</label>
+        <name>maps__BeginTripPostalCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- State where the start of the trip took place --></help>
+        <label>État, région, province départ du trajet</label>
+        <name>maps__BeginTripState__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Event Record, which is the start of this trip --></help>
+        <label>Arrêt de départ du trajet</label>
+        <name>maps__BeginTripStop__c</name>
+        <relationshipLabel><!-- Maps Live Daily Drive Trips (Begin Trip Stop) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Street where the start of the trip took place --></help>
+        <label>Rue de départ du trajet</label>
+        <name>maps__BeginTripStreet__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of the trip --></help>
+        <label>Date</label>
+        <name>maps__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if trip took place within denoted holiday off --></help>
+        <label>Conduite pendant les congés</label>
+        <name>maps__DrivingDuringHoliday__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if trip took place outside of denoted working hours --></help>
+        <label>Conduite hors des heures de travail</label>
+        <name>maps__DrivingOutsideWorkingHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- City where the end of the trip took place --></help>
+        <label>Ville d&apos;arrivée du trajet</label>
+        <name>maps__EndTripCity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Country where the end of the trip took place --></help>
+        <label>Pays d&apos;arrivée du trajet</label>
+        <name>maps__EndTripCountry__c</name>
+    </fields>
+    <fields>
+        <help><!-- Time when this trip ended --></help>
+        <label>Date/heure d&apos;arrivée du trajet</label>
+        <name>maps__EndTripDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Address where the end of the trip took place --></help>
+        <label>Adresse complète d&apos;arrivée du trajet</label>
+        <name>maps__EndTripFullAddress__c</name>
+    </fields>
+    <fields>
+        <help><!-- Postal Code where the end of the trip took place --></help>
+        <label>Code postal d&apos;arrivée du trajet</label>
+        <name>maps__EndTripPostalCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- State where the end of the trip took place --></help>
+        <label>État, région, province arrivée du trajet</label>
+        <name>maps__EndTripState__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Event Record, which is the end of this trip --></help>
+        <label>Arrêt d&apos;arrivée du trajet</label>
+        <name>maps__EndTripStop__c</name>
+        <relationshipLabel><!-- Maps Live Daily Drive Trips (End Trip Stop) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Street where the end of the trip took place --></help>
+        <label>Rue d&apos;arrivée du trajet</label>
+        <name>maps__EndTripStreet__c</name>
+    </fields>
+    <fields>
+        <label>Horodatage de fin Unix</label>
+        <name>maps__EndUnixTimeStamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Live Asset Daily Summary record to which this mileage relates --></help>
+        <label>Résumé quotidien d&apos;actif live</label>
+        <name>maps__LiveAssetDailySummary__c</name>
+        <relationshipLabel>Itinéraires routiers quotidiens live</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Denoted driver of this trip --></help>
+        <label>Conducteur live</label>
+        <name>maps__LiveDriver__c</name>
+        <relationshipLabel><!-- Maps Live Daily Drive Trips --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Horodatage de début Unix</label>
+        <name>maps__StartUnixTimeStamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total # of Hard Accel Events In Trip --></help>
+        <label>Total évén. Accélération brutale trajet</label>
+        <name>maps__TotalNumOfHardAccelEventsInTrip__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total # of hard braking events within this trip --></help>
+        <label>Total évén. Freinage brutal du trajet</label>
+        <name>maps__TotalNumOfHardBrakeEventsInTrip__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total # of max speed threshold events within this trip --></help>
+        <label>Total événements Seuil de vitesse trajet</label>
+        <name>maps__TotalNumOfSpeedThresholdEventsInTrip__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total # of speeding events within this trip --></help>
+        <label>Total événements Excès de vitesse trajet</label>
+        <name>maps__TotalNumOfSpeedingEventsInTrip__c</name>
+    </fields>
+    <fields>
+        <label>Distance de trajet (km)</label>
+        <name>maps__TripDistanceKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total trip distance in miles. --></help>
+        <label>Distance de trajet (mi)</label>
+        <name>maps__TripDistanceMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- Duration of this trip, in hours --></help>
+        <label>Temps de conduite du trajet (heures)</label>
+        <name>maps__TripDriveTimeHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Duration of this trip, in minutes --></help>
+        <label>Temps de conduite du trajet (minutes)</label>
+        <name>maps__TripDriveTimeMinutes__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Order of Trips throughout the day --></help>
+        <label>Ordre des trajets</label>
+        <name>maps__TripOrder__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nom de l&apos;itinéraire routier quotidien li</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

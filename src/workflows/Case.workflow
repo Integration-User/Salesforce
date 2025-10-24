@@ -152,11 +152,55 @@
             <type>user</type>
         </recipients>
         <recipients>
+            <recipient>alatorraca@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>apenn@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>bmarenholz@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carora@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
             <recipient>cmarks@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>gkumar@greenstreet.com</recipient>
+            <recipient>crastogi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jlyle@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jsafavieh@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kmarrinan@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>krajasekaran@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mdryhval@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mfloyd@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mkumaran@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -164,11 +208,35 @@
             <type>user</type>
         </recipients>
         <recipients>
+            <recipient>osawkins@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
             <recipient>praj@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>vsethuraman@greenstreet.com</recipient>
+            <recipient>rbaskar@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sbashir@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>slin@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ssmith@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swang@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>uhindocha@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>noreply@greenstreet.com</senderAddress>
@@ -261,8 +329,7 @@
         <description>Transaction Support Email Alert</description>
         <protected>false</protected>
         <recipients>
-            <recipient>jecusi@greenstreet.com</recipient>
-            <type>user</type>
+            <type>owner</type>
         </recipients>
         <senderAddress>noreply@greenstreet.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
@@ -284,7 +351,7 @@
         <description>Untouched Data Support Cases</description>
         <protected>false</protected>
         <recipients>
-            <recipient>crastogi@greenstreet.com</recipient>
+            <recipient>adillard@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>

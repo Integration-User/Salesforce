@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Product_Feedback__c.Contact__c</field>
+    </columns>
+    <columns>
+        <field>Product_Feedback__c.Feedback_Type__c</field>
+    </columns>
+    <columns>
+        <field>Product_Feedback__c.Description_of_Feedback__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Product_Feedback__c.Product__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>IJ Global: Award Add-on,IJ Global: Award Sponsorship,IJ Global: Award Table,IJGlobal: Data Delivery + News + IJ Investor,IJ Global: Event Sponsorship,IJ Global: Events Registration,IJGlobal: IJ Investor,IJGlobal: News,IJGlobal: News + IJ Investor,IJGlobal: One-Time</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_OWNER_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>MTD IJGlobal Weekly Product Feedback</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Product_Feedback__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

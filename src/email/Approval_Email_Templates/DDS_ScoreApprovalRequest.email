@@ -1,0 +1,18 @@
+<p style="font-family:Arial; font-size:12px;">Hi there,</p>
+
+<p style="font-family:Arial; font-size:12px;">{!Opportunity.OwnerFullName} has requested approval for the opportunity {!Opportunity.Name} (<a href="{!Opportunity.Link}">Link</a>).</p>
+
+<p style="font-family:Arial; font-size:12px;"><strong>Account:</strong> {!Opportunity.Account}<br>
+<strong>Company Type: </strong>{!Opportunity.Company_Type_Opp__c}<br>
+<strong>Current Products:</strong> {!Opportunity.Products__c}<br>
+<strong>Deal Score:</strong> {!Opportunity.DDS_ScoreAssignment__c}<br>
+<strong>Distance to Next Grade:</strong>{!Opportunity.DDS_ScoreARRResidual__c}<br>
+<strong>Previous Score:</strong> {!Opportunity.Previous_Score__c}<br>
+<strong>Approval Request Reason:</strong> {!Opportunity.DDS_ScoreAssignment__c} score{!Opportunity.DDS_ApprovalEmailHVTYoYInsight__c}<br>
+<strong>{!CASE(Opportunity.Sales_Type__c,"Renewal", "Starting Price: ","")}</strong> {!CASE(Opportunity.Sales_Type__c,"Renewal", Opportunity.DDS_StartingPriceText__c ,"")} 
+<strong>{!CASE(Opportunity.Sales_Type__c,"Renewal", "Price Change: ","")}</strong> {!CASE(Opportunity.Sales_Type__c,"Renewal", Opportunity.DDS_ApprovalEmailRenewalInsight__c ,"")} 
+<strong>Total Contract ARR:</strong> {!Opportunity.Total_ARR__c}<br>
+<strong>Pricing Justification:</strong> {!ApprovalRequest.Comments}</p>
+
+
+<p style="font-family:Arial; font-size:12px;">You can reply to this email with "Approved" or "Rejected" labels to process this request or use the <a href="{!ApprovalRequest.Internal_URL}">Link</a> to access the approval record via Salesforce.</p>

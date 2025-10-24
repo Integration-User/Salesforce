@@ -1,0 +1,98 @@
+<apex:page controller="seismic.SeismicEmbeddedAppVFDetailPageController" action="{!Init}" docType="html-5.0" applyBodyTag="false" showHeader="true" sidebar="false" standardStylesheets="false">
+
+  <apex:includeScript value="{!URLFOR($Resource.seismic__jquery_3_6_1_min_js)}" />
+  <apex:includeScript value="{!URLFOR($Resource.seismic__jquery_base64_js)}" />
+  <apex:includeScript value="{!JSENCODE(CanvasSDKControllerUrlString)}" />
+  <script type="text/javascript">
+    if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function(searchString, position) {
+    position = position || 0;
+    return this.indexOf(searchString, position) === position;
+    };
+    }
+  </script>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seismic Content Viewer</title>
+
+    <style type="text/css">
+      html, body, canvas-container { height: 100%; margin: 0; padding: 0; }
+      body { background-color: white; font-size: 12px !important; line-height: 1.2 !important; }
+      body #contentWrapper .bodyDiv .outerNoSidebar .noSidebarCell { padding: 0; }
+      body #contentWrapper #bodyTable { padding: 0; }
+      body #contentWrapper #bodyTable #detailIFrame { height: 765px !important; }
+      body.sfdcBody { padding: 0 !important; }
+      body.sfdcBody.apexPageInline { margin: 0; }
+
+      nav.slds-breadcrumb-container {
+            margin: 8px;
+        }
+
+        nav.slds-breadcrumb-container ol {
+            list-style-type: none;
+            align-items: center;
+            background-color: #F9F9FB;
+            padding: 10px;
+        }
+
+        nav.slds-breadcrumb-container li {
+            display: inline;
+            margin-left: 0px;
+        }
+
+        nav.slds-breadcrumb-container a {
+            text-decoration: none;
+            font-family: "Segoe UI", "Source Sans Pro", Arial, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 20px;
+            color: #006DCC;
+        }
+
+        nav.slds-breadcrumb-container a:hover {
+            text-decoration: underline;
+        }
+
+        .slds-breadcrumb__separator {
+        margin: 0 5px;
+        color: #0070d2;
+        }
+    </style>
+  </head>
+  <body>
+    <apex:pageMessages id="messages" escape="false" rendered="{!HasInvalidSubscription}"/>
+    <nav aria-label="Breadcrumb" class="slds-breadcrumb-container">
+        <ol class="slds-breadcrumb slds-list_horizontal">
+            <apex:repeat value="{!breadcrumbItems}" var="breadcrumb">
+                <li class="slds-breadcrumb__item">
+                    <a href="{!breadcrumb.url}" class="slds-text-link">{!breadcrumb.label}</a>
+                <apex:outputPanel rendered="{!NOT(breadcrumb == breadcrumbItems[breadcrumbItems.size-1])}">
+                    <span class="slds-breadcrumb__separator"> > </span>
+                </apex:outputPanel>
+                </li>
+            </apex:repeat>
+        </ol>
+    </nav>
+    <div class="canvas-container" style="border: 3px solid #f6f6f6; margin: 3px;">
+    <apex:canvasApp applicationName="SeismicCanvasApp" namespacePrefix="seismic" developerName="SeismicCanvasApp" parameters="{!CanvasAppParamString}" width="100%" scrolling="auto" onCanvasAppLoad="resize" rendered="{!IF(HasInvalidSubscription,false,true)}"/>
+    </div>
+    <script type="text/javascript">
+        Sfdc.canvas.controller.subscribe({name : 'goBack', onData : function (e) {
+            handleGoBackRequest(e.backUrl);
+        }});
+        
+        function handleGoBackRequest(backUrl){
+            window.top.location.href = encodeURI(backUrl);
+        }
+
+        function resize() {
+            var body = document.body, html = document.documentElement;
+            var containerHeight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+            Sfdc.canvas.controller.resize( {height : (containerHeight - 4) + "px"});
+        } 
+    </script>
+  </body>
+</apex:page>

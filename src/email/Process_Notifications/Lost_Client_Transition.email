@@ -1,0 +1,14 @@
+Name: {!Account.Name}
+Account Manager: {!Account.OwnerFirstName} {!Account.OwnerLastName} Company Type: {!Account.Company_Type__c} 
+Location: {!Account.BillingCity}, {!Account.ShippingState} 
+
+Tenure: {!Account.Years_as_Client__c} year(s)
+YOY Usage Change: {!Account.Usage_Change__c}%
+TTM clicks: {!Account.TTM_Rollup__c}
+
+Renewal Month: {!Account.Renewal_Month__c}
+
+Notes:
+{!Account.Attempts_to_Save__c}
+
+{!Account.Link}

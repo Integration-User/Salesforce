@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Letterhead</letterhead>
+    <name>Not Receiving Newsletters</name>
+    <style>freeForm</style>
+    <subject>React News Case #{!Case.CaseNumber}: {!Case.Subject}</subject>
+    <textOnly>Hi {!Case.SuppliedName},
+
+Thank you for flagging, It seems that our newsletters are being bounced back. In order to solve this, kindly open the link below:
+
+https://reactnews.us20.list-manage.com/subscribe?u=039d0f612c670ba39195b3fde&amp;id=b0728480f9
+
+This will allow our system to email you again. Once filled out, you may now start receiving newsletters from us.
+
+Also, to avoid this again in the future, kindly send the attached whitelisting guide to your IT team.
+
+If you need any additional assistance, please let me know.
+
+Best regards,
+React News
+Client Operations
+requests@reactnews.com
+
+
+Green Street
+www.greenstreet.com
+www.reactnews.com
+The Monument Building
+London EC3R 8AF
+United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

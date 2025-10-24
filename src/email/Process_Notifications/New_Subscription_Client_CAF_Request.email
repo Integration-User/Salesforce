@@ -1,0 +1,22 @@
+Account Name:  {!Opportunity.Account}
+Salesperson:     {!Opportunity.OwnerFullName}
+Stage:                {!Opportunity.StageName}
+Close Date:        {!Opportunity.CloseDate}
+Company Type:  {!Account.Company_Type__c}
+US Contract?      {!Account.00Nf400000NxONp}
+UK Contract?      {!Account.00Nf400000NxONk}
+
+
+Address:             
+{!Account.BillingAddress} 
+
+Contract Type:    {!Opportunity.Contract_Type__c}
+Contract Start:    {!Opportunity.Contract_Start_Date__c}
+Contract End:     {!Opportunity.Contract_End_Date__c}
+Contract Length:  {!Opportunity.Length_of_Contract__c}
+Invoice Terms:      {!Opportunity.00Nf400000TdIIx}
+Sales Amount:      {!Opportunity.Amount}
+2nd Year Amount: {!Opportunity.X2nd_Year_Amount_in_USD__c}
+
+Product Count:     {!Opportunity.Product_Count__c}
+Lead Source:        {!Opportunity.LeadSource}

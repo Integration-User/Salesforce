@@ -1,0 +1,135 @@
+<apex:page controller="seismic.SubscriptionConfigMappingController">
+    <apex:stylesheet value="{!URLFOR($Resource.seismic__SeismicAdmin)}"/>
+
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jquery_3_6_1_min_js)}" />
+    
+    <apex:pageMessages id="messages" escape="false" />
+    
+    <apex:form id="editSubscriptionConfigurationMapping">
+        <apex:pageBlock title="{!$Label.seismic__globalHeaderSubscription}" id="editSubscriptionConfigurationMappingPage">
+            <apex:pageBlockButtons >
+                <apex:actionFunction action="{!saveSubscriptionConfigurationMapping}" name="SaveSubscriptionConfigurationMapping" />
+                <apex:commandButton id="checkAndSaveButton" value="{!$Label.seismic__buttonSave}" onclick="checkAndSaveSubscriptionConfigurationMapping(SaveSubscriptionConfigurationMapping);return false;"/>
+                <apex:commandButton id="cancelButton" action="{!redirectToSeismicAdmin}" value="{!$Label.seismic__buttonCancel}" immediate="true"/>
+                <apex:commandButton id="deleteButton"
+                    value="{!$Label.seismic__buttonDelete}"
+                    onclick="return window.confirm('{!$Label.seismic__messageConfirmDeleteSubscription}')"
+                    action="{!deleteSubscriptionConfigurationMapping}"
+                    rendered="{!isDeletable}">
+                </apex:commandButton>
+                <apex:actionFunction name="showGlobalMessage" action="{!showGlobalMessage}" rerender="messages" immediate="true" oncomplete="enableAllButtons&&enableAllButtons()">
+                    <apex:param name="messageTypeToShow" assignTo="{!messageTypeToShow}" value=""/>
+                    <apex:param name="messageToShow" assignTo="{!messageToShow}" value=""/>
+                </apex:actionFunction>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection id="settings" columns="1">
+                <apex:pageBlockSectionItem id="relatedUserObject" rendered="{!NOT(canChangeUserObajectField)}">
+                    <apex:outputLabel value="{!$Label.seismic__userObjectFieldLabel}" for="newObjectType"/>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                        {!subscriptionConfigurationMapping.seismic__User_Object_Field_Name__c}
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="relatedUserObjectList" rendered="{!canChangeUserObajectField}">
+                    <apex:outputLabel value="{!$Label.seismic__userObjectFieldLabel}" for="newObjectType"/>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                        <apex:outputpanel layout="block" styleClass="requiredBlock"></apex:outputpanel>
+                        <select val="{!subscriptionConfigurationMapping.seismic__User_Object_Field__c}" id="userObjectFieldSelector">
+                            <apex:repeat value="{!userObjectSelectOptions}" var="list">
+                                <apex:repeat value="{!list}" var="o">
+                                    <option value="{!o.value}" >{!o.label}</option>
+                                </apex:repeat>
+                            </apex:repeat>
+                        </select>
+                        <apex:inputHidden id="userObjectFieldSelectorHidden" value="{!subscriptionConfigurationMapping.seismic__User_Object_Field__c}"/>
+                        <script type="text/javascript">
+                            var userObjectField = '{!$Component.userObjectFieldSelector}';
+                            function getUserObjectField() {
+                                var input = document.getElementById(userObjectField);
+                                return input && input.value;
+                            }
+
+                            jQuery(function(){
+                                var $userObjectFieldSelector = jQuery("#userObjectFieldSelector");
+                                $userObjectFieldSelector.children("option").each(function(k, v){
+                                    if(jQuery(v).val() == $userObjectFieldSelector.attr("val")){
+                                        jQuery(v).attr("selected", "selected");
+                                    }
+                                });
+
+                                document.getElementById('{!$Component.userObjectFieldSelectorHidden}').value = jQuery("#userObjectFieldSelector").val();
+
+                                jQuery("#userObjectFieldSelector").change(function(){
+                                    document.getElementById('{!$Component.userObjectFieldSelectorHidden}').value = jQuery(this).val();
+                                });
+                            });
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="userFieldValue">    
+                    <apex:outputLabel id="label" value="{!$Label.seismic__userFieldValue}" for="newUserFieldValue"/>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                        <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!subscriptionConfigurationMapping.seismic__User_Field_Value__c}" id="newUserFieldValue"/>
+                        <script>
+                            var newUserFieldValue = '{!$Component.newUserFieldValue}';
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="subscription">
+                    <apex:outputLabel id="label" value="{!$Label.seismic__subscription}" for="newSubscription"/>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                        <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!subscriptionConfigurationMapping.seismic__Subscription__c}" id="newSubscription"/>
+                        <script>
+                            var newSubscription = '{!$Component.newSubscription}';
+                            function showErrorMessage(msg) {
+                                showGlobalMessage('error', msg);
+                            }
+
+                            function checkSubscription(url, funComplete){
+                                var tenantLogo = jQuery('#seismicTenantLogo');
+                                tenantLogo.on("load", function(result) {
+                                    funComplete(true);
+                                });
+
+                                tenantLogo.on("error", function(result) {
+                                    funComplete(false);
+                                });
+                                
+                                tenantLogo.attr("src", url);
+                            }
+
+                            function checkAndSaveSubscriptionConfigurationMapping(callback) {
+                                var newSubscriptionValue = document.getElementById(newSubscription).value;
+                                var isDevTenant = eval('{!isDevTenant}');
+                                if (isDevTenant) {
+                                    var logoUrl = 'https://' + newSubscriptionValue + '/Images/Logo.jpg';
+                                    var tenant = 'dev';
+                                    var serverBaseUrl = 'https://' + devTenant;
+                                    checkSubscription(logoUrl, function (status) {
+                                        if(!status){
+                                            showErrorMessage('{!$Label.messageSubscriptionAccessDenied}');
+                                        } else {
+                                            callback();
+                                        }
+                                    });
+                                } else {
+                                    var logoUrl = 'https://' + newSubscriptionValue + '.seismic.com/Images/Logo.jpg';
+                                    checkSubscription(logoUrl, function (status) {
+                                        if (!status) {
+                                            showErrorMessage('{!$Label.messageSubscriptionAccessDenied}');
+                                        } else {
+                                            callback();
+                                        }
+                                    });
+                                }    
+                            }
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <img style="display: none;" id="seismicTenantLogo" /> 
+</apex:page>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email used for the reject action on the opportunity&apos; score approval process</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Score Approval - Rejected</name>
+    <style>none</style>
+    <subject>Opp Approval Rejected for {!Opportunity.Name}</subject>
+    <textOnly>Hi {!Opportunity.OwnerFirstName},
+
+{!ApprovalRequest.Process_Approver} has rejected the approval for the opportunity {!Opportunity.Name} ({!Opportunity.Link}).
+
+Account: {!Opportunity.Account}
+Company Type: {!Opportunity.Company_Type_Opp__c}
+Current Products: {!Opportunity.Products__c}
+Approval Request Reason: {!Opportunity.DDS_ScoreAssignment__c} score{!Opportunity.DDS_ApprovalEmailHVTYoYInsight__c}
+Approval Comments: {!ApprovalRequest.Comments}
+
+Please coordinate with your manager to align on approved pricing for this opportunity.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
