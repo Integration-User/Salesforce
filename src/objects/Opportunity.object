@@ -6246,6 +6246,19 @@ NULL))))</formula>
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Q4_Promo_Co_seller__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Requested by Finance, one time use.</description>
+        <inlineHelpText>Q4 Promotion where Sales Reps are working together to close a deal.</inlineHelpText>
+        <label>Q4 Promo Co-seller</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Qualified_Date__c</fullName>
         <inlineHelpText>Populates when the opportunity stage is moved to qualified.</inlineHelpText>
         <label>Qualified Date</label>
