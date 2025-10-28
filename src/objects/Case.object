@@ -23276,6 +23276,25 @@ ISPICKVAL(Status,&quot;Closed&quot;)
         <errorMessage>Please provide the solution notes when closing the case.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Prevent_Editing_Closed_Case</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
+$UserRole.Name &lt;&gt; &quot;Commercial Operations&quot;,
+$User.LastName &lt;&gt; &quot;Fernandez&quot;,
+$User.LastName &lt;&gt; &quot;Eager&quot;,
+ISPICKVAL(Status, &quot;Closed&quot;),
+OR(
+RecordType.DeveloperName = &quot;Account_Assignment&quot;,
+RecordType.DeveloperName = &quot;Opportunity_Review&quot;,
+RecordType.DeveloperName = &quot;Client_Access&quot;),
+OR(
+$User.Department = &apos;Sales&apos;,
+$User.Department = &apos;Account Management&apos;)
+)</errorConditionFormula>
+        <errorMessage>You cannot close or modify a closed case. Please reach out to OTC team for assistance.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Escalated_To</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
