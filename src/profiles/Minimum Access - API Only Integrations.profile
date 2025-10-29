@@ -28381,6 +28381,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Locatus_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Locatus_Partners_Amount_to_Remit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Loss_Reason__c</field>
         <readable>false</readable>
@@ -28696,13 +28706,13 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Q4_rate_cut_promotion__c</field>
+        <editable>false</editable>
+        <field>Opportunity.Q4_Promo_Co_seller__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Q4_Promo_Co_seller__c</field>
+        <editable>true</editable>
+        <field>Opportunity.Q4_rate_cut_promotion__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

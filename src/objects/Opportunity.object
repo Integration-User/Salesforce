@@ -4064,6 +4064,53 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Locatus_Partner__c</fullName>
+        <inlineHelpText>Helps Locatus identify which partners to remit payment to</inlineHelpText>
+        <label>Locatus Partner</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DISC Vision</fullName>
+                    <default>false</default>
+                    <label>DISC Vision</label>
+                </value>
+                <value>
+                    <fullName>IRIS</fullName>
+                    <default>false</default>
+                    <label>IRIS</label>
+                </value>
+                <value>
+                    <fullName>RRI</fullName>
+                    <default>false</default>
+                    <label>RRI</label>
+                </value>
+                <value>
+                    <fullName>Woningbouw</fullName>
+                    <default>false</default>
+                    <label>Woningbouw</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Locatus_Partners_Amount_to_Remit__c</fullName>
+        <inlineHelpText>The amount to be remitted to the Locatus Partner that will be receiving a cut of the profits from this Opportunity</inlineHelpText>
+        <label>Locatus Partners Amount to Remit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Loss_Reason__c</fullName>
         <label>Loss Reason</label>
         <required>false</required>
@@ -10501,6 +10548,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Advisory involvement</fullName>
@@ -14063,6 +14129,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Advisory involvement</fullName>
@@ -17613,6 +17698,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Competitor</fullName>
@@ -21051,6 +21155,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -24685,6 +24808,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -28583,6 +28725,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Advisory involvement</fullName>
@@ -32173,6 +32334,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Favor Access Expired</fullName>
@@ -35471,6 +35651,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -41917,6 +42116,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Advisory involvement</fullName>
@@ -45644,6 +45862,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49578,6 +49815,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Advisory involvement</fullName>
@@ -53268,6 +53524,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

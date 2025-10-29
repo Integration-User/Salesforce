@@ -28460,6 +28460,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Locatus_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Locatus_Partners_Amount_to_Remit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Loss_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -28776,6 +28786,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Q4_Promo_Co_seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Q4_rate_cut_promotion__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -49048,11 +49063,6 @@
         <field>zisf__zicCleanJob__c.zisf__logs__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Q4_rate_cut_promotion__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <layoutAssignments>
         <layout>AAKCS__AAkonsult_Settings__mdt-AAKCS__AAkonsult Setting Layout</layout>
     </layoutAssignments>
@@ -58266,7 +58276,7 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.Advertising_Closed</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
@@ -58291,7 +58301,7 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.Favors</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
@@ -58306,7 +58316,7 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.Sales_Development</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
