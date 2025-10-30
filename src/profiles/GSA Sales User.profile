@@ -27991,6 +27991,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Estimated_SDO_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.Event__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -58064,6 +58069,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
