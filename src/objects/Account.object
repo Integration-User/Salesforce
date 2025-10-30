@@ -4787,6 +4787,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                     <default>false</default>
                     <label>Bulk List</label>
                 </value>
+                <value>
+                    <fullName>News - Advertisement</fullName>
+                    <default>false</default>
+                    <label>News - Advertisement</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Email Campaign</controllingFieldValue>
@@ -4939,6 +4944,24 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
                 <controllingFieldValue>Event</controllingFieldValue>
                 <controllingFieldValue>Organic Social</controllingFieldValue>
                 <valueName>Referral</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>News - Advertisement</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Referral</controllingFieldValue>
@@ -10997,6 +11020,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Preqin</fullName>
                 <default>false</default>
             </values>
@@ -14825,6 +14852,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Internal Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News - Advertisement</fullName>
                 <default>false</default>
             </values>
             <values>
