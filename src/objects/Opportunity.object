@@ -2502,6 +2502,15 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Description_History__c</fullName>
+        <label>Description History</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Designated_ARR__c</fullName>
         <label>Updated ARR</label>
         <precision>18</precision>
@@ -2631,6 +2640,23 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_SDO_Value__c</fullName>
+        <formula>(
+IF(INCLUDES(Marketing_Product_of_Interest__c,&quot;Data &amp; Analytics&quot;), 20000, 0) +
+IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Research&quot;), 10000, 0) +
+IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;News&quot;), 7500, 0) +
+IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Advisory Services&quot;), 0, 0) +
+IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Infrastructure&quot;), 7500, 0)
+)</formula>
+        <inlineHelpText>Based on Marketing Product of Interest field</inlineHelpText>
+        <label>Estimated SDO Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Event__c</fullName>
@@ -2870,7 +2896,7 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
     <fields>
         <fullName>Goals__c</fullName>
         <label>Goals</label>
-        <length>131072</length>
+        <length>32000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
@@ -3649,6 +3675,11 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                     <default>false</default>
                     <label>Bulk List</label>
                 </value>
+                <value>
+                    <fullName>News - Advertisement</fullName>
+                    <default>false</default>
+                    <label>News - Advertisement</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Email Campaign</controllingFieldValue>
@@ -3794,6 +3825,23 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
                 <controllingFieldValue>Paid Search</controllingFieldValue>
                 <controllingFieldValue>Organic Social</controllingFieldValue>
                 <valueName>Content Download</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>News - Advertisement</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Offline Upload</controllingFieldValue>
@@ -4053,6 +4101,53 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Locatus_Partner__c</fullName>
+        <inlineHelpText>Helps Locatus identify which partners to remit payment to</inlineHelpText>
+        <label>Locatus Partner</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DISC Vision</fullName>
+                    <default>false</default>
+                    <label>DISC Vision</label>
+                </value>
+                <value>
+                    <fullName>IRIS</fullName>
+                    <default>false</default>
+                    <label>IRIS</label>
+                </value>
+                <value>
+                    <fullName>RRI</fullName>
+                    <default>false</default>
+                    <label>RRI</label>
+                </value>
+                <value>
+                    <fullName>Woningbouw</fullName>
+                    <default>false</default>
+                    <label>Woningbouw</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Locatus_Partners_Amount_to_Remit__c</fullName>
+        <inlineHelpText>The amount to be remitted to the Locatus Partner that will be receiving a cut of the profits from this Opportunity</inlineHelpText>
+        <label>Locatus Partners Amount to Remit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Loss_Reason__c</fullName>
@@ -5471,7 +5566,7 @@ OwnerId  = $User.Id)</formula>
     <fields>
         <fullName>Needs__c</fullName>
         <label>Needs</label>
-        <length>131072</length>
+        <length>32000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
@@ -6102,7 +6197,7 @@ NULL))))</formula>
     <fields>
         <fullName>Problems__c</fullName>
         <label>Problems</label>
-        <length>131072</length>
+        <length>32000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
@@ -6244,6 +6339,19 @@ NULL))))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Q4_Promo_Co_seller__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Requested by Finance, one time use.</description>
+        <inlineHelpText>Q4 Promotion where Sales Reps are working together to close a deal.</inlineHelpText>
+        <label>Q4 Promo Co-seller</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Qualified_Date__c</fullName>
@@ -10293,6 +10401,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -10467,6 +10579,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13855,6 +13986,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -14029,6 +14164,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17445,6 +17599,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -17579,6 +17737,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -20887,6 +21064,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -21021,6 +21202,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -24469,6 +24669,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -24655,6 +24859,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -28371,6 +28594,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -28549,6 +28776,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -31965,6 +32211,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -32139,6 +32389,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -35267,6 +35536,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -35441,6 +35714,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -41705,6 +41997,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -41883,6 +42179,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -45428,6 +45743,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -45614,6 +45933,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49358,6 +49696,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -49544,6 +49886,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -53060,6 +53421,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>News - Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-Green Street Sponsored Event</fullName>
                 <default>false</default>
             </values>
@@ -53238,6 +53603,25 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>RoW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locatus_Partner__c</picklist>
+            <values>
+                <fullName>DISC Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RRI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Woningbouw</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
