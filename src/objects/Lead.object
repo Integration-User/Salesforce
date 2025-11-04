@@ -271,6 +271,10 @@
             <default>true</default>
         </values>
         <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Open</fullName>
             <default>true</default>
         </values>
@@ -766,6 +770,93 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Customer_Profile_Type_CH__c</fullName>
+        <inlineHelpText>For College House</inlineHelpText>
+        <label>Customer Profile Type (CH)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Lead_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Broker</fullName>
+                    <default>false</default>
+                    <label>Broker</label>
+                </value>
+                <value>
+                    <fullName>Developer</fullName>
+                    <default>false</default>
+                    <label>Developer</label>
+                </value>
+                <value>
+                    <fullName>Investor</fullName>
+                    <default>false</default>
+                    <label>Investor</label>
+                </value>
+                <value>
+                    <fullName>Lender</fullName>
+                    <default>false</default>
+                    <label>Lender</label>
+                </value>
+                <value>
+                    <fullName>Manager</fullName>
+                    <default>false</default>
+                    <label>Manager</label>
+                </value>
+                <value>
+                    <fullName>Owner/Operator</fullName>
+                    <default>false</default>
+                    <label>Owner/Operator</label>
+                </value>
+                <value>
+                    <fullName>Owner</fullName>
+                    <default>false</default>
+                    <label>Owner</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Broker</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Developer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Investor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Lender</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Manager</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Owner/Operator</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Owner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>College House</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>CventEvents__ContactStub__c</fullName>
         <deprecated>false</deprecated>
         <externalId>true</externalId>
@@ -981,6 +1072,39 @@
         <securityClassification>Confidential</securityClassification>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Contact_CRD_ID__c</fullName>
+        <description>This field can be used to store the synced contact CRD ID from Fintrx</description>
+        <externalId>false</externalId>
+        <label>Fintrx Contact CRD ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Dataset__c</fullName>
+        <externalId>false</externalId>
+        <label>Fintrx Dataset</label>
+        <length>64</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fintrx_Url__c</fullName>
+        <description>This field can be used to store the Fintrx link to the synced contact</description>
+        <inlineHelpText>This field can be used to store the Fintrx link to the synced contact</inlineHelpText>
+        <label>Fintrx Url</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
     </fields>
     <fields>
         <fullName>Firm_AUM_Portfolio_Size_Mktg_Identified__c</fullName>
@@ -5473,6 +5597,44 @@ Stored as Long on Solr.</description>
         <type>DateTime</type>
     </fields>
     <listViews>
+        <fullName>AM_Referrals</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>Lead_Type__c</columns>
+        <columns>Part_of_Renewal__c</columns>
+        <columns>Product_Interest_1__c</columns>
+        <columns>Product_Interest_2__c</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>Referred_by_Role_Lead__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Lead.Referrals</value>
+        </filters>
+        <filters>
+            <field>LEAD.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Disqualified</value>
+        </filters>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2025 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>AM_Referrer__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>AM Referrals</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CAM_Manager</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>Advisory_Lead</fullName>
         <columns>Account__c</columns>
         <columns>FULL_NAME</columns>
@@ -5519,6 +5681,15 @@ Stored as Long on Solr.</description>
             <value>Marketing Qualified,Inquiry,Slide Request,New Alert Trial,Demo Request</value>
         </filters>
         <label>All Open Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>College_House_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>College House</label>
+        <queue>College_House</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Commercial_Advisory_ARR_Lead</fullName>
@@ -5588,6 +5759,11 @@ Stored as Long on Solr.</description>
             <operation>notEqual</operation>
             <value>Disqualified</value>
         </filters>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2025 12:00 AM</value>
+        </filters>
         <label>Referrals</label>
         <sharedTo>
             <role>GSA_Executive</role>
@@ -5609,6 +5785,49 @@ Stored as Long on Solr.</description>
             <value>Open,Working</value>
         </filters>
         <label>My Open Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>Referrals_CS_to_AM</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>Lead_Type__c</columns>
+        <columns>Part_of_Renewal__c</columns>
+        <columns>Product_Interest_1__c</columns>
+        <columns>Product_Interest_2__c</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>Referred_by_Role_Lead__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Lead.Referrals</value>
+        </filters>
+        <filters>
+            <field>LEAD.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Disqualified</value>
+        </filters>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2025 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>AM_Referrer__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Referred_by_Role_Lead__c</field>
+            <operation>contains</operation>
+            <value>customer success</value>
+        </filters>
+        <label>Referrals CS to AM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Customer_Success_Manager</roleAndSubordinatesInternal>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Sales_Queue</fullName>
@@ -5633,6 +5852,42 @@ Stored as Long on Solr.</description>
         <sharedTo>
             <role>System_Administrator</role>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Seller_to_Seller_Referrals</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>Lead_Type__c</columns>
+        <columns>Part_of_Renewal__c</columns>
+        <columns>Product_Interest_1__c</columns>
+        <columns>Product_Interest_2__c</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>Referred_by_Role_Lead__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Lead.Referrals</value>
+        </filters>
+        <filters>
+            <field>LEAD.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Disqualified</value>
+        </filters>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2025 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Referred_by_Role_Lead__c</field>
+            <operation>contains</operation>
+            <value>Sales</value>
+        </filters>
+        <label>Seller to Seller Referrals</label>
     </listViews>
     <listViews>
         <fullName>TodaysLeads</fullName>
@@ -6175,6 +6430,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Lender - Real Estate</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Long Only</fullName>
                 <default>false</default>
             </values>
@@ -6243,6 +6502,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Real Estate Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Retailer</fullName>
                 <default>false</default>
             </values>
@@ -6260,6 +6523,41 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Vendor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_Profile_Type_CH__c</picklist>
+            <values>
+                <fullName>Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner%2FOperator</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9545,6 +9843,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Lender - Real Estate</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Long Only</fullName>
                 <default>false</default>
             </values>
@@ -9613,6 +9915,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Real Estate Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Retailer</fullName>
                 <default>false</default>
             </values>
@@ -9630,6 +9936,41 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Vendor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_Profile_Type_CH__c</picklist>
+            <values>
+                <fullName>Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner%2FOperator</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12453,6 +12794,7 @@ Stored as Long on Solr.</description>
         <lookupPhoneDialogsAdditionalFields>LEAD.COMPANY</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>LEAD.PHONE</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>LEAD.MOBILE_PHONE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LEAD.FAX</lookupPhoneDialogsAdditionalFields>
         <searchFilterFields>LEAD.LAST_NAME</searchFilterFields>
         <searchFilterFields>LEAD.FIRST_NAME</searchFilterFields>
         <searchFilterFields>LEAD.COMPANY</searchFilterFields>

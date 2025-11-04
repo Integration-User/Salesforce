@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Maps ライブイベント</value>
+    </caseValues>
+    <fields>
+        <help><!-- Internal Use --></help>
+        <label>相関関係 ID</label>
+        <name>maps__CorrelationId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device Involved with Event &amp; Rule --></help>
+        <label>デバイス ID</label>
+        <name>maps__DeviceId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date &amp; Time of Entry --></help>
+        <label>エントリの日時</label>
+        <name>maps__EntryDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Location of Entry Position --></help>
+        <label>エントリの位置</label>
+        <name>maps__EntryPosition__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date &amp; Time of Exit --></help>
+        <label>終了の日時</label>
+        <name>maps__ExitDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Location of Exit Position --></help>
+        <label>終了の位置</label>
+        <name>maps__ExitPosition__c</name>
+    </fields>
+    <fields>
+        <label>ライブ納入商品</label>
+        <name>maps__LiveAsset__c</name>
+        <relationshipLabel>ライブイベント</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Record Type of Event Created --></help>
+        <label>ライブイベント種別</label>
+        <name>maps__LiveEventType__c</name>
+        <picklistValues>
+            <masterLabel>Enters</masterLabel>
+            <translation><!-- Enters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exits</masterLabel>
+            <translation><!-- Exits --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Lookup to IoT Device that Created Event --></help>
+        <label>ライブ IoT デバイス</label>
+        <name>maps__LiveIoTDevice__c</name>
+        <relationshipLabel>ライブイベント</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- External Rule Id --></help>
+        <label>ルール ID</label>
+        <name>maps__RuleId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name or label for this rule --></help>
+        <label>ルール名</label>
+        <name>maps__RuleName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of time spent within a Geofence in Hours --></help>
+        <label>ジオフェンス内で過ごした時間 (時間)</label>
+        <name>maps__TimeSpentinGeofenceHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of time spent within a Geofence in Minutes --></help>
+        <label>ジオフェンス内で過ごした時間 (分)</label>
+        <name>maps__TimeSpentinGeofenceMinutes__c</name>
+    </fields>
+    <nameFieldLabel>Maps ライブイベント名</nameFieldLabel>
+</CustomObjectTranslation>

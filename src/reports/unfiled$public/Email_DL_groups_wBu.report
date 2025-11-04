@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_69314397</developerName>
+        <masterLabel>Grouping</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Contact_Email_Distribution__c.Email_Distribution__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Asset-Backed Alert</sourceValue>
+            </sourceValues>
+            <value>ABA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Commercial Mortgage Alert</sourceValue>
+            </sourceValues>
+            <value>CMA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Real Estate Alert</sourceValue>
+            </sourceValues>
+            <value>REA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>US Data Center</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Gaming</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US HealthCare</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Industrial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Insights</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Lab Space</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Lodging</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Macro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Net Lease</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Office</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Quick Takes - Earnings</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Quick Takes - Flash Reactions</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Quick Takes - Informational</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Residential</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Retail</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Sector</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Self Storage</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Towers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Week in Review</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Weekly Pricing Review</sourceValue>
+            </sourceValues>
+            <value>US</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>EUR Company</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Daily</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR HealthCare</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Industrial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Insights</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Macro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Office</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Quick Takes - Earnings</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Quick Takes - Flash Reactions</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Quick Takes - Informational</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Real Estate Securities Monthly</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Residential</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Retail</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Sector</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Self Storage</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Week in Review</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Weekly Pricing Review</sourceValue>
+            </sourceValues>
+            <value>EUR</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>US Apartment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Company</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Daily</sourceValue>
+            </sourceValues>
+            <value>US2</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>FK_$Contact.Full_Name__c</field>
+    </columns>
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>Contact_Email_Distribution__c.Email_Distribution__c</field>
+    </columns>
+    <columns>
+        <field>Account.GSA_ID__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(1 AND 2 AND 3 AND 4 AND 5) OR (6 AND 7 AND 3 AND 4 AND 5) OR (3 AND 4 AND 5 AND 8 AND 9)</booleanFilter>
+        <criteriaItems>
+            <column>BucketField_69314397</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ABA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Current_Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>Asset-Backed Alert</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Account_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Contact.Contact_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Current_Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>Commercial Mortgage Alert</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_69314397</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>CMA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_69314397</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>REA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Current_Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>Real Estate Alert</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_69314397</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Alert Email DL group audit</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$Contact_Email_Distribution__c@Contact_Email_Distribution__c.Contact__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

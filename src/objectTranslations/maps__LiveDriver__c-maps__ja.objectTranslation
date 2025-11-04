@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Maps ライブ運転者</value>
+    </caseValues>
+    <fields>
+        <label>運転者 ID</label>
+        <name>maps__DriverId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email used for receiving Telematics Alerts --></help>
+        <label>テレマティックスアラートに使用されるメール</label>
+        <name>maps__EmailUsedForTelematicsAlerts__c</name>
+    </fields>
+    <fields>
+        <label>名</label>
+        <name>maps__FirstName__c</name>
+    </fields>
+    <fields>
+        <label>自宅の市区町村</label>
+        <name>maps__HomeCity__c</name>
+    </fields>
+    <fields>
+        <label>自宅の国</label>
+        <name>maps__HomeCountry__c</name>
+    </fields>
+    <fields>
+        <label>自宅の完全な住所</label>
+        <name>maps__HomeFullAddress__c</name>
+    </fields>
+    <fields>
+        <label>自宅の郵便番号</label>
+        <name>maps__HomePostalCode__c</name>
+    </fields>
+    <fields>
+        <label>自宅の都道府県</label>
+        <name>maps__HomeState__c</name>
+    </fields>
+    <fields>
+        <label>自宅の町名・番地</label>
+        <name>maps__HomeStreetAddress__c</name>
+    </fields>
+    <fields>
+        <label>姓</label>
+        <name>maps__LastName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Driver&apos;s specific working hours --></help>
+        <label>ライブ勤務時間</label>
+        <name>maps__LiveWorkingHours__c</name>
+        <relationshipLabel>ライブ運転者</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lat/Long values for this driver&apos;s home address --></help>
+        <label>位置情報</label>
+        <name>maps__Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Device Disconnect Alerts --></help>
+        <label>デバイス切断アラートを受信しますか?</label>
+        <name>maps__ReceiveDeviceDisconnectAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Hard Accel Alerts --></help>
+        <label>急加速アラートを受信しますか?</label>
+        <name>maps__ReceiveHardAccelAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Hard Braking Alerts --></help>
+        <label>急減速アラートを受信しますか?</label>
+        <name>maps__ReceiveHardBrakingAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Max Speed Threshold Alerts --></help>
+        <label>最大速度しきい値アラートを受信</label>
+        <name>maps__ReceiveMaxSpeedThresholdAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Posted Speed Alerts --></help>
+        <label>制限速度アラートを受信しますか?</label>
+        <name>maps__ReceivePostedSpeedAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Stop Alerts --></help>
+        <label>停止アラートを受信しますか?</label>
+        <name>maps__ReceiveStopAlerts__c</name>
+    </fields>
+    <fields>
+        <label>ユーザー</label>
+        <name>maps__User__c</name>
+        <relationshipLabel><!-- Maps Live Drivers --></relationshipLabel>
+    </fields>
+    <nameFieldLabel>Maps ライブ運転者名</nameFieldLabel>
+</CustomObjectTranslation>

@@ -154,6 +154,17 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>maps__ActivityGenerationObjects__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Activity Generation Object</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>maps__AllowExports__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -281,6 +292,25 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>maps__DistanceCalculationRule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Distance Calculation Rules</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>maps__EditTimesheetEntries__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Edit Timesheet entries</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>maps__EditableTooltips__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -327,6 +357,30 @@
         <label>Live Mobile Tracking</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>maps__ManagerVisibility__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Select which manager structure to adopt for Timesheet</description>
+        <label>Manager Visibility</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Role Hierarchy</fullName>
+                    <default>true</default>
+                    <label>Role Hierarchy</label>
+                </value>
+                <value>
+                    <fullName>Manager Hierarchy</fullName>
+                    <default>false</default>
+                    <label>Manager Hierarchy</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>maps__MaxExportSize__c</fullName>
@@ -420,6 +474,14 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>maps__RequireApprovalProcess__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Require Approval Process</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>maps__SelfHostedDataUser__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -452,6 +514,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>maps__TimesheetPeriod__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Timesheet Period</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>maps__User__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
@@ -475,7 +548,7 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Maps Settings Groups</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

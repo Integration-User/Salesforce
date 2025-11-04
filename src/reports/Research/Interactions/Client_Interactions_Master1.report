@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Activity.Minutes_Spent__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Activity.In_Person_or_Virtual_Meeting__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Client Interactions Master: export this data to update the Client Interactions file.</description>
+    <filter>
+        <booleanFilter>(1 AND 2) AND 3</booleanFilter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Green Street</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.GSA_ID__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>28396,55060,33523,34045,59618,33527,1371,1353,30506,1093436,1374,33522,1325869,1268675,1337453,1158162,1256202,1275056,52835,1333445,1254222,1240895,1337419,1334626,1136696,53222,1142061,1312628,58216,1353532,1227868,28093,1126323,43782,1179135,954187,52263,1257117,1260818,19357,1245259,1187256,25738,55729,1150532,47717,1281333,53223,1349,1245202,1133204,55721,59921,1177738,1327047,1242538,1179642,1174607,1174608,1133192,41748,33524,1242785,1149689,31191,26770,44424,50665,1299816,1303617,1306625</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TASK_TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Analyst Visit,Corporate Access,NDRS Visit,Data Request,Direct Conversation,In-Person Analyst Visit,Virtual Analyst Visit,Visit</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>LAST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TASK_TYPE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Client Interactions Master</name>
+    <params>
+        <name>closed</name>
+        <value>closed</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactActivity</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

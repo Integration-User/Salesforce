@@ -590,6 +590,11 @@ NOT(ISBLANK(AccountId))
                     <default>false</default>
                     <label>IJGlobal</label>
                 </value>
+                <value>
+                    <fullName>College House</fullName>
+                    <default>false</default>
+                    <label>College House</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
@@ -1332,6 +1337,59 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <label>Current User?</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Profile_Type_CH__c</fullName>
+        <inlineHelpText>For College House</inlineHelpText>
+        <label>Customer Profile Type (CH)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Broker</fullName>
+                    <default>false</default>
+                    <label>Broker</label>
+                </value>
+                <value>
+                    <fullName>Developer</fullName>
+                    <default>false</default>
+                    <label>Developer</label>
+                </value>
+                <value>
+                    <fullName>Investor</fullName>
+                    <default>false</default>
+                    <label>Investor</label>
+                </value>
+                <value>
+                    <fullName>Lender</fullName>
+                    <default>false</default>
+                    <label>Lender</label>
+                </value>
+                <value>
+                    <fullName>Manager</fullName>
+                    <default>false</default>
+                    <label>Manager</label>
+                </value>
+                <value>
+                    <fullName>Owner/Operator</fullName>
+                    <default>false</default>
+                    <label>Owner/Operator</label>
+                </value>
+                <value>
+                    <fullName>Owner</fullName>
+                    <default>false</default>
+                    <label>Owner</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Customer_Timestamp__c</fullName>
@@ -2395,6 +2453,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
+            <controllingField>LeadSource</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -2583,7 +2642,220 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                     <default>false</default>
                     <label>Bulk List</label>
                 </value>
+                <value>
+                    <fullName>News - Advertisement</fullName>
+                    <default>false</default>
+                    <label>News - Advertisement</label>
+                </value>
             </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Contact Us</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Demo Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Referral</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Scored Lead</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Trial Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Content Download</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Email</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>Call</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Email Campaign</controllingFieldValue>
+                <controllingFieldValue>Organic Search</controllingFieldValue>
+                <controllingFieldValue>Direct Traffic</controllingFieldValue>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <controllingFieldValue>Other Campaigns</controllingFieldValue>
+                <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Derived Intent</controllingFieldValue>
+                <controllingFieldValue>Inbound Email</controllingFieldValue>
+                <controllingFieldValue>Inbound Call</controllingFieldValue>
+                <controllingFieldValue>Webinar</controllingFieldValue>
+                <controllingFieldValue>Awards</controllingFieldValue>
+                <controllingFieldValue>Paid Social</controllingFieldValue>
+                <controllingFieldValue>Paid Search</controllingFieldValue>
+                <controllingFieldValue>Organic Social</controllingFieldValue>
+                <valueName>News - Advertisement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Offline Upload</controllingFieldValue>
+                <valueName>Bulk List</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Google</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Preqin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>ZoomInfo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>SalesNav</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Fintrex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Green Street News</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Referral</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
+                <controllingFieldValue>Outbound Prospecting</controllingFieldValue>
+                <valueName>Internal Referral</valueName>
+            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -4908,6 +5180,13 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Referrer_URL__c</fullName>
+        <label>Referrer URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>Region__c</fullName>
         <label>Region</label>
         <required>false</required>
@@ -5130,29 +5409,9 @@ IF(CONTAINS(LOWER(MailingCountry), &quot;venezuela&quot;), &quot;Red List&quot;,
                     <label>Apartment</label>
                 </value>
                 <value>
-                    <fullName>Industrial</fullName>
+                    <fullName>Cold Storage</fullName>
                     <default>false</default>
-                    <label>Industrial</label>
-                </value>
-                <value>
-                    <fullName>Office</fullName>
-                    <default>false</default>
-                    <label>Office</label>
-                </value>
-                <value>
-                    <fullName>Retail</fullName>
-                    <default>false</default>
-                    <label>Retail</label>
-                </value>
-                <value>
-                    <fullName>Health Care</fullName>
-                    <default>false</default>
-                    <label>Health Care</label>
-                </value>
-                <value>
-                    <fullName>Niche</fullName>
-                    <default>false</default>
-                    <label>Niche</label>
+                    <label>Cold Storage</label>
                 </value>
                 <value>
                     <fullName>Data Center</fullName>
@@ -5160,14 +5419,152 @@ IF(CONTAINS(LOWER(MailingCountry), &quot;venezuela&quot;), &quot;Red List&quot;,
                     <label>Data Center</label>
                 </value>
                 <value>
+                    <fullName>Debt</fullName>
+                    <default>false</default>
+                    <label>Debt</label>
+                </value>
+                <value>
+                    <fullName>Gaming</fullName>
+                    <default>false</default>
+                    <label>Gaming</label>
+                </value>
+                <value>
+                    <fullName>Ground Lease</fullName>
+                    <default>false</default>
+                    <label>Ground Lease</label>
+                </value>
+                <value>
+                    <fullName>Health Care</fullName>
+                    <default>false</default>
+                    <label>Health Care</label>
+                </value>
+                <value>
+                    <fullName>Industrial</fullName>
+                    <default>false</default>
+                    <label>Industrial</label>
+                </value>
+                <value>
+                    <fullName>Land</fullName>
+                    <default>false</default>
+                    <label>Land</label>
+                </value>
+                <value>
+                    <fullName>Life Science</fullName>
+                    <default>false</default>
+                    <label>Life Science</label>
+                </value>
+                <value>
+                    <fullName>Lodging</fullName>
+                    <default>false</default>
+                    <label>Lodging</label>
+                </value>
+                <value>
+                    <fullName>Mall</fullName>
+                    <default>false</default>
+                    <label>Mall</label>
+                </value>
+                <value>
+                    <fullName>Manufactured Housing</fullName>
+                    <default>false</default>
+                    <label>Manufactured Housing</label>
+                </value>
+                <value>
+                    <fullName>Medical Office Building</fullName>
+                    <default>false</default>
+                    <label>Medical Office Building</label>
+                </value>
+                <value>
+                    <fullName>Mortgage Reit</fullName>
+                    <default>false</default>
+                    <label>Mortgage Reit</label>
+                </value>
+                <value>
                     <fullName>Multi-Sector</fullName>
                     <default>false</default>
                     <label>Multi-Sector</label>
                 </value>
                 <value>
+                    <fullName>Net Lease</fullName>
+                    <default>false</default>
+                    <label>Net Lease</label>
+                </value>
+                <value>
+                    <fullName>Niche</fullName>
+                    <default>false</default>
+                    <label>Niche</label>
+                </value>
+                <value>
+                    <fullName>Office</fullName>
+                    <default>false</default>
+                    <label>Office</label>
+                </value>
+                <value>
+                    <fullName>Real Assets</fullName>
+                    <default>false</default>
+                    <label>Real Assets</label>
+                </value>
+                <value>
                     <fullName>Residential</fullName>
                     <default>false</default>
                     <label>Residential</label>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                    <label>Retail</label>
+                </value>
+                <value>
+                    <fullName>Self-Storage</fullName>
+                    <default>false</default>
+                    <label>Self-Storage</label>
+                </value>
+                <value>
+                    <fullName>Senior Housing</fullName>
+                    <default>false</default>
+                    <label>Senior Housing</label>
+                </value>
+                <value>
+                    <fullName>Single Family Rentals</fullName>
+                    <default>false</default>
+                    <label>Single Family Rentals</label>
+                </value>
+                <value>
+                    <fullName>Skilled Nursing Facility</fullName>
+                    <default>false</default>
+                    <label>Skilled Nursing Facility</label>
+                </value>
+                <value>
+                    <fullName>Strip Center</fullName>
+                    <default>false</default>
+                    <label>Strip Center</label>
+                </value>
+                <value>
+                    <fullName>Student Housing</fullName>
+                    <default>false</default>
+                    <label>Student Housing</label>
+                </value>
+                <value>
+                    <fullName>Towers</fullName>
+                    <default>false</default>
+                    <label>Towers</label>
+                </value>
+                <value>
+                    <fullName>Manufactured Home Park</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Manufactured Home Park</label>
+                </value>
+                <value>
+                    <fullName>Single-Family Rental</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Single-Family Rental</label>
+                </value>
+                <value>
+                    <fullName>Tower</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Tower</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -9421,8 +9818,8 @@ Stored as Long on Solr.</description>
         </filters>
         <label>Casey Searl – Business Development</label>
         <sharedTo>
-            <roleAndSubordinates>BDR_Manager</roleAndSubordinates>
-            <roleAndSubordinates>Sales_Manager</roleAndSubordinates>
+            <roleAndSubordinatesInternal>BDR_Manager</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>Sales_Manager</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -9706,6 +10103,28 @@ Stored as Long on Solr.</description>
         <label>Madeline Hector Business Development</label>
     </listViews>
     <listViews>
+        <fullName>Mass_Activation_Copy</fullName>
+        <columns>Activate_Contact__c</columns>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Account.X18_digit_Account_ID__c</field>
+            <operation>equals</operation>
+            <value>001f400000dzhdeAAA</value>
+        </filters>
+        <filters>
+            <field>Contact_Status__c</field>
+            <operation>equals</operation>
+            <value>Inactive</value>
+        </filters>
+        <label>Mass Activation [Copy]</label>
+    </listViews>
+    <listViews>
         <fullName>Mass_Activations_JLL_EMEA</fullName>
         <columns>Account.OwnerIDName__c</columns>
         <columns>ACCOUNT.OWNERSHIP</columns>
@@ -9854,7 +10273,7 @@ Stored as Long on Solr.</description>
         <label>New Users not logged in for 9-10 weeks</label>
         <sharedTo>
             <role>Customer_Success</role>
-            <roleAndSubordinates>CAM_Manager</roleAndSubordinates>
+            <roleAndSubordinatesInternal>CAM_Manager</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -10047,8 +10466,8 @@ Stored as Long on Solr.</description>
         </filters>
         <label>POD1</label>
         <sharedTo>
-            <roleAndSubordinates>BDR_Manager</roleAndSubordinates>
-            <roleAndSubordinates>Sales_Manager</roleAndSubordinates>
+            <roleAndSubordinatesInternal>BDR_Manager</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>Sales_Manager</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -10069,8 +10488,8 @@ Stored as Long on Solr.</description>
         </filters>
         <label>POD2</label>
         <sharedTo>
-            <roleAndSubordinates>BDR_Manager</roleAndSubordinates>
-            <roleAndSubordinates>Sales_Manager</roleAndSubordinates>
+            <roleAndSubordinatesInternal>BDR_Manager</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>Sales_Manager</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -10091,9 +10510,9 @@ Stored as Long on Solr.</description>
         </filters>
         <label>React EU - Business Development</label>
         <sharedTo>
-            <roleAndSubordinates>Administrative</roleAndSubordinates>
-            <roleAndSubordinates>BDR_Manager</roleAndSubordinates>
-            <roleAndSubordinates>Sales_Manager</roleAndSubordinates>
+            <roleAndSubordinatesInternal>Administrative</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>BDR_Manager</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>Sales_Manager</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -10147,7 +10566,7 @@ Stored as Long on Solr.</description>
         <label>New Users not logged in for 3-4 weeks</label>
         <sharedTo>
             <role>Customer_Success</role>
-            <roleAndSubordinates>CAM_Manager</roleAndSubordinates>
+            <roleAndSubordinatesInternal>CAM_Manager</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -10184,7 +10603,7 @@ Stored as Long on Solr.</description>
         <label>CBDR</label>
         <sharedTo>
             <role>Sales_Manager</role>
-            <roleAndSubordinates>BDR_Manager</roleAndSubordinates>
+            <roleAndSubordinatesInternal>BDR_Manager</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>

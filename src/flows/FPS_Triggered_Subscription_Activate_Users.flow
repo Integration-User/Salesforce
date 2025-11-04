@@ -4,7 +4,7 @@
         <name>Create_User_Account_Grants</name>
         <label>Create User Account Grants</label>
         <locationX>308</locationX>
-        <locationY>1271</locationY>
+        <locationY>1163</locationY>
         <actionName>zephr_InvocableCreateUserAccountGrants</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -28,12 +28,13 @@
             </value>
         </inputParameters>
         <nameSegment>zephr_InvocableCreateUserAccountGrants</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Post_Error_to_Chatter</name>
         <label>Post Error to Chatter</label>
         <locationX>572</locationX>
-        <locationY>1511</locationY>
+        <locationY>1379</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -50,13 +51,14 @@
             </value>
         </inputParameters>
         <nameSegment>chatterPost</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
         <name>Provision_Subscription</name>
         <label>Provision Subscription</label>
         <locationX>308</locationX>
-        <locationY>1391</locationY>
+        <locationY>1271</locationY>
         <actionName>zephr_InvocableStartSubProvisioning</actionName>
         <actionType>apex</actionType>
         <faultConnector>
@@ -70,14 +72,16 @@
             </value>
         </inputParameters>
         <nameSegment>zephr_InvocableStartSubProvisioning</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>55.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Subscription_User_to_updateSubscriptionUsers</name>
         <label>Add Subscription User to updateSubscriptionUsers</label>
         <locationX>264</locationX>
-        <locationY>815</locationY>
+        <locationY>755</locationY>
         <assignmentItems>
             <assignToReference>updateSubscriptionUsers</assignToReference>
             <operator>Add</operator>
@@ -93,7 +97,7 @@
         <name>Set_Status</name>
         <label>Set Status</label>
         <locationX>264</locationX>
-        <locationY>695</locationY>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>Loop_Subscription_Users.Subscriber_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -116,7 +120,7 @@
         <name>Subscriber_Management_System</name>
         <label>Subscriber Management System</label>
         <locationX>176</locationX>
-        <locationY>1151</locationY>
+        <locationY>1055</locationY>
         <defaultConnector>
             <targetReference>Create_User_Account_Grants</targetReference>
         </defaultConnector>
@@ -134,7 +138,8 @@
             <label>SRP</label>
         </rules>
     </decisions>
-    <description>Activates Subscription Users on a Subscription. Record-triggered so we can callout
+    <description>Edit 6.6. Removing start condition. 
+Activates Subscription Users on a Subscription. Record-triggered so we can callout
 
 V4 - Set SRP Integration Status to Pending
 V3
@@ -147,7 +152,7 @@ Added SRP support</description>
         <name>Loop_Subscription_Users</name>
         <label>Loop Subscription Users</label>
         <locationX>176</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <collectionReference>Get_Subscription_Users</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -180,7 +185,7 @@ Added SRP support</description>
         <name>Get_Subscription_Users</name>
         <label>Get Subscription Users</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Clear_Trigger_Flag</targetReference>
@@ -214,7 +219,7 @@ Added SRP support</description>
         <name>Clear_Trigger_Flag</name>
         <label>Clear Trigger Flag</label>
         <locationX>176</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Loop_Subscription_Users</targetReference>
         </connector>
@@ -234,7 +239,7 @@ Added SRP support</description>
         <name>Update_Subscription_Users</name>
         <label>Update Subscription Users</label>
         <locationX>176</locationX>
-        <locationY>1031</locationY>
+        <locationY>947</locationY>
         <connector>
             <targetReference>Subscriber_Management_System</targetReference>
         </connector>
@@ -250,20 +255,11 @@ Added SRP support</description>
         <connector>
             <targetReference>Get_Subscription_Users</targetReference>
         </connector>
-        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Trigger_Subscriber_Activation__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
         <object>Subscription__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>updateSubscriptionUsers</name>
         <dataType>SObject</dataType>

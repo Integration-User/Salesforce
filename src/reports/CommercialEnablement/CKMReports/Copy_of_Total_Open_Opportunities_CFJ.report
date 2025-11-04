@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_79219935</developerName>
+        <masterLabel>Seniority</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>OWNER_TITLE</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Business Development Associate</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Business Development Rep</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Business Development Representative</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Associate, Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Associate</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Inside Sales Associate</sourceValue>
+            </sourceValues>
+            <value>Associate</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Senior Sales Associate</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Senior Associate</sourceValue>
+            </sourceValues>
+            <value>Senior Associate</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Vice President</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vice President, Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>VP</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Associate Vice President</sourceValue>
+            </sourceValues>
+            <value>VP</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Senior Vice President, Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Senior Vice President</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Director</sourceValue>
+            </sourceValues>
+            <value>SVP</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>STAGE_DURATION</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>OWNER_ACTIVE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Sales_Opportunity</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_79219935</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER_TITLE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Copy of Total Open Opportunities</name>
+    <params>
+        <name>open</name>
+        <value>open</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

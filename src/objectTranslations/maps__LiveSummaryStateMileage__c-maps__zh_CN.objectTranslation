@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>地图实时摘要省/州里程</value>
+    </caseValues>
+    <fields>
+        <help><!-- The 3 character country code --></help>
+        <label>国家/地区</label>
+        <name>maps__Country__c</name>
+        <picklistValues>
+            <masterLabel>CAN</masterLabel>
+            <translation><!-- CAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Specified</masterLabel>
+            <translation><!-- Not Specified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Live Asset Daily Summary record to which this mileage relates --></help>
+        <label>实时资产每日摘要</label>
+        <name>maps__LiveAssetDailySummary__c</name>
+        <relationshipLabel>实时摘要州/省里程</relationshipLabel>
+    </fields>
+    <fields>
+        <label>报表日期</label>
+        <name>maps__ReportDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The associated state or province for this record --></help>
+        <label>州或省</label>
+        <name>maps__StateProvince__c</name>
+    </fields>
+    <fields>
+        <label>出行总距离 (km)</label>
+        <name>maps__TotalDistanceTraveledKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in miles within this state. --></help>
+        <label>出行总距离 (mi)</label>
+        <name>maps__TotalDistanceTraveledMiles__c</name>
+    </fields>
+    <nameFieldLabel>地图实时摘要州/省里程名称</nameFieldLabel>
+</CustomObjectTranslation>

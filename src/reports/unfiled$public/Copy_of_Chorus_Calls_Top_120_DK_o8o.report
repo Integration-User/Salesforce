@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Ollie Maude</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Ekistics Property,Europa Capital,Fabrix,Fairwater Capital,Fiera Real Estate,Fulwell Capital,Global Mutual (EU),Grant Thornton LLP (EU),Gravis Capital,Grosvenor Group Limited (EU Entity),Harbert Management Corporation (EU),Highclere International Investors (EU),Hobart Partners,Irish Life Investment Managers (EU),KPMG Global,Lendlease (EU),Northern Horizon Capital,PFA Pension (EU),NIAM,Catella Real Estate (EU),Cibus Nordic Real Estate,Svenska Cellulosa Aktiebolaget SCA,Ragde Eiendom AS,Castellum (EU),Steen &amp; Strøm,Pareto Securities (EU),Oscar Properties,Aurora Eiendom AS,Stenhus Fastigheter i Norden AB (publ,ABG Fastena,Njord Securities,Arwidsro,Vika Project Finance,Diös Fastigheter,Norrsvedja Fastigheter,Scala Eiendom,Trophi Fastighets,Brunswick Real Estate,Corem Property Group,Heimstaden Bostad,Swedish Logistic Property,Nivika Fastigheter,Fastighetsbolaget Emilshus,Skanska AB,Entra ASA,K2A Knaust &amp; Andersson Fastigheter,Genova Property Group,Sl�tt� F�rvaltning AB,Nyfosa AB,Catena,Neobo,M2 Gruppen,Fortinova,NP3 Fastigheter,Stendörren Fastigheter,Första AP-fonden (AP 1),Harworth Group,Impact Healthcare REIT (NA),Fiera Real Estate UK,Evolve Estates,Federated Hermes (EU),IM Properties,LGPS Central,Industrials REIT,Harbert Management Corporation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>JR Capital,Helical PLC (EU),Kier Group PLC,Grosvenor,LCN Capital Partners,Great Portland Estates,G Research,Eisler Capital,Jupiter Asset Management</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 OME</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Title</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles*OpportunityContactRole$Contact_Email__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Phone</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Id</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Close_Reason__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Close_Reason__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Interest - Check Back Later</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Account_Owner__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>edmond dweck</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Copy Closed Lost Opportunities 10/4</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Contact_Roles_Custom__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Opportunity$Close_Reason__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <endDate>2024-10-01</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-10-01</startDate>
+    </timeFrameFilter>
+    <userFilter>edweck@greenstreet.com</userFilter>
+</Report>

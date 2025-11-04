@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_89780792</developerName>
+        <masterLabel>Campaign Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>CAMPAIGN.TYPE</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Webinar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Conference Call</sourceValue>
+            </sourceValues>
+            <value>Webinar/Conference Call</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Industry Conference/Booth</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Industry Online Event</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Industry</sourceValue>
+            </sourceValues>
+            <value>Speaking</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Product Promotion</sourceValue>
+            </sourceValues>
+            <value>Product Promotion</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Blog/Market Currents</sourceValue>
+            </sourceValues>
+            <value>Blog/Market Currents</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>OPP.NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>OPP.AMOUNT</field>
+    </columns>
+    <columns>
+        <field>OPP.STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>INFLUENCE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>REVENUE_SHARE</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Closed NEW revenue associated with marketing campaigns. Monthly data is captured by CLOSED DATE of the opportunity.</description>
+    <filter>
+        <criteriaItems>
+            <column>OPP.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>New -</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN.TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Webinar,Email,Industry Conference/Booth,Search,Social Media,Other,Green_Street_Event,Conference Call,In Person,Industry Online Event,Industry,General,Content,Advertising,Press Release,Product Promotion,OnDemand,Blog/Market Currents,CPPI,Featured Insights,Targeted Campaigns,Website Direct,User/Usage</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPP.CLOSE_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1/1/2020</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPP.STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>OPP.CLOSE_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_89780792</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Campaign Revenue by Camp Name</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomizableCampaignInfluence</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

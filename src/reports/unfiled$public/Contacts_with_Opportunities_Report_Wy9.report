@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>Contact</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Contact$Account</field>
+        </columns>
+        <columns>
+            <field>Contact$Name</field>
+        </columns>
+        <currency>USD</currency>
+        <filter>
+            <booleanFilter>1</booleanFilter>
+            <criteriaItems>
+                <column>Contact$Owner</column>
+                <columnToColumn>false</columnToColumn>
+                <isUnlocked>true</isUnlocked>
+                <operator>equals</operator>
+                <value>Matt Souter</value>
+            </criteriaItems>
+        </filter>
+        <format>Summary</format>
+        <name>Contacts with Opportunities block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Contacts_with_Opportunities__c</reportType>
+        <scope>organization</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>Contact$Birthdate</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>c</joinTable>
+        </blockInfo>
+        <columns>
+            <field>ACCOUNT_NAME</field>
+        </columns>
+        <columns>
+            <field>OPPORTUNITY_NAME</field>
+        </columns>
+        <columns>
+            <field>STAGE_NAME</field>
+        </columns>
+        <currency>USD</currency>
+        <filter>
+            <criteriaItems>
+                <column>STAGE_NAME</column>
+                <columnToColumn>false</columnToColumn>
+                <isUnlocked>true</isUnlocked>
+                <operator>equals</operator>
+                <value>Qualified Prospect (2),Conducting Needs Analysis (3),Pricing Proposal Sent (4),Agreement Sent and Being Negotiated (5),Verbal Win (6)</value>
+            </criteriaItems>
+        </filter>
+        <format>Summary</format>
+        <name>Opportunities block 1</name>
+        <params>
+            <name>open</name>
+            <value>all</value>
+        </params>
+        <params>
+            <name>probability</name>
+            <value>&gt;0</value>
+        </params>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Opportunity</reportType>
+        <scope>organization</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>CLOSE_DATE</dateColumn>
+            <interval>INTERVAL_CURRENT</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>Contact</joinTable>
+    </blockInfo>
+    <description>For Matt to update Contact Sector Interests</description>
+    <format>MultiBlock</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$MailingState</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$MailingCity</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Contacts with Opportunities Report</name>
+    <reportType>Contacts_with_Opportunities__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

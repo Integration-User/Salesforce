@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Maps-liveföraren</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>En Maps-liveförare</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Maps-liveförare</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Maps-liveförarna</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Maps-liveförare</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Maps-liveförare</value>
+    </caseValues>
+    <fields>
+        <label>ID för förare</label>
+        <name>maps__DriverId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email used for receiving Telematics Alerts --></help>
+        <label>E-post som används för tel.aviseringar</label>
+        <name>maps__EmailUsedForTelematicsAlerts__c</name>
+    </fields>
+    <fields>
+        <label>Förnamn</label>
+        <name>maps__FirstName__c</name>
+    </fields>
+    <fields>
+        <label>Hemort</label>
+        <name>maps__HomeCity__c</name>
+    </fields>
+    <fields>
+        <label>Hemland</label>
+        <name>maps__HomeCountry__c</name>
+    </fields>
+    <fields>
+        <label>Fullständig hemadress</label>
+        <name>maps__HomeFullAddress__c</name>
+    </fields>
+    <fields>
+        <label>Hempostnummer</label>
+        <name>maps__HomePostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Hemregion</label>
+        <name>maps__HomeState__c</name>
+    </fields>
+    <fields>
+        <label>Hemgatuadress</label>
+        <name>maps__HomeStreetAddress__c</name>
+    </fields>
+    <fields>
+        <label>Efternamn</label>
+        <name>maps__LastName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Driver&apos;s specific working hours --></help>
+        <label>Livearbetstid</label>
+        <name>maps__LiveWorkingHours__c</name>
+        <relationshipLabel>Liveförare</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lat/Long values for this driver&apos;s home address --></help>
+        <label>Plats</label>
+        <name>maps__Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Device Disconnect Alerts --></help>
+        <label>Få aviseringar om frånkopplad enhet?</label>
+        <name>maps__ReceiveDeviceDisconnectAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Hard Accel Alerts --></help>
+        <label>Få aviseringar om hård acceleration?</label>
+        <name>maps__ReceiveHardAccelAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Hard Braking Alerts --></help>
+        <label>Få aviseringar om hård inbromsning?</label>
+        <name>maps__ReceiveHardBrakingAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Max Speed Threshold Alerts --></help>
+        <label>Få aviseringar om hastighetströskel</label>
+        <name>maps__ReceiveMaxSpeedThresholdAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Posted Speed Alerts --></help>
+        <label>Få aviseringar om fortkörning?</label>
+        <name>maps__ReceivePostedSpeedAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Stop Alerts --></help>
+        <label>Få aviseringar om stopp?</label>
+        <name>maps__ReceiveStopAlerts__c</name>
+    </fields>
+    <fields>
+        <label>Användare</label>
+        <name>maps__User__c</name>
+        <relationshipLabel><!-- Maps Live Drivers --></relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Namn på Maps-liveförare</nameFieldLabel>
+</CustomObjectTranslation>

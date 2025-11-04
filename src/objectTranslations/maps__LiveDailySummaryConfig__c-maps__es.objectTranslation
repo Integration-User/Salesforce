@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Configuración de resumen diario en vivo de Maps</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Configuraciones de resúmenes diarios en vivo de Maps</value>
+    </caseValues>
+    <fields>
+        <help><!-- Total number of active devices associated with the DeviceLayer on this Summary --></help>
+        <label>Recuento de dispositivos activos</label>
+        <name>maps__ActiveDevicesCount__c</name>
+    </fields>
+    <fields>
+        <label>Activo</label>
+        <name>maps__Active__c</name>
+    </fields>
+    <fields>
+        <label>Crear registro de batería de dispositivo</label>
+        <name>maps__CreateDeviceBatteryRecord__c</name>
+    </fields>
+    <fields>
+        <label>Crear registro de aceleración brusca</label>
+        <name>maps__CreateHardAccelRecord__c</name>
+    </fields>
+    <fields>
+        <label>Crear registro de frenada brusca</label>
+        <name>maps__CreateHardBrakeRecord__c</name>
+    </fields>
+    <fields>
+        <label>Crear registro de exceso de velocidad</label>
+        <name>maps__CreateSpeedRecord__c</name>
+    </fields>
+    <fields>
+        <label>Crear registro de umbral de velocidad</label>
+        <name>maps__CreateSpeedThresholdRecord__c</name>
+    </fields>
+    <fields>
+        <label>Crear registro de kilometraje estatal</label>
+        <name>maps__CreateStateMileageRecord__c</name>
+    </fields>
+    <fields>
+        <label>Crear registro de paradas</label>
+        <name>maps__CreateStopRecord__c</name>
+    </fields>
+    <fields>
+        <label>Descripción</label>
+        <name>maps__Description__c</name>
+    </fields>
+    <fields>
+        <label>Capa en vivo</label>
+        <name>maps__DeviceLayer__c</name>
+        <relationshipLabel>Configuraciones de resumen diario en vivo</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Valor de distancia</label>
+        <name>maps__DistanceValue__c</name>
+    </fields>
+    <fields>
+        <label>Optimización de viaje de conducción</label>
+        <name>maps__DriveTripOptimization__c</name>
+        <picklistValues>
+            <masterLabel>Mobile Tracking</masterLabel>
+            <translation><!-- Mobile Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle Tracking</masterLabel>
+            <translation><!-- Vehicle Tracking --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The current job id of the running Summary batch job associated with this config --></help>
+        <label>Id. del trabajo</label>
+        <name>maps__JobId__c</name>
+    </fields>
+    <fields>
+        <label>Fecha/Hora finalización de último lote</label>
+        <name>maps__LastBatchEndDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Id. de Último lote</label>
+        <name>maps__LastBatchId__c</name>
+    </fields>
+    <fields>
+        <label>Fecha/Hora de inicio de último lote</label>
+        <name>maps__LastBatchStartDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Medición de distancia</label>
+        <name>maps__MeasureOfDistance__c</name>
+        <picklistValues>
+            <masterLabel>Feet</masterLabel>
+            <translation><!-- Feet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meters</masterLabel>
+            <translation><!-- Meters --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Cantidad de tiempo de velocidad</label>
+        <name>maps__SpeedAmtOfTime__c</name>
+    </fields>
+    <fields>
+        <label>Límite de velocidad superado</label>
+        <name>maps__SpeedLimitOver__c</name>
+    </fields>
+    <fields>
+        <label>Incremento de tiempo límite de velocidad</label>
+        <name>maps__SpeedLimitTimeIncrement__c</name>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minutes</masterLabel>
+            <translation><!-- Minutes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Tiempo de límite de velocidad</label>
+        <name>maps__SpeedLimitTime__c</name>
+    </fields>
+    <fields>
+        <label>Unidades de límite de velocidad</label>
+        <name>maps__SpeedLimitUnits__c</name>
+        <picklistValues>
+            <masterLabel>kph</masterLabel>
+            <translation><!-- kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mph</masterLabel>
+            <translation><!-- mph --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Evento de umbral de velocidad activo</label>
+        <name>maps__SpeedThresholdEventActive__c</name>
+    </fields>
+    <fields>
+        <label>Tiempo de umbral de velocidad</label>
+        <name>maps__SpeedThresholdTime__c</name>
+    </fields>
+    <fields>
+        <label>Unidades de umbral de velocidad</label>
+        <name>maps__SpeedThresholdUnits__c</name>
+        <picklistValues>
+            <masterLabel>Kph</masterLabel>
+            <translation><!-- Kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mph</masterLabel>
+            <translation><!-- Mph --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Umbral de velocidad</label>
+        <name>maps__SpeedThreshold__c</name>
+    </fields>
+    <fields>
+        <label>Valor de velocidad</label>
+        <name>maps__SpeedValue__c</name>
+    </fields>
+    <fields>
+        <label>Evento de exceso de velocidad activo</label>
+        <name>maps__SpeedingEventActive__c</name>
+    </fields>
+    <fields>
+        <label>Evento de parada activo</label>
+        <name>maps__StopEventActive__c</name>
+    </fields>
+    <fields>
+        <label>Valor de tiempo de parada</label>
+        <name>maps__StopTimeValue__c</name>
+    </fields>
+    <fields>
+        <label>Unidad de velocidad</label>
+        <name>maps__UnitOfSpeed__c</name>
+        <picklistValues>
+            <masterLabel>kph</masterLabel>
+            <translation><!-- kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mph</masterLabel>
+            <translation><!-- mph --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nombre de configuración de resumen diari</nameFieldLabel>
+</CustomObjectTranslation>

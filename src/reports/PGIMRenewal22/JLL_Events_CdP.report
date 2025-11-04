@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.FullActivityRelations$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$Account</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$Who</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations*Activity$Activity_Type_Events__c</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$Subject</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$Description</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$Owner</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND (3 OR 4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <column>User.FullActivityRelations*Activity$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.FullActivityRelations$Account</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>JLL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.FullActivityRelations$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Chirag Shah</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.FullActivityRelations$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Adam Latorraca</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Manager</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Claire Arora</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>JLL Events</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Events_with_Attendees__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>User.FullActivityRelations$ActivityDate</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>User.FullActivityRelations$ActivityDate</dateColumn>
+        <interval>INTERVAL_PREVCURFY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact.Full_Name__c</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_ID</field>
+    </columns>
+    <columns>
+        <field>OWNER_FULL_NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Waypoint Asset Management,Capreon,Rivington Hark Group,SitusAMC,City of London Corporation,Europa Capital,Pradera,Corum Asset Management,Ellandi,Lothbury Investment Management,MNK Partners,Unibail Management,Banco Santander S.A.,Bouwinvest Real Estate Investors (NA),British Land (NA),Buccleuch Property,Harrison Street Real Estate Capital,LLC,Kempen Capital Management (EU),Brockton Everlast,Capital &amp; Regional (NA),Baupost Group,L.L.C. (The),Principal Global Investors (NA),Blue Coast Capital,GIC Private Limited (NA),M&amp;G Investments,Fidelity International,AEW Capital Management,L.P.,JLL - News Only,Morgan Stanley Investment Banking (NA),Morgan Stanley Investment Management (NA),Oaktree Capital Management,PGIM Real Estate,PIMCO,PineBridge Benson Elliot,Redevco,Savills (EU),Wells Fargo - CIB Commercial Real Estate,Aberdeen Standard Investments Inc.,Aviva Investors (EU),Barclays Capital - Investment Bank (NA),Blackstone Group,British Property Federation,Brookfield Property Group LLC,DWS Group - European Direct Team,Eastdil Secured (NA),Goldman Sachs Asset Management (NA),Goldman Sachs Group,Inc.,The (NA),Hines,HSBC Global Asset Management (NA)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>J.P. Morgan - Investment Bank (NA),LandSec,LaSalle Investment Management (NA),Macquarie Capital Advisors,MDSR Investments,P-Three,Nuveen Services,LLC (NA),Rasmala Investment Bank (NA),BKL Property Consultants,Columbia Threadneedle (EU),LXI REIT (RN),Blackrock,Ares Management,Revcap,Partners Group (USA) Inc.,Kennedy Wilson,Patron Capital,Oxford Properties Group (NA),Citigroup Global Markets,Inc.,Deutsche Bank Securities Inc. Investment Bank (NA),RBC Capital Markets,Norges Bank Investment Management (NA),Apollo Management (NA),Canada Pension Plan Investment Board,Evercore Partners,TPG (NA),Fortress Investment Group (U.S.) (NA),Starwood Capital Group (NA),Angelo,Gordon and Company (NA),Jefferies LLC (NA),AXA IM - Real Assets (EU),EQT Exeter Advisors UK Ltd,King Street Capital Management (EU),Montagu Evans,DTZ Investors,ECE Real Estate Partners,Queensberry,Public Investment Fund (Saudi Arabia),Glenbrook,The Carlyle Group,Shaftesbury Capital PLC,Essential Living,Redical,Revantage Global Services,Royal London Asset Management,Savills Investment,The Crown Estate,Tri7,NewRiver (EU),Aareal Capital Corporation (NA)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>abrdn,Bank of America/Comm. R.E. Group (NA),Eurofund Group,Hammerson,KKR,Cushman &amp; Wakefield Retail Strategic Group,Agile Retail,Elevate Retail Partnerships,Blackstar Real Estate,Frasers Group,Hobart Partners,AS Retail,ICG Real Estate,M3 Capital Partners LLC (NA),CBRE Investment Management,BNP Paribas Real Estate,Realty Income Corporation,Colliers International (NA),Global Mutual (EU),Avison Young - Avant Team</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Retail Analytics Pro Targets - Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
