@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Kilométrage d&apos;état du résumé live Maps</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Kilométrages d&apos;état du résumé live Maps</value>
+    </caseValues>
+    <fields>
+        <help><!-- The 3 character country code --></help>
+        <label>Pays</label>
+        <name>maps__Country__c</name>
+        <picklistValues>
+            <masterLabel>CAN</masterLabel>
+            <translation><!-- CAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Specified</masterLabel>
+            <translation><!-- Not Specified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Live Asset Daily Summary record to which this mileage relates --></help>
+        <label>Résumé quotidien d&apos;actif live</label>
+        <name>maps__LiveAssetDailySummary__c</name>
+        <relationshipLabel>Kilométrage dans l&apos;état du résumé live</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Date du rapport</label>
+        <name>maps__ReportDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The associated state or province for this record --></help>
+        <label>État, Région ou Province</label>
+        <name>maps__StateProvince__c</name>
+    </fields>
+    <fields>
+        <label>Distance totale parcourue (km)</label>
+        <name>maps__TotalDistanceTraveledKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in miles within this state. --></help>
+        <label>Distance totale parcourue (mi)</label>
+        <name>maps__TotalDistanceTraveledMiles__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nom du kilométrage dans l&apos;état, la régio</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

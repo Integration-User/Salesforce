@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Riley Mendelson</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Mount Vernon Investments,Stillwater Asset Management,AEI Capital Corp.,Auctus Capital Partners,Axial Real Estate Advisors,Nath Companies,NetSTREIT,Newport RE Group,Carpathian Capital Management,Dakota REIT,Bigos Management,Inc.,Black Swan Real Estate,Bremer Bank,Buhl Investors,Capital Partners,Dominium,Eagle Ridge Partners,Elgethun Capital Management,Enclave Development,Envoi LLC,EPIQ Partners LLC,Granite Peak Equity,Great Lakes Management,Hempel Companies,Hyland Hill,Kraus Anderson Companies,Lantern Asset Management,Larkspur Capital LP,Legacy Trust Company,N.A.,Leone Real Estate Partners,Leon Industrial LLC,Leon Multifamily,Linscomb &amp; Williams,Lionstone Partners LLC (NA),Hudson Americas,L.P. (NA),Long View Equity LLC,Lovett Industrial,Lurin Capital,Luther King Capital Management,Lynd Companies,M2G Ventures,Madera Residential,MarketSpace Capital,Matador Capital,MBP Capital,MCR Development,MedCraft Investment Partners,MedProperties,MedProperties Holdings LP,MetroNational Corporation,Michelson Realty Capital,Milam Real Estate Capital LLC,Minnesota State Board of Investment,Miramar Holdings,Mohr Partners,Momentum Multifamily,Moody National Companies,Morgan Group,Moxiebridge Inc,Mr. Cooper,Multifamily Acquisition Advisors</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Multifamily Property Group,N3 Real Estate,Napali Capital LLC,NewQuest Properties,New Standard Ventures,Nitya Capital LLC,North Dakota Department of Trust Lands,North Dakota State Investment Board,North Dallas Bank &amp; Trust,Northmarq Capital,NorthRock Partners,Northwood Retail,NXSTEP Opportunity Partners,Odyssey Residential Holdings,Offerd,Oldham Goodwin Capital,Old Three Hundred Capital LLC,OliveMill Holdings,Oppidan Investment Company,Orison Capital,Overwatch Fund,Pace Realty Investors,Paster Properties,Portico Benefit Services,Rebound Partners,Sawmill Private Management,South Dakota Retirement System,SR Realty Trust,St. Paul Teachers? Retirement Fund Association,Stack Financial Management,Sterling Real Estate Trust,Tailwind Group,Target Pension,Te Miller,The Excelsior Group,Thiemann Real Estate,Timberland Partners,Two Harbors Investment Corp.,Avalon Capital Group Inc,Cove Investment Group,Diversified Wealth Management,Carleton College,Ernst Capital Group,Freehouse Capital Partners,Galliard Capital Management,GHR Foundation,Interstate Development,Laborers National Pension Fund,Legendary Capital LLC,MacFarlan Capital Partners,Mayo Clinic,MCP Ventures,Meridian,Merit Energy Company,Moir Park Capital LLC,Edgewood REIT,LV Collective,MedCore Partners</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 RM</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

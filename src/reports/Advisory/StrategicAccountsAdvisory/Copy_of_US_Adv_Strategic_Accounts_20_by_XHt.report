@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.Strategic_Segment__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Strategic_Lead__c</field>
+    </columns>
+    <columns>
+        <field>Account.Strategic_Co_Lead__c</field>
+    </columns>
+    <columns>
+        <field>Account.Advisory_Last_Interaction_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Strategic_Account_Action_Items__c</field>
+    </columns>
+    <columns>
+        <field>Account.Advisory_Next_Steps__c</field>
+    </columns>
+    <columns>
+        <field>Account.Company_Type__c</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <currency>USD</currency>
+    <description>US Strategic Accounts, CP edit</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Strategic_Segment__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>IPO Prospect</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>US IPO Prospects 1.0</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.Strategic_Lead__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

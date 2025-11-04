@@ -34,6 +34,7 @@
         </outputParameters>
     </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>Consolidation Opportunity Management {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Consolidation Opportunity Management</label>
@@ -68,6 +69,14 @@
             <name>SuccessResult</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(53, 115, 27); font-family: serif; font-size: 16px;&quot;&gt;{!Result}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -83,6 +92,14 @@
             <name>ErrorResult</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(224, 13, 13); font-size: 16px; font-family: serif;&quot;&gt;{!Result}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -142,6 +159,14 @@
                 <assignToReference>Opportunity.Consolidated_To__c</assignToReference>
                 <name>recordId</name>
             </outputParameters>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>

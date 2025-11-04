@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <constants>
+        <name>TransactionQueueId</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>00GVy00000KK4iHMAT</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Trial_Start_Or_Deactivation_Decision_On_Oppty</name>
         <label>Trial Start Or Deactivation Decision On Oppty</label>
-        <locationX>445</locationX>
-        <locationY>325</locationY>
+        <locationX>578</locationX>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Review_Trial</name>
@@ -117,6 +125,35 @@
             </connector>
             <label>Update Deactivation Due Date</label>
         </rules>
+        <rules>
+            <name>Create_Transaction_Support_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ACH_Auto_debit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Transaction_Support_RT</targetReference>
+            </connector>
+            <label>Create Transaction Support Case</label>
+        </rules>
     </decisions>
     <environments>Default</environments>
     <formulas>
@@ -145,7 +182,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -159,7 +196,7 @@
         <name>Create_Limited_Case_Trial</name>
         <label>Create Limited Case Trial</label>
         <locationX>314</locationX>
-        <locationY>432</locationY>
+        <locationY>431</locationY>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -230,10 +267,72 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
+        <name>Create_Transaction_Case</name>
+        <label>Create Transaction Case</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>AP_Email__c</field>
+            <value>
+                <elementReference>$Record.AP_Email__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>TransactionCaseDescription</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>TransactionQueueId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Transaction_Support_RT.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>{!$Record.Account.Name} - ACH Auto-Debit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Set up Auto-Debit</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
         <name>Opportunity_Review_Case</name>
         <label>Opportunity Review Case</label>
         <locationX>50</locationX>
-        <locationY>432</locationY>
+        <locationY>431</locationY>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -291,11 +390,32 @@
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordLookups>
+        <name>Get_Transaction_Support_RT</name>
+        <label>Get Transaction Support RT</label>
+        <locationX>842</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Transaction_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Transaction_Support</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Case_Due_Date_Update</name>
         <label>Case Due Date Update</label>
         <locationX>578</locationX>
-        <locationY>432</locationY>
+        <locationY>431</locationY>
         <filterLogic>(1 OR 2) AND (3 AND 4)</filterLogic>
         <filters>
             <field>ActivationDeactivation_Needs__c</field>
@@ -334,22 +454,21 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>716</locationX>
-        <locationY>48</locationY>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Trial_Start_Or_Deactivation_Decision_On_Oppty</targetReference>
         </connector>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
-        <scheduledPaths>
-            <name>Create_Deactivation_Case</name>
-            <label>Create Deactivation Case</label>
-            <offsetNumber>1</offsetNumber>
-            <offsetUnit>Minutes</offsetUnit>
-            <recordField>Trial_End_Date__c</recordField>
-            <timeSource>RecordField</timeSource>
-        </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>TransactionCaseDescription</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello OTC Team, 
+A customer requires ACH Auto-debit setup for linked opportunity.
+This is an auto-generated email . Please reach out to Commercial Tech support if you require assistance.</text>
+    </textTemplates>
 </Flow>

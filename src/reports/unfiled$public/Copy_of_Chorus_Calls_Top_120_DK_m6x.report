@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Usman Muzaffar</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Blackfin Real Estate Investors,Klein Enterprises,MRP Realty,Greenebaum Enterprises DUPE*,Sagax Associates,SJG Properties,Spy Rock Real Estate Group,West End Capital Group,Wheeler Real Estate Investment Trust Inc.,White Oak Storage,Militello Capital,Montgomery County Employee Retirement Plans,Monument Realty,37th Parallel Properties,A.J. Dwoskin and Associates Inc.,ABR Capital Partners,Acento Real Estate,AGNC Investment Corp,Alliance Partners LLC,Altmore Capital,Arcland,Armada Hoffler Properties,Armory Asset Management,Atlantic Realty Companies,Inc.,Atlas Investments,Beatty Management Company,Blue Ocean,Bonaventure,Brookwood Capital Advisors,Byrnes &amp; Associates,Canal Capital Management,Capital Funding Group,Inc,Capital Square,Capital Square Realty Advisors,Capitol Seniors Housing,Capstone Development Inc,Central Pension Fund of the International Union of Operating Engineers &amp; Participating Employers,Chasen Companies,Cherner Development Group,Chesapeake Realty,The Chevy Chase Land Company,CityInterests Development Partners,Clark Realty Capital,Delaware Public Employees Retirement System,District of Columbia Retirement Board,Douglas Development Corp,Dynex Capital,Eastbanc,Educational Employees&apos; Supplementary Retirement System of Fairfax County</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Elm Street Development Inc,Enterprise Community Partners,Ernst Equities,Excelsa,Franklin Park,Global Medical REIT (NA),Granite Canyon Partners,GrayCo,Hackney Real Estate Partners,Heritage Properties Inc,Hill Management,Horizon Land Co,Insight Property Group,International Brotherhood of Electrical Workers,International Finance Corporation (NA),Invictus Capital Partners LLC,IPA,LaRock Capital Partners,Levco Management,Linden Property Group,Lock7 Development,Lockheed Martin Investment Management,Markel|Eagle Partners,Mosaic Realty Partners LLC,Multi-Employer Property Trust,National Electrical Benefit Fund,New Legacy Partners,Outlier Capital,Peck Properties,Penzance Companies,Pillar Development,PRP Real Estate Investment Management,Quadrangle Development,Redbrick LMD LLC,Republic Properties,Rock Creek Property Group,Rockford Capital Partners,ROSS Companies,SteeleHarbour Capital Partners,Stonebridge Investments,The Burnbrae Companies,The Franklin Johnston Group,The Maison Group,The Time Group,Thirdline Capital Management LLC DUPE,Thomas Park Investments,TTI Capital,Urban Investment Partners,Usonian Realty,Viking Capital,Virginia Retirement System - Private,Washington Alliance Capital,White Star Investments,Willard Retail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Willow Creek Partners,WPM Real Estate Management,Legacy Investing,Peterson Companies,The Donaldson Group,Washington Property Company,Xsitecapital,Graystone Companies,Gumenick Properties,Saul Centers,Wellings Capital,Atapco Properties,Canadian Apartment Properties REIT (Capreit),Cohen Investment Group,Comstock Holding Companies,Inc.,Featherstone Partners</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 UM</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

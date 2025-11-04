@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Dan Davis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AIIM Capital,StoneHawk Capital Partners,Bamboo Equity Partners,Silverado Interests,Velocis LLC,Prescott Realty Group,Presidium Group LLC,Ridgeline Capital Partners,Waymaker Real Estate,WaZu Capital Partners,Workspace Capital Partners,Altus Properties,Argent Capital Management,LLC,Bianco Properties,Bison Capital Group,Block Real Estate Services,BlueScope Properties Group,Caption Management,Copaken Brooks,Echo Investment Capital,Eighteen Capital Group,Enfinite Capital LLC,EPR Properties,Hall Capital,Ingram Capital,Kennedy Capital Management,Lennox Capital Partners,Marco Capital Group,Maxus Realty Trust Inc,Midwest Advisors LLC,MXD Capital,Outer Circle Capital,Parapet Capital Management,Paravest Capital,Park City Capital,Patmos Capital Partners,Pax Equity,Peregren Capital Group,Pershing Capital,Pillar Income Asset Management Inc,Prairie Capital Management,Provision Capital,Quadrex Capital Partners LLC,Rastegar Equity Partners,Realty Capital Partners,Realty Capital Residential,Reap Capital,Redhorn Capital Partners,Reserve Capital Partners,Rockspring Capital,RockStar Capital,RockStep Capital,Sade Capital,Sapient Capital Group,Sarofim Realty Advisors,Savoy Equity Partners,Saxony Capital Management,Sentinel Capital,Seven City,Shakiba Capital</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Shippy Capital,SHIR Capital,Signorelli Company,Silver Oak Multifamily Capital,Silver Star Properties REIT,Inc.,Socorro Asset Management LP,SPI Advisory,Square Deal Capital Inc,Stallion Capital Management,Stonebriar Commercial Finance,Stronghill Capital,Sugar Creek Capital,Sunrise Capital Group,SWBC,SWK Holdings Corp,T3 Capital LP,Tabani Group,Terrain Capital Partners LLC,Terrydale Capital,The Dinerstein Companies (TDC) (NA),The Jenkins Organization,The Michelson Organization,The Woodmont Company,Thompson Realty Capital,Three Pillars Capital Group,Thrive FP,Tierra Capital Partners,TriArc Real Estate Partners,Twain Financial Partners,Twin Tree Capital Management,Unilev Capital,Urban Southwest Capital,ValCap Group,Valor Capital Group Multifamily,Vandever Capital,Venterra Realty,Veritas Residential Capital,Vesta Capital,Vitae Capital,VWH Capital Management LP,Wallace Capital Management,Westdale Real Estate Investment and Management,Westward Capital Group (NA),Woods Capital,Woodside Capital Partners,Worcester Investments,Yorktown Realty Capital,Zion Capital,Staubach Capital,Argos Capital Partners LLC,Palladius Capital Management,LLC,PHP Capital Partners,Provident Realty Advisors,RREAF Holdings,Trinsic Residential Group,LP,Vinecrest Capital</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Wayfinder Real Estate,Westmount Realty Capital,LLC,WindMass Capital,Xebec Realty Partners (NA)</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 DD</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

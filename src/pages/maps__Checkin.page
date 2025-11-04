@@ -1,6 +1,4 @@
 <apex:page controller="maps.Checkin" extensions="maps.RemoteFunctions">
-    <apex:variable var="RequestPlatform" value="{!IF($CurrentPage.parameters.platform == null || $CurrentPage.parameters.platform == 'null', 'tablet', LOWER($CurrentPage.parameters.platform))}" />
-  
         <script type='text/javascript' src="{!URLFOR($Resource.Maps3rdPartyPlugins, 'jquery/jquery-3.6.0.min.js')}"></script> 
         <apex:slds />
         <script type='text/javascript' src="{!URLFOR($Resource.Maps3rdPartyPlugins, 'jquery/jquery-ui.min.js')}"></script>
@@ -37,7 +35,13 @@
                         if({!showMe}){
                             recordData = JSON.parse('{!JSENCODE(recordOutput)}');
                             recordData.forEach(function(field) {
-                                $('.' + field.name).val(field.value);
+                                // if the field is a checkbox, set the checked value
+                                // otherwise, set the value of the field
+                                if (field.value === true) {
+                                    $('.' + field.name).prop('checked', true);
+                                } else {
+                                    $('.' + field.name).val(field.value);
+                                }
                             })
                         } else {
                             checkIn();
@@ -69,8 +73,10 @@
                     var inputFields = $('.fieldInput');
                     var fields = [];
                     inputFields.each(function(v,k){
+                        // if the field is a checkbox, get the checked value
+                        // otherwise, get the value of the field
                         var fieldName = $(k).attr('data-field');
-                        var fieldValue = $(k).find('.' + fieldName).val();
+                        var fieldValue = $(k).find('.' + fieldName).prop('checked') || $(k).find('.' + fieldName).val();
                         if(fieldName != undefined) {
                             fields.push({
                                 name: fieldName,
@@ -116,7 +122,9 @@
             function checkOut() {
                 
                 recordData.forEach(function(field) {
-                    field.value = $('.' + field.name).val();
+                    // if the field is a checkbox, get the checked value
+                    // otherwise, get the value of the field
+                    field.value = $('.' + field.name).prop('checked') || $('.' + field.name).val();
                 })
                 var requestData = {
                     action      : 'check_out',
@@ -188,7 +196,13 @@
 
             if (updateFields) {
                 recordData.forEach(function(field) {
-                    $('.' + field.name).val(field.value);
+                    // if the field is a checkbox, set the checked value
+                    // otherwise, set the value of the field
+                    if (field.value === true) {
+                        $('.' + field.name).prop('checked', true);
+                    } else {
+                        $('.' + field.name).val(field.value);
+                    }
                 });
                 
                 updateFields = false;
@@ -199,7 +213,7 @@
 
             <div class="CustomDispositionFormTable fieldSetTable slds-p-around--medium">
                 <apex:repeat value="{!IF(defaultFields != null,defaultFields,defaultFields)}" var="f">
-                    <apex:outputPanel rendered="{! IF(RequestPlatform == 'tablet' && LOWER(f.fieldType) == 'reference', false, true)}" layout="none">
+                    <apex:outputPanel rendered="{! IF(isMobilePage && LOWER(f.fieldType) == 'reference', false, true)}" layout="none">
                         <apex:outputPanel layout="none" rendered="{!LOWER(f.fieldType) == 'date'}">
                             <div class="slds-form-element slds-m-vertical_small">
                                 <label class="fieldLabel dateLabel slds-form-element__label">{!f.Label}<apex:outputText value="*" rendered="{!f.Required || f.DBRequired}"/></label>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>((asknicely__NPS__c.Promoter__c:SUM-asknicely__NPS__c.Detractor__c:SUM)/RowCount)*100</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>NPS</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_86693889</developerName>
+        <masterLabel>Company Type Merged</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>FK_$Contact.Company_Type_Contact__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Dedicated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Dedicated, Event Driven</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Generalist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Generalist, Dedicated Sponsor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Generalist, Dedicated Sponsor, Event Driven</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Generalist, Event Driven</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Non-Contracted Hedge Fund-generalist</sourceValue>
+            </sourceValues>
+            <value>Hedge Fund</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Long Only</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Long Only- Dedicated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Long Only- Generalist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Long Only- Generalist, Dedicated Sponsor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Non-Contracted Long Only-dedicated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Non-Contracted Long Only-generalist</sourceValue>
+            </sourceValues>
+            <value>Long Only</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>FK_$Contact.asknicely__npsscore__c</field>
+    </columns>
+    <columns>
+        <field>asknicely__NPS__c.Survey_Name__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.Current_Products__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>FK_$Contact.Key_Contact__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>FK_$Contact.VIP__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.Priority__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.asknicely__nps_comment__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <column>asknicely__NPS__c.Survey_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>NPS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>asknicely__NPS__c.asknicely__segment__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>NPS</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Year</dateGranularity>
+        <field>CUST_CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_86693889</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>NPS Score by Company Type by Yr</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$asknicely__NPS__c@asknicely__NPS__c.asknicely__contact__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>asknicely__NPS__c.asknicely__surveyresponded__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

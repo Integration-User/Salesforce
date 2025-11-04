@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Type</field>
+    </columns>
+    <columns>
+        <field>Account$Owner</field>
+    </columns>
+    <columns>
+        <field>Account.DuplicateRecordItems$DuplicateRecordSet.Status__c</field>
+    </columns>
+    <columns>
+        <field>Account.DuplicateRecordItems$DuplicateRecordSet.Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account.DuplicateRecordItems$DuplicateRecordSet.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>AM Review,Cancelled,Resolved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Company_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Commercial Broker</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.DuplicateRecordItems$DuplicateRecordSet</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Duplicate Accounts for Clean up</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Duplicate_CRT_for_Accounts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

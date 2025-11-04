@@ -1,29 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
-        <caseType>Nominative</caseType>
+        <caseType>Prepositional</caseType>
         <plural>false</plural>
-        <value>Слой</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Nominative</caseType>
-        <plural>true</plural>
-        <value>Слои</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Accusative</caseType>
-        <plural>false</plural>
-        <value>Слой</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Accusative</caseType>
-        <plural>true</plural>
-        <value>Слои</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Genitive</caseType>
-        <plural>false</plural>
-        <value>Слоя</value>
+        <value>Слое</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
@@ -31,9 +11,39 @@
         <value>Слоев</value>
     </caseValues>
     <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Слоем</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Слои</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Слои</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Слой</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Слой</value>
+    </caseValues>
+    <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
         <value>Слою</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Слоя</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
@@ -42,18 +52,8 @@
     </caseValues>
     <caseValues>
         <caseType>Instrumental</caseType>
-        <plural>false</plural>
-        <value>Слоем</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Instrumental</caseType>
         <plural>true</plural>
         <value>Слоями</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Prepositional</caseType>
-        <plural>false</plural>
-        <value>Слое</value>
     </caseValues>
     <caseValues>
         <caseType>Prepositional</caseType>
@@ -61,30 +61,30 @@
         <value>Слоях</value>
     </caseValues>
     <fields>
-        <label><!-- ArcGIS WebMap Click2Create --></label>
+        <label></label>
         <name>maps__ArcGISWebMapC2C__c</name>
     </fields>
     <fields>
-        <label><!-- Description --></label>
+        <label></label>
         <name>maps__Description__c</name>
     </fields>
     <fields>
-        <label><!-- Email On Aggregation Success --></label>
+        <label></label>
         <name>maps__EmailOnAggregationSuccess__c</name>
     </fields>
     <fields>
-        <label><!-- Maps Folder --></label>
+        <label></label>
         <name>maps__Folder__c</name>
-        <relationshipLabel><!-- Maps Layers --></relationshipLabel>
+        <relationshipLabel></relationshipLabel>
     </fields>
     <fields>
         <help>Используется для хранения параметров слоя в формате JSON.</help>
-        <label><!-- Options --></label>
+        <label></label>
         <name>maps__Options__c</name>
     </fields>
     <fields>
         <help>Используется для определения, как тип слоя представляет запись.</help>
-        <label><!-- Type --></label>
+        <label></label>
         <name>maps__Type__c</name>
         <picklistValues>
             <masterLabel>ArcGIS Online</masterLabel>
@@ -105,12 +105,12 @@
     </fields>
     <fields>
         <help>Заполняется непосредственно по личной папкой пользователя, иначе остается пустым. Если поле пустое и поиск папки пустой, отобразится в корпоративной папке. Если папка заполнена, это может быть личная или корпоративная папка.</help>
-        <label><!-- User --></label>
+        <label></label>
         <name>maps__User__c</name>
-        <relationshipLabel><!-- Maps Layers --></relationshipLabel>
+        <relationshipLabel></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Version --></label>
+        <label></label>
         <name>maps__Version__c</name>
     </fields>
     <gender>Masculine</gender>

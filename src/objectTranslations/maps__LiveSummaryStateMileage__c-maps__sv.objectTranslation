@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Maps-livesammanfattningen för körsträcka i region</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>En Maps-livesammanfattning för körsträcka i region</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Maps-livesammanfattning för körsträcka i region</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Maps-livesammanfattningarna för körsträcka i region</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Maps-livesammanfattningar för körsträcka i region</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Maps-livesammanfattningar för körsträcka i region</value>
+    </caseValues>
+    <fields>
+        <help><!-- The 3 character country code --></help>
+        <label>Land</label>
+        <name>maps__Country__c</name>
+        <picklistValues>
+            <masterLabel>CAN</masterLabel>
+            <translation><!-- CAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Specified</masterLabel>
+            <translation><!-- Not Specified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Live Asset Daily Summary record to which this mileage relates --></help>
+        <label>Daglig sammanfattning för livetillgång</label>
+        <name>maps__LiveAssetDailySummary__c</name>
+        <relationshipLabel>Livesammanfattning för körsträcka i region</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Rapportdatum</label>
+        <name>maps__ReportDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The associated state or province for this record --></help>
+        <label>Delstat eller provins</label>
+        <name>maps__StateProvince__c</name>
+    </fields>
+    <fields>
+        <label>Totalt avstånd tillryggalagt (km)</label>
+        <name>maps__TotalDistanceTraveledKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in miles within this state. --></help>
+        <label>Totalt avstånd tillryggalagt (mi)</label>
+        <name>maps__TotalDistanceTraveledMiles__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Namn på Livesammanfattning för körsträck</nameFieldLabel>
+</CustomObjectTranslation>

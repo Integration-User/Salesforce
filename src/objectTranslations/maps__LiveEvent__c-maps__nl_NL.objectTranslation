@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Maps Live-event</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Maps Live-events</value>
+    </caseValues>
+    <fields>
+        <help><!-- Internal Use --></help>
+        <label>Correlatie-ID</label>
+        <name>maps__CorrelationId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device Involved with Event &amp; Rule --></help>
+        <label>Apparaat-ID</label>
+        <name>maps__DeviceId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date &amp; Time of Entry --></help>
+        <label>Invoerdatum/-tijd</label>
+        <name>maps__EntryDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Location of Entry Position --></help>
+        <label>Invoerpositie</label>
+        <name>maps__EntryPosition__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date &amp; Time of Exit --></help>
+        <label>Vertrekdatum/-tijd</label>
+        <name>maps__ExitDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Location of Exit Position --></help>
+        <label>Vertrekpositie</label>
+        <name>maps__ExitPosition__c</name>
+    </fields>
+    <fields>
+        <label>Live activum</label>
+        <name>maps__LiveAsset__c</name>
+        <relationshipLabel>Live gebeurtenissen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Record Type of Event Created --></help>
+        <label>Type live gebeurtenis</label>
+        <name>maps__LiveEventType__c</name>
+        <picklistValues>
+            <masterLabel>Enters</masterLabel>
+            <translation><!-- Enters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exits</masterLabel>
+            <translation><!-- Exits --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Lookup to IoT Device that Created Event --></help>
+        <label>Live IoT-apparaat</label>
+        <name>maps__LiveIoTDevice__c</name>
+        <relationshipLabel>Live gebeurtenissen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- External Rule Id --></help>
+        <label>Regel-ID</label>
+        <name>maps__RuleId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name or label for this rule --></help>
+        <label>Regelnaam</label>
+        <name>maps__RuleName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of time spent within a Geofence in Hours --></help>
+        <label>Tijd besteed in Geofence (uren)</label>
+        <name>maps__TimeSpentinGeofenceHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of time spent within a Geofence in Minutes --></help>
+        <label>Tijd besteed in Geofence (minuten)</label>
+        <name>maps__TimeSpentinGeofenceMinutes__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Naam gebeurtenis live Maps</nameFieldLabel>
+</CustomObjectTranslation>

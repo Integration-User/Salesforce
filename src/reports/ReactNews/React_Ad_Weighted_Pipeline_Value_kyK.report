@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_66266650</developerName>
+        <masterLabel>Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>FULL_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Georgia Byass</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Henrietta Curtis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Issy Hills</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jamie Hamer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mona Singh</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Olivia Houlder</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rhys Zownir</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tori Hutchinson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Will Judd</sourceValue>
+            </sourceValues>
+            <value>React Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Aaron Ling</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alistair Bush</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Benjamin Sutton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ben Perkins</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Charles Sjostrom</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Fady Labib</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jackson Knowles</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Louis Attwood</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matt Souter</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael Smyth</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Murray Banks</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paul Eager</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Will Morrow</sourceValue>
+            </sourceValues>
+            <value>Green Street Team</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>UNIT_PRICE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>EXP_PRODUCT_AMOUNT</field>
+    </columns>
+    <columns>
+        <field>PRODUCT_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Trial_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Trial_End_Date__c</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>UNIT_PRICE.CONVERT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>EXP_PRODUCT_AMOUNT.CONVERT</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>PRODUCT_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>React Advertising</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Advertising</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_66266650</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STAGE_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>React Ad - Weighted Pipeline Value</name>
+    <params>
+        <name>open</name>
+        <value>open</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>PROBABILITY</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

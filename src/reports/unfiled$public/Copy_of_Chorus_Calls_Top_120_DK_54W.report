@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Jared Turner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Hilltop Residential,Eiffel Investments Capital,ECapital Management,Boston Omaha Asset Management,Clark Investment Group,Embrey,Evergen Equity,Excel Commercial Real Estate,Freehill Development Company,GenCap Partners,GoldCor Capital Partners,Heady Investments,Hughes Capital Partners,i3 Interests,InLight Capital,LLC,JLB Partners LLC (NA),Joule Capital Ventures,JT Capital,K8H Ventures,Kairoi Residential,KDC,Keener Investments,Kompass Kapital,Kong Capital LLC,Thompson Realty Group,Investment &amp; Development Ventures,Guttman Development Partners,Fountain Residential Partners,HN Capital Partners,G6 Hospitality,Hanover Company,ILE Homes,Finial Group,Flagship Capital Partners,Bonavia Properties,Bulk Industrial Group,Burlington Capital,CrossFirst Bankshares,E2M Partners,Edison Capital Holdings,Edison Equity Partners,Elevate Commercial Investment,Energy Related Properties,EPC Real Estate Group,ExCap Advisors,EZO Capital Group,Flint Development,Floyd Ventures,Fritz Duda Company,Fuller Realty Interests,Gatehouse Capital,Gauge Real Estate Partners,Gentry Mills Capital,Goldenrod Companies,GVA Real Estate Group,Hanford Investments,Harris Bay,Harwood International Incorporated,Hawkeye Partners,HealthCap Partners,Hiram Capital Management LLC,HM Equity Management</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Hopkins Commercial Real Estate,Hoque Global,Hunt Realty Investments,ICP Funds,Ilan Investments,InterCapital Group,Interra Capital,Investar Financial,Invictus Commercial Equities,Ironwood Realty Partners,Jefferson Bank,JMI Realty,Jordan Multifamily,Keller Capital,KOA Partners,Metonic,Overland Property Group,Percipio Partners,Internacional Realty,Ironbridge Realty Partners,Kennington Commercial,Lodging Advisory Group,Occidental Management,Security Benefit Life Insurance Company,Assurity Life Insurance Company,Bridgepoint Investment Banking,CU Capital Market Solutions,Eurus Capital Partners,Harbor Capital,Hart Advisors,HC2 Capital,Hillview Capital Partners,HPI Real Estate,Inc.,HS Development Group,Flatbay Capital,Aspen Funds,Cohen Esrey,Eagle Property Capital,Edge Realty Partners,Eider Creek Capital,Endeavor Real Estate Group,EPIC Real Estate Partners,Exline Capital,Foresite Commercial Real Estate,Four Rivers Capital,Foxgate Capital,GRACO Real Estate Development,Grayco Partners,GrayStreet Partners,Green Point Property Company,GWR Equities LLC,HighPark Capital,Hinze Capital,Holt Lunsford Commercial,Hunington Properties,Ignite Investments,Impex Capital Group,Integrated Real Estate Group,Jackson-Shaw,Juniper Investment Group,Kalterra Capital Partners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>KE Andrews,KeyCity Capital,Knightvest Capital,Kobalt Investment Company,Prime Capital Investment Advisors,King Ranch,Nolan Living,Flexspace Advisors,Global Real Estate Advisors [GREA],Green Brick Partners,Haddock Investments,HALL Structured Finance,HHS Residential</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 JT</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
