@@ -314,6 +314,33 @@
         <template>Cases/Case_Status_Update</template>
     </alerts>
     <alerts>
+        <fullName>Salesforce_Request_Case_Cancelled</fullName>
+        <description>Salesforce Request Case Cancelled</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hrose@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jecusi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mbonyab@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mgupta@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Requested_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CTR_Cancelled_Email_Template</template>
+    </alerts>
+    <alerts>
         <fullName>Salesforce_Request_Case_Closed</fullName>
         <description>Salesforce Request Case Closed</description>
         <protected>false</protected>
