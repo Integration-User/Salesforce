@@ -22,7 +22,7 @@
         <name>ClientTrialActivationEmailAlert</name>
         <label>ClientTrialActivationEmailAlert</label>
         <locationX>522</locationX>
-        <locationY>2400</locationY>
+        <locationY>2100</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -76,7 +76,7 @@
         <name>TrialActivationEmailAlert</name>
         <label>TrialActivationEmailAlert</label>
         <locationX>258</locationX>
-        <locationY>2400</locationY>
+        <locationY>2100</locationY>
         <actionName>Case.Trial_Activation_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -111,106 +111,6 @@
     </actionCalls>
     <apiVersion>57.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <assignments>
-        <name>College_House_Product_Case_Assignment</name>
-        <label>College House Product Case Assignment</label>
-        <locationX>50</locationX>
-        <locationY>1608</locationY>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.AccountId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.AccountId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.ActivationDeactivation_Needs__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Full Trial Activation</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.ContactId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Contact.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.Description</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Trial Activation</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.Due_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Opportunity__r.Trial_Start_Date__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.Opportunity__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Opportunity__r.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.OwnerId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>00G5G000004kklJ</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.Platform__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>College House</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.Priority</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>High</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.RecordTypeId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Label.Client_Access</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.Status</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>New</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CollegeHouse.Subject</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>CreateCaseList</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>CollegeHouse</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Bulk_Case_Decision</targetReference>
-        </connector>
-    </assignments>
     <assignments>
         <name>GS_Case_Assignment</name>
         <label>GS Case Assignment</label>
@@ -501,7 +401,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>College_House_Decision</targetReference>
+            <targetReference>Bulk_Case_Decision</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -737,7 +637,7 @@
         <name>Bulk_Case_Decision</name>
         <label>Bulk Case Decision</label>
         <locationX>182</locationX>
-        <locationY>1800</locationY>
+        <locationY>1500</locationY>
         <defaultConnector>
             <targetReference>GSA_Relation_Decision</targetReference>
         </defaultConnector>
@@ -759,70 +659,10 @@
         </rules>
     </decisions>
     <decisions>
-        <name>College_House_Decision</name>
-        <label>College House Decision</label>
-        <locationX>182</locationX>
-        <locationY>1500</locationY>
-        <defaultConnector>
-            <targetReference>Bulk_Case_Decision</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_College_House</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6)</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>Basic - </stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>Database Explorer - </stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>Enhanced - Additional Users</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>Enhanced Reporting - </stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Opportunity__r.Products__c</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>Student Market Reports</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>College_House_Product_Case_Assignment</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Compliance_Creation</name>
         <label>Compliance Creation</label>
         <locationX>522</locationX>
-        <locationY>2592</locationY>
+        <locationY>2292</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>US_Client_Access_Closed</name>
@@ -1005,7 +845,7 @@
         <name>GSA_Relation_Decision</name>
         <label>GSA Relation Decision</label>
         <locationX>522</locationX>
-        <locationY>2184</locationY>
+        <locationY>1884</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>GSARelationTrial</name>
@@ -1132,7 +972,7 @@
         <locationX>182</locationX>
         <locationY>1200</locationY>
         <defaultConnector>
-            <targetReference>College_House_Decision</targetReference>
+            <targetReference>Bulk_Case_Decision</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1166,7 +1006,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Case_Untouched_For_2_Hours</name>
-            <conditionLogic>1 AND (2 OR 6) AND (7 OR 8) AND 3 AND (4 OR 5)</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5) AND (6 OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.IsClosed</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1200,13 +1040,6 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Sunday</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.OwnerId</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>EU_Data_Support_OwnerId</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1415,7 +1248,7 @@
         <name>Create_UK_Compliance_Record</name>
         <label>Create UK Compliance Record</label>
         <locationX>522</locationX>
-        <locationY>2700</locationY>
+        <locationY>2400</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
             <value>
@@ -1465,7 +1298,7 @@
         <name>Create_US_Compliance_Record</name>
         <label>Create US Compliance Record</label>
         <locationX>258</locationX>
-        <locationY>2700</locationY>
+        <locationY>2400</locationY>
         <inputAssignments>
             <field>Account_Name__c</field>
             <value>
@@ -1515,7 +1348,7 @@
         <name>Insert_Activation_Case_Records</name>
         <label>Insert Activation Case Records</label>
         <locationX>50</locationX>
-        <locationY>1908</locationY>
+        <locationY>1608</locationY>
         <connector>
             <targetReference>GSA_Relation_Decision</targetReference>
         </connector>
@@ -1546,7 +1379,7 @@
         <name>Update_Account_GSA_Relation_To_Client_Trial</name>
         <label>Update Account GSA Relation To Client + Trial</label>
         <locationX>522</locationX>
-        <locationY>2292</locationY>
+        <locationY>1992</locationY>
         <connector>
             <targetReference>ClientTrialActivationEmailAlert</targetReference>
         </connector>
@@ -1577,7 +1410,7 @@
         <name>Update_Account_GSA_Relation_To_Trial</name>
         <label>Update Account GSA Relation To Trial</label>
         <locationX>258</locationX>
-        <locationY>2292</locationY>
+        <locationY>1992</locationY>
         <connector>
             <targetReference>TrialActivationEmailAlert</targetReference>
         </connector>
@@ -1642,14 +1475,6 @@
         <isViewedAsPlainText>false</isViewedAsPlainText>
         <text>&lt;p&gt;Hey {!$Record.Owner:User.FirstName},&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;There has been no activity for case: # {!$Record.CaseNumber} for the past 4 days. Please review the case to determine the next steps and follow up with clients as needed.&lt;/p&gt;</text>
     </textTemplates>
-    <variables>
-        <name>CollegeHouse</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Case</objectType>
-    </variables>
     <variables>
         <name>CreateCaseList</name>
         <dataType>SObject</dataType>
