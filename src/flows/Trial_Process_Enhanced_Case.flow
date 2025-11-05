@@ -117,49 +117,49 @@
         <locationX>50</locationX>
         <locationY>1608</locationY>
         <assignmentItems>
-            <assignToReference>CollegeHouse.AccountId</assignToReference>
+            <assignToReference>LocatusCase.AccountId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.AccountId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.ActivationDeactivation_Needs__c</assignToReference>
+            <assignToReference>LocatusCase.ActivationDeactivation_Needs__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Full Trial Activation</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.ContactId</assignToReference>
+            <assignToReference>LocatusCase.ContactId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Contact.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.Description</assignToReference>
+            <assignToReference>LocatusCase.Description</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Trial Activation</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.Due_Date__c</assignToReference>
+            <assignToReference>LocatusCase.Due_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Opportunity__r.Trial_Start_Date__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.Opportunity__c</assignToReference>
+            <assignToReference>LocatusCase.Opportunity__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Opportunity__r.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.OwnerId</assignToReference>
+            <assignToReference>LocatusCase.OwnerId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>00G5G000004kklJ</stringValue>
@@ -173,28 +173,28 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.Priority</assignToReference>
+            <assignToReference>LocatusCase.Priority</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>High</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.RecordTypeId</assignToReference>
+            <assignToReference>LocatusCase.RecordTypeId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Label.Client_Access</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.Status</assignToReference>
+            <assignToReference>LocatusCase.Status</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>New</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>CollegeHouse.Subject</assignToReference>
+            <assignToReference>LocatusCase.Subject</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Full Trial Activation - {!$Record.Opportunity__r.Name}</stringValue>
@@ -1166,7 +1166,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Case_Untouched_For_2_Hours</name>
-            <conditionLogic>1 AND (2 OR 6) AND (7 OR 8) AND 3 AND (4 OR 5)</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5) AND (6 OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.IsClosed</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1200,13 +1200,6 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Sunday</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.OwnerId</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>EU_Data_Support_OwnerId</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
