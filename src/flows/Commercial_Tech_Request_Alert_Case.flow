@@ -41,10 +41,30 @@
         <offset>0</offset>
     </actionCalls>
     <actionCalls>
+        <name>Salesforce_Request_Case_Cancelled</name>
+        <label>Salesforce Request Case Cancelled</label>
+        <locationX>50</locationX>
+        <locationY>3647</locationY>
+        <actionName>Case.Salesforce_Request_Case_Cancelled</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Case_Status_Is_Closed</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.Salesforce_Request_Case_Cancelled</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
         <name>SalesforceRequestCaseClosed</name>
         <label>SalesforceRequestCaseClosed</label>
         <locationX>50</locationX>
-        <locationY>3647</locationY>
+        <locationY>3947</locationY>
         <actionName>Case.Salesforce_Request_Case_Closed</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -65,7 +85,7 @@
         <actionName>Case.Salesforce</actionName>
         <actionType>emailAlert</actionType>
         <connector>
-            <targetReference>Case_Status_Is_Closed</targetReference>
+            <targetReference>Case_Cancelled</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -106,12 +126,44 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Case_Cancelled</name>
+        <label>Case Cancelled</label>
+        <locationX>182</locationX>
+        <locationY>3539</locationY>
+        <defaultConnector>
+            <targetReference>Case_Status_Is_Closed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Case_is_Cancelled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Salesforce_Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Salesforce_Request_Case_Cancelled</targetReference>
+            </connector>
+            <label>Case is Cancelled</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Case_Is_Changed_Decision</name>
         <label>Case Is Changed Decision</label>
         <locationX>182</locationX>
         <locationY>3239</locationY>
         <defaultConnector>
-            <targetReference>Case_Status_Is_Closed</targetReference>
+            <targetReference>Case_Cancelled</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -163,7 +215,7 @@
         <name>Case_Status_Is_Closed</name>
         <label>Case Status Is Closed</label>
         <locationX>182</locationX>
-        <locationY>3539</locationY>
+        <locationY>3839</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CaseStatusIsClosed</name>
