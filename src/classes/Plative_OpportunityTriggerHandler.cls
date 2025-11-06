@@ -285,7 +285,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
         List<String> excludedStage = new List<String> {'Quota, Prior Year', 'Closed Won', 'Closed Lost', 'Active', 'Deactivated', 'Consolidated', 'Suspended'};
         for (Opportunity salesOpp:  [Select Id, Account.OwnerId, (Select Id FROM OpportunityLineItems Where Product2.Family = 'Research'),
                                      (Select Id, ownerId from Renewals__r) opps FROM Opportunity 
-                                     WHERE Id IN :oppIds AND Account.AM_Manager__r.Name != 'Megan Kerbs' AND Account.Products_Include__c != 'News Only']) {
+                                     WHERE Id IN :oppIds AND (Account.AM_Manager__r.Name != 'Megan Kerbs' OR Account.Products_Include__c != 'News Only')]) {
             list<OpportunityLineItem> oliList = salesOpp.OpportunityLineItems;
             if (oliList != null && oliList.size() > 0) {
                 for (Opportunity renewalOpp : salesOpp.Renewals__r) {
@@ -299,7 +299,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
         }
         for(Opportunity opp: [Select Id, Name, AccountId, Account.OwnerId, ownerId, (Select Id FROM OpportunityLineItems Where Product2.Family = 'Research') FROM Opportunity 
                               WHERE RecordType.DeveloperName = 'Existing_Business' AND ID NOT IN :excludedIds AND AccountId IN :accountIds 
-                              AND StageName NOT IN :excludedStage AND Account.AM_Manager__r.Name != 'Megan Kerbs' AND Account.Products_Include__c != 'News Only']) {
+                              AND StageName NOT IN :excludedStage AND (Account.AM_Manager__r.Name != 'Megan Kerbs' OR Account.Products_Include__c != 'News Only')]) {
             list<OpportunityLineItem> oliList = opp.OpportunityLineItems;  
             if (oliList != null && oliList.size() > 0 && opp.ownerId != opp.Account.OwnerId) {
                 opp.OwnerId = opp.Account.OwnerId;
