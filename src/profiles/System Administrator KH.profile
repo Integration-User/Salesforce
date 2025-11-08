@@ -17065,6 +17065,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.GS_Taxonomy_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.GS_Taxonomy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Geographic_Exposure__c</field>
         <readable>false</readable>
@@ -34541,6 +34551,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>affectlayer__AffectLayer_Admin_Setting__c.affectlayer__AffectLayer_Is_Default__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -50363,6 +50383,9 @@
     <layoutAssignments>
         <layout>Zephr_Webhook_Data__c-Zephr Webhook Data Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>ZoomInfo_Industry_And_Sub_Mapping__mdt-ZoomInfo Industry And Sub Mapping Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -57802,10 +57825,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

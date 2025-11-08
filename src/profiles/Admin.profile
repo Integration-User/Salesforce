@@ -17314,6 +17314,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.GS_Taxonomy_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.GS_Taxonomy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Geographic_Exposure__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29263,6 +29273,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Intent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Interaction_Level_NS_Internal_Id__c</field>
         <readable>true</readable>
@@ -34785,6 +34800,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Zephr_Webhook_Data__c.Zephr_Tenant__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -50929,6 +50954,9 @@
     <layoutAssignments>
         <layout>Zephr_Webhook_Data__c-Zephr Webhook Data Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>ZoomInfo_Industry_And_Sub_Mapping__mdt-ZoomInfo Industry And Sub Mapping Layout</layout>
+    </layoutAssignments>
     <loginIpRanges>
         <description>Admin access</description>
         <endAddress>255.255.255.255</endAddress>
@@ -58419,6 +58447,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageHerokuAppLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageHubConnections</name>
     </userPermissions>
     <userPermissions>
@@ -58628,10 +58660,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SendCustomNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
