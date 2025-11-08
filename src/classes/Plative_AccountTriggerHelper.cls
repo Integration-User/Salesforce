@@ -96,6 +96,27 @@ public class Plative_AccountTriggerHelper  {
 			    (acc.Company_Type__c != mapOldAcc.get(acc.Id).Company_Type__c))){
 				setCompanyTypes.add(acc.Company_Type__c);			
 			}
+            // SF-1775 : Update ZoomInfo_SIC_Code_account__c and ZoomInfo_NAICS_Code_account__c value from metadata
+            if(acc.ZoomInfo_SIC_Code_account__c != null) {
+                SIC_Codes_And_Descriptions__mdt sicCodeValue = SIC_Codes_And_Descriptions__mdt.getInstance('X'+acc.ZoomInfo_SIC_Code_account__c);
+                if(sicCodeValue != null && sicCodeValue.SIC_Descriptions_Value__c !=null) acc.SicDesc = sicCodeValue.SIC_Descriptions_Value__c;
+            }
+            if(acc.ZoomInfo_NAICS_Code_account__c != null) {
+                NAICS_US_Code_And_Titles__mdt naicsCodeTitles = NAICS_US_Code_And_Titles__mdt.getInstance('X'+acc.ZoomInfo_NAICS_Code_account__c);
+                if(naicsCodeTitles != null && naicsCodeTitles.NAICS_US_Title_Value__c !=null) acc.NAICS_Sector__c = naicsCodeTitles.NAICS_US_Title_Value__c;
+            }
+            //SF-1805 ICP Field Automation
+            if(acc.ZoomInfo_Industry_account__c != null & acc.ZoomInfo_Primary_Sub_Industry__c != null && 
+               (mapOldAcc == null || (acc.ZoomInfo_Industry_account__c != mapOldAcc.get(acc.Id).ZoomInfo_Industry_account__c 
+                                                       || acc.ZoomInfo_Primary_Sub_Industry__c != mapOldAcc.get(acc.Id).ZoomInfo_Primary_Sub_Industry__c ))) {
+                List<ZoomInfo_Industry_And_Sub_Mapping__mdt> industrySubMapping = [Select GS_Taxonomy__c, GS_Taxonomy_Type__c From ZoomInfo_Industry_And_Sub_Mapping__mdt 
+                                                                             Where ZoomInfo_Industry__c = :acc.ZoomInfo_Industry_account__c 
+                                                                             AND ZoomInfo_Sub_Industry__c = :acc.ZoomInfo_Primary_Sub_Industry__c LIMIt 1];
+                if(industrySubMapping != null && industrySubMapping.size() > 0) {
+                    acc.GS_Taxonomy__c = industrySubMapping[0].GS_Taxonomy__c;
+                    acc.GS_Taxonomy_Type__c = industrySubMapping[0].GS_Taxonomy_Type__c;
+                }
+            }
 		}
 		//if the field is not updated then return
 		if(setCompanyTypes.isEmpty()){

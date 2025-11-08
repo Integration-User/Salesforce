@@ -8,6 +8,10 @@ public class AccountTriggerTest {
 		Account acc = new Account();
         acc.Name = 'Test Account 1';
         acc.RecordTypeId = accRecordTypeId;
+        acc.ZoomInfo_NAICS_Code_account__c = '111110';
+        acc.ZoomInfo_SIC_Code_account__c = '1061';
+        acc.ZoomInfo_Industry_account__c = 'Education';
+        acc.ZoomInfo_Primary_Sub_Industry__c = 'Colleges & Universities';
         Insert acc;
         
         Id oppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Existing_Business').getRecordTypeId();
