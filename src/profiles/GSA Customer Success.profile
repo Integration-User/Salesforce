@@ -3051,7 +3051,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_AccountTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_ActivitySecurityUtil</apexClass>
@@ -17046,6 +17046,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.GS_News_Canada_Client__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.GS_Taxonomy_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.GS_Taxonomy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -34175,6 +34185,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>affectlayer__AffectLayer_Admin_Setting__c.affectlayer__AffectLayer_Is_Default__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -50541,6 +50561,9 @@
         <layout>Zephr_Webhook_Data__c-Zephr Webhook Data Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ZoomInfo_Industry_And_Sub_Mapping__mdt-ZoomInfo Industry And Sub Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>affectlayer__AffectLayer_Admin_Setting__c-affectlayer__AffectLayer Admin Setting Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -58653,9 +58676,9 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
+        <default>false</default>
         <recordType>Account.Subsidiary_Account</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
@@ -60478,10 +60501,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

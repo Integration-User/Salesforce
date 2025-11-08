@@ -4019,6 +4019,359 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>GS_Taxonomy_Type__c</fullName>
+        <inlineHelpText>This is calculated based on the ZoomInfo Industry and Sub-Industry fields</inlineHelpText>
+        <label>GS Taxonomy Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Academia/Media</fullName>
+                    <default>false</default>
+                    <label>Academia/Media</label>
+                </value>
+                <value>
+                    <fullName>Brokers</fullName>
+                    <default>false</default>
+                    <label>Brokers</label>
+                </value>
+                <value>
+                    <fullName>Consulting</fullName>
+                    <default>false</default>
+                    <label>Consulting</label>
+                </value>
+                <value>
+                    <fullName>Developers</fullName>
+                    <default>false</default>
+                    <label>Developers</label>
+                </value>
+                <value>
+                    <fullName>Equity</fullName>
+                    <default>false</default>
+                    <label>Equity</label>
+                </value>
+                <value>
+                    <fullName>Government</fullName>
+                    <default>false</default>
+                    <label>Government</label>
+                </value>
+                <value>
+                    <fullName>Hedge Funds</fullName>
+                    <default>false</default>
+                    <label>Hedge Funds</label>
+                </value>
+                <value>
+                    <fullName>Hospitality</fullName>
+                    <default>false</default>
+                    <label>Hospitality</label>
+                </value>
+                <value>
+                    <fullName>Infrastructure</fullName>
+                    <default>false</default>
+                    <label>Infrastructure</label>
+                </value>
+                <value>
+                    <fullName>Insurance</fullName>
+                    <default>false</default>
+                    <label>Insurance</label>
+                </value>
+                <value>
+                    <fullName>Lenders</fullName>
+                    <default>false</default>
+                    <label>Lenders</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>Real Estate</fullName>
+                    <default>false</default>
+                    <label>Real Estate</label>
+                </value>
+                <value>
+                    <fullName>Retail-Oriented</fullName>
+                    <default>false</default>
+                    <label>Retail-Oriented</label>
+                </value>
+                <value>
+                    <fullName>Services</fullName>
+                    <default>false</default>
+                    <label>Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GS_Taxonomy__c</fullName>
+        <inlineHelpText>This is calculated based on the ZoomInfo Industry and Sub-Industry fields</inlineHelpText>
+        <label>GS Taxonomy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Academia</fullName>
+                    <default>false</default>
+                    <label>Academia</label>
+                </value>
+                <value>
+                    <fullName>Accountants</fullName>
+                    <default>false</default>
+                    <label>Accountants</label>
+                </value>
+                <value>
+                    <fullName>Agriculture Location Strategy</fullName>
+                    <default>false</default>
+                    <label>Agriculture Location Strategy</label>
+                </value>
+                <value>
+                    <fullName>Appraisers</fullName>
+                    <default>false</default>
+                    <label>Appraisers</label>
+                </value>
+                <value>
+                    <fullName>Boutique Investment Banks</fullName>
+                    <default>false</default>
+                    <label>Boutique Investment Banks</label>
+                </value>
+                <value>
+                    <fullName>Commercial Developers</fullName>
+                    <default>false</default>
+                    <label>Commercial Developers</label>
+                </value>
+                <value>
+                    <fullName>Commercial Property Insurance Carriers</fullName>
+                    <default>false</default>
+                    <label>Commercial Property Insurance Carriers</label>
+                </value>
+                <value>
+                    <fullName>Commercial Real Estate Lenders (Banks &amp; Credit Unions)</fullName>
+                    <default>false</default>
+                    <label>Commercial Real Estate Lenders (Banks &amp; Credit Unions)</label>
+                </value>
+                <value>
+                    <fullName>Commercial Services</fullName>
+                    <default>false</default>
+                    <label>Commercial Services</label>
+                </value>
+                <value>
+                    <fullName>Corporate M&amp;A Teams</fullName>
+                    <default>false</default>
+                    <label>Corporate M&amp;A Teams</label>
+                </value>
+                <value>
+                    <fullName>Countyl Tax Assessment Offices</fullName>
+                    <default>false</default>
+                    <label>Countyl Tax Assessment Offices</label>
+                </value>
+                <value>
+                    <fullName>Credit Rating Agencies</fullName>
+                    <default>false</default>
+                    <label>Credit Rating Agencies</label>
+                </value>
+                <value>
+                    <fullName>Data Center Developers &amp; Investors</fullName>
+                    <default>false</default>
+                    <label>Data Center Developers &amp; Investors</label>
+                </value>
+                <value>
+                    <fullName>Debt / Alternative CRE Lenders</fullName>
+                    <default>false</default>
+                    <label>Debt / Alternative CRE Lenders</label>
+                </value>
+                <value>
+                    <fullName>Economic Development Agencies</fullName>
+                    <default>false</default>
+                    <label>Economic Development Agencies</label>
+                </value>
+                <value>
+                    <fullName>Family Offices w/ CRE Holdings</fullName>
+                    <default>false</default>
+                    <label>Family Offices w/ CRE Holdings</label>
+                </value>
+                <value>
+                    <fullName>Global &amp; Regional CRE Brokerage Firms</fullName>
+                    <default>false</default>
+                    <label>Global &amp; Regional CRE Brokerage Firms</label>
+                </value>
+                <value>
+                    <fullName>Government Housing Authority</fullName>
+                    <default>false</default>
+                    <label>Government Housing Authority</label>
+                </value>
+                <value>
+                    <fullName>Healthcare</fullName>
+                    <default>false</default>
+                    <label>Healthcare</label>
+                </value>
+                <value>
+                    <fullName>Hedge Funds (REITs &amp; Real Assets)</fullName>
+                    <default>false</default>
+                    <label>Hedge Funds (REITs &amp; Real Assets)</label>
+                </value>
+                <value>
+                    <fullName>Hospitality Management Groups / Franchisors</fullName>
+                    <default>false</default>
+                    <label>Hospitality Management Groups / Franchisors</label>
+                </value>
+                <value>
+                    <fullName>Industrial &amp; Logistics Operators</fullName>
+                    <default>false</default>
+                    <label>Industrial &amp; Logistics Operators</label>
+                </value>
+                <value>
+                    <fullName>Infrastructure Developers</fullName>
+                    <default>false</default>
+                    <label>Infrastructure Developers</label>
+                </value>
+                <value>
+                    <fullName>Infrastructure Funds &amp; Investors</fullName>
+                    <default>false</default>
+                    <label>Infrastructure Funds &amp; Investors</label>
+                </value>
+                <value>
+                    <fullName>Infrastructure Services</fullName>
+                    <default>false</default>
+                    <label>Infrastructure Services</label>
+                </value>
+                <value>
+                    <fullName>Institutional Real Estate Investors</fullName>
+                    <default>false</default>
+                    <label>Institutional Real Estate Investors</label>
+                </value>
+                <value>
+                    <fullName>Insurance-Linked Securities (ILS)</fullName>
+                    <default>false</default>
+                    <label>Insurance-Linked Securities (ILS)</label>
+                </value>
+                <value>
+                    <fullName>Investor Platforms &amp; Marketplaces</fullName>
+                    <default>false</default>
+                    <label>Investor Platforms &amp; Marketplaces</label>
+                </value>
+                <value>
+                    <fullName>Large Corporate Occupiers</fullName>
+                    <default>false</default>
+                    <label>Large Corporate Occupiers</label>
+                </value>
+                <value>
+                    <fullName>Law Firms (Real Estate &amp; Infrastructure)</fullName>
+                    <default>false</default>
+                    <label>Law Firms (Real Estate &amp; Infrastructure)</label>
+                </value>
+                <value>
+                    <fullName>Media/Journalist</fullName>
+                    <default>false</default>
+                    <label>Media/Journalist</label>
+                </value>
+                <value>
+                    <fullName>Non-Profit</fullName>
+                    <default>false</default>
+                    <label>Non-Profit</label>
+                </value>
+                <value>
+                    <fullName>Private Equity Real Estate Funds</fullName>
+                    <default>false</default>
+                    <label>Private Equity Real Estate Funds</label>
+                </value>
+                <value>
+                    <fullName>Property Management</fullName>
+                    <default>false</default>
+                    <label>Property Management</label>
+                </value>
+                <value>
+                    <fullName>PropTech</fullName>
+                    <default>false</default>
+                    <label>PropTech</label>
+                </value>
+                <value>
+                    <fullName>Publicly Traded REITs</fullName>
+                    <default>false</default>
+                    <label>Publicly Traded REITs</label>
+                </value>
+                <value>
+                    <fullName>Public Pension Funds</fullName>
+                    <default>false</default>
+                    <label>Public Pension Funds</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Advisory &amp; Consulting Firms</fullName>
+                    <default>false</default>
+                    <label>Real Estate Advisory &amp; Consulting Firms</label>
+                </value>
+                <value>
+                    <fullName>Reinsurance Firms</fullName>
+                    <default>false</default>
+                    <label>Reinsurance Firms</label>
+                </value>
+                <value>
+                    <fullName>REIT-Focused Equity Asset Managers</fullName>
+                    <default>false</default>
+                    <label>REIT-Focused Equity Asset Managers</label>
+                </value>
+                <value>
+                    <fullName>Retail Chains / National Brands</fullName>
+                    <default>false</default>
+                    <label>Retail Chains / National Brands</label>
+                </value>
+                <value>
+                    <fullName>Retail-Focused Developers &amp; Landlords</fullName>
+                    <default>false</default>
+                    <label>Retail-Focused Developers &amp; Landlords</label>
+                </value>
+                <value>
+                    <fullName>Retail Investment Funds</fullName>
+                    <default>false</default>
+                    <label>Retail Investment Funds</label>
+                </value>
+                <value>
+                    <fullName>Risk Analytics Providers</fullName>
+                    <default>false</default>
+                    <label>Risk Analytics Providers</label>
+                </value>
+                <value>
+                    <fullName>Self-Storage Operators &amp; Investors</fullName>
+                    <default>false</default>
+                    <label>Self-Storage Operators &amp; Investors</label>
+                </value>
+                <value>
+                    <fullName>Sell-Side Equity Research Teams</fullName>
+                    <default>false</default>
+                    <label>Sell-Side Equity Research Teams</label>
+                </value>
+                <value>
+                    <fullName>Sovereign Wealth Fund</fullName>
+                    <default>false</default>
+                    <label>Sovereign Wealth Fund</label>
+                </value>
+                <value>
+                    <fullName>Specialty Use Asset Owners</fullName>
+                    <default>false</default>
+                    <label>Specialty Use Asset Owners</label>
+                </value>
+                <value>
+                    <fullName>Turnaround &amp; Restructuring Advisors</fullName>
+                    <default>false</default>
+                    <label>Turnaround &amp; Restructuring Advisors</label>
+                </value>
+                <value>
+                    <fullName>Utilities &amp; Energy Companies (Real Assets)</fullName>
+                    <default>false</default>
+                    <label>Utilities &amp; Energy Companies (Real Assets)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Geographic_Exposure__c</fullName>
         <label>Geographic Exposure</label>
         <required>false</required>
@@ -10436,6 +10789,272 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>GS_Taxonomy_Type__c</picklist>
+            <values>
+                <fullName>Academia%2FMedia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brokers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lenders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail-Oriented</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GS_Taxonomy__c</picklist>
+            <values>
+                <fullName>Academia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accountants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agriculture Location Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Appraisers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boutique Investment Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Developers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Property Insurance Carriers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Real Estate Lenders %28Banks %26 Credit Unions%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate M%26A Teams</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Countyl Tax Assessment Offices</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Rating Agencies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center Developers %26 Investors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt %2F Alternative CRE Lenders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Economic Development Agencies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Offices w%2F CRE Holdings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global %26 Regional CRE Brokerage Firms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Housing Authority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Funds %28REITs %26 Real Assets%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospitality Management Groups %2F Franchisors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial %26 Logistics Operators</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Developers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Funds %26 Investors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Institutional Real Estate Investors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance-Linked Securities %28ILS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor Platforms %26 Marketplaces</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Corporate Occupiers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law Firms %28Real Estate %26 Infrastructure%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media%2FJournalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Equity Real Estate Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PropTech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Pension Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Publicly Traded REITs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT-Focused Equity Asset Managers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Advisory %26 Consulting Firms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reinsurance Firms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Chains %2F National Brands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Investment Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail-Focused Developers %26 Landlords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Analytics Providers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage Operators %26 Investors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sell-Side Equity Research Teams</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sovereign Wealth Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specialty Use Asset Owners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turnaround %26 Restructuring Advisors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities %26 Energy Companies %28Real Assets%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Geographic_Exposure__c</picklist>
             <values>
                 <fullName>International</fullName>
@@ -14264,6 +14883,272 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GS_Taxonomy_Type__c</picklist>
+            <values>
+                <fullName>Academia%2FMedia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brokers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lenders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail-Oriented</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GS_Taxonomy__c</picklist>
+            <values>
+                <fullName>Academia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accountants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agriculture Location Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Appraisers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boutique Investment Banks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Developers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Property Insurance Carriers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Real Estate Lenders %28Banks %26 Credit Unions%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate M%26A Teams</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Countyl Tax Assessment Offices</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Rating Agencies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center Developers %26 Investors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt %2F Alternative CRE Lenders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Economic Development Agencies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Offices w%2F CRE Holdings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global %26 Regional CRE Brokerage Firms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Housing Authority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hedge Funds %28REITs %26 Real Assets%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospitality Management Groups %2F Franchisors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial %26 Logistics Operators</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Developers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Funds %26 Investors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Institutional Real Estate Investors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance-Linked Securities %28ILS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor Platforms %26 Marketplaces</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Corporate Occupiers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law Firms %28Real Estate %26 Infrastructure%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media%2FJournalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Equity Real Estate Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PropTech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Pension Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Publicly Traded REITs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REIT-Focused Equity Asset Managers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Advisory %26 Consulting Firms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reinsurance Firms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Chains %2F National Brands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Investment Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail-Focused Developers %26 Landlords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Analytics Providers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage Operators %26 Investors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sell-Side Equity Research Teams</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sovereign Wealth Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specialty Use Asset Owners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turnaround %26 Restructuring Advisors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities %26 Energy Companies %28Real Assets%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
