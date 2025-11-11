@@ -116,8 +116,14 @@ public class Plative_AccountTriggerHelper  {
                     acc.GS_Taxonomy__c = industrySubMapping[0].GS_Taxonomy__c;
                     acc.GS_Taxonomy_Type__c = industrySubMapping[0].GS_Taxonomy_Type__c;
                 }
+            } else if (acc.ZoomInfo_Industry_account__c != null & acc.ZoomInfo_Primary_Sub_Industry__c == null) {
+                acc.GS_Taxonomy__c = 'Insufficient Data';     
+                acc.GS_Taxonomy_Type__c = null;
+            } else if (acc.ZoomInfo_Industry_account__c == null & acc.ZoomInfo_Primary_Sub_Industry__c == null) {
+                acc.GS_Taxonomy__c = null;
+                acc.GS_Taxonomy_Type__c = null;
             }
-		}
+        }
 		//if the field is not updated then return
 		if(setCompanyTypes.isEmpty()){
 			return true;	
