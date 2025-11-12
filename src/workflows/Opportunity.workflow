@@ -635,6 +635,23 @@
         <template>Compliance_Workflow_Email_Templates/Deactivation_CAF_Needed</template>
     </alerts>
     <alerts>
+        <fullName>Upsell_Opp_Created_for_Client</fullName>
+        <description>Upsell Opp Created for Client</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Upsell_Opp_Created_for_Client</template>
+    </alerts>
+    <alerts>
         <fullName>Usage_Drop_Alert</fullName>
         <description>Usage Drop Alert</description>
         <protected>false</protected>
