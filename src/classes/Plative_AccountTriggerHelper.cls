@@ -96,6 +96,15 @@ public class Plative_AccountTriggerHelper  {
 			    (acc.Company_Type__c != mapOldAcc.get(acc.Id).Company_Type__c))){
 				setCompanyTypes.add(acc.Company_Type__c);			
 			}
+            // SF-1775 : Update ZoomInfo_SIC_Code_account__c and ZoomInfo_NAICS_Code_account__c value from metadata
+            if(acc.ZoomInfo_SIC_Code_account__c != null) {
+                SIC_Codes_And_Descriptions__mdt sicCodeValue = SIC_Codes_And_Descriptions__mdt.getInstance('X'+acc.ZoomInfo_SIC_Code_account__c);
+                if(sicCodeValue != null && sicCodeValue.SIC_Descriptions_Value__c !=null) acc.SicDesc = sicCodeValue.SIC_Descriptions_Value__c;
+            }
+            if(acc.ZoomInfo_NAICS_Code_account__c != null) {
+                NAICS_US_Code_And_Titles__mdt naicsCodeTitles = NAICS_US_Code_And_Titles__mdt.getInstance('X'+acc.ZoomInfo_NAICS_Code_account__c);
+                if(naicsCodeTitles != null && naicsCodeTitles.NAICS_US_Title_Value__c !=null) acc.NAICS_Sector__c = naicsCodeTitles.NAICS_US_Title_Value__c;
+            }
 		}
 		//if the field is not updated then return
 		if(setCompanyTypes.isEmpty()){
