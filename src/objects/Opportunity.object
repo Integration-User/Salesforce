@@ -3117,6 +3117,46 @@ IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Infrastructure&quot;), 7500,
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Intent__c</fullName>
+        <inlineHelpText>for the Opportunity Scoring Model(Salesforce Einstein)</inlineHelpText>
+        <label>Intent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Follow-up</fullName>
+                    <default>false</default>
+                    <label>Follow-up</label>
+                </value>
+                <value>
+                    <fullName>Purchase/Decision</fullName>
+                    <default>false</default>
+                    <label>Purchase/Decision</label>
+                </value>
+                <value>
+                    <fullName>Research/Information</fullName>
+                    <default>false</default>
+                    <label>Research/Information</label>
+                </value>
+                <value>
+                    <fullName>Meeting/Task</fullName>
+                    <default>false</default>
+                    <label>Meeting/Task</label>
+                </value>
+                <value>
+                    <fullName>Problem/Complaint</fullName>
+                    <default>false</default>
+                    <label>Problem/Complaint</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Interaction_Level_NS_Internal_Id__c</fullName>
         <externalId>false</externalId>
         <formula>CASE( Interaction_Level__c , &apos;Low Touch&apos;, 2, &apos;High Touch&apos;, 1,1)</formula>
@@ -10184,6 +10224,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Interaction_Level__c</picklist>
             <values>
                 <fullName>High Touch</fullName>
@@ -13765,6 +13828,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17382,6 +17468,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Interaction_Level__c</picklist>
             <values>
                 <fullName>High Touch</fullName>
@@ -20843,6 +20952,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -24436,6 +24568,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -28349,6 +28504,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Interaction_Level__c</picklist>
             <values>
                 <fullName>High Touch</fullName>
@@ -31994,6 +32172,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Interaction_Level__c</picklist>
             <values>
                 <fullName>High Touch</fullName>
@@ -35315,6 +35516,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -41752,6 +41976,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Interaction_Level__c</picklist>
             <values>
                 <fullName>High Touch</fullName>
@@ -45494,6 +45741,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49451,6 +49721,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Interaction_Level__c</picklist>
             <values>
                 <fullName>High Touch</fullName>
@@ -53172,6 +53465,29 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Intent__c</picklist>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting%2FTask</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem%2FComplaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase%2FDecision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FInformation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
