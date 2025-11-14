@@ -20264,6 +20264,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Entered_Onboarding_Flow_IJ__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.European_CPPI__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -20396,6 +20401,11 @@
         <editable>false</editable>
         <field>Contact.Has_Active_Opportunities__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Has_Completed_Onboarding_IJ__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
