@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortal</excludeButtons>
     <excludeButtons>DisablePartnerPortal</excludeButtons>
     <excludeButtons>DisablePrmSuperUser</excludeButtons>
     <excludeButtons>EnablePrmSuperUser</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
+    <excludeButtons>RequestUseSfdc</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -279,6 +280,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Attended_Training_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Entered_Onboarding_Flow_IJ__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Has_Completed_Onboarding_IJ__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
