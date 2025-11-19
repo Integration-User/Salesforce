@@ -2643,12 +2643,12 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
     </fields>
     <fields>
         <fullName>Estimated_SDO_Value__c</fullName>
-        <formula>(
-IF(INCLUDES(Marketing_Product_of_Interest__c,&quot;Data &amp; Analytics&quot;), 20000, 0) +
-IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Research&quot;), 10000, 0) +
-IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;News&quot;), 7500, 0) +
-IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Advisory Services&quot;), 0, 0) +
-IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Infrastructure&quot;), 7500, 0)
+        <formula>IF(ISBLANK(Marketing_Product_of_Interest__c), 12000,
+    IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Data &amp; Analytics&quot;), 20000, 0) +
+    IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Research&quot;), 10000, 0) +
+    IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;News&quot;), 7500, 0) +
+    IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Advisory Services&quot;), 0, 0) +
+    IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Infrastructure&quot;), 7500, 0)
 )</formula>
         <inlineHelpText>Based on Marketing Product of Interest field</inlineHelpText>
         <label>Estimated SDO Value</label>
