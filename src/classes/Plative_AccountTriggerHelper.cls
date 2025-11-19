@@ -106,30 +106,32 @@ public class Plative_AccountTriggerHelper  {
                 if(naicsCodeTitles != null && naicsCodeTitles.NAICS_US_Title_Value__c !=null) acc.NAICS_Sector__c = naicsCodeTitles.NAICS_US_Title_Value__c;
             }
             //SF-1805 ICP Field Automation
-            if(acc.ZoomInfo_Industry_account__c != null & acc.ZoomInfo_Primary_Sub_Industry__c != null && 
-               (mapOldAcc == null || (acc.ZoomInfo_Industry_account__c != mapOldAcc.get(acc.Id).ZoomInfo_Industry_account__c 
-                                                       || acc.ZoomInfo_Primary_Sub_Industry__c != mapOldAcc.get(acc.Id).ZoomInfo_Primary_Sub_Industry__c ))) {
-                List<ZoomInfo_Industry_And_Sub_Mapping__mdt> industrySubMapping = [Select GS_Taxonomy__c, GS_Taxonomy_Type__c From ZoomInfo_Industry_And_Sub_Mapping__mdt 
-                                                                             Where ZoomInfo_Industry__c = :acc.ZoomInfo_Industry_account__c 
-                                                                             AND ZoomInfo_Sub_Industry__c = :acc.ZoomInfo_Primary_Sub_Industry__c LIMIt 1];
-                if(industrySubMapping != null && industrySubMapping.size() > 0) {
-                    acc.GS_Taxonomy__c = industrySubMapping[0].GS_Taxonomy__c;
-                    acc.GS_Taxonomy_Type__c = industrySubMapping[0].GS_Taxonomy_Type__c;
+            if(mapOldAcc == null || (mapOldAcc != null && (acc.ZoomInfo_Industry_account__c != mapOldAcc.get(acc.Id).ZoomInfo_Industry_account__c || acc.ZoomInfo_Primary_Sub_Industry__c != mapOldAcc.get(acc.Id).ZoomInfo_Primary_Sub_Industry__c ))) {
+                List<ZoomInfo_Industry_And_Sub_Mapping__mdt> industrySubMappings = new List<ZoomInfo_Industry_And_Sub_Mapping__mdt>();
+                industrySubMappings.addAll([Select GS_Taxonomy__c, GS_Taxonomy_Type__c, ZoomInfo_Industry__c, ZoomInfo_Sub_Industry__c From ZoomInfo_Industry_And_Sub_Mapping__mdt Where ZoomInfo_Industry__c = :acc.ZoomInfo_Industry_account__c]);
+                industrySubMappings.addAll([Select GS_Taxonomy__c, GS_Taxonomy_Type__c, ZoomInfo_Industry__c, ZoomInfo_Sub_Industry__c From ZoomInfo_Industry_And_Sub_Mapping__mdt Where ZoomInfo_Sub_Industry__c = :acc.ZoomInfo_Primary_Sub_Industry__c]);
+                Boolean isGSTaxonomyUpdate = false;
+                for(ZoomInfo_Industry_And_Sub_Mapping__mdt metadata : industrySubMappings) {
+                    if(metadata.ZoomInfo_Industry__c == acc.ZoomInfo_Industry_account__c && metadata.ZoomInfo_Sub_Industry__c == acc.ZoomInfo_Primary_Sub_Industry__c) {
+                        System.debug('metadata-->' + metadata);
+                        acc.GS_Taxonomy__c = metadata.GS_Taxonomy__c;
+                        acc.GS_Taxonomy_Type__c = metadata.GS_Taxonomy_Type__c;
+                        isGSTaxonomyUpdate = true;
+                        break;
+                    }
                 }
-            } else if (acc.ZoomInfo_Industry_account__c != null & acc.ZoomInfo_Primary_Sub_Industry__c == null) {
-                acc.GS_Taxonomy__c = 'Insufficient Data';     
-                acc.GS_Taxonomy_Type__c = null;
-            } else if (acc.ZoomInfo_Industry_account__c == null & acc.ZoomInfo_Primary_Sub_Industry__c == null) {
-                acc.GS_Taxonomy__c = null;
-                acc.GS_Taxonomy_Type__c = null;
+                if(!isGSTaxonomyUpdate) {
+                    acc.GS_Taxonomy__c = 'Insufficient Data';     
+                    acc.GS_Taxonomy_Type__c = 'Insufficient Data'; 
+                }
             }
         }
 		//if the field is not updated then return
-		if(setCompanyTypes.isEmpty()){
+		if(setCompanyTypes.isEmpty()) {
 			return true;	
 		}
 		
-		if(!setCompanyTypes.isEmpty()){
+		if(!setCompanyTypes.isEmpty()) {
 			updateCTypeId(lstAccounts, setCompanyTypes);
 		}
 		return true;
