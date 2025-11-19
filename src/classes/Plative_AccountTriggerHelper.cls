@@ -105,13 +105,33 @@ public class Plative_AccountTriggerHelper  {
                 NAICS_US_Code_And_Titles__mdt naicsCodeTitles = NAICS_US_Code_And_Titles__mdt.getInstance('X'+acc.ZoomInfo_NAICS_Code_account__c);
                 if(naicsCodeTitles != null && naicsCodeTitles.NAICS_US_Title_Value__c !=null) acc.NAICS_Sector__c = naicsCodeTitles.NAICS_US_Title_Value__c;
             }
-		}
+            //SF-1805 ICP Field Automation
+            if(mapOldAcc == null || (mapOldAcc != null && (acc.ZoomInfo_Industry_account__c != mapOldAcc.get(acc.Id).ZoomInfo_Industry_account__c || acc.ZoomInfo_Primary_Sub_Industry__c != mapOldAcc.get(acc.Id).ZoomInfo_Primary_Sub_Industry__c ))) {
+                List<ZoomInfo_Industry_And_Sub_Mapping__mdt> industrySubMappings = new List<ZoomInfo_Industry_And_Sub_Mapping__mdt>();
+                industrySubMappings.addAll([Select GS_Taxonomy__c, GS_Taxonomy_Type__c, ZoomInfo_Industry__c, ZoomInfo_Sub_Industry__c From ZoomInfo_Industry_And_Sub_Mapping__mdt Where ZoomInfo_Industry__c = :acc.ZoomInfo_Industry_account__c]);
+                industrySubMappings.addAll([Select GS_Taxonomy__c, GS_Taxonomy_Type__c, ZoomInfo_Industry__c, ZoomInfo_Sub_Industry__c From ZoomInfo_Industry_And_Sub_Mapping__mdt Where ZoomInfo_Sub_Industry__c = :acc.ZoomInfo_Primary_Sub_Industry__c]);
+                Boolean isGSTaxonomyUpdate = false;
+                for(ZoomInfo_Industry_And_Sub_Mapping__mdt metadata : industrySubMappings) {
+                    if(metadata.ZoomInfo_Industry__c == acc.ZoomInfo_Industry_account__c && metadata.ZoomInfo_Sub_Industry__c == acc.ZoomInfo_Primary_Sub_Industry__c) {
+                        System.debug('metadata-->' + metadata);
+                        acc.GS_Taxonomy__c = metadata.GS_Taxonomy__c;
+                        acc.GS_Taxonomy_Type__c = metadata.GS_Taxonomy_Type__c;
+                        isGSTaxonomyUpdate = true;
+                        break;
+                    }
+                }
+                if(!isGSTaxonomyUpdate) {
+                    acc.GS_Taxonomy__c = 'Insufficient Data';     
+                    acc.GS_Taxonomy_Type__c = 'Insufficient Data'; 
+                }
+            }
+        }
 		//if the field is not updated then return
-		if(setCompanyTypes.isEmpty()){
+		if(setCompanyTypes.isEmpty()) {
 			return true;	
 		}
 		
-		if(!setCompanyTypes.isEmpty()){
+		if(!setCompanyTypes.isEmpty()) {
 			updateCTypeId(lstAccounts, setCompanyTypes);
 		}
 		return true;
