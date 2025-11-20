@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ZoomInfoIndustry317</label>
+    <protected>false</protected>
+    <values>
+        <field>GS_Taxonomy_Type__c</field>
+        <value xsi:type="xsd:string">Retail-Oriented</value>
+    </values>
+    <values>
+        <field>GS_Taxonomy__c</field>
+        <value xsi:type="xsd:string">Retail Chains / National Brands</value>
+    </values>
+    <values>
+        <field>ZoomInfo_Industry__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ZoomInfo_Sub_Industry__c</field>
+        <value xsi:type="xsd:string">Grocery Retail</value>
+    </values>
+</CustomMetadata>
