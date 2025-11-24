@@ -4,16 +4,14 @@ global class OpportunityLast120DaysActivityBatch implements Database.Batchable<s
         List<sObject> records = new List<sObject>();
         // Fetch Tasks (Calls) & Tasks (Emails)
         for (Task tsk : [SELECT Id, Subject, WhatId, Type FROM Task 
-                         WHERE ((Type = 'Call' AND SalesLoft1__Call_Disposition__c ='Connected') 
-                                OR (Type = 'Outgoing Email' AND SalesLoft1__SalesLoft_Replies_Count__c > 0)) 
-                         AND CreatedDate >= LAST_N_DAYS:120 AND WhatId !=null AND What.Type= 'Opportunity']) {
-                             String oppId = tsk.WhatId;
+                         WHERE (Subject LIKE '%Call: Connected%' OR Subject LIKE 'Reply%') AND CreatedDate >= LAST_N_DAYS:120 AND WhatId !=null AND What.Type= 'Opportunity']) {
+            String oppId = tsk.WhatId;
             if(oppId.startsWith('006')) {
                 records.add(tsk);   
             }             
         }
         // Fetch Events (Meetings)
-        for (Event evt : [SELECT Id, Status__c, WhatId FROM Event WHERE Status__c = 'Completed' AND StartDateTime >= LAST_N_DAYS:120 AND WhatId !=null AND What.Type= 'Opportunity']) {
+        for (Event evt : [SELECT Id, Status__c, WhatId FROM Event WHERE Status__c = 'Completed' AND Canceled_Date__c = NULL AND No_Show_Date__c = FALSE AND StartDateTime >= LAST_N_DAYS:120 AND WhatId !=null AND What.Type= 'Opportunity']) {
             String oppId = evt.WhatId;
             if(oppId.startsWith('006')) {
                 records.add(evt);   
