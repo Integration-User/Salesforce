@@ -1,5 +1,5 @@
-global class OpportunityLast120DaysActivityBatch implements Database.Batchable<sObject>, Schedulable {
-    
+global class OpportunityLast120DaysActivityBatch implements Database.Batchable<sObject>, Database.Stateful, Schedulable {
+    global Set<Id> OppIdsProcessed = new Set<Id>();
     global Iterable<sObject> start(Database.BatchableContext bc) {
         List<sObject> records = new List<sObject>();
         // Fetch Tasks (Calls) & Tasks (Emails)
@@ -38,11 +38,16 @@ global class OpportunityLast120DaysActivityBatch implements Database.Batchable<s
                 if (oppUpdates.containsKey(oppId)) {
                     opp = oppUpdates.get(oppId);
                 }
+                if(!OppIdsProcessed.contains(oppId)) {
+                    opp.Count_of_Connected_Calls_Last_120_Days__c = 0;
+                    opp.Count_of_Meeting_Attended_Last_120_Days__c = 0;
+                }
+                OppIdsProcessed.add(oppId);
                 // Handle different field values based on record type
                 if (record instanceof Task) {
-                    if (((Task) record).Type == 'Call') {
+                    if (((Task) record).Subject.contains('Call: Connected')) {
                         opp.Count_of_Connected_Calls_Last_120_Days__c = (opp.Count_of_Connected_Calls_Last_120_Days__c != null) ? opp.Count_of_Connected_Calls_Last_120_Days__c + 1 : 1;
-                    } else if (((Task) record).Type == 'Outgoing Email') {
+                    } else if (((Task) record).Subject.startsWith('Reply')) {
                         opp.Count_of_Email_Replies_Last_120_Days__c = (opp.Count_of_Email_Replies_Last_120_Days__c != null) ? opp.Count_of_Email_Replies_Last_120_Days__c + 1 : 1;
                     }
                 } 
