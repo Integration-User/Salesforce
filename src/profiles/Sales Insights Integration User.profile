@@ -17066,6 +17066,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.GS_Taxonomy_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.GS_Taxonomy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Geographic_Exposure__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17407,6 +17417,146 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Ownership</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_FIRM_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_ALTERNATIVES_ASSETS_UNDER_MGMT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_FIRM_NAME__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_FIRM_TYPE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_HF_ASSETS_UNDER_MANAGEMENT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_HF_NUMBER_OF_ACTIVE_FUNDS__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_INF_ASSETS_UNDER_MANAGEMENT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_INF_ESTIMATED_DRY_POWDER__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_INF_TOTAL_NO_OF_FUNDS_CLOSED__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_PE_ASSETS_UNDER_MANAGEMENT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_PE_ESTIMATED_DRY_POWDER__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_RE_ESTIMATED_DRY_POWDER__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_RE_TOTAL_NO_OF_FUNDS_CLOSED__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_GP_TOTAL_ASSETS_UNDER_MANAGEMENT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_IC_FIRM_NAME__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_IC_PRIVATE_EQUITY_AUA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_IC_REAL_ESTATE_AUA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_IC_TOTAL_AUA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_LP_AUM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_LP_FIRM_NAME__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_LP_FIRM_TYPE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_SP_NO_OF_FA_DEALS_SERVICED__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_SP_NO_OF_FUNDS_SERVICED__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_SP_NO_OF_LEGAL_ADV_DEALS_SERVICED__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_SP_NO_OF_RE_BROKER_DEALS_SERVICED__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_SP_SERVICE_PROVIDER_GROUP__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_SP_SERVICE_PROVIDER_TYPE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.PREQIN_SP_SERVICE_PROVIDER__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -34786,6 +34936,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>affectlayer__AffectLayer_Admin_Setting__c.affectlayer__AffectLayer_Is_Default__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -50922,6 +51082,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Zephr_Webhook_Data__c-Zephr Webhook Data Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ZoomInfo_Industry_And_Sub_Mapping__mdt-ZoomInfo Industry And Sub Mapping Layout</layout>
     </layoutAssignments>
     <loginIpRanges>
         <endAddress>35.155.249.183</endAddress>
