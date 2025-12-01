@@ -12,6 +12,60 @@
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>Green Street - Multitab</label>
     <navType>Console</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SDO_Lightning_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Sales_Development</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SDO_Lightning_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Sales_Development</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SDO_Lightning_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Sales_Development</recordType>
+        <type>Flexipage</type>
+        <profile>System Administrator KH</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SDO_Lightning_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Sales_Development</recordType>
+        <type>Flexipage</type>
+        <profile>System Administrator KH</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SDO_Lightning_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Sales_Development</recordType>
+        <type>Flexipage</type>
+        <profile>GSA Business Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SDO_Lightning_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Sales_Development</recordType>
+        <type>Flexipage</type>
+        <profile>GSA Business Development</profile>
+    </profileActionOverrides>
     <tabs>standard-home</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-Lead</tabs>
