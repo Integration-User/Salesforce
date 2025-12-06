@@ -101,18 +101,14 @@ public without sharing class TaskTriggerHandler {
             for (Task t : newList) {
                 if (oppMap.containsKey(t.WhatId)) {
                     Opportunity opp = oppMap.get(t.WhatId);
+                    // SF-1851, Removed changes related to // SF-1641
                     if (t.Subject.contains('Call: Connected')) {
                         opp.Count_of_Calls_Last_30__c = (opp.Count_of_Calls_Last_30__c != null) ? opp.Count_of_Calls_Last_30__c + 1 : 1;
+                        opp.Count_of_Connected_Calls_Last_120_Days__c = (opp.Count_of_Connected_Calls_Last_120_Days__c != null) ? opp.Count_of_Connected_Calls_Last_120_Days__c + 1 : 1;
                     } else if (t.Subject.startsWith('Reply')) {
                         opp.Count_of_Emails_Last_30__c = (opp.Count_of_Emails_Last_30__c != null) ? opp.Count_of_Emails_Last_30__c + 1 : 1;
-                    } 
-                    // SF-1641
-                    if(t.Type == 'Call' && t.SalesLoft1__Call_Disposition__c =='Connected') {
-                        opp.Count_of_Connected_Calls_Last_120_Days__c = (opp.Count_of_Connected_Calls_Last_120_Days__c != null) ? opp.Count_of_Connected_Calls_Last_120_Days__c + 1 : 1;
-                    }
-                    if(t.Type == 'Email' && t.SalesLoft1__SalesLoft_Replies_Count__c > 0) {
                         opp.Count_of_Email_Replies_Last_120_Days__c = (opp.Count_of_Email_Replies_Last_120_Days__c != null) ? opp.Count_of_Connected_Calls_Last_120_Days__c + 1 : 1;
-                    }
+                    } 
                 }
             }
             
