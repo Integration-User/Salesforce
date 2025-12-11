@@ -1,5 +1,6 @@
 global class OpportunityLast120DaysActivityBatch implements Database.Batchable<sObject>, Database.Stateful, Schedulable {
     global Set<Id> OppIdsProcessed = new Set<Id>();
+    Map<String, Opportunity> oppUpdates = new Map<String, Opportunity>();
     global Iterable<sObject> start(Database.BatchableContext bc) {
         List<sObject> records = new List<sObject>();
         // Fetch Tasks (Calls) & Tasks (Emails)
@@ -21,7 +22,6 @@ global class OpportunityLast120DaysActivityBatch implements Database.Batchable<s
     }
     
     global void execute(Database.BatchableContext bc, List<sObject> scope) {
-        Map<String, Opportunity> oppUpdates = new Map<String, Opportunity>();
         Set<String> oppIds = new Set<String>();
         for (sObject record : scope) {
             oppIds.add((String) record.get('WhatId'));
@@ -41,6 +41,7 @@ global class OpportunityLast120DaysActivityBatch implements Database.Batchable<s
                 if(!OppIdsProcessed.contains(oppId)) {
                     opp.Count_of_Connected_Calls_Last_120_Days__c = 0;
                     opp.Count_of_Meeting_Attended_Last_120_Days__c = 0;
+                    opp.Count_of_Email_Replies_Last_120_Days__c = 0;
                 }
                 OppIdsProcessed.add(oppId);
                 // Handle different field values based on record type
