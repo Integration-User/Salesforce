@@ -5678,6 +5678,50 @@ OwnerId  = $User.Id)</formula>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>News_Advertising_Region__c</fullName>
+        <label>News Advertising Region</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>UK</fullName>
+                    <default>false</default>
+                    <label>UK</label>
+                </value>
+                <value>
+                    <fullName>Europe</fullName>
+                    <default>false</default>
+                    <label>Europe</label>
+                </value>
+                <value>
+                    <fullName>Canada</fullName>
+                    <default>false</default>
+                    <label>Canada</label>
+                </value>
+                <value>
+                    <fullName>Australia</fullName>
+                    <default>false</default>
+                    <label>Australia</label>
+                </value>
+                <value>
+                    <fullName>U.S.</fullName>
+                    <default>false</default>
+                    <label>U.S.</label>
+                </value>
+                <value>
+                    <fullName>All regions (Global advertising)</fullName>
+                    <default>false</default>
+                    <label>All regions (Global advertising)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>News_CMAlert__c</fullName>
         <label>News CMAlert</label>
         <length>32768</length>
@@ -5720,6 +5764,45 @@ OwnerId  = $User.Id)</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>News_Trial_Product__c</fullName>
+        <label>News Trial Product</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Global News</fullName>
+                    <default>false</default>
+                    <label>Global News</label>
+                </value>
+                <value>
+                    <fullName>U.S. News</fullName>
+                    <default>false</default>
+                    <label>U.S. News</label>
+                </value>
+                <value>
+                    <fullName>Europe, U.K. &amp; Ireland News</fullName>
+                    <default>false</default>
+                    <label>Europe, U.K. &amp; Ireland News</label>
+                </value>
+                <value>
+                    <fullName>Canada News</fullName>
+                    <default>false</default>
+                    <label>Canada News</label>
+                </value>
+                <value>
+                    <fullName>Australia News</fullName>
+                    <default>false</default>
+                    <label>Australia News</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>NextStep</fullName>
@@ -11726,6 +11809,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Non_Standard_Paperwork__c</picklist>
             <values>
                 <fullName>Client%E2%80%99s Paper</fullName>
@@ -15346,6 +15479,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Non_Standard_Paperwork__c</picklist>
             <values>
                 <fullName>Client%E2%80%99s Paper</fullName>
@@ -18910,6 +19093,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Non_Standard_Paperwork__c</picklist>
             <values>
                 <fullName>Client%E2%80%99s Paper</fullName>
@@ -22406,6 +22639,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -26142,6 +26425,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -30066,6 +30399,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Non_Standard_Paperwork__c</picklist>
             <values>
                 <fullName>Client%E2%80%99s Paper</fullName>
@@ -33670,6 +34053,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Non_Standard_Paperwork__c</picklist>
             <values>
                 <fullName>Client%E2%80%99s Paper</fullName>
@@ -37030,6 +37463,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Non_Standard_Paperwork__c</picklist>
             <values>
                 <fullName>Client%E2%80%99s Paper</fullName>
@@ -40182,6 +40665,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -43582,6 +44115,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -47403,6 +47986,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -51363,6 +51996,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Non_Standard_Paperwork__c</picklist>
             <values>
                 <fullName>Client%E2%80%99s Paper</fullName>
@@ -55111,6 +55794,56 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Advertising_Region__c</picklist>
+            <values>
+                <fullName>All regions %28Global advertising%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>News_Trial_Product__c</picklist>
+            <values>
+                <fullName>Australia News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe%2C U%2EK%2E %26 Ireland News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E News</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
