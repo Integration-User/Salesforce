@@ -1129,6 +1129,7 @@ IF start date is blank, allow edits. if not is blank prevent edits</description>
     ISCHANGED(Start_Date__c),
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;,
+ $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Paul Eager&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Joyce Blanden&quot;
 )</errorConditionFormula>
         <errorDisplayField>Start_Date__c</errorDisplayField>
@@ -1192,6 +1193,7 @@ ISPICKVAL(Delivery_Method__c, &apos;API&apos;)
     PRIORVALUE(Starting_Price__c) &gt; 0,
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;,
+$User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Paul Eager&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Joyce Blanden&quot;
 )</errorConditionFormula>
         <errorDisplayField>Starting_Price__c</errorDisplayField>
