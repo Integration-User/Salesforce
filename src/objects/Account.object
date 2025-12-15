@@ -18617,6 +18617,17 @@ OR( ISCHANGED( Name ))))</errorConditionFormula>
         <errorMessage>Phone number must be contain numbers only, dashes &amp; other characters will populate on save. Enter phone number without dashes and other characters.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Prevent_Account_Owner_Transfer</fullName>
+        <active>true</active>
+        <description>Do not transfer account owner if owned by Integration User.</description>
+        <errorConditionFormula>AND(
+    ISCHANGED(OwnerId),
+    $User.Department = &quot;Sales&quot;,
+    PRIORVALUE(OwnerId) = &quot;0055G0000071oXH&quot;
+)</errorConditionFormula>
+        <errorMessage>Sales users cannot transfer the account owner if it&apos;s owned by Integration User.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Prevent_Renaming_Unassigned_Accounts</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
