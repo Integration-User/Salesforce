@@ -286,6 +286,16 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>APAC_Named_Account_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>APAC Named Account Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>APAC_Owner</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>API__c</fullName>
         <defaultValue>false</defaultValue>
         <inlineHelpText>Check if client is actively using the API.</inlineHelpText>
