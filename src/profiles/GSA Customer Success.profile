@@ -21034,6 +21034,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Consultative_Seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.HomePhone</field>
         <readable>true</readable>
@@ -34227,6 +34232,11 @@
         <editable>false</editable>
         <field>Zephr_Webhook_Data__c.Zephr_Tenant__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Overlay_Seller__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
