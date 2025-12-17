@@ -16112,6 +16112,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Assignment_Cohort__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Attempts_to_Save__c</field>
         <readable>true</readable>
     </fieldPermissions>
