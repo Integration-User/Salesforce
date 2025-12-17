@@ -1594,6 +1594,17 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Consultative_Seller__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Consultative Seller</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>ConsultativeSeller</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Contact_Name_For_Testing__c</fullName>
         <description>delete this field once HS Testing is complete</description>
         <externalId>false</externalId>
@@ -6006,6 +6017,17 @@ IF ( INCLUDES ( Account.Other_Vendors__c , &quot;I don&apos;t know&quot; ), &quo
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Overlay_Seller__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Overlay Seller</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>OverlaySeller</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
