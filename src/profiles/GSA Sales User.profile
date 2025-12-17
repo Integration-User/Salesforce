@@ -28484,6 +28484,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Consultative_Seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Contact_Name_For_Testing__c</field>
         <readable>true</readable>
@@ -29416,6 +29421,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Overlay_Seller__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
