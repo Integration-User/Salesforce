@@ -286,6 +286,16 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>APAC_Named_Account_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>APAC Named Account Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>APAC_Owner</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>API__c</fullName>
         <defaultValue>false</defaultValue>
         <inlineHelpText>Check if client is actively using the API.</inlineHelpText>
@@ -669,6 +679,16 @@ IF(
         <label>Approved Tiering</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Assignment_Cohort__c</fullName>
+        <externalId>false</externalId>
+        <label>Assignment Cohort</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Attempts_to_Save__c</fullName>
@@ -18495,6 +18515,16 @@ Stored as Long on Solr.</description>
         <searchResultsCustomButtons>Email_Distribution</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>AE_Account_Creation</fullName>
+        <active>true</active>
+        <description>Block people in department &quot;sales&quot; from creating Accounts in Salesforce.</description>
+        <errorConditionFormula>AND(
+ISNEW(),
+$User.Department = &quot;Sales&quot;,
+TODAY() &gt;= DATE(2026, 1, 5))</errorConditionFormula>
+        <errorMessage>Users in department Sales cannot create Accounts</errorMessage>
+    </validationRules>
     <validationRules>
         <fullName>Change_Account_Priority</fullName>
         <active>true</active>
