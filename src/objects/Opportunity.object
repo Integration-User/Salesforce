@@ -2557,6 +2557,22 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>Discovery_Meeting_Completed_Date__c</fullName>
+        <label>Discovery Meeting Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Discovery_Meeting_Scheduled_Date__c</fullName>
+        <label>Discovery Meeting Scheduled Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Disqualified__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Disqualified</label>
@@ -12367,6 +12383,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -12416,6 +12440,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16025,6 +16053,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -16074,6 +16110,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19627,6 +19667,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -19676,6 +19724,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23165,6 +23217,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -23214,6 +23274,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26959,6 +27023,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -27012,6 +27084,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -30901,6 +30977,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -30950,6 +31034,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -34539,6 +34627,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -34564,6 +34660,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Australia Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37937,6 +38037,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -37962,6 +38070,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Australia Detailed NAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -41107,6 +41219,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
@@ -41124,6 +41244,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44573,6 +44697,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -44622,6 +44754,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48448,6 +48584,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -48501,6 +48645,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -52426,6 +52574,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -52475,6 +52631,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -56216,6 +56376,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>APAC Sales Comps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>API</fullName>
                 <default>false</default>
             </values>
@@ -56261,6 +56429,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>CAN Sales Comps API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -58120,6 +58292,20 @@ IsClosed=TRUE)</errorConditionFormula>
         <errorMessage>There is a pending Subsidiary change approval on the Account. You cannot close the Opportunity until the Subsidiary change is approved or rejected.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Missing_Discovery_Meeting_Dates</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name = &quot;Sales Opportunity&quot;,
+ISCHANGED(StageName),
+NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+OR(
+ISBLANK(Discovery_Meeting_Completed_Date__c),
+ISBLANK(Discovery_Meeting_Scheduled_Date__c)
+))</errorConditionFormula>
+        <errorMessage>Discovery Meeting Dates should be completed before moving the stage.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>No_Opps_under_IJ_Placeholder</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -58294,6 +58480,17 @@ ISBLANK(Competition__c)
 )</errorConditionFormula>
         <errorDisplayField>Competition__c</errorDisplayField>
         <errorMessage>Fill out the Competition before moving to In Review.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Discovery_Scheduled_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISNEW(),
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name = &quot;Sales Opportunity&quot;,
+ISBLANK( Discovery_Meeting_Scheduled_Date__c )
+)</errorConditionFormula>
+        <errorMessage>Discovery Meeting Scheduled Date is required upon creation.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Event</fullName>
