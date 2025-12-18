@@ -31,6 +31,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Consultative_Seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Overlay_Seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy_Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -45,6 +55,21 @@
     <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
         <recordType>Account.Subsidiary_Account</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-New Business</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-New Business</layout>
+        <recordType>Opportunity.Events</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-New Business</layout>
+        <recordType>Opportunity.Sales_Opportunity</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-New Business - Closed</layout>
+        <recordType>Opportunity.Sales_Opportunity_Closed</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ZoomInfo_Industry_And_Sub_Mapping__mdt-ZoomInfo Industry And Sub Mapping Layout</layout>
@@ -251,6 +276,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
