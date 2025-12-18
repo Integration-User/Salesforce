@@ -2932,6 +2932,18 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <type>Percent</type>
     </fields>
     <fields>
+        <fullName>How_did_we_win__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Lessons learned from the negotiation</inlineHelpText>
+        <label>How did we win?</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ID_Request__c</fullName>
         <label>ID Request</label>
         <required>false</required>
@@ -5570,6 +5582,18 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Markets_Covered__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What markets does the client invest in / cover?</inlineHelpText>
+        <label>Markets Covered</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Monthly_Recurring_Revenue__c</fullName>
         <label>Monthly Recurring Revenue</label>
         <precision>18</precision>
@@ -7616,6 +7640,167 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
+        <fullName>Sectors_Covered__c</fullName>
+        <inlineHelpText>What sector(s) does the client invest in / cover?</inlineHelpText>
+        <label>Sectors Covered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Apartment</fullName>
+                    <default>false</default>
+                    <label>Apartment</label>
+                </value>
+                <value>
+                    <fullName>Cold Storage</fullName>
+                    <default>false</default>
+                    <label>Cold Storage</label>
+                </value>
+                <value>
+                    <fullName>Data Center</fullName>
+                    <default>false</default>
+                    <label>Data Center</label>
+                </value>
+                <value>
+                    <fullName>Debt</fullName>
+                    <default>false</default>
+                    <label>Debt</label>
+                </value>
+                <value>
+                    <fullName>Gaming</fullName>
+                    <default>false</default>
+                    <label>Gaming</label>
+                </value>
+                <value>
+                    <fullName>Ground Lease</fullName>
+                    <default>false</default>
+                    <label>Ground Lease</label>
+                </value>
+                <value>
+                    <fullName>Health Care</fullName>
+                    <default>false</default>
+                    <label>Health Care</label>
+                </value>
+                <value>
+                    <fullName>Industrial</fullName>
+                    <default>false</default>
+                    <label>Industrial</label>
+                </value>
+                <value>
+                    <fullName>Land</fullName>
+                    <default>false</default>
+                    <label>Land</label>
+                </value>
+                <value>
+                    <fullName>Life Science</fullName>
+                    <default>false</default>
+                    <label>Life Science</label>
+                </value>
+                <value>
+                    <fullName>Lodging</fullName>
+                    <default>false</default>
+                    <label>Lodging</label>
+                </value>
+                <value>
+                    <fullName>Mall</fullName>
+                    <default>false</default>
+                    <label>Mall</label>
+                </value>
+                <value>
+                    <fullName>Manufactured Housing</fullName>
+                    <default>false</default>
+                    <label>Manufactured Housing</label>
+                </value>
+                <value>
+                    <fullName>Medical Office Building</fullName>
+                    <default>false</default>
+                    <label>Medical Office Building</label>
+                </value>
+                <value>
+                    <fullName>Mortgage Reit</fullName>
+                    <default>false</default>
+                    <label>Mortgage Reit</label>
+                </value>
+                <value>
+                    <fullName>Multi-Sector</fullName>
+                    <default>false</default>
+                    <label>Multi-Sector</label>
+                </value>
+                <value>
+                    <fullName>Net Lease</fullName>
+                    <default>false</default>
+                    <label>Net Lease</label>
+                </value>
+                <value>
+                    <fullName>Niche</fullName>
+                    <default>false</default>
+                    <label>Niche</label>
+                </value>
+                <value>
+                    <fullName>Office</fullName>
+                    <default>false</default>
+                    <label>Office</label>
+                </value>
+                <value>
+                    <fullName>Real Assets</fullName>
+                    <default>false</default>
+                    <label>Real Assets</label>
+                </value>
+                <value>
+                    <fullName>Residential</fullName>
+                    <default>false</default>
+                    <label>Residential</label>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                    <label>Retail</label>
+                </value>
+                <value>
+                    <fullName>Self-Storage</fullName>
+                    <default>false</default>
+                    <label>Self-Storage</label>
+                </value>
+                <value>
+                    <fullName>Senior Housing</fullName>
+                    <default>false</default>
+                    <label>Senior Housing</label>
+                </value>
+                <value>
+                    <fullName>Single Family Rentals</fullName>
+                    <default>false</default>
+                    <label>Single Family Rentals</label>
+                </value>
+                <value>
+                    <fullName>Skilled Nursing Facility</fullName>
+                    <default>false</default>
+                    <label>Skilled Nursing Facility</label>
+                </value>
+                <value>
+                    <fullName>Strip Center</fullName>
+                    <default>false</default>
+                    <label>Strip Center</label>
+                </value>
+                <value>
+                    <fullName>Student Housing</fullName>
+                    <default>false</default>
+                    <label>Student Housing</label>
+                </value>
+                <value>
+                    <fullName>Towers</fullName>
+                    <default>false</default>
+                    <label>Towers</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Sectors_Sold_NS_Internal_ID__c</fullName>
         <externalId>false</externalId>
         <formula>CASE( Sectors_Sold__c ,&apos;Single/Dual Sector&apos; , 1, &apos;All Sectors&apos;, 2,2)</formula>
@@ -8228,6 +8413,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <scale>0</scale>
         <trackHistory>false</trackHistory>
         <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Use_Case__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How does the client intend to use the selected products?</inlineHelpText>
+        <label>Use Case</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Web_Form_Comments_Questions__c</fullName>
@@ -13315,6 +13512,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -16997,6 +17313,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -20583,6 +21018,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -24129,6 +24683,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>U%2ES%2E Strip Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -28163,6 +28836,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -31969,6 +32761,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -35379,6 +36290,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -38757,6 +39787,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -41899,6 +43048,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>U%2ES%2E Strip Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -45685,6 +46953,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>U%2ES%2E Strip Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49764,6 +51151,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -53602,6 +55108,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -57368,6 +58993,125 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sectors_Sold__c</picklist>
             <values>
                 <fullName>All Sectors</fullName>
@@ -58472,6 +60216,78 @@ ISBLANK(Competition__c)
 )</errorConditionFormula>
         <errorDisplayField>Competition__c</errorDisplayField>
         <errorMessage>Fill out the Competition before moving to In Review.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Customer_Handoff</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+OR(
+RecordType.Name = &quot;Sales Opportunity&quot;,
+RecordType.Name = &quot;Sales Opportunity - Closed&quot;
+),
+OR(
+ISBLANK( Use_Case__c ),
+ISBLANK( How_did_we_win__c ),
+ISBLANK( Markets_Covered__c)),
+NOT(
+OR(
+INCLUDES(Competition__c, &quot;CoStar&quot;),
+INCLUDES(Competition__c, &quot;Yardi Matrix&quot;),
+INCLUDES(Competition__c, &quot;Moody&apos;s&quot;),
+INCLUDES(Competition__c, &quot;Real Capital Analytics (RCA)&quot;),
+INCLUDES(Competition__c, &quot;Trepp&quot;),
+INCLUDES(Competition__c, &quot;Crexi&quot;),
+INCLUDES(Competition__c, &quot;RealPage&quot;),
+INCLUDES(Competition__c, &quot;RENX&quot;),
+INCLUDES(Competition__c, &quot;Storeys&quot;),
+INCLUDES(Competition__c, &quot;Connect CRE Canada&quot;),
+INCLUDES(Competition__c, &quot;Campus Review&quot;),
+INCLUDES(Competition__c, &quot;Real Estate Business&quot;),
+INCLUDES(Competition__c, &quot;CoStar News&quot;),
+INCLUDES(Competition__c, &quot;Property Week&quot;),
+INCLUDES(Competition__c, &quot;Estate Gazette (EG)&quot;),
+INCLUDES(Competition__c, &quot;Property Wire&quot;),
+INCLUDES(Competition__c, &quot;The Real Deal&quot;),
+INCLUDES(Competition__c, &quot;Commercial Observer&quot;),
+INCLUDES(Competition__c, &quot;Bisnow&quot;),
+INCLUDES(Competition__c, &quot;Other&quot;))
+),
+NOT(
+OR(
+INCLUDES(Sectors_Covered__c, &quot;Apartment&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Cold Storage&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Data Center&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Debt&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Gaming&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Ground Lease&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Health Care&quot;),
+INCLUDES(Sectors_Covered__c, &quot;RealPage&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Industrial&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Land&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Life Science&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Lodging&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Mall&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Manufactured Housing&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Medical Office Building&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Mortgage Reit&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Multi-Sector&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Net Lease&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Niche&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Office&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Real Assets&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Residential&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Self-Storage&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Senior Housing&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Single Family Rentals&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Skilled Nursing Facility&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Strip Center&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Student Housing&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Towers&quot;))
+))</errorConditionFormula>
+        <errorMessage>Please fill out the Customer Handoff section before closing the opportunity.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Event</fullName>
