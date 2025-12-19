@@ -16244,6 +16244,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.APAC_Named_Account_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.API__c</field>
         <readable>true</readable>
@@ -17049,11 +17054,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.APAC_Named_Account_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Account.GS_Taxonomy_Type__c</field>
         <readable>true</readable>
@@ -17266,6 +17266,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Market_Data_Deals_L60D_Usage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Markets_Covered__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -21031,11 +21036,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Has_Completed_Onboarding_IJ__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Consultative_Seller__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -28214,6 +28214,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Consultative_Seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Contact_Name_For_Testing__c</field>
         <readable>true</readable>
@@ -28700,6 +28705,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.How_did_we_win__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.ID_Request__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -28970,6 +28980,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Markets_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Monthly_Recurring_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29121,6 +29136,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Overlay_Seller__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -29544,6 +29564,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sectors_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Sectors_Sold_NS_Internal_ID__c</field>
         <readable>true</readable>
@@ -29796,6 +29821,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Usage_Change__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Use_Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -34232,11 +34262,6 @@
         <editable>false</editable>
         <field>Zephr_Webhook_Data__c.Zephr_Tenant__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Overlay_Seller__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
