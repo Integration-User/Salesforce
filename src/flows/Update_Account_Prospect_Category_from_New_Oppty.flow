@@ -3,10 +3,56 @@
     <apiVersion>58.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
+        <name>Check_Market_Sectors_Covered</name>
+        <label>Check Market/Sectors Covered</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Blank_Market_Sectors</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Interests__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Markets_Covered__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sales_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sales_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Upsell</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Market_Sector_Fields</targetReference>
+            </connector>
+            <label>Blank Market / Sectors</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Closed_Lost_Sales_Opportunity</name>
         <label>Closed Lost Sales Opportunity</label>
-        <locationX>446</locationX>
-        <locationY>623</locationY>
+        <locationX>534</locationX>
+        <locationY>923</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes1</name>
@@ -41,8 +87,8 @@
     <decisions>
         <name>Is_Sales_Opportunity_Closed_for_Account</name>
         <label>Is Sales Opportunity Closed for Account</label>
-        <locationX>248</locationX>
-        <locationY>839</locationY>
+        <locationX>336</locationX>
+        <locationY>1139</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -63,7 +109,7 @@
     <decisions>
         <name>New_Opportunity_Decision</name>
         <label>New Opportunity Decision</label>
-        <locationX>446</locationX>
+        <locationX>534</locationX>
         <locationY>323</locationY>
         <defaultConnector>
             <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
@@ -197,8 +243,8 @@
     <recordLookups>
         <name>Open_Sales_Opportunities</name>
         <label>All Open Sales Opportunities</label>
-        <locationX>248</locationX>
-        <locationY>731</locationY>
+        <locationX>336</locationX>
+        <locationY>1031</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_Sales_Opportunity_Closed_for_Account</targetReference>
@@ -241,10 +287,10 @@
     <recordUpdates>
         <name>Reset_Account_Prospect_Category</name>
         <label>Reset Account Prospect Category</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>431</locationY>
         <connector>
-            <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
+            <targetReference>Check_Market_Sectors_Covered</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -268,6 +314,36 @@
         </inputAssignments>
         <inputAssignments>
             <field>Re_visit_Date__c</field>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account_Market_Sector_Fields</name>
+        <label>Update Account Market/Sector Fields</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Interests__c</field>
+            <value>
+                <elementReference>$Record.Sectors_Covered__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Markets_Covered__c</field>
+            <value>
+                <elementReference>$Record.Markets_Covered__c</elementReference>
+            </value>
         </inputAssignments>
         <object>Account</object>
     </recordUpdates>
@@ -298,8 +374,8 @@
     <recordUpdates>
         <name>Update_Account_Prospect_Category_As_Suspect</name>
         <label>Update Account Prospect Category As Suspect</label>
-        <locationX>116</locationX>
-        <locationY>947</locationY>
+        <locationX>204</locationX>
+        <locationY>1247</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -319,7 +395,7 @@
     <recordUpdates>
         <name>Update_Account_to_Credit_Risk</name>
         <label>Update Account to Credit Risk</label>
-        <locationX>578</locationX>
+        <locationX>754</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>Closed_Lost_Sales_Opportunity</targetReference>
@@ -347,7 +423,7 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>320</locationX>
+        <locationX>408</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>New_Opportunity_Decision</targetReference>
