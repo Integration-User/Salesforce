@@ -4603,6 +4603,49 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>News_Advertising_Region__c</fullName>
+        <label>News Advertising Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>UK</fullName>
+                    <default>false</default>
+                    <label>UK</label>
+                </value>
+                <value>
+                    <fullName>Europe</fullName>
+                    <default>false</default>
+                    <label>Europe</label>
+                </value>
+                <value>
+                    <fullName>Canada</fullName>
+                    <default>false</default>
+                    <label>Canada</label>
+                </value>
+                <value>
+                    <fullName>Australia</fullName>
+                    <default>false</default>
+                    <label>Australia</label>
+                </value>
+                <value>
+                    <fullName>U.S.</fullName>
+                    <default>false</default>
+                    <label>U.S.</label>
+                </value>
+                <value>
+                    <fullName>All regions (Global advertising)</fullName>
+                    <default>false</default>
+                    <label>All regions (Global advertising)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>News_ID__c</fullName>
         <externalId>true</externalId>
         <label>News ID</label>
@@ -4611,6 +4654,44 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>News_Trial_Product__c</fullName>
+        <label>News Trial Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Global News</fullName>
+                    <default>false</default>
+                    <label>Global News</label>
+                </value>
+                <value>
+                    <fullName>U.S. News</fullName>
+                    <default>false</default>
+                    <label>U.S. News</label>
+                </value>
+                <value>
+                    <fullName>Europe, U.K. &amp; Ireland News</fullName>
+                    <default>false</default>
+                    <label>Europe, U.K. &amp; Ireland News</label>
+                </value>
+                <value>
+                    <fullName>Canada News</fullName>
+                    <default>false</default>
+                    <label>Canada News</label>
+                </value>
+                <value>
+                    <fullName>Australia News</fullName>
+                    <default>false</default>
+                    <label>Australia News</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Next_Outreach_Date__c</fullName>
