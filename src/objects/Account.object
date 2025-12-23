@@ -5669,6 +5669,24 @@ Owner.Id = $User.Id)</formula>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Number_of_Closed_Lost_Sales_Opps__c</fullName>
+        <label>Number of Closed Lost Sales Opps</label>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Opportunity - Closed, Sales Opportunity</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Number_of_Closed_Won_Renewals__c</fullName>
         <label>Number of Closed Won Renewals</label>
         <summaryFilterItems>
@@ -8419,6 +8437,28 @@ Owner.Id = $User.Id)</formula>
         <label>Restrict Download</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RevOps_ICP_Parent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>RevOps ICP Parent</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Accounts</relationshipLabel>
+        <relationshipName>Accounts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RevOps_ICP_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>RevOps ICP Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Revenue_Size__c</fullName>
