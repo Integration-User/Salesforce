@@ -8209,6 +8209,44 @@ Owner.Id = $User.Id)</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Region_Standardized__c</fullName>
+        <label>Region(Standardized)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>APAC</fullName>
+                    <default>false</default>
+                    <label>APAC</label>
+                </value>
+                <value>
+                    <fullName>EMEA</fullName>
+                    <default>false</default>
+                    <label>EMEA</label>
+                </value>
+                <value>
+                    <fullName>LATAM</fullName>
+                    <default>false</default>
+                    <label>LATAM</label>
+                </value>
+                <value>
+                    <fullName>NAMER</fullName>
+                    <default>false</default>
+                    <label>NAMER</label>
+                </value>
+                <value>
+                    <fullName>No Region Data</fullName>
+                    <default>false</default>
+                    <label>No Region Data</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Region__c</fullName>
         <label>Region</label>
         <required>false</required>
@@ -14003,6 +14041,29 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Region_Standardized__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAMER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Region Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Region__c</picklist>
             <values>
                 <fullName>Africa</fullName>
@@ -18200,6 +18261,29 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region_Standardized__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAMER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Region Data</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

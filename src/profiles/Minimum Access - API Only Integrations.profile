@@ -17513,6 +17513,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Region_Standardized__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Region__c</field>
         <readable>false</readable>
@@ -49953,6 +49958,9 @@
     <layoutAssignments>
         <layout>Case-Transaction Support Layout</layout>
         <recordType>Case.Transaction_Support</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Country_Region_Mapping__mdt-Country Region Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ISO_Map__mdt-ISO Map Layout</layout>
