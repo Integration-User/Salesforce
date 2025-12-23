@@ -8394,6 +8394,28 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>RevOps_ICP_Parent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>RevOps ICP Parent</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Accounts</relationshipLabel>
+        <relationshipName>Accounts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RevOps_ICP_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>RevOps ICP Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Revenue_Size__c</fullName>
         <label>Revenue Size</label>
         <precision>18</precision>
