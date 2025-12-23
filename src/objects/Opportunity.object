@@ -1359,6 +1359,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Spam</label>
                 </value>
+                <value>
+                    <fullName>No Decision</fullName>
+                    <default>false</default>
+                    <label>No Decision</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -6005,7 +6010,7 @@ IF ( INCLUDES ( Account.Other_Vendors__c , &quot;I don&apos;t know&quot; ), &quo
     <fields>
         <fullName>Overlay_Seller__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <label>Overlay Seller</label>
+        <label>Specialist Seller</label>
         <referenceTo>User</referenceTo>
         <relationshipName>OverlaySeller</relationshipName>
         <required>false</required>
