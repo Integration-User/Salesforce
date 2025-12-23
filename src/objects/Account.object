@@ -286,6 +286,16 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>APAC_Named_Account_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>APAC Named Account Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>APAC_Owner</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>API__c</fullName>
         <defaultValue>false</defaultValue>
         <inlineHelpText>Check if client is actively using the API.</inlineHelpText>
@@ -669,6 +679,16 @@ IF(
         <label>Approved Tiering</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Assignment_Cohort__c</fullName>
+        <externalId>false</externalId>
+        <label>Assignment Cohort</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Attempts_to_Save__c</fullName>
@@ -8189,6 +8209,44 @@ Owner.Id = $User.Id)</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Region_Standardized__c</fullName>
+        <label>Region(Standardized)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>APAC</fullName>
+                    <default>false</default>
+                    <label>APAC</label>
+                </value>
+                <value>
+                    <fullName>EMEA</fullName>
+                    <default>false</default>
+                    <label>EMEA</label>
+                </value>
+                <value>
+                    <fullName>LATAM</fullName>
+                    <default>false</default>
+                    <label>LATAM</label>
+                </value>
+                <value>
+                    <fullName>NAMER</fullName>
+                    <default>false</default>
+                    <label>NAMER</label>
+                </value>
+                <value>
+                    <fullName>No Region Data</fullName>
+                    <default>false</default>
+                    <label>No Region Data</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Region__c</fullName>
         <label>Region</label>
         <required>false</required>
@@ -13983,6 +14041,29 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Region_Standardized__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAMER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Region Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Region__c</picklist>
             <values>
                 <fullName>Africa</fullName>
@@ -18184,6 +18265,29 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Region_Standardized__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAMER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Region Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Region__c</picklist>
             <values>
                 <fullName>Africa</fullName>
@@ -18496,6 +18600,16 @@ Stored as Long on Solr.</description>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
     <validationRules>
+        <fullName>AE_Account_Creation</fullName>
+        <active>true</active>
+        <description>Block people in department &quot;sales&quot; from creating Accounts in Salesforce.</description>
+        <errorConditionFormula>AND(
+ISNEW(),
+$User.Department = &quot;Sales&quot;,
+TODAY() &gt;= DATE(2026, 1, 5))</errorConditionFormula>
+        <errorMessage>Users in department Sales cannot create Accounts</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Change_Account_Priority</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -18557,6 +18671,17 @@ OR( ISCHANGED( Name ))))</errorConditionFormula>
         <errorConditionFormula>NOT(ISNUMBER(  Phone  ))</errorConditionFormula>
         <errorDisplayField>Phone</errorDisplayField>
         <errorMessage>Phone number must be contain numbers only, dashes &amp; other characters will populate on save. Enter phone number without dashes and other characters.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Account_Owner_Transfer</fullName>
+        <active>true</active>
+        <description>Do not transfer account owner if owned by Integration User.</description>
+        <errorConditionFormula>AND(
+    ISCHANGED(OwnerId),
+    $User.Department = &quot;Sales&quot;,
+    PRIORVALUE(OwnerId) = &quot;0055G0000071oXH&quot;
+)</errorConditionFormula>
+        <errorMessage>Sales users cannot transfer the account owner if it&apos;s owned by Integration User.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Prevent_Renaming_Unassigned_Accounts</fullName>

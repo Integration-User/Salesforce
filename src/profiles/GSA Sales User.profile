@@ -16264,6 +16264,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.APAC_Named_Account_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.API__c</field>
         <readable>true</readable>
@@ -17566,6 +17571,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Region_Global_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Region_Standardized__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -21370,7 +21380,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.News_Advertising_Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.News_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.News_Trial_Product__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -28479,6 +28499,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Consultative_Seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Contact_Name_For_Testing__c</field>
         <readable>true</readable>
@@ -29401,6 +29426,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Overlay_Seller__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -50274,6 +50304,9 @@
         <layout>Contract-Contract Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Country_Region_Mapping__mdt-Country Region Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>CspTrustedSite-Content Security Policy Trusted Site Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -54985,10 +55018,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

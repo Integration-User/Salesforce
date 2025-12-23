@@ -25,6 +25,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Region_Standardized__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>ZoomInfo_Industry_And_Sub_Mapping__mdt.GS_Taxonomy_Type__c</field>
         <readable>false</readable>
@@ -35,11 +40,18 @@
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>Account-Organization Account</layout>
+        <recordType>Account.Organization_Account</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
         <recordType>Account.Subsidiary_Account</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Country_Region_Mapping__mdt-Country Region Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ZoomInfo_Industry_And_Sub_Mapping__mdt-ZoomInfo Industry And Sub Mapping Layout</layout>

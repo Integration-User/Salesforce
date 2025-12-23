@@ -1594,6 +1594,17 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Consultative_Seller__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Consultative Seller</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>ConsultativeSeller</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Contact_Name_For_Testing__c</fullName>
         <description>delete this field once HS Testing is complete</description>
         <externalId>false</externalId>
@@ -5990,6 +6001,17 @@ IF ( INCLUDES ( Account.Other_Vendors__c , &quot;I don&apos;t know&quot; ), &quo
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Overlay_Seller__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Overlay Seller</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>OverlaySeller</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -11784,6 +11806,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>College House</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data %26 Analytics</fullName>
                 <default>false</default>
             </values>
@@ -15454,6 +15480,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>College House</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data %26 Analytics</fullName>
                 <default>false</default>
             </values>
@@ -19068,6 +19098,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>College House</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data %26 Analytics</fullName>
                 <default>false</default>
             </values>
@@ -22615,6 +22649,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Marketing_Product_of_Interest__c</picklist>
             <values>
                 <fullName>Advisory Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>College House</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26401,6 +26439,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Marketing_Product_of_Interest__c</picklist>
             <values>
                 <fullName>Advisory Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>College House</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -30371,6 +30413,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Marketing_Product_of_Interest__c</picklist>
             <values>
                 <fullName>Advisory Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>College House</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44094,6 +44140,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>College House</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data %26 Analytics</fullName>
                 <default>false</default>
             </values>
@@ -47962,6 +48012,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Marketing_Product_of_Interest__c</picklist>
             <values>
                 <fullName>Advisory Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>College House</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -51971,6 +52025,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>College House</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Data %26 Analytics</fullName>
                 <default>false</default>
             </values>
@@ -55770,6 +55828,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Marketing_Product_of_Interest__c</picklist>
             <values>
                 <fullName>Advisory Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>College House</fullName>
                 <default>false</default>
             </values>
             <values>

@@ -17513,6 +17513,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Region_Standardized__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Region__c</field>
         <readable>false</readable>
@@ -21313,9 +21318,19 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.News_Advertising_Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.News_ID__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.News_Trial_Product__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -28424,6 +28439,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Consultative_Seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.Contact_Name_For_Testing__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -29345,6 +29365,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Overlay_Seller__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -49933,6 +49958,9 @@
     <layoutAssignments>
         <layout>Case-Transaction Support Layout</layout>
         <recordType>Case.Transaction_Support</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Country_Region_Mapping__mdt-Country Region Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ISO_Map__mdt-ISO Map Layout</layout>
