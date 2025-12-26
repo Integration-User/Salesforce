@@ -17356,6 +17356,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Number_of_Closed_Lost_Sales_Opps__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Number_of_Closed_Won_Renewals__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17433,6 +17438,11 @@
         <editable>true</editable>
         <field>Account.Ownership</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.PQ_MERGE_Website__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -17567,6 +17577,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Region_Global_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Region_Standardized__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -50325,6 +50340,9 @@
         <layout>Contract-Contract Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Country_Region_Mapping__mdt-Country Region Mapping Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>CspTrustedSite-Content Security Policy Trusted Site Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -55006,10 +55024,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
