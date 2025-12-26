@@ -1364,6 +1364,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>No Decision</label>
                 </value>
+                <value>
+                    <fullName>Went Dark</fullName>
+                    <default>false</default>
+                    <label>Went Dark</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1393,6 +1398,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Spam</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Disqualified</controllingFieldValue>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Went Dark</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
@@ -47602,6 +47612,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Unreachable</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Went Dark</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Competition__c</picklist>
@@ -51783,6 +51797,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Value Equation</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Went Dark</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Competition__c</picklist>
@@ -55714,6 +55732,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -60126,6 +60148,18 @@ ISBLANK(Discovery_Meeting_Completed_Date__c),
 ISBLANK(Discovery_Meeting_Scheduled_Date__c)
 ))</errorConditionFormula>
         <errorMessage>Discovery Meeting Dates should be completed before moving the stage.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>More_than_30_Days_Schedule_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+Discovery_Meeting_Scheduled_Date__c &gt; (TODAY() + 30),
+OR(
+RecordType.DeveloperName = &apos;Sales_Development&apos;,
+RecordType.DeveloperName = &apos;Sales_Opportunity&apos;)
+)</errorConditionFormula>
+        <errorMessage>You cannot set Meeting Scheduled Date more than 30 days from Today.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>No_Opps_under_IJ_Placeholder</fullName>
