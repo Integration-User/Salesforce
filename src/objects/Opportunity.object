@@ -3171,6 +3171,17 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Initial_Meeting_Organizer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Initial Meeting Organizer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>InitialMeetingOrganizer</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Intent__c</fullName>
         <inlineHelpText>for the Opportunity Scoring Model(Salesforce Einstein)</inlineHelpText>
         <label>Intent</label>
@@ -60161,6 +60172,17 @@ RecordType.DeveloperName = &apos;Sales_Development&apos;,
 RecordType.DeveloperName = &apos;Sales_Opportunity&apos;)
 )</errorConditionFormula>
         <errorMessage>You cannot set Meeting Scheduled Date more than 30 days from Today.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoDecisionReason_Discovery_Complete_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name = &quot;Sales Opportunity&quot;,
+ISPICKVAL(Close_Reason__c, &quot;No Decision&quot;),
+ISBLANK(Discovery_Meeting_Completed_Date__c)
+)</errorConditionFormula>
+        <errorMessage>“No Decision” can only be selected if Discovery Meeting Completed Date is filled out.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>No_Opps_under_IJ_Placeholder</fullName>

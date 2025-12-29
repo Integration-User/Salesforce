@@ -305,6 +305,12 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Initial_Meeting_Organizer__c</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Qualified_Team__c</field>
             <value>
                 <elementReference>$Record.Owner.Sales_Team__c</elementReference>
