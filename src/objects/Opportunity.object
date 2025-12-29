@@ -1364,6 +1364,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>No Decision</label>
                 </value>
+                <value>
+                    <fullName>Went Dark</fullName>
+                    <default>false</default>
+                    <label>Went Dark</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1393,6 +1398,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Spam</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Disqualified</controllingFieldValue>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>No Decision</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
@@ -3131,6 +3141,17 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Meeting_Organizer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Initial Meeting Organizer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>InitialMeetingOrganizer</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Intent__c</fullName>
@@ -46168,6 +46189,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>No Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>No Research Budget</fullName>
                 <default>false</default>
             </values>
@@ -46189,6 +46214,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Unreachable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -50222,6 +50251,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>No Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-coverage</fullName>
                 <default>false</default>
             </values>
@@ -50251,6 +50284,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -54044,6 +54081,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>No Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-coverage</fullName>
                 <default>false</default>
             </values>
@@ -54065,6 +54106,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -58341,6 +58386,17 @@ Account.Lock_Opportunities__c=TRUE,
 IsClosed=TRUE)</errorConditionFormula>
         <errorDisplayField>X6Sense_Segment_Names__c</errorDisplayField>
         <errorMessage>There is a pending Subsidiary change approval on the Account. You cannot close the Opportunity until the Subsidiary change is approved or rejected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoDecisionReason_Discovery_Complete_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name = &quot;Sales Opportunity&quot;,
+ISPICKVAL(Close_Reason__c, &quot;No Decision&quot;),
+ISBLANK(Discovery_Meeting_Completed_Date__c)
+)</errorConditionFormula>
+        <errorMessage>“No Decision” can only be selected if Discovery Meeting Completed Date is filled out.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>No_Opps_under_IJ_Placeholder</fullName>
