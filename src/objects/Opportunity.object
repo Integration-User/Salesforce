@@ -1364,6 +1364,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>No Decision</label>
                 </value>
+                <value>
+                    <fullName>Went Dark</fullName>
+                    <default>false</default>
+                    <label>Went Dark</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1393,6 +1398,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Spam</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Disqualified</controllingFieldValue>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>No Decision</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
@@ -46168,6 +46178,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>No Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>No Research Budget</fullName>
                 <default>false</default>
             </values>
@@ -46189,6 +46203,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Unreachable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -50222,6 +50240,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>No Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-coverage</fullName>
                 <default>false</default>
             </values>
@@ -50251,6 +50273,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -54044,6 +54070,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>No Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Non-coverage</fullName>
                 <default>false</default>
             </values>
@@ -54065,6 +54095,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
