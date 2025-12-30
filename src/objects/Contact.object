@@ -10754,6 +10754,15 @@ Stored as Long on Solr.</description>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
+        <fullName>Contacts_must_have_an_Account</fullName>
+        <active>true</active>
+        <description>Every contact must be tied to an Account</description>
+        <errorConditionFormula>ISNEW()
+&amp;&amp;  ISBLANK(AccountId)
+&amp;&amp; $Profile.Name &lt;&gt; &apos;System Administrator&apos;</errorConditionFormula>
+        <errorMessage>All Contacts must be associated with an Account. Please create an Account before you attempt to create a Contact associated with it</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Datalink_of_Website_Access_Required</fullName>
         <active>false</active>
         <errorConditionFormula>IF(
