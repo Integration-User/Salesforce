@@ -31,6 +31,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Markets_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Number_of_Closed_Lost_Sales_Opps__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -101,6 +106,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.How_did_we_win__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Markets_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.News_Advertising_Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -112,6 +127,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Overlay_Seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sectors_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Use_Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -148,6 +173,14 @@
     <layoutAssignments>
         <layout>Opportunity-New Business - Closed</layout>
         <recordType>Opportunity.Sales_Opportunity_Closed</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Renewals - Closed</layout>
+        <recordType>Opportunity.Renewal_Closed</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Renewals 2</layout>
+        <recordType>Opportunity.Existing_Business</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Sales Development</layout>
