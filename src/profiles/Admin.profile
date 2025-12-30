@@ -18694,11 +18694,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.RevOps_ICP_Score__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Account.Revenue_Size__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -30180,6 +30175,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Initial_Asking_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Initial_Meeting_Organizer__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -59607,6 +59607,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SendCustomNotifications</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
