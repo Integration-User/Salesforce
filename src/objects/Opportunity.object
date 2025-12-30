@@ -60295,73 +60295,79 @@ ISBLANK(Competition__c)
     <validationRules>
         <fullName>Require_Customer_Handoff</fullName>
         <active>true</active>
+        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-ISCHANGED(StageName),
-ISPICKVAL(StageName, &quot;Closed Won&quot;),
-OR(
-RecordType.Name = &quot;Sales Opportunity&quot;,
-RecordType.Name = &quot;Sales Opportunity - Closed&quot;
-),
-OR(
-ISBLANK( Use_Case__c ),
-ISBLANK( How_did_we_win__c ),
-ISBLANK( Markets_Covered__c)),
-NOT(
-OR(
-INCLUDES(Competition__c, &quot;CoStar&quot;),
-INCLUDES(Competition__c, &quot;Yardi Matrix&quot;),
-INCLUDES(Competition__c, &quot;Moody&apos;s&quot;),
-INCLUDES(Competition__c, &quot;Real Capital Analytics (RCA)&quot;),
-INCLUDES(Competition__c, &quot;Trepp&quot;),
-INCLUDES(Competition__c, &quot;Crexi&quot;),
-INCLUDES(Competition__c, &quot;RealPage&quot;),
-INCLUDES(Competition__c, &quot;RENX&quot;),
-INCLUDES(Competition__c, &quot;Storeys&quot;),
-INCLUDES(Competition__c, &quot;Connect CRE Canada&quot;),
-INCLUDES(Competition__c, &quot;Campus Review&quot;),
-INCLUDES(Competition__c, &quot;Real Estate Business&quot;),
-INCLUDES(Competition__c, &quot;CoStar News&quot;),
-INCLUDES(Competition__c, &quot;Property Week&quot;),
-INCLUDES(Competition__c, &quot;Estate Gazette (EG)&quot;),
-INCLUDES(Competition__c, &quot;Property Wire&quot;),
-INCLUDES(Competition__c, &quot;The Real Deal&quot;),
-INCLUDES(Competition__c, &quot;Commercial Observer&quot;),
-INCLUDES(Competition__c, &quot;Bisnow&quot;),
-INCLUDES(Competition__c, &quot;Other&quot;))
-),
-NOT(
-OR(
-INCLUDES(Sectors_Covered__c, &quot;Apartment&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Cold Storage&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Data Center&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Debt&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Gaming&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Ground Lease&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Health Care&quot;),
-INCLUDES(Sectors_Covered__c, &quot;RealPage&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Industrial&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Land&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Life Science&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Lodging&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Mall&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Manufactured Housing&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Medical Office Building&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Mortgage Reit&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Multi-Sector&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Net Lease&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Niche&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Office&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Real Assets&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Residential&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Self-Storage&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Senior Housing&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Single Family Rentals&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Skilled Nursing Facility&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Strip Center&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Student Housing&quot;),
-INCLUDES(Sectors_Covered__c, &quot;Towers&quot;))
-))</errorConditionFormula>
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    OR(
+        $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+        $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
+    ),
+    OR(
+LEN(TRIM(Use_Case__c)) = 0,
+LEN(TRIM(How_did_we_win__c)) = 0,
+LEN(TRIM(Markets_Covered__c)) = 0,
+ISBLANK(Competition__c),
+ISBLANK(Sectors_Covered__c),
+        NOT(
+            OR(
+                INCLUDES(Competition__c, &quot;CoStar&quot;),
+                INCLUDES(Competition__c, &quot;Yardi Matrix&quot;),
+                INCLUDES(Competition__c, &quot;Moody&apos;s&quot;),
+                INCLUDES(Competition__c, &quot;Real Capital Analytics (RCA)&quot;),
+                INCLUDES(Competition__c, &quot;Trepp&quot;),
+                INCLUDES(Competition__c, &quot;Crexi&quot;),
+                INCLUDES(Competition__c, &quot;RealPage&quot;),
+                INCLUDES(Competition__c, &quot;RENX&quot;),
+                INCLUDES(Competition__c, &quot;Storeys&quot;),
+                INCLUDES(Competition__c, &quot;Connect CRE Canada&quot;),
+                INCLUDES(Competition__c, &quot;Campus Review&quot;),
+                INCLUDES(Competition__c, &quot;Real Estate Business&quot;),
+                INCLUDES(Competition__c, &quot;CoStar News&quot;),
+                INCLUDES(Competition__c, &quot;Property Week&quot;),
+                INCLUDES(Competition__c, &quot;Estate Gazette (EG)&quot;),
+                INCLUDES(Competition__c, &quot;Property Wire&quot;),
+                INCLUDES(Competition__c, &quot;The Real Deal&quot;),
+                INCLUDES(Competition__c, &quot;Commercial Observer&quot;),
+                INCLUDES(Competition__c, &quot;Bisnow&quot;),
+                INCLUDES(Competition__c, &quot;Other&quot;)
+            )
+        ),
+        NOT(
+            OR(
+                INCLUDES(Sectors_Covered__c, &quot;Apartment&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Cold Storage&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Data Center&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Debt&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Gaming&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Ground Lease&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Health Care&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;RealPage&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Industrial&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Land&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Life Science&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Lodging&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Mall&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Manufactured Housing&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Medical Office Building&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Mortgage Reit&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Multi-Sector&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Net Lease&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Niche&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Office&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Real Assets&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Residential&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Self-Storage&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Senior Housing&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Single Family Rentals&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Skilled Nursing Facility&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Strip Center&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Student Housing&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Towers&quot;)
+            )
+        )
+    )
+)</errorConditionFormula>
         <errorMessage>Please fill out the Customer Handoff section before closing the opportunity.</errorMessage>
     </validationRules>
     <validationRules>
@@ -60471,6 +60477,27 @@ ISBLANK(Sales_Owner__c)
 )</errorConditionFormula>
         <errorDisplayField>Sales_Owner__c</errorDisplayField>
         <errorMessage>This field cannot be blank when submitting for &quot;Review&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Sector_Markets_Covered</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    OR(
+        $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+        $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
+    ),
+    OR(
+        ISBLANK(Account.Interests__c),
+        ISBLANK(Account.Markets_Covered__c)
+    ),
+    OR(
+        LEN(TRIM(Markets_Covered__c)) = 0,
+        ISBLANK(Sectors_Covered__c)
+    )
+)</errorConditionFormula>
+        <errorMessage>Sectors / Markets Covered are required if the fields from the account level are blank.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Trial_Type</fullName>
