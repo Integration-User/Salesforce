@@ -334,6 +334,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Discovery_Meeting_Scheduled_Date__c</field>
+            <value>
+                <elementReference>Discovery_Meeting_Scheduled_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Existing_Sales_Opportunity__c</field>
             <value>
                 <elementReference>New_Sales_Oppty.recordId</elementReference>
@@ -421,6 +427,12 @@
             <field>Create_New_Sales_Opportunity__c</field>
             <value>
                 <elementReference>Create_New_Sales_Opportunity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Discovery_Meeting_Scheduled_Date__c</field>
+            <value>
+                <elementReference>Discovery_Meeting_Scheduled_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -576,6 +588,39 @@
                     <stringValue>12</stringValue>
                 </width>
             </styleProperties>
+        </fields>
+        <fields>
+            <name>Discovery_Meeting_Scheduled_Date</name>
+            <dataType>Date</dataType>
+            <defaultValue>
+                <elementReference>Opportunity.Discovery_Meeting_Scheduled_Date__c</elementReference>
+            </defaultValue>
+            <fieldText>Discovery Meeting Scheduled Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <validationRule>
+                <errorMessage>&lt;p&gt;You cannot set Meeting Scheduled Date more than 30 days from Today.&lt;/p&gt;</errorMessage>
+                <formulaExpression>NOT({!Discovery_Meeting_Scheduled_Date} &gt; (TODAY() + 30))</formulaExpression>
+            </validationRule>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Create_New_Sales_Opportunity</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <nextOrFinishButtonLabel>Convert</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
