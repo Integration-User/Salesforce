@@ -9,6 +9,14 @@
         <template>unfiled$public/AskNicely_Closed_Case</template>
     </alerts>
     <alerts>
+        <fullName>AskNicely_Closed_Case_GS_IJGlobal</fullName>
+        <ccEmails>greenstreet_45d975f@emailtosurvey.asknice.ly</ccEmails>
+        <description>AskNicely Closed Case - GS IJGlobal</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/AskNicely_Closed_Case_GS_IJGlobal</template>
+    </alerts>
+    <alerts>
         <fullName>AskNicely_Closed_Case_GS_News</fullName>
         <ccEmails>greenstreet_45d975f@emailtosurvey.asknice.ly</ccEmails>
         <description>AskNicely Closed Case - GS News</description>
