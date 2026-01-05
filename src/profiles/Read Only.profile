@@ -29156,6 +29156,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Infra_Sectors_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Initial_Asking_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29752,6 +29757,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Regions_Covered__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
