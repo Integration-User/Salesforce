@@ -4456,6 +4456,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>ICP_Score_CRE_GP_Investors__c</fullName>
+        <externalId>false</externalId>
+        <label>ICP Score - CRE GP Investors</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ICP_Score_CRE_Platform__c</fullName>
         <externalId>false</externalId>
         <label>ICP Score - CRE Platform</label>
@@ -4470,6 +4481,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <fullName>ICP_Score_CRE_Service_Providers__c</fullName>
         <externalId>false</externalId>
         <label>ICP Score - CRE Service Providers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Score_Infra_GP_Investors__c</fullName>
+        <externalId>false</externalId>
+        <label>ICP Score - Infra GP Investors</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -8508,6 +8530,16 @@ Owner.Id = $User.Id)</formula>
         <fullName>RevOps_Assignment_Notes__c</fullName>
         <externalId>false</externalId>
         <label>RevOps Assignment Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RevOps_ICP_Parent_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>RevOps ICP Parent(Text)</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>

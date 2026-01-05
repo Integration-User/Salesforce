@@ -17111,12 +17111,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.ICP_Score_CRE_GP_Investors__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.ICP_Score_CRE_Platform__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.ICP_Score_CRE_Service_Providers__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.ICP_Score_Infra_GP_Investors__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -17642,6 +17652,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.RevOps_Assignment_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.RevOps_ICP_Parent_Text__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
