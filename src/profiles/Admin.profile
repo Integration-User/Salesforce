@@ -18694,6 +18694,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.RevOps_ICP_Parent_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.RevOps_ICP_Parent__c</field>
         <readable>true</readable>
     </fieldPermissions>
