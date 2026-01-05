@@ -146,6 +146,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Infra_Sectors_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Initial_Meeting_Organizer__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -167,6 +172,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Overlay_Seller__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Regions_Covered__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
