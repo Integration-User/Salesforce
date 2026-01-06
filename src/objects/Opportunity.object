@@ -1441,16 +1441,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Spam</label>
                 </value>
-                <value>
-                    <fullName>No Decision</fullName>
-                    <default>false</default>
-                    <label>No Decision</label>
-                </value>
-                <value>
-                    <fullName>Went Dark</fullName>
-                    <default>false</default>
-                    <label>Went Dark</label>
-                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1480,11 +1470,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Spam</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Disqualified</controllingFieldValue>
-                <controllingFieldValue>Closed Lost</controllingFieldValue>
-                <valueName>No Decision</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
