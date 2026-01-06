@@ -1062,6 +1062,78 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         </valueSet>
     </fields>
     <fields>
+        <fullName>Budget_Details__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please include relevant context to budget including: Timing, Owner, and Process.</inlineHelpText>
+        <label>Budget Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <inlineHelpText>Customer&apos;s stated budget. If a range is provided, please use an average amount.</inlineHelpText>
+        <label>Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Buying_Process__c</fullName>
+        <label>Buying Process</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Plan</fullName>
+                    <default>false</default>
+                    <label>Plan</label>
+                </value>
+                <value>
+                    <fullName>Recognize</fullName>
+                    <default>false</default>
+                    <label>Recognize</label>
+                </value>
+                <value>
+                    <fullName>Search</fullName>
+                    <default>false</default>
+                    <label>Search</label>
+                </value>
+                <value>
+                    <fullName>Evaluate</fullName>
+                    <default>false</default>
+                    <label>Evaluate</label>
+                </value>
+                <value>
+                    <fullName>Select</fullName>
+                    <default>false</default>
+                    <label>Select</label>
+                </value>
+                <value>
+                    <fullName>Commit</fullName>
+                    <default>false</default>
+                    <label>Commit</label>
+                </value>
+                <value>
+                    <fullName>Implement</fullName>
+                    <default>false</default>
+                    <label>Implement</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>CRS_Sent__c</fullName>
         <inlineHelpText>Only Required for Individuals</inlineHelpText>
         <label>CRS Sent</label>
@@ -1179,6 +1251,16 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <controllingField>StageName</controllingField>
             <valueSetDefinition>
                 <sorted>false</sorted>
+                <value>
+                    <fullName>Bad Opp - Never Connected</fullName>
+                    <default>false</default>
+                    <label>Bad Opp - Never Connected</label>
+                </value>
+                <value>
+                    <fullName>Interest / Not Ready to Buy (Mktg Nurture)</fullName>
+                    <default>false</default>
+                    <label>Interest / Not Ready to Buy (Mktg Nurture)</label>
+                </value>
                 <value>
                     <fullName>Advisory Involvement</fullName>
                     <default>false</default>
@@ -1440,6 +1522,14 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
                 <valueName>Validating Investment Thesis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Bad Opp - Never Connected</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Interest / Not Ready to Buy (Mktg Nurture)</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
@@ -3158,6 +3248,51 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Infra_Sectors_Covered__c</fullName>
+        <label>Infra Sectors Covered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Renewables</fullName>
+                    <default>false</default>
+                    <label>Renewables</label>
+                </value>
+                <value>
+                    <fullName>Telecom</fullName>
+                    <default>false</default>
+                    <label>Telecom</label>
+                </value>
+                <value>
+                    <fullName>Transport</fullName>
+                    <default>false</default>
+                    <label>Transport</label>
+                </value>
+                <value>
+                    <fullName>Oil and Gas</fullName>
+                    <default>false</default>
+                    <label>Oil and Gas</label>
+                </value>
+                <value>
+                    <fullName>Social and Defense</fullName>
+                    <default>false</default>
+                    <label>Social and Defense</label>
+                </value>
+                <value>
+                    <fullName>Data Center</fullName>
+                    <default>false</default>
+                    <label>Data Center</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
     </fields>
     <fields>
         <fullName>Initial_Asking_Price__c</fullName>
@@ -7027,6 +7162,151 @@ NULL))))</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Regions_Covered__c</fullName>
+        <label>Regions Covered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>true</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>US - National (All)</fullName>
+                    <default>false</default>
+                    <label>US - National (All)</label>
+                </value>
+                <value>
+                    <fullName>US - East Coast</fullName>
+                    <default>false</default>
+                    <label>US - East Coast</label>
+                </value>
+                <value>
+                    <fullName>US - Midwest</fullName>
+                    <default>false</default>
+                    <label>US - Midwest</label>
+                </value>
+                <value>
+                    <fullName>US - Sunbelt</fullName>
+                    <default>false</default>
+                    <label>US - Sunbelt</label>
+                </value>
+                <value>
+                    <fullName>US - West Coast</fullName>
+                    <default>false</default>
+                    <label>US - West Coast</label>
+                </value>
+                <value>
+                    <fullName>CA -National (All)</fullName>
+                    <default>false</default>
+                    <label>CA -National (All)</label>
+                </value>
+                <value>
+                    <fullName>CA - Central Canada</fullName>
+                    <default>false</default>
+                    <label>CA - Central Canada</label>
+                </value>
+                <value>
+                    <fullName>CA - Western Canada</fullName>
+                    <default>false</default>
+                    <label>CA - Western Canada</label>
+                </value>
+                <value>
+                    <fullName>CA - Prairies</fullName>
+                    <default>false</default>
+                    <label>CA - Prairies</label>
+                </value>
+                <value>
+                    <fullName>CA -Atlantic Canada</fullName>
+                    <default>false</default>
+                    <label>CA -Atlantic Canada</label>
+                </value>
+                <value>
+                    <fullName>CA -Northern Canada</fullName>
+                    <default>false</default>
+                    <label>CA -Northern Canada</label>
+                </value>
+                <value>
+                    <fullName>APAC Investor</fullName>
+                    <default>false</default>
+                    <label>APAC Investor</label>
+                </value>
+                <value>
+                    <fullName>AUS - National (All)</fullName>
+                    <default>false</default>
+                    <label>AUS - National (All)</label>
+                </value>
+                <value>
+                    <fullName>AUS - East Coast Markets</fullName>
+                    <default>false</default>
+                    <label>AUS - East Coast Markets</label>
+                </value>
+                <value>
+                    <fullName>AUS - Western / Resource Markets</fullName>
+                    <default>false</default>
+                    <label>AUS - Western / Resource Markets</label>
+                </value>
+                <value>
+                    <fullName>AUS - Southern Market</fullName>
+                    <default>false</default>
+                    <label>AUS - Southern Market</label>
+                </value>
+                <value>
+                    <fullName>AUS -Government / Institutional Hub</fullName>
+                    <default>false</default>
+                    <label>AUS -Government / Institutional Hub</label>
+                </value>
+                <value>
+                    <fullName>Pan Euro Investor</fullName>
+                    <default>false</default>
+                    <label>Pan Euro Investor</label>
+                </value>
+                <value>
+                    <fullName>Country Investor - UK</fullName>
+                    <default>false</default>
+                    <label>Country Investor - UK</label>
+                </value>
+                <value>
+                    <fullName>Country Investor - GE</fullName>
+                    <default>false</default>
+                    <label>Country Investor - GE</label>
+                </value>
+                <value>
+                    <fullName>Country Investor - FR</fullName>
+                    <default>false</default>
+                    <label>Country Investor - FR</label>
+                </value>
+                <value>
+                    <fullName>Country Investor - IT</fullName>
+                    <default>false</default>
+                    <label>Country Investor - IT</label>
+                </value>
+                <value>
+                    <fullName>Country Investor - SP</fullName>
+                    <default>false</default>
+                    <label>Country Investor - SP</label>
+                </value>
+                <value>
+                    <fullName>Country Investor -Nordics</fullName>
+                    <default>false</default>
+                    <label>Country Investor -Nordics</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Renewal_Credit__c</fullName>
         <label>Renewal Credit</label>
         <summarizedField>OpportunityLineItem.Renewal_Credit__c</summarizedField>
@@ -10129,6 +10409,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -10564,6 +10875,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13202,6 +13540,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13998,6 +14443,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -14357,6 +14833,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16999,6 +17502,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Risk__c</picklist>
             <values>
                 <fullName>Consistently Unresponsive</fullName>
@@ -17779,6 +18389,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -18178,6 +18819,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -20724,6 +21392,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -21452,6 +22227,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -21851,6 +22657,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -24397,6 +25230,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -25181,6 +26121,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -25652,6 +26623,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -28530,6 +29528,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Risk__c</picklist>
             <values>
                 <fullName>Consistently Unresponsive</fullName>
@@ -29370,6 +30475,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -29769,6 +30905,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -32475,6 +33638,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Risk__c</picklist>
             <values>
                 <fullName>Consistently Unresponsive</fullName>
@@ -33247,6 +34517,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -33622,6 +34923,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -36016,6 +37344,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Risk__c</picklist>
             <values>
                 <fullName>Consistently Unresponsive</fullName>
@@ -36776,6 +38211,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -37151,6 +38617,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -39513,6 +41006,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Risk__c</picklist>
             <values>
                 <fullName>Consistently Unresponsive</fullName>
@@ -40270,6 +41870,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -40621,6 +42252,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -42778,6 +44436,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -43574,6 +45339,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -43969,6 +45765,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -46671,6 +48494,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -47564,6 +49494,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -47931,6 +49892,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -50861,6 +52849,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Risk__c</picklist>
             <values>
                 <fullName>Consistently Unresponsive</fullName>
@@ -51701,6 +53796,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -51722,6 +53848,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Close_Reason__c</picklist>
             <values>
                 <fullName>Advisory Involvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bad Opp - Never Connected</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -51754,6 +53884,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Favor Access Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest %2F Not Ready to Buy %28Mktg Nurture%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -52100,6 +54234,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -54850,6 +57011,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Risk__c</picklist>
             <values>
                 <fullName>Consistently Unresponsive</fullName>
@@ -55654,6 +57922,37 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Buying_Process__c</picklist>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CRS_Sent__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -55675,6 +57974,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Close_Reason__c</picklist>
             <values>
                 <fullName>Advisory Involvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bad Opp - Never Connected</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55707,6 +58010,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Favor Access Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest %2F Not Ready to Buy %28Mktg Nurture%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -56041,6 +58348,33 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -58743,6 +61077,113 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions_Covered__c</picklist>
+            <values>
+                <fullName>APAC Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - East Coast Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Southern Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS - Western %2F Resource Markets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS -Government %2F Institutional Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Central Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Prairies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Western Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Atlantic Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA -Northern Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - FR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - GE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - SP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor - UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Country Investor -Nordics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pan Euro Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - East Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Midwest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - National %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Sunbelt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - West Coast</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

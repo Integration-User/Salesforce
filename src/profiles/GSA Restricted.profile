@@ -28476,6 +28476,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Budget_Details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Budget__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Buying_Process__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.CRS_Sent__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29136,6 +29151,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Infra_Sectors_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Initial_Asking_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29727,6 +29747,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Regions_Covered__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
