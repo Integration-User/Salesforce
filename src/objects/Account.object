@@ -8558,6 +8558,14 @@ Owner.Id = $User.Id)</formula>
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>RevOps_Last_Assignment_Date__c</fullName>
+        <inlineHelpText>When was the Account last assigned to a rep</inlineHelpText>
+        <label>RevOps Last Assignment Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Revenue_Size__c</fullName>
         <label>Revenue Size</label>
         <precision>18</precision>
@@ -8565,6 +8573,17 @@ Owner.Id = $User.Id)</formula>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revops_Last_Assigned_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <inlineHelpText>What was the last rep this Account was assigned to?</inlineHelpText>
+        <label>Revops Last Assigned To</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Accounts8</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Risk_Score__c</fullName>
