@@ -1184,6 +1184,21 @@ ISPICKVAL(Delivery_Method__c, &apos;API&apos;)
         <errorMessage>&quot;Delivery method&quot; is required for data delivery products</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Prevent_OLI_Update_Closed_Opp</fullName>
+        <active>true</active>
+        <description>Prevent OLI updates for Closed opportunity.</description>
+        <errorConditionFormula>AND(
+Opportunity.IsClosed = TRUE,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+OR(
+Opportunity.Record_Type_for_Query__c = &quot;Renewal&quot;,
+Opportunity.Record_Type_for_Query__c = &quot;Renewal - Closed&quot;,
+Opportunity.Record_Type_for_Query__c = &quot;Sales Opportunity&quot;,
+Opportunity.Record_Type_for_Query__c = &quot;Sales Opportunity - Closed&quot;)
+)</errorConditionFormula>
+        <errorMessage>You cannot update a product if the opportunity is closed.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Prevent_StartingPrice_Update</fullName>
         <active>true</active>
         <description>IF Starting price ISNULL False then prevent editing of starting price. across all types of opportunities</description>
