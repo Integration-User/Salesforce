@@ -1130,6 +1130,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Implement</label>
                 </value>
+                <value>
+                    <fullName>Track</fullName>
+                    <default>false</default>
+                    <label>Track</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1251,6 +1256,16 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <controllingField>StageName</controllingField>
             <valueSetDefinition>
                 <sorted>false</sorted>
+                <value>
+                    <fullName>Bad Opp - Never Connected</fullName>
+                    <default>false</default>
+                    <label>Bad Opp - Never Connected</label>
+                </value>
+                <value>
+                    <fullName>Interest / Not Ready to Buy (Mktg Nurture)</fullName>
+                    <default>false</default>
+                    <label>Interest / Not Ready to Buy (Mktg Nurture)</label>
+                </value>
                 <value>
                     <fullName>Advisory Involvement</fullName>
                     <default>false</default>
@@ -1497,6 +1512,14 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
                 <valueName>Validating Investment Thesis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Bad Opp - Never Connected</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Interest / Not Ready to Buy (Mktg Nurture)</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
@@ -30471,6 +30494,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Select</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Track</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>CRS_Sent__c</picklist>
@@ -45335,6 +45362,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Select</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Track</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>CRS_Sent__c</picklist>
@@ -49488,6 +49519,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Track</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -53792,6 +53827,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <fullName>Select</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Track</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>CRS_Sent__c</picklist>
@@ -57916,6 +57955,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Select</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Track</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -62044,6 +62087,77 @@ ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
         <errorMessage>Please ensure that Close Reason is populated before marking this Opportunity as closed.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Closed_Lost_Bad_Opp_Interest</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+OR(
+    $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;,
+    $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;),
+    OR(
+ISPICKVAL(Close_Reason__c, &quot;Change of Business Model / Strategy&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Competition&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Economic Impact (e.g. COVID)&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Favor Access Expired&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Lost Product Line(s)&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Market Conditions&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Merger &amp; Acquisition&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Non-coverage&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Product Offering&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Value Equation&quot;),
+ISPICKVAL(Close_Reason__c, &quot;Interest / Not Ready to Buy (Mktg Nurture)&quot;)
+    ),
+    OR(
+         INCLUDES( Regions_Covered__c , &quot;None&quot;),
+        NOT(
+            OR(
+                INCLUDES(Infra_Sectors_Covered__c, &quot;Renewables&quot;),
+                INCLUDES(Infra_Sectors_Covered__c, &quot;Telecom&quot;),
+                INCLUDES(Infra_Sectors_Covered__c, &quot;Transport&quot;),
+                INCLUDES(Infra_Sectors_Covered__c, &quot;Oil and Gas&quot;),
+                INCLUDES(Infra_Sectors_Covered__c, &quot;Social and Defense&quot;),
+                INCLUDES(Infra_Sectors_Covered__c, &quot;Data Center&quot;)
+            )
+        ),
+        NOT(
+            OR(
+                INCLUDES(Sectors_Covered__c, &quot;Apartment&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Cold Storage&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Data Center&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Debt&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Gaming&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Ground Lease&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Health Care&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;RealPage&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Industrial&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Land&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Life Science&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Lodging&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Mall&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Manufactured Housing&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Medical Office Building&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Mortgage Reit&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Multi-Sector&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Net Lease&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Niche&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Office&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Real Assets&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Residential&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Self-Storage&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Senior Housing&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Single Family Rentals&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Skilled Nursing Facility&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Strip Center&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Student Housing&quot;),
+                INCLUDES(Sectors_Covered__c, &quot;Towers&quot;)
+            )
+        )
+    )
+)</errorConditionFormula>
+        <errorMessage>You need to provide the Infra Sectors, Sectors &amp; Regions Covered covered.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Closed_Won_Blank_Billing_Schedule</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -62452,6 +62566,61 @@ Create_New_Renewal_Opportunity__c=TRUE)
         <errorMessage>To ensure a renewal is created, please check &quot;Create New Renewal Opportunity&quot; OR add a Year 2 Amount. If you do not want to create a renewal from this opp, please enter reason why in &quot;Reason for No Renewal&quot;.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>InfraSector_Sectors_Covered</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
+OR(
+$RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+$RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
+),
+OR(
+ISBLANK(Infra_Sectors_Covered__c),
+ISBLANK(Sectors_Covered__c),
+NOT(
+OR(
+INCLUDES(Infra_Sectors_Covered__c, &quot;Renewables&quot;),
+INCLUDES(Infra_Sectors_Covered__c, &quot;Telecom&quot;),
+INCLUDES(Infra_Sectors_Covered__c, &quot;Transport&quot;),
+INCLUDES(Infra_Sectors_Covered__c, &quot;Oil and Gas&quot;),
+INCLUDES(Infra_Sectors_Covered__c, &quot;Social and Defense&quot;),
+INCLUDES(Infra_Sectors_Covered__c, &quot;Data Center&quot;))),
+NOT(
+OR(
+INCLUDES(Sectors_Covered__c, &quot;Apartment&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Cold Storage&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Data Center&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Debt&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Gaming&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Ground Lease&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Health Care&quot;),
+INCLUDES(Sectors_Covered__c, &quot;RealPage&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Industrial&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Land&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Life Science&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Lodging&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Mall&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Manufactured Housing&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Medical Office Building&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Mortgage Reit&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Multi-Sector&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Net Lease&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Niche&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Office&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Real Assets&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Residential&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Self-Storage&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Senior Housing&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Single Family Rentals&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Skilled Nursing Facility&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Strip Center&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Student Housing&quot;),
+INCLUDES(Sectors_Covered__c, &quot;Towers&quot;)
+))))</errorConditionFormula>
+        <errorMessage>You need to provide the Infra Sectors Covered &amp; Sectors Covered fields.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Invalid_Current_Contract_Year</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -62715,6 +62884,31 @@ ISBLANK(Awards__c)
         <errorMessage>Please provide the awards details.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_Buying_Process</fullName>
+        <active>true</active>
+        <description>Require “Buying Process” field be filled out.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISBLANK(TEXT(Buying_Process__c)),
+ISCHANGED(StageName),
+OR(
+RecordType.Name = &quot;Sales Opportunity&quot;,
+RecordType.Name = &quot;Renewal&quot;,
+RecordType.Name = &quot;Sales Development&quot;
+),
+OR(
+ISPICKVAL(StageName, &quot;In Review&quot;),
+ISPICKVAL(StageName, &quot;Qualified&quot;),
+ISPICKVAL(StageName, &quot;3 - Qualifying&quot;),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
+ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
+ISPICKVAL(StageName, &quot;Closed Won&quot;))
+)</errorConditionFormula>
+        <errorDisplayField>Buying_Process__c</errorDisplayField>
+        <errorMessage>Please provide the Buying Process before moving the stage.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Close_Opportunity_Notes</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -62771,10 +62965,9 @@ ISBLANK(Competition__c)
     <validationRules>
         <fullName>Require_Customer_Handoff</fullName>
         <active>true</active>
-        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
     OR(
         $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
         $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
@@ -62782,9 +62975,8 @@ ISBLANK(Competition__c)
     OR(
 LEN(TRIM(Use_Case__c)) = 0,
 LEN(TRIM(How_did_we_win__c)) = 0,
-LEN(TRIM(Markets_Covered__c)) = 0,
+INCLUDES(Regions_Covered__c, &quot;None&quot;),
 ISBLANK(Competition__c),
-ISBLANK(Sectors_Covered__c),
         NOT(
             OR(
                 INCLUDES(Competition__c, &quot;CoStar&quot;),
@@ -62807,39 +62999,6 @@ ISBLANK(Sectors_Covered__c),
                 INCLUDES(Competition__c, &quot;Commercial Observer&quot;),
                 INCLUDES(Competition__c, &quot;Bisnow&quot;),
                 INCLUDES(Competition__c, &quot;Other&quot;)
-            )
-        ),
-        NOT(
-            OR(
-                INCLUDES(Sectors_Covered__c, &quot;Apartment&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Cold Storage&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Data Center&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Debt&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Gaming&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Ground Lease&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Health Care&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;RealPage&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Industrial&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Land&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Life Science&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Lodging&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Mall&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Manufactured Housing&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Medical Office Building&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Mortgage Reit&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Multi-Sector&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Net Lease&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Niche&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Office&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Real Assets&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Residential&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Self-Storage&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Senior Housing&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Single Family Rentals&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Skilled Nursing Facility&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Strip Center&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Student Housing&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Towers&quot;)
             )
         )
     )
