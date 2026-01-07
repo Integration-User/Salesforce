@@ -1446,16 +1446,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Spam</label>
                 </value>
-                <value>
-                    <fullName>No Decision</fullName>
-                    <default>false</default>
-                    <label>No Decision</label>
-                </value>
-                <value>
-                    <fullName>Went Dark</fullName>
-                    <default>false</default>
-                    <label>Went Dark</label>
-                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1485,11 +1475,6 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Spam</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Disqualified</controllingFieldValue>
-                <controllingFieldValue>Closed Lost</controllingFieldValue>
-                <valueName>No Decision</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
@@ -62981,7 +62966,7 @@ ISBLANK(Competition__c)
         <fullName>Require_Customer_Handoff</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
     OR(
         $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
@@ -63016,8 +63001,8 @@ ISBLANK(Competition__c),
                 INCLUDES(Competition__c, &quot;Other&quot;)
             )
         )
-            )
-        )</errorConditionFormula>
+    )
+)</errorConditionFormula>
         <errorMessage>Please fill out the Customer Handoff section before closing the opportunity.</errorMessage>
     </validationRules>
     <validationRules>
