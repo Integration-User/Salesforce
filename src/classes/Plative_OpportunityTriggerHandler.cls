@@ -202,7 +202,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
                 }
                 // END SF-770 Changes */
                 // SF-771 Changes
-                // SF-1616 - Skip Relationship Intelligence Validation for Account Subsidiary as Belgium 22.3 OR Locatus 22.1
+                /* SF-1616 - Skip Relationship Intelligence Validation for Account Subsidiary as Belgium 22.3 OR Locatus 22.1
                 if(!subsidiaryList.contains('22.1 Locatus') && !subsidiaryList.contains('22.3 Belgium') && 
                    (oppty.Win_Validation__c == 'Pending Review' && oldOppty.Win_Validation__c != oppty.Win_Validation__c)
                    && (!relIntelligenceOpp.containsKey(oppty.id) || !relIntelligenceWinOpp.containsKey(oppty.id) 
@@ -213,7 +213,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
                     if(winOppEmptyField.containsKey(oppty.id) && winOppEmptyField.get(oppty.id) != null) errorMessage += string.join(winOppEmptyField.get(oppty.id),' & ');
                     oppty.Win_Validation__c.addError(errorMessage, FALSE);
                 }
-                // END SF-771 Changes
+                // END SF-771 Changes */
             }
             
             
