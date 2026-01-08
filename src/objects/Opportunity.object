@@ -61915,7 +61915,7 @@ ISBLANK(Account.Website))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>BDR_Cannot_Stage_To_Qualified</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
 ISCHANGED(StageName) ,
 ISPICKVAL(StageName, &quot;Qualified&quot;),
@@ -62090,72 +62090,37 @@ ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
         <fullName>Closed_Lost_Bad_Opp_Interest</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISPICKVAL(StageName, &quot;Closed Lost&quot;),
-OR(
-    $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;,
-    $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;),
     OR(
-ISPICKVAL(Close_Reason__c, &quot;Change of Business Model / Strategy&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Competition&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Economic Impact (e.g. COVID)&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Favor Access Expired&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Lost Product Line(s)&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Market Conditions&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Merger &amp; Acquisition&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Non-coverage&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Product Offering&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Value Equation&quot;),
-ISPICKVAL(Close_Reason__c, &quot;Interest / Not Ready to Buy (Mktg Nurture)&quot;)
+        $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;,
+        $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;
     ),
+
     OR(
-         INCLUDES( Regions_Covered__c , &quot;None&quot;),
-        NOT(
-            OR(
-                INCLUDES(Infra_Sectors_Covered__c, &quot;Renewables&quot;),
-                INCLUDES(Infra_Sectors_Covered__c, &quot;Telecom&quot;),
-                INCLUDES(Infra_Sectors_Covered__c, &quot;Transport&quot;),
-                INCLUDES(Infra_Sectors_Covered__c, &quot;Oil and Gas&quot;),
-                INCLUDES(Infra_Sectors_Covered__c, &quot;Social and Defense&quot;),
-                INCLUDES(Infra_Sectors_Covered__c, &quot;Data Center&quot;)
-            )
-        ),
-        NOT(
-            OR(
-                INCLUDES(Sectors_Covered__c, &quot;Apartment&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Cold Storage&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Data Center&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Debt&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Gaming&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Ground Lease&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Health Care&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;RealPage&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Industrial&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Land&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Life Science&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Lodging&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Mall&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Manufactured Housing&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Medical Office Building&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Mortgage Reit&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Multi-Sector&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Net Lease&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Niche&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Office&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Real Assets&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Residential&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Self-Storage&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Senior Housing&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Single Family Rentals&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Skilled Nursing Facility&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Strip Center&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Student Housing&quot;),
-                INCLUDES(Sectors_Covered__c, &quot;Towers&quot;)
-            )
+        ISPICKVAL(Close_Reason__c, &quot;Change of Business Model / Strategy&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Competition&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Economic Impact (e.g. COVID)&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Favor Access Expired&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Lost Product Line(s)&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Market Conditions&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Merger &amp; Acquisition&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Non-coverage&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Product Offering&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Value Equation&quot;),
+        ISPICKVAL(Close_Reason__c, &quot;Interest / Not Ready to Buy (Mktg Nurture)&quot;)
+    ),
+
+    OR(
+        ISBLANK(Regions_Covered__c),
+        INCLUDES(Regions_Covered__c, &quot;None&quot;),
+        AND(
+            ISBLANK(Sectors_Covered__c),
+            ISBLANK(Infra_Sectors_Covered__c)
         )
     )
 )</errorConditionFormula>
-        <errorMessage>You need to provide the Infra Sectors, Sectors &amp; Regions Covered covered.</errorMessage>
+        <errorMessage>You need to provide the Regions Covered , as well as either Sectors Covered OR Infra Sectors Covered</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Closed_Won_Blank_Billing_Schedule</fullName>
@@ -63011,9 +62976,13 @@ ISBLANK(Competition__c),
         <errorConditionFormula>AND(
 ISNEW(),
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$UserRole.Name &lt;&gt;&quot;Outbound BDR&quot;,
+$UserRole.Name &lt;&gt;&quot;Inbound BDR&quot;,
+NOT(ISPICKVAL(LeadSource, &quot;Referral&quot;)), 
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISBLANK( Discovery_Meeting_Scheduled_Date__c )
 )</errorConditionFormula>
+        <errorDisplayField>Discovery_Meeting_Scheduled_Date__c</errorDisplayField>
         <errorMessage>Discovery Meeting Scheduled Date is required upon creation.</errorMessage>
     </validationRules>
     <validationRules>
