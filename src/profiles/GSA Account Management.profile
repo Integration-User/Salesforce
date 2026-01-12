@@ -17629,6 +17629,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.RevOps_Assigned_Date_History__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.RevOps_Assignment_Notes__c</field>
         <readable>true</readable>
@@ -17641,6 +17646,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.RevOps_ICP_Parent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.RevOps_Last_Assigned__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
