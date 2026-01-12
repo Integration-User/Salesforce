@@ -62091,6 +62091,7 @@ ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
         <active>true</active>
         <errorConditionFormula>AND(
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISCHANGED(StageName),
     ISPICKVAL(StageName, &quot;Closed Lost&quot;),
     OR(
         $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;,
@@ -62120,7 +62121,7 @@ ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
         )
     )
 )</errorConditionFormula>
-        <errorMessage>You need to provide the Regions Covered , as well as either Sectors Covered OR Infra Sectors Covered</errorMessage>
+        <errorMessage>You need to provide the Regions Covered,cas well as either Sectors Covered OR Infra Sectors Covered.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Closed_Won_Blank_Billing_Schedule</fullName>
