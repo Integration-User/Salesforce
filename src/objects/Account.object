@@ -8527,9 +8527,28 @@ Owner.Id = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>RevOps_Assigned_Date_History__c</fullName>
+        <description>Automatically updated with RevOps Last Assignment Date every owner change.</description>
+        <label>RevOps Assigned Date History</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>RevOps_Assignment_Notes__c</fullName>
         <externalId>false</externalId>
         <label>RevOps Assignment Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RevOps_ICP_Parent_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>RevOps ICP Parent(Text)</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -8546,6 +8565,16 @@ Owner.Id = $User.Id)</formula>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RevOps_Last_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <label>RevOps Last Assigned</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>RevOps_Last_Assignment_Date__c</fullName>
@@ -8568,11 +8597,11 @@ Owner.Id = $User.Id)</formula>
         <fullName>Revops_Last_Assigned_To__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <inlineHelpText>What was the last rep this Account was assigned to?</inlineHelpText>
-        <label>Revops Last Assigned To</label>
+        <label>RevOps Last Assigned To</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Accounts8</relationshipName>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
