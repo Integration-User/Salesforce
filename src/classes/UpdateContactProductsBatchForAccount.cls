@@ -7,7 +7,7 @@ public class UpdateContactProductsBatchForAccount implements Database.Batchable<
     }
 
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        return Database.getQueryLocator([SELECT Id, Current_Products__c, Account.Current_Products__c FROM Contact WHERE AccountId IN :accountIds]);
+        return Database.getQueryLocator([SELECT Id, Current_Products__c, Account.Current_Products__c FROM Contact WHERE AccountId IN :accountIds AND Contact_Status__c = 'Active']);
     }
 
     public void execute(Database.BatchableContext bc, List<Contact> contacts) {
@@ -30,7 +30,7 @@ public class UpdateContactProductsBatchForAccount implements Database.Batchable<
     public void finish(Database.BatchableContext bc) {
         if (!errors.isEmpty() || Test.isrunningtest()) {
             Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-            mail.setToAddresses(new List<String>{UserInfo.getUserEmail()});
+            mail.setToAddresses(new List<String>{'mgupta@greenstreet.com'});
             mail.setSubject('Batch Update Errors');
             mail.setPlainTextBody('The following errors occurred during contact update:\n' + String.join(errors, '\n'));
             Messaging.sendEmail(new List<Messaging.SingleEmailMessage>{mail});
