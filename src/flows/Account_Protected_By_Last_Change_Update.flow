@@ -2,36 +2,6 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <assignments>
-        <name>Update_Contact_Acc_Name</name>
-        <label>Update Contact Acc Name</label>
-        <locationX>721</locationX>
-        <locationY>1763</locationY>
-        <assignmentItems>
-            <assignToReference>Contact.Id</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Contacts.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Contact.Current_Products__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Current_Products__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>ContactList</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Contact</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Through_Contacts</targetReference>
-        </connector>
-    </assignments>
     <decisions>
         <name>Became_Research_Client</name>
         <label>Became Research Client</label>
@@ -69,28 +39,6 @@
                 <targetReference>Update_Became_Client_Research</targetReference>
             </connector>
             <label>Research Client - True</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Change_in_Current_Product_Decision</name>
-        <label>Change in Current Product Decision</label>
-        <locationX>831</locationX>
-        <locationY>1439</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_Current_Product_Change</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Current_Products__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_All_Contacts</targetReference>
-            </connector>
-            <label>Yes - Current Product Change</label>
         </rules>
     </decisions>
     <decisions>
@@ -205,9 +153,6 @@
         <label>Protected By field update</label>
         <locationX>534</locationX>
         <locationY>1331</locationY>
-        <defaultConnector>
-            <targetReference>Change_in_Current_Product_Decision</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Protected_By_field_is_changed</name>
@@ -223,28 +168,6 @@
                 <targetReference>Update_Protected_By_Last_Change</targetReference>
             </connector>
             <label>Protected By field is changed</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Update_Contact_List_Not_Empty</name>
-        <label>Update Contact List Not Empty</label>
-        <locationX>633</locationX>
-        <locationY>1955</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>ContactList</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Product_Name_On_Contact</targetReference>
-            </connector>
-            <label>Yes</label>
         </rules>
     </decisions>
     <description>SF-546: Flow to time stamp Protected By Last Change
@@ -274,20 +197,6 @@ SF-775: PB Migration</description>
     </formulas>
     <interviewLabel>Account {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account Protected By Last Change Update</label>
-    <loops>
-        <name>Loop_Through_Contacts</name>
-        <label>Loop Through Contacts</label>
-        <locationX>633</locationX>
-        <locationY>1655</locationY>
-        <collectionReference>Get_All_Contacts</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Update_Contact_Acc_Name</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Update_Contact_List_Not_Empty</targetReference>
-        </noMoreValuesConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -307,34 +216,6 @@ SF-775: PB Migration</description>
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordLookups>
-        <name>Get_All_Contacts</name>
-        <label>Get All Contacts</label>
-        <locationX>633</locationX>
-        <locationY>1547</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Loop_Through_Contacts</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>AccountId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Contact_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Active</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Contact</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <recordLookups>
         <name>Get_Opportunity</name>
         <label>Get Opportunity</label>
@@ -421,16 +302,9 @@ SF-775: PB Migration</description>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Product_Name_On_Contact</name>
-        <label>Update Product Name On Contact</label>
-        <locationX>501</locationX>
-        <locationY>2063</locationY>
-        <inputReference>ContactList</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Protected_By_Last_Change</name>
         <label>Update Protected By Last Change</label>
-        <locationX>237</locationX>
+        <locationX>402</locationX>
         <locationY>1439</locationY>
         <filterLogic>and</filterLogic>
         <filters>

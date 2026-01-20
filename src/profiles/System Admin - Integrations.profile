@@ -3458,6 +3458,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UpdateContactProductsBatchForAccount</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateContactProductsBatchForAccountTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UpdateExcelAddINUsersOnAccountBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16355,6 +16363,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Account_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Account_Source__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17689,6 +17702,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.RevOps_Assigned_Date_History__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.RevOps_Assignment_Notes__c</field>
         <readable>true</readable>
@@ -17701,6 +17719,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.RevOps_ICP_Parent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.RevOps_Last_Assigned__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -29419,7 +29442,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Opportunity.Marketing_Product_of_Interest__c</field>
         <readable>true</readable>
     </fieldPermissions>

@@ -83,7 +83,8 @@ public class Plative_AccountProductLineTriggerHelper {
             //SF-798 - Bulkify Email Distro assignment upon Product Addition
             //Database.insert(accountEmailDistributionInsertList, false);
             if(accountEmailDistributionInsertList.size() > 0){
-                database.executeBatch(new AccountEmailDistributionInsertBatch(accountEmailDistributionInsertList), 10); // Calling batch class.
+                String batchSize = System_Configuration__mdt.getInstance('AccountEmailDistributionBatchSize').Value__c;
+                database.executeBatch(new AccountEmailDistributionInsertBatch(accountEmailDistributionInsertList), Integer.valueOf(batchSize)); // Calling batch class.
             }
             return true;
         } catch(Exception ex){
