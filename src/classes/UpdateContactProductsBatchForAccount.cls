@@ -30,7 +30,7 @@ public class UpdateContactProductsBatchForAccount implements Database.Batchable<
     public void finish(Database.BatchableContext bc) {
         if (!errors.isEmpty() || Test.isrunningtest()) {
             Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-            mail.setToAddresses(new List<String>{UserInfo.getUserEmail()});
+            mail.setToAddresses(new List<String>{'mgupta@greenstreet.com'});
             mail.setSubject('Batch Update Errors');
             mail.setPlainTextBody('The following errors occurred during contact update:\n' + String.join(errors, '\n'));
             Messaging.sendEmail(new List<Messaging.SingleEmailMessage>{mail});
