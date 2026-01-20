@@ -6,7 +6,7 @@ public class UpdateContactProductsBatchForAccountTest {
         Account acc = new Account(Name = 'Test Account', Current_Products__c = 'US Portfolio Tools');
         insert acc;
 
-        Contact con1 = new Contact(LastName = 'Test Contact 1', AccountId = acc.Id, Current_Products__c = 'US Detailed NAV');
+        Contact con1 = new Contact(LastName = 'Test Contact 1', AccountId = acc.Id, Current_Products__c = 'US Detailed NAV', Contact_Status__c = 'Active');
         Contact con2 = new Contact(LastName = 'Test Contact 2', AccountId = acc.Id, Current_Products__c = 'US Detailed NAV');
         insert new List<Contact>{con1, con2};
 
