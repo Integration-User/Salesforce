@@ -12,12 +12,14 @@ public class Plative_AccountTriggerHandler{
 	public static Boolean beforeInsertRun = false;
     public static Boolean isOwnerChanged = false;
     public static Boolean isAccountTriggerSkip = false;
+    public static Boolean isCurrentProductUpdated = false;
 
 	/**
 	* Description : after update DML
 	**/	
 	public static void afterUpdate(Map<Id, Account> mapOldAcc, Map<Id, Account> mapNewAcc){
         List<Id> deactivatedAccountIds = new List<Id>();
+        Set<Id> accountIdsToProcess = new Set<Id>();
 		if (!Plative_AccountTriggerHandler.afterUpdateRun) {
 			Boolean isSuccess = Plative_AccountTriggerHelper.syncRecordsToNS(mapOldAcc,mapNewAcc);
 			Plative_AccountTriggerHandler.afterUpdateRun = true;
@@ -30,6 +32,9 @@ public class Plative_AccountTriggerHandler{
                 }
                 if(acc.Account_Status__c != 'Active' && acc.Account_Status__c != mapOldAcc.get(acc.Id).Account_Status__c) {
                     deactivatedAccountIds.add(acc.Id);
+                }
+                if (acc.Current_Products__c != mapOldAcc.get(acc.Id).Current_Products__c) {
+                    accountIdsToProcess.add(acc.Id);
                 }
             }
             // SF-798 - Getting Record Lock issue due to this batch class
@@ -53,6 +58,11 @@ public class Plative_AccountTriggerHandler{
         system.debug('deactivatedAccountIds->'+deactivatedAccountIds);
         if(deactivatedAccountIds.size() > 0 && !System.isBatch() && !System.isFuture()) {
             Database.executeBatch(new RemoveAccountEmailDistributionBatch(deactivatedAccountIds), 1);
+        }
+        system.debug('accountIdsToProcess->'+accountIdsToProcess);
+        if (!accountIdsToProcess.isEmpty() && !isCurrentProductUpdated) {
+            isCurrentProductUpdated = true;
+            Database.executeBatch(new UpdateContactProductsBatchForAccount(accountIdsToProcess), 20);
         }
         
 	}
