@@ -7,7 +7,7 @@ public class UpdateContactProductsBatchForAccount implements Database.Batchable<
     }
 
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        return Database.getQueryLocator([SELECT Id, Current_Products__c, Account.Current_Products__c FROM Contact WHERE AccountId IN :accountIds]);
+        return Database.getQueryLocator([SELECT Id, Current_Products__c, Account.Current_Products__c FROM Contact WHERE AccountId IN :accountIds AND Contact_Status__c = 'Active']);
     }
 
     public void execute(Database.BatchableContext bc, List<Contact> contacts) {
