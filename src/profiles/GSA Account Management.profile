@@ -3027,11 +3027,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_AccountEmailDistributionHelper</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_AccountEmailDistributionTrgTest</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_AccountProductLineTriggerHandler</apexClass>
@@ -3039,15 +3039,15 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_AccountProductLineTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_AccountProductLineTriggerTest</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_AccountTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_AccountTriggerHelper</apexClass>
@@ -3091,7 +3091,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_ContactTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_ContactTriggerHelper</apexClass>
@@ -3119,7 +3119,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_DeActivateUserQueueableTest</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Plative_EmailDistributionCtrl</apexClass>
@@ -3435,6 +3435,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>UpdateContactOwnerWithAccountOwner</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateContactProductsBatchForAccount</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateContactProductsBatchForAccountTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -60714,10 +60722,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

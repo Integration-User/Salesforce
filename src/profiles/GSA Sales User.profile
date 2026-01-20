@@ -3416,6 +3416,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UpdateContactProductsBatchForAccount</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateContactProductsBatchForAccountTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UpdateExcelAddINUsersOnAccountBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
