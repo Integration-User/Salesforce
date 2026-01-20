@@ -59,6 +59,11 @@ public class Plative_AccountTriggerHandler{
         if(deactivatedAccountIds.size() > 0 && !System.isBatch() && !System.isFuture()) {
             Database.executeBatch(new RemoveAccountEmailDistributionBatch(deactivatedAccountIds), 1);
         }
+        for (Account acc : mapNewAcc.values()) {
+            if (acc.Current_Products__c != mapOldAcc.get(acc.Id).Current_Products__c) {
+                accountIdsToProcess.add(acc.Id);
+            }
+        }
         system.debug('accountIdsToProcess->'+accountIdsToProcess);
         if (!accountIdsToProcess.isEmpty() && !isCurrentProductUpdated) {
             isCurrentProductUpdated = true;
