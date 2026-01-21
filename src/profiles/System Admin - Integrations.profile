@@ -17230,6 +17230,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Infra_Sectors_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Interests__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17675,6 +17680,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Regions_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Renewal_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17711,6 +17721,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.RevOps_ICP_Parent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.RevOps_ICP_Score_cumulative__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -29156,6 +29171,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.How_did_we_win__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.ICP_Account_at_time_of_Booking__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

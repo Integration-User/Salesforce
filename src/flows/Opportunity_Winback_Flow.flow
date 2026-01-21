@@ -33,6 +33,88 @@
         </connector>
     </assignments>
     <decisions>
+        <name>Check_Account_ICP_Score</name>
+        <label>Check Account ICP Score</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Former_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ICP_Score_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.RevOps_ICP_Score_cumulative__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6 - Verbal Win and Finalizing Contract</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ICP_Account_at_time_of_Booking__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_ICP_Booking</targetReference>
+            </connector>
+            <label>ICP Score &gt; 0</label>
+        </rules>
+        <rules>
+            <name>ICP_LessthanZero</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.RevOps_ICP_Score_cumulative__c</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6 - Verbal Win and Finalizing Contract</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ICP_Account_at_time_of_Booking__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_Update_ICP_Booking</targetReference>
+            </connector>
+            <label>ICP Score &lt;= 0</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Former_Account</name>
         <label>Former Account</label>
         <locationX>0</locationX>
@@ -183,6 +265,38 @@
         <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordUpdates>
+        <name>No_Update_ICP_Booking</name>
+        <label>No - Update ICP Booking</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Former_Account</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ICP_Account_at_time_of_Booking__c</field>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_ICP_Booking</name>
+        <label>Yes - Update ICP Booking</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Former_Account</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ICP_Account_at_time_of_Booking__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_New_Winback</name>
         <label>Update New Winback</label>
         <locationX>0</locationX>
@@ -209,7 +323,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Former_Account</targetReference>
+            <targetReference>Check_Account_ICP_Score</targetReference>
         </connector>
         <filterFormula>OR(
 {!$Record.RecordType.DeveloperName} = &apos;Sales_Opportunity&apos;,
