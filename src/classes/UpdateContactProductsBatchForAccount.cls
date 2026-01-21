@@ -7,18 +7,26 @@ public class UpdateContactProductsBatchForAccount implements Database.Batchable<
     }
 
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        return Database.getQueryLocator([SELECT Id, Current_Products__c, Account.Current_Products__c FROM Contact WHERE AccountId IN :accountIds AND Contact_Status__c = 'Active']);
+        return Database.getQueryLocator([SELECT Id, Current_Products__c, Account.Current_Products__c FROM Contact 
+                                         WHERE AccountId IN :accountIds AND Contact_Status__c = 'Active']);
     }
 
     public void execute(Database.BatchableContext bc, List<Contact> contacts) {
-        for (Contact c : contacts) {
-            c.Current_Products__c = c.Account.Current_Products__c;
+        Set<Id> conIds = New Set<Id>();
+        List<Contact> conList = New List<Contact>();
+        for (Contact con : contacts) {
+            conIds.add(con.Id);
+            //c.Current_Products__c = c.Account.Current_Products__c;
+        }
+        for (Contact con : [SELECT Id, Current_Products__c, Account.Current_Products__c FROM Contact WHERE Id IN :conIds FOR UPDATE]) {
+            con.Current_Products__c = con.Account.Current_Products__c;
+            conList.add(con);
         }
         Plative_ContactTriggerHandler.isContactTriggerSkip = true;
-        List<Database.SaveResult> results = Database.update(contacts, false);
+        List<Database.SaveResult> results = Database.update(conList, false);
         for (Integer i = 0; i < results.size(); i++) {
             if (!results[i].isSuccess()) {
-                String errorMsg = 'Contact ID: ' + contacts[i].Id + ' - ';
+                String errorMsg = 'Contact ID: ' + conList[i].Id + ' - ';
                 for (Database.Error err : results[i].getErrors()) {
                     errorMsg += err.getMessage() + '; ';
                 }
