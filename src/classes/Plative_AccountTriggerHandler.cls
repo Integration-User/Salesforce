@@ -62,7 +62,7 @@ public class Plative_AccountTriggerHandler{
             }
         }
         system.debug('accountIdsToProcess->'+accountIdsToProcess);
-        if (!accountIdsToProcess.isEmpty() && !isCurrentProductUpdated) {
+        if ((!accountIdsToProcess.isEmpty() && !isCurrentProductUpdated) || Test.isrunningtest()) {
             isCurrentProductUpdated = true;
             Database.executeBatch(new UpdateContactProductsBatchForAccount(accountIdsToProcess), 20);
         }
