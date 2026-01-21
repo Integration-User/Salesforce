@@ -11,12 +11,14 @@ public class Plative_AccountEmailDistributionHelper {
         
         //AccountId Set from the inserted Email Distribution
         Set<Id> accountIdSet = new Set<Id>();
+        Set<String> distributionName = new Set<String>();
         for(Account_Email_Distribution__c emailDistribution: triggerNew){
             accountIdSet.add(emailDistribution.Account__c);
+            distributionName.add(emailDistribution.Name);
         }
         
         //Get active related contacts from the AccountId Set along with the email distributions
-        List<Contact> contactList = [Select Id,AccountId,(Select Id,Email_Distribution__c,Opt_Out__c from Contact_Email_Distributions__r)
+        List<Contact> contactList = [Select Id,AccountId,(Select Id,Email_Distribution__c,Opt_Out__c from Contact_Email_Distributions__r Where Name IN :distributionName)
                                      from Contact where AccountId IN :accountIdSet];
         
         //Map of AccountId Vs Contact List

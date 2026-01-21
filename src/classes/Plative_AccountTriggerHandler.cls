@@ -12,12 +12,14 @@ public class Plative_AccountTriggerHandler{
 	public static Boolean beforeInsertRun = false;
     public static Boolean isOwnerChanged = false;
     public static Boolean isAccountTriggerSkip = false;
+    public static Boolean isCurrentProductUpdated = false;
 
 	/**
 	* Description : after update DML
 	**/	
 	public static void afterUpdate(Map<Id, Account> mapOldAcc, Map<Id, Account> mapNewAcc){
         List<Id> deactivatedAccountIds = new List<Id>();
+        Set<Id> accountIdsToProcess = new Set<Id>();
 		if (!Plative_AccountTriggerHandler.afterUpdateRun) {
 			Boolean isSuccess = Plative_AccountTriggerHelper.syncRecordsToNS(mapOldAcc,mapNewAcc);
 			Plative_AccountTriggerHandler.afterUpdateRun = true;
@@ -53,6 +55,16 @@ public class Plative_AccountTriggerHandler{
         system.debug('deactivatedAccountIds->'+deactivatedAccountIds);
         if(deactivatedAccountIds.size() > 0 && !System.isBatch() && !System.isFuture()) {
             Database.executeBatch(new RemoveAccountEmailDistributionBatch(deactivatedAccountIds), 1);
+        }
+        for (Account acc : mapNewAcc.values()) {
+            if (acc.Current_Products__c != mapOldAcc.get(acc.Id).Current_Products__c) {
+                accountIdsToProcess.add(acc.Id);
+            }
+        }
+        system.debug('accountIdsToProcess->'+accountIdsToProcess);
+        if ((!accountIdsToProcess.isEmpty() && !isCurrentProductUpdated) || Test.isrunningtest()) {
+            isCurrentProductUpdated = true;
+            Database.executeBatch(new UpdateContactProductsBatchForAccount(accountIdsToProcess), 20);
         }
         
 	}

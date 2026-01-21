@@ -3458,6 +3458,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UpdateContactProductsBatchForAccount</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateContactProductsBatchForAccountTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UpdateExcelAddINUsersOnAccountBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -17585,6 +17593,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.RevOps_Assigned_Date_History__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.RevOps_ICP_Parent_Text__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
