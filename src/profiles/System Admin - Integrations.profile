@@ -17111,6 +17111,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.RevOps_ICP_Score_cumulative__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.RevOps_Last_Assigned__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -28437,6 +28442,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.How_did_we_win__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.ICP_Account_at_time_of_Booking__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
