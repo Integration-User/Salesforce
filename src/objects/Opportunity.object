@@ -3055,6 +3055,30 @@ IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Infrastructure&quot;), 7500,
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>ICP_Account_at_time_of_Booking__c</fullName>
+        <label>ICP Account at time of Booking</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>ID_Request__c</fullName>
         <label>ID Request</label>
         <required>false</required>
@@ -10833,6 +10857,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ID_Request__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -14787,6 +14822,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Regional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18777,6 +18823,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ID_Request__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -22611,6 +22668,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Regional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -26577,6 +26645,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Regional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -30867,6 +30946,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ID_Request__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -34885,6 +34975,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ID_Request__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -38579,6 +38680,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ID_Request__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -42214,6 +42326,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ID_Request__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -45727,6 +45850,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Regional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49858,6 +49992,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Regional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -54208,6 +54353,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ID_Request__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -58326,6 +58482,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>ICP_Account_at_time_of_Booking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ID_Request__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -62132,7 +62299,7 @@ ISPICKVAL(Close_Reason__c, &quot;Interest / Not Ready to Buy (Mktg Nurture)&quot
         )
     )
 )</errorConditionFormula>
-        <errorMessage>You need to provide the Regions Covered,cas well as either Sectors Covered OR Infra Sectors Covered.</errorMessage>
+        <errorMessage>You need to provide the Regions Covered, as well as either Sectors Covered OR Infra Sectors Covered.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Closed_Won_Blank_Billing_Schedule</fullName>
@@ -63098,22 +63265,22 @@ ISBLANK(Sales_Owner__c)
         <fullName>Require_Sector_Markets_Covered</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
-    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISPICKVAL(StageName, &quot;Closed Won&quot;),
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     OR(
         $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
         $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
     ),
     OR(
-        ISBLANK(Account.Interests__c),
-        ISBLANK(Account.Markets_Covered__c)
+        ISBLANK(Account.Regions_Covered__c ),
+        ISBLANK(Account.Infra_Sectors_Covered__c)
     ),
     OR(
-        LEN(TRIM(Markets_Covered__c)) = 0,
-        ISBLANK(Sectors_Covered__c)
+        ISBLANK(Markets_Covered__c),
+        ISBLANK(Infra_Sectors_Covered__c)
     )
 )</errorConditionFormula>
-        <errorMessage>Sectors / Markets Covered are required if the fields from the account level are blank.</errorMessage>
+        <errorMessage>Regions Covered and Infra Sectors Covered are required if the fields from the account level are blank.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Trial_Type</fullName>
