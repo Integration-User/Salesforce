@@ -8539,6 +8539,20 @@ Owner.Id = $User.Id)</formula>
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>RevOps_ICP_Score_cumulative__c</fullName>
+        <description>Calculate all ICP Scores.</description>
+        <externalId>false</externalId>
+        <formula>ICP_Score_CRE_GP_Investors__c + ICP_Score_CRE_Platform__c + ICP_Score_CRE_Service_Providers__c + ICP_Score_Infra_GP_Investors__c + ICP_Score_Infra_Investors__c + ICP_Score_Infra_Service_Providers__c + ICP_Score_Retail__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RevOps ICP Score (cumulative)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>RevOps_Last_Assigned__c</fullName>
         <externalId>false</externalId>
         <label>RevOps Last Assigned</label>
