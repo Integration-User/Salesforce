@@ -20,6 +20,50 @@
     <apiVersion>59.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <name>Assignment_2</name>
+        <label>Assignment 2</label>
+        <locationX>534</locationX>
+        <locationY>1487</locationY>
+        <assignmentItems>
+            <assignToReference>OpportunityContactRole.OpportunityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>sales_OppId_Var</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityContactRole.Role</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Check_Contact_Role.Role</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityContactRole.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Check_Contact_Role.ContactId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityContactRole.IsPrimary</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Check_Contact_Role.IsPrimary</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ListOfOpportunityContactRole</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>OpportunityContactRole</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Contact_Role</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>update_Sales_Type</name>
         <label>update Sales Type</label>
         <locationX>314</locationX>
@@ -83,6 +127,28 @@
                 <targetReference>Get_Record_Type</targetReference>
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Contact_Role_Exits</name>
+        <label>Is Contact Role Exits</label>
+        <locationX>446</locationX>
+        <locationY>1679</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Contact_Role_Exits</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ListOfOpportunityContactRole</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Contact_Role_For_New_Opp</targetReference>
+            </connector>
             <label>Yes</label>
         </rules>
     </decisions>
@@ -266,6 +332,20 @@
     </formulas>
     <interviewLabel>Sales Development Opportunity Conversion {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Sales Development Opportunity Conversion</label>
+    <loops>
+        <name>Check_Contact_Role</name>
+        <label>Check Contact Role</label>
+        <locationX>446</locationX>
+        <locationY>1379</locationY>
+        <collectionReference>SDO_Contact_Roles</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assignment_2</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Is_Contact_Role_Exits</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -285,6 +365,13 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Contact_Role_For_New_Opp</name>
+        <label>Create Contact Role For New Opp</label>
+        <locationX>314</locationX>
+        <locationY>1787</locationY>
+        <inputReference>ListOfOpportunityContactRole</inputReference>
+    </recordCreates>
     <recordCreates>
         <name>Create_Sales_Opportunity</name>
         <label>Create Sales Opportunity</label>
@@ -331,33 +418,15 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Discovery_Meeting_Scheduled_Date__c</field>
-            <value>
-                <elementReference>$Record.Discovery_Meeting_Scheduled_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Inbound__c</field>
             <value>
                 <elementReference>$Record.Inbound__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Initial_Meeting_Organizer__c</field>
-            <value>
-                <elementReference>$Record.Initial_Meeting_Organizer__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LeadSource</field>
             <value>
                 <elementReference>$Record.LeadSource</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead_Contact__c</field>
-            <value>
-                <elementReference>$Record.Lead_Contact__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -492,21 +561,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Initial_Meeting_Organizer__c</field>
-            <value>
-                <elementReference>$Record.Initial_Meeting_Organizer__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LeadSource</field>
             <value>
                 <elementReference>$Record.LeadSource</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead_Contact__c</field>
-            <value>
-                <elementReference>$Record.Lead_Contact__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -604,6 +661,27 @@
         <object>RecordType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>SDO_Contact_Roles</name>
+        <label>SDO Contact Roles</label>
+        <locationX>446</locationX>
+        <locationY>1271</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Contact_Role</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityContactRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_AM_SDO_Referral</name>
         <label>Update AM SDO Referral</label>
@@ -650,6 +728,9 @@
         <label>Update Sales Oppty Field</label>
         <locationX>446</locationX>
         <locationY>1163</locationY>
+        <connector>
+            <targetReference>SDO_Contact_Roles</targetReference>
+        </connector>
         <inputAssignments>
             <field>New_Sales_Opportunity__c</field>
             <value>
@@ -716,6 +797,22 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ListOfOpportunityContactRole</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityContactRole</objectType>
+    </variables>
+    <variables>
+        <name>OpportunityContactRole</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityContactRole</objectType>
     </variables>
     <variables>
         <name>sales_OppId_Var</name>
