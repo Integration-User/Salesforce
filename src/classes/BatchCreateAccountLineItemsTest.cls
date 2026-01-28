@@ -4,7 +4,7 @@ public class BatchCreateAccountLineItemsTest {
     static void setup() {
         // Create test Accounts
         List<Account> accounts = new List<Account>();
-            accounts.add(new Account(Name = 'Test Account ' + i, CurrencyIsoCode = 'USD'));
+            accounts.add(new Account(Name = 'Test Account ', CurrencyIsoCode = 'USD'));
         insert accounts;
 
         // Create test Products
