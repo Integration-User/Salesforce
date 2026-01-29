@@ -4,7 +4,7 @@ public class BatchCreateAccountLineItemsTest {
     static void setup() {
         // Create test Accounts
         List<Account> accounts = new List<Account>();
-            accounts.add(new Account(Name = 'Test Account ', CurrencyIsoCode = 'USD'));
+        accounts.add(new Account(Name = 'Test Account ', CurrencyIsoCode = 'USD'));
         insert accounts;
 
         // Create test Products
@@ -41,7 +41,7 @@ public class BatchCreateAccountLineItemsTest {
         
         Test.startTest();
         BatchCreateAccountLineItems batch = new BatchCreateAccountLineItems();
-        Database.executeBatch(batch, 1);
+        Database.executeBatch(batch, 2);
         Test.stopTest();
 
         // Assert Account_Product_Line__c records were created
@@ -60,7 +60,7 @@ public class BatchCreateAccountLineItemsTest {
 
         Test.startTest();
         BatchCreateAccountLineItems batch = new BatchCreateAccountLineItems();
-        Database.executeBatch(batch, 1);
+        Database.executeBatch(batch, 2);
         Test.stopTest();
         // No unhandled exception should occur
         System.assert(true, 'Batch should handle exceptions gracefully');
@@ -79,7 +79,7 @@ public class BatchCreateAccountLineItemsTest {
 
         Test.startTest();
         BatchCreateAccountLineItems batch = new BatchCreateAccountLineItems();
-        Database.executeBatch(batch, 1);
+        Database.executeBatch(batch, 2);
         Test.stopTest();
 
         // Assert no Account_Product_Line__c records were created for null Account
