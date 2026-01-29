@@ -1446,6 +1446,16 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Spam</label>
                 </value>
+                <value>
+                    <fullName>Initial Meeting Not Completed</fullName>
+                    <default>false</default>
+                    <label>Initial Meeting Not Completed</label>
+                </value>
+                <value>
+                    <fullName>Current Client - CS Request</fullName>
+                    <default>false</default>
+                    <label>Current Client - CS Request</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1475,6 +1485,15 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Spam</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Disqualified</controllingFieldValue>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Initial Meeting Not Completed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Disqualified</controllingFieldValue>
+                <valueName>Current Client - CS Request</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
@@ -30635,11 +30654,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Current Client - CS Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Due Diligence</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Economic Impact %28e%2Eg%2E COVID%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Meeting Not Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -45547,11 +45574,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Current Client - CS Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Due Diligence</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Economic Impact %28e%2Eg%2E COVID%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Meeting Not Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -49697,7 +49732,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
-                <fullName>No Decision</fullName>
+                <fullName>Current Client - CS Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Meeting Not Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -49722,10 +49761,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Unreachable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -54034,6 +54069,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Current Client - CS Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Due Diligence</fullName>
                 <default>false</default>
             </values>
@@ -54043,6 +54082,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Favor Access Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Meeting Not Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -54063,10 +54106,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Merger %26 Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No Decision</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -54099,10 +54138,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -58175,6 +58210,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Current Client - CS Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Due Diligence</fullName>
                 <default>false</default>
             </values>
@@ -58184,6 +58223,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Favor Access Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Meeting Not Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -58200,10 +58243,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Merger %26 Acquisition</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No Decision</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -58228,10 +58267,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Value Equation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Went Dark</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
