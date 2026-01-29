@@ -33,9 +33,6 @@ public class Plative_AccountTriggerHandler{
                 if(acc.Account_Status__c != 'Active' && acc.Account_Status__c != mapOldAcc.get(acc.Id).Account_Status__c) {
                     deactivatedAccountIds.add(acc.Id);
                 }
-                if (acc.Current_Products__c != mapOldAcc.get(acc.Id).Current_Products__c) {
-                    accountIdsToProcess.add(acc.Id);
-                }
             }
             // SF-798 - Getting Record Lock issue due to this batch class
             // if (isContactUpdated) Database.executeBatch(new Batch_UpdateContactCurrentProduct(),50);         
@@ -58,6 +55,11 @@ public class Plative_AccountTriggerHandler{
         system.debug('deactivatedAccountIds->'+deactivatedAccountIds);
         if(deactivatedAccountIds.size() > 0 && !System.isBatch() && !System.isFuture()) {
             Database.executeBatch(new RemoveAccountEmailDistributionBatch(deactivatedAccountIds), 1);
+        }
+        for (Account acc : mapNewAcc.values()) {
+            if (acc.Current_Products__c != mapOldAcc.get(acc.Id).Current_Products__c) {
+                accountIdsToProcess.add(acc.Id);
+            }
         }
         system.debug('accountIdsToProcess->'+accountIdsToProcess);
         if (!accountIdsToProcess.isEmpty() && !isCurrentProductUpdated && !System.isBatch()) {
