@@ -4,14 +4,20 @@ public class BatchCreateAccountLineItemsTest {
     static void setup() {
         // Create test Accounts
         List<Account> accounts = new List<Account>();
-            accounts.add(new Account(Name = 'Test Account ', CurrencyIsoCode = 'USD'));
+        for (Integer i = 0; i < 1; i++) {
+            accounts.add(new Account(Name = 'Test Account ' + i, CurrencyIsoCode = 'USD'));
+        }
         insert accounts;
 
         // Create test Products
         List<Product2> products = new List<Product2>{
             new Product2(Name = 'US Detailed NAV', IsActive = true, CurrencyIsoCode = 'USD'),
             new Product2(Name = 'US Portfolio Tools', IsActive = true, CurrencyIsoCode = 'USD'),
-            new Product2(Name = 'US Tertiary Market Data', IsActive = true, CurrencyIsoCode = 'USD')
+            new Product2(Name = 'US Tertiary Market Data', IsActive = true, CurrencyIsoCode = 'USD'),
+            new Product2(Name = 'US Research + REIT Data', IsActive = true, CurrencyIsoCode = 'USD'),
+            new Product2(Name = 'EUR Detailed NAV', IsActive = true, CurrencyIsoCode = 'USD'),
+            new Product2(Name = 'Canada Detailed NAV', IsActive = true, CurrencyIsoCode = 'USD'),
+            new Product2(Name = 'Australia Detailed NAV', IsActive = true, CurrencyIsoCode = 'USD')
         };
         insert products;
 
@@ -22,7 +28,11 @@ public class BatchCreateAccountLineItemsTest {
                 Account_Id__c = acc.Id,
                 US_Detailed_NAV__c = true,
                 US_Portfolio_Tool__c = true,
-                US_Tertiary_Data__c = true
+                US_Tertiary_Data__c = true,
+                US_Research_REIT_Data__c = true,
+                AUS_NAV__c = true,
+                CAN_NAV__c = true,
+                EU_NAV__c = true
             ));
         }
         insert stagingRecords;
@@ -33,7 +43,7 @@ public class BatchCreateAccountLineItemsTest {
         
         Test.startTest();
         BatchCreateAccountLineItems batch = new BatchCreateAccountLineItems();
-        Database.executeBatch(batch, 2);
+        Database.executeBatch(batch, 1);
         Test.stopTest();
 
         // Assert Account_Product_Line__c records were created
@@ -52,7 +62,7 @@ public class BatchCreateAccountLineItemsTest {
 
         Test.startTest();
         BatchCreateAccountLineItems batch = new BatchCreateAccountLineItems();
-        Database.executeBatch(batch, 2);
+        Database.executeBatch(batch, 1);
         Test.stopTest();
         // No unhandled exception should occur
         System.assert(true, 'Batch should handle exceptions gracefully');
@@ -71,7 +81,7 @@ public class BatchCreateAccountLineItemsTest {
 
         Test.startTest();
         BatchCreateAccountLineItems batch = new BatchCreateAccountLineItems();
-        Database.executeBatch(batch, 2);
+        Database.executeBatch(batch, 1);
         Test.stopTest();
 
         // Assert no Account_Product_Line__c records were created for null Account
