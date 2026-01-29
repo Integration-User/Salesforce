@@ -13,7 +13,11 @@ public class BatchCreateAccountLineItemsTest {
         List<Product2> products = new List<Product2>{
             new Product2(Name = 'US Detailed NAV', IsActive = true, CurrencyIsoCode = 'USD'),
             new Product2(Name = 'US Portfolio Tools', IsActive = true, CurrencyIsoCode = 'USD'),
-            new Product2(Name = 'US Tertiary Market Data', IsActive = true, CurrencyIsoCode = 'USD')
+            new Product2(Name = 'US Tertiary Market Data', IsActive = true, CurrencyIsoCode = 'USD'),
+            new Product2(Name = 'US Research + REIT Data', IsActive = true, CurrencyIsoCode = 'USD'),
+            new Product2(Name = 'EUR Detailed NAV', IsActive = true, CurrencyIsoCode = 'USD'),
+            new Product2(Name = 'Canada Detailed NAV', IsActive = true, CurrencyIsoCode = 'USD'),
+            new Product2(Name = 'Australia Detailed NAV', IsActive = true, CurrencyIsoCode = 'USD')
         };
         insert products;
 
@@ -24,7 +28,11 @@ public class BatchCreateAccountLineItemsTest {
                 Account_Id__c = acc.Id,
                 US_Detailed_NAV__c = true,
                 US_Portfolio_Tool__c = true,
-                US_Tertiary_Data__c = true
+                US_Tertiary_Data__c = true,
+                US_Research_REIT_Data__c = true,
+                AUS_NAV__c = true,
+                CAN_NAV__c = true,
+                EU_NAV__c = true
             ));
         }
         insert stagingRecords;
