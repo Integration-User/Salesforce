@@ -386,6 +386,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BatchCreateAccountLineItems</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>BatchCreateAccountLineItemsTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Batch_UpdateBillingContactCategory</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -33132,6 +33140,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.AUS_NAV__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Staging_Opportunity_Data__c.Account_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -33142,12 +33155,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.CAN_NAV__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Staging_Opportunity_Data__c.Contract_End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Staging_Opportunity_Data__c.Contract_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.EU_NAV__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -33178,6 +33201,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Staging_Opportunity_Data__c.US_Portfolio_Tool__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Staging_Opportunity_Data__c.US_Research_REIT_Data__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

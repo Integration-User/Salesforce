@@ -14,7 +14,8 @@ public class BatchCreateAccountLineItems implements Database.Batchable<SObject>,
     }
     // Query all records from Staging_Opportunity_Data__c
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        return Database.getQueryLocator('SELECT Id, Account_Id__c, US_Detailed_NAV__c, US_Portfolio_Tool__c, US_Tertiary_Data__c FROM Staging_Opportunity_Data__c');
+        return Database.getQueryLocator('SELECT Id, Account_Id__c, US_Detailed_NAV__c, US_Portfolio_Tool__c, US_Tertiary_Data__c, US_Research_REIT_Data__c,'+
+                                        ' EU_NAV__c, CAN_NAV__c, AUS_NAV__c FROM Staging_Opportunity_Data__c');
     }
 
     public void execute(Database.BatchableContext bc, List<SObject> scope) {
@@ -36,7 +37,9 @@ public class BatchCreateAccountLineItems implements Database.Batchable<SObject>,
 
                 Map<String, Id> productNameToIdWithCurrency = new Map<String, Id>();
                 Map<String, Id> productNameToId = new Map<String, Id>();
-                for (Product2 p : [SELECT Id, Name, CurrencyIsoCode FROM Product2 WHERE Name IN ('US Detailed NAV', 'US Portfolio Tools', 'US Tertiary Market Data') AND IsActive = true]) {
+                for (Product2 p : [SELECT Id, Name, CurrencyIsoCode FROM Product2 
+                                   WHERE Name IN ('US Detailed NAV', 'US Portfolio Tools', 'US Tertiary Market Data', 'US Research + REIT Data', 'EUR Detailed NAV', 
+                                                  'Canada Detailed NAV', 'Australia Detailed NAV') AND IsActive = true]) {
                     productNameToId.put(p.Name, p.Id);
                     productNameToIdWithCurrency.put(p.Name + '|' + p.CurrencyIsoCode , p.Id);
                 }
@@ -65,7 +68,34 @@ public class BatchCreateAccountLineItems implements Database.Batchable<SObject>,
                             newProductLine.Account__c = sod.Account_Id__c;
                             newLineItems.add(newProductLine);
                         }
-
+                    if (sod.US_Research_REIT_Data__c == true && productNameToId.containsKey('US Research + REIT Data')) {
+                        Id prodId = productNameToIdWithCurrency.containsKey('US Research + REIT Data|'+ acc.CurrencyIsoCode) ? productNameToIdWithCurrency.get('US Research + REIT Data|'+ acc.CurrencyIsoCode) : productNameToId.get('US Research + REIT Data');
+                        Account_Product_Line__c newProductLine = new Account_Product_Line__c();
+                        newProductLine.Product__c = prodId;
+                        newProductLine.Account__c = sod.Account_Id__c;
+                        newLineItems.add(newProductLine);
+                    }
+                    if (sod.EU_NAV__c == true && productNameToId.containsKey('EUR Detailed NAV')) {
+                        Id prodId = productNameToIdWithCurrency.containsKey('EUR Detailed NAV|'+ acc.CurrencyIsoCode) ? productNameToIdWithCurrency.get('EUR Detailed NAV|'+ acc.CurrencyIsoCode) : productNameToId.get('EUR Detailed NAV');
+                        Account_Product_Line__c newProductLine = new Account_Product_Line__c();
+                        newProductLine.Product__c = prodId;
+                        newProductLine.Account__c = sod.Account_Id__c;
+                        newLineItems.add(newProductLine);
+                    }
+                    if (sod.CAN_NAV__c == true && productNameToId.containsKey('Canada Detailed NAV')) {
+                        Id prodId = productNameToIdWithCurrency.containsKey('Canada Detailed NAV|'+ acc.CurrencyIsoCode) ? productNameToIdWithCurrency.get('Canada Detailed NAV|'+ acc.CurrencyIsoCode) : productNameToId.get('Canada Detailed NAV');
+                        Account_Product_Line__c newProductLine = new Account_Product_Line__c();
+                        newProductLine.Product__c = prodId;
+                        newProductLine.Account__c = sod.Account_Id__c;
+                        newLineItems.add(newProductLine);
+                    }
+                    if (sod.AUS_NAV__c == true && productNameToId.containsKey('Australia Detailed NAV')) {
+                        Id prodId = productNameToIdWithCurrency.containsKey('Australia Detailed NAV|'+ acc.CurrencyIsoCode) ? productNameToIdWithCurrency.get('Australia Detailed NAV|'+ acc.CurrencyIsoCode) : productNameToId.get('Australia Detailed NAV');
+                        Account_Product_Line__c newProductLine = new Account_Product_Line__c();
+                        newProductLine.Product__c = prodId;
+                        newProductLine.Account__c = sod.Account_Id__c;
+                        newLineItems.add(newProductLine);
+                    }
                 }
                 System.debug('newLineItems-?' + newLineItems.size());
 
