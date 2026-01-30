@@ -32778,7 +32778,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Task.Email_Message_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
