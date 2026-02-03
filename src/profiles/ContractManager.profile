@@ -16376,6 +16376,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Altis_Account_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Analyst_Access__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17692,7 +17697,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Revops_Last_Assigned_To__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -54846,6 +54851,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewHelpLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewPublicCapstoneFolders</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

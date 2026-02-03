@@ -52,6 +52,16 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Account_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Altis_Account_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.GS_Taxonomy_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -108,6 +118,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.RevOps_ICP_Parent_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.RevOps_Last_Assigned__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Revops_Last_Assigned_To__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

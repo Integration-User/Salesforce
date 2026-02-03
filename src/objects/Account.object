@@ -365,7 +365,7 @@
     <fields>
         <fullName>Account_6sense_Segment_Names__c</fullName>
         <label>6sense Segment Names</label>
-        <length>131072</length>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
@@ -585,6 +585,14 @@
         <label>Agency</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Altis_Account_Id__c</fullName>
+        <label>Altis Account Id</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Analyst_Access__c</fullName>
@@ -8596,7 +8604,7 @@ Owner.Id = $User.Id)</formula>
         <label>RevOps Last Assigned</label>
         <length>255</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -8625,7 +8633,7 @@ Owner.Id = $User.Id)</formula>
         <referenceTo>User</referenceTo>
         <relationshipName>Accounts8</relationshipName>
         <required>false</required>
-        <trackHistory>true</trackHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -9582,7 +9590,7 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
     <fields>
         <fullName>ZoomInfo_NAICS_Code_account__c</fullName>
         <label>ZoomInfo NAICS Code</label>
-        <length>131072</length>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>

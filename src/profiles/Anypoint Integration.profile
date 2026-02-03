@@ -16324,6 +16324,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Altis_Account_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Analyst_Access__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -32703,7 +32708,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Task.Email_Message_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
