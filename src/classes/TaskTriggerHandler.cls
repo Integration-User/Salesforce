@@ -107,7 +107,7 @@ public without sharing class TaskTriggerHandler {
                         opp.Count_of_Connected_Calls_Last_120_Days__c = (opp.Count_of_Connected_Calls_Last_120_Days__c != null && opp.Count_of_Connected_Calls_Last_120_Days__c > 0) ? opp.Count_of_Connected_Calls_Last_120_Days__c + 1 : 1;
                     } else if (opp != null && t.Subject.startsWith('Reply')) {
                         opp.Count_of_Emails_Last_30__c = (opp.Count_of_Emails_Last_30__c != null) ? opp.Count_of_Emails_Last_30__c + 1 : 1;
-                        opp.Count_of_Email_Replies_Last_120_Days__c = (opp.Count_of_Email_Replies_Last_120_Days__c != null && opp.Count_of_Email_Replies_Last_120_Days__c > 0) ? opp.Count_of_Connected_Calls_Last_120_Days__c + 1 : 1;
+                        opp.Count_of_Email_Replies_Last_120_Days__c = (opp.Count_of_Email_Replies_Last_120_Days__c != null && opp.Count_of_Email_Replies_Last_120_Days__c > 0) ? opp.Count_of_Email_Replies_Last_120_Days__c + 1 : 1;
                     } 
                 }
             }
