@@ -10780,6 +10780,7 @@ false
         <fullName>Deactivate_Contact_Before_Moving</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 OR( ISPICKVAL(Contact_Status__c, &quot;Active&quot;)),
 OR( PRIORVALUE( AccountId ) &lt;&gt;  AccountId ))</errorConditionFormula>
         <errorMessage>You must deactivate this user before moving them to a new account.</errorMessage>
@@ -10787,7 +10788,7 @@ OR( PRIORVALUE( AccountId ) &lt;&gt;  AccountId ))</errorConditionFormula>
     <validationRules>
         <fullName>Fields_Required_to_Create_Salesforce_Use</fullName>
         <active>true</active>
-        <errorConditionFormula>Salesforce_User__c == true &amp;&amp;
+        <errorConditionFormula>Salesforce_User__c == true &amp;&amp; $Profile.Name &lt;&gt; &quot;System Administrator&quot; &amp;&amp;
 (ISPICKVAL(User_Department__c, &apos;&apos;)  ||   
 ISPICKVAL(Timezone__c, &apos;&apos;) || ISBLANK( Manager__c ) )</errorConditionFormula>
         <errorMessage>Field from Salesforce User section cannot be blank if Salesforce User is Checked</errorMessage>
@@ -10832,6 +10833,7 @@ ISCHANGED(Reference__c)
         <fullName>Require_Awards</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(LeadSource, &quot;Awards&quot;),
 ISBLANK(Awards__c)
 )</errorConditionFormula>
@@ -10841,6 +10843,7 @@ ISBLANK(Awards__c)
         <fullName>Require_Event</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(LeadSource, &quot;Event&quot;),
 ISBLANK(Event__c)
 )</errorConditionFormula>
@@ -10850,6 +10853,7 @@ ISBLANK(Event__c)
         <fullName>Require_Webinar</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(LeadSource, &quot;Webinar&quot;),
 ISBLANK(Webinar__c)
 )</errorConditionFormula>
