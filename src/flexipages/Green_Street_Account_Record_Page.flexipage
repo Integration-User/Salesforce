@@ -35,10 +35,21 @@
                         <valueListItems>
                             <value>Account.Add_Remove_Product_Line</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
                                 <criteria>
                                     <leftValue>{!$Permission.CustomPermission.Access_Entitlements_Features}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>true</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!$User.Department}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Sales</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!$User.Department}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Account Management</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -58,10 +69,21 @@
                         <valueListItems>
                             <value>Account.Add_Remove_Email_Distribution</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND NOT 2 AND NOT 3</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>Subsidiary_Account</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!$User.Department}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Sales</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!$User.Department}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Account Management</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -993,48 +1015,6 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>displayConnections</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayHeader</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayNews</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayRecommendedLeads</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayRelationshipMaps</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayTopcard</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>headerText</name>
-                    <value>Company Profile</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minHeight</name>
-                    <value>520</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>scrolling</name>
-                    <value>auto</value>
-                </componentInstanceProperties>
-                <componentName>LID:SalesNavigatorCompanyProfileComponent</componentName>
-                <identifier>LID_SalesNavigatorCompanyProfileComponent</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
                     <name>height</name>
                     <value>500</value>
                 </componentInstanceProperties>
@@ -1490,6 +1470,12 @@
                 </componentInstanceProperties>
                 <componentName>forceChatter:topicsOnRecordWrapper</componentName>
                 <identifier>forceChatter_topicsOnRecordWrapper</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>prqnconnmvpb:preqinConnector</componentName>
+                <identifier>prqnconnmvpb_preqinConnector</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>
