@@ -492,6 +492,37 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Acquisition__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+    NOT(ISBLANK(Delinian_Id__c)),
+    &quot;IJGlobal Subscription&quot;,
+    IF(
+        NOT(ISBLANK(IJ_Global_Events_UID__c)),
+        &quot;IJGlobal Events&quot;,
+        IF(
+            NOT(ISBLANK(Locatus_ID__c)),
+            &quot;Locatus&quot;,
+ IF(
+            NOT(ISBLANK( React_id__c )),
+            &quot;React/GS News&quot;,
+            IF(
+                NOT(ISBLANK(College_House_Id__c)),
+                &quot;College House&quot;,
+                &quot;Not from Acquisition&quot;
+            )
+        )
+    )
+)
+)</formula>
+        <inlineHelpText>If the Account was from an Acquisition, this field calculates the name of the Acquisition based on the IDs entered on those accounts.</inlineHelpText>
+        <label>Acquisition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Activate_Account__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Activate Account</label>
