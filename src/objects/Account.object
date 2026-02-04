@@ -18823,6 +18823,7 @@ Stored as Long on Solr.</description>
         <active>true</active>
         <description>Block people in department &quot;sales&quot; from creating Accounts in Salesforce.</description>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISNEW(),
 $User.Department = &quot;Sales&quot;,
 TODAY() &gt;= DATE(2026, 1, 5))</errorConditionFormula>
@@ -18930,6 +18931,7 @@ OR( ISCHANGED( Name ))))</errorConditionFormula>
         <fullName>Prevent_Renaming_Unassigned_Accounts</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 OR(
 Id=&quot;001f400000dzfxV&quot;,
 Id=&quot;001f400000dzfxU&quot;),
@@ -18985,6 +18987,7 @@ ISBLANK(TEXT(Lead_Type__c)))
         <fullName>Require_Entitlement_Guidance</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL( Entitlement_Guidance__c , &quot;Restricted - See Notes Field&quot;) ,
 ISBLANK(Entitlement_Guidance_Notes__c))</errorConditionFormula>
         <errorMessage>Please provide the Entitlement Guidance Notes.</errorMessage>
@@ -18993,6 +18996,7 @@ ISBLANK(Entitlement_Guidance_Notes__c))</errorConditionFormula>
         <fullName>Require_Prospect_Not_Viable</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(Prospect_Category__c, &quot;Not Viable Now&quot;),
 ISBLANK(Prospect_Notes__c),
 RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
@@ -19004,7 +19008,7 @@ RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
         <fullName>Require_Revisit_Date</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
-
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(Prospect_Category__c, &quot;Re-visit Timing&quot;),
 ISBLANK(Re_visit_Date__c),
 RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
@@ -19016,6 +19020,7 @@ RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
         <fullName>Require_Revisit_Timing</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(Prospect_Category__c, &quot;&quot;),
 NOT(ISBLANK(Re_visit_Date__c)),
 RecordType.DeveloperName = &apos;Subsidiary_Account&apos;
