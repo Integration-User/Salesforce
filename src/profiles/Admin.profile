@@ -3474,6 +3474,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UpdateCustomerSuccessRepBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateCustomerSuccessRepBatchTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UpdateExcelAddINUsersOnAccountBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -16641,6 +16649,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Agency__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Altis_Account_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
