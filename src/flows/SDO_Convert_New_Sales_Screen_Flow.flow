@@ -386,6 +386,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Discovery_Meeting_Scheduled_Date__c</field>
+            <value>
+                <elementReference>Discovery_Meeting_Scheduled_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Existing_Sales_Opportunity__c</field>
             <value>
                 <elementReference>New_Sales_Oppty.recordId</elementReference>
@@ -476,6 +482,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Discovery_Meeting_Scheduled_Date__c</field>
+            <value>
+                <elementReference>Discovery_Meeting_Scheduled_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>StageName</field>
             <value>
                 <stringValue>Qualified</stringValue>
@@ -526,7 +538,6 @@
             <dataType>String</dataType>
             <fieldText>Conversion Type</fieldText>
             <fieldType>DropdownBox</fieldType>
-            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -618,7 +629,6 @@
             <dataType>Boolean</dataType>
             <fieldText>Create New Sales Opportunity</fieldText>
             <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -628,6 +638,38 @@
                     <stringValue>12</stringValue>
                 </width>
             </styleProperties>
+        </fields>
+        <fields>
+            <name>Discovery_Meeting_Scheduled_Date</name>
+            <dataType>Date</dataType>
+            <defaultValue>
+                <elementReference>Opportunity.Discovery_Meeting_Scheduled_Date__c</elementReference>
+            </defaultValue>
+            <fieldText>Discovery Meeting Scheduled Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <validationRule>
+                <errorMessage>&lt;p&gt;You cannot set Meeting Scheduled Date more than 30 days from Today.&lt;/p&gt;</errorMessage>
+                <formulaExpression>NOT({!Discovery_Meeting_Scheduled_Date} &gt; (TODAY() + 30))</formulaExpression>
+            </validationRule>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Create_New_Sales_Opportunity</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <nextOrFinishButtonLabel>Convert</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -810,7 +852,6 @@
             <dataType>Boolean</dataType>
             <fieldText>Create New Upsell Opportunity</fieldText>
             <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -854,7 +895,7 @@
         <name>Success_Renewal_Screen_New_Oppty</name>
         <label>Success Renewal Screen New Oppty</label>
         <locationX>1634</locationX>
-        <locationY>890</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -926,7 +967,7 @@
         <name>Success_Screen_New_Oppty</name>
         <label>Success Screen New Oppty</label>
         <locationX>50</locationX>
-        <locationY>890</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -953,7 +994,7 @@
             <targetReference>Convert</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
