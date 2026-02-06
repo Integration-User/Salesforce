@@ -209,6 +209,16 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>NewSalesOppLink</name>
+        <dataType>String</dataType>
+        <expression>&quot;&lt;a href=&apos;&quot; &amp; LEFT({!$Api.Partner_Server_URL_340}, FIND(&quot;/services&quot;, {!$Api.Partner_Server_URL_340})) &amp; {!Get_SDO_Opp.New_Sales_Opportunity__c} &amp; &quot;&apos; target=&apos;_self&apos;&gt;&quot; &amp; {!Get_SDO_Opp.New_Sales_Opportunity__r.Name} &amp; &quot;&lt;/a&gt;&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>newUpsellOppLink</name>
+        <dataType>String</dataType>
+        <expression>&quot;&lt;a href=&apos;&quot; &amp; LEFT({!$Api.Partner_Server_URL_340}, FIND(&quot;/services&quot;, {!$Api.Partner_Server_URL_340})) &amp; {!Get_SDO_Opp_For_Upsell.New_Sales_Opportunity__c} &amp; &quot;&apos; target=&apos;_self&apos;&gt;&quot; &amp; {!Get_SDO_Opp_For_Upsell.New_Sales_Opportunity__r.Name} &amp; &quot;&lt;/a&gt;&quot;</expression>
+    </formulas>
     <interviewLabel>SDO Convert Opportunity Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SDO Convert New Sales Screen Flow</label>
     <processMetadataValues>
@@ -230,6 +240,48 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_SDO_Opp</name>
+        <label>Get SDO Opp</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Success_Screen_New_Oppty</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_SDO_Opp_For_Upsell</name>
+        <label>Get SDO Opp For Upsell</label>
+        <locationX>1634</locationX>
+        <locationY>782</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Success_Renewal_Screen_New_Oppty</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Opportunity</name>
         <label>Opportunity</label>
@@ -365,7 +417,7 @@
         <locationX>1634</locationX>
         <locationY>674</locationY>
         <connector>
-            <targetReference>Success_Renewal_Screen_New_Oppty</targetReference>
+            <targetReference>Get_SDO_Opp_For_Upsell</targetReference>
         </connector>
         <faultConnector>
             <targetReference>New_Renewal_Oppty_Error_Screen</targetReference>
@@ -404,7 +456,7 @@
         <locationX>50</locationX>
         <locationY>674</locationY>
         <connector>
-            <targetReference>Success_Screen_New_Oppty</targetReference>
+            <targetReference>Get_SDO_Opp</targetReference>
         </connector>
         <faultConnector>
             <targetReference>New_Oppty_Error_Screen</targetReference>
@@ -486,7 +538,6 @@
             <dataType>String</dataType>
             <fieldText>Conversion Type</fieldText>
             <fieldType>DropdownBox</fieldType>
-            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -578,7 +629,6 @@
             <dataType>Boolean</dataType>
             <fieldText>Create New Sales Opportunity</fieldText>
             <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -597,7 +647,6 @@
             </defaultValue>
             <fieldText>Discovery Meeting Scheduled Date</fieldText>
             <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -803,7 +852,6 @@
             <dataType>Boolean</dataType>
             <fieldText>Create New Upsell Opportunity</fieldText>
             <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -853,7 +901,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Copy_1_of_Success_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(10, 144, 10); font-size: 14px;&quot;&gt;Opportunity has been converted.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(21, 150, 25); font-size: 14px;&quot;&gt;Opportunity has been converted. &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(21, 150, 25);&quot;&gt;Here is the link to your newly created opportunity: &lt;/strong&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);&quot;&gt;{!newUpsellOppLink}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -925,7 +973,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Success_Text</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(21, 150, 25);&quot;&gt;Opportunity has been converted.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(21, 150, 25);&quot;&gt;Opportunity has been converted. &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(21, 150, 25);&quot;&gt;Here is the link to your newly created opportunity: &lt;/strong&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(29, 29, 31); background-color: rgb(255, 255, 255);&quot;&gt;{!NewSalesOppLink}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -946,7 +994,7 @@
             <targetReference>Convert</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
