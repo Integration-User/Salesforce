@@ -1139,6 +1139,7 @@ IF start date is blank, allow edits. if not is blank prevent edits</description>
         <fullName>Cannot_have_Starting_Price_for_an_Upsell</fullName>
         <active>true</active>
         <errorConditionFormula>AND( 
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 Upsell_Cross_sell__c = TRUE,
  Starting_Price__c &gt; 0)</errorConditionFormula>
         <errorMessage>Products that are considered an &quot;Upsell&quot; must have a Starting Price of $0.</errorMessage>
@@ -1153,7 +1154,7 @@ Upsell_Cross_sell__c = TRUE,
     <validationRules>
         <fullName>Check_SKU_Product_with_Select_Product</fullName>
         <active>true</active>
-        <errorConditionFormula>IF((NOT( ISBLANK(TEXT(SKU_Product__c) ) ) &amp;&amp; NOT( TEXT(SKU_Product__c) == Product2.Name )),true, false)</errorConditionFormula>
+        <errorConditionFormula>IF((NOT( ISBLANK(TEXT(SKU_Product__c) ) ) &amp;&amp; $Profile.Name &lt;&gt; &quot;System Administrator&quot; &amp;&amp; NOT( TEXT(SKU_Product__c) == Product2.Name )),true, false)</errorConditionFormula>
         <errorDisplayField>SKU_Product__c</errorDisplayField>
         <errorMessage>Please ensure that SKU Detail matches SKU Product</errorMessage>
     </validationRules>
@@ -1161,6 +1162,7 @@ Upsell_Cross_sell__c = TRUE,
         <fullName>Data_Sale_Product_Validation</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 CONTAINS( Product2.Name , &apos;Data Sale&apos;),
 OR(
 ISPICKVAL(Delivery_Method__c, &apos;Snowflake&apos;),
@@ -1173,6 +1175,7 @@ ISPICKVAL(Delivery_Method__c, &apos;API&apos;)
         <fullName>Delivery_method_required_for_DataDeliver</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
  ISPICKVAL(Delivery_Method__c, &apos;&apos;),
  OR(
      Product2.Name  =  &apos;US Data Delivery - Market Data &amp; Deals&apos;,
@@ -1186,14 +1189,13 @@ ISPICKVAL(Delivery_Method__c, &apos;API&apos;)
     <validationRules>
         <fullName>Prevent_OLI_Update_Closed_Opp</fullName>
         <active>true</active>
-        <description>Prevent OLI updates for Closed opportunity.</description>
+        <description>Prevent OLI updates for Closed opportunity.
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
-Opportunity.IsClosed = TRUE,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+Opportunity.IsClosed = TRUE,
 OR(
-Opportunity.Record_Type_for_Query__c = &quot;Renewal&quot;,
 Opportunity.Record_Type_for_Query__c = &quot;Renewal - Closed&quot;,
-Opportunity.Record_Type_for_Query__c = &quot;Sales Opportunity&quot;,
 Opportunity.Record_Type_for_Query__c = &quot;Sales Opportunity - Closed&quot;)
 )</errorConditionFormula>
         <errorMessage>You cannot update a product if the opportunity is closed.</errorMessage>
@@ -1218,6 +1220,7 @@ $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Paul Eag
         <fullName>Product_Delivery_Method_Validation</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 NOT(CONTAINS( Product2.Name , &apos;Data Sale&apos;)),
 NOT( ISBLANK(TEXT(Delivery_Method__c))),
 NOT(OR (
