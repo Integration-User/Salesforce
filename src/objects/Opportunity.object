@@ -63467,7 +63467,7 @@ ISBLANK(Competition__c)
         <fullName>Require_Customer_Handoff</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
-    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
     OR(
         $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
@@ -63499,11 +63499,17 @@ ISBLANK(Competition__c),
                 INCLUDES(Competition__c, &quot;The Real Deal&quot;),
                 INCLUDES(Competition__c, &quot;Commercial Observer&quot;),
                 INCLUDES(Competition__c, &quot;Bisnow&quot;),
-                INCLUDES(Competition__c, &quot;Other&quot;)
+                INCLUDES(Competition__c, &quot;Other&quot;),
+                INCLUDES(Competition__c, &quot;Infralogic&quot;),
+                INCLUDES(Competition__c, &quot;PFI&quot;),
+                INCLUDES(Competition__c, &quot;Bloomberg&quot;),
+                INCLUDES(Competition__c, &quot;New Project Media&quot;),
+                INCLUDES(Competition__c, &quot;Preqin&quot;),
+                INCLUDES(Competition__c, &quot;Pitchbook&quot;)
             )
         )
-    )
-)</errorConditionFormula>
+            )
+        )</errorConditionFormula>
         <errorMessage>Please fill out the Customer Handoff section before closing the opportunity.</errorMessage>
     </validationRules>
     <validationRules>
