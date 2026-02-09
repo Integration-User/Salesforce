@@ -10758,6 +10758,19 @@ Stored as Long on Solr.</description>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
+        <fullName>Cannot_Modify_DNC</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISCHANGED(DoNotCall),
+DoNotCall = FALSE,
+OR(
+$User.Department =&apos;Sales&apos;,
+$User.Department =&apos;Sales Development&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>DoNotCall</errorDisplayField>
+        <errorMessage>You cannot uncheck the &quot;Do Not Call&quot; field. If a Contact is requesting to opt-in again, please reach out to the Compliance team for assistance</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Contacts_must_have_an_Account</fullName>
         <active>true</active>
         <description>Every contact must be tied to an Account.</description>
