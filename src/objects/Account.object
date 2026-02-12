@@ -18759,6 +18759,7 @@ Stored as Long on Solr.</description>
         <description>Block people in department &quot;sales&quot; from creating Accounts in Salesforce.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Profile.Name &lt;&gt; &quot;IJGlobal Events User&quot;,
 ISNEW(),
 $User.Department = &quot;Sales&quot;,
 TODAY() &gt;= DATE(2026, 1, 5))</errorConditionFormula>
