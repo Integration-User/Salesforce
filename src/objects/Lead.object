@@ -1023,6 +1023,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Discovery_Meeting_Scheduled_Date__c</fullName>
+        <inlineHelpText>This is the date the initial meeting is scheduled to occur, NOT when you scheduled the time.</inlineHelpText>
+        <label>Discovery Meeting Scheduled Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Disqualified_Context__c</fullName>
         <label>Disqualified Context</label>
         <required>false</required>
@@ -12881,6 +12890,18 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISBLANK(TEXT(Minimum_Advisory_Fee_50k__c)),
 ISPICKVAL(Lead_Type__c,&quot;Advisory&quot;))</errorConditionFormula>
         <errorMessage>Please ensure Typical Advisory Minimum (6-figures) is populated before saving this Lead.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Discovery_Meeting_Date</fullName>
+        <active>true</active>
+        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName = &quot;Referrals&quot;,
+ISPICKVAL( Status , &quot;Sales_Qualified&quot; ),
+ISBLANK (Discovery_Meeting_Scheduled_Date__c)
+)</errorConditionFormula>
+        <errorDisplayField>Discovery_Meeting_Scheduled_Date__c</errorDisplayField>
+        <errorMessage>Provide the Discovery Meeting Scheduled  Date before converting the lead.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Disqualified_Context</fullName>
