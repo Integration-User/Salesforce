@@ -2683,6 +2683,7 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
     </fields>
     <fields>
         <fullName>Discovery_Meeting_Completed_Date__c</fullName>
+        <inlineHelpText>This is the date the meeting actually took place.</inlineHelpText>
         <label>Discovery Meeting Completed Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2691,6 +2692,7 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
     </fields>
     <fields>
         <fullName>Discovery_Meeting_Scheduled_Date__c</fullName>
+        <inlineHelpText>This is the date the initial meeting is scheduled to occur, NOT when you scheduled the time.</inlineHelpText>
         <label>Discovery Meeting Scheduled Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -62514,6 +62516,19 @@ ISCHANGED( StageName )))</errorConditionFormula>
         <errorMessage>You cannot edit opportunities once they have been closed. Please contact your system admin for help making any necessary changes.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Cannot_Modify_Scheduled_Date</fullName>
+        <active>true</active>
+        <description>Discovery Scheduled date cannot be edited on Sales Opps.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;, 
+RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
+ISCHANGED(Discovery_Meeting_Scheduled_Date__c),
+NOT(ISBLANK(Discovery_Meeting_Scheduled_Date__c))
+)</errorConditionFormula>
+        <errorDisplayField>Discovery_Meeting_Scheduled_Date__c</errorDisplayField>
+        <errorMessage>You cannot edit the Discovery Scheduled Date.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Check_New_Sales_Opportunity</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -63163,6 +63178,22 @@ New_Sales_Opportunity__r.Account.Id &lt;&gt; Account.Id
 )</errorConditionFormula>
         <errorDisplayField>LeadSource</errorDisplayField>
         <errorMessage>Please fill out the Lead Source field for this Opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Initial_Meeting_Organizer</fullName>
+        <active>true</active>
+        <description>Initial Meeting Organizer should not be edited.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISNEW()),
+PRIORVALUE(Initial_Meeting_Organizer__c ) != &apos;&apos;,
+ISCHANGED(Initial_Meeting_Organizer__c ),
+OR(
+RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
+RecordType.DeveloperName =&apos;Sales_Opportunity_Closed&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>Initial_Meeting_Organizer__c</errorDisplayField>
+        <errorMessage>You cannot edit the Initial Meeting Organizer once filled out.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Lock_SDO_LeadSource</fullName>
