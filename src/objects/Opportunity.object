@@ -62653,6 +62653,17 @@ ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
         <errorMessage>You need to provide the Regions Covered, as well as either Sectors Covered OR Infra Sectors Covered.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Closed_Oppty_Restrict_Acct_Change</fullName>
+        <active>true</active>
+        <description>Prevent anyone to change the related account on a Closed Won opportunity.</description>
+        <errorConditionFormula>AND(
+ISCHANGED(AccountId),
+ISPICKVAL(StageName, &quot;Closed Won&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>AccountId</errorDisplayField>
+        <errorMessage>You cannot change the related account on a Closed Won opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Closed_Won_Blank_Billing_Schedule</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
