@@ -10763,9 +10763,7 @@ Stored as Long on Solr.</description>
         <errorConditionFormula>AND(
 ISCHANGED(DoNotCall),
 DoNotCall = FALSE,
-OR(
-$User.Department =&apos;Sales&apos;,
-$User.Department =&apos;Sales Development&apos;)
+$User.Username !=&apos;sworsham@greenstreet.com&apos;
 )</errorConditionFormula>
         <errorDisplayField>DoNotCall</errorDisplayField>
         <errorMessage>You cannot uncheck the &quot;Do Not Call&quot; field. If a Contact is requesting to opt-in again, please reach out to the Compliance team for assistance</errorMessage>
