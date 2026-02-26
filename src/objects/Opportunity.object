@@ -1632,7 +1632,7 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
     <fields>
         <fullName>Closed_Opportunity_Notes__c</fullName>
         <label>Closed Opportunity Notes</label>
-        <length>131072</length>
+        <length>100000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
@@ -2683,6 +2683,7 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
     </fields>
     <fields>
         <fullName>Discovery_Meeting_Completed_Date__c</fullName>
+        <inlineHelpText>This is the date the meeting actually took place.</inlineHelpText>
         <label>Discovery Meeting Completed Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2691,6 +2692,7 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
     </fields>
     <fields>
         <fullName>Discovery_Meeting_Scheduled_Date__c</fullName>
+        <inlineHelpText>This is the date the initial meeting is scheduled to occur, NOT when you scheduled the time.</inlineHelpText>
         <label>Discovery Meeting Scheduled Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3063,15 +3065,13 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
     </fields>
     <fields>
         <fullName>How_did_we_win__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>Lessons learned from the negotiation</inlineHelpText>
         <label>How did we win?</label>
-        <length>255</length>
-        <required>false</required>
+        <length>5000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>ICP_Account_at_time_of_Booking__c</fullName>
@@ -8771,15 +8771,13 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
     </fields>
     <fields>
         <fullName>Use_Case__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>How does the client intend to use the selected products?</inlineHelpText>
         <label>Use Case</label>
-        <length>255</length>
-        <required>false</required>
+        <length>5000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Web_Form_Comments_Questions__c</fullName>
@@ -13290,6 +13288,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Infrastructure Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Locatus%3A DISC data</fullName>
                 <default>false</default>
             </values>
@@ -17283,6 +17285,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Infrastructure Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Locatus%3A DISC data</fullName>
                 <default>false</default>
             </values>
@@ -21212,6 +21218,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Infrastructure Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Locatus%3A DISC data</fullName>
                 <default>false</default>
             </values>
@@ -25082,6 +25092,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Research</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29295,6 +29309,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Research</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -33539,6 +33557,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Infrastructure Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Locatus%3A DISC data</fullName>
                 <default>false</default>
             </values>
@@ -37364,6 +37386,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Infrastructure Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -41062,6 +41088,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Research</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48551,6 +48581,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Infrastructure Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Locatus%3A DISC data</fullName>
                 <default>false</default>
             </values>
@@ -52798,6 +52832,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Research</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -57106,6 +57144,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Infrastructure Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Locatus%3A DISC data</fullName>
                 <default>false</default>
             </values>
@@ -61251,6 +61293,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Infrastructure Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Locatus%3A DISC data</fullName>
                 <default>false</default>
             </values>
@@ -62514,6 +62560,19 @@ ISCHANGED( StageName )))</errorConditionFormula>
         <errorMessage>You cannot edit opportunities once they have been closed. Please contact your system admin for help making any necessary changes.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Cannot_Modify_Scheduled_Date</fullName>
+        <active>true</active>
+        <description>Discovery Scheduled date cannot be edited on Sales Opps.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;, 
+RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
+ISCHANGED(Discovery_Meeting_Scheduled_Date__c),
+NOT(ISBLANK(Discovery_Meeting_Scheduled_Date__c))
+)</errorConditionFormula>
+        <errorDisplayField>Discovery_Meeting_Scheduled_Date__c</errorDisplayField>
+        <errorMessage>You cannot edit the Discovery Scheduled Date.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Check_New_Sales_Opportunity</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -63163,6 +63222,22 @@ New_Sales_Opportunity__r.Account.Id &lt;&gt; Account.Id
 )</errorConditionFormula>
         <errorDisplayField>LeadSource</errorDisplayField>
         <errorMessage>Please fill out the Lead Source field for this Opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Initial_Meeting_Organizer</fullName>
+        <active>true</active>
+        <description>Initial Meeting Organizer should not be edited.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISNEW()),
+PRIORVALUE(Initial_Meeting_Organizer__c ) != &apos;&apos;,
+ISCHANGED(Initial_Meeting_Organizer__c ),
+OR(
+RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
+RecordType.DeveloperName =&apos;Sales_Opportunity_Closed&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>Initial_Meeting_Organizer__c</errorDisplayField>
+        <errorMessage>You cannot edit the Initial Meeting Organizer once filled out.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Lock_SDO_LeadSource</fullName>
