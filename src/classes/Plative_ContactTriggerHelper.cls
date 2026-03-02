@@ -212,11 +212,48 @@ public class Plative_ContactTriggerHelper  {
             for(AggregateResult result : [Select Count(Id), AccountId from Contact where AccountId in :accountCounts.keySet() AND AccountId != null AND Excel_Last_Use_Date__c != null GROUP BY AccountId]) {
                 accountCounts.put(String.valueof(result.get('AccountId')), Integer.valueOf(result.get('expr0')));
             }
-			List<Account> accUpdates = new List<Account>();
+            List<Account> accUpdates = new List<Account>();
             for(String accId : accountCounts.keySet()) {
                 if(String.isNotBlank(accId)) accUpdates.add(New Account(Id = accId, Excel_Add_In_Users__c = accountCounts.get(accId)));
             }
             if(!accUpdates.isEmpty()) update accUpdates;
+        }
+    }
+    /**
+    * Description : Synchronize Do Not Contact and Do Not Call fields across duplicate email contacts
+    * This method enqueues a Queueable job to handle the sync in an async context
+    **/
+    public static void syncDuplicateContactDNCFields(List<Contact> newContacts, Map<Id, Contact> oldContactMap) {
+        List<Id> contactsToSync = new List<Id>();
+        
+        // Check if Email, DoNotCall, or HasOptedOutOfEmail fields changed
+        for (Contact newContact : newContacts) {
+            Contact oldContact = oldContactMap != null ? oldContactMap.get(newContact.Id) : null;
+            
+            // For insert, check if contact has email
+            if (oldContact == null && String.isNotBlank(newContact.Email)) {
+                contactsToSync.add(newContact.Id);
+                continue;
+            }
+            
+            // For update, check if email or DNC/DNCall flags changed
+            if (oldContact != null) {
+                if (newContact.Email != oldContact.Email || 
+                    newContact.DoNotCall != oldContact.DoNotCall || 
+                    newContact.HasOptedOutOfEmail != oldContact.HasOptedOutOfEmail) {
+                        contactsToSync.add(newContact.Id);
+                    }
+            }
+        }
+        
+        // If there are contacts to sync, enqueue the queueable job
+        if (!contactsToSync.isEmpty() && !System.isBatch() && !Plative_ContactTriggerHandler.isDNCcheck) {
+            try {
+                Plative_ContactTriggerHandler.isDNCcheck = true;
+                System.enqueueJob(new SyncDuplicateContactDNCQueueable(contactsToSync));
+            } catch (Exception ex) {
+                System.debug('Error enqueuing SyncDuplicateContactDNCQueueable: ' + ex.getMessage());
+            }
         }
     }
 }
