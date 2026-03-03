@@ -63605,6 +63605,17 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
         <errorMessage>Lead Type cannot be blank.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_New_Opps_Stage_1</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISNEW(),
+RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
+NOT(ISPICKVAL(StageName, &quot;1 - Introducing&quot;))
+)</errorConditionFormula>
+        <errorDisplayField>StageName</errorDisplayField>
+        <errorMessage>New Sales Opportunities must begin at Stage 1.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Product_of_Interest</fullName>
         <active>true</active>
         <description>Require Product of Interest for SDO when moving to In Review.</description>
