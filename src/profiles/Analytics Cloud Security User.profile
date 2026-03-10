@@ -54696,6 +54696,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>AssessmentPlatformUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>CampaignInfluence2</name>
     </userPermissions>
     <userPermissions>
@@ -54740,6 +54744,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ViewDraftArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewEventLogFiles</name>
     </userPermissions>
     <userPermissions>
@@ -54753,6 +54761,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewPlatformEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewProductCatalogObjects</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

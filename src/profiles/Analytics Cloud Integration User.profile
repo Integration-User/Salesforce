@@ -58175,6 +58175,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>AllowViewKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ApexRestServices</name>
     </userPermissions>
     <userPermissions>
@@ -58184,6 +58188,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiUserOnly</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AssessmentPlatformUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58251,6 +58259,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ViewDraftArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewEventLogFiles</name>
     </userPermissions>
     <userPermissions>
@@ -58264,6 +58276,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewPlatformEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewProductCatalogObjects</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

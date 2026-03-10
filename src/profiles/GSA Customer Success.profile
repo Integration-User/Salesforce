@@ -16308,16 +16308,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Acquisition__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Altis_Account_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Account_Source__c</field>
         <readable>true</readable>
@@ -16331,6 +16321,11 @@
         <editable>false</editable>
         <field>Account.Account_Tier__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Acquisition__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -16376,6 +16371,11 @@
         <editable>false</editable>
         <field>Account.Agency__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Altis_Account_Id__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -27209,6 +27209,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Discovery_Meeting_Scheduled_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Disqualified_Context__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -28434,11 +28439,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.Discovery_Meeting_Scheduled_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Opportunity.Budget_Details__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -28898,11 +28898,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.GSA_Relationship__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Disqualified__c</field>
         <readable>true</readable>
@@ -29010,6 +29005,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Future_Renewal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.GSA_Relationship__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -60926,7 +60926,15 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>AllowUniversalSearch</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>AllowViewEditConvertedLeads</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AllowViewKnowledge</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
