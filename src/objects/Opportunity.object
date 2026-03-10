@@ -3014,6 +3014,17 @@ IF(INCLUDES(Marketing_Product_of_Interest__c, &quot;Infrastructure&quot;), 7500,
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>GSA_Relationship__c</fullName>
+        <description>Fetches the GSA Relationship from the account.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Type)</formula>
+        <label>GSA Relationship</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>GSA_Subsidairy__c</fullName>
         <description>Used for routing on-boarding and compliance alert</description>
         <externalId>false</externalId>
