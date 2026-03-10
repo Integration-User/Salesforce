@@ -29131,6 +29131,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.GSA_Relationship__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.GSA_Subsidairy__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -54706,6 +54711,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>AssessmentPlatformUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>CampaignInfluence2</name>
     </userPermissions>
     <userPermissions>
@@ -54750,6 +54759,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ViewDraftArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewEventLogFiles</name>
     </userPermissions>
     <userPermissions>
@@ -54763,6 +54776,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewPlatformEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewProductCatalogObjects</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
