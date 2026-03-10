@@ -63347,6 +63347,85 @@ NOT(ISPICKVAL(StageName, &quot;Open&quot;))
         <errorMessage>Please move this opportunity into your name, before trying to move stages.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Prevent_Move_Prior_Stage</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;Sales_Opportunity&apos;,
+NOT($Profile.Name = &quot;System Administrator&quot;),
+    ISCHANGED(StageName),
+    NOT(ISBLANK(PRIORVALUE(StageName))),
+    CASE(
+        TEXT(StageName),
+&quot;1 - Introducing&quot;, 1,
+&quot;2 - Conducting Needs Analysis&quot;, 2,
+&quot;3 - Qualifying&quot;, 3,
+&quot;4 - Recommending&quot;, 4,
+&quot;5 - Negotiation and Agreement Sent&quot;, 5,
+&quot;6 - Verbal Win and Finalizing Contract&quot;, 6,
+        &quot;Closed Won&quot;, 7,
+        &quot;Closed Lost&quot;, 7,
+        99
+    )
+    &lt;
+    CASE(
+        TEXT(PRIORVALUE(StageName)),
+&quot;1 - Introducing&quot;, 1,
+&quot;2 - Conducting Needs Analysis&quot;, 2,
+&quot;3 - Qualifying&quot;, 3,
+&quot;4 - Recommending&quot;, 4,
+&quot;5 - Negotiation and Agreement Sent&quot;, 5,
+&quot;6 - Verbal Win and Finalizing Contract&quot;, 6,
+        &quot;Closed Won&quot;, 7,
+        &quot;Closed Lost&quot;, 7,
+        99
+    )
+)</errorConditionFormula>
+        <errorDisplayField>StageName</errorDisplayField>
+        <errorMessage>You cannot move to the prior stage.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Skipping_Stage</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;System Administrator&quot;),
+  NOT(ISNEW()),
+  RecordType.DeveloperName = &apos;Sales_Opportunity&apos;,
+  ISCHANGED(StageName),
+
+  NOT( OR(
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    ISPICKVAL(StageName, &quot;Closed Lost&quot;)
+  )),
+  (
+    CASE(TEXT(StageName),
+      &quot;1 - Introducing&quot;, 1,
+      &quot;2 - Conducting Needs Analysis&quot;, 2,
+      &quot;3 - Qualifying&quot;, 3,
+      &quot;4 - Recommending&quot;, 4,
+      &quot;5 - Negotiation and Agreement Sent&quot;, 5,
+      &quot;6 - Verbal Win and Finalizing Contract&quot;, 6,
+      &quot;Closed Won&quot;, 7,
+      &quot;Closed Lost&quot;, 7,
+      0
+    )
+    &gt;
+    CASE(TEXT(PRIORVALUE(StageName)),
+      &quot;1 - Introducing&quot;, 1,
+      &quot;2 - Conducting Needs Analysis&quot;, 2,
+      &quot;3 - Qualifying&quot;, 3,
+      &quot;4 - Recommending&quot;, 4,
+      &quot;5 - Negotiation and Agreement Sent&quot;, 5,
+      &quot;6 - Verbal Win and Finalizing Contract&quot;, 6,
+      &quot;Closed Won&quot;, 7,
+      &quot;Closed Lost&quot;, 7,
+      0
+    ) + 1
+  )
+)</errorConditionFormula>
+        <errorDisplayField>StageName</errorDisplayField>
+        <errorMessage>You cannot skip stages. You must proceed to the next stage in sequence.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Prevent_Update_Oppty_Amount</fullName>
         <active>true</active>
         <description>Do not allow Sales and AM team members or leaders to edit closed won opportunities except Commercial Operations and System Admins.</description>
@@ -63609,6 +63688,7 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
         <active>true</active>
         <errorConditionFormula>AND(
 ISNEW(),
+NOT($Profile.Name = &quot;System Administrator&quot;),
 RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
 NOT(ISPICKVAL(StageName, &quot;1 - Introducing&quot;))
 )</errorConditionFormula>
