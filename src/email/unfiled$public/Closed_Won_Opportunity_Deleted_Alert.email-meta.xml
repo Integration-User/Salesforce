@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Closed Won Opportunity Deleted Alert</name>
+    <style>none</style>
+    <subject>Closed Won Opportunity Deleted Alert</subject>
+    <textOnly>Hi Team,
+
+Closed Won Opportunity has been deleted from the system. Please find the details below:
+
+Opportunity Name: {!Opportunity.Name}
+
+Account Link: {!Opportunity.Account}
+
+Opportunity Value: {!$Opportunity.Amount}
+
+Owner: {!Opportunity.OwnerFullName}
+
+Closed Date:{!Opportunity.CloseDate}
+
+Last Modified By: {!Opportunity.LastModifiedBy}
+
+Thanks.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
