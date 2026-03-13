@@ -31,6 +31,19 @@
         <template>Compliance_Workflow_Email_Templates/Prospect_SS5_Call_to_action</template>
     </alerts>
     <alerts>
+        <fullName>Closed_Won_Opportunity_Deleted_Alert</fullName>
+        <ccEmails>mbonyab@greenstreet.com,jecusi@greenstreet.com,mgupta@greenstreet.com</ccEmails>
+        <description>Closed Won Opportunity Deleted Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>trice@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@greenstreet.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Closed_Won_Opportunity_Deleted_Alert</template>
+    </alerts>
+    <alerts>
         <fullName>Closed_Won_Renewal_Alert</fullName>
         <description>Closed Won Renewal Alert</description>
         <protected>false</protected>
