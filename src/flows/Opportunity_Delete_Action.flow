@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Closed_Won_Opportunity_Deleted_Alert</name>
+        <label>Closed Won Opportunity Deleted Alert</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>Opportunity.Closed_Won_Opportunity_Deleted_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.Closed_Won_Opportunity_Deleted_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <constants>
+        <name>AllEmailAlerts</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>mohit.gupta@straive.com,mgupta@greenstreet.com</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Is_Opportunity_Closed_Won</name>
+        <label>Is Opportunity Closed Won?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Closed_Won</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Closed_Won_Opportunity_Deleted_Alert</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Opportunity - Delete Action {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Delete Action</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Opportunity_Closed_Won</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>OpportunityDeleteAlert</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 16px; font-family: serif;&quot;&gt;Hi Team,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; font-family: serif;&quot;&gt;Closed Won Opportunity has been deleted from the system. Please find the details below:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 16px; font-family: serif;&quot;&gt;Opportunity Name: &lt;/strong&gt;&lt;span style=&quot;font-size: 16px; font-family: serif;&quot;&gt; {!$Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 16px; font-family: serif;&quot;&gt;Account:&lt;/strong&gt;&lt;span style=&quot;font-size: 16px; font-family: serif;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;$Api.Partner_Server_URL_540 + &apos;/&apos; + {!$Record.AccountId}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 16px; font-family: serif;&quot;&gt;{!$Record.Account.Name}&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 16px; font-family: serif;&quot;&gt;Opportunity Value: &lt;/strong&gt;&lt;span style=&quot;font-size: 16px; font-family: serif;&quot;&gt;{!$Record.Amount}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 16px; font-family: serif;&quot;&gt;Owner: &lt;/strong&gt;&lt;span style=&quot;font-size: 16px; font-family: serif;&quot;&gt;{!$Record.Owner.FirstName} &amp;amp; &apos; &apos;  &amp;amp; &lt;/span&gt;&lt;span style=&quot;font-size: 16px; font-family: serif; background-color: rgb(255, 255, 255);&quot;&gt;{!$Record.Owner.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 16px; font-family: serif;&quot;&gt;Closed Date:&lt;/strong&gt;&lt;span style=&quot;font-size: 16px; font-family: serif;&quot;&gt; {!&lt;/span&gt;&lt;span style=&quot;font-size: 16px; font-family: serif; background-color: rgb(255, 255, 255);&quot;&gt;Record&lt;/span&gt;&lt;span style=&quot;font-size: 16px; font-family: serif;&quot;&gt;.CloseDate}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(41, 42, 46); font-family: serif; font-size: 16px; background-color: rgba(5, 21, 36, 0);&quot;&gt;Last Modified By: &lt;/strong&gt;&lt;span style=&quot;font-family: serif; font-size: 16px;&quot;&gt;{!$Record.LastModifiedBy.&lt;/span&gt;&lt;span style=&quot;font-family: serif; font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;FirstName&lt;/span&gt;&lt;span style=&quot;font-family: serif; font-size: 16px;&quot;&gt;} &lt;/span&gt;&lt;span style=&quot;font-family: serif; font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;amp; &apos; &apos;  &amp;amp; {!$Record.LastModifiedBy.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; font-family: serif;&quot;&gt;Thanks.&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+</Flow>
