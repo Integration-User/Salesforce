@@ -124,7 +124,7 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Outcome_1_of_Check_Renewal_Risk_Type</name>
+            <name>Outcome_Renewal_Risk_Type</name>
             <conditionLogic>(1 OR 2 OR 3) AND (4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Risk_Type__c</leftValueReference>
@@ -164,7 +164,7 @@
             <connector>
                 <targetReference>Update_This_YR</targetReference>
             </connector>
-            <label>Outcome 1 of Check Renewal Risk Type</label>
+            <label>Outcome Renewal Risk Type</label>
         </rules>
     </decisions>
     <decisions>
@@ -382,7 +382,7 @@
         <inputAssignments>
             <field>Timing_Risk__c</field>
             <value>
-                <stringValue>N/A (Attrition Expected)</stringValue>
+                <stringValue>Timing Risk</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
