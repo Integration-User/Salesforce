@@ -62511,12 +62511,24 @@ $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK(Company_Type_Opp__c),
 ISCHANGED(StageName),
 OR(
+    AND(
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
+      NOT(
+        OR(
+          ISPICKVAL(Close_Reason__c, &quot;Student/non-buying EDU/Media/non-viable contact&quot;),
+          ISPICKVAL(Close_Reason__c, &quot;Current Client&quot;),
+          ISPICKVAL(Close_Reason__c, &quot;Current Client - CS Request&quot;),
+          ISPICKVAL(Close_Reason__c, &quot;Spam&quot;)
+        )
+      )
+    ),
 ISPICKVAL( StageName , &quot;In Review&quot;)
 ),
-OR
-(
-NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
+
+  OR(
+    NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))
+  )
+)</errorConditionFormula>
         <errorMessage>Company type on account must be completed.</errorMessage>
     </validationRules>
     <validationRules>
