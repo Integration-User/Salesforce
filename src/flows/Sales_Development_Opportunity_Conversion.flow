@@ -138,7 +138,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Contact_Role_Exits</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>ListOfOpportunityContactRole</leftValueReference>
                 <operator>IsNull</operator>
@@ -432,7 +432,7 @@
         <inputAssignments>
             <field>Initial_Meeting_Organizer__c</field>
             <value>
-                <elementReference>$Record.Initial_Meeting_Organizer__c</elementReference>
+                <elementReference>$Record.OwnerId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -504,7 +504,7 @@
         <inputAssignments>
             <field>Sales_Type__c</field>
             <value>
-                <stringValue>New</stringValue>
+                <elementReference>salesType</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -573,6 +573,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Discovery_Meeting_Scheduled_Date__c</field>
+            <value>
+                <elementReference>$Record.Discovery_Meeting_Scheduled_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Inbound__c</field>
             <value>
                 <elementReference>$Record.Inbound__c</elementReference>
@@ -581,7 +587,7 @@
         <inputAssignments>
             <field>Initial_Meeting_Organizer__c</field>
             <value>
-                <elementReference>$Record.Initial_Meeting_Organizer__c</elementReference>
+                <elementReference>$Record.OwnerId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -820,7 +826,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>AMSDOReferredby</name>
         <dataType>String</dataType>
