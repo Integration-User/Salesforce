@@ -62574,6 +62574,7 @@ ISPICKVAL( StageName , &quot;Disqualified&quot;),
           ISPICKVAL(Close_Reason__c, &quot;Student/non-buying EDU/Media/non-viable contact&quot;),
           ISPICKVAL(Close_Reason__c, &quot;Current Client&quot;),
           ISPICKVAL(Close_Reason__c, &quot;Current Client - CS Request&quot;),
+          ISPICKVAL(Close_Reason__c, &quot;Unreachable&quot;),
           ISPICKVAL(Close_Reason__c, &quot;Spam&quot;)
         )
       )
@@ -62780,6 +62781,10 @@ $UserRole.DeveloperName &lt;&gt; &quot;Event_User&quot;,
 
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
+NOT(ISPICKVAL(Close_Reason__c, &quot;Student/non-buying EDU/Media/non-viable contact&quot;)),
+NOT(ISPICKVAL(Close_Reason__c, &quot;Current Client&quot;)),
+NOT(ISPICKVAL(Close_Reason__c, &quot;Current Client - CS Request&quot;)),
+NOT(ISPICKVAL(Close_Reason__c, &quot;Unreachable&quot;)),
 NOT(ISPICKVAL(Close_Reason__c, &quot;Spam&quot;)),
 ISCHANGED(StageName),
 OR(
