@@ -64,7 +64,7 @@
         <name>SalesforceRequestCaseClosed</name>
         <label>SalesforceRequestCaseClosed</label>
         <locationX>50</locationX>
-        <locationY>4247</locationY>
+        <locationY>4355</locationY>
         <actionName>Case.Salesforce_Request_Case_Closed</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -235,7 +235,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SalesforceRequestCaseClosed</targetReference>
+                <targetReference>Closed_Case_Owner_Update</targetReference>
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>CaseStatusIsClosed</label>
@@ -625,6 +625,22 @@
             <field>OwnerId</field>
             <value>
                 <elementReference>c_Gong_Queue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Closed_Case_Owner_Update</name>
+        <label>Closed Case Owner Update</label>
+        <locationX>50</locationX>
+        <locationY>4247</locationY>
+        <connector>
+            <targetReference>SalesforceRequestCaseClosed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
