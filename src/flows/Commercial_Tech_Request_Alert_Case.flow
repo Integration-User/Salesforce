@@ -4,7 +4,7 @@
         <name>Commercial_Tech_Request_Email</name>
         <label>Commercial Tech Request Email</label>
         <locationX>50</locationX>
-        <locationY>3047</locationY>
+        <locationY>3347</locationY>
         <actionName>Case.New_Salesforce_Request_Case_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -24,7 +24,7 @@
         <name>CTR_Auto_Reply</name>
         <label>CTR Auto Reply</label>
         <locationX>50</locationX>
-        <locationY>2447</locationY>
+        <locationY>2747</locationY>
         <actionName>Case.Commercial_Tech_Request_Auto_Reply</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -44,7 +44,7 @@
         <name>Salesforce_Request_Case_Cancelled</name>
         <label>Salesforce Request Case Cancelled</label>
         <locationX>50</locationX>
-        <locationY>3647</locationY>
+        <locationY>3947</locationY>
         <actionName>Case.Salesforce_Request_Case_Cancelled</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -64,7 +64,7 @@
         <name>SalesforceRequestCaseClosed</name>
         <label>SalesforceRequestCaseClosed</label>
         <locationX>50</locationX>
-        <locationY>3947</locationY>
+        <locationY>4247</locationY>
         <actionName>Case.Salesforce_Request_Case_Closed</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -81,7 +81,7 @@
         <name>SalesforceRequestStatusUpdate</name>
         <label>SalesforceRequestStatusUpdate</label>
         <locationX>50</locationX>
-        <locationY>3347</locationY>
+        <locationY>3647</locationY>
         <actionName>Case.Salesforce</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -99,11 +99,18 @@
     </actionCalls>
     <apiVersion>57.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <constants>
+        <name>c_Gong_Queue</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>00GWE000009luJJ</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Application_Is_Not_Null_Decision</name>
         <label>Application Is Not Null Decision</label>
         <locationX>182</locationX>
-        <locationY>2939</locationY>
+        <locationY>3239</locationY>
         <defaultConnector>
             <targetReference>Case_Is_Changed_Decision</targetReference>
         </defaultConnector>
@@ -129,7 +136,7 @@
         <name>Case_Cancelled</name>
         <label>Case Cancelled</label>
         <locationX>182</locationX>
-        <locationY>3539</locationY>
+        <locationY>3839</locationY>
         <defaultConnector>
             <targetReference>Case_Status_Is_Closed</targetReference>
         </defaultConnector>
@@ -161,7 +168,7 @@
         <name>Case_Is_Changed_Decision</name>
         <label>Case Is Changed Decision</label>
         <locationX>182</locationX>
-        <locationY>3239</locationY>
+        <locationY>3539</locationY>
         <defaultConnector>
             <targetReference>Case_Cancelled</targetReference>
         </defaultConnector>
@@ -215,7 +222,7 @@
         <name>Case_Status_Is_Closed</name>
         <label>Case Status Is Closed</label>
         <locationX>182</locationX>
-        <locationY>3839</locationY>
+        <locationY>4139</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CaseStatusIsClosed</name>
@@ -270,6 +277,7 @@
             <connector>
                 <targetReference>Update_Owner_Amplitude</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>AmplitudeRequest</label>
         </rules>
     </decisions>
@@ -302,7 +310,41 @@
             <connector>
                 <targetReference>Update_Owner_Chorus</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>ChorusRequest</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CTR_Gong</name>
+        <label>CTR Gong</label>
+        <locationX>182</locationX>
+        <locationY>2231</locationY>
+        <defaultConnector>
+            <targetReference>Salesforce_Request_Category_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Gong_Application</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Application__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gong</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_to_Gong_Queue</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Gong Application</label>
         </rules>
     </decisions>
     <decisions>
@@ -334,6 +376,7 @@
             <connector>
                 <targetReference>Update_Owner_Hubspot</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>HubspotRequest</label>
         </rules>
     </decisions>
@@ -366,6 +409,7 @@
             <connector>
                 <targetReference>Update_Owner_Linkedln</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>LinkedlnRequest</label>
         </rules>
     </decisions>
@@ -398,6 +442,7 @@
             <connector>
                 <targetReference>Update_Owner_Salesloft</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>SalesloftRequest</label>
         </rules>
     </decisions>
@@ -407,7 +452,7 @@
         <locationX>182</locationX>
         <locationY>1931</locationY>
         <defaultConnector>
-            <targetReference>Salesforce_Request_Category_Decision</targetReference>
+            <targetReference>CTR_Gong</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -430,6 +475,7 @@
             <connector>
                 <targetReference>Update_Owner_ZoomInfo</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>ZoomInfoRequest</label>
         </rules>
     </decisions>
@@ -473,7 +519,7 @@
         <name>Salesforce_Report_Decision</name>
         <label>Salesforce Report Decision</label>
         <locationX>182</locationX>
-        <locationY>2639</locationY>
+        <locationY>2939</locationY>
         <defaultConnector>
             <targetReference>Application_Is_Not_Null_Decision</targetReference>
         </defaultConnector>
@@ -512,7 +558,7 @@
         <name>Salesforce_Request_Category_Decision</name>
         <label>Salesforce Request Category Decision</label>
         <locationX>182</locationX>
-        <locationY>2231</locationY>
+        <locationY>2531</locationY>
         <defaultConnector>
             <targetReference>Salesforce_Report_Decision</targetReference>
         </defaultConnector>
@@ -567,6 +613,22 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Assign_to_Gong_Queue</name>
+        <label>Assign to Gong Queue</label>
+        <locationX>50</locationX>
+        <locationY>2339</locationY>
+        <connector>
+            <targetReference>Salesforce_Request_Category_Decision</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>c_Gong_Queue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <recordUpdates>
         <name>Update_Owner_Amplitude</name>
         <label>Update Owner = Amplitude</label>
@@ -635,7 +697,7 @@
         <name>Update_Owner_Salesforce_Report_Request</name>
         <label>Update Owner = Salesforce Report Request</label>
         <locationX>50</locationX>
-        <locationY>2747</locationY>
+        <locationY>3047</locationY>
         <connector>
             <targetReference>Application_Is_Not_Null_Decision</targetReference>
         </connector>
@@ -659,7 +721,7 @@
         <name>Update_Owner_Salesforce_Request</name>
         <label>Update Owner = Salesforce Request</label>
         <locationX>50</locationX>
-        <locationY>2339</locationY>
+        <locationY>2639</locationY>
         <connector>
             <targetReference>CTR_Auto_Reply</targetReference>
         </connector>
@@ -701,7 +763,7 @@
         <locationX>50</locationX>
         <locationY>2039</locationY>
         <connector>
-            <targetReference>Salesforce_Request_Category_Decision</targetReference>
+            <targetReference>CTR_Gong</targetReference>
         </connector>
         <inputAssignments>
             <field>OwnerId</field>
