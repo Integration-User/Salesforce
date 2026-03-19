@@ -2461,6 +2461,11 @@
                     <label>New Employee - SFDC Seat Request</label>
                 </value>
                 <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
                     <fullName>Platform Feedback/Wishlist</fullName>
                     <default>false</default>
                     <label>Platform Feedback/Wishlist</label>
@@ -2490,11 +2495,6 @@
                     <default>false</default>
                     <label>User Deactivation</label>
                 </value>
-                <value>
-                    <fullName>Other</fullName>
-                    <default>false</default>
-                    <label>Other</label>
-                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Chorus</controllingFieldValue>
@@ -2504,6 +2504,7 @@
                 <controllingFieldValue>SalesLoft</controllingFieldValue>
                 <controllingFieldValue>Amplitude</controllingFieldValue>
                 <controllingFieldValue>ZoomInfo</controllingFieldValue>
+                <controllingFieldValue>Gong</controllingFieldValue>
                 <valueName>Bug/Issue</valueName>
             </valueSettings>
             <valueSettings>
@@ -2513,12 +2514,24 @@
                 <controllingFieldValue>Salesforce</controllingFieldValue>
                 <controllingFieldValue>SalesLoft</controllingFieldValue>
                 <controllingFieldValue>ZoomInfo</controllingFieldValue>
+                <controllingFieldValue>Gong</controllingFieldValue>
                 <valueName>Data Cleanup</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Chorus</controllingFieldValue>
                 <controllingFieldValue>Salesforce</controllingFieldValue>
+                <controllingFieldValue>Gong</controllingFieldValue>
                 <valueName>General Customization</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Chorus</controllingFieldValue>
+                <controllingFieldValue>HubSpot</controllingFieldValue>
+                <controllingFieldValue>Linkedin Sales Nav</controllingFieldValue>
+                <controllingFieldValue>Salesforce</controllingFieldValue>
+                <controllingFieldValue>SalesLoft</controllingFieldValue>
+                <controllingFieldValue>ZoomInfo</controllingFieldValue>
+                <controllingFieldValue>Gong</controllingFieldValue>
+                <valueName>Other</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Chorus</controllingFieldValue>
@@ -2532,23 +2545,16 @@
                 <controllingFieldValue>Salesforce</controllingFieldValue>
                 <controllingFieldValue>SalesLoft</controllingFieldValue>
                 <controllingFieldValue>ZoomInfo</controllingFieldValue>
+                <controllingFieldValue>Gong</controllingFieldValue>
                 <valueName>Training</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Chorus</controllingFieldValue>
                 <controllingFieldValue>HubSpot</controllingFieldValue>
                 <controllingFieldValue>Linkedin Sales Nav</controllingFieldValue>
                 <controllingFieldValue>Salesforce</controllingFieldValue>
                 <controllingFieldValue>SalesLoft</controllingFieldValue>
                 <controllingFieldValue>ZoomInfo</controllingFieldValue>
-                <valueName>Other</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>HubSpot</controllingFieldValue>
-                <controllingFieldValue>Linkedin Sales Nav</controllingFieldValue>
-                <controllingFieldValue>Salesforce</controllingFieldValue>
-                <controllingFieldValue>SalesLoft</controllingFieldValue>
-                <controllingFieldValue>ZoomInfo</controllingFieldValue>
+                <controllingFieldValue>Gong</controllingFieldValue>
                 <valueName>Process Improvement</valueName>
             </valueSettings>
             <valueSettings>
@@ -4716,6 +4722,10 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Gong</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>HubSpot</fullName>
                 <default>false</default>
             </values>
@@ -6606,6 +6616,10 @@ FALSE))))))))))))))</formula>
             <picklist>Application__c</picklist>
             <values>
                 <fullName>Chorus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gong</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12699,6 +12713,10 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Gong</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>HubSpot</fullName>
                 <default>false</default>
             </values>
@@ -18218,6 +18236,10 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Chorus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gong</fullName>
                 <default>false</default>
             </values>
             <values>
