@@ -17094,12 +17094,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.ICP_Score_CRE_LP__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.ICP_Score_CRE_Platform__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.ICP_Score_CRE_Service_Providers__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.ICP_Score_INFRA_LP__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -17425,6 +17435,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Original_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Other_PB_IDs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
