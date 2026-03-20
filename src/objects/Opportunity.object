@@ -7692,6 +7692,25 @@ NULL))))</formula>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Risk_Type_Historical__c</fullName>
+        <externalId>false</externalId>
+        <label>Risk Type Historical</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Risk_Type_Last_Updated__c</fullName>
+        <label>Risk Type Last Updated</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Risk_Type__c</fullName>
         <inlineHelpText>Not depending on down sell. Just on paper actually being signed.</inlineHelpText>
         <label>Risk Type</label>
@@ -64626,7 +64645,7 @@ ISPICKVAL(Renewal_Risk__c,&quot;Power User / VIP left the Firm&quot;)))</errorCo
         <active>true</active>
         <errorConditionFormula>AND(
 RecordType.DeveloperName = &apos;Existing_Business&apos;,
-This_Year_Increase__c &lt; -1.00,
+This_Year_Increase__c &lt;= -1.00,
 OR(
 TEXT(Risk_Type__c)=&apos;Low Attrition Risk&apos;,
 TEXT(Risk_Type__c)=&apos;Medium Attrition Risk&apos;,
