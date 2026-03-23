@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OPPORTUNITY_ID</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY.NAME</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>FROM_OPPORTUNITY_STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Products__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Total_ARR__c.CONVERT</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(1 OR 2 OR 3) AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>includes</operator>
+            <value>Asset-Backed Alert</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>includes</operator>
+            <value>Commercial Mortgage Alert</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>includes</operator>
+            <value>Real Estate Alert</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>US Research + REIT Data</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>US Research + Market Data &amp; Deals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>Pan-European Research + REIT Data</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>Pan-European Research + Market Data &amp; Deals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>React News</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Sales_Opportunity_Closed,Opportunity.Sales_Opportunity</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>US News Only Price Change</name>
+    <params>
+        <name>include</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityHistory</reportType>
+    <scope>all</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>OPP_CLOSE_DATE</dateColumn>
+        <endDate>2022-04-12</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2021-01-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,253 @@
+<apex:page controller="seismic.SeismicTabButtonController" action="{!init}">
+    <apex:stylesheet value="{!URLFOR($Resource.seismic__SeismicAdmin)}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.seismic__jquery_ui_1_13_2_min_css)}"/>
+
+    <script type="text/javascript">
+	    window.$Label = window.$Label || {};
+        $Label.commonOk = '{!JSENCODE($Label.commonOk)}';
+
+        function format(string) {
+          	var outerArguments = arguments;
+          	return string.replace(/\{(\d+)\}/g, function () {
+            	return outerArguments[parseInt(arguments[1]) + 1];
+          	});
+        }
+
+		function decodeBase64(text) {
+            return decodeURIComponent(atob(text).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+		}
+    </script>
+    <script type="text/javascript" src="{!URLFOR($Resource.SeismicAdminSetting)}"></script>
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jquery_3_6_1_min_js)}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jquery_ui_1_13_2_min_js)}" />
+	<style type="text/css">
+			.ui-autocomplete-loading { background: white url('{!URLFOR($Resource.AjaxLoad_GIF)}') right center no-repeat; }
+	</style>
+
+    <script>
+    	jQuery.noConflict();
+
+        function disableAllButtons() {
+            var allBtns = [].slice.apply(document.getElementsByClassName("btn"));
+
+            for (var i = 0; i < allBtns.length; i++) {
+                var btn = allBtns[i];
+                if (btn) {
+                    btn.className = 'btnDisabled';
+                    btn.disabled = 'disabled';
+                }
+            }
+        }
+
+        function enableAllButtons() {
+            var allBtns = [].slice.apply(document.getElementsByClassName("btnDisabled"));
+
+            for (var i = 0; i < allBtns.length; i++) {
+                var btn = allBtns[i];
+                if (btn) {
+                    btn.className = 'btn';
+                    btn.removeAttribute('disabled');
+                }
+            }
+        }
+    	
+		function showError(msg) {
+            showGlobalMessage('error', msg);
+        }
+
+        function checkCanDelete(objectDisplayName, buttonName, buttonApiName, objectTypeMappingInstanceName, visualforcePageId) {
+            var msg = '';
+            if(buttonName && objectDisplayName) {
+                msg = format('{!$Label.messageConfirmDeleteObject}', buttonName, objectDisplayName);
+            } else {
+                msg = '{!$Label.messageConfirmDelete}';
+            }
+
+            if (window.confirm(msg)) {
+                deleteObjectTypeMapping();
+            }
+        }
+    </script>
+
+    <apex:form id="editObjectMappingLightning">
+        <apex:actionFunction name="showGlobalMessage" action="{!showGlobalMessage}" rerender="messages" immediate="true" oncomplete="enableAllButtons&&enableAllButtons()">
+            <apex:param name="messageTypeToShow" assignTo="{!messageTypeToShow}" value=""/>
+            <apex:param name="messageToShow" assignTo="{!messageToShow}" value=""/>
+        </apex:actionFunction>
+        <apex:sectionHeader id="editHeader" title="{!$Label.seismic__legacyHeaderFolderButton}" subtitle="{!IF(NOT(ISBLANK(newObjectTypeMapping.seismic__Object_Label__c)), newObjectTypeMapping.seismic__Object_Label__c, newObjectTypeMapping.seismic__Object_Name__c)}" rendered="{!NOT(ISNULL(newObjectTypeMapping.Id))}"/>
+        <apex:sectionHeader id="newHeader" title="{!$Label.seismic__legacyHeaderFolderButton}" subtitle="{!$Label.seismic__legacyHeaderFolderButtonSubtitle}" rendered="{!ISNULL(newObjectTypeMapping.Id)}"/>
+        <apex:pageMessages id="messages" escape="false" />
+        <apex:pageBlock id="settings" title="{!$Label.seismic__newHeaderEditTabButton}" rendered="{!objectTypeMappingAccessable}">
+            <apex:pageBlockButtons id="buttons" >
+                <script type="text/javascript">
+                    function getMissedFieldsLightning () {
+                        var fieldsToCheck = {};
+                        fieldsToCheck[buttonNameId] = '{!$Label.seismic__commonButtonName}';
+                        if({!ISNULL(newObjectTypeMapping.Id)}) {
+                            fieldsToCheck[objectName] = '{!$Label.seismic__commonRelated}';
+                        }
+
+                        fieldsToCheck[newEmbeddedApplication] = '{!$Label.seismic__commonEmbeddedApp}';
+
+                        var missedFields = [];
+                        for(var id in fieldsToCheck) {
+                            var label = fieldsToCheck[id];
+
+                            var input = document.getElementById(id);
+                            if(!input) continue;
+
+                            var value = input.value;
+                            if(!value) {
+                                missedFields.push(label);
+                            }
+                        }
+
+                        return missedFields;
+                    }
+
+                    function hasDuplicateButtonLightning(isUpdate) {
+                        return false;
+                    }
+
+                    function checkAndSaveButtonLightning(callback) {
+                        disableAllButtons();
+                        var missedFields = getMissedFieldsLightning();
+                        if(missedFields.length > 0) {
+                          	showError(format('{!$Label.messageEmptyField}', missedFields.join(', ')));
+                            return false;
+                        }
+
+                        var dupliate = hasDuplicateButtonLightning();
+                        if ('EXCEPTION' == dupliate) {
+                            enableAllButtons();
+                            return false;
+                        } else if(dupliate) {
+                          	showError('{!$Label.messageButtonExists}');
+                            return false;
+                        }
+                        callback();
+                    }
+
+                    function checkAndUpdateButtonLightning(callback) {
+                        disableAllButtons();
+                        var missedFields = getMissedFieldsLightning();
+                        if(missedFields.length > 0) {
+                          	showError(format('{!$Label.messageEmptyField}', missedFields.join(', ')));
+                            return false;
+                        }
+
+                        var dupliate = hasDuplicateButtonLightning(true);
+                        if('EXCEPTION' == dupliate) {
+                            enableAllButtons();
+                            return false;
+                        } else if(dupliate) {
+                            showError('{!$Label.messageButtonExists}');
+                            return false;
+                        }
+                        callback();
+                    }
+                </script>
+                <apex:actionFunction name="deleteObjectTypeMapping" action="{!deleteObjectTypeMapping}" rerender="messages" immediate="true" oncomplete="enableAllButtons&&enableAllButtons()" />
+                <apex:actionFunction action="{!saveNewObjectTypeMapping}" name="saveNewObjectTypeMappingLightning" />
+                <apex:commandButton id="saveButton" value="{!$Label.seismic__buttonSave}" rendered="{!ISNULL(newObjectTypeMapping.Id) && objectTypeMappingInsertable}" onclick="checkAndSaveButtonLightning(saveNewObjectTypeMappingLightning);return false;"/>
+                <apex:actionFunction action="{!updateObjectTypeMapping}" name="updateObjectTypeMappingLightning" />
+                <apex:commandButton id="updateButton" value="{!$Label.seismic__buttonSave}" rendered="{!NOT(ISNULL(newObjectTypeMapping.Id)) && objectTypeMappingUpdatable}" onclick="checkAndUpdateButtonLightning(updateObjectTypeMappingLightning);return false;"/>
+                <apex:commandButton id="deleteButton" value="{!$Label.seismic__buttonDelete}" rendered="{!NOT(ISNULL(newObjectTypeMapping.Id)) && objectTypeMappingDeleteable}" onclick="checkCanDelete(null, null, '{!JSINHTMLENCODE(newObjectTypeMapping.seismic__Button_Value__c)}', '{!JSINHTMLENCODE(newObjectTypeMapping.Name)}', '{!JSINHTMLENCODE(newObjectTypeMapping.seismic__Related_Visualforce_Page_Name__c)}'); return false;" />
+                <apex:commandButton action="{!backToList}" id="cancelButton" value="{!$Label.seismic__buttonCancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection id="fields" columns="1">
+                <apex:pageBlockSectionItem id="buttonName" >
+                    <apex:outputLabel id="label" value="{!$Label.seismic__commonButtonName}" for="newButtonNameLightning"/>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                        <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!newObjectTypeMapping.seismic__Button_Name__c}" id="newButtonNameLightning" style="width:250px"/>
+                        <apex:inputHidden value="{!newObjectTypeMapping.seismic__Button_Value__c}" id="newButtonValueLightning" />
+                        <script>
+                            var buttonNameId = '{!$Component.newButtonNameLightning}';
+                            var buttonValueId = '{!$Component.newButtonValueLightning}';
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="relatedObject" rendered="{!NOT(ISNULL(newObjectTypeMapping.Id))}" >
+                    <apex:outputLabel id="label" value="{!$Label.seismic__commonRelated}" for="newObjectType"/>
+                    <apex:outputpanel layout="block">{!newObjectTypeMapping.Object_Label__c}
+                        <script>
+                            function getCurrentObjectName() {
+                                return '{!JSENCODE(newObjectTypeMapping.Object_Name__c)}';
+                            }
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="relatedObjectList" rendered="{!ISNULL(newObjectTypeMapping.Id)}" >
+                    <apex:outputLabel id="label" value="{!$Label.seismic__commonRelated}" for="newObjectType"/>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                        <apex:outputpanel layout="block" styleClass="requiredBlock"></apex:outputpanel>
+						<apex:inputtext id="accountSearch" value="{!searchTerm}" html-placeholder="Begin typing to search for related object" style="width:250px"/> 
+                        <apex:inputHidden id="objectTypeSelectorHiddenLightning" value="{!newObjectTypeMapping.seismic__Object_Name__c}"/>
+                        <script type="text/javascript">
+                            var objectName = '{!$Component.objectTypeSelectorHiddenLightning}';
+                            function getCurrentObjectName() {
+                                var input = document.getElementById(objectName);
+                                return input && input.value;
+                            }
+                            jQuery(function(){  
+								jQuery("input[id$='accountSearch']").autocomplete({  
+								minLength: 2,  
+								source: function(request, response) {  
+										var searchString = request.term;  
+										Visualforce.remoting.Manager.invokeAction(
+											'{!$RemoteAction.SeismicTabButtonController.getSearchSuggestions}', searchString , function(result, event) {  
+											if(event.status) {  
+												if (typeof result === 'undefined' || result.length <=0) {  
+													response(['No Record Found']);  
+												} else {  
+													response(result);  
+												}  
+											} else {  
+												response([]);  
+											}  
+										});  
+								    }, 
+								select: function(event, ui){  
+										if(ui.item.label != 'No Record Found'){  
+											jQuery("input[id$='accountSearch']").val(ui.item.label);
+											document.getElementById('{!$Component.objectTypeSelectorHiddenLightning}').value = ui.item.value;
+										}  
+										return false;  
+								},  
+								focus: function( event, ui ) {  
+										jQuery("input[id$='accountSearch']").val(ui.item.label);  
+										return false;  
+								}  
+							});  
+						});  
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageblocksectionitem id="embeddedApp">
+                    <apex:outputLabel id="label" value="{!$Label.seismic__commonEmbeddedApp}" for="newEmbeddedApplication"/>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                        <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!newObjectTypeMapping.seismic__Embedded_Application__c}" id="newEmbeddedApplication" style="width:250px"/>
+                        <script>
+                            var newEmbeddedApplication = '{!$Component.newEmbeddedApplication}';
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem id="selectedTab">
+                    <apex:outputLabel id="label" value="{!$Label.seismic__newTabTitleTab}" for="newSelectedTab"/>
+                    <apex:outputpanel layout="block">
+                        <apex:outputpanel layout="block"/>
+                        <apex:inputfield value="{!newObjectTypeMapping.seismic__Selected_Tab__c}" id="newSelectedTab" style="width:250px"/>
+                        <script>
+                            var newSelectedTab = '{!$Component.newSelectedTab}';
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

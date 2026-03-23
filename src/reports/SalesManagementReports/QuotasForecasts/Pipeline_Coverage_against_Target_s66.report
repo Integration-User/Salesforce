@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>ForecastingFact_Opp.Amount:SUM / ForecastingQuota.QuotaAmount:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Gross Coverage</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>ForecastingFact_Opp.ExpectedRevenue:SUM / ForecastingQuota.QuotaAmount:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Weighted Coverage</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ForecastingQuota$QuotaAmount</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$Amount</field>
+    </columns>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$Probability</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$ExpectedRevenue</field>
+    </columns>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps*Opportunity$Last_Stage_Change__c</field>
+    </columns>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$CloseDate</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Conducting Needs Analysis (3),Pricing Proposal Sent (4),Agreement Sent and Being Negotiated (5),Verbal Win (6)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ForecastingQuota$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Kris Hoffman</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ForecastingQuota$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$StageName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Pipeline Coverage against Target (SS3+)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Forecast_Attainment__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$CloseDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

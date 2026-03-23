@@ -96,13 +96,42 @@ public class Plative_AccountTriggerHelper  {
 			    (acc.Company_Type__c != mapOldAcc.get(acc.Id).Company_Type__c))){
 				setCompanyTypes.add(acc.Company_Type__c);			
 			}
-		}
+            // SF-1775 : Update ZoomInfo_SIC_Code_account__c and ZoomInfo_NAICS_Code_account__c value from metadata
+            if(acc.ZoomInfo_SIC_Code_account__c != null) {
+                SIC_Codes_And_Descriptions__mdt sicCodeValue = SIC_Codes_And_Descriptions__mdt.getInstance('X'+acc.ZoomInfo_SIC_Code_account__c);
+                if(sicCodeValue != null && sicCodeValue.SIC_Descriptions_Value__c !=null) acc.SicDesc = sicCodeValue.SIC_Descriptions_Value__c;
+            }
+            if(acc.ZoomInfo_NAICS_Code_account__c != null) {
+                NAICS_US_Code_And_Titles__mdt naicsCodeTitles = NAICS_US_Code_And_Titles__mdt.getInstance('X'+acc.ZoomInfo_NAICS_Code_account__c);
+                if(naicsCodeTitles != null && naicsCodeTitles.NAICS_US_Title_Value__c !=null) acc.NAICS_Sector__c = naicsCodeTitles.NAICS_US_Title_Value__c;
+            }
+            //SF-1805 ICP Field Automation
+            if(mapOldAcc == null || (mapOldAcc != null && (acc.ZoomInfo_Industry_account__c != mapOldAcc.get(acc.Id).ZoomInfo_Industry_account__c || acc.ZoomInfo_Primary_Sub_Industry__c != mapOldAcc.get(acc.Id).ZoomInfo_Primary_Sub_Industry__c ))) {
+                List<ZoomInfo_Industry_And_Sub_Mapping__mdt> industrySubMappings = new List<ZoomInfo_Industry_And_Sub_Mapping__mdt>();
+                industrySubMappings.addAll([Select GS_Taxonomy__c, GS_Taxonomy_Type__c, ZoomInfo_Industry__c, ZoomInfo_Sub_Industry__c From ZoomInfo_Industry_And_Sub_Mapping__mdt Where ZoomInfo_Industry__c = :acc.ZoomInfo_Industry_account__c]);
+                industrySubMappings.addAll([Select GS_Taxonomy__c, GS_Taxonomy_Type__c, ZoomInfo_Industry__c, ZoomInfo_Sub_Industry__c From ZoomInfo_Industry_And_Sub_Mapping__mdt Where ZoomInfo_Sub_Industry__c = :acc.ZoomInfo_Primary_Sub_Industry__c]);
+                Boolean isGSTaxonomyUpdate = false;
+                for(ZoomInfo_Industry_And_Sub_Mapping__mdt metadata : industrySubMappings) {
+                    if(metadata.ZoomInfo_Industry__c == acc.ZoomInfo_Industry_account__c && metadata.ZoomInfo_Sub_Industry__c == acc.ZoomInfo_Primary_Sub_Industry__c) {
+                        System.debug('metadata-->' + metadata);
+                        acc.GS_Taxonomy__c = metadata.GS_Taxonomy__c;
+                        acc.GS_Taxonomy_Type__c = metadata.GS_Taxonomy_Type__c;
+                        isGSTaxonomyUpdate = true;
+                        break;
+                    }
+                }
+                if(!isGSTaxonomyUpdate) {
+                    acc.GS_Taxonomy__c = 'Insufficient Data';     
+                    acc.GS_Taxonomy_Type__c = 'Insufficient Data'; 
+                }
+            }
+        }
 		//if the field is not updated then return
-		if(setCompanyTypes.isEmpty()){
+		if(setCompanyTypes.isEmpty()) {
 			return true;	
 		}
 		
-		if(!setCompanyTypes.isEmpty()){
+		if(!setCompanyTypes.isEmpty()) {
 			updateCTypeId(lstAccounts, setCompanyTypes);
 		}
 		return true;
@@ -233,13 +262,13 @@ public class Plative_AccountTriggerHelper  {
             update renewalOwnerChanges;
         }
         // Step 1: Get Account details
-        List<Account> accounts = [SELECT Id, OwnerId,Owner.name, Customer_Success_Rep__c FROM Account WHERE Id IN :accIds];
+        List<Account> accounts = [SELECT Id, OwnerId, Customer_Success_Rep__c, owner.Name FROM Account WHERE Id IN :accIds];
         // Step 2: Get Owner IDs
         Set<Id> ownerIds = new Set<Id>();
         for (Account acc : accounts) {
+            system.debug('acc-->' + acc.owner.Name);
             ownerIds.add(acc.OwnerId);
         }
-        system.debug('ownerIds-->' + ownerIds);
         
         Map<Id, Boolean> ownerHasCSRole = new Map<Id, Boolean>();
         for (UserAccountTeamMember uatm : [SELECT OwnerId, TeamMemberRole FROM UserAccountTeamMember WHERE OwnerId IN :ownerIds AND TeamMemberRole = 'Customer Success']) {
@@ -249,18 +278,20 @@ public class Plative_AccountTriggerHelper  {
         // Account Team 
         List<Account> customerRepToAccount = New List<Account>();
         List<AccountTeamMember> teamMembersToDelete = new List<AccountTeamMember>();
-        List<AccountTeamMember> accountTeamMemberList = [SELECT AccountId, Account.Customer_Success_Rep__c,User.name FROM AccountTeamMember WHERE TeamMemberRole = 'Customer Success' AND AccountId IN :accIds ORDER BY LastModifiedDate DESC];
+        List<AccountTeamMember> accountTeamMemberList = [SELECT AccountId, Account.Customer_Success_Rep__c,User.name, UserId FROM AccountTeamMember WHERE TeamMemberRole = 'Customer Success' AND AccountId IN :accIds ORDER BY LastModifiedDate DESC];
+
         for (Account acc : accounts) {
             if (!ownerHasCSRole.containsKey(acc.OwnerId)) {
                 for (AccountTeamMember atm : accountTeamMemberList) {
                     if(atm.AccountId == acc.Id) teamMembersToDelete.add(atm);
                 }
                 // Nullify Customer_Success_Rep__c field
-               if(acc.Customer_Success_Rep__c != null) customerRepToAccount.add(new Account(Id = acc.Id, Customer_Success_Rep__c = null));
+               if(acc.Customer_Success_Rep__c != null)  customerRepToAccount.add(new Account(Id = acc.Id, Customer_Success_Rep__c = null, Customer_Success_Rep_ID__c = null));
             } else {
                 for (AccountTeamMember atm: accountTeamMemberList) {
+                    system.debug('atm-->' + atm);
                     if(atm.AccountId == acc.Id && atm.Account.Customer_Success_Rep__c != atm.User.name) {
-                        customerRepToAccount.add(new Account(Id = atm.AccountId, Customer_Success_Rep__c = atm.User.name));
+                        customerRepToAccount.add(new Account(Id = atm.AccountId, Customer_Success_Rep__c = atm.User.name, Customer_Success_Rep_ID__c = atm.UserId));
                     }
                 }
             }

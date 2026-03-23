@@ -39,6 +39,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Set_Final_Message</name>
         <label>Set Final Message</label>
@@ -256,6 +257,14 @@
             <name>Display_Final_Message</name>
             <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!finalMessage}&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>

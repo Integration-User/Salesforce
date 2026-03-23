@@ -48,6 +48,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Subscription_Product</name>
         <label>Assign Subscription Product</label>
@@ -404,6 +405,14 @@
             <name>txtError</name>
             <fieldText>&lt;p&gt;An error has occurred - please report the following message:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!$Flow.FaultMessage}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -423,6 +432,14 @@
             <name>Instructions</name>
             <fieldText>&lt;p&gt;The system will add new dates to the Subscription for the same Products.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>newStartDate</name>
@@ -430,6 +447,14 @@
             <fieldText>New Start Date</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <validationRule>
                 <errorMessage>&lt;p&gt;The new end date must be after the new start date&lt;/p&gt;</errorMessage>
                 <formulaExpression>{!newStartDate} &lt; {!newEndDate}</formulaExpression>
@@ -441,6 +466,14 @@
             <fieldText>New End Date</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <validationRule>
                 <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;The new end date must be after the new start date&lt;/span&gt;&lt;/p&gt;</errorMessage>
                 <formulaExpression>{!newStartDate} &lt; {!newEndDate}</formulaExpression>

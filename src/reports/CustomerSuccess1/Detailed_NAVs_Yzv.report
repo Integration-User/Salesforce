@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOWNER</field>
+    </columns>
+    <columns>
+        <field>WHO_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <criteriaItems>
+            <column>TASK_TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>NAV/Data Request,NAV Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CASE_TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Detailed NAV / Model</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Green Street</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Detailed NAV Requests</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2022-08-15</startDate>
+    </timeFrameFilter>
+</Report>

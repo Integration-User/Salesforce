@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_57199069</developerName>
+        <masterLabel>News</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Contact.Contact_Email_Distributions__r$Name</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Asset-Backed Alert</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Commercial Mortgage Alert</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund Alert</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Real Estate Alert</sourceValue>
+            </sourceValues>
+            <value>News</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>US Morning Update</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Quick Takes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Apartment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Health Care</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Industrial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Real Estate Analytics All</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Lodging</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Macro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Market Snapshots</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Office</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Retail</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Self Storage</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REA Week in Review</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT All</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Residential</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Retail</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Self Storage</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Week in Review</sourceValue>
+            </sourceValues>
+            <value>Research</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>EUR Quick Takes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR REA Industrial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Real Estate Analytics All</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR REA Macro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR REA Office</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR REA Retail</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR REIT All</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR REIT Macro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR REIT Retail</sourceValue>
+            </sourceValues>
+            <value>EU Research</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>US REIT All Sector Updates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Data Center / Towers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Health Care</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Industrial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Lodging</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Macro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Net Lease / Gaming</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US REIT Office / Lab Space</sourceValue>
+            </sourceValues>
+            <value>US Research</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Contact$Email</field>
+    </columns>
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Email_Distributions__r$Account__c</field>
+    </columns>
+    <columns>
+        <field>Contact$MailingCountry</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Email_Distributions__r$Opt_Out__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <column>Contact$Contact_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Contact_Email_Distributions__r$Opt_Out__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Contact_Email_Distributions__r$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Contacts with Email Distribution</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_with_Email_Distribution__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contact$Birthdate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -314,7 +314,7 @@ public class Plative_OpportunityRenewalHelper {
         newOpp.Billing_Contact__c = Opp.Billing_Contact__c;
         newOpp.Terms__c = Opp.Terms__c;
         newOpp.AccountId = Opp.AccountId;
-        newOpp.CampaignId = Opp.CampaignId; 
+        // SF-1743 : newOpp.CampaignId = Opp.CampaignId; 
         newOpp.Non_Standard_Paperwork__c = Opp.Non_Standard_Paperwork__c; 
 
         if(Opp.Evergreen_Contract__c == true){
@@ -541,6 +541,11 @@ public class Plative_OpportunityRenewalHelper {
         // Get Green Street IJGlobal product List to create DeActivation Case
         System_Configuration__mdt ijGlobalProductConfig = System_Configuration__mdt.getInstance('Green_Street_IJGlobal_Platform');
         List<String> ijGlobalPlatformProductList = ijGlobalProductConfig.Value__c.split(';');
+        
+        // Get Green Street College House product List to create DeActivation Case
+        System_Configuration__mdt collegeHouseproductConfig = System_Configuration__mdt.getInstance('Green_Street_College_House');
+        List<String> collegeHousePlatformProductList = collegeHouseproductConfig.Value__c.split(';');
+        collegeHousePlatformProductList.addAll(collegeHouseproductConfig.List_Of_Value__c.split(';'));
 
         for(Opportunity opp : triggerNew) {
             Opportunity oldOpp = triggerOldMap.get(opp.Id);
@@ -552,6 +557,7 @@ public class Plative_OpportunityRenewalHelper {
                    Boolean isGreenStreetlocatus = false;
                    Boolean isGreenStreetIJGlobal = false;
                    Boolean isGreenStreet = false;
+                   Boolean isGreenStreetCollegeHouse = false;
                    // For Green Street News product Check
                    for(String product : newsPlatformProductList) {
                        if(String.isNotBlank(products) && products.containsIgnoreCase(product)) {
@@ -573,10 +579,18 @@ public class Plative_OpportunityRenewalHelper {
                            break;
                        }
                    }
+                   // For Green Street College House Product Check
+                   for(String collegeHouseProduct : collegeHousePlatformProductList) {
+                       if(String.isNotBlank(products) && products.containsIgnoreCase(collegeHouseProduct)) {
+                           isGreenStreetCollegeHouse = true;
+                           break;
+                       }
+                   }
                    // For Green Street product Check
                    if(String.isNotBlank(products)) {
                        for(String oppProduct : products.split(';')) {
-                           if(!newsPlatformProductList.contains(oppProduct) && !locatusPlatformProductList.contains(oppProduct) && !ijGlobalPlatformProductList.contains(oppProduct)) {
+                           if(!newsPlatformProductList.contains(oppProduct) && !locatusPlatformProductList.contains(oppProduct) 
+                              && !ijGlobalPlatformProductList.contains(oppProduct) && !collegeHousePlatformProductList.contains(oppProduct)) {
                                isGreenStreet = true;
                                break;
                            }
@@ -586,6 +600,7 @@ public class Plative_OpportunityRenewalHelper {
                    system.debug('isGreenStreetlocatus->' + isGreenStreetlocatus);
                    system.debug('isGreenStreetNews->' + isGreenStreetNews);
                    system.debug('isGreenStreet->' + isGreenStreet);
+                   system.debug('isGreenStreetCollegeHouse->' + isGreenStreetCollegeHouse);
 
                    // Green Street Platform Case
                    if(isGreenStreet) {
@@ -619,6 +634,14 @@ public class Plative_OpportunityRenewalHelper {
                                                       Opportunity__c = opp.Id, Origin = 'Automation', ownerId = groupInfo.Id, Priority = 'High', 
                                                       Status = 'New', Subject = Opp.Account_Name__c +' - '+ opp.Activation_Deactivation_Needs__c, Platform__c = 'IJGlobal');
                        caseList.add(activationCaseForIJGlobal);
+                   }
+                   if(isGreenStreetCollegeHouse) {
+                       Case activationCaseForCollegeHouse = new Case(BusinessHoursId = System.Label.Default_Business_Hours_Id, recordTypeId = recordTypeId,
+                                                      AccountId = opp.AccountId, ActivationDeactivation_Needs__c = opp.Activation_Deactivation_Needs__c,
+                                                      CurrencyIsoCode = opp.CurrencyIsoCode, Due_Date__c = opp.Contract_Start_Date__c, Minutes_Spent_Cases__c = 3,
+                                                      Opportunity__c = opp.Id, Origin = 'Automation', ownerId = groupInfo.Id, Priority = 'High', 
+                                                      Status = 'New', Subject = Opp.Account_Name__c +' - '+ opp.Activation_Deactivation_Needs__c, Platform__c = 'College House');
+                       caseList.add(activationCaseForCollegeHouse);
                    }
                }  
         }

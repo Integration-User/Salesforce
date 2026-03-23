@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.asknicely__Asknicely__r$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Contact.asknicely__Asknicely__r$asknicely__score__c</field>
+    </columns>
+    <columns>
+        <field>Contact.asknicely__Asknicely__r$asknicely__surveyresponded__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Current_Products__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Company_Type_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Account</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Contact.asknicely__Asknicely__r$asknicely__surveyresponded__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>6/1/2022 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.asknicely__Asknicely__r$asknicely__surveyresponded__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>6/30/2022 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>June &apos;22 NPS</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_with_AskNicely_Responses__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Contact$Company_Type_Contact__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Contact$Birthdate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

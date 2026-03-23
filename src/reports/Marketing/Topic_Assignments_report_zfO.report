@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>TopicAssignment$Topic</field>
+    </columns>
+    <columns>
+        <field>TopicAssignment$Entity</field>
+    </columns>
+    <columns>
+        <field>TopicAssignment$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>TopicAssignment$DerivedRecord</field>
+    </columns>
+    <columns>
+        <field>TopicAssignment$EntityKeyPrefix</field>
+    </columns>
+    <columns>
+        <field>TopicAssignment$CreatedBy</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>Topic Assignments report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Topic_Assignments__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>TopicAssignment$CreatedDate</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>TopicAssignment$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

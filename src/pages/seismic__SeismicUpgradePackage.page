@@ -1,0 +1,18 @@
+<apex:page id="SeismicUpgradePackage" controller="seismic.SeismicUpgradePackageController">
+  <apex:form id="completeUpgrade">
+    <apex:pageBlock id="packageUpgrade" title="{!$Label.seismic__completeUpgradeHeader}" rendered="{!notComplete}">
+      <apex:pageBlockSection columns="1">
+        <span style="font-weight: bold;">{!$Label.messageImportant} </span>
+        {!$Label.messageUpgrade}
+      </apex:pageBlockSection>
+      <apex:pageBlockButtons id="completeUpgradeButton" location="bottom">
+        <apex:commandButton value="{!$Label.seismic__buttonCompleteUpgrade}" action="{!completeUpgrade}"/>
+      </apex:pageBlockButtons>
+    </apex:pageBlock>
+    <apex:pageBlock id="packageUpgradeComplete" title="{!$Label.seismic__completeUpgradeHeader}" rendered="{!!notComplete}">
+      <apex:pageBlockSection columns="1">
+        {!$Label.seismic__messageUpgradeComplete}
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

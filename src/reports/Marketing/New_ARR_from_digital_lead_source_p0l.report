@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_543557</developerName>
+        <masterLabel>Pipeline v Revenue</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>OPP.STAGE_NAME</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Qualified Prospect (2)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Conducting Needs Analysis (3)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pricing Proposal Sent (4)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Agreement Sent and Being Negotiated (5)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Verbal Win (6)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Quota, Current</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Quota, Prior Year</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Potential</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Active</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Deactivated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Consolidated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Suspended</sourceValue>
+            </sourceValues>
+            <value>Pipeline</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Won</sourceValue>
+            </sourceValues>
+            <value>Closed Won</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CAMPAIGN.NAME</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN.TYPE</field>
+    </columns>
+    <columns>
+        <field>CM.RESPONDED</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>CONTACT.FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>CONTACT.TITLE</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>OPP.NAME</field>
+    </columns>
+    <columns>
+        <field>OPP.OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>OPP.AMOUNT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>OPP.AMOUNT.CONVERT</field>
+    </columns>
+    <columns>
+        <field>REVENUE_SHARE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>REVENUE_SHARE.CONVERT</field>
+    </columns>
+    <columns>
+        <field>INFLUENCE</field>
+    </columns>
+    <columns>
+        <field>OPP.STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>OPP.CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>Contact.Products_Include__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Marketing_Identified_Country_contact__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN.CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>4/1/2020 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Digital: General Branding,Digital: EREA Content Download,Digital: Real Estate Alert Free Publication,2020 Digital EREA,2020 Digital News,2020 Digital Advertising,Digital: Real Estate Alert Free Trial,Digital: Commercial Mortgage Alert Free Publication,Digital: Real Estate Alert Subscription,Digital: Commercial Mortgage Alert Free Trial,Digital: Commercial Mortgage Alert Subscription</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPP.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>New -</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CampaignMember.Owner_Role__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Sales,BDR,BDR manager,UK News Manager</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPP.AMOUNT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>USD 0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPP.CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>4/1/2020 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>OPP.CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_543557</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>New ARR $ from digital lead source</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomizableCampaignInfluence</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

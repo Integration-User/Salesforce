@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Dispositivo IoT en vivo de Maps</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dispositivos IoT en vivo de Maps</value>
+    </caseValues>
+    <fields>
+        <label>Id. de dispositivo</label>
+        <name>maps__DeviceId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The physical address the device last reported from --></help>
+        <label>Dirección de última posición</label>
+        <name>maps__LastPositionAddress__c</name>
+    </fields>
+    <fields>
+        <help><!-- Timestamp of last received Geo-location message. --></help>
+        <label>Fecha/hora de última posición</label>
+        <name>maps__LastPositionDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Evento de última posición (sin procesar)</label>
+        <name>maps__LastPositionEventRaw__c</name>
+    </fields>
+    <fields>
+        <label>Ultima posición sin procesar</label>
+        <name>maps__LastPositionRaw__c</name>
+    </fields>
+    <fields>
+        <help><!-- Timestamp of this last position record updated by batch. --></help>
+        <label>Fecha/hora de lote de última posición</label>
+        <name>maps__LastPositionUpdateDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Zona horaria de último informado</label>
+        <name>maps__LastReportedTimeZone__c</name>
+    </fields>
+    <fields>
+        <label>Resumen diario más reciente</label>
+        <name>maps__LatestDailySummary__c</name>
+        <relationshipLabel><!-- Maps Live IoT Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Geo-location of last position received. --></help>
+        <label>Última posición</label>
+        <name>maps__Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading, in kilometers --></help>
+        <label>Odómetro (km)</label>
+        <name>maps__OdometerKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading, in miles --></help>
+        <label>Odómetro (mi)</label>
+        <name>maps__OdometerMiles__c</name>
+    </fields>
+    <fields>
+        <label>Usuario</label>
+        <name>maps__User__c</name>
+        <relationshipLabel><!-- Maps Live IoT Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Última actualización de NIV</label>
+        <name>maps__VINLastUpdated__c</name>
+    </fields>
+    <fields>
+        <label>NIV</label>
+        <name>maps__VIN__c</name>
+    </fields>
+    <fields>
+        <label>Proveedor de dispositivo</label>
+        <name>maps__Vendor__c</name>
+        <picklistValues>
+            <masterLabel>CalAmp</masterLabel>
+            <translation><!-- CalAmp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ford</masterLabel>
+            <translation><!-- Ford --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GM</masterLabel>
+            <translation><!-- GM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Geometris</masterLabel>
+            <translation><!-- Geometris --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Geotab</masterLabel>
+            <translation><!-- Geotab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maps Live Tracking: Mobile</masterLabel>
+            <translation><!-- Maps Live Tracking: Mobile --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nombre de dispositivo IoT en vivo de Map</nameFieldLabel>
+</CustomObjectTranslation>

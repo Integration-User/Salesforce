@@ -50,6 +50,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_to_Contact_List</name>
         <label>Add to Contact List</label>
@@ -490,6 +491,14 @@ V6 - Added the setting of the Start Date, End Date and Status</description>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;The Start Date will be applied to all selected Subscribers&lt;/p&gt;</helpText>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <validationRule>
                         <errorMessage>&lt;p&gt;Subscriber Start Date must be on or after the Subscription Start Date.&lt;/p&gt;</errorMessage>
                         <formulaExpression>ISBLANK({!Get_Subscription.Start_Date__c}) || ({!Get_Subscription.Start_Date__c} &lt;= {!Start_Date})</formulaExpression>
@@ -516,6 +525,14 @@ V6 - Added the setting of the Start Date, End Date and Status</description>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;The End Date will be applied to all selected Subscribers&lt;/span&gt;&lt;/p&gt;</helpText>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <validationRule>
                         <errorMessage>&lt;p&gt;Subscriber End Date must be on or before the Subscription End Date.&lt;/p&gt;</errorMessage>
                         <formulaExpression>ISBLANK({!Get_Subscription.End_Date__c} ) || ({!Get_Subscription.End_Date__c} &gt;= {!End_Date})</formulaExpression>
@@ -531,6 +548,14 @@ V6 - Added the setting of the Start Date, End Date and Status</description>
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>addSubscribers</name>
@@ -573,6 +598,14 @@ V6 - Added the setting of the Start Date, End Date and Status</description>
                         <assignToReference>listSelectedContacts_Output</assignToReference>
                         <name>listSelectedContacts_Output</name>
                     </outputParameters>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -584,6 +617,14 @@ V6 - Added the setting of the Start Date, End Date and Status</description>
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>true</showHeader>
@@ -600,6 +641,14 @@ V6 - Added the setting of the Start Date, End Date and Status</description>
             <name>ErrorMessage_0</name>
             <fieldText>&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <helpText>&lt;p style=&quot;text-align: center;&quot;&gt;Please try again or contact your Salesforce Admin.&lt;/p&gt;</helpText>
         <showFooter>true</showFooter>
@@ -617,6 +666,14 @@ V6 - Added the setting of the Start Date, End Date and Status</description>
             <name>ErrorMessage_0_0</name>
             <fieldText>&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <helpText>&lt;p style=&quot;text-align: center;&quot;&gt;Please try again or contact your Salesforce Admin.&lt;/p&gt;</helpText>
         <showFooter>true</showFooter>

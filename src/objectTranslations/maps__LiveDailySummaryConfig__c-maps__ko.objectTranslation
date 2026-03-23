@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Maps 라이브 일간 요약 구성</value>
+    </caseValues>
+    <fields>
+        <help><!-- Total number of active devices associated with the DeviceLayer on this Summary --></help>
+        <label>활성 장치 수</label>
+        <name>maps__ActiveDevicesCount__c</name>
+    </fields>
+    <fields>
+        <label>활성</label>
+        <name>maps__Active__c</name>
+    </fields>
+    <fields>
+        <label>장치 배터리 레코드 만들기</label>
+        <name>maps__CreateDeviceBatteryRecord__c</name>
+    </fields>
+    <fields>
+        <label>높은 가속 레코드 만들기</label>
+        <name>maps__CreateHardAccelRecord__c</name>
+    </fields>
+    <fields>
+        <label>과도한 브레이크 사용 레코드 만들기</label>
+        <name>maps__CreateHardBrakeRecord__c</name>
+    </fields>
+    <fields>
+        <label>속도 레코드 만들기</label>
+        <name>maps__CreateSpeedRecord__c</name>
+    </fields>
+    <fields>
+        <label>속도 임계값 레코드 만들기</label>
+        <name>maps__CreateSpeedThresholdRecord__c</name>
+    </fields>
+    <fields>
+        <label>시/도 주행 거리 레코드 만들기</label>
+        <name>maps__CreateStateMileageRecord__c</name>
+    </fields>
+    <fields>
+        <label>정지 레코드 만들기</label>
+        <name>maps__CreateStopRecord__c</name>
+    </fields>
+    <fields>
+        <label>설명</label>
+        <name>maps__Description__c</name>
+    </fields>
+    <fields>
+        <label>실시간 레이어</label>
+        <name>maps__DeviceLayer__c</name>
+        <relationshipLabel>실시간 일일 요약 구성</relationshipLabel>
+    </fields>
+    <fields>
+        <label>거리 값</label>
+        <name>maps__DistanceValue__c</name>
+    </fields>
+    <fields>
+        <label>운전 이동 최적화</label>
+        <name>maps__DriveTripOptimization__c</name>
+        <picklistValues>
+            <masterLabel>Mobile Tracking</masterLabel>
+            <translation><!-- Mobile Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle Tracking</masterLabel>
+            <translation><!-- Vehicle Tracking --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The current job id of the running Summary batch job associated with this config --></help>
+        <label>작업 ID</label>
+        <name>maps__JobId__c</name>
+    </fields>
+    <fields>
+        <label>마지막 배치 종료 일자/시간</label>
+        <name>maps__LastBatchEndDateTime__c</name>
+    </fields>
+    <fields>
+        <label>마지막 배치 ID</label>
+        <name>maps__LastBatchId__c</name>
+    </fields>
+    <fields>
+        <label>마지막 배치 시작 일자/시간</label>
+        <name>maps__LastBatchStartDateTime__c</name>
+    </fields>
+    <fields>
+        <label>거리 측정</label>
+        <name>maps__MeasureOfDistance__c</name>
+        <picklistValues>
+            <masterLabel>Feet</masterLabel>
+            <translation><!-- Feet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meters</masterLabel>
+            <translation><!-- Meters --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>속도 시간</label>
+        <name>maps__SpeedAmtOfTime__c</name>
+    </fields>
+    <fields>
+        <label>다음에 대한 속도 제한</label>
+        <name>maps__SpeedLimitOver__c</name>
+    </fields>
+    <fields>
+        <label>속도 제한 시간 증분</label>
+        <name>maps__SpeedLimitTimeIncrement__c</name>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minutes</masterLabel>
+            <translation><!-- Minutes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>속도 제한 시간</label>
+        <name>maps__SpeedLimitTime__c</name>
+    </fields>
+    <fields>
+        <label>속도 제한 단위</label>
+        <name>maps__SpeedLimitUnits__c</name>
+        <picklistValues>
+            <masterLabel>kph</masterLabel>
+            <translation><!-- kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mph</masterLabel>
+            <translation><!-- mph --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>속도 임계값 이벤트 활성</label>
+        <name>maps__SpeedThresholdEventActive__c</name>
+    </fields>
+    <fields>
+        <label>속도 임계값 시간</label>
+        <name>maps__SpeedThresholdTime__c</name>
+    </fields>
+    <fields>
+        <label>속도 임계값 단위</label>
+        <name>maps__SpeedThresholdUnits__c</name>
+        <picklistValues>
+            <masterLabel>Kph</masterLabel>
+            <translation><!-- Kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mph</masterLabel>
+            <translation><!-- Mph --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>속도 임계값</label>
+        <name>maps__SpeedThreshold__c</name>
+    </fields>
+    <fields>
+        <label>속도 값</label>
+        <name>maps__SpeedValue__c</name>
+    </fields>
+    <fields>
+        <label>과속 이벤트 활성</label>
+        <name>maps__SpeedingEventActive__c</name>
+    </fields>
+    <fields>
+        <label>정지 이벤트 활성</label>
+        <name>maps__StopEventActive__c</name>
+    </fields>
+    <fields>
+        <label>정지 시간 값</label>
+        <name>maps__StopTimeValue__c</name>
+    </fields>
+    <fields>
+        <label>속도 단위</label>
+        <name>maps__UnitOfSpeed__c</name>
+        <picklistValues>
+            <masterLabel>kph</masterLabel>
+            <translation><!-- kph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mph</masterLabel>
+            <translation><!-- mph --></translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel>Maps 실시간 일일 요약 구성 이름</nameFieldLabel>
+</CustomObjectTranslation>

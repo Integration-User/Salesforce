@@ -79,6 +79,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>ApproverIdAssignment</name>
         <label>Approver Id Assignment</label>
@@ -768,11 +769,27 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>display_ARRErrorTitle</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(186, 49, 41); background-color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;Opportunity Score - Recalculation needed&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Copy_1_of_display_ownErerror</name>
             <fieldText>&lt;p&gt;The opportunity scored condition has changed. Go back an calculate the score again before submitting for approval&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -790,11 +807,27 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>Screen_Title</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Error when trying to update the opportunity&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displayDMLError</name>
             <fieldText>&lt;p&gt;{!varDMLErrorMessages}&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -817,6 +850,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>InProgressScreenTitle2</name>
                     <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;Opportunity Score&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -839,6 +880,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>InProgressScreen_Section2</name>
@@ -859,11 +908,27 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>display_inProgress</name>
                     <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(239, 152, 78);&quot;&gt;Approval In progress&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>InProgress_Image_A_Icon</name>
@@ -896,6 +961,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -938,6 +1011,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -980,6 +1061,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1022,6 +1111,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1064,6 +1161,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1090,16 +1195,40 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>InProgress_displayTextScoreMessageInstructions</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Please, review the obtained scoring. Here are the reasons for the scoring result:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>InProgress_displayTextScoreMessage</name>
                     <fieldText>&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;strong&gt;{!recordID.DDS_ScoreInsight__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>InProgress_displayInsightNewLogo</name>
                     <fieldText>&lt;p&gt;{!newLogoInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1129,6 +1258,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>InProgress_displayRenewalTextInsight</name>
                     <fieldText>&lt;p&gt;{!renewalInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
                         <conditions>
@@ -1165,6 +1302,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>InProgress_displayMultiYearInsoght</name>
                     <fieldText>&lt;p&gt;{!MultiYearInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1187,6 +1332,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>InProgress_displayYoYInsight</name>
                     <fieldText>&lt;p&gt;{!YoYunmetInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1209,6 +1362,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>InProgress_displayHVTInsight</name>
                     <fieldText>&lt;p&gt;{!HVTunmetInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1231,6 +1392,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>displayHVTmultiyear</name>
                     <fieldText>&lt;p&gt;{!HVTunmetMultiYearTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1260,6 +1429,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>displayHVTandYoYinsight</name>
                     <fieldText>&lt;p&gt;{!YoYandHVTunmetInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1295,6 +1472,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Submit for Approval</nextOrFinishButtonLabel>
         <showFooter>false</showFooter>
@@ -1313,11 +1498,27 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>NoApproverTitle</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 11px;&quot;&gt;&lt;img src=&quot;https://greenstreetadvisors--mckinsey.sandbox.file.force.com/sfc/servlet.shepherd/version/download/0687c000001YbKq?asPdf=false&amp;amp;operationContext=CHATTER&quot; alt=&quot;warning_60.png&quot;&gt; &lt;/strong&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;No approver found&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>display_NoApprover</name>
             <fieldText>&lt;p&gt;There is no manager found in the opportunity&apos; owner information who can approve the score. Ask you administrator to assign a manager before submitting for approval.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -1337,6 +1538,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>textInitialTitle</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Opportunity Score&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>OpportunityInitialScore_Section1</name>
@@ -1394,6 +1603,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                         <assignToReference>varDMLErrorMessages</assignToReference>
                         <name>dmlError</name>
                     </outputParameters>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1426,6 +1643,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
@@ -1445,11 +1670,27 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>titleUnableToCalculateScore</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(186, 49, 41);&quot;&gt;Unable to Calculate the Score&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>textErrorMessage</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(186, 49, 41);&quot;&gt;It was not possible to calculate the score. Contact with your administrator to get support.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>ScreenErrorAdmin_Section1</name>
@@ -1507,6 +1748,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                         <assignToReference>varDMLErrorMessages</assignToReference>
                         <name>dmlError</name>
                     </outputParameters>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1539,6 +1788,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
@@ -1558,16 +1815,40 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>displayTextTitleMissingFields</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(186, 49, 41); font-size: 16px;&quot;&gt;Unable to Calculate the Score&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>textMissingFields</name>
             <fieldText>&lt;p&gt;Please, validate the following information to score the opportunity:&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>textMissingInput</name>
             <fieldText>&lt;p class=&quot;ql-indent-1&quot;&gt;{!recordID.DDS_ScoreInsight__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>ScreenErrorInput_Section1</name>
@@ -1625,6 +1906,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                         <assignToReference>varDMLErrorMessages</assignToReference>
                         <name>dmlError</name>
                     </outputParameters>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1657,6 +1946,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
@@ -1677,17 +1974,41 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>Copy_1_of_ScreenTitle1</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Opportunity Score&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>approvalSuccessText</name>
             <fieldText>&lt;p&gt;Before submitting the opportunity for approval, provide a brief justification for the ARR proposed.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>inputTextPriceJustification</name>
             <fieldText>Price justification (max 500 characters)</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <validationRule>
                 <errorMessage>&lt;p&gt;The input text has exceeded the maximum length of 500 characters&lt;/p&gt;</errorMessage>
                 <formulaExpression>LEN({!inputTextPriceJustification})&lt;501</formulaExpression>
@@ -1697,6 +2018,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>displayTextApproverAssigned</name>
             <fieldText>&lt;p&gt;Assigned approver: &lt;strong&gt;{!recordID.Owner.Manager.FirstName} &lt;/strong&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!recordID.Owner.Manager.LastName}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Continue</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -1714,11 +2043,27 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>textTitleWrongContractYear</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;Opportunity Score&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>textWrongContractYearMessage</name>
             <fieldText>&lt;p&gt;The current contract year is not suitable to get a score.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
@@ -1735,11 +2080,27 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             <name>textTitleWrongRT</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;Opportunity Score&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>textWrongRTexp</name>
             <fieldText>&lt;p&gt;The current  record type is not suitable to get a score.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
@@ -1765,6 +2126,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>Copy_1_of_Copy_2_of_ScreenTitle2</name>
                     <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;Opportunity Score&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1827,6 +2196,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                         <assignToReference>varDMLErrorMessages</assignToReference>
                         <name>dmlError</name>
                     </outputParameters>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1848,6 +2225,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>SuccessScreen_Section2</name>
@@ -1868,11 +2253,27 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>display_Rejected</name>
                     <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;Approval Status:&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(215, 46, 45);&quot;&gt;Rejected&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1888,6 +2289,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>display_Approved</name>
                     <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;Approval Status:&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(71, 130, 80); background-color: rgb(255, 255, 255);&quot;&gt;Approved&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1930,6 +2339,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1972,6 +2389,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2014,6 +2439,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2056,6 +2489,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2098,6 +2539,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2124,16 +2573,40 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>displayTextScoreMessageInstructions</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Please, review the obtained scoring. Here are the reasons for the scoring result:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>displayTextScoreMessage</name>
                     <fieldText>&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;strong&gt;{!recordID.DDS_ScoreInsight__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>displayInsightNewLogo</name>
                     <fieldText>&lt;p&gt;{!newLogoInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2163,6 +2636,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>displayRenewalTextInsight</name>
                     <fieldText>&lt;p&gt;{!renewalInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
                         <conditions>
@@ -2199,6 +2680,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>displayMultiYearInsoght</name>
                     <fieldText>&lt;p&gt;{!MultiYearInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2221,6 +2710,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>displayYoYInsight</name>
                     <fieldText>&lt;p&gt;{!YoYunmetInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2243,6 +2740,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>displayHTVInsight</name>
                     <fieldText>&lt;p&gt;{!HVTunmetInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2265,6 +2770,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>display_HVTunmetMY</name>
                     <fieldText>&lt;p&gt;{!HVTunmetMultiYearTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2294,6 +2807,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>display_HVTandYoYunmet</name>
                     <fieldText>&lt;p&gt;{!YoYandHVTunmetInsightTemplate}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2323,6 +2844,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>displayTextRequestforApproval</name>
                     <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;If you are happy with the current score result, &lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;submit for approval&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; to continue.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2338,6 +2867,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>display_NoApprovalText</name>
                     <fieldText>&lt;p&gt;Given the current contract year, this score does not require additional approval&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2360,6 +2897,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
                     <name>display_ApprovedText</name>
                     <fieldText>&lt;p&gt;Your opportunity is approved. You may send the proposal to the customer.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -2381,6 +2926,14 @@ FLOOR(({!recordID.Contract_End_Date__c}- {!recordID.Contract_Start_Date__c})/365
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Submit for Approval</nextOrFinishButtonLabel>
         <showFooter>false</showFooter>

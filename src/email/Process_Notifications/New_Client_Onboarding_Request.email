@@ -1,0 +1,19 @@
+{!Opportunity.OwnerFullName} just signed a {!Opportunity.Length_of_Contract__c} year contract with {!Opportunity.Account} for {!Opportunity.Amount}!
+
+STAGE: {!Opportunity.StageName} {!NullValue(Opportunity.Trial_End_Date__c, "")}
+
+Please inform us if the client priority should be set to something different than the designated AM’s team.
+
+- Details -
+Company Type: {!Opportunity.Company_Type_Opp__c}              
+Products:  {!Opportunity.Products__c}
+Address:             
+{!Account.BillingAddress} 
+
+{!Opportunity.Special_Circumstances__c}
+
+Contract Dates: {!Opportunity.Contract_Start_Date__c} - {!Opportunity.Contract_End_Date__c}
+Billing Contact:     {!Opportunity.Billing_Contact__c}
+Billing Cadence:  {!Opportunity.Billing_Schedule__c} {!Opportunity.Other_Invoice_Frequency__c}
+
+{!Opportunity.Link}

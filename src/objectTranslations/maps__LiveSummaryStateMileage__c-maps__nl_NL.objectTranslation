@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Kilometerstand van Maps Live-samenvattingsstaat</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Kilometerstanden van Maps Live-samenvattingsstaten</value>
+    </caseValues>
+    <fields>
+        <help><!-- The 3 character country code --></help>
+        <label>Land</label>
+        <name>maps__Country__c</name>
+        <picklistValues>
+            <masterLabel>CAN</masterLabel>
+            <translation><!-- CAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Specified</masterLabel>
+            <translation><!-- Not Specified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Live Asset Daily Summary record to which this mileage relates --></help>
+        <label>Dagelijks overzicht live activum</label>
+        <name>maps__LiveAssetDailySummary__c</name>
+        <relationshipLabel>Live overzicht kilometerstand staat</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Rapportdatum</label>
+        <name>maps__ReportDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The associated state or province for this record --></help>
+        <label>Staat of provincie</label>
+        <name>maps__StateProvince__c</name>
+    </fields>
+    <fields>
+        <label>Totale afstand afgelegd (km)</label>
+        <name>maps__TotalDistanceTraveledKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in miles within this state. --></help>
+        <label>Totale afstand afgelegd (mijl)</label>
+        <name>maps__TotalDistanceTraveledMiles__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Naam live overzicht kilometerstand staat</nameFieldLabel>
+</CustomObjectTranslation>

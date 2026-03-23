@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>STREET</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>LEAD_SOURCE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Demo Request,Digital Campaign,Inquiry,Marketing Qualified,New Alert Trial,Report Request,Slide Request,Snowflake,Webinar</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Inquiry_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>React Inquiry</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Inbounds January - Old Process</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2024-01-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2024-01-01</startDate>
+    </timeFrameFilter>
+</Report>

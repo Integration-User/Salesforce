@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$RecordType</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Total_ARR__c.CONVERT</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CurrencyIsoCode</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Id</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SalesDevelopment__r$CreatedDate</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Validate Closed Won and Lost</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won,Closed Lost</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$StageName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Marketing Lead Conversion - Closed</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_SDO__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.SalesDevelopment__r$Created_Date_short__c</dateColumn>
+        <endDate>2025-08-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2025-08-01</startDate>
+    </timeFrameFilter>
+</Report>

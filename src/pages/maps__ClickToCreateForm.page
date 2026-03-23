@@ -54,33 +54,36 @@
                 <apex:outputPanel rendered="{! IF(RequestPlatform == 'tablet' && f.typeAsString == 'REFERENCE', false, true)}" layout="none">
                     <apex:outputPanel layout="none" rendered="{!f.typeAsString == 'DATE' || f.typeAsString == 'DATETIME'}">
                         <div class="slds-form-element slds-m-top_x-small slds-grid slds-grid_vertical">
-                            <label class="fieldLabel dateLabel slds-form-element__label">{!f.Label}
-                                <apex:outputText value="*" rendered="{!f.Required || f.DBRequired}"/>
+                            <label class="fieldLabel dateLabel slds-form-element__label">
+                                <apex:outputText rendered="{!f.Required || f.DBRequired}">
+                                    <abbr class='slds-required' title='required'>*</abbr>
+                                </apex:outputText>
                                 <apex:outputText value="@" rendered="{!arcgisMapped[f.fieldPath]}"/>
+                                {!f.Label}
                             </label>
 
                             <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}">
                                 <div class="datetimepicker-container slds-grid slds-gutters">
                                     <div class="dateInput slds-col">
-                                        <apex:inputText value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} datePick datepicker" rendered="{!!locked[f.fieldPath]}" />
-                                        <apex:outputText value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} datePick" rendered="{!locked[f.fieldPath]}" html-disabled="disabled" />
+                                        <apex:inputText value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} datePick datepicker" rendered="{!!locked[f.fieldPath]}" html-aria-label="{!f.Label}" />
+                                        <apex:outputText value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} datePick" rendered="{!locked[f.fieldPath]}" html-disabled="disabled" html-aria-label="{!f.Label}" />
                                     </div>
                                     <apex:outputPanel layout="none" rendered="{!f.typeAsString == 'DATETIME' && !locked[f.fieldPath]}">
                                         <div class="updateFields-datetime-template">
                                             <div class="slds-grid slds-grid_vertical-align-center date-time-v2-selector">
                                                 <div style="width: 1rem;"></div>
                                                 <div>
-                                                    <select class="hr" title="Hour"></select>
+                                                    <select class="hr" title="Hour" aria-label="Hour"></select>
                                                 </div>
                                                 <div>
                                                     <span class="timeColon">:</span>
                                                 </div>
                                                 <div>
-                                                    <select class="min" title="Minute"></select>
+                                                    <select class="min" title="Minute" aria-label="Minute"></select>
                                                 </div>
                                                 <div style="width: 1rem;"></div>
                                                 <div>
-                                                    <select class="am-pm" title="AM/PM">
+                                                    <select class="am-pm" title="AM/PM" aria-label="AM/PM">
                                                         <option value="AM">AM</option>
                                                         <option value="PM">PM</option>
                                                     </select>
@@ -112,8 +115,8 @@
 
                             <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}">
                                 <div>
-                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath}" rendered="{!!locked[f.fieldPath]}" />
-                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath}" rendered="{!locked[f.fieldPath]}" html-disabled="disabled" />
+                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath}" rendered="{!!locked[f.fieldPath]}" html-aria-label="{!f.Label}" />
+                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath}" rendered="{!locked[f.fieldPath]}" html-disabled="disabled" html-aria-label="{!f.Label}" />
                                 </div>
                             </div>
                         </div>
@@ -130,11 +133,11 @@
 
                             <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}">
                                 <div>
-                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} slds-input" rendered="{!!locked[f.fieldPath]}" />
+                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} slds-input" rendered="{!!locked[f.fieldPath]}" html-aria-label="{!f.Label}" />
                                 </div>
                                 <apex:outputPanel rendered="{!locked[f.fieldPath]}">
                                     <div class="slds-form-element--has-hover-tooltip">
-                                        <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} slds-input" html-disabled="disabled" />
+                                        <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} slds-input" html-disabled="disabled" html-aria-label="{!f.Label}" />
                                         <div class="slds-popover slds-popover_tooltip slds-nubbin_top-left" role="tooltip" aria-live="polite">
                                             <div class="slds-popover__body slds-text-longform">
                                                 <p>Your administrator has predetermined these fields for you.</p>
@@ -158,13 +161,13 @@
 
                             <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}">
                                 <div>
-                                    <apex:selectList value="{!obj[f.fieldPath]}" multiselect="true" styleClass="{!f.fieldPath} get-input" rendered="{!!locked[f.fieldPath]}">
+                                    <apex:selectList value="{!obj[f.fieldPath]}" multiselect="true" styleClass="{!f.fieldPath} get-input" rendered="{!!locked[f.fieldPath]}" html-aria-label="{!f.Label}">
                                         <apex:selectOptions value="{!multiSelectFields[f.fieldPath]}"/>
                                     </apex:selectList>
                                 </div>
                                 <apex:outputPanel rendered="{!locked[f.fieldPath]}">
                                     <div class="slds-form-element--has-hover-tooltip">
-                                        <apex:selectList value="{!obj[f.fieldPath]}" multiselect="true" styleClass="{!f.fieldPath} get-input">
+                                        <apex:selectList value="{!obj[f.fieldPath]}" multiselect="true" styleClass="{!f.fieldPath} get-input" html-aria-label="{!f.Label}">
                                             <apex:selectOptions value="{!multiSelectFields[f.fieldPath]}"/>
                                         </apex:selectList>
                                         <div class="slds-popover slds-popover_tooltip slds-nubbin_top-left" role="tooltip" aria-live="polite">

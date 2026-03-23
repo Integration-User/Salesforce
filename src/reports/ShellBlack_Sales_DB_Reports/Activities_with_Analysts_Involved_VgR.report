@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>TASK_TYPE</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>Activity.Analysts__c</field>
+    </columns>
+    <columns>
+        <field>FULL_DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>ASSIGNED</field>
+    </columns>
+    <currency>USD</currency>
+    <description>This report contains all activities where an analyst was involved starting December 1, 2018.</description>
+    <filter>
+        <criteriaItems>
+            <column>Activity.Analysts__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Activity.Analysts__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>Alistair Bush,Aaron Ling,Will Morrow,Kris Hoffman,Ryan Dalton,Lauren Spinazze,Eric Lovett,Katherine Marin,Jenna Gregory,Ben Perkins,Louis Attwood,Paul Eager,Matt Souter,Elizabeth Steiner,Murray Banks,Murrie Holland,Anna Cervisi,Lauren Rebolloso,Kevin Johnson,Connor Ryberg,Kristen Santos,Carolina Paini,Dirk Aulabaugh,Phil Owens,Kristen Angle,Ruben Bos,Kris Rapadas,Amanda Nguyen,David Balaguer,Sharon Robertson,Adam Shapton,Richard Martin,David De La Rosa,Damon Scott,Gabriella Peak,Susan Worsham,Randy Wussler,Yiqun Wang,Justin Brown,Jim Sullivan,Tim Joy,Carrie Fisher,Staci Pollock,Jesse Freitag-Akselrod,John Lutzius,Seth Laughlin,Max Warren,Michael Vranich,Juella Waller,Laurie Hauck,Katie Clemons,Kiki Watkins</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TASK_TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Admin,Compliance,Conference/Booth,Interactive Email,Outgoing Email,Email,&quot;Referral, Advisory&quot;,Referral (GSI or Advisory),Relationship Review,Account/Information Update,Relationship Update,Sales Stage Update</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Activities with Analysts Involved</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountActivity</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

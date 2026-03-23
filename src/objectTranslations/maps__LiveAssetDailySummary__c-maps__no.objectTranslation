@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Daglige sammendraget for Maps Live-aktivum</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Daglig sammendrag for Maps Live-aktivum</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Daglig sammendrag for Maps Live-aktivum</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Daglige sammendragene for Maps Live-aktivum</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Daglige sammendrag for Maps Live-aktivum</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Daglige sammendrag for Maps Live-aktivum</value>
+    </caseValues>
+    <fields>
+        <help><!-- Average duration of user-defined stop events, in hours. --></help>
+        <label>Gjennomsnittlig stopptid (timer)</label>
+        <name>maps__AverageStopTimeHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Average duration of user-defined stop events, in minutes. --></help>
+        <label>Gjennomsnittlig stopptid (minutter)</label>
+        <name>maps__AverageStopTimeMinutes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the device battery on events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Antall hendelser – enhetsbatteri på</label>
+        <name>maps__CountOfEventsDeviceBatteryOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the speed threshold events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Antall enheter – fartsterskel</label>
+        <name>maps__CountOfEventsSpeedThreshold__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the speeding events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Antall enheter – økt hastighet</label>
+        <name>maps__CountOfSummaryEventsSpeeding__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the stop events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Antall enheter – stopp</label>
+        <name>maps__CountOfSummaryEventsStops__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that this summary applies to --></help>
+        <label>Sammendragsdato</label>
+        <name>maps__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device Vendor concatenated with Device ID --></help>
+        <label>Enhets-ID</label>
+        <name>maps__DeviceId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total time spent moving with engine on, in hours --></help>
+        <label>Kjøretid (timer)</label>
+        <name>maps__DriveTimeHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total time spent moving with engine on, in minutes --></help>
+        <label>Kjøretid (minutter)</label>
+        <name>maps__DriveTimeMinutes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if a trip took place within denoted holiday off --></help>
+        <label>Kjøring på fridager</label>
+        <name>maps__DrivingDuringHolidayOff__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if a trip took place outside of denoted working hours --></help>
+        <label>Kjøring utenfor arbeidstid</label>
+        <name>maps__DrivingOutsideWorkingHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the full data content of the first point received by aws for the day. --></help>
+        <label>Innhold første melding</label>
+        <name>maps__FirstMessageContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the date and time of the first point received by aws for the day. --></help>
+        <label>Tidsstempel på første melding</label>
+        <name>maps__FirstMessageTimestamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of device messages indicating a quick acceleration event that day (when available) --></help>
+        <label>Antall kraftig akselerering-hendelser</label>
+        <name>maps__HardAccelerationCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of device messages indicating a hard braking event that day (when available) --></help>
+        <label>Antall kraftig bremsing-hendelser</label>
+        <name>maps__HardBrakingCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the full data content of the last point received by aws for the day. --></help>
+        <label>Innhold siste melding</label>
+        <name>maps__LastMessageContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the date and time of the last point received by aws for the day. --></help>
+        <label>Tidsstempel på siste melding</label>
+        <name>maps__LastMessageTimestamp__c</name>
+    </fields>
+    <fields>
+        <label>Live-aktivum</label>
+        <name>maps__LiveAsset__c</name>
+        <relationshipLabel>Daglige sammendrag for Maps Live-aktivum</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to the summary configuration that this summary is based on --></help>
+        <label>Konfigurasjon av daglig Live-sammendrag</label>
+        <name>maps__LiveDailySummaryConfig__c</name>
+        <relationshipLabel>Daglige sammendrag for Maps Live-aktivum</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Sjåfør</label>
+        <name>maps__LiveDriver__c</name>
+        <relationshipLabel>Daglige sammendrag for Maps Live-aktivum</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Live IoT-enhet</label>
+        <name>maps__LiveIoTDevice__c</name>
+        <relationshipLabel>Daglige sammendrag for Maps Live-aktivum</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Maximum single speed value received that day (in KPH) --></help>
+        <label>Maksimum hastighet (km/t)</label>
+        <name>maps__MaximumSpeedKPH__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum single speed value received that day (in MPH) --></help>
+        <label>Maksimum hastighet (mile/t)</label>
+        <name>maps__MaximumSpeedMPH__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading of the day, in kilometers --></help>
+        <label>Kilometerteller</label>
+        <name>maps__OdometerKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading of the day, in miles --></help>
+        <label>Kilometerteller (mi)</label>
+        <name>maps__OdometerMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in kilometers --></help>
+        <label>Total distanse (km)</label>
+        <name>maps__TripDistanceKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in miles --></help>
+        <label>Total distanse (mile)</label>
+        <name>maps__TripDistanceMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User that is assigned to the associated Device at the time that the Summary was created --></help>
+        <label>Bruker</label>
+        <name>maps__User__c</name>
+        <relationshipLabel><!-- Maps Live Asset Daily Summaries --></relationshipLabel>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Navn på daglig sammendrag for Maps Live-</nameFieldLabel>
+</CustomObjectTranslation>

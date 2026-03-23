@@ -24,7 +24,7 @@ private class CloneOpportunityForAccountsBatchTest {
         // Create Opportunity and Line Item
         Opportunity oldOpp = new Opportunity(
             Name = 'Test Opp - Closed', StageName = 'Closed Won', CloseDate = Date.today(),
-            AccountId = acc.Id, Pricebook2Id = Test.getStandardPricebookId());
+            AccountId = acc.Id, Pricebook2Id = Test.getStandardPricebookId(), Contract_End_Date__c = system.today());
         insert oldOpp;
 
         OpportunityLineItem oli = new OpportunityLineItem(

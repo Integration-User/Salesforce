@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Résumé quotidien d&apos;actif live Maps</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Résumés quotidiens d&apos;actif live Maps</value>
+    </caseValues>
+    <fields>
+        <help><!-- Average duration of user-defined stop events, in hours. --></help>
+        <label>Temps d&apos;arrêt moyen (heures)</label>
+        <name>maps__AverageStopTimeHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Average duration of user-defined stop events, in minutes. --></help>
+        <label>Temps d&apos;arrêt moyen (minutes)</label>
+        <name>maps__AverageStopTimeMinutes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the device battery on events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Nbre évén. - Batterie appareil activée</label>
+        <name>maps__CountOfEventsDeviceBatteryOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the speed threshold events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Nombre d&apos;événements - Seuil de vitesse</label>
+        <name>maps__CountOfEventsSpeedThreshold__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the speeding events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Nombre d&apos;événements - Excès de vitesse</label>
+        <name>maps__CountOfSummaryEventsSpeeding__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of the stop events recorded that day, as defined in the daily summary configuration --></help>
+        <label>Nombre d&apos;événements - Arrêts</label>
+        <name>maps__CountOfSummaryEventsStops__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that this summary applies to --></help>
+        <label>Date du résumé</label>
+        <name>maps__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device Vendor concatenated with Device ID --></help>
+        <label>ID de l&apos;appareil</label>
+        <name>maps__DeviceId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total time spent moving with engine on, in hours --></help>
+        <label>Temps de conduite (heures)</label>
+        <name>maps__DriveTimeHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total time spent moving with engine on, in minutes --></help>
+        <label>Temps de conduite (minutes)</label>
+        <name>maps__DriveTimeMinutes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if a trip took place within denoted holiday off --></help>
+        <label>Conduite pendant les congés</label>
+        <name>maps__DrivingDuringHolidayOff__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indication if a trip took place outside of denoted working hours --></help>
+        <label>Conduite hors des heures de travail</label>
+        <name>maps__DrivingOutsideWorkingHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the full data content of the first point received by aws for the day. --></help>
+        <label>Contenu du premier message</label>
+        <name>maps__FirstMessageContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the date and time of the first point received by aws for the day. --></help>
+        <label>Horodatage du premier message</label>
+        <name>maps__FirstMessageTimestamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of device messages indicating a quick acceleration event that day (when available) --></help>
+        <label>Nbre d&apos;événements d&apos;accélération brutale</label>
+        <name>maps__HardAccelerationCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of device messages indicating a hard braking event that day (when available) --></help>
+        <label>Nombre d&apos;événements de freinage brutal</label>
+        <name>maps__HardBrakingCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the full data content of the last point received by aws for the day. --></help>
+        <label>Contenu du dernier message</label>
+        <name>maps__LastMessageContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the date and time of the last point received by aws for the day. --></help>
+        <label>Horodatage du dernier message</label>
+        <name>maps__LastMessageTimestamp__c</name>
+    </fields>
+    <fields>
+        <label>Actif live</label>
+        <name>maps__LiveAsset__c</name>
+        <relationshipLabel>Résumés quotidiens d&apos;actif live Maps</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to the summary configuration that this summary is based on --></help>
+        <label>Configuration du résumé quotidien live</label>
+        <name>maps__LiveDailySummaryConfig__c</name>
+        <relationshipLabel>Résumés quotidiens d&apos;actif live Maps</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Conducteur</label>
+        <name>maps__LiveDriver__c</name>
+        <relationshipLabel>Résumés quotidiens d&apos;actif live Maps</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Appareil IoT live</label>
+        <name>maps__LiveIoTDevice__c</name>
+        <relationshipLabel>Résumés quotidiens d&apos;actif live Maps</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Maximum single speed value received that day (in KPH) --></help>
+        <label>Vitesse maximale (km/h)</label>
+        <name>maps__MaximumSpeedKPH__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum single speed value received that day (in MPH) --></help>
+        <label>Vitesse maximale (m/h)</label>
+        <name>maps__MaximumSpeedMPH__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading of the day, in kilometers --></help>
+        <label>Odomètre (km)</label>
+        <name>maps__OdometerKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading of the day, in miles --></help>
+        <label>Odomètre (mi)</label>
+        <name>maps__OdometerMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in kilometers --></help>
+        <label>Distance totale (km)</label>
+        <name>maps__TripDistanceKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total distance traveled in miles --></help>
+        <label>Distance totale (mi)</label>
+        <name>maps__TripDistanceMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User that is assigned to the associated Device at the time that the Summary was created --></help>
+        <label>Utilisateur</label>
+        <name>maps__User__c</name>
+        <relationshipLabel><!-- Maps Live Asset Daily Summaries --></relationshipLabel>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nom du résumé quotidien d&apos;actif live Map</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -5,7 +5,7 @@
             var MARemoting = {
                 processAJAXRequest : '{!$RemoteAction.RemoteFunctions.processAJAXRequest}',
                 getRoute : '{!$RemoteAction.RemoteFunctions.getRoute}',
-                MapAnythingIORequestPOST : '{!$RemoteAction.RemoteFunctions.MapAnythingIORequestPOST}',
+                MapAnythingIORequestPOST : '{!$RemoteAction.RemoteFunctions.MapAnythingIORequestPOST}'
             }
         </script>
         <!-- jQuery -->
@@ -1098,8 +1098,10 @@
             window.assetsFailedToLoad = false;
         </script>
         
-        <link rel="stylesheet" onerror="assetsFailedToLoad = true;" href="https://js.arcgis.com/4.30/esri/themes/light/main.css" />
-        <script src="https://js.arcgis.com/4.30"></script>
+        <script type="module" src="https://js.arcgis.com/calcite-components/3.1.0/calcite.esm.js"></script>
+        <link rel="stylesheet" onerror="assetsFailedToLoad = true;" href="https://js.arcgis.com/4.32/esri/themes/light/main.css" />
+        <script src="https://js.arcgis.com/4.32"></script>
+        <script type="module" src="https://js.arcgis.com/map-components/4.32/arcgis-map-components.esm.js"></script>
 
         <script>
             const MAPS = Object.assign({
@@ -1122,7 +1124,6 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
             <apex:outputPanel rendered="{!NOT(debug)}">
-                <link rel="stylesheet" href="{!URLFOR($Resource.maps__VuePrintEmail, 'dist/assets/main.css')}"></link>
                 <script type="module" src="{!URLFOR($Resource.maps__VuePrintEmail, 'dist/bundle.js')}"></script>
             </apex:outputPanel>
 

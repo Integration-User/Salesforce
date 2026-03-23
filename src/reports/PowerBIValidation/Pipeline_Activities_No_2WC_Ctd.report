@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Id</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$Status</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$In_Person_or_Virtual_Meeting__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$CallType</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Used to validate 2WC</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1 - Introducing,2 - Conducting Needs Analysis,2 - Conducting Needs Analysis​,3 - Qualifying,3 - Qualifying​,4 - Recommending,4 - Recommending​,5 - Negotiation and Agreement Sent,5 - Negotiation and Agreement Sent​,6 - Verbal Win and Finalizing Contract,6 - Verbal Win and Finalizing Contract​</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Activities$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>-</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Sales_Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Activities$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Henrietta Curtis</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Activities$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Pipeline - Activities No 2WC</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_or_without_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.Activities$ActivityDate</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

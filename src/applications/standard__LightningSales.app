@@ -3169,7 +3169,6 @@
     <tabs>standard-Task</tabs>
     <tabs>standard-File</tabs>
     <tabs>standard-Quote</tabs>
-    <tabs>standard-WaveHomeLightning</tabs>
     <tabs>Compliance__c</tabs>
     <tabs>Product_Feedback__c</tabs>
     <tabs>asknicely__NPS__c</tabs>

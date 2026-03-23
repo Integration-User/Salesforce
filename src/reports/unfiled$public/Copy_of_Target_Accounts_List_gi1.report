@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>URL</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_COUNTRY_CODE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_CITY</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STREET</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_ZIP</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(1 OR 2) AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <column>USERS.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Nicholas Whittemore</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.US_Expansion_Owner__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Nicholas Whittemore</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Prospect_Category__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Target</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Prospect_Category__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Not Viable Now,Not Viable</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Copy of &quot;Target&quot; Accounts List</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>ADDRESS1_STREET</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Nicholas Whittemore</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Denali Commercial Properties,LLC (NA),Dhanani Private Equity Group,Digital Realty,Direct Retail Partners,Clearview Investments,ClearWorth Capital,CLX Ventures,Coffman Interests,2GR Equity,35 South Capital,3LB Equities,5Rivers CRE,68 Ventures,Abbey Residential,Accelerate Real Asset Management,Adana Capital,AFO Capital,Agarita Management Co.,AIC Holdings,AIC Industrial,Alamo Equity LLC,AlbaneseCormier Holdings,Allen Harrison Company,Alliance Industrial Company,Allied Orion Group LLC,AllTrades Industrial Properties,Alpine Start Development,Altera Fund Advisors,AmeriCan Multifamily Alliance Group,AMR Capital,ApexOne Investment Partners,Apricus Realty Capital,Arlington Properties,Arroyo Investors,Artesia Real Estate,Ashland Greene Capital Partners,Aspen Heights Partners,Aspen Oak Capital Partners,ATCAP Partners,Barber Partners,Behringer Investments,Bella Asset Management,BHW Capital,Blacklion Holdings,Blue Ridge Industrial,Blue Road Investments,Bodka Creek Capital,Bradford Commercial Real Estate Services,Braun Enterprises,Brazos Residential,Bridgeview Real Estate,Butler Burgher Group,CAF Capital Partners,LLC,Camden Property Trust (NA),CanTex Capital,Capital Commercial Investments,Capstar Real Estate Advisors,Capstone Real Estate Investments LLC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Captiva Development,Cardinal Capital Partners,Inc.,Carleton Companies,Carlson Capital,Castle Hill Partners,Cawley Partners,CAZ Investments,CB Capital - tx,CFH Investment Partners,Champion Partners Ltd,Charter Holdings,Chief Partners LP,Chiron Financial,Churchill Capital,Cienda Partners,Civicap Partners,Civitas Capital Group,Civitas Capital Management,LLC (NA),Civitas Senior Living,Clearlake Management LLC,Commerce Capital Partners,Committed Industrial,Common Ground Capital LLC,Compass Datacenters,Compatriot Capital,Concord Capital Partners,Corinth Land Company,Corsair Property Company,Covemark Group,Crescent Partners,Criterion Development Partners,Crown Castle International (NA),CR Properties,LLC,CSA Capital Partners,CWS Apartments,Cypress Equities (NA),Cypress Real Estate Advisors,Dalcor Companies,Daniel Corporation,Dart Interests (NA),Darwin German Real Estate Investments,Dauntless Capital Partners,David Z. Mafrige Interests,davisRE,DDelta Real Estate Investments,Delta Development,Discover Multifamily,Disrupt Equity Partners,DJE Texas Management Group LLC,Dobbins Group,Dollar-Flowers Realty Partners,Dominion Partners,Door Capital Partners,Dottid,Double Diamond Resorts,Dunhill Partners,Highine Real Estate Partners,McWane,Oakley Group</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>PMAT Real Estate Investments,Shannon Waltchack,Spectrum Capital</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 NW</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

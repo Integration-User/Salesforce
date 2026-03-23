@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Report$Name</field>
+    </columns>
+    <columns>
+        <field>Report$Owner</field>
+    </columns>
+    <columns>
+        <field>Report$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Report$Id</field>
+    </columns>
+    <columns>
+        <field>Report.DashboardComponents$Dashboard</field>
+    </columns>
+    <columns>
+        <field>Report.DashboardComponents$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Report$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Rachel Bellizzi</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Report.DashboardComponents$Dashboard</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marketing Overview of Client Leads,Marketing Overview of MQL &amp; Inquiry Trends</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Reports from Rachel&apos;s KPI Dashboards</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Reports_On_Dashboards__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Report$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

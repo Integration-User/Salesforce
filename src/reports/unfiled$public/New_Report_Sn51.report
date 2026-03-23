@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Close_Reason__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Closed_Opportunity_Notes__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Account_Owner__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Usman Muzaffar</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityContactRoles*Contact$GSA_Relationship__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Prospect</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Copy of Closed Lost Opps Mastersheet</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_www_Contact_Roles__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

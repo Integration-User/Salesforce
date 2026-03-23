@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunitySplits$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$RecordType</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Owner</field>
+    </columns>
+    <columns>
+        <field>Opportunity$StageName</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunitySplits$SplitAmount</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunitySplits$SplitPercentage</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Contract_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Contract_End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>((1 AND 2 AND 3 AND 4 AND 5 AND 6) AND 7) AND 8 AND 9</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunitySplits$SplitType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunitySplits$SplitAmount</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>USD 0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Existing_Business,Opportunity.Renewal_Closed,Opportunity.Sales_Opportunity,Opportunity.Sales_Opportunity_Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Andy Fowler</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Products__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Edge - Project work</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunitySplits$SplitOwner.Sales_Team__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Expansion US Core</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunitySplits$SplitOwner.Sales_Team__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Expansion US Core</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Close_Year__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>2025</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.OpportunitySplits$SplitOwner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Gutter Sales 2025</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Splits__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$Contract_Start_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -4,7 +4,7 @@ public class ActiveSubscriptionCountBatch implements Schedulable, Database.Batch
     // Use custom AggregateResultIterable to return aggregate results from start
     public Iterable<AggregateResult> start(Database.BatchableContext bc) {
         String soql = 'SELECT Account__c accId, COUNT(Id) cnt FROM Subscription__c '
-            + 'WHERE Status__c = \'Active\' AND End_Date__c >= ' + String.valueOf(Date.today()) + ' AND Account__c != null '
+            + 'WHERE Status__c = \'Active\' AND End_Date__c >= TODAY AND Account__c != null '
             + 'GROUP BY Account__c';
         return new AggregateResultIterable(soql, SCOPE_SIZE);
     }

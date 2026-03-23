@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_8564591</developerName>
+        <masterLabel>Campaign Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>MEMBER_STATUS</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Outreach But Not Responsive</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Engaged But Not The Right Timing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Engaged But Product Is Not A Fit</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Engaged But No Budget</sourceValue>
+            </sourceValues>
+            <value>Disqualified</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Not Started</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Initial Outreach</sourceValue>
+            </sourceValues>
+            <value>Pending</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Won Sale</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Converted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Discussions Ongoing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Trial Complete</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Trial completed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Trial Restarted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Trial Started</sourceValue>
+            </sourceValues>
+            <value>Qualified</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumnStackedTo100</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>CAMPAIGN_NAME</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <secondaryGroupingColumn>BucketField_8564591</secondaryGroupingColumn>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN_MEMBER_ID</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_OWNER</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Nordic Region Salesforce Target List</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_8564591</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Nordic Region Salesforce Target List</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignAccount</reportType>
+    <scope>orgAll</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

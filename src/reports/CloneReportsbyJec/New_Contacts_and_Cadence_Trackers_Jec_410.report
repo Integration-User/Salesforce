@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.ActionCadenceTracker$CurrentStep.StepTitle</field>
+    </columns>
+    <columns>
+        <field>Contact.ActionCadenceTracker$LastCompletedStep.StepTitle</field>
+    </columns>
+    <columns>
+        <field>Contact.ActionCadenceTracker$State</field>
+    </columns>
+    <columns>
+        <field>Contact.ActionCadenceTracker$Owner</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.ActionCadenceTracker$ActionCadence</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Contacts with Cadence Trackers</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_and_Sales_Cadence_Trackers__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

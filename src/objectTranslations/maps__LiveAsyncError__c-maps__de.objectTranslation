@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Asynchroner Maps-Live-Fehler</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Asynchrone Maps-Live-Fehler</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Asynchronen Maps-Live-Fehler</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Asynchrone Maps-Live-Fehler</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Asynchronen Maps-Live-Fehlers</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Asynchroner Maps-Live-Fehler</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Asynchronem Maps-Live-Fehler</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Asynchronen Maps-Live-Fehlern</value>
+    </caseValues>
+    <fields>
+        <help><!-- The name of the class and, optionally the method, that the error originated. --></help>
+        <label>Klassenname</label>
+        <name>maps__ClassName__c</name>
+    </fields>
+    <fields>
+        <label>Abgeschlossen</label>
+        <name>maps__Completed__c</name>
+    </fields>
+    <fields>
+        <label>Geräte-ID</label>
+        <name>maps__DeviceId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of error received. --></help>
+        <label>Fehlertyp</label>
+        <name>maps__ErrorType__c</name>
+    </fields>
+    <fields>
+        <label>Zeilennummer</label>
+        <name>maps__LineNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to the summary that had errors --></help>
+        <label>Konfig. für die tägl. Zusammenfassung</label>
+        <name>maps__LiveDailySummaryConfig__c</name>
+        <relationshipLabel>Asynchrone Live-Fehler</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The value of the message received. --></help>
+        <label>Meldung</label>
+        <name>maps__Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- The entire sObject in JSON format, if available. --></help>
+        <label>Objektfeldwerte</label>
+        <name>maps__ObjectFieldValues__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Id of the sObject on which this error occurred. --></help>
+        <label>Objekt-ID</label>
+        <name>maps__ObjectId__c</name>
+    </fields>
+    <fields>
+        <label>Berichtsdatum</label>
+        <name>maps__ReportDate__c</name>
+    </fields>
+    <fields>
+        <label>SObject-Typ</label>
+        <name>maps__SobjectType__c</name>
+    </fields>
+    <fields>
+        <help><!-- The value of the stack trace received. --></help>
+        <label>Stapelverfolgung</label>
+        <name>maps__StackTrace__c</name>
+    </fields>
+    <fields>
+        <label>Betreff</label>
+        <name>maps__Subject__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Name des asynchronen Maps-Live-Fehlers</nameFieldLabel>
+</CustomObjectTranslation>

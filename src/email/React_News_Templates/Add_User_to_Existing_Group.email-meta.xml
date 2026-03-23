@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Letterhead</letterhead>
+    <name>Add User to Existing Group</name>
+    <style>freeForm</style>
+    <subject>React News Case #{!Case.CaseNumber}: {!Case.Subject}</subject>
+    <textOnly>Hi {!Case.SuppliedName},
+
+We have sent you an introduction email – from there you should be able to set up your account, interests, and preferences, and access our content. If you can’t find the email in your inbox, please check your junk folder as sometimes it can be found there. The registration link in the invitation email expires after 1 month.
+
+Once login credentials are set up, you can also access the React Deal Tracker on our website and mobile app. A 2-minute promotional video that may be of interest as well as the links to download this on the App Store or Google Play can be found here:  https://www.reactnews.media/deal-tracker/
+
+If you need any additional assistance, please let us know.
+
+Best regards,
+React News
+Client Operations
+requests@reactnews.com
+
+
+Green Street
+www.greenstreet.com
+www.reactnews.com
+The Monument Building
+London EC3R 8AF
+United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

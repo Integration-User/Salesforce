@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>PHONE3</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <currency>GBP</currency>
+    <filter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,ACTIAM (EU),Amundi Asset Management (EU),CPR Asset Management (EU),Credit Suisse AG (EU),DekaBank (EU),Dimensional Fund Advisors (EU),elo mutual,Handelsbanken Asset Management (EU),KBC Asset Management (EU),NN Investment Partners (EU),OP Financial Group (EU),Pictet Asset Management S.A. (EU),Royal London Asset Management (EU),Zurcher Kantonalbank Asset Management (EU) (AKA SwissCanto)</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>PSI Prospects: Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

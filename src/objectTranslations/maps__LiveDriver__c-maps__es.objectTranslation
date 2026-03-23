@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Conductor en vivo de Maps</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Conductores en vivo de Maps</value>
+    </caseValues>
+    <fields>
+        <label>Id. de Conductor</label>
+        <name>maps__DriverId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email used for receiving Telematics Alerts --></help>
+        <label>Correo usado para alertas telemáticas</label>
+        <name>maps__EmailUsedForTelematicsAlerts__c</name>
+    </fields>
+    <fields>
+        <label>Nombre</label>
+        <name>maps__FirstName__c</name>
+    </fields>
+    <fields>
+        <label>Ciudad de origen</label>
+        <name>maps__HomeCity__c</name>
+    </fields>
+    <fields>
+        <label>País de origen</label>
+        <name>maps__HomeCountry__c</name>
+    </fields>
+    <fields>
+        <label>Dirección completa de origen</label>
+        <name>maps__HomeFullAddress__c</name>
+    </fields>
+    <fields>
+        <label>Código postal de origen</label>
+        <name>maps__HomePostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Estado o provincia de origen</label>
+        <name>maps__HomeState__c</name>
+    </fields>
+    <fields>
+        <label>Dirección de calle de origen</label>
+        <name>maps__HomeStreetAddress__c</name>
+    </fields>
+    <fields>
+        <label>Apellidos</label>
+        <name>maps__LastName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Driver&apos;s specific working hours --></help>
+        <label>Horario laboral en vivo</label>
+        <name>maps__LiveWorkingHours__c</name>
+        <relationshipLabel>Conductores en vivo</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lat/Long values for this driver&apos;s home address --></help>
+        <label>Ubicación</label>
+        <name>maps__Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Device Disconnect Alerts --></help>
+        <label>¿Recibir alerta desconexión dispositivo?</label>
+        <name>maps__ReceiveDeviceDisconnectAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Hard Accel Alerts --></help>
+        <label>¿Recibir alertas de aceleración brusca?</label>
+        <name>maps__ReceiveHardAccelAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Hard Braking Alerts --></help>
+        <label>¿Recibir alertas de frenada brusca?</label>
+        <name>maps__ReceiveHardBrakingAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Max Speed Threshold Alerts --></help>
+        <label>Recibir alertas umbral velocidad máxima</label>
+        <name>maps__ReceiveMaxSpeedThresholdAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Posted Speed Alerts --></help>
+        <label>¿Recibir alertas velocidad registrada?</label>
+        <name>maps__ReceivePostedSpeedAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Stop Alerts --></help>
+        <label>¿Recibir alertas de parada?</label>
+        <name>maps__ReceiveStopAlerts__c</name>
+    </fields>
+    <fields>
+        <label>Usuario</label>
+        <name>maps__User__c</name>
+        <relationshipLabel><!-- Maps Live Drivers --></relationshipLabel>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nombre de conductor en vivo de Maps</nameFieldLabel>
+</CustomObjectTranslation>

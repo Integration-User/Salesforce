@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Maps-Live-Fahrer</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Maps-Live-Fahrer</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Maps-Live-Fahrer</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Maps-Live-Fahrer</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Maps-Live-Fahrers</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Maps-Live-Fahrer</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Maps-Live-Fahrer</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Maps-Live-Fahrern</value>
+    </caseValues>
+    <fields>
+        <label>Fahrer-ID</label>
+        <name>maps__DriverId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email used for receiving Telematics Alerts --></help>
+        <label>Für Telematikwarnungen verwendete E-Mail</label>
+        <name>maps__EmailUsedForTelematicsAlerts__c</name>
+    </fields>
+    <fields>
+        <label>Vorname</label>
+        <name>maps__FirstName__c</name>
+    </fields>
+    <fields>
+        <label>Stadt privat</label>
+        <name>maps__HomeCity__c</name>
+    </fields>
+    <fields>
+        <label>Land privat</label>
+        <name>maps__HomeCountry__c</name>
+    </fields>
+    <fields>
+        <label>Vollständige Privatadresse</label>
+        <name>maps__HomeFullAddress__c</name>
+    </fields>
+    <fields>
+        <label>Postleitzahl privat</label>
+        <name>maps__HomePostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Bundesland privat</label>
+        <name>maps__HomeState__c</name>
+    </fields>
+    <fields>
+        <label>Privatadresse</label>
+        <name>maps__HomeStreetAddress__c</name>
+    </fields>
+    <fields>
+        <label>Nachname</label>
+        <name>maps__LastName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Driver&apos;s specific working hours --></help>
+        <label>Live-Arbeitszeit</label>
+        <name>maps__LiveWorkingHours__c</name>
+        <relationshipLabel>Live-Fahrer</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lat/Long values for this driver&apos;s home address --></help>
+        <label>Standort</label>
+        <name>maps__Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Device Disconnect Alerts --></help>
+        <label>Bei Gerätetrennung warnen?</label>
+        <name>maps__ReceiveDeviceDisconnectAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Hard Accel Alerts --></help>
+        <label>Bei starker Beschleunigung warnen?</label>
+        <name>maps__ReceiveHardAccelAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Hard Braking Alerts --></help>
+        <label>Bei scharfen Bremsvorgängen warnen?</label>
+        <name>maps__ReceiveHardBrakingAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Max Speed Threshold Alerts --></help>
+        <label>Bei max. Geschwindigkeitsschwell. warnen</label>
+        <name>maps__ReceiveMaxSpeedThresholdAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Posted Speed Alerts --></help>
+        <label>Warn. zur vorg. Geschwindigkeit empf.?</label>
+        <name>maps__ReceivePostedSpeedAlerts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if driver should receive Stop Alerts --></help>
+        <label>Bei Haltepunkten warnen?</label>
+        <name>maps__ReceiveStopAlerts__c</name>
+    </fields>
+    <fields>
+        <label>Benutzer</label>
+        <name>maps__User__c</name>
+        <relationshipLabel><!-- Maps Live Drivers --></relationshipLabel>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Maps-Live-Fahrername</nameFieldLabel>
+</CustomObjectTranslation>
