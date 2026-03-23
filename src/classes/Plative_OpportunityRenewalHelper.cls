@@ -332,11 +332,11 @@ public class Plative_OpportunityRenewalHelper {
         newOpp.Evergreen_Increase__c = Opp.Evergreen_Increase__c;
         newOpp.Current_Contract_Year__c = ContractYear;
         newOpp.Other_Invoice_Frequency__c = String.isNotBlank(Opp.Billing_Schedule__c) && (Opp.Billing_Schedule__c=='Other') ? Opp.Other_Invoice_Frequency__c : newOpp.Other_Invoice_Frequency__c;
-        newOpp.This_Year_Increase__c = 0; //SF-2070
-        /*Update Evergreen This year % increasex 
+        // newOpp.This_Year_Increase__c = 0; //SF-2070
+        Update Evergreen This year % increasex 
         if(opp.Next_Year_Increase__c != 0){
             newOpp.This_Year_Increase__c = Opp.Next_Year_Increase__c;
-        }*/
+        }
         //Performs different calculations based on ContractYear. Values hard coded as per client spec. 
         switch on ContractYear{
             when 1 {
