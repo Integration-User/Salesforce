@@ -38,7 +38,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Former_Account</targetReference>
+            <targetReference>Check_Renewal_Risk_Type</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -112,6 +112,98 @@
                 <targetReference>No_Update_ICP_Booking</targetReference>
             </connector>
             <label>ICP Score &lt;= 0</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Renewal_Risk_Type</name>
+        <label>Check Renewal Risk Type</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Check_Renewal_Risk_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_Renewal_Risk_Type</name>
+            <conditionLogic>(1 OR 2 OR 3) AND (4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Risk_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Expect Full Attrition</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Risk_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Verbal Notice of Cancellation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Risk_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Written Notice of Cancellation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal_Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing_Business</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_This_YR</targetReference>
+            </connector>
+            <label>Outcome Renewal Risk Type</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Check_Renewal_Risk_Type</name>
+        <label>Copy 1 of Check Renewal Risk Type</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Former_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Outcome_Renewal_Risk_Type</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Risk_Type__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal_Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing_Business</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Risk_Type_Last_Updated</targetReference>
+            </connector>
+            <label>Copy 1 of Outcome Renewal Risk Type</label>
         </rules>
     </decisions>
     <decisions>
@@ -270,7 +362,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Former_Account</targetReference>
+            <targetReference>Check_Renewal_Risk_Type</targetReference>
         </connector>
         <inputAssignments>
             <field>ICP_Account_at_time_of_Booking__c</field>
@@ -286,7 +378,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Former_Account</targetReference>
+            <targetReference>Check_Renewal_Risk_Type</targetReference>
         </connector>
         <inputAssignments>
             <field>ICP_Account_at_time_of_Booking__c</field>
@@ -308,6 +400,38 @@
             <field>Winback_Opportunity__c</field>
             <value>
                 <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Risk_Type_Last_Updated</name>
+        <label>Update Risk Type Last Updated</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Former_Account</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Risk_Type_Last_Updated__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_This_YR</name>
+        <label>Update This YR %</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Copy_1_of_Check_Renewal_Risk_Type</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>This_Year_Increase__c</field>
+            <value>
+                <numberValue>-100.0</numberValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
