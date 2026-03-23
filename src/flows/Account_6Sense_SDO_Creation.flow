@@ -1,15 +1,198 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Update_Contact_List</name>
+        <label>Update Contact List</label>
+        <locationX>534</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>ContactVar.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_through_Contacts.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContactVar.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContactList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>ContactVar</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_Contacts</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Renewal_Oppty_List</name>
+        <label>Update Renewal Oppty List</label>
+        <locationX>974</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>OpptyRenewalVar.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Renewal_Oppty.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpptyRenewalVar.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpptyRenewalList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>OpptyRenewalVar</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Renewal_Oppty</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Account_Owner_Change</name>
+        <label>Account Owner Change</label>
+        <locationX>743</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Is_Account_Changed_by_Customer_Rep</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Change_Account_Owner</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Former</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_All_Contacts</targetReference>
+            </connector>
+            <label>Change Account Owner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Contact_List</name>
+        <label>Check Contact List</label>
+        <locationX>446</locationX>
+        <locationY>947</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>List_Not_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ContactList</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Contact_Owners</targetReference>
+            </connector>
+            <label>List Not Empty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Renewal_List</name>
+        <label>Check Renewal List</label>
+        <locationX>886</locationX>
+        <locationY>1055</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Renewal_Not_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OpptyRenewalList</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Owners_for_Renewals</targetReference>
+            </connector>
+            <label>Renewal Not Empty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Account_Changed_by_Customer_Rep</name>
+        <label>Is Account Changed by Customer Rep?</label>
+        <locationX>1040</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Decision_4</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Is_Customer_Rep_Changed__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Is_Customer_Rep_Changed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Number_of_Open_Opportunities__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Renewal_Opportunity</targetReference>
+            </connector>
+            <label>Rep Changed True</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>X6_Sense_Segment_Name_Decision</name>
         <label>6 Sense Segment Name Decision</label>
-        <locationX>182</locationX>
+        <locationX>396</locationX>
         <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Account_Owner_Change</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>X6Sense_Segment_Changed</name>
-            <conditionLogic>(1 OR 3) AND 2</conditionLogic>
+            <conditionLogic>(1 OR 3) AND 2 AND 4</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Account_6sense_Segment_Names__c</leftValueReference>
                 <operator>Contains</operator>
@@ -31,15 +214,51 @@
                     <stringValue>Gulshan’s SDR workflow test</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account_6sense_Segment_Names__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Get_Record_SDO_Record_Type</targetReference>
             </connector>
             <label>6Sense Segment Changed</label>
         </rules>
     </decisions>
+    <description>- Added Account / Contact Owner bulk change</description>
     <environments>Default</environments>
     <interviewLabel>Account - 6Sense SDO Creation {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account - 6Sense SDO Creation</label>
+    <loops>
+        <name>Loop_Renewal_Oppty</name>
+        <label>Loop Renewal Oppty</label>
+        <locationX>886</locationX>
+        <locationY>755</locationY>
+        <collectionReference>Get_Renewal_Opportunity</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Update_Renewal_Oppty_List</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_Renewal_List</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_through_Contacts</name>
+        <label>Loop through Contacts</label>
+        <locationX>446</locationX>
+        <locationY>647</locationY>
+        <collectionReference>Get_All_Contacts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Update_Contact_List</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_Contact_List</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -128,6 +347,27 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>Get_All_Contacts</name>
+        <label>Get All Contacts</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_Contacts</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Record_SDO_Record_Type</name>
         <label>Get Record SDO Record Type</label>
         <locationX>50</locationX>
@@ -148,23 +388,89 @@
         <object>RecordType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Renewal_Opportunity</name>
+        <label>Get Renewal Opportunity</label>
+        <locationX>886</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Renewal_Oppty</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Record_Type_for_Query__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Renewal</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Contact_Owners</name>
+        <label>Update Contact Owners</label>
+        <locationX>314</locationX>
+        <locationY>1055</locationY>
+        <inputReference>ContactList</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Owners_for_Renewals</name>
+        <label>Update Owners for Renewals</label>
+        <locationX>754</locationX>
+        <locationY>1163</locationY>
+        <inputReference>OpptyRenewalList</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>270</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>X6_Sense_Segment_Name_Decision</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Account_6sense_Segment_Names__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <object>Account</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>ContactList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>ContactVar</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>OpptyRenewalList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>OpptyRenewalVar</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
 </Flow>

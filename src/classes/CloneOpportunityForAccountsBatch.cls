@@ -4,20 +4,20 @@ global class CloneOpportunityForAccountsBatch implements Database.Batchable<SObj
     // ID of the template Opportunity and Product2
     global Database.QueryLocator start(Database.BatchableContext bc) {
         Set<Id> accountList = New Set<Id>();
-        for (Subscription__c subscription : [SELECT Account__c FROM Subscription__c Where Status__c = 'Active' AND End_Date__c > 2025-07-02]) {
+        for (Subscription__c subscription : [SELECT Account__c FROM Subscription__c Where Status__c = 'Active' AND End_Date__c > 2025-07-02 AND (NOT (Products__c LIKE '%Investor%'))]) {
             accountList.add(subscription.Account__c);
         }
         return Database.getQueryLocator([
             SELECT Id, name, AccountId, StageName, Company_Type_Opp__c, CloseDate, Create_New_Renewal_Opportunity__c, Current_Contract_Year__c, 
-            CurrencyIsoCode, Exclude_from_Deal_Scoring_Model__c, Customer_Channel_New__c, RecordTypeId, Pricebook2Id, Sectors_Sold__c, 
-            Department__c, Department_Id__c,Class__c,Currency_NS_Internal_Id__c, Contract_Start_Date__c,Contract_End_Date__c,Sales_Type__c,
+            CurrencyIsoCode, Exclude_from_Deal_Scoring_Model__c, Customer_Channel_New__c, RecordTypeId, Pricebook2Id, Sectors_Sold__c, owner.IsActive,
+            Department__c, Department_Id__c,Class__c,Currency_NS_Internal_Id__c, Contract_Start_Date__c,Contract_End_Date__c,Sales_Type__c,OwnerId,
             (Select Id, End_Date__c,Licenses__c From OpportunityLineItems where Product2.Name = 'IJGlobal: News')
             FROM Opportunity 
             WHERE Id IN (
                 SELECT OpportunityId 
                 FROM OpportunityLineItem 
                 WHERE PricebookEntry.Product2.Name = 'IJGlobal: News' 
-            ) AND AccountId IN :accountList /*AND AccountId = '001WI00000I6ibtYAB'*/ AND StageName = 'Closed Won' ORDER BY LastModifiedDate DESC
+            ) AND AccountId IN :accountList  /* AND AccountId = '001Vy00000Eo6iGIAR'*/ AND StageName = 'Closed Won' AND Contract_End_Date__c !=null ORDER BY Contract_End_Date__c DESC
         ]);
     }
 
@@ -29,18 +29,26 @@ global class CloneOpportunityForAccountsBatch implements Database.Batchable<SObj
             Id oppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Existing_Business').getRecordTypeId();
             List<Opportunity> newOpps = new List<Opportunity>();
             Map<Id, OpportunityLineItem> oli = new Map<Id, OpportunityLineItem>();
+            Map<Id, Decimal> oliLicenses = new Map<Id, Decimal>();
             for (Opportunity oldOpp : scope) {
                 Opportunity newOpp = oldOpp.clone(false, false, false, false);
                 newOpp.CloseDate = System.today();
                 newOpp.Create_New_Renewal_Opportunity__c = false;
-                newOpp.Current_Contract_Year__c = null;
+                newOpp.Current_Contract_Year__c = 1;
                 newopp.RecordTypeId = oppRecordTypeId;
-                newopp.Contract_Start_Date__c = Date.newInstance(2025, 7, 17);
+                //newopp.Contract_Start_Date__c = Date.newInstance(2025, 7, 17);
                 newopp.StageName = '2 - Conducting Needs Analysis';
+                if(oldOpp.owner.IsActive) newOpp.OwnerId = oldOpp.OwnerId;
                 newOpps.add(newOpp);
                 oli.put(oldOpp.Id, oldOpp.OpportunityLineItems[0]);
+                Decimal Licenses = 0;
+                for(OpportunityLineItem oil : oldOpp.OpportunityLineItems) {
+                    Licenses += oil.Licenses__c;
+                }
+                oliLicenses.put(oldOpp.Id, Licenses);
             }
             insert newOpps;
+
             
             List<OpportunityLineItem> items = new List<OpportunityLineItem>();
             for (Opportunity opp : newOpps) {
@@ -51,7 +59,7 @@ global class CloneOpportunityForAccountsBatch implements Database.Batchable<SObj
                     Product2Id = pbe.Product2Id,
                     Start_Date__c = Date.newInstance(2025, 7, 17),
                     End_Date__c = oli.get(scope[0].Id).End_Date__c,
-                    Licenses__c = oli.get(scope[0].Id).Licenses__c,
+                    Licenses__c = oliLicenses.get(scope[0].Id),
                     Sales_Type__c = 'Renewal',
                     PricebookEntryId = pbe.Id,
                     TotalPrice = 0.0,

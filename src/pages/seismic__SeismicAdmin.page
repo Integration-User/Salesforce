@@ -1,0 +1,720 @@
+<apex:page controller="seismic.SeismicAdminController" action="{!init}">
+    <apex:stylesheet value="{!URLFOR($Resource.seismic__SeismicAdmin)}"/>
+    <script type="text/javascript">
+        window.$Label = window.$Label || {};
+        $Label.messageInsufficientAccess = '{!JSENCODE($Label.messageInsufficientAccess)}';
+        $Label.messageUnknownIssue = '{!JSENCODE($Label.messageUnknownIssue)}';
+        $Label.messageConfirmClearFilters = '{!JSENCODE($Label.messageConfirmClearFilters)}';
+        $Label.filterLabelEdit = '{!JSENCODE($Label.filterLabelEdit)}';
+        $Label.filterLabelProperty = '{!JSENCODE($Label.filterLabelProperty)}';
+        $Label.filterLabelOperator = '{!JSENCODE($Label.filterLabelOperator)}';
+        $Label.filterLabelField = '{!JSENCODE($Label.filterLabelField)}';
+        $Label.operatorEquals = '{!JSENCODE($Label.operatorEquals)}';
+        $Label.operatorDiffers = '{!JSENCODE($Label.operatorDiffers)}';
+        $Label.operatorGreaterOrEqual = '{!JSENCODE($Label.operatorGreaterOrEqual)}';
+        $Label.operatorGreater = '{!JSENCODE($Label.operatorGreater)}';
+        $Label.operatorLessOrEqual = '{!JSENCODE($Label.operatorLessOrEqual)}';
+        $Label.operatorLess = '{!JSENCODE($Label.operatorLess)}';
+        $Label.operatorStartsWith = '{!JSENCODE($Label.operatorStartsWith)}';
+        $Label.operatorEndsWith = '{!JSENCODE($Label.operatorEndsWith)}';
+        $Label.operatorContains = '{!JSENCODE($Label.operatorContains)}';
+        $Label.operatorDoesNotContain = '{!JSENCODE($Label.operatorDoesNotContain)}';
+        $Label.operatorContainsAll = '{!JSENCODE($Label.operatorContainsAll)}';
+        $Label.operatorContainsAny = '{!JSENCODE($Label.operatorContainsAny)}';
+        $Label.commonOk = '{!JSENCODE($Label.commonOk)}';
+        function format(string) {
+          	var outerArguments = arguments;
+          	return string.replace(/\{(\d+)\}/g, function () {
+            	return outerArguments[parseInt(arguments[1]) + 1];
+          	});
+        }
+		function decodeBase64(text) {
+            return decodeURIComponent(atob(text).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+		}
+    </script>
+    <apex:includeScript value="{!URLFOR($Resource.seismic__json2)}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jquery_base64_js)}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__SeismicAdminSetting)}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__SeismicFilterDialog)}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jszip, '/jszip.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jszip, '/jszip-load.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jszip, '/jszip-deflate.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jszip, '/jszip-inflate.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jquery_3_6_1_min_js)}" />
+    <script>
+    	jQuery.noConflict();
+    	function disableAllButtons() {
+            var allBtns = [].slice.apply(document.getElementsByClassName("btn"));
+            for (var i = 0; i < allBtns.length; i++) {
+                var btn = allBtns[i];
+                if (btn) {
+                    btn.className = 'btnDisabled';
+                    btn.disabled = 'disabled';
+                }
+            }
+        }
+        function enableAllButtons() {
+            var allBtns = [].slice.apply(document.getElementsByClassName("btnDisabled"));
+            for (var i = 0; i < allBtns.length; i++) {
+                var btn = allBtns[i];
+                if (btn) {
+                    btn.className = 'btn';
+                    btn.removeAttribute('disabled');
+                }
+            }
+        }
+        function showError(msg) {
+            showGlobalMessage('error', msg);
+        }
+
+		function checkCanDeleteLegacy(objectDisplayName, buttonName) {
+			var msg = '';
+            if(buttonName && objectDisplayName) {
+                msg = format('{!$Label.messageConfirmDeleteObject}', buttonName, objectDisplayName);
+            } else {
+                msg = '{!$Label.messageConfirmDelete}';
+            }
+
+            if (window.confirm(msg)) {
+                return true;
+            } else {
+				return false;
+			}
+		}
+
+        function checkCanDelete(objectDisplayName, buttonName, buttonApiName, objectTypeMappingInstanceName, visualforcePageId) {
+            var msg = '';
+            if(buttonName && objectDisplayName) {
+                msg = format('{!$Label.messageConfirmDeleteObject}', buttonName, objectDisplayName);
+            } else {
+                msg = '{!$Label.messageConfirmDelete}';
+            }
+            if (window.confirm(msg)) {
+                if(visualforcePageId) {
+                    deleteVisualforcePage(visualforcePageId, function(){
+                        _delete();
+                    });
+                } else {
+                    _delete();
+                }
+            }
+            function _delete() {
+                sforce.connection.query("SELECT ID from WebLink WHERE WebLink.Name = '" + buttonApiName.replace("'", "\\'") + "'", {
+                    onSuccess : function(result){
+                        if(result.getArray("records").length == 0){
+                            Visualforce.remoting.Manager.invokeAction(
+                                '{!$RemoteAction.SeismicAdminController.deleteObjectTypeMapping}',
+                                objectTypeMappingInstanceName,
+                                function(result){
+                                    if(!result) {
+                                        window.location.href = encodeURI(window.location.href);
+                                        return;
+                                    }
+                                    if(typeof result == 'string'){
+                                        showError(result);
+                                    } else if(result.statusCode != 200) {
+                                        showError(result.message);
+                                    }
+                                }
+                            );
+                        } else {
+                            var idToDel = result.getArray("records")[0].Id;
+                            sforce.connection.deleteIds([result.getArray("records")[0].Id], {
+                                onSuccess : function(result){
+                                    if(result && result[0] && result[0].success == 'true') {
+                                        Visualforce.remoting.Manager.invokeAction(
+                                            '{!$RemoteAction.SeismicAdminController.deleteObjectTypeMapping}',
+                                            objectTypeMappingInstanceName,
+                                            function(result){
+                                                if(!result) {
+                                                    window.location.href = encodeURI(window.location.href);
+                                                    return;
+                                                }
+                                                if(typeof result == 'string'){
+                                                    showError(result);
+                                                } else if(result.statusCode != 200) {
+                                                    showError(result.message);
+                                                }
+                                            }
+                                        );
+                                    } else if(result[0] && result[0].errors && result[0].errors.message){
+                                        var msg = result[0].errors.message;
+                                        if(msg.indexOf('Please delete the reference before deleting the button or link') > -1) {
+                                            msg += '<a target="_blank" href="https://login.salesforce.com/_ui/common/config/link/WeblinkImpactAnalysis/d?id=' + idToDel.substr(0, 15) + '&delete=1">Click to see where this button is used</a>';
+                                        }
+                                        showError(format('{!$Label.messageDeleteButtonFailure}', msg));
+                                    }
+                                },
+                                onFailure : function(error){
+                                    showError(format('{!$Label.messageDeleteButtonFailure}', error.message));
+                                }
+                            });
+                        }
+                    },
+                    onFailure : function(error){
+                        showError(format('{!$Label.messageDeleteButtonFailure}', error.message));
+                    }
+                });
+            }
+        }
+    </script>
+    <apex:sectionHeader id="seismicAdminHeader" title="{!$Label.seismic__seismicAdminHeader}" rendered="{!isListView}" />
+	<div style="margin-bottom: 15px;">
+	<apex:variable var="seismicLink" value='<a href="{!seismicConfigurationLink}" target="_blank" title="{!$Label.seismic__seismicAdminDeprecatedTitle}">Seismic Configuration</a>' />
+    <apex:outputText escape="false" value="{!SUBSTITUTE($Label.seismic__seismicAdminDeprecated, '{0}', seismicLink)}" />
+	</div>
+    <apex:pageMessages id="messages" rendered="{!isListView}" escape="false" />
+	<apex:tabPanel switchType="client" value="{!tabInFocus}" id="tabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab">
+		<apex:tab label="{!$Label.seismic__tabGlobalSetting}" name="global" id="globalSetting">
+			<apex:form id="subscription" rendered="{!isListView}">
+		        <apex:actionFunction name="showGlobalMessage" action="{!showGlobalMessage}" rerender="messages" immediate="true">
+		            <apex:param name="messageTypeToShow" assignTo="{!messageTypeToShow}" value=""/>
+		            <apex:param name="messageToShow" assignTo="{!messageToShow}" value=""/>
+		        </apex:actionFunction>
+		        <apex:pageBlock title="{!$Label.seismic__globalHeaderSubscription}" id="page" rendered="{!adminSettingAccessable}">
+		            <apex:pageBlockButtons location="top" id="buttons">
+		                <apex:commandButton id="checkAndSave" value="{!$Label.seismic__buttonCheckAndSave}" rendered="{!adminSettingManagable}" disabled="{!(checkingSubscription || disableClassicAdmin)}" onclick="this.disabled='disabled';this.className='btnDisabled'" action="{!saveAndValidateSubscription}" rerender="subscriptionSetting, messages, checkSubscriptionBlock"/>
+		                <apex:commandButton id="upgradeComponents" value="{!$Label.seismic__upgradeSeismicComponents}" disabled="{!(isUpgradeComponentsInProgress || disableActivity || disableClassicAdmin)}" action="{!upgradeComponents}" />
+		            </apex:pageBlockButtons>
+		            <apex:pageBlockSection id="section"  columns="1">
+		                <apex:inputText id="subscription" label="{!$Label.seismic__globalLabelSubscription}" value="{!seismicAdminSettings.seismic__Subscription__c}" onkeypress="if(event.keyCode==13){saveAndValidateSubscription();return false;}" disabled="{!OR(NOT(adminSettingManagable), disableClassicAdmin)}">
+		                    <apex:actionFunction name="saveAndValidateSubscription" action="{!saveAndValidateSubscription}" rerender="subscriptionSetting, messages, checkSubscriptionBlock" />
+		                </apex:inputText>
+		            </apex:pageBlockSection>
+		        </apex:pageBlock>
+                <!-- New Predictive start -->
+				<apex:pageBlock id="tenantOverride" title="{!$Label.seismic__globalLabelSubscriptionConfigurationMappings}">
+					<apex:pageBlockButtons id="buttonsBlock" location="top">
+						<apex:commandButton id="newButton" value="{!$Label.seismic__buttonNew}" action="{!addNewSubscriptionConfigurationMapping}" disabled="{!disableClassicAdmin}"/>
+					</apex:pageBlockButtons>
+                    <apex:variable value="{!1}" var="index" />
+		            <apex:pageBlockTable value="{!tenantConfigrationMappings}" rendered="{!NOT(tenantConfigrationMappings.empty)}" var="tcm" id="table">
+		                <apex:variable value="" var="objectDisplayName" />
+		                <apex:variable value="" var="buttonName" />
+		                <apex:column id="actionColumn" rendered="{!tenantConfigrationMappingsUpdatable && tenantConfigrationMappingsDeleteable}" styleClass="actionColumn">
+		                    <apex:variable value="{!IF(NOT(ISBLANK(tcm.Name)), tcm.Name, tcm.Name)}" var="tenantConfigrationName" />
+		                    <apex:facet name="header">{!$Label.seismic__commonAction}</apex:facet>
+		                    <apex:commandLink id="editLink" value="{!$Label.seismic__buttonEdit}" action="{!editSubscriptionConfigurationMapping}" rendered="{!tenantConfigrationMappingsUpdatable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+		                        <apex:param name="subscriptionConfigurationMappingName" value="{!tcm.Name}" assignTo="{!subscriptionConfigurationMappingName}"/>
+		                    </apex:commandLink>
+		                    |&nbsp;
+		                    <apex:commandLink id="deleteLink" 
+                                value="{!$Label.seismic__buttonDelete}"
+                                onclick="return window.confirm('{!$Label.seismic__messageConfirmDeleteSubscription}')"
+                                action="{!deleteSubscriptionConfigurationMapping}"
+                                rendered="{!tenantConfigrationMappingsDeleteable}"
+								style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+                                <apex:param name="subscriptionConfigurationMappingName" value="{!tcm.Name}" assignTo="{!subscriptionConfigurationMappingName}"/>
+                            </apex:commandLink>
+		                    <apex:variable value="{!index+1}" var="index" />
+		                </apex:column>
+		                <apex:column id="userObjectField" value="{!tcm.seismic__User_Object_Field_Name__c}" styleClass="dataCell" width="200" >
+		                    <apex:facet name="header">{!$Label.seismic__userObjectFieldLabel}</apex:facet>
+		                </apex:column>
+		                <apex:column id="userFieldValue" value="{!tcm.seismic__User_Field_Value__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__userFieldValue}</apex:facet>
+		                </apex:column>
+		                <apex:column id="subscription" value="{!tcm.seismic__Subscription__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__subscription}</apex:facet>
+                        </apex:column>
+		            </apex:pageBlockTable>
+		            <apex:pageBlockSection id="emptyTable" rendered="{!tenantConfigrationMappings.empty}" columns="1">
+					  <apex:outputText value="{!$Label.seismic__commonNoRecords}" />
+		            </apex:pageBlockSection>
+                </apex:pageBlock>
+		        <div style="display: none;">
+		            <apex:pageBlock id="checkSubscriptionBlock">
+		                <apex:pageBlockSection rendered="{!checkingSubscription && adminSettingManagable}">
+		                    <apex:actionFunction name="saveSubscription" action="{!saveSubscription}" rerender="messages, subscriptionSetting">
+		                        <apex:param name="subscription" assignTo="{!subscription}" value=""/>
+		                        <apex:param name="tenant" assignTo="{!tenant}" value=""/>
+		                        <apex:param name="serverBaseUrl" assignTo="{!serverBaseUrl}" value=""/>
+		                        <apex:param name="disableSingleSignOnAutoRedirection" assignTo="{!disableSingleSignOnAutoRedirection}" value=""/>
+		                    </apex:actionFunction>
+		                    <apex:actionFunction name="showErrorMessage" action="{!showErrorMessage}" rerender="messages, subscriptionSetting">
+		                        <apex:param name="errorMessage" assignTo="{!errorMessage}" value=""/>
+		                    </apex:actionFunction>
+		                    <c:CheckSubscription devTenant="{!devTenant}" 
+                            >{!seismicAdminSettings.seismic__Subscription__c}</c:CheckSubscription>
+		                </apex:pageBlockSection>
+		            </apex:pageBlock>
+		        </div>
+		    </apex:form>
+		</apex:tab>
+		<apex:tab label="{!$Label.seismic__tabLegacyComponents}" name="old" id="oldSetting" rendered="{!showLegacyTab}">
+			<apex:form id="mappings" rendered="{!isListView}">
+		        <!-- adds a page message (messageToShow) at various severties (messageTypeToShow) -->
+		        <apex:actionFunction name="showGlobalMessage" action="{!showGlobalMessage}" rerender="messages" immediate="true">
+		            <apex:param name="messageTypeToShow" assignTo="{!messageTypeToShow}" value=""/>
+		            <apex:param name="messageToShow" assignTo="{!messageToShow}" value=""/>
+		        </apex:actionFunction>
+		        <apex:pageBlock title="{!$Label.seismic__legacyHeaderSubscription}" id="legacySubscriptionSetting" rendered="{!adminSettingAccessable}">
+		            <apex:pageBlockButtons location="top" id="buttons">
+		                <apex:commandButton id="saveButton" disabled="true" value="{!$Label.seismic__buttonSave}" rendered="{!adminSettingManagable}" action="{!saveLegacySubscription}" rerender="legacySubscriptionSetting, messages"/>
+		            </apex:pageBlockButtons>
+		            <apex:pageBlockSection id="settings" columns="1">
+		                <apex:inputCheckbox disabled="true" id="openPredictiveContentInNewWindow" label="{!$Label.seismic__legacyLabelNewWindow}" value="{!seismicAdminSettings.seismic__OpenPredictiveContentInNewWindow__c}" title="{!$Label.seismic__legacyLabelNewWindowInfo}"></apex:inputCheckbox>
+		                <apex:inputCheckbox disabled="true" id="enableUniversalContentDetailPage" label="{!$Label.seismic__legacyLabelUniversalContent}" value="{!seismicAdminSettings.seismic__EnableUniversalContentDetailPage__c}" title="{!$Label.seismic__legacyLabelUniversalContentInfo}"></apex:inputCheckbox>
+		            </apex:pageBlockSection>
+		        </apex:pageBlock>
+		        <apex:outputPanel >
+		            <script>
+		                function createdVisualforcePage(visualforcePage, SObject) {
+		                    showMessage('info', format('{!$Label.messageCreateVfPage}', '<a target="_blank" href="/09D/e?type=' + SObject + '&setupid=' + SObject + 'Links&PageOrSobjectType=' + SObject + '&retURL=">', '</a>'));
+		                }
+		            </script>
+		            <apex:actionFunction name="showMessage" action="{!showMessage}" rerender="messages" immediate="true">
+		                <apex:param name="messageTypeToShow" assignTo="{!messageTypeToShow}" value=""/>
+		                <apex:param name="messageToShow" assignTo="{!messageToShow}" value=""/>
+		            </apex:actionFunction>
+		        </apex:outputPanel>
+
+		        <apex:pageBlock id="systemDefinedPredictive" title="{!$Label.seismic__legacyHeaderSystemPredictive}">
+		            <apex:pageBlockButtons id="buttons" location="top">
+		                <apex:commandButton id="newButton" value="{!$Label.seismic__buttonNew}" disabled="true" action="{!AddSystemDefinedPredictiveMapping}"/>
+		            </apex:pageBlockButtons>
+		            <apex:variable value="{!0}" var="index" />
+		            <!-- table of existing mappings -->
+		            <apex:pageBlockTable value="{!systemDefinedPredictiveMappings}" var="mapping" rendered="{! NOT(systemDefinedPredictiveMappings.empty) }" id="table">
+		                <apex:variable value="" var="objectDisplayName" />
+		                <apex:variable value="" var="pageName" />
+		                <apex:variable value="  " var="emptyContent" />
+		                <apex:column id="actionColumn" rendered="{!objectTypeMappingUpdatable && objectTypeMappingDeleteable}" styleClass="actionColumn">
+		                    <apex:variable value="{!IF(NOT(ISBLANK(mapping.seismic__Object_Label__c)), mapping.seismic__Object_Label__c, mapping.seismic__Object_Name__c)}" var="objectDisplayName" />
+		                    <apex:variable value="{!IF(ISBLANK(mapping.seismic__Button_Name__c), DEFAULT_BUTTON_LABEL, mapping.seismic__Button_Name__c )}" var="pageName" />
+		                    <apex:variable value="{!index+1}" var="index" />
+		                    <apex:facet name="header">{!$Label.seismic__commonAction}</apex:facet>
+		                    <apex:commandLink id="deleteLink" value="{!$Label.seismic__buttonDelete}" action="{!deleteVFPage}" onclick="return checkCanDeleteLegacy('{!JSINHTMLENCODE(objectDisplayName)}', '{!JSINHTMLENCODE(pageName)}');" rendered="{!objectTypeMappingDeleteable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+								<apex:param name="objectTypeMappingInstanceNameName" value="{!mapping.Name}" assignTo="{!objectTypeMappingInstanceNameName}" />
+							</apex:commandLink>
+		                </apex:column>
+		                <apex:column id="relatedObjectColumn" value="{!objectDisplayName}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonRelated}</apex:facet>
+		                </apex:column>
+		                <apex:column id="predictiveComponentNameColumn" value="{!pageName}" styleClass="dataCell" width="200" >
+		                    <apex:facet name="header">{!$Label.seismic__legacySystemPredictiveComponentName}</apex:facet>
+		                </apex:column>
+		                <apex:column id="predictiveSettingTitleColumn" value="{!mapping.seismic__Team_Site__c}" styleClass="dataCell" width="200" >
+		                    <apex:facet name="header">{!$Label.seismic__legacySystemPredictiveSettingTitle}</apex:facet>
+		                </apex:column>
+		                <!--
+		                <apex:column value="{!mapping.VisualforceParameter__c}" styleClass="dataCell" width="200" >
+		                    <apex:facet name="header">Visualforce Parameter</apex:facet>
+		                </apex:column>
+		                 -->
+		            </apex:pageBlockTable>
+		            <apex:pageBlockSection id="emptyMappings" rendered="{!systemDefinedPredictiveMappings.empty}" columns="1">
+		                <apex:outputText value="{!$Label.seismic__commonNoRecords}" />
+		            </apex:pageBlockSection>
+		        </apex:pageBlock>
+		        <apex:pageBlock id="predictiveContent" title="{!$Label.seismic__legacyHeaderPredictiveContent}">
+		            <apex:pageBlockButtons id="buttons" location="top">
+		                <apex:commandButton disabled="true" id="newButton" value="{!$Label.seismic__buttonNew}" action="{!AddVisualforcePageMapping}"/>
+		            </apex:pageBlockButtons>
+		            <apex:variable value="{!0}" var="index" />
+		            <!-- table of existing mappings -->
+		            <apex:pageBlockTable value="{!vfPageMappings}" var="mapping" rendered="{! NOT(vfPageMappings.empty) }" id="table">
+		                <apex:variable value="" var="objectDisplayName" />
+		                <apex:variable value="" var="pageName" />
+		                <apex:variable value="  " var="emptyContent" />
+		                <apex:column id="actionColumn" rendered="{!objectTypeMappingUpdatable && objectTypeMappingDeleteable}" styleClass="actionColumn">
+		                    <apex:variable value="{!IF(NOT(ISBLANK(mapping.seismic__Object_Label__c)), mapping.seismic__Object_Label__c, mapping.seismic__Object_Name__c)}" var="objectDisplayName" />
+		                    <apex:variable value="{!IF(ISBLANK(mapping.seismic__Button_Name__c), DEFAULT_BUTTON_LABEL, mapping.seismic__Button_Name__c )}" var="pageName" />
+		                    <apex:variable value="{!index+1}" var="index" />
+		                    <apex:facet name="header">{!$Label.seismic__commonAction}</apex:facet>
+		                    <apex:commandLink id="deleteLink" value="{!$Label.seismic__buttonDelete}" action="{!deleteVFPage}" onclick="return checkCanDeleteLegacy('{!JSINHTMLENCODE(objectDisplayName)}', '{!JSINHTMLENCODE(pageName)}');" rendered="{!objectTypeMappingDeleteable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+								<apex:param name="objectTypeMappingInstanceNameName" value="{!mapping.Name}" assignTo="{!objectTypeMappingInstanceNameName}" />
+							</apex:commandLink>
+		                </apex:column>
+		                <apex:column id="nameColumn" value="{!pageName}" styleClass="dataCell" width="200" >
+		                    <apex:facet name="header">{!$Label.seismic__commonName}</apex:facet>
+		                </apex:column>
+		                <apex:column id="relatedObjectColumn" value="{!objectDisplayName}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonRelated}</apex:facet>
+		                </apex:column>
+		                <apex:column id="profileColumn" value="{!mapping.seismic__Team_Site__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonProfile}</apex:facet>
+                        </apex:column>
+		                <apex:column id="pathColumn" value="{!mapping.seismic__Filter_List_Name__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonFolderPath}</apex:facet>
+                        </apex:column>
+		                <apex:column id="filtersColumn" value="{!mapping.Id}" styleClass="dataCell js-filters-column" >
+		                    <apex:facet name="header">{!$Label.seismic__commonFilters}</apex:facet>
+		                </apex:column>
+		            </apex:pageBlockTable>
+		            <apex:pageBlockSection id="emptyTable" rendered="{!vfPageMappings.empty}" columns="1">
+		                <apex:outputText value="{!$Label.seismic__commonNoRecords}" />
+		            </apex:pageBlockSection>
+                </apex:pageBlock>
+
+		        <!-- Folder Button start -->
+		        <apex:pageBlock id="folderButton" title="{!$Label.seismic__legacyHeaderFolderButton}" rendered="{!objectTypeMappingAccessable}">
+
+		            <apex:pageBlockButtons id="folderButtons" location="top">
+		                <apex:commandButton disabled="true" id="newButton" value="{!$Label.seismic__buttonNew}" action="{!addObjectFolderMapping}" rendered="{!objectTypeMappingInsertable}"/>
+		            </apex:pageBlockButtons>
+
+		            <apex:variable value="{!1}" var="index" />
+
+		            <apex:pageBlockTable value="{!objFolderMappings}" rendered="{!NOT(objFolderMappings.empty)}" var="otm" id="table">
+		                <apex:variable value="" var="objectDisplayName" />
+		                <apex:variable value="" var="buttonName" />
+		                <apex:variable value="  " var="emptyContent" />
+
+		                <apex:column id="actionColumn" rendered="{!objectTypeMappingUpdatable && objectTypeMappingDeleteable}" styleClass="actionColumn">
+		                    <apex:variable value="{!IF(NOT(ISBLANK(otm.seismic__Object_Label__c)), otm.seismic__Object_Label__c, otm.seismic__Object_Name__c)}" var="objectDisplayName" />
+		                    <apex:variable value="{!IF(ISBLANK(otm.seismic__Button_Name__c), DEFAULT_BUTTON_LABEL, otm.seismic__Button_Name__c )}" var="buttonName" />
+		                    <apex:facet name="header">{!$Label.seismic__commonAction}</apex:facet>
+
+		                    <apex:commandLink id="deleteLink" value="{!$Label.seismic__buttonDelete}" action="{!deleteDocumentButton}" onclick="return checkCanDeleteLegacy('{!JSINHTMLENCODE(objectDisplayName)}', '{!JSINHTMLENCODE(buttonName)}');" rendered="{!objectTypeMappingDeleteable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+								<apex:param name="objectTypeMappingInstanceNameName" value="{!otm.Name}" assignTo="{!objectTypeMappingInstanceNameName}"/>
+							</apex:commandLink>
+
+		                    <apex:variable value="{!index+1}" var="index" />
+		                </apex:column>
+
+		                <apex:column id="buttonNameColumn" value="{!buttonName}" styleClass="dataCell" width="200" >
+		                    <apex:facet name="header">{!$Label.seismic__commonButtonName}</apex:facet>
+		                </apex:column>
+
+		                <apex:column id="relatedObjectColumn" value="{!objectDisplayName}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonRelated}</apex:facet>
+		                </apex:column>
+
+		                <apex:column id="profileColumn" value="{!otm.seismic__Team_Site__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonProfile}</apex:facet>
+                        </apex:column>
+
+		                <apex:column id="folderPathColumn" value="{!otm.seismic__Filter_List_Name__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonFolderPath}</apex:facet>
+                        </apex:column>
+
+		                <apex:column id="filtersColumn" value="{!otm.Id}" styleClass="dataCell js-filters-column" >
+		                    <apex:facet name="header">{!$Label.seismic__commonFilters}</apex:facet>
+		                </apex:column>
+
+		            </apex:pageBlockTable>
+		            <apex:pageBlockSection id="emptyTable" rendered="{!objFolderMappings.empty}" columns="1">
+		                <apex:outputText value="{!$Label.seismic__commonNoRecords}" />
+		            </apex:pageBlockSection>
+		        </apex:pageBlock>
+
+		        <script type="text/javascript">
+		            jQuery(function(){
+		                var filtersDatas = JSON.parse(decodeBase64("{!JSENCODE(filtersDatas)}"));
+		                var filterLogics = JSON.parse(decodeBase64("{!JSENCODE(filterLogics)}"));
+		                jQuery(".js-filters-column").each(function(){
+
+		                    var id = jQuery(this).text();
+		                    jQuery(this).empty();
+
+		                    var filterData = filtersDatas[id];
+		                    var filterLogic = filterLogics[id];
+		                    if (!filterData || filterData.length == 0)
+		                        return;
+
+		                    var $tbody = jQuery('<tbody>').appendTo(
+		                        jQuery('<table class="list">')
+		                            .append(jQuery('<tbody>')
+		                            .append(jQuery('<tr class=headerRow>')
+		                                .append(
+		                                    jQuery('<th class=headerRow>').html('{!$Label.filterLabelProperty}'),
+		                                    jQuery('<th class=headerRow>').html('{!$Label.filterLabelOperator}'),
+		                                    jQuery('<th class=headerRow>').html('{!$Label.filterLabelField}')
+		                                )
+		                            )
+		                        ).appendTo(this));
+
+		                    for(var i = 0; i < filterData.length; i ++) {
+		                        var item = filterData[i];
+		                        var seismicField = item[0],
+		                            operator = item[1],
+		                            sfFieldLabel = item[2];
+
+		                        $tbody.append(jQuery('<tr class="dataRow">').append(
+		                            jQuery('<td class="seismicFieldColumn dataCell">').text(seismicField),
+		                            jQuery('<td class="operatorColumn dataCell">').text(operator),
+		                            jQuery('<td class="sfFieldLabelColumn dataCell">').text(sfFieldLabel)
+		                        ));
+		                    }
+
+		                    var filterMatching = filterLogic == 'OR' ? '{!$Label.filterLabelAny}' : '{!$Label.filterLabelAll}';
+		                    jQuery('<div style="height: 20px; line-height: 20px;"></div>').text('{!$Label.filterLabelMatching}' + ' ' + filterMatching).appendTo(this);
+		                });
+		            })
+		        </script>
+
+		        <!-- Folder Button end -->
+
+		        <!-- Document Button start -->
+		        <apex:pageBlock id="documentButton" title="{!$Label.seismic__commonDocumentButton}" rendered="{!objectTypeMappingAccessable}">
+		            <apex:pageBlockButtons id="buttons" location="top">
+		                <apex:commandButton disabled="true" id="newButton" value="{!$Label.seismic__buttonNew}" action="{!addObjectDocMapping}" rendered="{!objectTypeMappingInsertable}"/>
+		            </apex:pageBlockButtons>
+		            <apex:variable value="{!1}" var="index" />
+		            <apex:pageBlockTable value="{!objDocMappings}" rendered="{!NOT(objDocMappings.empty)}" var="otm" id="table">
+		                <apex:variable value="" var="objectDisplayName" />
+		                <apex:variable value="" var="buttonName" />
+		                <apex:column id="actionColumn" rendered="{!objectTypeMappingUpdatable && objectTypeMappingDeleteable}" styleClass="actionColumn">
+		                    <apex:variable value="{!IF(NOT(ISBLANK(otm.seismic__Object_Label__c)), otm.seismic__Object_Label__c, otm.seismic__Object_Name__c)}" var="objectDisplayName" />
+		                    <apex:variable value="{!IF(ISBLANK(otm.seismic__Button_Name__c), DEFAULT_BUTTON_LABEL, otm.seismic__Button_Name__c )}" var="buttonName" />
+		                    <apex:facet name="header">{!$Label.seismic__commonAction}</apex:facet>
+		                    <apex:commandLink id="deleteLink" value="{!$Label.seismic__buttonDelete}" action="{!deleteDocumentButton}" onclick="return checkCanDeleteLegacy('{!JSINHTMLENCODE(objectDisplayName)}', '{!JSINHTMLENCODE(buttonName)}');" rendered="{!objectTypeMappingDeleteable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+								<apex:param name="objectTypeMappingInstanceNameName" value="{!otm.Name}" assignTo="{!objectTypeMappingInstanceNameName}"/>
+							</apex:commandLink>
+		                    <apex:variable value="{!index+1}" var="index" />
+		                </apex:column>
+		                <apex:column id="buttonNameColumn" value="{!buttonName}" styleClass="dataCell" width="200" >
+		                    <apex:facet name="header">{!$Label.seismic__commonButtonName}</apex:facet>
+		                </apex:column>
+		                <apex:column id="relatedObjectColumn" value="{!objectDisplayName}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonRelated}</apex:facet>
+		                </apex:column>
+		                <apex:column id="profileColumn" value="{!otm.seismic__Team_Site__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonProfile}</apex:facet>
+                        </apex:column>
+		                <apex:column id="documentPathColumn" value="{!otm.seismic__Document_Name__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonDocumentPath}</apex:facet>
+                        </apex:column>
+		                <apex:column id="defaultFormatColumn" value="{!otm.seismic__Generate_Format__c}" styleClass="dataCell" width="200">
+		                	<apex:facet name="header">{!$Label.seismic__legacyDocumentButtonTitleFormat}</apex:facet>
+		                </apex:column>
+		                <apex:column />
+		            </apex:pageBlockTable>
+		            <apex:pageBlockSection id="emptyTable" rendered="{!objDocMappings.empty}" columns="1">
+					  <apex:outputText value="{!$Label.seismic__commonNoRecords}" />
+		            </apex:pageBlockSection>
+		        </apex:pageBlock>
+		        <!-- Document Button end -->
+
+		        <!-- custom tab mapping start -->
+		        <apex:pageBlock id="customTabMappings" title="{!$Label.seismic__legacyHeaderCustomTab}" rendered="{!customTabMappingAccessable}">
+		            <apex:pageBlockButtons id="buttons" location="top">
+		                <apex:commandButton disabled="true" id="newButton" value="{!$Label.seismic__buttonNew}" action="{!addCustomTabMapping}" rendered="{!customTabMappingInsertable}"/>
+		            </apex:pageBlockButtons>
+		            <apex:variable value="{!1}" var="index" />
+		            <apex:pageBlockTable value="{!customTabMappings}" rendered="{!NOT(customTabMappings.empty)}" var="ctm" id="table">
+		                <apex:column id="actionColumn" rendered="{!customTabMappingUpdatable && customTabMappingDeleteable}" styleClass="actionColumn">
+		                    <apex:facet name="header">{!$Label.seismic__commonAction}</apex:facet>
+		                    <apex:commandLink id="deleteLink" value="{!$Label.seismic__buttonDelete}" action="{!deleteCustomTabMapping}" onclick="return window.confirm(format('{!$Label.seismic__messageConfirmDeleteMapping}', '{!JSINHTMLENCODE(ctm.seismic__Custom_Tab__c)}', '{!JSINHTMLENCODE(ctm.seismic__Team_Site__c)}'))" rendered="{!customTabMappingDeleteable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+		                        <apex:param name="customTabMappingInstanceNameName" value="{!ctm.Name}" assignTo="{!customTabMappingInstanceNameName}"/>
+		                    </apex:commandLink>
+		                    <apex:variable value="{!index+1}" var="index" />
+		                </apex:column>
+		                <!--
+		                <apex:column value="{!ctm.Custom_Tab_Id__c}" />
+		                 -->
+		                <apex:column id="customTabColumn" value="{!ctm.seismic__Custom_Tab__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonCustomTab}</apex:facet>
+		                </apex:column>
+		                <apex:column id="profileColumn" value="{!ctm.seismic__Team_Site__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonProfile}</apex:facet>
+                        </apex:column>
+		                <apex:column id="customTabMappingsFolderPathColumn" value="{!ctm.seismic__Filter_List_Name__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonFolderPath}</apex:facet>
+                        </apex:column>
+		                <apex:column />
+		            </apex:pageBlockTable>
+		            <apex:pageBlockSection id="emptyTable" rendered="{!customTabMappings.empty}" columns="1">
+		                <apex:outputText value="{!$Label.seismic__commonNoRecords}" />
+		            </apex:pageBlockSection>
+		        </apex:pageBlock>
+		        <!-- custom tab mapping end -->
+		    </apex:form>
+		</apex:tab>
+		<apex:tab label="{!$Label.seismic__tabNewComponents}" name="new" id="newSetting" rendered="{!NOT(disableActivity)}">
+			<apex:form id="newMappings" rendered="{!isListView}">
+                <apex:outputPanel >
+                    <script>
+		                function createdVisualforcePage(visualforcePage, SObject) {
+		                    showMessage('info', format('{!$Label.messageCreateVfPage}', '<a target="_blank" href="/09D/e?type=' + SObject + '&setupid=' + SObject + 'Links&PageOrSobjectType=' + SObject + '&retURL=">', '</a>'));
+		                }
+                        jQuery.noConflict();
+    	
+                        function showError(msg) {
+                            showGlobalMessage('error', msg);
+                        }
+                        function checkCanDeleteVFPage(objectTypeMappingInstanceNameName) {
+                            if(window.confirm('{!$Label.messageConfirmDelete}')) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+                        function checkCanDeleteButton() {
+                            if(window.confirm('{!$Label.messageConfirmDelete}')) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+		            </script>
+                    <apex:actionFunction name="showGlobalMessage" action="{!showGlobalMessage}" rerender="messages" immediate="true" oncomplete="enableAllButtons&&enableAllButtons()">
+                        <apex:param name="messageTypeToShow" assignTo="{!messageTypeToShow}" value="" />
+                        <apex:param name="messageToShow" assignTo="{!messageToShow}" value="" />
+                    </apex:actionFunction>
+                    <apex:actionFunction name="showMessage" action="{!showMessage}" rerender="messages" immediate="true">
+		                <apex:param name="messageTypeToShow" assignTo="{!messageTypeToShow}" value=""/>
+		                <apex:param name="messageToShow" assignTo="{!messageToShow}" value=""/>
+		            </apex:actionFunction>
+                </apex:outputPanel>
+
+				<!-- New Predictive start -->
+				<apex:pageBlock id="embeddedAppForClassicTitle" title="{!$Label.seismic__newHeaderEmbedded}">
+					<apex:pageBlockButtons id="buttonsBlock" location="top">
+						<apex:commandButton id="newButton" value="{!$Label.seismic__buttonNew}" disabled="{!disableClassicAdmin}" action="{!addNewPredictiveMapping}" />
+					</apex:pageBlockButtons>
+
+					<apex:variable value="{!0}" var="index" />
+
+					<!-- table of existing mappings -->
+					<apex:pageBlockTable value="{!newPredictiveMappings}" var="mapping" rendered="{! NOT(newPredictiveMappings.empty) }" id="table">
+						<apex:variable value="" var="objectDisplayName" />
+						<apex:variable value="" var="pageName" />
+						<apex:variable value="  " var="emptyContent" />
+
+						<apex:column id="actionColumn" rendered="{!objectTypeMappingUpdatable && objectTypeMappingDeleteable}"
+							styleClass="actionColumn">
+							<apex:variable value="{!IF(NOT(ISBLANK(mapping.seismic__Object_Label__c)), mapping.seismic__Object_Label__c, mapping.seismic__Object_Name__c)}"
+								var="objectDisplayName" />
+							<apex:variable value="{!IF(ISBLANK(mapping.seismic__Button_Name__c), DEFAULT_BUTTON_LABEL, mapping.seismic__Button_Name__c )}"
+								var="pageName" />
+							<apex:variable value="{!index+1}" var="index" />
+
+							<apex:facet name="header">{!$Label.seismic__commonAction}</apex:facet>
+
+							<apex:commandLink id="editLink" value="{!$Label.seismic__buttonEdit}" action="{!editNewPredictiveMapping}" rendered="{!objectTypeMappingUpdatable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+								<apex:param name="objectTypeMappingInstanceNameName" value="{!mapping.Name}" assignTo="{!objectTypeMappingInstanceNameName}" />
+		                    </apex:commandLink>
+		                    |&nbsp;
+		                    <apex:commandLink id="deleteLink" value="{!$Label.seismic__buttonDelete}" action="{!deleteVFPage}" rendered="{!objectTypeMappingDeleteable}" onclick="return checkCanDeleteVFPage('{!JSINHTMLENCODE(mapping.Name)}');" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+                                <apex:param name="objectTypeMappingInstanceNameName" value="{!mapping.Name}" assignTo="{!objectTypeMappingInstanceNameName}" />
+                            </apex:commandLink>
+						</apex:column>
+
+						<apex:column id="nameColumn" value="{!pageName}" styleClass="dataCell" width="200">
+							<apex:facet name="header">{!$Label.seismic__commonName}</apex:facet>
+						</apex:column>
+
+						<apex:column id="relatedObjectColumn" value="{!objectDisplayName}" styleClass="dataCell"
+							width="200">
+							<apex:facet name="header">{!$Label.seismic__commonRelated}</apex:facet>
+						</apex:column>
+
+						<apex:column id="embeddedApplicationColumn" value="{!mapping.seismic__Embedded_Application__c}"
+							styleClass="dataCell" width="200">
+							<apex:facet name="header">{!$Label.seismic__commonEmbeddedApp}</apex:facet>
+						</apex:column>
+
+            			<apex:column id="openContentInlineColumn" value="{!mapping.seismic__Open_Content_Inline__c}"
+							styleClass="dataCell" width="200">
+							<apex:facet name="header">{!$Label.seismic__newEmbeddedTitleInline}</apex:facet>
+						</apex:column>
+
+					</apex:pageBlockTable>
+
+					<apex:pageBlockSection id="emptyTable" rendered="{!newPredictiveMappings.empty}" columns="1">
+		                <apex:outputText value="{!$Label.seismic__commonNoRecords}" />
+		            </apex:pageBlockSection>
+				</apex:pageBlock>
+				<!-- New Predictive end -->
+				
+				<!-- Tab Shortcut start -->
+		        <apex:pageBlock id="tabShortcutButtons" title="{!$Label.seismic__newHeaderTabButton}" rendered="{!objectTypeMappingAccessable}">
+
+		            <apex:pageBlockButtons id="buttons" location="top">
+		                <apex:commandButton id="newButton" value="{!$Label.seismic__buttonNew}" disabled="{!disableClassicAdmin}" action="{!addObjectFolderMappingLightning}" rendered="{!objectTypeMappingInsertable}"/>
+		            </apex:pageBlockButtons>
+
+		            <apex:variable value="{!1}" var="index" />
+
+		            <apex:pageBlockTable value="{!objFolderMappingsLightning}" rendered="{!NOT(objFolderMappingsLightning.empty)}" var="otm" id="table">
+		                <apex:variable value="" var="objectDisplayName" />
+		                <apex:variable value="" var="buttonName" />
+		                <apex:variable value="  " var="emptyContent" />
+
+		                <apex:column id="actionColumn" rendered="{!objectTypeMappingUpdatable && objectTypeMappingDeleteable}" styleClass="actionColumn">
+		                    <apex:variable value="{!IF(NOT(ISBLANK(otm.seismic__Object_Label__c)), otm.seismic__Object_Label__c, otm.seismic__Object_Name__c)}" var="objectDisplayName" />
+		                    <apex:variable value="{!IF(ISBLANK(otm.seismic__Button_Name__c), DEFAULT_BUTTON_LABEL, otm.seismic__Button_Name__c )}" var="buttonName" />
+		                    <apex:facet name="header">{!$Label.seismic__commonAction}</apex:facet>
+
+		                    <apex:commandLink id="editLink" action="{!editObjectFolderMappingLightning}" value="{!$Label.seismic__buttonEdit}" rendered="{!objectTypeMappingUpdatable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+		                        <apex:param name="objectTypeMappingInstanceNameName" value="{!otm.Name}" assignTo="{!objectTypeMappingInstanceNameName}"/>
+		                    </apex:commandLink>
+                            |&nbsp;
+                            <apex:commandLink id="deleteLink" action="{!deleteTabButton}" value="{!$Label.seismic__buttonDelete}" rendered="{!objectTypeMappingDeleteable}" onclick="return checkCanDeleteButton();" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+		                        <apex:param name="objectTypeMappingInstanceNameName" value="{!otm.Name}" assignTo="{!objectTypeMappingInstanceNameName}"/>
+		                    </apex:commandLink>
+		                    <apex:variable value="{!index+1}" var="index" />
+		                </apex:column>
+
+		                <apex:column id="buttonNameColumn" value="{!buttonName}" styleClass="dataCell" width="200" >
+		                    <apex:facet name="header">{!$Label.seismic__commonButtonName}</apex:facet>
+		                </apex:column>
+
+		                <apex:column id="relatedObjectColumn" value="{!objectDisplayName}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonRelated}</apex:facet>
+		                </apex:column>
+
+		                <apex:column id="embeddedApplicationColumn" value="{!otm.seismic__Embedded_Application__c}" styleClass="dataCell" width="200">
+		                	<apex:facet name="header">{!$Label.seismic__commonEmbeddedApp}</apex:facet>
+		                </apex:column>
+
+		                <apex:column id="selectedTabColumn" value="{!otm.seismic__Selected_Tab__c}" styleClass="dataCell" width="200">
+		                	<apex:facet name="header">{!$Label.seismic__newTabTitleTab}</apex:facet>
+		                </apex:column>
+
+		            </apex:pageBlockTable>
+		            <apex:pageBlockSection id="emptyTable" rendered="{!objFolderMappingsLightning.empty}" columns="1">
+		                <apex:outputText value="{!$Label.seismic__commonNoRecords}" />
+		            </apex:pageBlockSection>
+		        </apex:pageBlock>
+		        <!-- Tab Shortcut end -->
+
+		        <!-- New Document Button start -->
+		        <apex:pageBlock id="newDocumentButton" title="{!$Label.seismic__commonDocumentButton}" rendered="{!objectTypeMappingAccessable}">
+		            <apex:pageBlockButtons id="buttons" location="top">
+		                <apex:commandButton id="newButton" value="{!$Label.seismic__buttonNew}" disabled="{!disableClassicAdmin}" action="{!addObjectNewDocMapping}" rendered="{!objectTypeMappingInsertable}"/>
+		            </apex:pageBlockButtons>
+		            <apex:variable value="{!1}" var="index" />
+		            <apex:pageBlockTable value="{!objNewDocMappings}" rendered="{!NOT(objNewDocMappings.empty)}" var="otm" id="newDocumentButtonTable">
+		                <apex:variable value="" var="objectDisplayName" />
+		                <apex:variable value="" var="buttonName" />
+		                <apex:column id="actionColumn" rendered="{!objectTypeMappingUpdatable && objectTypeMappingDeleteable}" styleClass="actionColumn">
+		                    <apex:variable value="{!IF(NOT(ISBLANK(otm.seismic__Object_Label__c)), otm.seismic__Object_Label__c, otm.seismic__Object_Name__c)}" var="objectDisplayName" />
+		                    <apex:variable value="{!IF(ISBLANK(otm.seismic__Button_Name__c), DEFAULT_BUTTON_LABEL, otm.seismic__Button_Name__c )}" var="buttonName" />
+		                    <apex:facet name="header">{!$Label.seismic__commonAction}</apex:facet>
+		                    <apex:commandLink id="editLink" value="{!$Label.seismic__buttonEdit}" action="{!editObjectNewDocMapping}" rendered="{!objectTypeMappingUpdatable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+		                        <apex:param name="objectTypeMappingInstanceNameName" value="{!otm.Name}" assignTo="{!objectTypeMappingInstanceNameName}"/>
+		                    </apex:commandLink>
+		                    |&nbsp;
+		                    <apex:commandLink id="deleteLink" action="{!deleteDocumentButton}" value="{!$Label.seismic__buttonDelete}" onclick="return checkCanDeleteButton();" rendered="{!objectTypeMappingDeleteable}" style="{!IF(disableClassicAdmin, 'color: #999; cursor: not-allowed; pointer-events: none;', '')}">
+                              <apex:param name="objectTypeMappingInstanceNameName" value="{!otm.Name}" assignTo="{!objectTypeMappingInstanceNameName}"/>
+                            </apex:commandLink>
+		                    <apex:variable value="{!index+1}" var="index" />
+		                </apex:column>
+		                <apex:column id="buttonNameColumn" value="{!buttonName}" styleClass="dataCell" width="200" >
+		                    <apex:facet name="header">{!$Label.seismic__commonButtonName}</apex:facet>
+		                </apex:column>
+		                <apex:column id="relatedObjectColumn" value="{!objectDisplayName}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonRelated}</apex:facet>
+		                </apex:column>
+		                <apex:column id="profileColumn" value="{!otm.seismic__Team_Site__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonProfile}</apex:facet>
+                        </apex:column>
+		                <apex:column id="documentPathColumn" value="{!otm.seismic__Document_Name__c}" styleClass="dataCell" width="200">
+		                    <apex:facet name="header">{!$Label.seismic__commonDocumentPath}</apex:facet>
+                        </apex:column>
+		            </apex:pageBlockTable>
+		            <apex:pageBlockSection id="emptyTable" rendered="{!objNewDocMappings.empty}" columns="1">
+		                <apex:outputText value="{!$Label.seismic__commonNoRecords}" />
+		            </apex:pageBlockSection>
+		        </apex:pageBlock>
+		        <!-- New Document Button end -->
+			</apex:form>
+		</apex:tab>
+	</apex:tabPanel>
+    <img style="display: none;" id="seismicTenantLogo" /> 
+</apex:page>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_89780792</developerName>
+        <masterLabel>Campaign Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>CAMPAIGN.TYPE</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Webinar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Conference Call</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>OnDemand</sourceValue>
+            </sourceValues>
+            <value>Webinar/Conference Call</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Industry Conference/Booth</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Industry Online Event</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Industry</sourceValue>
+            </sourceValues>
+            <value>Speaking</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Product Promotion</sourceValue>
+            </sourceValues>
+            <value>Product Promotion</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Blog/Market Currents</sourceValue>
+            </sourceValues>
+            <value>Blog/Market Currents</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_28706137</developerName>
+        <masterLabel>Pipeline vs Revenue</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>OPP.STAGE_NAME</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Qualified Prospect (2)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Conducting Needs Analysis (3)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pricing Proposal Sent (4)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Agreement Sent and Being Negotiated (5)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Verbal Win (6)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Quota, Current</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Quota, Prior Year</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Potential</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Active</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Deactivated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Consolidated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Suspended</sourceValue>
+            </sourceValues>
+            <value>Pipeline</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Won</sourceValue>
+            </sourceValues>
+            <value>Closed Won Revenue</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>OPP.AMOUNT.CONVERT</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>CAMPAIGN.TYPE</groupingColumn>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <aggregateTypes>Unique</aggregateTypes>
+        <field>OPP.NAME</field>
+    </columns>
+    <columns>
+        <field>OPP.CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>OPP.CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>INFLUENCE</field>
+    </columns>
+    <columns>
+        <field>REVENUE_SHARE</field>
+    </columns>
+    <columns>
+        <field>OPP.ID</field>
+    </columns>
+    <columns>
+        <field>OPP.ISO_CODE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>OPP.AMOUNT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>OPP.AMOUNT.CONVERT</field>
+    </columns>
+    <columns>
+        <field>OPP.STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN.NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>OPP.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>New -</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPP.RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Opportunity.Advisory,Opportunity.Advisory_Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPP.CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1/1/2021 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPP.STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Qualified Prospect (2),Conducting Needs Analysis (3),Pricing Proposal Sent (4),Agreement Sent and Being Negotiated (5),Verbal Win (6),Closed Lost,Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPP.AMOUNT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>USD 0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN.CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1/1/2021 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN.TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Webinar,Industry Conference/Booth,Social Media,Green_Street_Event,Advertising,Press Release,Product Promotion,Blog/Market Currents,CPPI,Targeted Campaigns,Media</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.GSA_Relationship__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Prospect</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN.TYPE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Marketing Channels Pipeline Created</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomizableCampaignInfluence</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

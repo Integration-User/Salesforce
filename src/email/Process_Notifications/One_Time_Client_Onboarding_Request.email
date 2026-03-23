@@ -1,0 +1,24 @@
+{!Opportunity.OwnerFullName} just signed a contract with {!Opportunity.Account} for {!Opportunity.Amount}!
+
+STAGE: {!Opportunity.StageName} - {!NullValue(Opportunity.Trial_End_Date__c, "\"\"")}
+
+*This is a one time client, therefore does not need an AM assignment. 
+
+Details -- 
+Contract Type:                      {!Opportunity.Contract_Type__c}
+Geographic Exposure:          {!Opportunity.Geographic_Exposure__c}
+Other Research Providers:    {!Opportunity.Other_Vendors__c}
+# of products:       {!Opportunity.Product_Count__c}
+
+Contract Terms--
+Contract Length:  {!Opportunity.Length_of_Contract__c}
+Contract Start:    {!Opportunity.Contract_Start_Date__c}
+Contract End:     {!Opportunity.Contract_End_Date__c}
+
+
+Address:             
+{!Account.BillingAddress} 
+
+
+
+{!Opportunity.Link}

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_76438780</developerName>
+        <masterLabel>Client Breakdown</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Company_Type__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Accountant</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Consultant</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Law Firm</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Government</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Fixed Income/CMBS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Individual</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Other</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vendor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Retailer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Associations</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Press</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>University</sourceValue>
+            </sourceValues>
+            <value>CST</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Alpha Capture</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bank - Investment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bank - Lender</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Commercial Broker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Competitor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Family Office</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Non-Contracted Hedge Fund-dedicated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Non-Contracted Hedge Fund-generalist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Dedicated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Dedicated, Event Driven</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Generalist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Generalist, Dedicated Sponsor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Generalist, Dedicated Sponsor, Event Driven</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hedge Fund - Generalist, Event Driven</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>High Net Worth - RIA</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Institutional Consultant</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Insurance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Non-Contracted Long Only-dedicated</sourceValue>
+            </sourceValues>
+            <value>Other</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Trading Only</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Non-Contracted Long Only-generalist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Long Only</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Long Only- Dedicated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Long Only- Generalist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Long Only- Generalist, Dedicated Sponsor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pension Fund/Endowment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Private Equity - Dedicated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Private Equity - Diversified</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rating Agency</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Real Estate Company</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>REIT - Coverage Universe</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>REIT - Non Coverage Universe</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sovereign Wealth Fund</sourceValue>
+            </sourceValues>
+            <value>Other 2</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Donut</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>BucketField_76438780</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>true</showPercentage>
+        <showTotal>true</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Account.Company_Type__c</field>
+    </columns>
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.US_Expansion_Owner__c</field>
+    </columns>
+    <columns>
+        <field>Account.Protected_By__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Products_Include__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Total_ARR__c</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE_CODE</field>
+    </columns>
+    <columns>
+        <field>Account.Prospect_Category__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.CURRENCY_ISO_CODE</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Client,Favor,Former,Parent,Prospect,Suspended,Trial</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.CURRENCY_ISO_CODE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>USD</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>(EU)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ADDRESS1_STATE_CODE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>CT,ME,NH,OH,RI,VT</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_76438780</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Copy of My Territories - All Clients dra</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.Total_ARR__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

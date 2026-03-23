@@ -1,6 +1,12 @@
-<apex:page standardstylesheets="false" controller="maps.BaseObjects" sidebar="false" title="Salesforce Maps Settings" extensions="maps.RemoteActions,maps.RemoteFunctions,maps.LiveRemoteFunctions,maps.LiveControllerHelper,maps.AdminAJAXResources,maps.DataLayers,maps.AutoAssignmentController,maps.TerritoryRemoteFunctions,maps.CustomEventConfigController,maps.Click2CreateSettings,maps.OAuth,maps.UserAJAXResources,maps.Util,maps.TerritoryPlanning,maps.TPRemoteActions,maps.AdvRouteRemoting,maps.MapsCustomActions">
+<apex:page standardstylesheets="false" controller="maps.BaseObjects" sidebar="false" title="Salesforce Maps Settings" extensions="maps.RemoteActions,maps.RemoteFunctions,maps.LiveRemoteFunctions,maps.LiveControllerHelper,maps.AdminAJAXResources,maps.DataLayers,maps.AutoAssignmentController,maps.TerritoryRemoteFunctions,maps.CustomEventConfigController,maps.Click2CreateSettings,maps.OAuth,maps.UserAJAXResources,maps.Util,maps.TerritoryPlanning,maps.TPRemoteActions,maps.AdvRouteRemoting,maps.MapsCustomActions,maps.MileageAdminSettingsController">
     <c:System />
+    <div id="permanentAssistiveText"
+        aria-live="polite"
+        role="status"
+        class="slds-assistive-text"
+    ></div>
     <div id="ma-vue-root"></div>
+
 
     <script>
         window.advancedFeatureLicenseEnabled = {!advancedFeatureLicenseEnabled};
@@ -38,6 +44,7 @@
     <apex:stylesheet value="{!URLFOR($Resource.maps__Maps3rdPartyPlugins, 'jquery/jquery-ui.css')}"/>
     <script type='text/javascript'>
         var baseURL = '{!BaseURL}';
+        var orgCanSetV1Flag = {!orgCanSetV1Flag};
         toastr.options = {
             "positionClass": "toast-bottom-right",
             "onclick": null,
@@ -57,6 +64,29 @@
             }
         };
 
+        const permanentAnnouncer = document.getElementById('permanentAssistiveText');
+
+        // Function to announce messages to screen readers that persists through component transitions
+        function announceToScreenReader(messageType, message) {
+            // Clear first to ensure it's treated as a new announcement
+            permanentAnnouncer.textContent = '';
+            
+            // mimic a nextTick to ensure the DOM is updated
+            setTimeout(() => {
+                const typeText = messageType === 'success' ? MASystem.Labels.MA_Success_Message ?? 'Success Message' : 
+                             messageType === 'error' ? MASystem.Labels.MA_Error_Message ?? 'Error Message' : 
+                             messageType === 'warning' ? MASystem.Labels.MA_Warning_Message ?? 'Warning Message' :
+                             MASystem.Labels.MA_Information_Message ?? 'Information Message';
+
+                permanentAnnouncer.textContent = `${typeText}: ${message}`;
+                
+                // Clear after a while to prepare for next announcement
+                setTimeout(() => {
+                    permanentAnnouncer.textContent = '';
+                }, 500);
+            }, 50);
+        }
+
         var MAToastMessages = {
             showMessage : function(options,type) {
                 type = type || 'info';
@@ -69,6 +99,12 @@
                     closeButton : false,
                     onclick : null
                 }, options || {});
+
+                // Create message for screen reader
+                const message = options.subMessage ? `${options.message}, ${options.subMessage}` : `${options.message}`;
+                
+                // Use the new announceToScreenReader method
+                announceToScreenReader(type, message);
 
                 toastr.options.timeOut = options.timeOut;
                 toastr.options.extendedTimeOut = options.extendedTimeOut;
@@ -84,8 +120,11 @@
                 else {
                     return toastr[type](options.subMessage,options.message);
                 }
-
-
+            },
+            hideMessage : function (toast) {
+                toastr.clear(toast);
+                toast.remove();
+                toast = null;
             },
             showSuccess : function(options) {
                 return MAToastMessages.showMessage(options,'success');
@@ -98,11 +137,6 @@
             },
             showError : function(options) {
                 return MAToastMessages.showMessage(options,'error');
-            },
-            hideMessage : function (toast) {
-                toastr.clear(toast);
-                toast.remove();
-                toast = null;
             }
         } 
     </script>
@@ -113,41 +147,6 @@
     <apex:stylesheet value="{!URLFOR($Resource.maps__MapsFonts, 'styles.css')}"/>
     <!-- Maps Configuration Page Styling -->
     <apex:stylesheet value="{!URLFOR($Resource.maps__MapsStyles, 'styles/css/ma-configuration-ui.css')}"/>
-    <apex:outputPanel layout="none" rendered="{!PendoEnabled}">
-        <script>
-            (function(apiKey){
-                (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
-                v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
-                o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
-                y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
-                z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
-
-                // Call this whenever information about your visitors becomes available
-                // Please use Strings, Numbers, or Bools for value types.
-                pendo.initialize({
-                    visitor: { 
-                        id: '{!JSENCODE($User.Id)}',
-                        email: '{!JSENCODE($User.Email)}',
-                        firstName: '{!JSENCODE($User.FirstName)}',
-                        lastName: '{!JSENCODE($User.LastName)}',
-                        userName: '{!JSENCODE($User.Username)}',
-                        userAgent: window.navigator.userAgent
-                    },
-
-                    account: { 
-                        id: '{!JSENCODE($Organization.Id)}', // Highly recommended
-                        name: '{!JSENCODE($Organization.Name)}'
-                        // planLevel:    // Optional
-                        // planPrice:    // Optional
-                        // creationDate: // Optional
-
-                        // You can add any additional account level key-values here,
-                        // as long as it's not one of the above reserved names.
-                    }
-                });
-            })('{!JSENCODE(pendoKey)}');
-        </script>
-    </apex:outputPanel>
 
     <script>
         var $Images = {

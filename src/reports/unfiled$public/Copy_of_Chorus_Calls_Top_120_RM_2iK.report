@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Disposition__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Name</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Account__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__Opportunity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__EngagingQuestions__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>affectlayer__Engagement__c$affectlayer__RepTalkRatio__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$affectlayer__URL__c</field>
+    </columns>
+    <columns>
+        <field>affectlayer__Engagement__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Disposition__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c.affectlayer__Chorus_Engagement_Users__r$affectlayer__User__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Andrew Pilmer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Venture One Real Estate,LLC (NA),Speedwagon Capital Partners,Starwood Hotels &amp; Resorts Worldwide,State Universities Retirement System of Illinois,Station 31 Partners,LLC,Adams Property Group,Aline Capital LLC,Appelman Properties,Barrister Commercial Group,BC Wood Properties,CF Capital,Clemson University Foundation,Compass Capital,Computershare Inc.,Corporex Capital,Furman Capital Advisors,Global Lending Services,Graycliff Capital Partners,Insignis Partners,Kaden Companies,Kentucky Retirement Systems,Kentucky Teachers Retirement System,Lasso Capital,LDG Development,M&amp;J Wilkow,Magellan Development Group,Magnolia Capital,Mansur Realty Corporation,Maple Street Capital,Material Capital Partners,Matheson Capital,MB Investments,MCB Real Estate,McCall Capital Partners,Metropolis Investment Holdings,Metro Self Storage,Middle Street Partners,Midwest Industrial Funds,Midwest Park Capital LLC,ML Realty Partners LLC,MP Materials,Municipal Employees&apos; Annuity &amp; Benefit Fund of Chicago,Murphy Real Estate Services,National Apartment Partners,Next Realty,North Grove Real Estate Capital,North Park Ventures,Oak Residential Partners,Origami Capital Partners,Orion Residential,OTO Development,Partners Enterprise Capital (NA),Pathway to Living,Peak Properties</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Performance Trust Capital Partners,Perkins&amp;Will,Pritzker Organization LLC,R2 Companies,Ravinia Capital Group LLC,Realogic Analytics,RE Development Solutions,Regency Multifamily,Rockwell Partners,Royal Palm Companies [RPC Holdings],Rushmore Properties,LLC,Scarlet Hotel Group,Schwartz Capital Group,Secure Capital Group,Sedgwick,SHA Capital Partners,Shapack Partners,Sherman Residential,SMB Bradley,Sounding Capital Partners,South Coast,Sterling Bay,Sterling Partners,Stock Yards Bank &amp; Trust Co,Styx Co.,Talos Capital,Taylor Theus,Teachers&apos; Retirement System of the State of Illinois,The Alter Group,The Bright Group,The Habitat Company,The Montford Group.,The Peakstone Group,The Scion Group,The Wolcott Group,TMGOC Ventures,Tricap Residential Group,Tri-Land Properties Inc,Twin Pagoda,Twin Rivers Capital,University of Chicago Investment Office,University of Illinois Foundation,University of Kentucky,University of Louisville,University Of South Carolina,Vanderbilt Office Properties,Vermilion Development,Verus Partners,Vivaldi Capital Management,Watermark Capital Partners,Waterway Capital,Waycross Partners,WCM Global Wealth,Wedgewood Investment Group,Weiss Entities LLC,West Virginia Investment Management Board,West Virginia University</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>affectlayer__Engagement__c$affectlayer__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Weyland Ventures,Window Rock Capital Partners,WMG Development,Woodfield Development,Woodfield Investments,Work with Focus,WP Global Partners,Zeller Realty Group,Transformco Properties</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>affectlayer__Engagement__c$affectlayer__Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chorus Calls - Top 120 APM</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Engagements_with_Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>affectlayer__Engagement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

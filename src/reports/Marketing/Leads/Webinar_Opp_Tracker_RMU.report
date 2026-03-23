@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_3500126</developerName>
+        <masterLabel>Region</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>CAMPAIGN.NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Pan-European Commercial Property Outlook April 2020</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pan-European Commercial Property Outlook February 2020</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pan-European Commercial Property Outlook November 2020</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pan-European Outlook: Choppy Waters</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>European Management Value Added: Separating the Best from the Rest</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>European Multifamily Residential: First-Mover Opportunity in Nascent Sector</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>European Office: Better Days Ahead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>European Office Outlook: Winners &amp; Losers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>European Retail: Valuation Reality Awaits</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EU Year In Review 2020</sourceValue>
+            </sourceValues>
+            <value>EU</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>U.S. Office Real Estate: Fundamentals &amp; Valuation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>U.S. Real Estate: Shifting Tides Create Opportunity</sourceValue>
+            </sourceValues>
+            <value>US</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Global Featured Insights Heard on the Beach: The Sum of All Fears</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Global Featured Insights Property Insights: Everybody CARES</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Global Featured Insights Socially Distanced Pricing Behaviour</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Global Featured Insights The Never-Ending Uphill Retail Struggle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Global Property Perspective: US vs. Europe</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Global Retail Webinar: Retail Across the Globe</sourceValue>
+            </sourceValues>
+            <value>Global</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CONTACT.FULL_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Unique</aggregateTypes>
+        <field>OPP.NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>OPP.AMOUNT</field>
+    </columns>
+    <columns>
+        <field>OPP.STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Products__c</field>
+    </columns>
+    <columns>
+        <field>OPP.CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>OPP.CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>OPP.OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>INFLUENCE</field>
+    </columns>
+    <columns>
+        <field>REVENUE_SHARE</field>
+    </columns>
+    <columns>
+        <field>PRIMARY</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN.TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Webinar,Conference Call,OnDemand</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>2020,2021,2022</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>slide request</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_3500126</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Webinar Opp # $ Tracker</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomizableCampaignInfluence</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>OPP.CREATED_DATE</sortColumn>
+    <sortOrder>Desc</sortOrder>
+</Report>

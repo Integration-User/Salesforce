@@ -1,0 +1,119 @@
+<apex:page controller="seismic.SeismicNewDocRequesterController" action="{!Init}" showHeader="true" sidebar="false">
+    <style type="text/css">
+        html, body { height: 100%; margin: 0; padding: 0; }
+        /* to fix inline=1 (in SF touch)*/
+        body.sfdcBody { padding: 0 !important; }
+        body.sfdcBody.apexPageInline { margin: 0; }
+        body #contentWrapper .bodyDiv .outerNoSidebar .noSidebarCell { padding: 0; }
+        body #contentWrapper #bodyTable { padding: 0; }
+        body #contentWrapper #bodyTable #requesterIFrame { height: 760px !important; }
+        body #canvasContainer { height: 100%; }
+        body #canvasContainer #requesterIFrame { background: transparent; }
+        body #canvasContainer #requesterIFrame div.waitingSearchDiv { background: transparent; }
+    </style>
+
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jquery_3_6_1_min_js)}" />
+    <apex:includeScript value="{!URLFOR($Resource.seismic__jquery_base64_js)}" />
+    <script type="text/javascript" src="{!JSENCODE(CanvasSDKControllerUrlString)}"></script>
+
+    <body>
+        <apex:pageMessages id="messages" escape="false" rendered="{!HasInvalidSubscription}"/>
+        <apex:canvasApp applicationName="SeismicCanvasApp" namespacePrefix="seismic" developerName="SeismicCanvasApp" onCanvasAppLoad="onWindowResize" parameters="{!CanvasAppParamsString}" width="100%" scrolling="auto" rendered="{!IF(HasInvalidSubscription,false,true)}"/>
+    </body>
+
+    <script type="text/javascript">
+        var isMobile = {
+            Android: function () {
+                return navigator.userAgent.match(/Android/i) ? true : false;
+            },
+            BlackBerry: function () {
+                return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+            },
+            iOS: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+            },
+            Windows: function () {
+                return navigator.userAgent.match(/IEMobile/i) ? true : false;
+            },
+            any: function () {
+                //alert(navigator.userAgent);
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+            }
+        };
+
+        var docViewerUrl = '{!JSENCODE(DocDetailURL)}';
+        var searches = (window.location.search || "").replace(/^\?/, "").split("&");
+        var isInline = false;
+        var isInApp = false;
+        for (var i = 0; i < searches.length; i++) {
+            if ((/^inline\=/.test(searches[i]) && "1" == searches[i].match(/^inline\=(.*)/)[1])
+               || /^isdtp\=/.test(searches[i])) {
+                isInline = true;
+            }
+
+            if (/^isdtp\=/.test(searches[i])) {
+                isInApp = true;
+            }
+        }
+
+        var $window = $(window);
+        function onWindowResize () {
+            if (window.isMobile.iOS()) {
+                var contentWrapper = $("#contentWrapper");
+                var width = contentWrapper.length > 0 ? contentWrapper.width() : $window.width();
+                var height = contentWrapper.length > 0 ? contentWrapper.height() : $window.height();
+                Sfdc.canvas.controller.resize( {height : height+ "px", width : width+ "px"});
+            } else {
+                Sfdc.canvas.controller.resize( {height : "100%", width : "100%"});
+            }
+        }
+
+        window.onresize = function () {
+            onWindowResize();
+        };
+
+        window.onload = function () {
+
+            if (this.bodyOnLoad) {
+                bodyOnLoad();
+            }
+
+            if (isInline && isMobile.any()) {
+                $("html,body").css("overflow", "hidden");
+            }
+        }
+
+        function pushState(url) {
+            if (/^&/.test(url)) {
+                var params = window.location.search.replace(/^\?/, '').split('&').map(function (v) {
+                    return v.split("=")
+                });
+
+                var result = window.location.search;
+                url.replace(/^&/, '').split('&').forEach(function (v) {
+                    var key = v.split('=')[0],
+                        value = v.split('=')[1];
+
+                    if (result.indexOf('&' + key + '=') > -1 || result.indexOf('?' + key + '=') > -1) {
+                        result = result.replace(new RegExp('(&|\\?)' + key + '=[^&]*'), '$1' + key + '=' + value)
+                    } else {
+                        result += (window.location.search.indexOf('?') == 0 ? '&' : '?') + key + '=' + value;
+                    }
+                });
+
+                url = result;
+            }
+
+            window.history.pushState("", "", url);
+        }
+
+        Sfdc.canvas.controller.subscribe({name : 'openDocumentDetail', onData : function (e) {
+            window.location.href = encodeURI(e.docDetailUrl);
+        }});
+
+        Sfdc.canvas.controller.subscribe({name : 'pushState', onData : function (f) {
+            pushState(f.url);
+        }});
+
+    </script>
+</apex:page>

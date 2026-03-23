@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use this when sending invoice after a few days client confirmed payment processed or is in process/approval..</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>GS Subscription Invoice Template (Follow up on payment)</name>
+    <relatedEntityType>Transaction__c</relatedEntityType>
+    <style>none</style>
+    <subject>Green Street Invoice {{{Transaction__c.Name}}} payment follow-up</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

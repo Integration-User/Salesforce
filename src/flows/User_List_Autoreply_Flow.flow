@@ -33,12 +33,31 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Transaction_Alert</name>
+        <label>Send Transaction Alert</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <actionName>Case.Transaction_Support_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.Transaction_Support_Email_Alert</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Is_UserList</name>
         <label>Is UserList?</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -76,6 +95,28 @@
                 <targetReference>Get_User_List_Email_Template</targetReference>
             </connector>
             <label>User List Case</label>
+        </rules>
+        <rules>
+            <name>New_Transaction_Support</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Set up Auto-Debit</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transaction_Support</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Transaction_Alert</targetReference>
+            </connector>
+            <label>New Transaction Support</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -122,12 +163,15 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Is_UserList</targetReference>
         </connector>
-        <filterFormula>{!$Record.RecordType.DeveloperName} = &apos;Help_Desk&apos; &amp;&amp; ISPICKVAL({!$Record.Origin}, &apos;Email&apos;)</filterFormula>
+        <filterFormula>OR(
+{!$Record.RecordType.DeveloperName} = &apos;Help_Desk&apos; &amp;&amp; ISPICKVAL({!$Record.Origin}, &apos;Email&apos;),
+{!$Record.RecordType.DeveloperName} = &apos;Transaction_Support&apos; 
+)</filterFormula>
         <object>Case</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

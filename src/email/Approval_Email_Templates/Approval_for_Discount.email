@@ -1,0 +1,25 @@
+The following Opportunity has a discount of over 10% and is awaiting your approval. You can access the Opportunity by using the link below and clicking Approve or Reject on the Approval History related items.
+
+{!Opportunity.Name}
+{!Opportunity.Link}
+
+
+{!ApprovalRequest.Comments}
+
+Deal Details:
+Client Segment: {!Account.Client_Segment__c}
+CRE Exposure: {!Account.CRE_Exposure__c}
+# Employees: {!Account.NumberOfEmployees}
+Invoice Frequency: {!Opportunity.00Nf400000TdIIx}
+Sector Interests: {!Opportunity.Sector_Interests__c}
+Special Circumstances: {!Opportunity.Special_Circumstances__c}
+
+Revenue Details:
+Contract Type: {!Opportunity.Contract_Type__c}
+Opportunity Amount in USD: {!Opportunity.Amount}
+Reps: {!OpportunitySplit.Split}
+Amounts: {!OpportunitySplit.SplitAmountCalculated}
+Notes: {!OpportunitySplit.SplitNote}
+
+{!Product2.Name}
+{!Product2.Description}

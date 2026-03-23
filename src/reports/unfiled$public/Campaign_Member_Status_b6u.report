@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_8564591</developerName>
+        <masterLabel>Converted?</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>MEMBER_STATUS</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Won Sale</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Converted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Discussions Ongoing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Trial Complete</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Trial completed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Trial Restarted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Trial Started</sourceValue>
+            </sourceValues>
+            <value>Converted</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Outreach But Not Responsive</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Engaged But Not The Right Timing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Engaged But Product Is Not A Fit</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Engaged But No Budget</sourceValue>
+            </sourceValues>
+            <value>Disqualified</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Not Started</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Initial Outreach</sourceValue>
+            </sourceValues>
+            <value>Pending</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN_MEMBER_ID</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_OWNER</field>
+    </columns>
+    <columns>
+        <field>CampaignMember.Member_Status_Reason__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>For Campaign Tracker</description>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN_PARENT_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Core - Risk Scorecard Campaign Tracker</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN_PARENT_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Core - Risk Scorecard Campaign Tracker</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Campaign Member Status</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignAccount</reportType>
+    <scope>orgAll</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+</Report>

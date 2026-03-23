@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.FullActivityRelations$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$Id</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations*Activity$Activity_Type_Events__c</field>
+    </columns>
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$Account</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations*Activity$Comments__c</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$Description</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations*Activity$Client_Use_Case__c</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$What</field>
+    </columns>
+    <columns>
+        <field>User.FullActivityRelations$Subject</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(1 OR 3) AND 2 AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <column>User$Manager</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Claire Arora,Andrew Dillard,Olivia Sawkins</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.FullActivityRelations*Activity$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Claire Arora,Olivia Sawkins</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.FullActivityRelations$IsTask</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.FullActivityRelations*Activity$Activity_Type_Events__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Visit,Relationship Management,Product Training / Methodology,Onboarding,Issue Resolution,Green Street 101 Webinar,Account Handoff</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>FY &apos;25 CS visits</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Events_with_Attendees__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>User.FullActivityRelations$ActivityDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

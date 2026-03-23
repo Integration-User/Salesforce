@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>Product_Feedback__c.Region__c</field>
+    </columns>
+    <columns>
+        <field>Product_Feedback__c.Product__c</field>
+    </columns>
+    <columns>
+        <field>Product_Feedback__c.Contact__c</field>
+    </columns>
+    <columns>
+        <field>Product_Feedback__c.Feedback_Type__c</field>
+    </columns>
+    <columns>
+        <field>Product_Feedback__c.Description_of_Feedback__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CUST_OWNER_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Aaron Ling,Rayer Van-Ristell,Louis Attwood,Mona Singh,Alistair Bush,Rhys Zownir,Henrietta Curtis,Pierre Samin,Imane Berkani</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Product Feedback Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Product_Feedback__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_PREVCURFY</interval>
+    </timeFrameFilter>
+</Report>

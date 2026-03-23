@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_76381287</developerName>
+        <masterLabel>AM Referral</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity.Referred_By__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Jonathan Jessen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jonathan Spencer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael Morrison</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>&quot;&quot;</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>-</sourceValue>
+            </sourceValues>
+            <value>NO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Adam Shapton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Anna Cervisi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Beau Krueger</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Eric Lovett</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Katherine Marin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristen Angle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lauren Rebolloso</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael Barackman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michelle Fernandez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Murrie Holland</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Staci Pollock</sourceValue>
+            </sourceValues>
+            <value>YES</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_52295793</developerName>
+        <masterLabel>Commit?</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>FORECAST_CATEGORY</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Omitted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pipeline</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Best Case</sourceValue>
+            </sourceValues>
+            <value>No</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Commit</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed</sourceValue>
+            </sourceValues>
+            <value>Yes</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_13526485</developerName>
+        <masterLabel>Referral?</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>LEAD_SOURCE</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <value>Yes</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>EXP_PRODUCT_AMOUNT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>UNIT_PRICE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Referred_By__c</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>PRODUCT_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>eREA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ALIAS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BS,LA,JS,AB</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_52295793</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_13526485</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FISCAL_QUARTER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STAGE_NAME</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>eREA Revenue + Open Pipeline</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_PREVCURFY</interval>
+    </timeFrameFilter>
+</Report>

@@ -9,6 +9,14 @@
         <template>unfiled$public/AskNicely_Closed_Case</template>
     </alerts>
     <alerts>
+        <fullName>AskNicely_Closed_Case_GS_IJGlobal</fullName>
+        <ccEmails>greenstreet_45d975f@emailtosurvey.asknice.ly</ccEmails>
+        <description>AskNicely Closed Case - GS IJGlobal</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/AskNicely_Closed_Case_GS_IJGlobal</template>
+    </alerts>
+    <alerts>
         <fullName>AskNicely_Closed_Case_GS_News</fullName>
         <ccEmails>greenstreet_45d975f@emailtosurvey.asknice.ly</ccEmails>
         <description>AskNicely Closed Case - GS News</description>
@@ -152,11 +160,55 @@
             <type>user</type>
         </recipients>
         <recipients>
+            <recipient>alatorraca@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>apenn@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>bmarenholz@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carora@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
             <recipient>cmarks@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>gkumar@greenstreet.com</recipient>
+            <recipient>crastogi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jlyle@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jsafavieh@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kmarrinan@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>krajasekaran@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mdryhval@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mfloyd@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mkumaran@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -164,11 +216,35 @@
             <type>user</type>
         </recipients>
         <recipients>
+            <recipient>osawkins@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
             <recipient>praj@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>vsethuraman@greenstreet.com</recipient>
+            <recipient>rbaskar@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sbashir@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>slin@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ssmith@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swang@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>uhindocha@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>noreply@greenstreet.com</senderAddress>
@@ -246,6 +322,33 @@
         <template>Cases/Case_Status_Update</template>
     </alerts>
     <alerts>
+        <fullName>Salesforce_Request_Case_Cancelled</fullName>
+        <description>Salesforce Request Case Cancelled</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hrose@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jecusi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mbonyab@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mgupta@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Requested_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CTR_Cancelled_Email_Template</template>
+    </alerts>
+    <alerts>
         <fullName>Salesforce_Request_Case_Closed</fullName>
         <description>Salesforce Request Case Closed</description>
         <protected>false</protected>
@@ -255,6 +358,17 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Salesforce_Request_Case_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Transaction_Support_Email_Alert</fullName>
+        <description>Transaction Support Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@greenstreet.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Transaction_Support_Email</template>
     </alerts>
     <alerts>
         <fullName>Trial_Activation_Email_Alert</fullName>
@@ -272,7 +386,7 @@
         <description>Untouched Data Support Cases</description>
         <protected>false</protected>
         <recipients>
-            <recipient>crastogi@greenstreet.com</recipient>
+            <recipient>adillard@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>

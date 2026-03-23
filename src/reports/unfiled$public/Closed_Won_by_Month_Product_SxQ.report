@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_83789158</developerName>
+        <masterLabel>Business Lines</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>PRODUCT_NAME</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Green Street News: Australia</sourceValue>
+            </sourceValues>
+            <value>AU News</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Green Street News: Canada</sourceValue>
+            </sourceValues>
+            <value>CA News</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Canada Research + Market Data &amp; Deals</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Canada Detailed NAV</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Canada Research + REIT Data</sourceValue>
+            </sourceValues>
+            <value>CA RD&amp;A</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Green Street News: Europe</sourceValue>
+            </sourceValues>
+            <value>EU News</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>EUR Data Delivery - Market Data &amp; Deals</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Data Delivery - REIT Data</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Detailed NAV</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EUR Sales Comps</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pan-European Research + Market Data &amp; Deals</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pan-European Research + REIT Data</sourceValue>
+            </sourceValues>
+            <value>EU RD&amp;A</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>IJGlobal: Data Delivery + News + IJ Investor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IJGlobal: IJ Investor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IJGlobal: News</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IJGlobal: News + IJ Investor</sourceValue>
+            </sourceValues>
+            <value>IJGlobal</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Data License: Petrol Station Forecourt Data</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Data License Directory</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Data License Local Data Online</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>UK Retail Analytics Pro</sourceValue>
+            </sourceValues>
+            <value>LDC</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Locatus: Retail Data</sourceValue>
+            </sourceValues>
+            <value>Locatus</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Asset-Backed Alert</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Commercial Mortgage Alert</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Real Estate Alert</sourceValue>
+            </sourceValues>
+            <value>US News</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>US Data Delivery - Market Data &amp; Deals</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Data Delivery - REIT Data</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Detailed NAV</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Portfolio Tools</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Research + Market Data &amp; Deals</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Research + REIT Data</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Sales Comps</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Tertiary Forecast Data</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Tertiary Market Data</sourceValue>
+            </sourceValues>
+            <value>US RD&amp;A</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Start_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>OpportunityLineItem.ARR_Formula__c.CONVERT</field>
+    </columns>
+    <columns>
+        <field>RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Opportunity_Line_Item_ID__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>OpportunityLineItem.Upsell_Cross_sell__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Sales_Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Priority__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 OR (2 AND 3)</booleanFilter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Sales_Opportunity_Closed,Opportunity.Sales_Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Existing_Business,Opportunity.Renewal_Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Upsell_Cross_sell__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>OpportunityLineItem.Finance_Effective_Date__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_83789158</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OPPORTUNITY_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Closed Won by Month &amp; Product</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>OpportunityLineItem.Finance_Effective_Date__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

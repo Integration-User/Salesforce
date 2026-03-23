@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>When a new lead is available for anyone on the team due to inactivity.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Leads</letterhead>
+    <name>New Lead</name>
+    <style>freeForm</style>
+    <subject>New Lead - {!Lead.FirstName}</subject>
+    <textOnly>*** NEW LEAD ASSIGNED TO QUEUE***
+
+The following lead was created on {!Lead.CreatedDate} and has yet to be followed up on.
+
+Company: {!Lead.Company}
+Contact Name: {!Lead.Name}
+Title: {!Lead.Title}
+Email: {!Lead.Email}
+
+
+Click on the link to work the opportunity:
+{!Lead.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

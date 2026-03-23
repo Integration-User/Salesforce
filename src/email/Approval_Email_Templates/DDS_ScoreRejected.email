@@ -1,0 +1,11 @@
+<p style="font-family:Arial; font-size:12px;">Hi {!Opportunity.OwnerFirstName},</p>
+
+<p style="font-family:Arial; font-size:12px;">{!ApprovalRequest.Process_Approver} has rejected the approval for the opportunity {!Opportunity.Name} (<a href="{!Opportunity.Link}">Link</a>).</p>
+
+<p style="font-family:Arial; font-size:12px;"><strong>Account:</strong> {!Opportunity.Account}<br>
+<strong>Company Type: </strong>{!Opportunity.Company_Type_Opp__c}<br>
+<strong>Current Products:</strong> {!Opportunity.Products__c}<br>
+<strong>Approval Request Reason:</strong> {!Opportunity.DDS_ScoreAssignment__c} score{!Opportunity.DDS_ApprovalEmailHVTYoYInsight__c}<br>
+<strong>Approval Comments: </strong> {!ApprovalRequest.Comments}</p>
+
+<p style="font-family:Arial; font-size:12px;">Please coordinate with your manager to align on approved pricing for this opportunity.</p>

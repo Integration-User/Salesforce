@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ativo de mapas ativos</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Ativos de mapas ativos</value>
+    </caseValues>
+    <fields>
+        <help><!-- Is the Asset currently an active inventory/fleet item? --></help>
+        <label>Ativa</label>
+        <name>maps__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Proprietary Id for identifying assets within the company --></help>
+        <label>ID do ativo</label>
+        <name>maps__AssetId__c</name>
+    </fields>
+    <fields>
+        <label>Dispositivo IoT do Live</label>
+        <name>maps__LiveIoTDevice__c</name>
+        <relationshipLabel>Ativos do Maps Live</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Make of Vehicle or Non-Vehicle --></help>
+        <label>Marca</label>
+        <name>maps__Make__c</name>
+    </fields>
+    <fields>
+        <help><!-- Model of Vehicle or Non-Vehicle --></help>
+        <label>Modelo</label>
+        <name>maps__Model__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading, in kilometers --></help>
+        <label>Odômetro (km)</label>
+        <name>maps__OdometerKm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last available odometer reading, in miles --></help>
+        <label>Odômetro (milhas)</label>
+        <name>maps__OdometerMiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- A unique identifier for non-motorized and off-road assets --></help>
+        <label>Número de série</label>
+        <name>maps__SerialNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of asset, Vehicle or Non Vehicle etc. --></help>
+        <label>Tipo</label>
+        <name>maps__Type__c</name>
+        <picklistValues>
+            <masterLabel>Other Equipment</masterLabel>
+            <translation><!-- Other Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle</masterLabel>
+            <translation><!-- Vehicle --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Vehicle Identification Number of vehicle-type assets --></help>
+        <label>VIN</label>
+        <name>maps__VIN__c</name>
+    </fields>
+    <fields>
+        <help><!-- The year of make/model of asset. --></help>
+        <label>Ano</label>
+        <name>maps__Year__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nome do ativo do Maps Live</nameFieldLabel>
+</CustomObjectTranslation>

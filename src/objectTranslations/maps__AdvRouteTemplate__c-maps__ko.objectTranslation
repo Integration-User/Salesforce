@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Maps Advanced Route 템플릿</value>
+    </caseValues>
+    <fields>
+        <label>활성</label>
+        <name>maps__Active__c</name>
+    </fields>
+    <fields>
+        <label>완료 방문의 활동 날짜 필드</label>
+        <name>maps__ActivityDateFieldOnCompletedVisit__c</name>
+    </fields>
+    <fields>
+        <label>향후 방문의 활동 날짜 필드</label>
+        <name>maps__ActivityDateFieldOnFutureVisit__c</name>
+    </fields>
+    <fields>
+        <label>향후 방문의 활동 종료 일자 필드</label>
+        <name>maps__ActivityEndDateFieldOnFutureVisit__c</name>
+    </fields>
+    <fields>
+        <label>Maps Advanced Route 라우팅 가능 개체</label>
+        <name>maps__AdvRouteRoutableObject__c</name>
+        <relationshipLabel>Maps Advanced Route 템플릿</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Maps Advanced Route 템플릿</label>
+        <name>maps__AdvRouteTemplate__c</name>
+        <relationshipLabel>Maps Advanced Route 템플릿</relationshipLabel>
+    </fields>
+    <fields>
+        <label>기본 필터 필터링</label>
+        <name>maps__BaseFilterFilters__c</name>
+    </fields>
+    <fields>
+        <label>기본 필터에 모든 레코드 포함</label>
+        <name>maps__BaseFilterIncludesAllRecords__c</name>
+    </fields>
+    <fields>
+        <label>기본 필터 논리 순서</label>
+        <name>maps__BaseFilterLogicOrder__c</name>
+    </fields>
+    <fields>
+        <label>기본 필터 Where 절</label>
+        <name>maps__BaseFilterWhereClause__c</name>
+    </fields>
+    <fields>
+        <label>기본 URL</label>
+        <name>maps__BaseUrl__c</name>
+    </fields>
+    <fields>
+        <label>완료 탭 선택 목록</label>
+        <name>maps__CompletedTabsPicklist__c</name>
+        <picklistValues>
+            <masterLabel>PlanInformation</masterLabel>
+            <translation><!-- PlanInformation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>완료 탭</label>
+        <name>maps__CompletedTabs__c</name>
+    </fields>
+    <fields>
+        <label>완료 방문 필터</label>
+        <name>maps__CompletedVisitFilters__c</name>
+    </fields>
+    <fields>
+        <label>완료 방문 개체</label>
+        <name>maps__CompletedVisitObject__c</name>
+    </fields>
+    <fields>
+        <label>작업의 완료 방문 순서</label>
+        <name>maps__CompletedVisitOrderOfOperations__c</name>
+    </fields>
+    <fields>
+        <label>완료 방문 쿼리</label>
+        <name>maps__CompletedVisitsQuery__c</name>
+    </fields>
+    <fields>
+        <label>핵심 기본 개체 ID</label>
+        <name>maps__CoreBaseObjectId__c</name>
+    </fields>
+    <fields>
+        <label>다음에서 최적화할 일수</label>
+        <name>maps__DayToOptimizeOn__c</name>
+    </fields>
+    <fields>
+        <label>최적화 요소 사이 일수</label>
+        <name>maps__DaysBetweenOptimizationsFactor__c</name>
+        <picklistValues>
+            <masterLabel>Daily</masterLabel>
+            <translation><!-- Daily --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>최적화 사이 일수</label>
+        <name>maps__DaysBetweenOptimizations__c</name>
+    </fields>
+    <fields>
+        <label>다음에 라우팅할 요일</label>
+        <name>maps__DaysOfWeekToRouteFor__c</name>
+    </fields>
+    <fields>
+        <label>단위 삽입 일수</label>
+        <name>maps__DaysToInsertUnit__c</name>
+        <picklistValues>
+            <masterLabel>Months</masterLabel>
+            <translation><!-- Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weeks</masterLabel>
+            <translation><!-- Weeks --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>삽입할 일</label>
+        <name>maps__DaysToInsert__c</name>
+    </fields>
+    <fields>
+        <help><!-- A short description of the template
+Max Length: 255 --></help>
+        <label>설명</label>
+        <name>maps__Description__c</name>
+    </fields>
+    <fields>
+        <label>종료 일자</label>
+        <name>maps__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>빈도 시작 일자</label>
+        <name>maps__FrequencyStartDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- uncheck this if your performance period does not line up with your template start --></help>
+        <label>템플릿 시작 시 빈도 시작</label>
+        <name>maps__FrequencyStartsOnTemplateStart__c</name>
+    </fields>
+    <fields>
+        <label>향후 방문 필터</label>
+        <name>maps__FutureVisitFilters__c</name>
+    </fields>
+    <fields>
+        <label>향후 방문 작업 논리 순서</label>
+        <name>maps__FutureVisitLogicOrderOfOperations__c</name>
+    </fields>
+    <fields>
+        <label>향후 방문 개체</label>
+        <name>maps__FutureVisitObject__c</name>
+    </fields>
+    <fields>
+        <label>향후 방문 쿼리</label>
+        <name>maps__FutureVisitsQuery__c</name>
+    </fields>
+    <fields>
+        <label>반복 중</label>
+        <name>maps__IsRepeating__c</name>
+    </fields>
+    <fields>
+        <label>최대 세그먼트 이동 시간</label>
+        <name>maps__MaxSegmentTravelTime__c</name>
+    </fields>
+    <fields>
+        <label>최대 총 거리</label>
+        <name>maps__MaxTotalDistance__c</name>
+    </fields>
+    <fields>
+        <label>최대 작업 시간</label>
+        <name>maps__MaxWorkingHours__c</name>
+    </fields>
+    <fields>
+        <label>삭제 필요</label>
+        <name>maps__NeedsDeleting__c</name>
+    </fields>
+    <fields>
+        <label>최적화 속도 기본 설정</label>
+        <name>maps__OptimizationSpeedPreference__c</name>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45</masterLabel>
+            <translation><!-- 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60</masterLabel>
+            <translation><!-- 60 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>같은 교대 근무 방문 차단</label>
+        <name>maps__PreventSameShiftVisits__c</name>
+    </fields>
+    <fields>
+        <label>우선 순위 지정 엄격성</label>
+        <name>maps__PrioritizationStrictness__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>날짜까지 반복</label>
+        <name>maps__RepeatUntilDate__c</name>
+    </fields>
+    <fields>
+        <label>라우팅 가능한 개체 주문 번호</label>
+        <name>maps__RoutableObjectOrderNumber__c</name>
+    </fields>
+    <fields>
+        <label>경로 기간 간격 유형</label>
+        <name>maps__RouteDurationIntervalType__c</name>
+        <picklistValues>
+            <masterLabel>Months</masterLabel>
+            <translation><!-- Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weeks</masterLabel>
+            <translation><!-- Weeks --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>경로 기간 간격</label>
+        <name>maps__RouteDurationInterval__c</name>
+    </fields>
+    <fields>
+        <label>경로 기간 유형</label>
+        <name>maps__RouteDurationType__c</name>
+    </fields>
+    <fields>
+        <label>경로 순서 완충</label>
+        <name>maps__RouteOrderBuffer__c</name>
+    </fields>
+    <fields>
+        <label>경로 및 일정 구성</label>
+        <name>maps__RoutesAndScheduleConfig__c</name>
+        <relationshipLabel>Maps Advanced Route 템플릿</relationshipLabel>
+    </fields>
+    <fields>
+        <label>자동 재최적화 실행</label>
+        <name>maps__RunAutoOptimization__c</name>
+    </fields>
+    <fields>
+        <label>저장된 쿼리 ID</label>
+        <name>maps__SavedQueryId__c</name>
+    </fields>
+    <fields>
+        <label>선택한 출력 유형</label>
+        <name>maps__SelectedOutputTypes__c</name>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>선택한 프로모션 구간</label>
+        <name>maps__SelectedPromoWindows__c</name>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>시작 일자</label>
+        <name>maps__StartDate__c</name>
+    </fields>
+    <fields>
+        <label>완료 방문의 템플릿 개체 필드</label>
+        <name>maps__TemplateObjectFieldOnCompletedVisit__c</name>
+    </fields>
+    <fields>
+        <label>향후 방문의 템플릿 개체 필드</label>
+        <name>maps__TemplateObjectFieldOnFutureVisit__c</name>
+    </fields>
+    <fields>
+        <label>템플릿 개체 위도 필드</label>
+        <name>maps__TemplateObjectLatitudeField__c</name>
+    </fields>
+    <fields>
+        <label>템플릿 개체 경도 필드</label>
+        <name>maps__TemplateObjectLongitudeField__c</name>
+    </fields>
+    <fields>
+        <label>템플릿 개체</label>
+        <name>maps__TemplateObject__c</name>
+    </fields>
+    <fields>
+        <label>재최적화할 시간</label>
+        <name>maps__TimeToOptimize__c</name>
+        <picklistValues>
+            <masterLabel>10:00 AM</masterLabel>
+            <translation><!-- 10:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:00 PM</masterLabel>
+            <translation><!-- 10:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:15 AM</masterLabel>
+            <translation><!-- 10:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:15 PM</masterLabel>
+            <translation><!-- 10:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:30 AM</masterLabel>
+            <translation><!-- 10:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:30 PM</masterLabel>
+            <translation><!-- 10:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:45 AM</masterLabel>
+            <translation><!-- 10:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:45 PM</masterLabel>
+            <translation><!-- 10:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:00 AM</masterLabel>
+            <translation><!-- 11:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:00 PM</masterLabel>
+            <translation><!-- 11:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:15 AM</masterLabel>
+            <translation><!-- 11:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:15 PM</masterLabel>
+            <translation><!-- 11:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:30 AM</masterLabel>
+            <translation><!-- 11:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:30 PM</masterLabel>
+            <translation><!-- 11:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:45 AM</masterLabel>
+            <translation><!-- 11:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:45 PM</masterLabel>
+            <translation><!-- 11:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 AM</masterLabel>
+            <translation><!-- 12:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:15 AM</masterLabel>
+            <translation><!-- 12:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:15 PM</masterLabel>
+            <translation><!-- 12:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 AM</masterLabel>
+            <translation><!-- 12:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:45 AM</masterLabel>
+            <translation><!-- 12:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:45 PM</masterLabel>
+            <translation><!-- 12:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:00 AM</masterLabel>
+            <translation><!-- 1:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:00 PM</masterLabel>
+            <translation><!-- 1:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:15 AM</masterLabel>
+            <translation><!-- 1:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:15 PM</masterLabel>
+            <translation><!-- 1:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:30 AM</masterLabel>
+            <translation><!-- 1:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:30 PM</masterLabel>
+            <translation><!-- 1:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:45 AM</masterLabel>
+            <translation><!-- 1:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:45 PM</masterLabel>
+            <translation><!-- 1:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:00 AM</masterLabel>
+            <translation><!-- 2:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:00 PM</masterLabel>
+            <translation><!-- 2:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:15 AM</masterLabel>
+            <translation><!-- 2:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:15 PM</masterLabel>
+            <translation><!-- 2:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:30 AM</masterLabel>
+            <translation><!-- 2:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:30 PM</masterLabel>
+            <translation><!-- 2:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:45 AM</masterLabel>
+            <translation><!-- 2:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:45 PM</masterLabel>
+            <translation><!-- 2:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:00 AM</masterLabel>
+            <translation><!-- 3:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:00 PM</masterLabel>
+            <translation><!-- 3:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:15 AM</masterLabel>
+            <translation><!-- 3:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:15 PM</masterLabel>
+            <translation><!-- 3:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:30 AM</masterLabel>
+            <translation><!-- 3:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:30 PM</masterLabel>
+            <translation><!-- 3:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:45 AM</masterLabel>
+            <translation><!-- 3:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:45 PM</masterLabel>
+            <translation><!-- 3:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:00 AM</masterLabel>
+            <translation><!-- 4:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:00 PM</masterLabel>
+            <translation><!-- 4:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:15 AM</masterLabel>
+            <translation><!-- 4:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:15 PM</masterLabel>
+            <translation><!-- 4:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:30 AM</masterLabel>
+            <translation><!-- 4:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:30 PM</masterLabel>
+            <translation><!-- 4:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:45 AM</masterLabel>
+            <translation><!-- 4:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:45 PM</masterLabel>
+            <translation><!-- 4:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:00 AM</masterLabel>
+            <translation><!-- 5:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:00 PM</masterLabel>
+            <translation><!-- 5:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:15 AM</masterLabel>
+            <translation><!-- 5:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:15 PM</masterLabel>
+            <translation><!-- 5:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:30 AM</masterLabel>
+            <translation><!-- 5:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:30 PM</masterLabel>
+            <translation><!-- 5:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:45 AM</masterLabel>
+            <translation><!-- 5:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:45 PM</masterLabel>
+            <translation><!-- 5:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:00 AM</masterLabel>
+            <translation><!-- 6:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:00 PM</masterLabel>
+            <translation><!-- 6:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:15 AM</masterLabel>
+            <translation><!-- 6:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:15 PM</masterLabel>
+            <translation><!-- 6:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:30 AM</masterLabel>
+            <translation><!-- 6:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:30 PM</masterLabel>
+            <translation><!-- 6:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:45 AM</masterLabel>
+            <translation><!-- 6:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:45 PM</masterLabel>
+            <translation><!-- 6:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:00 AM</masterLabel>
+            <translation><!-- 7:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:00 PM</masterLabel>
+            <translation><!-- 7:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:15 AM</masterLabel>
+            <translation><!-- 7:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:15 PM</masterLabel>
+            <translation><!-- 7:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:30 AM</masterLabel>
+            <translation><!-- 7:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:30 PM</masterLabel>
+            <translation><!-- 7:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:45 AM</masterLabel>
+            <translation><!-- 7:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:45 PM</masterLabel>
+            <translation><!-- 7:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:00 AM</masterLabel>
+            <translation><!-- 8:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:00 PM</masterLabel>
+            <translation><!-- 8:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:15 AM</masterLabel>
+            <translation><!-- 8:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:15 PM</masterLabel>
+            <translation><!-- 8:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:30 AM</masterLabel>
+            <translation><!-- 8:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:30 PM</masterLabel>
+            <translation><!-- 8:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:45 AM</masterLabel>
+            <translation><!-- 8:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:45 PM</masterLabel>
+            <translation><!-- 8:45 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:00 AM</masterLabel>
+            <translation><!-- 9:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:00 PM</masterLabel>
+            <translation><!-- 9:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:15 AM</masterLabel>
+            <translation><!-- 9:15 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:15 PM</masterLabel>
+            <translation><!-- 9:15 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:30 AM</masterLabel>
+            <translation><!-- 9:30 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:30 PM</masterLabel>
+            <translation><!-- 9:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:45 AM</masterLabel>
+            <translation><!-- 9:45 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:45 PM</masterLabel>
+            <translation><!-- 9:45 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>툴팁 필드 API</label>
+        <name>maps__TooltipFieldApis__c</name>
+    </fields>
+    <fields>
+        <label>사용자 필드</label>
+        <name>maps__UserField__c</name>
+    </fields>
+    <fields>
+        <label>방문 유형</label>
+        <name>maps__VisitType__c</name>
+    </fields>
+    <nameFieldLabel>Maps Advanced Route 템플릿 이름</nameFieldLabel>
+</CustomObjectTranslation>

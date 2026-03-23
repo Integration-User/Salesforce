@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CONTACT_OWNER</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.LID__No_longer_at_Company__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.ADDRESS1_STATE_CODE</field>
+    </columns>
+    <columns>
+        <field>Account.ZoomInfo_State_account__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Company_Type_Contact__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Status__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>LinkedIn integration will automatically flag contacts that are no longer at the company specified in our CRM.</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.LID__No_longer_at_Company__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Not at Company,Ignore,Pursue</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Not At Company Flag</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -49,6 +49,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Subscription_Product</name>
         <label>Assign Subscription Product</label>
@@ -477,6 +478,14 @@ Extends a Subscription Product linked to a Subscription</description>
             <name>txtErrorMessage</name>
             <fieldText>&lt;p&gt;An error occurred when extending the subscription dates. Please report the following error:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!$Flow.FaultMessage}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -496,6 +505,14 @@ Extends a Subscription Product linked to a Subscription</description>
             <name>Instructions</name>
             <fieldText>&lt;p&gt;The extension will take effect from the current end date, or from today, if the subscription has already ended.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Extension_Duration_Days</name>
@@ -506,6 +523,14 @@ Extends a Subscription Product linked to a Subscription</description>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <scale>0</scale>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <validationRule>
                 <errorMessage>&lt;p&gt;You can only extend a subscription by 1-{!formulaMaxExtensionDays} days.&lt;/p&gt;</errorMessage>
                 <formulaExpression>({!Extension_Duration_Days} &gt;= 1) &amp;&amp;({!Extension_Duration_Days} &lt;= {!formulaMaxExtensionDays})</formulaExpression>

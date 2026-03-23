@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email used for the approve action on the opportunity&apos; score approval process</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>GSA_Letterhead</letterhead>
+    <name>Score Approval - Approved</name>
+    <style>freeForm</style>
+    <subject>Approval for {!Opportunity.Name} is Complete</subject>
+    <textOnly>Hi {{!Opportunity.OwnerFirstName},
+
+
+{!ApprovalRequest.Process_Approver} has accepted the approval for the opportunity {!Opportunity.Name} ({!Opportunity.Link}).
+
+Account: {!Opportunity.Account}
+Company Type: {!Opportunity.Company_Type_Opp__c}
+Current Products: {!Opportunity.Products__c}
+Approval Request Reason: {!Opportunity.DDS_ScoreAssignment__c}{!Opportunity.DDS_ApprovalEmailHVTYoYInsight__c}
+Approval Comments: {!ApprovalRequest.Comments}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

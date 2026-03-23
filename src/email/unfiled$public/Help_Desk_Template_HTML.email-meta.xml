@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GSA_Letterhead</letterhead>
+    <name>Help Desk Template HTML</name>
+    <style>freeForm</style>
+    <subject>Automated Email (Do Not Reply) - Help Desk Case #{!Case.CaseNumber}</subject>
+    <textOnly>Hi {!Case.SuppliedName},
+
+Thank you for your inquiry. You’ve reached us over the weekend and as a result response times may be slower. If you need help logging into your account, please navigate to the login page and click ‘Forgot Password’ – your username is likely to be your email address. We look forward to connecting with you soon.
+
+Thank you,
+Green Street
+
+Please do not reply to this email as inbound messages are not monitored by Green Street.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

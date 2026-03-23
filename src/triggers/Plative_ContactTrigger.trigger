@@ -5,6 +5,7 @@
 * [05.Mar.2020] Anisa Shaikh - Code Creation
 */
 trigger Plative_ContactTrigger on Contact (before insert, before update, after update, after insert) {
+    if(Plative_ContactTriggerHandler.isContactTriggerSkip) return;
 	Trigger_Control_Setting__c setting = Trigger_Control_Setting__c.getOrgDefaults();
     if (setting.Contact__c && trigger.isBefore && Trigger.isUpdate) {
         Plative_ContactTriggerHandler.beforeUpdate(trigger.oldMap, trigger.newMap);
