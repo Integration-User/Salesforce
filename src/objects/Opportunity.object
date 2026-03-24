@@ -550,6 +550,32 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Adoption_Usage__c</fullName>
+        <description>Product engagement or usage is declining or insufficient.</description>
+        <inlineHelpText>Product engagement or usage is declining or insufficient.</inlineHelpText>
+        <label>Adoption / Usage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Advisory_Only_Notes__c</fullName>
         <label>Advisory Only Notes</label>
         <required>false</required>
@@ -1651,6 +1677,31 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>Commercial_Contract__c</fullName>
+        <inlineHelpText>Renewal risk driven primarily by pricing or contracting issues.</inlineHelpText>
+        <label>Commercial / Contract</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Company_Name__c</fullName>
         <externalId>false</externalId>
         <label>Company Name</label>
@@ -1660,6 +1711,31 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Strategic_Change__c</fullName>
+        <inlineHelpText>Risk driven by structural changes to the client’s organization or strategy.</inlineHelpText>
+        <label>Company / Strategic Change</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Company_Type_Opp__c</fullName>
@@ -1685,6 +1761,31 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSetName>Competition</valueSetName>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Competitive__c</fullName>
+        <inlineHelpText>Customer evaluating or considering alternative vendors.</inlineHelpText>
+        <label>Competitive</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Consolidated_To__c</fullName>
@@ -6621,6 +6722,31 @@ NULL))))</formula>
         <visibleLines>10</visibleLines>
     </fields>
     <fields>
+        <fullName>Product_Fit_Capability__c</fullName>
+        <inlineHelpText>Product does not fully support the client’s evolving needs.</inlineHelpText>
+        <label>Product Fit / Capability</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Product_Interest_1__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>Product Interest 1</label>
@@ -7566,8 +7692,28 @@ NULL))))</formula>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Risk_Type_Historical__c</fullName>
+        <externalId>false</externalId>
+        <label>Risk Level (historical)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Risk_Type_Last_Updated__c</fullName>
+        <label>Risk Level Last Updated</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Risk_Type__c</fullName>
-        <label>Risk Type</label>
+        <inlineHelpText>Not depending on down sell. Just on paper actually being signed.</inlineHelpText>
+        <label>Risk Level</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -7577,19 +7723,51 @@ NULL))))</formula>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
+                    <fullName>Full Attrition</fullName>
+                    <default>false</default>
+                    <label>Full Attrition</label>
+                </value>
+                <value>
+                    <fullName>Low Attrition Risk</fullName>
+                    <default>false</default>
+                    <label>Low Attrition Risk</label>
+                </value>
+                <value>
+                    <fullName>Medium Attrition Risk</fullName>
+                    <default>false</default>
+                    <label>Medium Attrition Risk</label>
+                </value>
+                <value>
+                    <fullName>High Attrition Risk</fullName>
+                    <default>false</default>
+                    <label>High Attrition Risk</label>
+                </value>
+                <value>
+                    <fullName>Expect Full Attrition</fullName>
+                    <default>false</default>
+                    <label>Expect Full Attrition</label>
+                </value>
+                <value>
+                    <fullName>Verbal Notice of Cancellation</fullName>
+                    <default>false</default>
+                    <label>Verbal Notice of Cancellation</label>
+                </value>
+                <value>
+                    <fullName>Written Notice of Cancellation</fullName>
+                    <default>false</default>
+                    <label>Written Notice of Cancellation</label>
+                </value>
+                <value>
                     <fullName>Pricing</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Downsell</label>
                 </value>
                 <value>
                     <fullName>Timing</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Timing</label>
-                </value>
-                <value>
-                    <fullName>Full Attrition</fullName>
-                    <default>false</default>
-                    <label>Full Attrition</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -8231,6 +8409,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Stakeholder_Relationship__c</fullName>
+        <inlineHelpText>Renewal risk tied to changes in champions or internal relationships.</inlineHelpText>
+        <label>Stakeholder / Relationship</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Starting_Price_Opp__c</fullName>
         <label>Starting Price</label>
         <summarizedField>OpportunityLineItem.Starting_Price__c</summarizedField>
@@ -8447,6 +8650,30 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timing_Risk__c</fullName>
+        <label>Timing Risk</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Timing Risk</fullName>
+                    <default>false</default>
+                    <label>Timing Risk</label>
+                </value>
+                <value>
+                    <fullName>No Timing Risk</fullName>
+                    <default>false</default>
+                    <label>No Timing Risk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Today__c</fullName>
@@ -8791,6 +9018,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Value_Realization__c</fullName>
+        <inlineHelpText>Customer questions whether the product delivers enough value to justify renewal.</inlineHelpText>
+        <label>Value Realization</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Web_Form_Comments_Questions__c</fullName>
         <label>Web Form Comments &amp; Questions</label>
         <length>31144</length>
@@ -8809,6 +9061,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Win_Back__c</fullName>
+        <inlineHelpText>Customer previously churned on a prior renewal (not you are working the win back opportunity).</inlineHelpText>
+        <label>Win Back</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Win_Validation__c</fullName>
@@ -30671,6 +30948,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Adoption_Usage__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approval_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -30912,6 +31200,28 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Commercial_Contract__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Company_Strategic_Change__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Competition__c</picklist>
             <values>
                 <fullName>Bisnow</fullName>
@@ -31015,6 +31325,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competitive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -33180,6 +33501,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Product_Fit_Capability__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Product_Types__c</picklist>
             <values>
                 <fullName>LDC</fullName>
@@ -34168,15 +34500,27 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Risk_Type__c</picklist>
             <values>
-                <fullName>Full Attrition</fullName>
+                <fullName>Expect Full Attrition</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pricing</fullName>
+                <fullName>High Attrition Risk</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Timing</fullName>
+                <fullName>Low Attrition Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Attrition Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Verbal Notice of Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Written Notice of Cancellation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -34583,6 +34927,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Stakeholder_Relationship__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Terms__c</picklist>
             <values>
                 <fullName>Net 30</fullName>
@@ -34602,6 +34957,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Timing_Risk__c</picklist>
+            <values>
+                <fullName>No Timing Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Timing Risk</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -34631,6 +34997,28 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Realization__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Win_Back__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -45735,6 +46123,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Adoption_Usage__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approval_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -45972,6 +46371,28 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Commercial_Contract__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Company_Strategic_Change__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Competition__c</picklist>
             <values>
                 <fullName>Bisnow</fullName>
@@ -46075,6 +46496,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Yardi Matrix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competitive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -48240,6 +48672,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Product_Fit_Capability__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Product_Types__c</picklist>
             <values>
                 <fullName>LDC</fullName>
@@ -49228,15 +49671,27 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Risk_Type__c</picklist>
             <values>
-                <fullName>Full Attrition</fullName>
+                <fullName>Expect Full Attrition</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Pricing</fullName>
+                <fullName>High Attrition Risk</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Timing</fullName>
+                <fullName>Low Attrition Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Attrition Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Verbal Notice of Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Written Notice of Cancellation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49643,6 +50098,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Stakeholder_Relationship__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Terms__c</picklist>
             <values>
                 <fullName>Net 30</fullName>
@@ -49662,6 +50128,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Timing_Risk__c</picklist>
+            <values>
+                <fullName>No Timing Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Timing Risk</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49691,6 +50168,28 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Realization__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Win_Back__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -62559,12 +63058,25 @@ $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK(Company_Type_Opp__c),
 ISCHANGED(StageName),
 OR(
+    AND(
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
+      NOT(
+        OR(
+          ISPICKVAL(Close_Reason__c, &quot;Student/non-buying EDU/Media/non-viable contact&quot;),
+          ISPICKVAL(Close_Reason__c, &quot;Current Client&quot;),
+          ISPICKVAL(Close_Reason__c, &quot;Current Client - CS Request&quot;),
+          ISPICKVAL(Close_Reason__c, &quot;Unreachable&quot;),
+          ISPICKVAL(Close_Reason__c, &quot;Spam&quot;)
+        )
+      )
+    ),
 ISPICKVAL( StageName , &quot;In Review&quot;)
 ),
-OR
-(
-NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
+
+  OR(
+    NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))
+  )
+)</errorConditionFormula>
         <errorMessage>Company type on account must be completed.</errorMessage>
     </validationRules>
     <validationRules>
@@ -62757,6 +63269,10 @@ $UserRole.DeveloperName &lt;&gt; &quot;Event_User&quot;,
 
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISPICKVAL( StageName , &quot;Disqualified&quot;),
+NOT(ISPICKVAL(Close_Reason__c, &quot;Student/non-buying EDU/Media/non-viable contact&quot;)),
+NOT(ISPICKVAL(Close_Reason__c, &quot;Current Client&quot;)),
+NOT(ISPICKVAL(Close_Reason__c, &quot;Current Client - CS Request&quot;)),
+NOT(ISPICKVAL(Close_Reason__c, &quot;Unreachable&quot;)),
 NOT(ISPICKVAL(Close_Reason__c, &quot;Spam&quot;)),
 ISCHANGED(StageName),
 OR(
@@ -63554,6 +64070,7 @@ NOT(ISPICKVAL(StageName, &quot;Open&quot;))
         <active>true</active>
         <errorConditionFormula>AND(
 RecordType.DeveloperName = &apos;Sales_Opportunity&apos;,
+NOT($Permission.Skip_Validation_Rule),
 NOT($Profile.Name = &quot;System Administrator&quot;),
     ISCHANGED(StageName),
     NOT(ISBLANK(PRIORVALUE(StageName))),
@@ -63939,6 +64456,17 @@ ISPICKVAL( Close_Reason__c, &quot;Timing&quot;)
         <errorMessage>Please provide Revisit Date.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_Risk_Type</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;Existing_Business&apos;,
+ISCHANGED(StageName),
+ISBLANK(TEXT(Risk_Type__c))
+)</errorConditionFormula>
+        <errorDisplayField>Risk_Type__c</errorDisplayField>
+        <errorMessage>Please provide the Risk Type before moving the stage.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_SDO_Close_Reason</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -63983,6 +64511,17 @@ ISBLANK(Sales_Owner__c)
     )
 )</errorConditionFormula>
         <errorMessage>Sectors / Markets Covered are required if the fields from the account level are blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_This_Yr_Percent</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (
+  RecordType.DeveloperName = &apos;Existing_Business&apos;,
+  ISCHANGED(StageName),
+  ISBLANK (This_Year_Increase__c)
+)</errorConditionFormula>
+        <errorDisplayField>This_Year_Increase__c</errorDisplayField>
+        <errorMessage>You need to provide This Year % Increase.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Trial_Type</fullName>
@@ -64148,6 +64687,20 @@ ISPICKVAL(Renewal_Risk__c,&quot;Known Change in Business Model&quot;),
 ISPICKVAL(Renewal_Risk__c,&quot;Power User / VIP left the Firm&quot;)))</errorConditionFormula>
         <errorDisplayField>Risk_Type__c</errorDisplayField>
         <errorMessage>Please fill in the Risk Type if Renewal Risk is populated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Type_Percentage</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;Existing_Business&apos;,
+This_Year_Increase__c &lt;= -1.00,
+OR(
+TEXT(Risk_Type__c)=&apos;Low Attrition Risk&apos;,
+TEXT(Risk_Type__c)=&apos;Medium Attrition Risk&apos;,
+TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>This_Year_Increase__c</errorDisplayField>
+        <errorMessage>If Risk Type is Low, Medium, or High then This Year % Increase must be greater than -100%.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Tracking_Consolidated_Opportunities</fullName>

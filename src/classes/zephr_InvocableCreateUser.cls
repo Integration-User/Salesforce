@@ -107,7 +107,8 @@ public with sharing class zephr_InvocableCreateUser {
                                 userResponse = (ZephrApiRequestsResponses.User) JSON.deserialize(res.getBody(), ZephrApiRequestsResponses.User.class);
                                 userResponse.success = true;
                                 userResponse.salesforceId = userRequest.salesforceId;
-                                if (userRequest?.sendPasswordReset) {
+                                System_Configuration__mdt zephrSendResetPassword = System_Configuration__mdt.getInstance('ZephrSendResetPassword');
+                                if (userRequest?.sendPasswordReset && zephrSendResetPassword.IsEnabled__c) {
                                     res = zephr.sendResetPassword(userRequest.email, userRequest.tenantId + '|' + userRequest.websiteName);
                                     if (res.getStatusCode() == 201 || res.getStatusCode() == 200) {
                                         userResponse.message = 'User created successfully and password reset link sent.';

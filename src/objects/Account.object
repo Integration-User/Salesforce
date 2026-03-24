@@ -4516,6 +4516,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>ICP_Score_CRE_LP__c</fullName>
+        <externalId>false</externalId>
+        <label>ICP Score - CRE LP</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ICP_Score_CRE_Platform__c</fullName>
         <externalId>false</externalId>
         <label>ICP Score - CRE Platform</label>
@@ -4533,6 +4544,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Score_INFRA_LP__c</fullName>
+        <externalId>false</externalId>
+        <label>ICP Score - INFRA LP</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
@@ -5949,6 +5971,16 @@ Owner.Id = $User.Id)</formula>
         <summaryOperation>min</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Other_PB_IDs__c</fullName>
+        <externalId>false</externalId>
+        <label>Other PB IDs</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Other_Vendors__c</fullName>
@@ -8619,7 +8651,7 @@ Owner.Id = $User.Id)</formula>
         <fullName>RevOps_ICP_Score_cumulative__c</fullName>
         <description>Calculate all ICP Scores.</description>
         <externalId>false</externalId>
-        <formula>ICP_Score_CRE_GP_Investors__c + ICP_Score_CRE_Platform__c + ICP_Score_CRE_Service_Providers__c + ICP_Score_Infra_GP_Investors__c + ICP_Score_Infra_Investors__c + ICP_Score_Infra_Service_Providers__c + ICP_Score_Retail__c</formula>
+        <formula>ICP_Score_CRE_GP_Investors__c + ICP_Score_CRE_Platform__c + ICP_Score_CRE_Service_Providers__c + ICP_Score_Infra_GP_Investors__c + ICP_Score_Infra_Investors__c + ICP_Score_Infra_Service_Providers__c + ICP_Score_Retail__c +  ICP_Score_CRE_LP__c + ICP_Score_INFRA_LP__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>RevOps ICP Score (cumulative)</label>
         <precision>18</precision>
