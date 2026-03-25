@@ -22,13 +22,19 @@ public with sharing class zephr_InvocableSendPasswordReset {
                 ZephrIntegrationNG zephr = zephrIntegrationsByTenantMap.get(userRequest.tenantId);
 
                 try {
-                    HttpResponse res = zephr.sendResetPassword(userRequest.email, userRequest.tenantId + '|' +userRequest.websiteSlug);
-                    if (res.getStatusCode() == 201 || res.getStatusCode() == 200) {
-                        userResponse.success = true;
-                        userResponse.message = 'Password reset link sent.';
-                    } else {
+                    System_Configuration__mdt zephrSendResetPassword = System_Configuration__mdt.getInstance('ZephrSendResetPassword');
+                    if(zephrSendResetPassword.IsEnabled__c) {
                         userResponse.success = false;
-                        userResponse.message = res.getBody();
+                        userResponse.message = 'The password reset link cannot be sent. Please contact the System Administrator for assistance.';
+                    } else {
+                        HttpResponse res = zephr.sendResetPassword(userRequest.email, userRequest.tenantId + '|' +userRequest.websiteSlug);
+                        if (res.getStatusCode() == 201 || res.getStatusCode() == 200) {
+                            userResponse.success = true;
+                            userResponse.message = 'Password reset link sent.';
+                        } else {
+                            userResponse.success = false;
+                            userResponse.message = res.getBody();
+                        }
                     }
                 } catch (Exception ex) {
                     System.debug(LoggingLevel.ERROR, ex.getMessage() + ' - ' + ex.getStackTraceString());
