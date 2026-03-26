@@ -69,6 +69,12 @@ public class Plative_ContactTriggerHandler {
             Plative_ContactTriggerHandler.afterInsertRun = true;
         }
     }
+    /**
+    * Description : after delete DML
+    **/
+    public static void afterDelete(List<Contact> triggerOld){
+        Plative_ContactTriggerHelper.updateExcelAddUsersOnAccount(triggerOld, null);
+    }
     
     public static Boolean  isUpdateBillingContact(Map<Id, Contact> mapOldCon, Map<Id, Contact> mapNewCon){
         Boolean isUpdate = false;
