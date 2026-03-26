@@ -100,6 +100,8 @@ public class Plative_OpportunityTriggerTest {
         
 
         Opportunity oppty = new Opportunity();
+        Id oppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Sales_Opportunity').getRecordTypeId();
+        oppty.RecordTypeId = oppRecordTypeId;
         oppty.Name = 'Test Oppty';
         oppty.CloseDate = System.today().addDays(5);
         oppty.StageName = '2 - Conducting Needs Analysis';
@@ -186,7 +188,7 @@ public class Plative_OpportunityTriggerTest {
     
     @isTest
     static void updateOpptyClosedWon(){        
-        Opportunity opptyTemp = [Select Id,AccountId,Name  from Opportunity where RecordType.DeveloperName = 'Sales_Development' LIMIT 1];
+        Opportunity opptyTemp = [Select Id,AccountId,Name  from Opportunity where RecordType.DeveloperName = 'Sales_Opportunity' LIMIT 1];
         Opportunity oppty = new Opportunity();
         Id oppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Sales_Opportunity_Closed').getRecordTypeId();
         oppty.RecordTypeId = oppRecordTypeId;
