@@ -19096,6 +19096,7 @@ Stored as Long on Solr.</description>
         <active>true</active>
         <description>Block people in department &quot;sales&quot; from creating Accounts in Salesforce.</description>
         <errorConditionFormula>AND(
+$Permission.Allow_Create_Accounts = False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $Profile.Name &lt;&gt; &quot;IJGlobal Events User&quot;,
 ISNEW(),
