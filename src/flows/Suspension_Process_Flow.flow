@@ -6,7 +6,7 @@
         <name>Suspended_Opportunity</name>
         <label>Suspended Opportunity</label>
         <locationX>182</locationX>
-        <locationY>671</locationY>
+        <locationY>623</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Opportunity_Suspended</name>
@@ -28,7 +28,7 @@
         <name>Usage_Drop</name>
         <label>Usage Drop</label>
         <locationX>182</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <defaultConnector>
             <targetReference>Suspended_Opportunity</targetReference>
         </defaultConnector>
@@ -96,7 +96,7 @@
         <name>Update_Account</name>
         <label>Update Account</label>
         <locationX>50</locationX>
-        <locationY>911</locationY>
+        <locationY>839</locationY>
         <inputAssignments>
             <field>Type</field>
             <value>
@@ -109,7 +109,7 @@
         <name>Update_Opportunity</name>
         <label>Update Opportunity</label>
         <locationX>50</locationX>
-        <locationY>791</locationY>
+        <locationY>731</locationY>
         <connector>
             <targetReference>Update_Account</targetReference>
         </connector>
@@ -134,7 +134,7 @@
         <inputAssignments>
             <field>Risk_Type__c</field>
             <value>
-                <stringValue>Full Attrition</stringValue>
+                <stringValue>Expect Full Attrition</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -143,7 +143,7 @@
         <name>Update_Renewal_Risk</name>
         <label>Update Renewal Risk</label>
         <locationX>50</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Suspended_Opportunity</targetReference>
         </connector>
