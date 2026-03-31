@@ -18,13 +18,6 @@
                     <elementReference>Get_OppRecord.OwnerId</elementReference>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>Get_OppRecord.Record_Type_for_Query__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Sales Opportunity</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>Update_Related_To_Opp</targetReference>
             </connector>
@@ -60,7 +53,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_OppRecord</targetReference>
+            <targetReference>Owner_Match</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -72,6 +65,8 @@
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>OpportunityContactRole</object>
+        <sortField>LastModifiedDate</sortField>
+        <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -81,21 +76,35 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Owner_Match</targetReference>
+            <targetReference>Get_OppContactRole</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_OppContactRole.OpportunityId</elementReference>
-            </value>
-        </filters>
         <filters>
             <field>Record_Type_for_Query__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Sales Opportunity</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -119,7 +128,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_OppContactRole</targetReference>
+            <targetReference>Get_OppRecord</targetReference>
         </connector>
         <filterFormula>NOT(ISBLANK({!$Record.WhoId})) &amp;&amp;
 BEGINS({!$Record.WhoId}, &quot;003&quot;)</filterFormula>
