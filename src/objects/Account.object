@@ -1281,6 +1281,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Count_of_Contacts__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Contacts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Count_of_open_SDO__c</fullName>
         <description>Count the number of open SDOs</description>
         <label>Count of open SDO</label>
@@ -12478,6 +12489,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Locatus%3A One-Off Presentation Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Locatus%3A One-Time Data</fullName>
                 <default>false</default>
             </values>
@@ -16633,6 +16648,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Locatus%3A Office Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locatus%3A One-Off Presentation Fee</fullName>
                 <default>false</default>
             </values>
             <values>

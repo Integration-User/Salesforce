@@ -4,7 +4,7 @@
 * History     :
 * [05.Mar.2020] Anisa Shaikh - Code Creation
 */
-trigger Plative_ContactTrigger on Contact (before insert, before update, after update, after insert) {
+trigger Plative_ContactTrigger on Contact (before insert, before update, after update, after insert, after delete) {
     if(Plative_ContactTriggerHandler.isContactTriggerSkip) return;
 	Trigger_Control_Setting__c setting = Trigger_Control_Setting__c.getOrgDefaults();
     if (setting.Contact__c && trigger.isBefore && Trigger.isUpdate) {
@@ -19,5 +19,8 @@ trigger Plative_ContactTrigger on Contact (before insert, before update, after u
     }
     if(trigger.isBefore) {
         Plative_ContactTriggerHandler.beforeActions(trigger.new);
+    }
+    if (setting.Contact__c && trigger.isAfter && Trigger.isDelete) {
+        Plative_ContactTriggerHandler.afterDelete(trigger.old);
     }
 }

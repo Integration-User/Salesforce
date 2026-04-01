@@ -10,6 +10,7 @@ public class Plative_ContactTriggerHandler {
     public static Boolean beforeUpdateRun = false;
     public static Boolean afterInsertRun = false;
     public static Boolean isContactTriggerSkip = false;
+    public static Boolean isDNCcheck = false;
     /**
     * Description : after update DML
     **/ 
@@ -64,6 +65,12 @@ public class Plative_ContactTriggerHandler {
             Plative_ContactTriggerHelper.updateExcelAddUsersOnAccount(triggerNew, null); // SF-918
             Plative_ContactTriggerHandler.afterInsertRun = true;
         }
+    }
+    /**
+    * Description : after delete DML
+    **/
+    public static void afterDelete(List<Contact> triggerOld){
+        Plative_ContactTriggerHelper.updateExcelAddUsersOnAccount(triggerOld, null);
     }
     
     public static Boolean  isUpdateBillingContact(Map<Id, Contact> mapOldCon, Map<Id, Contact> mapNewCon){
