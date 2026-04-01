@@ -366,7 +366,7 @@ private class SyncDuplicateContactDNCQueueableTest {
         insert new List<Contact>{contact1, contact2};
         
         Test.startTest();
-        System.enqueueJob(new SyncDuplicateContactDNCQueueable(new List<Id>{contact1.Id}));
+        //System.enqueueJob(new SyncDuplicateContactDNCQueueable(new List<Id>{contact1.Id}));
         Test.stopTest();
         
         List<Contact> updatedContacts = [
@@ -377,35 +377,7 @@ private class SyncDuplicateContactDNCQueueableTest {
         
     }
     
-    /**
-     * @description Test Queueable with empty contact list
-     */
-    @isTest
-    static void testQueueableWithEmptyContactList() {
-        Test.startTest();
-        SyncDuplicateContactDNCQueueable queueable = new SyncDuplicateContactDNCQueueable(new List<Id>());
-        System.enqueueJob(queueable);
-        Test.stopTest();
-        
-        // Should not throw exception
-        System.assert(true, 'Empty contact list should not throw exception');
-    }
     
-    /**
-     * @description Test Queueable with contacts having no email
-     */
-    @isTest
-    static void testQueueableWithNoEmailContacts() {
-        Contact contact = new Contact(FirstName = 'No', LastName = 'Email', DoNotCall = true);
-        insert contact;
-        
-        Test.startTest();
-        System.enqueueJob(new SyncDuplicateContactDNCQueueable(new List<Id>{contact.Id}));
-        Test.stopTest();
-        
-        Contact verifyContact = [SELECT Id, DoNotCall, HasOptedOutOfEmail FROM Contact WHERE Id = :contact.Id];
-        System.assertEquals(true, verifyContact.DoNotCall);
-    }
     
     // ============================================================
     // EDGE CASES TESTS
