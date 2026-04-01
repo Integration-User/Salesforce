@@ -201,22 +201,90 @@ public class Plative_ContactTriggerHelper  {
     }
     // SF-918 - Excel Add-In - Account
     public static void updateExcelAddUsersOnAccount(List<Contact> contacts, Map<Id, Contact> mapOldCon){
-        Map<String, Integer> accountCounts = new Map<String, Integer>();
+        // Step 1: Handle Excel_Last_Use_Date__c changes
+        Map<String, Integer> excelAccountCounts = new Map<String, Integer>();
+        Set<String> excelAffectedAccounts = new Set<String>();
+        
         for(Contact con : contacts) {
             Contact oldCon = mapOldCon != null ? mapOldCon.get(con.Id) : null;
-            if(!accountCounts.containsKey(con.AccountId) && (oldCon == null || (oldCon != null && con.Excel_Last_Use_Date__c != oldCon.Excel_Last_Use_Date__c))) {
-                accountCounts.put(con.AccountId, 0);
+            if(!excelAffectedAccounts.contains(con.AccountId) && 
+               (oldCon == null || con.Excel_Last_Use_Date__c != oldCon.Excel_Last_Use_Date__c)) {
+                excelAffectedAccounts.add(con.AccountId);
+                excelAccountCounts.put(con.AccountId, 0);
             }
         }
-        if(!accountCounts.isEmpty()) {
-            for(AggregateResult result : [Select Count(Id), AccountId from Contact where AccountId in :accountCounts.keySet() AND AccountId != null AND Excel_Last_Use_Date__c != null GROUP BY AccountId]) {
-                accountCounts.put(String.valueof(result.get('AccountId')), Integer.valueOf(result.get('expr0')));
+        
+        // Query Excel user counts for affected accounts
+        if(!excelAccountCounts.isEmpty()) {
+            for(AggregateResult result : [SELECT Count(Id), AccountId FROM Contact 
+                                           WHERE AccountId IN :excelAccountCounts.keySet() 
+                                           AND AccountId != null 
+                                           AND Excel_Last_Use_Date__c != null 
+                                           GROUP BY AccountId]) {
+                excelAccountCounts.put(String.valueOf(result.get('AccountId')), 
+                                      Integer.valueOf(result.get('expr0')));
             }
-			List<Account> accUpdates = new List<Account>();
-            for(String accId : accountCounts.keySet()) {
-                if(String.isNotBlank(accId)) accUpdates.add(New Account(Id = accId, Excel_Add_In_Users__c = accountCounts.get(accId)));
+        }
+        
+        // Step 2: Handle AccountId changes (detect both old and new accounts)
+        Set<String> accountIdChanges = new Set<String>();
+        if(mapOldCon != null) {
+            for(Contact newCon : contacts) {
+                Contact oldCon = mapOldCon.get(newCon.Id);
+                if(newCon.AccountId != oldCon.AccountId) {
+                    if(String.isNotBlank(oldCon.AccountId)) {
+                        accountIdChanges.add(oldCon.AccountId);
+                    }
+                    if(String.isNotBlank(newCon.AccountId)) {
+                        accountIdChanges.add(newCon.AccountId);
+                    }
+                }
             }
-            if(!accUpdates.isEmpty()) update accUpdates;
+        }
+        
+        // Step 3: Combine all affected accounts for total contact count
+        Set<String> allAffectedAccounts = new Set<String>(excelAffectedAccounts);
+        allAffectedAccounts.addAll(accountIdChanges);
+        
+        // Get total contact counts for ALL affected accounts in single query
+        Map<String, Integer> totalContactCounts = new Map<String, Integer>();
+        if(!allAffectedAccounts.isEmpty()) {
+            for(AggregateResult result : [SELECT Count(Id) cnt, AccountId 
+                                           FROM Contact 
+                                           WHERE AccountId IN :allAffectedAccounts 
+                                           AND AccountId != null 
+                                           GROUP BY AccountId]) {
+                totalContactCounts.put(String.valueOf(result.get('AccountId')), 
+                                      Integer.valueOf(result.get('cnt')));
+            }
+            
+            // Ensure all affected accounts have a count (0 if no contacts)
+            for(String accId : allAffectedAccounts) {
+                if(!totalContactCounts.containsKey(accId)) {
+                    totalContactCounts.put(accId, 0);
+                }
+            }
+        }
+        
+        // Build final account update list
+        List<Account> accUpdates = new List<Account>();
+        for(String accId : allAffectedAccounts) {
+            if(String.isNotBlank(accId)) {
+                Account accToUpdate = new Account(Id = accId);
+                // Only set Excel count if it was affected by Excel_Last_Use_Date__c change
+                if(excelAccountCounts.containsKey(accId)) {
+                    accToUpdate.Excel_Add_In_Users__c = excelAccountCounts.get(accId);
+                }
+                // Always set total contact count
+                accToUpdate.Count_of_Contacts__c = totalContactCounts.containsKey(accId) ? 
+                                                       totalContactCounts.get(accId) : 0;
+                accUpdates.add(accToUpdate);
+            }
+        }
+        
+        // Single DML update
+        if(!accUpdates.isEmpty()) {
+            update accUpdates;
         }
     }
 }
