@@ -3,8 +3,8 @@ private class SalesloftReplyCountQueueableTest {
     @isTest
     static void testSchedulerPlusQueueableUpdatesTasks() {
         // prepare tasks that should be updated by the queueable
-        Task t1 = new Task(Subject='Salesloft test', Email_Message_Id__c='msg1');
-        Task t2 = new Task(Subject='Salesloft test2', Email_Message_Id__c='msg2');
+        Task t1 = new Task(Subject='Salesloft test', Email_Message_Id__c='<msg1>');
+        Task t2 = new Task(Subject='Salesloft test2', Email_Message_Id__c='<msg2>');
         insert new List<Task>{t1, t2};
 
         // install mock for both token and activities

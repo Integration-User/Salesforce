@@ -25,7 +25,7 @@ public class SalesloftReplyCountQueueable implements Queueable, Database.AllowsC
         for (SalesloftEmailActivityResponse.ActivityData act : resp.data) {
             system.debug('act->' + act);
             if (act.message_id != null) {
-                messageIds.add(act.message_id);
+                messageIds.add('<' + act.message_id + '>');
             }
         }
 
@@ -40,8 +40,8 @@ public class SalesloftReplyCountQueueable implements Queueable, Database.AllowsC
             system.debug('taskByMessageId->' + taskByMessageId);
             List<Task> updates = new List<Task>();
             for (SalesloftEmailActivityResponse.ActivityData act : resp.data) {
-                if (act.message_id != null && taskByMessageId.containsKey(act.message_id)) {
-                    Task t = taskByMessageId.get(act.message_id);
+                if (act.message_id != null && taskByMessageId.containsKey('<' + act.message_id + '>')) {
+                    Task t = taskByMessageId.get('<' + act.message_id + '>');
                     Integer replies = (act.counts != null) ? act.counts.replies : 0;
                     t.SalesLoft_Reply_Count_API__c = replies;
                     updates.add(t);
