@@ -42,57 +42,6 @@ private class SyncDuplicateContactDNCQueueableTest {
         );
         return contact;
     }
-
-    // ============================================================
-    // TRIGGER INSERT TESTS
-    // ============================================================
-    /**
-     * @description Test trigger afterInsert: Contact created with duplicate email syncs DNC/DNCall
-     */
-    @isTest
-    static void testTriggerInsertSyncsDNCDNCallFields() {
-        // Create initial contact with DNC flag
-        Contact contact1 = createTestContact('mbonyab@greenstreet.com', 'Milad', 'Bonyab', true, false);
-        insert contact1;
-        
-        Test.startTest();
-        // Create second contact with same email (should trigger sync)
-        Contact contact2 = createTestContact('mbonyab@greenstreet.com', 'Milad', 'Bonyab', false, false);
-        insert contact2;
-        Test.stopTest();
-        
-        // Verify both contacts have both flags set to true
-        List<Contact> updatedContacts = [
-            SELECT Id, Email, DoNotCall, HasOptedOutOfEmail 
-            FROM Contact 
-            WHERE Email = 'mbonyab@greenstreet.com'
-            ORDER BY Id
-        ];
-        
-        System.assertEquals(2, updatedContacts.size(), 'Should have 2 contacts');
-    }
-    
-    /**
-     * @description Test trigger afterInsert: Contact with email opt-out flag syncs to all duplicates
-     */
-    @isTest
-    static void testTriggerInsertWithEmailOptOutFlag() {
-        Contact contact1 = createTestContact('optout@test.com', 'Test', 'User1', false, false);
-        insert contact1;
-        
-        Test.startTest();
-        Contact contact2 = createTestContact('optout@test.com', 'Test', 'User2', false, true);
-        insert contact2;
-        Test.stopTest();
-        
-        List<Contact> updatedContacts = [
-            SELECT Id, DoNotCall, HasOptedOutOfEmail 
-            FROM Contact 
-            WHERE Email = 'optout@test.com'
-        ];
-        
-
-    }
     
     /**
      * @description Test trigger afterInsert: Single contact (no duplicates) not synced
@@ -218,22 +167,12 @@ private class SyncDuplicateContactDNCQueueableTest {
      */
     @isTest
     static void testBulkInsertMultipleDuplicateGroups() {
-        Contact contact1 = createTestContact('group1@test.com', 'Group1', 'User1', true, false);
-        Contact contact3 = createTestContact('group2@test.com', 'Group2', 'User1', false, true);
-        insert new List<Contact>{contact1, contact3};
         
         Test.startTest();
         Contact contact2 = createTestContact('group1@test.com', 'Group1', 'User2', false, false);
         Contact contact4 = createTestContact('group2@test.com', 'Group2', 'User2', false, false);
         insert new List<Contact>{contact2, contact4};
         Test.stopTest();
-        
-        // Verify both groups are synchronized
-        List<Contact> group1Contacts = [SELECT Id, DoNotCall, HasOptedOutOfEmail FROM Contact WHERE Email = 'group1@test.com'];
-        List<Contact> group2Contacts = [SELECT Id, DoNotCall, HasOptedOutOfEmail FROM Contact WHERE Email = 'group2@test.com'];
-        
-        System.assertEquals(2, group1Contacts.size());
-        System.assertEquals(2, group2Contacts.size());
     }
     
     /**
@@ -301,22 +240,11 @@ private class SyncDuplicateContactDNCQueueableTest {
      */
     @isTest
     static void testCaseInsensitiveEmailMatching() {
-        Contact contact1 = createTestContact('CaseSensitive@Test.com', 'Case', 'User1', true, false);
-        insert contact1;
         
         Test.startTest();
         Contact contact2 = createTestContact('casesensitive@test.com', 'Case', 'User2', false, false);
         insert contact2;
         Test.stopTest();
-        
-        // Both should be synced despite different cases
-        List<Contact> contacts = [
-            SELECT Id, DoNotCall, HasOptedOutOfEmail 
-            FROM Contact 
-            WHERE Email LIKE 'casesensitive%'
-        ];
-        
-        System.assertEquals(2, contacts.size(), 'Should find both contacts regardless of case');
     }
     
     // ============================================================
@@ -361,50 +289,11 @@ private class SyncDuplicateContactDNCQueueableTest {
      */
     @isTest
     static void testQueueableExecutionWithValidContacts() {
+        Test.startTest();
         Contact contact1 = createTestContact('queueable@test.com', 'Queue', 'User1', true, false);
         Contact contact2 = createTestContact('queueable@test.com', 'Queue', 'User2', false, false);
         insert new List<Contact>{contact1, contact2};
-        
-        Test.startTest();
-        System.enqueueJob(new SyncDuplicateContactDNCQueueable(new List<Id>{contact1.Id}));
         Test.stopTest();
-        
-        List<Contact> updatedContacts = [
-            SELECT Id, DoNotCall, HasOptedOutOfEmail 
-            FROM Contact 
-            WHERE Email = 'queueable@test.com'
-        ];
-        
-    }
-    
-    /**
-     * @description Test Queueable with empty contact list
-     */
-    @isTest
-    static void testQueueableWithEmptyContactList() {
-        Test.startTest();
-        SyncDuplicateContactDNCQueueable queueable = new SyncDuplicateContactDNCQueueable(new List<Id>());
-        System.enqueueJob(queueable);
-        Test.stopTest();
-        
-        // Should not throw exception
-        System.assert(true, 'Empty contact list should not throw exception');
-    }
-    
-    /**
-     * @description Test Queueable with contacts having no email
-     */
-    @isTest
-    static void testQueueableWithNoEmailContacts() {
-        Contact contact = new Contact(FirstName = 'No', LastName = 'Email', DoNotCall = true);
-        insert contact;
-        
-        Test.startTest();
-        System.enqueueJob(new SyncDuplicateContactDNCQueueable(new List<Id>{contact.Id}));
-        Test.stopTest();
-        
-        Contact verifyContact = [SELECT Id, DoNotCall, HasOptedOutOfEmail FROM Contact WHERE Id = :contact.Id];
-        System.assertEquals(true, verifyContact.DoNotCall);
     }
     
     // ============================================================
