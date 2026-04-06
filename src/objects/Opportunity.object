@@ -2028,6 +2028,17 @@ TEXT(YEAR(Contract_Start_Date__c))</formula>
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Created_by_Department_Static__c</fullName>
+        <externalId>false</externalId>
+        <label>Created by Department (Static)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CurrencyIsoCode</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -7315,6 +7326,17 @@ NULL))))</formula>
         <formula>Referred_By__r.UserRole.Name</formula>
         <label>Referred by Role</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReferredbyDepartmentStatic__c</fullName>
+        <externalId>false</externalId>
+        <label>Referred by Department (Static)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
@@ -63991,7 +64013,6 @@ ISCHANGED(LeadSource),
 NOT(ISPICKVAL(LeadSource, &quot;Inbound Call&quot;)),
 NOT(ISPICKVAL(LeadSource, &quot;Inbound Email&quot;)),
 NOT(ISPICKVAL(LeadSource, &quot;Outbound Prospecting&quot;)),
-NOT(ISPICKVAL(LeadSource, &quot;Referral&quot;)),
 NOT(ISPICKVAL(LeadSource, &quot;Partner Referral&quot;)),
 OR(
 CONTAINS(CreatedBy.Username,&quot;hubspotintegration&quot;),
@@ -64720,6 +64741,17 @@ Current_Contract_Year__c = 1,
 ISBLANK(Initial_Asking_Price__c ))</errorConditionFormula>
         <errorDisplayField>Initial_Asking_Price__c</errorDisplayField>
         <errorMessage>In order to move to Stage 4, please fill in the opportunity &quot;Initial Asking Price&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_Inbound</fullName>
+        <active>true</active>
+        <description>Prevent editing of Inbound field</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISNEW()),
+ISCHANGED(Inbound__c)
+)</errorConditionFormula>
+        <errorMessage>You cannot modify the Inbound checkbox.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Risk_Reason_Blank</fullName>
