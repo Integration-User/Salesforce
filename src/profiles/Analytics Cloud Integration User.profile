@@ -27734,6 +27734,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Lead.ReferredbyDepartmentStatic__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Renewal_Month__c</field>
         <readable>true</readable>
@@ -28756,6 +28761,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Created_Date_short__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Created_by_Department_Static__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -29866,6 +29876,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Referred_by_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.ReferredbyDepartmentStatic__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -58256,6 +58271,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>AllowViewKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ApexRestServices</name>
     </userPermissions>
     <userPermissions>
@@ -58265,6 +58284,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiUserOnly</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AssessmentPlatformUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58332,6 +58355,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ViewDraftArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewEventLogFiles</name>
     </userPermissions>
     <userPermissions>
@@ -58345,6 +58372,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewPlatformEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewProductCatalogObjects</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
