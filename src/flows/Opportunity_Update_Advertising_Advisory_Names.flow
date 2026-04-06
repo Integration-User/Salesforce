@@ -3,10 +3,67 @@
     <apiVersion>58.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
+        <name>Map_Opp_to_Static_Role</name>
+        <label>Map Opp to Static Role</label>
+        <locationX>446</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>New_Opp_from_Client_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Map_Opp_to_Created_By</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Created_by_Role</targetReference>
+            </connector>
+            <label>Map Opp to Created By</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>New_Opp_from_Client_Account</name>
+        <label>New Opp from Client Account</label>
+        <locationX>446</locationX>
+        <locationY>623</locationY>
+        <defaultConnector>
+            <targetReference>New_Sales_Opp</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_Client_Sales_Opp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_to_Upsell</targetReference>
+            </connector>
+            <label>New Client Sales Opp</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>New_Sales_Opp</name>
         <label>New Sales Opp</label>
-        <locationX>314</locationX>
-        <locationY>323</locationY>
+        <locationX>446</locationX>
+        <locationY>923</locationY>
         <defaultConnector>
             <targetReference>Referral_Opp</targetReference>
         </defaultConnector>
@@ -51,8 +108,8 @@
     <decisions>
         <name>Opportunity_Record_Type_Decision</name>
         <label>Opportunity Record Type Decision</label>
-        <locationX>314</locationX>
-        <locationY>923</locationY>
+        <locationX>446</locationX>
+        <locationY>1523</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Advertising_Oppty</name>
@@ -98,12 +155,76 @@
             </connector>
             <label>Advisory Oppty</label>
         </rules>
+        <rules>
+            <name>Sales_Oppty</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing_Business</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal_Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Events</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Favors</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Favour_Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Quota</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Sales_Opportunity_Name</targetReference>
+            </connector>
+            <label>Sales Oppty</label>
+        </rules>
     </decisions>
     <decisions>
         <name>Referral_Opp</name>
         <label>Referral Opp</label>
-        <locationX>314</locationX>
-        <locationY>623</locationY>
+        <locationX>446</locationX>
+        <locationY>1223</locationY>
         <defaultConnector>
             <targetReference>Opportunity_Record_Type_Decision</targetReference>
         </defaultConnector>
@@ -156,6 +277,11 @@
         <dataType>String</dataType>
         <expression>&quot;Advisory&quot; &amp; &quot; &quot;&amp; &quot;-&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name} &amp; &quot; &quot; &amp; {!$Record.Renewal_Month__c} &amp; &quot; &quot; &amp; {!$Record.Renewal_Year__c}</expression>
     </formulas>
+    <formulas>
+        <name>Sales_Opp_Name</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.Sales_Type__c}) &amp; &quot; &quot;&amp; &quot;-&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name} &amp; &quot; &quot; &amp; {!$Record.Renewal_Month__c} &amp; &quot; &quot; &amp; {!$Record.Renewal_Year__c}</expression>
+    </formulas>
     <interviewLabel>Opportunity - Update Advertising / Advisory Names {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity - Update Advertising / Advisory Names</label>
     <processMetadataValues>
@@ -181,7 +307,7 @@
         <name>Update_Advertising_Oppty_Name</name>
         <label>Update Advertising Oppty Name</label>
         <locationX>50</locationX>
-        <locationY>1031</locationY>
+        <locationY>1631</locationY>
         <inputAssignments>
             <field>Name</field>
             <value>
@@ -194,7 +320,7 @@
         <name>Update_Advisory_Oppty_Name</name>
         <label>Update Advisory Oppty Name</label>
         <locationX>314</locationX>
-        <locationY>1031</locationY>
+        <locationY>1631</locationY>
         <inputAssignments>
             <field>Name</field>
             <value>
@@ -204,10 +330,26 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Created_by_Role</name>
+        <label>Update Created by Role</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>New_Opp_from_Client_Account</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Created_by_Department_Static__c</field>
+            <value>
+                <elementReference>$User.Department</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Initial_Organizer</name>
         <label>Update Initial Organizer</label>
-        <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationX>314</locationX>
+        <locationY>1031</locationY>
         <connector>
             <targetReference>Referral_Opp</targetReference>
         </connector>
@@ -222,8 +364,8 @@
     <recordUpdates>
         <name>Update_Referral_Initial_Organizer</name>
         <label>Update Referral Initial Organizer</label>
-        <locationX>182</locationX>
-        <locationY>731</locationY>
+        <locationX>314</locationX>
+        <locationY>1331</locationY>
         <connector>
             <targetReference>Opportunity_Record_Type_Decision</targetReference>
         </connector>
@@ -235,11 +377,40 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <start>
-        <locationX>188</locationX>
-        <locationY>0</locationY>
+    <recordUpdates>
+        <name>Update_Sales_Opportunity_Name</name>
+        <label>Update Sales Opportunity Name</label>
+        <locationX>578</locationX>
+        <locationY>1631</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Sales_Opp_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_to_Upsell</name>
+        <label>Update to Upsell</label>
+        <locationX>314</locationX>
+        <locationY>731</locationY>
         <connector>
             <targetReference>New_Sales_Opp</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Sales_Type__c</field>
+            <value>
+                <stringValue>Upsell</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Map_Opp_to_Static_Role</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
