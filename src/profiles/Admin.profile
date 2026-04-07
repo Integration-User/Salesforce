@@ -29955,6 +29955,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Opportunity_Source_Reporting__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Opportunity_Source__c</field>
         <readable>true</readable>
     </fieldPermissions>
