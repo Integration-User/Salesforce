@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Delete</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -319,59 +317,43 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>TTM_Cost_Per_Click__c</field>
+                <field>GSN_Active_Users_TTM__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>TTM_Clicks_Per_User__c</field>
+                <field>GSN_Active_Users_Trailing_12_24M__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>News_Usage_L60D__c</field>
+                <field>GSN_Active_Users_Current_Quarter__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>First_60D_Usage__c</field>
+                <field>GSN_L3M_Event_Totals__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>F60D_News_Usage__c</field>
+                <field>GSN_L6M_Event_Totals__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>F60D_Research_Usage__c</field>
+                <field>GSN_L12M_Event_Totals__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>F60D_REIT_Data_Usage__c</field>
+                <field>GSN_Trailing_12_24M_Event_Totals__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>F60D_MD_Ds_Usage__c</field>
+                <field>IJ_L12M_Active_Users__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Last_6M_Usage__c</field>
+                <field>IJ_L12M_Event_Totals__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>L6M_News_Usage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>L6M_Research_Usage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>L6M_REIT_Data_Usage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>L6M_MD_Ds_Usage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Prior_6M_Usage__c</field>
+                <field>IJ_Trailing_12_24M_Event_Totals__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -380,10 +362,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Monthly_Active_Users__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Change_in_Usage_QoQ__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

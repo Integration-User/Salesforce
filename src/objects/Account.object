@@ -4092,6 +4092,90 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>GSN_Active_Users_Current_Quarter__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of distinct users active this quarter where any condition is met: (1) URL = greenstreetnews.com/onboarding/us/, (2) URL = greenstreetnews.com/us/, (3) Event = Viewed where Post_type = us_article, (4) Event = PDF Download where Post_type = us_article</inlineHelpText>
+        <label>GSN: Active Users Current Quarter</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSN_Active_Users_TTM__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of distinct users on the account who were active over the trailing 12 months</inlineHelpText>
+        <label>GSN: Active Users TTM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSN_Active_Users_Trailing_12_24M__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of distinct users on the account who were active in the trailing 12-24 month prior period</inlineHelpText>
+        <label>GSN Active Users Trailing 12-24M</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSN_L12M_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total count of &apos;Viewed&apos; events across all users on the account over the trailing 12 months</inlineHelpText>
+        <label>GSN: L12M Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSN_L3M_Event_Totals__c</fullName>
+        <description>Total count of &apos;Viewed&apos; events across all users on the account over the trailing 3 months</description>
+        <externalId>false</externalId>
+        <label>GSN: L3M Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSN_L6M_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total count of &apos;Viewed&apos; events across all users on the account over the trailing 6 months</inlineHelpText>
+        <label>GSN: L6M Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSN_Trailing_12_24M_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total count of &apos;Viewed&apos; events across all users on the account in the trailing 12-24 month prior period</inlineHelpText>
+        <label>GSN: Trailing 12-24M Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>GS_News_Canada_Client__c</fullName>
         <defaultValue>false</defaultValue>
         <label>GS News: Canada Client</label>
@@ -4837,6 +4921,30 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>IJ_L12M_Active_Users__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of distinct users on the account who were active over the past 12 months</inlineHelpText>
+        <label>IJ: L12M Active Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_L12M_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total clicks from all users on the account across all tracked events over the last 12 months</inlineHelpText>
+        <label>IJ  L12M Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>IJ_Relationship__c</fullName>
         <externalId>false</externalId>
         <label>IJ Relationship</label>
@@ -4844,6 +4952,18 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_Trailing_12_24M_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total clicks from all users on the account in the prior year (months 13-24), used for year-over-year engagement comparison</inlineHelpText>
+        <label>IJ: Trailing 12-24M Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
