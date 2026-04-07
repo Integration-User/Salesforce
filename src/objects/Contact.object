@@ -1932,6 +1932,50 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>GSN_L12M_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total count of &apos;Viewed&apos; events triggered by the contact over the trailing 12 months</inlineHelpText>
+        <label>GSN: L12M Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSN_L3M_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total count of &apos;Viewed&apos; events triggered by the contact over the trailing 3 months</inlineHelpText>
+        <label>GSN: L3M Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSN_L6M_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total count of &apos;Viewed&apos; events triggered by the contact over the trailing 6 months</inlineHelpText>
+        <label>GSN: L6M Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSN_Last_Seen_Date__c</fullName>
+        <inlineHelpText>The most recent date the contact triggered a &apos;Viewed&apos; event</inlineHelpText>
+        <label>GSN: Last Seen Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>GS_Start_Date__c</fullName>
         <inlineHelpText>Date Employee is starting with Green Street</inlineHelpText>
         <label>GS Start Date</label>
@@ -2080,6 +2124,38 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_L30_Day_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total clicks by the contact on any tracked event within the last 30 days</inlineHelpText>
+        <label>IJ  L30-Day Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_L90_Day_Event_Totals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total clicks by the contact on any tracked event within the last 90 days</inlineHelpText>
+        <label>IJ  L90-Day Event Totals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IJ_Last_Seen_Date__c</fullName>
+        <inlineHelpText>The most recent date the contact interacted with any tracked event</inlineHelpText>
+        <label>IJ: Last Seen Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>In_Review_Timestamp__c</fullName>
