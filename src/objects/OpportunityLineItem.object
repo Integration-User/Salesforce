@@ -1230,6 +1230,26 @@ ISPICKVAL(Delivery_Method__c, &apos;API&apos;)))
         <errorMessage>This is not an appropriate Delivery Method for this product</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Restricted_IJGlobal_OLI_Without_SKUField</fullName>
+        <active>true</active>
+        <description>Require “SKU Product” and “Product: SKU Detail”  For IJ Global Products</description>
+        <errorConditionFormula>AND(
+  Opportunity.RecordType.Name = &quot;Events&quot;,
+  OR(
+    ISPICKVAL(Product_SKU_Detail__c, &quot;&quot;),
+    ISPICKVAL(SKU_Product__c, &quot;&quot;)
+  ),
+  OR(
+    Product2.Name = &quot;IJ Global: Award Table&quot;,
+    Product2.Name = &quot;IJ Global: Award Add-on&quot;,
+    Product2.Name = &quot;IJ Global: Award Sponsorship&quot;,
+    Product2.Name = &quot;IJ Global: Event Sponsorship&quot;,
+    Product2.Name = &quot;IJ Global: Events Registration&quot;
+  )
+)</errorConditionFormula>
+        <errorMessage>Please fill out SKU Detail &amp; SKU Product fields - these are mandatory for IJ Global Event products.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Starting_Price_Required</fullName>
         <active>false</active>
         <errorConditionFormula>AND(
