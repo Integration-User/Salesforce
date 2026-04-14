@@ -16,6 +16,8 @@ public without sharing class Plative_OpportunityTriggerHandler {
 	public static Id renewalRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Renewal').getRecordTypeId();
    	public static Id salesRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Sales Opportunity').getRecordTypeId();
     public static Id salesDevRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByDeveloperName().get('Sales_Development').getRecordTypeId();
+    public static Id eventRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Events').getRecordTypeId();
+
     /**
     * Description : before insert dml event
     **/
@@ -241,11 +243,22 @@ public without sharing class Plative_OpportunityTriggerHandler {
         /*SF-1064 Add Validation to Update Product: SKU Detail before moving to Stage 6 - Verbal Win and Finalizing Contract*/
         System_Configuration__mdt skuDetailproductConfig = System_Configuration__mdt.getInstance('SKU_Detail_Validation_Product_List');
         List<String> skuDetailproductValidationList = skuDetailproductConfig.Value__c.split(';');
+        
+        //SF-2094
+        System_Configuration__mdt ijGlobalskuProductConfig = System_Configuration__mdt.getInstance('IJ_Global_SKU_Validation');
+        List<String> ijGlobalskuProductValidationList = ijGlobalskuProductConfig.Value__c.split(';');
+        
         Set<Id> skuDetailproductOpportunities = new Set<Id>();
+        Set<Id> ijGlobalskuProductOpportunities = new Set<Id>();
+        Set<String> ijGlobalOliProducts = new Set<String>();
         Map<Id, List<String>> oneTimeProductList = new Map<Id, List<String>>();
-        for (OpportunityLineItem oli : [SELECT Id, OpportunityId, Product2.Name, Product_Type_Description__c, Product_SKU_Detail__c, Product2.One_Time__c FROM OpportunityLineItem WHERE OpportunityId IN :triggerNewMap.keySet()]) {
+        for (OpportunityLineItem oli : [SELECT Id, OpportunityId, Product2.Name, Product_Type_Description__c, Product_SKU_Detail__c, SKU_Product__c, Product2.One_Time__c, Opportunity.recordType.DeveloperName FROM OpportunityLineItem WHERE OpportunityId IN :triggerNewMap.keySet()]) {
             if(skuDetailproductValidationList.contains(oli.Product2.Name) && oli.Product_SKU_Detail__c == null) {
                 skuDetailproductOpportunities.add(oli.OpportunityId);
+            }
+            if(ijGlobalskuProductValidationList.contains(oli.Product2.Name) && oli.Opportunity.recordType.DeveloperName == 'Events' && (oli.Product_SKU_Detail__c == null || oli.SKU_Product__c == null)) {
+                ijGlobalskuProductOpportunities.add(oli.OpportunityId);
+                ijGlobalOliProducts.add(oli.Product2.Name);
             }
             // SF-1071 : Product Type Description Field
             if(String.isBlank(oli.Product_Type_Description__c) && oli.Product2.One_Time__c && oneTimeProductList.containsKey(oli.OpportunityId)) {
@@ -266,7 +279,12 @@ public without sharing class Plative_OpportunityTriggerHandler {
                        System.debug('=oneTimeProductList Validation =' + oneTimeProductList.get(oppty.Id));
                        oppty.addError('Before moving to Stage 6, \'Product Type Description\' field must be entered on Products for ' + string.join(oneTimeProductList.get(oppty.Id),' & '));
                    }
-               }
+               } //Before moving to Stage 6, please ensure 'SKU Product' & 'Product: SKU Detail' are filled out on each product on this opportunity
+            if(ijGlobalskuProductOpportunities.contains(oppty.Id) && oldOppty.StageName != oppty.StageName && oppty.recordTypeId == eventRecordTypeId
+               && (oppty.StageName == '6 - Verbal Win and Finalizing Contract' || oppty.StageName == 'Closed Won')) {
+                   System.debug(String.join(ijGlobalOliProducts, ' & ') + ' Opportunity Product must \'Product: SKU Detail\' value before moving the stage.');
+                   oppty.addError('Before moving to Stage 6, \'SKU Product\' & \'Product: SKU Detail\' are filled out on each IJ product ('+String.join(ijGlobalOliProducts, ' & ')+ ') on this opportunity.');
+            }
         }
 		// END - SF-1064
     }
