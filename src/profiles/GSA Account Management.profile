@@ -280,6 +280,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Region_Standardized__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Entered_Onboarding_Flow_IJ__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -539,6 +544,10 @@
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>Account-Organization Account</layout>
+        <recordType>Account.Organization_Account</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -547,6 +556,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Contact-Contact Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Country_Region_Mapping__mdt-Country Region Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-New Business</layout>

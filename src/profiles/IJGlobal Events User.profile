@@ -17497,6 +17497,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Region_Standardized__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Region__c</field>
         <readable>false</readable>
@@ -50452,6 +50457,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Contract-Contract Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Country_Region_Mapping__mdt-Country Region Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CspTrustedSite-Content Security Policy Trusted Site Layout</layout>
