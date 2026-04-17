@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <excludeButtons>DeepClone</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -733,6 +732,15 @@
         <fields>Sales_Type__c</fields>
         <fields>Lost_Product__c</fields>
         <relatedList>RelatedLineItemList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Gong__Started__c</fields>
+        <fields>Gong__Call_Duration__c</fields>
+        <fields>Gong__Primary_Opportunity__c</fields>
+        <relatedList>Gong__Related_Opportunity__c.Gong__Related_Entity_ID__c</relatedList>
+        <sortField>Gong__Started__c</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <excludeButtons>AddAccTeamMemberOnOpp</excludeButtons>

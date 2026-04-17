@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Lagret</value>
+    </caseValues>
+    <caseValues>
         <article>Indefinite</article>
         <plural>false</plural>
         <value>Ett lager</value>
@@ -11,6 +16,11 @@
         <value>Lager</value>
     </caseValues>
     <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Lagren</value>
+    </caseValues>
+    <caseValues>
         <article>Indefinite</article>
         <plural>true</plural>
         <value>Lager</value>
@@ -20,41 +30,31 @@
         <plural>true</plural>
         <value>Lager</value>
     </caseValues>
-    <caseValues>
-        <article>Definite</article>
-        <plural>true</plural>
-        <value>Lagren</value>
-    </caseValues>
-    <caseValues>
-        <article>Definite</article>
-        <plural>false</plural>
-        <value>Lagret</value>
-    </caseValues>
     <fields>
-        <label></label>
+        <label><!-- ArcGIS WebMap Click2Create --></label>
         <name>maps__ArcGISWebMapC2C__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Description --></label>
         <name>maps__Description__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Email On Aggregation Success --></label>
         <name>maps__EmailOnAggregationSuccess__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Maps Folder --></label>
         <name>maps__Folder__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Maps Layers --></relationshipLabel>
     </fields>
     <fields>
         <help>Används för att lagra lagrets alternativ i ett JSON-format.</help>
-        <label></label>
+        <label><!-- Options --></label>
         <name>maps__Options__c</name>
     </fields>
     <fields>
         <help>Används för att bestämma vilken lagertyp posten representerar.</help>
-        <label></label>
+        <label><!-- Type --></label>
         <name>maps__Type__c</name>
         <picklistValues>
             <masterLabel>ArcGIS Online</masterLabel>
@@ -75,12 +75,12 @@
     </fields>
     <fields>
         <help>Fylls i om direkt under en användares personliga mapp, annars tom. Om tom och mappsökningen är tom kommer detta att visas i företagsmappen. Om mappen är fylld kan det vara en personlig eller företagsmapp.</help>
-        <label></label>
+        <label><!-- User --></label>
         <name>maps__User__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Maps Layers --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Version --></label>
         <name>maps__Version__c</name>
     </fields>
     <gender>Neuter</gender>

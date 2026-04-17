@@ -312,7 +312,19 @@
             <type>owner</type>
         </recipients>
         <recipients>
-            <recipient>CAM_Manager</recipient>
+            <recipient>AM_Manager_Core</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>AM_Manager_Strategic</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer_Success_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>EU_VP_Sales</recipient>
             <type>role</type>
         </recipients>
         <recipients>
@@ -727,6 +739,10 @@
             <type>role</type>
         </recipients>
         <recipients>
+            <recipient>US_Platform_Sales_Manager_B</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
             <recipient>US_Sales_C</recipient>
             <type>role</type>
         </recipients>
@@ -736,6 +752,10 @@
         </recipients>
         <recipients>
             <recipient>BDR_Manager</recipient>
+            <type>roleSubordinatesInternal</type>
+        </recipients>
+        <recipients>
+            <recipient>EU_VP_Sales</recipient>
             <type>roleSubordinatesInternal</type>
         </recipients>
         <recipients>
@@ -756,6 +776,10 @@
         </recipients>
         <recipients>
             <recipient>UK_Sales_Manager_D</recipient>
+            <type>roleSubordinatesInternal</type>
+        </recipients>
+        <recipients>
+            <recipient>US_Platform_Sales_Manager_B</recipient>
             <type>roleSubordinatesInternal</type>
         </recipients>
         <recipients>
@@ -780,6 +804,10 @@
         </recipients>
         <recipients>
             <recipient>dperson@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ggatto@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -832,6 +860,10 @@
         </recipients>
         <recipients>
             <recipient>pstockley@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rkoslow@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -915,6 +947,10 @@
             <type>roleSubordinatesInternal</type>
         </recipients>
         <recipients>
+            <recipient>EU_VP_Sales</recipient>
+            <type>roleSubordinatesInternal</type>
+        </recipients>
+        <recipients>
             <recipient>Event_Manager</recipient>
             <type>roleSubordinatesInternal</type>
         </recipients>
@@ -937,6 +973,98 @@
         <recipients>
             <recipient>US_Sales_Manager_D</recipient>
             <type>roleSubordinatesInternal</type>
+        </recipients>
+        <recipients>
+            <recipient>ameoli@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>asharma@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>bjansen@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dfigenshu@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dperson@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ggatto@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>idelgado@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jblanden@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jcohen@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jguilfoy@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jhillman@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jstuek@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kkappeler@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mgutter@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mlehavi@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mscott@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>osawkins@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>peager@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pstockley@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rkoslow@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sayala@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>smartin@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tking@greenstreet.com</recipient>
+            <type>user</type>
         </recipients>
         <senderAddress>greenstreet-newbusinesssales@greenstreetadvisors.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
@@ -1214,7 +1342,7 @@
             <name>Update_Opp_Name</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Account.LastModifiedById</field>
             <operation>notEqual</operation>

@@ -41,6 +41,16 @@
         .ui-datepicker-year, .ui-datepicker-month {
             min-width: 100px !important;
         }
+
+        .ClickToCreateFormTable .fieldLabel > span {
+            display: block !important;
+            margin-bottom: 0.25rem;
+            visibility: visible !important;
+        }
+
+        .ClickToCreateFormTable label.fieldLabel {
+            display: block !important;
+        }
     </style>
 
     <apex:form >
@@ -54,19 +64,20 @@
                 <apex:outputPanel rendered="{! IF(RequestPlatform == 'tablet' && f.typeAsString == 'REFERENCE', false, true)}" layout="none">
                     <apex:outputPanel layout="none" rendered="{!f.typeAsString == 'DATE' || f.typeAsString == 'DATETIME'}">
                         <div class="slds-form-element slds-m-top_x-small slds-grid slds-grid_vertical">
-                            <label class="fieldLabel dateLabel slds-form-element__label">
-                                <apex:outputText rendered="{!f.Required || f.DBRequired}">
-                                    <abbr class='slds-required' title='required'>*</abbr>
-                                </apex:outputText>
-                                <apex:outputText value="@" rendered="{!arcgisMapped[f.fieldPath]}"/>
-                                {!f.Label}
+                            <label class="fieldLabel dateLabel slds-form-element__label" id="label-{!f.fieldPath}">
+                                <span class="dateTimeLabel">
+                                    <apex:outputText rendered="{!f.Required || f.DBRequired}">
+                                        <abbr class='slds-required' title='required'>*</abbr>
+                                    </apex:outputText>
+                                    <apex:outputText value="@" rendered="{!arcgisMapped[f.fieldPath]}"/>
+                                    {!f.Label}
+                                </span>
                             </label>
-
-                            <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}">
+                            <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}" data-label-id="label-{!f.fieldPath}" data-required="{!IF(f.Required || f.DBRequired, 'true', 'false')}">
                                 <div class="datetimepicker-container slds-grid slds-gutters">
                                     <div class="dateInput slds-col">
-                                        <apex:inputText value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} datePick datepicker" rendered="{!!locked[f.fieldPath]}" html-aria-label="{!f.Label}" />
-                                        <apex:outputText value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} datePick" rendered="{!locked[f.fieldPath]}" html-disabled="disabled" html-aria-label="{!f.Label}" />
+                                        <apex:inputText value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} datePick datepicker" rendered="{!!locked[f.fieldPath]}" />
+                                        <apex:outputText value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} datePick" rendered="{!locked[f.fieldPath]}" html-disabled="disabled" />
                                     </div>
                                     <apex:outputPanel layout="none" rendered="{!f.typeAsString == 'DATETIME' && !locked[f.fieldPath]}">
                                         <div class="updateFields-datetime-template">
@@ -105,39 +116,40 @@
                     </apex:outputPanel>
                     <apex:outputPanel layout="none" rendered="{!f.typeAsString == 'BOOLEAN'}">
                         <div class="slds-form-element slds-m-top_x-small">
-                            <label class="fieldLabel type-{!f.typeAsString} slds-form-element__label">
-                                <apex:outputText rendered="{!f.Required || f.DBRequired}">
-                                    <abbr class='slds-required' title='required'>*</abbr>
-                                </apex:outputText>
-                                <apex:outputText value="@" rendered="{!arcgisMapped[f.fieldPath]}"/>
-                                {!f.Label}
-                            </label>
-
                             <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}">
+                                <label class="fieldLabel type-{!f.typeAsString} slds-form-element__label">
+                                    <span>
+                                        <apex:outputText rendered="{!f.Required || f.DBRequired}">
+                                            <abbr class='slds-required' title='required'>*</abbr>
+                                        </apex:outputText>
+                                        <apex:outputText value="@" rendered="{!arcgisMapped[f.fieldPath]}"/>
+                                        {!f.Label}
+                                    </span>
+                                
                                 <div>
-                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath}" rendered="{!!locked[f.fieldPath]}" html-aria-label="{!f.Label}" />
-                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath}" rendered="{!locked[f.fieldPath]}" html-disabled="disabled" html-aria-label="{!f.Label}" />
+                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath}" rendered="{!!locked[f.fieldPath]}" />
+                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath}" rendered="{!locked[f.fieldPath]}" html-disabled="disabled" />
                                 </div>
+                                </label>
                             </div>
                         </div>
                     </apex:outputPanel>
                     <apex:outputPanel layout="none" rendered="{!f.typeAsString != 'DATE' && f.typeAsString !='DATETIME' && f.typeAsString != 'BOOLEAN' && f.typeAsString != 'MULTIPICKLIST'}">
                         <div class="slds-form-element slds-m-top_x-small">
-                            <label class="fieldLabel type-{!f.typeAsString} slds-form-element__label">
-                                <apex:outputText rendered="{!f.Required || f.DBRequired}">
-                                    <abbr class='slds-required' title='required'>*</abbr>
-                                </apex:outputText>
-                                <apex:outputText value="@" rendered="{!arcgisMapped[f.fieldPath]}"/>
-                                {!f.Label}
+                            <label class="fieldLabel type-{!f.typeAsString} slds-form-element__label" id="label-{!f.fieldPath}">
+                                <span>
+                                    <apex:outputText rendered="{!f.Required || f.DBRequired}">
+                                        <abbr class='slds-required' title='required'>*</abbr>
+                                    </apex:outputText>
+                                    <apex:outputText value="@" rendered="{!arcgisMapped[f.fieldPath]}"/>
+                                    {!f.Label}
+                                </span>
                             </label>
-
-                            <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}">
-                                <div>
-                                    <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} slds-input" rendered="{!!locked[f.fieldPath]}" html-aria-label="{!f.Label}" />
-                                </div>
+                            <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}" data-label-id="label-{!f.fieldPath}" data-required="{!IF(f.Required || f.DBRequired, 'true', 'false')}">
+                                <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} slds-input" rendered="{!!locked[f.fieldPath]}" />
                                 <apex:outputPanel rendered="{!locked[f.fieldPath]}">
                                     <div class="slds-form-element--has-hover-tooltip">
-                                        <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} slds-input" html-disabled="disabled" html-aria-label="{!f.Label}" />
+                                        <apex:inputField value="{!obj[f.fieldPath]}" styleClass="get-input {!f.fieldPath} slds-input" html-disabled="disabled" />
                                         <div class="slds-popover slds-popover_tooltip slds-nubbin_top-left" role="tooltip" aria-live="polite">
                                             <div class="slds-popover__body slds-text-longform">
                                                 <p>Your administrator has predetermined these fields for you.</p>
@@ -151,23 +163,22 @@
 
                     <apex:outputPanel layout="none" rendered="{!f.typeAsString == 'MULTIPICKLIST'}">
                         <div class="slds-form-element slds-m-top_x-small">
-                            <label class="fieldLabel type-{!f.typeAsString} slds-form-element__label">
-                                <apex:outputText rendered="{!f.Required || f.DBRequired}">
-                                    <abbr class='slds-required' title='required'>*</abbr>
-                                </apex:outputText>
-                                <apex:outputText value="@" rendered="{!arcgisMapped[f.fieldPath]}"/>
-                                {!f.Label}
+                            <label class="fieldLabel type-{!f.typeAsString} slds-form-element__label" id="label-{!f.fieldPath}">
+                                <span>
+                                    <apex:outputText rendered="{!f.Required || f.DBRequired}">
+                                        <abbr class='slds-required' title='required'>*</abbr>
+                                    </apex:outputText>
+                                    <apex:outputText value="@" rendered="{!arcgisMapped[f.fieldPath]}"/>
+                                    {!f.Label}
+                                </span>
                             </label>
-
-                            <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}">
-                                <div>
-                                    <apex:selectList value="{!obj[f.fieldPath]}" multiselect="true" styleClass="{!f.fieldPath} get-input" rendered="{!!locked[f.fieldPath]}" html-aria-label="{!f.Label}">
-                                        <apex:selectOptions value="{!multiSelectFields[f.fieldPath]}"/>
-                                    </apex:selectList>
-                                </div>
+                            <div class="field::{!f.fieldPath} fieldInput slds-form-element__control" data-type="{!f.typeAsString}" data-field="{!f.fieldPath}" data-label-id="label-{!f.fieldPath}" data-required="{!IF(f.Required || f.DBRequired, 'true', 'false')}">
+                                <apex:selectList value="{!obj[f.fieldPath]}" multiselect="true" styleClass="{!f.fieldPath} get-input" rendered="{!!locked[f.fieldPath]}">
+                                    <apex:selectOptions value="{!multiSelectFields[f.fieldPath]}"/>
+                                </apex:selectList>
                                 <apex:outputPanel rendered="{!locked[f.fieldPath]}">
                                     <div class="slds-form-element--has-hover-tooltip">
-                                        <apex:selectList value="{!obj[f.fieldPath]}" multiselect="true" styleClass="{!f.fieldPath} get-input" html-aria-label="{!f.Label}">
+                                        <apex:selectList value="{!obj[f.fieldPath]}" multiselect="true" styleClass="{!f.fieldPath} get-input">
                                             <apex:selectOptions value="{!multiSelectFields[f.fieldPath]}"/>
                                         </apex:selectList>
                                         <div class="slds-popover slds-popover_tooltip slds-nubbin_top-left" role="tooltip" aria-live="polite">
@@ -245,6 +256,12 @@
                     setCurrentMomentDateTime();
                 }
                 
+                // Set up aria-labelledby for accessibility after all initialization
+                setupAriaLabels();
+                
+                // Remove currentDate/currentDateTime spans from tab order to prevent them from being focused
+                $('.currentDate, .currentDateTime').attr('tabindex', '-1');
+                
                 //rich text stuff
                 try {
                     setTimeout(function() {
@@ -298,6 +315,53 @@
         catch(e) {
 
         }
+        
+        /**
+         * Sets up aria-labelledby and aria-required attributes for form inputs
+         * to ensure proper accessibility for screen readers.
+         * Handles both Visualforce-rendered fields (with data-label-id) and Vue-rendered fields (without data-label-id).
+         */
+        function setupAriaLabels() {
+            $('.fieldInput[data-field]').each(function() {
+                var $fieldInput = $(this);
+                var fieldName = $fieldInput.attr('data-field');
+                var labelId = $fieldInput.attr('data-label-id') || ('label-' + fieldName);
+                var isRequired = $fieldInput.attr('data-required') === 'true';
+                
+                // Verify the label exists before processing
+                var $label = $('#' + labelId);
+                if (!$label.length) {
+                    return;
+                }
+                
+                $fieldInput.find('input, select, textarea').each(function() {
+                    var $input = $(this);
+                    var inputType = $input.attr('type');
+                    
+                    // Skip input types that shouldn't have aria-labelledby - these have aria-label or have internal content instead
+                    if (inputType === 'hidden' || inputType === 'checkbox' || inputType === 'radio' || 
+                        inputType === 'button' || inputType === 'submit' || inputType === 'image' || inputType === 'file') {
+                        return;
+                    }
+                    
+                    // Screen readers prioritize aria-label over aria-labelledby
+                    // For selects with existing aria-label, combine it with the field label for context
+                    if ($input.is('select') && $input.attr('aria-label')) {
+                        var selectAriaLabel = $input.attr('aria-label');
+                        var fieldLabel = $label.text().trim();
+                        $input.attr('aria-label', fieldLabel + ' ' + selectAriaLabel);
+                    } else if (!$input.attr('aria-labelledby')) {
+                        $input.attr('aria-labelledby', labelId);
+                    }
+                    
+                    // Set aria-required if field is required
+                    if (isRequired && !$input.attr('aria-required')) {
+                        $input.attr('aria-required', 'true');
+                    }
+                });
+            });
+        }
+        
         function attachSalesforceSearchPopup($row, fieldAPI) {
             $row.on('click', '.get-input',function() {
                 // each modal using this look will need a class of 'js-search-modal-wrapper'

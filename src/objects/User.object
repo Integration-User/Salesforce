@@ -504,6 +504,11 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>IsSystemControlled</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>LanguageLocaleKey</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1188,6 +1193,11 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>WorkspaceId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>XFILES__Amazon_IAM_Secret__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -1631,6 +1641,7 @@
     </fields>
     <listViews>
         <fullName>AM</fullName>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
         <columns>FULL_NAME</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <columns>CORE.USERS.USERNAME</columns>
@@ -1643,7 +1654,17 @@
         <filters>
             <field>CORE.USER_ROLE.NAME</field>
             <operation>contains</operation>
-            <value>am</value>
+            <value>account manager</value>
+        </filters>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>contains</operation>
+            <value>AM</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
         </filters>
         <label>AM</label>
     </listViews>
@@ -1728,6 +1749,30 @@
         <columns>License_Type__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Users</label>
+    </listViews>
+    <listViews>
+        <fullName>CS</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.DEPARTMENT</field>
+            <operation>contains</operation>
+            <value>Customer</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Customer Success</label>
+        <sharedTo>
+            <role>System_Administrator</role>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>College_House</fullName>

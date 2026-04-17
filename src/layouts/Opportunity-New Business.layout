@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
@@ -829,6 +828,11 @@
             <actionType>QuickAction</actionType>
             <sortOrder>13</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Gong__View_Opportunity_in_Gong</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>14</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <quickActionList>
         <quickActionListItems>
@@ -960,6 +964,26 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>affectlayer__Engagement__c.affectlayer__Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Gong__Primary_Account__c</fields>
+        <fields>OWNER.ALIAS</fields>
+        <fields>Gong__Call_Start__c</fields>
+        <fields>Gong__Call_Duration__c</fields>
+        <fields>Gong__View_call__c</fields>
+        <relatedList>Gong__Gong_Call__c.Gong__Primary_Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>Gong__Gong_Interaction__c</fields>
+        <fields>Gong__Started__c</fields>
+        <fields>Gong__Call_Duration__c</fields>
+        <fields>Gong__Primary_Opportunity__c</fields>
+        <relatedList>Gong__Related_Opportunity__c.Gong__Related_Entity_ID__c</relatedList>
+        <sortField>Gong__Started__c</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

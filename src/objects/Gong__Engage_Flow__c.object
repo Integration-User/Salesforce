@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This custom object capture flow instances for Contacts/Leads, and cover multiple flows for each one of them</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Gong__Account__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; Gong__Contact_Name__r.AccountId,  Gong__Contact_Name__r.Account.Name,&quot;_self&quot;  )</formula>
+        <label>Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Added_to_Engage_Flow_By__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Added to Engage Flow By</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Contact_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Contact Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Engage Flows</relationshipLabel>
+        <relationshipName>Engage_Flows</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_Task_Due_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Engage Step Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Date_Added_to_Engage_Flow__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Date Added to Engage Flow</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Flow_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Flow Id</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Flow_Instance_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Flow Instance Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Flow_Owner__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Flow Owner</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Flow_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Engage Flow Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Finished (replied)</fullName>
+                    <default>false</default>
+                    <label>Finished (replied)</label>
+                </value>
+                <value>
+                    <fullName>Finished (no reply)</fullName>
+                    <default>false</default>
+                    <label>Finished (no reply)</label>
+                </value>
+                <value>
+                    <fullName>Finished (meeting booked)</fullName>
+                    <default>false</default>
+                    <label>Finished (meeting booked)</label>
+                </value>
+                <value>
+                    <fullName>Finished (removed manually)</fullName>
+                    <default>false</default>
+                    <label>Finished (removed manually)</label>
+                </value>
+                <value>
+                    <fullName>Finished (CRM change)</fullName>
+                    <default>false</default>
+                    <label>Finished (CRM change)</label>
+                </value>
+                <value>
+                    <fullName>Finished (account reply)</fullName>
+                    <default>false</default>
+                    <label>Finished (account reply)</label>
+                </value>
+                <value>
+                    <fullName>Finished (account meeting booked)</fullName>
+                    <default>false</default>
+                    <label>Finished (account meeting booked)</label>
+                </value>
+                <value>
+                    <fullName>Finished (account CRM change)</fullName>
+                    <default>false</default>
+                    <label>Finished (account CRM change)</label>
+                </value>
+                <value>
+                    <fullName>Bounced</fullName>
+                    <default>false</default>
+                    <label>Bounced</label>
+                </value>
+                <value>
+                    <fullName>Removed (other)</fullName>
+                    <default>false</default>
+                    <label>Removed (other)</label>
+                </value>
+                <value>
+                    <fullName>To-do expired</fullName>
+                    <default>false</default>
+                    <label>To-do expired</label>
+                </value>
+                <value>
+                    <fullName>No license</fullName>
+                    <default>false</default>
+                    <label>No license</label>
+                </value>
+                <value>
+                    <fullName>Person deleted</fullName>
+                    <default>false</default>
+                    <label>Person deleted</label>
+                </value>
+                <value>
+                    <fullName>Flow deleted</fullName>
+                    <default>false</default>
+                    <label>Flow deleted</label>
+                </value>
+                <value>
+                    <fullName>Paused</fullName>
+                    <default>false</default>
+                    <label>Paused</label>
+                </value>
+                <value>
+                    <fullName>Opted Out</fullName>
+                    <default>false</default>
+                    <label>Opted Out</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Last_Step_Completed_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Engage Last Step Completed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Step_Attempt_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Step Attempt ID</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Step_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Step Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Step_Subject__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Step Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Step_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Step Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Engaged_Person__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( Gong__Contact_Name__c ) , HYPERLINK(&apos;/&apos; &amp; Gong__Lead_Name__c , Gong__Lead_Name__r.FirstName &amp; &apos; &apos; &amp; Gong__Lead_Name__r.LastName &amp; &apos; (Lead)&apos;), HYPERLINK(&apos;/&apos; &amp; Gong__Contact_Name__c , Gong__Contact_Name__r.FirstName &amp; &apos; &apos; &amp; Gong__Contact_Name__r.LastName &amp; &apos; (Contact)&apos; ))</formula>
+        <label>Engaged Person</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Lead_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Lead Name</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Engage Flows</relationshipLabel>
+        <relationshipName>Engage_Flows</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Engage Flows</relationshipLabel>
+        <relationshipName>Engage_Flows</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Engage Flow</label>
+    <listViews>
+        <fullName>Gong__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Engage Flow Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Engage Flows</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

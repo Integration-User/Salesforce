@@ -12,6 +12,6 @@
     </values>
     <values>
         <field>Value__c</field>
-        <value xsi:type="xsd:string">IJGlobal: One-Time;IJGlobal: IJ Investor;IJGlobal: News</value>
+        <value xsi:type="xsd:string">IJGlobal: One-Time;IJGlobal: IJ Investor;IJGlobal: News;IJGlobal: News + IJ Investor</value>
     </values>
 </CustomMetadata>

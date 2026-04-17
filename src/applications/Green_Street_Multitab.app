@@ -28,6 +28,7 @@
     <tabs>standard-Campaign</tabs>
     <tabs>asknicely__NPS__c</tabs>
     <tabs>Subscription__c</tabs>
+    <tabs>Spiff_Commissions</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Green_Street_clone_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -36,6 +37,9 @@
         </mappings>
         <mappings>
             <tab>Product_Feedback__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Spiff_Commissions</tab>
         </mappings>
         <mappings>
             <tab>Subscription__c</tab>

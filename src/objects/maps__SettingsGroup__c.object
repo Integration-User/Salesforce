@@ -165,10 +165,39 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>maps__AdvRoutingProfile__c</fullName>
+        <deprecated>false</deprecated>
+        <description>this field controls which routing profile advanced optimizations use for a user</description>
+        <externalId>false</externalId>
+        <label>Advanced Routing Profile</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>maps__AdvancedRouteJobDownloadPermission__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This is used to allow users to download advanced job files for troubleshooting</description>
+        <label>Advanced Route Job Download Permission</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>maps__AllowExports__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <label>Allow Exports</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>maps__AllowTimesheetExports__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Allow Timesheet Exports</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
@@ -548,7 +577,7 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Maps Settings Groups</pluralLabel>
-    <searchLayouts />
+    <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

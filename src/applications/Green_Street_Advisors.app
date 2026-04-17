@@ -4172,6 +4172,7 @@
     <tabs>standard-Campaign</tabs>
     <tabs>asknicely__NPS__c</tabs>
     <tabs>Subscription__c</tabs>
+    <tabs>Spiff_Commissions</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Green_Street_Advisors_UtilityBar</utilityBar>
 </CustomApplication>

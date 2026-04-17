@@ -334,6 +334,11 @@
         <name>Digital_Source__c</name>
     </fields>
     <fields>
+        <help><!-- This is the date the initial meeting is scheduled to occur, NOT when you scheduled the time. --></help>
+        <label><!-- Discovery Meeting Scheduled Date --></label>
+        <name>Discovery_Meeting_Scheduled_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Disqualified Context --></label>
         <name>Disqualified_Context__c</name>
     </fields>
@@ -485,6 +490,134 @@
     <fields>
         <label><!-- Goals --></label>
         <name>Goals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active Engage Flow Names --></label>
+        <name>Gong__Active_Engage_Flow_Names__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currently in Engage Flow --></label>
+        <name>Gong__Actively_Being_in_a_Flow__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Added to Engage Flow --></label>
+        <name>Gong__Added_to_Flow_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Flow ID --></label>
+        <name>Gong__Current_Flow_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Flow Name --></label>
+        <name>Gong__Current_Flow_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Step Number --></label>
+        <name>Gong__Current_Flow_Step_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Step Type --></label>
+        <name>Gong__Current_Flow_Step_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Step Due Date --></label>
+        <name>Gong__Current_Flow_Task_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Added to Engage Flow By --></label>
+        <name>Gong__Current_Flow_User_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Flow Owner --></label>
+        <name>Gong__Engage_Flow_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Last Step Completed Date --></label>
+        <name>Gong__Engage_Last_Step_Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Step Attempt ID --></label>
+        <name>Gong__Flow_Execution_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Flow Status --></label>
+        <name>Gong__Flow_Status__c</name>
+        <picklistValues>
+            <masterLabel>Bounced</masterLabel>
+            <translation><!-- Bounced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finished (CRM change)</masterLabel>
+            <translation><!-- Finished (CRM change) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finished (account CRM change)</masterLabel>
+            <translation><!-- Finished (account CRM change) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finished (account meeting booked)</masterLabel>
+            <translation><!-- Finished (account meeting booked) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finished (account reply)</masterLabel>
+            <translation><!-- Finished (account reply) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finished (meeting booked)</masterLabel>
+            <translation><!-- Finished (meeting booked) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finished (no reply)</masterLabel>
+            <translation><!-- Finished (no reply) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finished (removed manually)</masterLabel>
+            <translation><!-- Finished (removed manually) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finished (replied)</masterLabel>
+            <translation><!-- Finished (replied) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flow deleted</masterLabel>
+            <translation><!-- Flow deleted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In progress</masterLabel>
+            <translation><!-- In progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No license</masterLabel>
+            <translation><!-- No license --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opted Out</masterLabel>
+            <translation><!-- Opted Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paused</masterLabel>
+            <translation><!-- Paused --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Person deleted</masterLabel>
+            <translation><!-- Person deleted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Removed (other)</masterLabel>
+            <translation><!-- Removed (other) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>To-do expired</masterLabel>
+            <translation><!-- To-do expired --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of Active Engage Flows --></label>
+        <name>Gong__Number_of_Active_Engage_Flows__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Locations --></label>
+        <name>Gong__NumberofLocations__c</name>
     </fields>
     <fields>
         <label><!-- HubSpot Score --></label>
@@ -2404,6 +2537,10 @@
         <name>Referred_by_Role_Lead__c</name>
     </fields>
     <fields>
+        <label><!-- Referred by Department (Static) --></label>
+        <name>ReferredbyDepartmentStatic__c</name>
+    </fields>
+    <fields>
         <label><!-- Renewal Month --></label>
         <name>Renewal_Month__c</name>
     </fields>
@@ -3095,6 +3232,10 @@
         <name>Require_Advisory_Minimum</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Provide the Discovery Meeting Scheduled  Date before converting the lead. --></errorMessage>
+        <name>Require_Discovery_Meeting_Date</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Please provide Disqualified Context. --></errorMessage>
         <name>Require_Disqualified_Context</name>
     </validationRules>
@@ -3137,6 +3278,10 @@
     <webLinks>
         <label><!-- RegisterLeadToEvent --></label>
         <name>CventEvents__RegisterLeadToEvent</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_Lead_in_Gong --></label>
+        <name>Gong__View_Lead_in_Gong</name>
     </webLinks>
     <webLinks>
         <label><!-- GoogleMaps --></label>

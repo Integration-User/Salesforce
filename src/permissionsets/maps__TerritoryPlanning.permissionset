@@ -421,6 +421,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>maps__FolderPermissions</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>maps__FolderPermissionsTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>maps__Functions</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1701,6 +1709,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>maps__AdvRouteTemplateUser__c.maps__OptimizeFromCurrentTime__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__AdvRouteTemplateUser__c.maps__PreviousJobs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5150,6 +5163,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__AdvRoutingProfile__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__AdvancedRouteJobDownloadPermission__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>maps__SettingsGroup__c.maps__AllowExports__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5395,6 +5418,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>maps__TPAreaType__c.maps__TerritoryTypeId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__TPArea__c.maps__AreaTypeId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>maps__TPArea__c.maps__AssignmentRules1__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5511,6 +5544,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>maps__TPRole__c.maps__TerritoryTeamRole__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__TPUnitAdditionalAssignment__c.maps__Alignment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__TPUnitAdditionalAssignment__c.maps__Area__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__TPUnitAdditionalAssignment__c.maps__UnitAssignment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6350,6 +6398,16 @@
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>maps__TPAreaType__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>maps__TPArea__c</object>
         <viewAllFields>false</viewAllFields>
@@ -6394,6 +6452,16 @@
         <object>maps__TPRole__c</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>maps__TPUnitAdditionalAssignment__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>

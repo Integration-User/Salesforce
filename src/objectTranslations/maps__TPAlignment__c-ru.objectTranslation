@@ -6,19 +6,24 @@
         <value>Выравнивание планирования территории</value>
     </caseValues>
     <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Выравнивания планирования территории</value>
+    </caseValues>
+    <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
         <value>Выравнивание планирования территории</value>
     </caseValues>
     <caseValues>
-        <caseType>Instrumental</caseType>
-        <plural>false</plural>
-        <value>Выравниванием планирования территории</value>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Выравнивания планирования территории</value>
     </caseValues>
     <caseValues>
-        <caseType>Prepositional</caseType>
+        <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value>Выравнивании планирования территории</value>
+        <value>Выравнивания планирования территории</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
@@ -31,24 +36,14 @@
         <value>Выравниванию планирования территории</value>
     </caseValues>
     <caseValues>
-        <caseType>Nominative</caseType>
-        <plural>true</plural>
-        <value>Выравнивания планирования территории</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Accusative</caseType>
-        <plural>true</plural>
-        <value>Выравнивания планирования территории</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Genitive</caseType>
-        <plural>false</plural>
-        <value>Выравнивания планирования территории</value>
-    </caseValues>
-    <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
         <value>Выравниваниям планирования территории</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Выравниванием планирования территории</value>
     </caseValues>
     <caseValues>
         <caseType>Instrumental</caseType>
@@ -57,11 +52,16 @@
     </caseValues>
     <caseValues>
         <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Выравнивании планирования территории</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
         <plural>true</plural>
         <value>Выравниваниях планирования территории</value>
     </caseValues>
     <fields>
-        <label></label>
+        <label><!-- Approval Status --></label>
         <name>maps__ApprovalStatus__c</name>
         <picklistValues>
             <masterLabel>Approved</masterLabel>
@@ -77,37 +77,37 @@
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- ApprovalSubmissionDate --></label>
         <name>maps__ApprovalSubmissionDate__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- ApprovalSubmittedBy --></label>
         <name>maps__ApprovalSubmittedBy__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Config --></label>
         <name>maps__Config__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Data Set --></label>
         <name>maps__DataSet__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Alignments --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Description --></label>
         <name>maps__Description__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Last Error --></label>
         <name>maps__LastError__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Root Area --></label>
         <name>maps__RootArea__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Alignments --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Sharing Access Level --></label>
         <name>maps__SharingAccessLevel__c</name>
         <picklistValues>
             <masterLabel>Commenter</masterLabel>
@@ -123,11 +123,11 @@
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Sharing Enabled --></label>
         <name>maps__SharingEnabled__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Status --></label>
         <name>maps__Status__c</name>
         <picklistValues>
             <masterLabel>Active</masterLabel>

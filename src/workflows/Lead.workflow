@@ -75,38 +75,23 @@
         <template>Referral_Templates/New_Referral</template>
     </alerts>
     <alerts>
-        <fullName>CAM_Referral</fullName>
-        <description>CAM Referral</description>
-        <protected>false</protected>
-        <recipients>
-            <recipient>cmccrory@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>esteiner@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>kangle@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Process_Notifications/Referral</template>
-    </alerts>
-    <alerts>
         <fullName>College_House_Referral_Alert</fullName>
         <description>College House Referral Alert</description>
         <protected>false</protected>
-        <recipients>
-            <recipient>bgrome-zimmerman@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
         <recipients>
             <recipient>bsherman@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
+            <recipient>bzimmerman@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
             <recipient>cmatthews@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lkight@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -115,29 +100,6 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>Referral_Templates/New_Referral</template>
-    </alerts>
-    <alerts>
-        <fullName>EAM_Referral</fullName>
-        <description>EAM Referral</description>
-        <protected>false</protected>
-        <recipients>
-            <recipient>cmccrory@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>esteiner@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>ksantos@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>slaughlin@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Process_Notifications/Referral</template>
     </alerts>
     <alerts>
         <fullName>IJGlobal_Referral_Email_Alert</fullName>
@@ -213,6 +175,10 @@
         </recipients>
         <recipients>
             <recipient>Global_Sales_Manager_A</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Subscription_Manager</recipient>
             <type>role</type>
         </recipients>
         <recipients>

@@ -1185,6 +1185,112 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Gong__Activity_Source__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Activity Source</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Associated_Accounts__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Associated Accounts</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Associated_Opportunities__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Associated Opportunities</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Call_Outcome__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Call Outcome (AI)</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Flow ID</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Flow Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_Step_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Step Number</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Flow_Execution_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Step Attempt ID</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Gong_Activity_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Gong Activity Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Gong_Participants_Emails__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Gong Participants Emails</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Meeting_Prospect_Canceled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Meeting Canceled by Prospect</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Meeting_Reschedule_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label># of Times Meeting Rescheduled</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Hours_Spent__c</fullName>
         <externalId>false</externalId>
         <formula>Minutes_Spent__c/60</formula>
@@ -2215,7 +2321,7 @@ Owner:User.Id =  $User.Id)</formula>
                     <fullName>User Management Tool</fullName>
                     <default>false</default>
                     <label>User Management Tool</label>
-				</value>
+                </value>
                 <value>
                     <fullName>ABAlert</fullName>
                     <default>false</default>
@@ -2239,6 +2345,24 @@ Owner:User.Id =  $User.Id)</formula>
                     <default>false</default>
                     <isActive>false</isActive>
                     <label>EUR REIT</label>
+                </value>
+                <value>
+                    <fullName>GSN-AUS</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>GSN-AUS</label>
+                </value>
+                <value>
+                    <fullName>GSN-CAN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>GSN-CAN</label>
+                </value>
+                <value>
+                    <fullName>GSN-EUR</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>GSN-EUR</label>
                 </value>
                 <value>
                     <fullName>HFAlert</fullName>

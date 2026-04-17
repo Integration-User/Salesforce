@@ -154,6 +154,18 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>maps__AreaTypeId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Area Type ID</label>
+        <referenceTo>maps__TPAreaType__c</referenceTo>
+        <relationshipLabel>Areas</relationshipLabel>
+        <relationshipName>Areas</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>maps__AssignmentRules1__c</fullName>
         <deprecated>false</deprecated>
         <label>Assignment Rules 1</label>
@@ -227,7 +239,7 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Territory Planning Areas</pluralLabel>
-    <searchLayouts />
+    <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

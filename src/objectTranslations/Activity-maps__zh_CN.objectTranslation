@@ -726,6 +726,10 @@
         <name>Disposition__c</name>
     </fields>
     <fields>
+        <label><!-- Email Message Id --></label>
+        <name>Email_Message_Id__c</name>
+    </fields>
+    <fields>
         <label><!-- Event Audit --></label>
         <name>Event_Audit__c</name>
     </fields>
@@ -757,6 +761,54 @@
         </lookupFilter>
         <name>GSA_Analyst__c</name>
         <relationshipLabel><!-- Assigned Actvities to GSA Analysts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activity Source --></label>
+        <name>Gong__Activity_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated Accounts --></label>
+        <name>Gong__Associated_Accounts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated Opportunities --></label>
+        <name>Gong__Associated_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Outcome (AI) --></label>
+        <name>Gong__Call_Outcome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Flow ID --></label>
+        <name>Gong__Current_Flow_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Flow Name --></label>
+        <name>Gong__Current_Flow_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Step Number --></label>
+        <name>Gong__Current_Flow_Step_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engage Step Attempt ID --></label>
+        <name>Gong__Flow_Execution_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gong Activity Id --></label>
+        <name>Gong__Gong_Activity_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gong Participants Emails --></label>
+        <name>Gong__Gong_Participants_Emails__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting Canceled by Prospect --></label>
+        <name>Gong__Meeting_Prospect_Canceled__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Times Meeting Rescheduled --></label>
+        <name>Gong__Meeting_Reschedule_Count__c</name>
     </fields>
     <fields>
         <label><!-- Hours Spent --></label>
@@ -831,8 +883,48 @@
         <label><!-- Products Discussed --></label>
         <name>Products_Discussed__c</name>
         <picklistValues>
+            <masterLabel>APAC Sales Comps</masterLabel>
+            <translation><!-- APAC Sales Comps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Sales Comps API</masterLabel>
+            <translation><!-- APAC Sales Comps API --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>API</masterLabel>
             <translation><!-- API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AVM</masterLabel>
+            <translation><!-- AVM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Activist Situations</masterLabel>
+            <translation><!-- Activist Situations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advertising</masterLabel>
+            <translation><!-- Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advisory</masterLabel>
+            <translation><!-- Advisory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset-Backed Alert</masterLabel>
+            <translation><!-- Asset-Backed Alert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Atlas</masterLabel>
+            <translation><!-- Atlas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australia Detailed NAV</masterLabel>
+            <translation><!-- Australia Detailed NAV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australia Research + REIT Data</masterLabel>
+            <translation><!-- Australia Research + REIT Data --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Basic - Additional Users</masterLabel>
@@ -847,6 +939,26 @@
             <translation><!-- Basic - Single Market --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>CAN Sales Comps</masterLabel>
+            <translation><!-- CAN Sales Comps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAN Sales Comps API</masterLabel>
+            <translation><!-- CAN Sales Comps API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CH Sales Comps</masterLabel>
+            <translation><!-- CH Sales Comps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada Detailed NAV</masterLabel>
+            <translation><!-- Canada Detailed NAV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada Research + Market Data &amp; Deals</masterLabel>
+            <translation><!-- Canada Research + Market Data &amp; Deals --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Canada Research + REIT Data</masterLabel>
             <translation><!-- Canada Research + REIT Data --></translation>
         </picklistValues>
@@ -855,12 +967,68 @@
             <translation><!-- College House --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Commercial Mortgage Alert</masterLabel>
+            <translation><!-- Commercial Mortgage Alert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Diagnostics</masterLabel>
+            <translation><!-- Company Diagnostics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Positioning &amp; Investor Messaging</masterLabel>
+            <translation><!-- Company Positioning &amp; Investor Messaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customized Sector/Market Research</masterLabel>
+            <translation><!-- Customized Sector/Market Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Sale - Pan-Euro Retail</masterLabel>
+            <translation><!-- Data - Sale - Pan-Euro Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Collection</masterLabel>
+            <translation><!-- Data Collection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Delivery - API</masterLabel>
+            <translation><!-- Data Delivery - API --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Data License Directory</masterLabel>
             <translation><!-- Data License Directory --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Data License Local Data Online</masterLabel>
+            <translation><!-- Data License Local Data Online --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Data License: Petrol Station Forecourt Data</masterLabel>
             <translation><!-- Data License: Petrol Station Forecourt Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Sale</masterLabel>
+            <translation><!-- Data Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Sale - UK Retail - All</masterLabel>
+            <translation><!-- Data Sale - UK Retail - All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Sale - UK Retail - Convenience</masterLabel>
+            <translation><!-- Data Sale - UK Retail - Convenience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Sale - UK Retail - Independents</masterLabel>
+            <translation><!-- Data Sale - UK Retail - Independents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Sale - UK Retail - London</masterLabel>
+            <translation><!-- Data Sale - UK Retail - London --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Sale - UK Retail - Multiples</masterLabel>
+            <translation><!-- Data Sale - UK Retail - Multiples --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Data Sales - EUR Retail Database Pro</masterLabel>
@@ -883,8 +1051,32 @@
             <translation><!-- Database Explorer - Tier 3 --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Deal Tracker</masterLabel>
+            <translation><!-- Deal Tracker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debt DB - ABS</masterLabel>
+            <translation><!-- Debt DB - ABS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debt DB - CMBS</masterLabel>
+            <translation><!-- Debt DB - CMBS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debt DB - CRE-CLO</masterLabel>
+            <translation><!-- Debt DB - CRE-CLO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debt DB - High Yield</masterLabel>
+            <translation><!-- Debt DB - High Yield --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Debt Databases</masterLabel>
             <translation><!-- Debt Databases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Detailed NAV</masterLabel>
+            <translation><!-- Detailed NAV --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>EU Market Data</masterLabel>
@@ -895,6 +1087,10 @@
             <translation><!-- EU Market Forecasts --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>EU News</masterLabel>
+            <translation><!-- EU News --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>EU Sales Comps</masterLabel>
             <translation><!-- EU Sales Comps --></translation>
         </picklistValues>
@@ -903,12 +1099,36 @@
             <translation><!-- EU Standardized Downloads --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>EUR Data Delivery - Market Data &amp; Deals</masterLabel>
+            <translation><!-- EUR Data Delivery - Market Data &amp; Deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUR Data Delivery - REIT Data</masterLabel>
+            <translation><!-- EUR Data Delivery - REIT Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUR Detailed NAV</masterLabel>
+            <translation><!-- EUR Detailed NAV --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>EUR Retail Database Pro</masterLabel>
             <translation><!-- EUR Retail Database Pro --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>EUR Sales Comps</masterLabel>
+            <translation><!-- EUR Sales Comps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUR Sales Comps API</masterLabel>
+            <translation><!-- EUR Sales Comps API --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>EURO Research</masterLabel>
             <translation><!-- EURO Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edge - Project work</masterLabel>
+            <translation><!-- Edge - Project work --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Enhanced - Additional Users</masterLabel>
@@ -931,6 +1151,14 @@
             <translation><!-- Exhibitor Package --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Financial/Strategic Advisory</masterLabel>
+            <translation><!-- Financial/Strategic Advisory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSI</masterLabel>
+            <translation><!-- GSI --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>GSN API - AUS</masterLabel>
             <translation><!-- GSN API - AUS --></translation>
         </picklistValues>
@@ -943,12 +1171,56 @@
             <translation><!-- GSN API - EUR --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>GSN API - USA - ABA</masterLabel>
+            <translation><!-- GSN API - USA - ABA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSN API - USA - CMA</masterLabel>
+            <translation><!-- GSN API - USA - CMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSN API - USA - REA</masterLabel>
+            <translation><!-- GSN API - USA - REA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green Street News: Australia</masterLabel>
+            <translation><!-- Green Street News: Australia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green Street News: Australia Advertising</masterLabel>
+            <translation><!-- Green Street News: Australia Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Green Street News: Canada</masterLabel>
             <translation><!-- Green Street News: Canada --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Green Street News: Canada Advertising</masterLabel>
+            <translation><!-- Green Street News: Canada Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Green Street News: Europe</masterLabel>
             <translation><!-- Green Street News: Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IJ Global: Award Add-on</masterLabel>
+            <translation><!-- IJ Global: Award Add-on --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IJ Global: Award Sponsorship</masterLabel>
+            <translation><!-- IJ Global: Award Sponsorship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IJ Global: Award Table</masterLabel>
+            <translation><!-- IJ Global: Award Table --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IJ Global: Event Sponsorship</masterLabel>
+            <translation><!-- IJ Global: Event Sponsorship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IJ Global: Events Registration</masterLabel>
+            <translation><!-- IJ Global: Events Registration --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>IJGlobal Investor</masterLabel>
@@ -959,8 +1231,32 @@
             <translation><!-- IJGlobal News --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>IJGlobal: Data Delivery + News + IJ Investor</masterLabel>
+            <translation><!-- IJGlobal: Data Delivery + News + IJ Investor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IJGlobal: IJ Investor</masterLabel>
+            <translation><!-- IJGlobal: IJ Investor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IJGlobal: News</masterLabel>
+            <translation><!-- IJGlobal: News --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>IJGlobal: News + IJ Investor</masterLabel>
             <translation><!-- IJGlobal: News + IJ Investor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IJGlobal: One-Time</masterLabel>
+            <translation><!-- IJGlobal: One-Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IPOs, M&amp;A, Privatizations</masterLabel>
+            <translation><!-- IPOs, M&amp;A, Privatizations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure Research</masterLabel>
+            <translation><!-- Infrastructure Research --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>LDC data directory</masterLabel>
@@ -969,6 +1265,90 @@
         <picklistValues>
             <masterLabel>Local Data Online</masterLabel>
             <translation><!-- Local Data Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locatus: DISC data</masterLabel>
+            <translation><!-- Locatus: DISC data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locatus: Footfall Data</masterLabel>
+            <translation><!-- Locatus: Footfall Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locatus: Housing Plans Data</masterLabel>
+            <translation><!-- Locatus: Housing Plans Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locatus: Office Data</masterLabel>
+            <translation><!-- Locatus: Office Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locatus: One-Off Presentation Fee</masterLabel>
+            <translation><!-- Locatus: One-Off Presentation Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locatus: One-Time Data</masterLabel>
+            <translation><!-- Locatus: One-Time Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locatus: Other</masterLabel>
+            <translation><!-- Locatus: Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locatus: Retail Data</masterLabel>
+            <translation><!-- Locatus: Retail Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locatus: Retail Risk Index</masterLabel>
+            <translation><!-- Locatus: Retail Risk Index --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD&amp;D</masterLabel>
+            <translation><!-- MD&amp;D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD&amp;D - Market Data</masterLabel>
+            <translation><!-- MD&amp;D - Market Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD&amp;D - Market Forecasts</masterLabel>
+            <translation><!-- MD&amp;D - Market Forecasts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD&amp;D - Rent Comps</masterLabel>
+            <translation><!-- MD&amp;D - Rent Comps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD&amp;D - Sales Comps</masterLabel>
+            <translation><!-- MD&amp;D - Sales Comps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD&amp;D Standardized Downloads</masterLabel>
+            <translation><!-- MD&amp;D Standardized Downloads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market Data &amp; Deals</masterLabel>
+            <translation><!-- Market Data &amp; Deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market Participants</masterLabel>
+            <translation><!-- Market Participants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage REITs</masterLabel>
+            <translation><!-- Mortgage REITs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEWS - HFAlert</masterLabel>
+            <translation><!-- NEWS - HFAlert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Test Product</masterLabel>
+            <translation><!-- New Test Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News</masterLabel>
+            <translation><!-- News --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>News - ABA</masterLabel>
@@ -983,6 +1363,10 @@
             <translation><!-- News - REA --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Niche Sector Expertise</masterLabel>
+            <translation><!-- Niche Sector Expertise --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Not Applicable</masterLabel>
             <translation><!-- Not Applicable --></translation>
         </picklistValues>
@@ -991,12 +1375,80 @@
             <translation><!-- Onboarding --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Onsite</masterLabel>
+            <translation><!-- Onsite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other/NA</masterLabel>
+            <translation><!-- Other/NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDF Viewer</masterLabel>
+            <translation><!-- PDF Viewer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pan-Euro Retail Analytics Pro</masterLabel>
+            <translation><!-- Pan-Euro Retail Analytics Pro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pan-European Research + Market Data &amp; Deals</masterLabel>
+            <translation><!-- Pan-European Research + Market Data &amp; Deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pan-European Research + REIT Data</masterLabel>
+            <translation><!-- Pan-European Research + REIT Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portfolio Analytics</masterLabel>
+            <translation><!-- Portfolio Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portfolio Investment Strategy</masterLabel>
+            <translation><!-- Portfolio Investment Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Portfolio Tools</masterLabel>
             <translation><!-- Portfolio Tools --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Portfolio Valuation</masterLabel>
+            <translation><!-- Portfolio Valuation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Conversions &amp; OpCo/PropCo</masterLabel>
+            <translation><!-- REIT Conversions &amp; OpCo/PropCo --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>REIT Data</masterLabel>
             <translation><!-- REIT Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Data - Canada</masterLabel>
+            <translation><!-- REIT Data - Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Data - Company Analysis</masterLabel>
+            <translation><!-- REIT Data - Company Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Data - Detailed NAVs</masterLabel>
+            <translation><!-- REIT Data - Detailed NAVs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Data - Interactive Charting</masterLabel>
+            <translation><!-- REIT Data - Interactive Charting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Data - Portfolio Search</masterLabel>
+            <translation><!-- REIT Data - Portfolio Search --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Data - Retail DB</masterLabel>
+            <translation><!-- REIT Data - Retail DB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT Data - Weekly REIT Pricing Review</masterLabel>
+            <translation><!-- REIT Data - Weekly REIT Pricing Review --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>REIT Data – Company Analysis</masterLabel>
@@ -1023,6 +1475,26 @@
             <translation><!-- REIT Data – Weekly Pricing Review --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Rankings</masterLabel>
+            <translation><!-- Rankings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>React Advertising</masterLabel>
+            <translation><!-- React Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Alert</masterLabel>
+            <translation><!-- Real Estate Alert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Royalties</masterLabel>
+            <translation><!-- Royalties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Transactions</masterLabel>
+            <translation><!-- Sales Transactions --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Silver Package</masterLabel>
             <translation><!-- Silver Package --></translation>
         </picklistValues>
@@ -1031,12 +1503,32 @@
             <translation><!-- Snowflake --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Special Committees</masterLabel>
+            <translation><!-- Special Committees --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Student Market Reports</masterLabel>
             <translation><!-- Student Market Reports --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Transaction Advisory</masterLabel>
+            <translation><!-- Transaction Advisory --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>UK Retail Analytics Pro</masterLabel>
             <translation><!-- UK Retail Analytics Pro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Data Delivery - Market Data &amp; Deals</masterLabel>
+            <translation><!-- US Data Delivery - Market Data &amp; Deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Data Delivery - REIT Data</masterLabel>
+            <translation><!-- US Data Delivery - REIT Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Detailed NAV</masterLabel>
+            <translation><!-- US Detailed NAV --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>US Market Data</masterLabel>
@@ -1047,12 +1539,28 @@
             <translation><!-- US Market Forecasts --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>US News</masterLabel>
+            <translation><!-- US News --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Portfolio Tools</masterLabel>
+            <translation><!-- US Portfolio Tools --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>US Rent Comps</masterLabel>
             <translation><!-- US Rent Comps --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>US Research</masterLabel>
             <translation><!-- US Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Research + Market Data &amp; Deals</masterLabel>
+            <translation><!-- US Research + Market Data &amp; Deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Research + REIT Data</masterLabel>
+            <translation><!-- US Research + REIT Data --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>US Sales Comps</masterLabel>
@@ -1063,12 +1571,28 @@
             <translation><!-- US Standardized Downloads --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>US Tertiary Forecast Data</masterLabel>
+            <translation><!-- US Tertiary Forecast Data --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>US Tertiary Market Data</masterLabel>
             <translation><!-- US Tertiary Market Data --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>US Tertiary Market Forecast</masterLabel>
+            <translation><!-- US Tertiary Market Forecast --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>US Tertiary Market Forecasts</masterLabel>
             <translation><!-- US Tertiary Market Forecasts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA Sales Comp API</masterLabel>
+            <translation><!-- USA Sales Comp API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Management Tool</masterLabel>
+            <translation><!-- User Management Tool --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -1126,6 +1650,10 @@
     <fields>
         <label><!-- SalesLoft View Count --></label>
         <name>SalesLoft1__SalesLoft_View_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesLoft Reply Count (API) --></label>
+        <name>SalesLoft_Reply_Count_API__c</name>
     </fields>
     <fields>
         <label><!-- Salesloft Meeting Type --></label>

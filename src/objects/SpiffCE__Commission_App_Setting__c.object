@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This custom setting is used to have the app settings that is used in the Spiff Commission Estimator.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>SpiffCE__Commission_Fieldset_API_Name_OppLineItem__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field has the value of opportunity line item&apos;s field set used for opportunity commission estimator</description>
+        <inlineHelpText>This field has the value of opportunity line item&apos;s field set used for opportunity commission estimator</inlineHelpText>
+        <label>Commission Fieldset API Name OppLineItem</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SpiffCE__Commission_Fieldset_API_Name_Opportunity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field has the value of field set used for opportunity commission estimator</description>
+        <inlineHelpText>This field has the value of field set used for opportunity commission estimator</inlineHelpText>
+        <label>Commission Fieldset API Name Opportunity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SpiffCE__Commission_Fieldset_API_Name_Quoteline__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will have the value of SBQQ Quote line&apos;s fieldset for Quote Commission Estimator</description>
+        <inlineHelpText>This field will have the value of SBQQ Quote line&apos;s fieldset for Quote Commission Estimator</inlineHelpText>
+        <label>Commission Fieldset API Name Quoteline</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SpiffCE__Commission_Fieldset_API_Name_SBQQ_Quote__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will have the value of SBQQ Quote&apos;s fieldset for Quote Commission Estimator</description>
+        <inlineHelpText>This field will have the value of SBQQ Quote&apos;s field set for Quote Commission Estimator</inlineHelpText>
+        <label>Commission Fieldset API Name SBQQ Quote</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SpiffCE__Restrict_Commission_Fetch_on_Opportunity__c</fullName>
+        <defaultValue>&quot;Closed Won,Closed Lost&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>List of comma separated statuses for which no commission should be fetched from Spiff</description>
+        <inlineHelpText>List of comma separated statuses for which no commission should be fetched from Spiff</inlineHelpText>
+        <label>Restrict Commission Fetch on Opportunity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SpiffCE__Show_Quick_Save_Alert_Message__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Switch to show/hide quick save alert message on Quote line editor when user clicks &apos;Estimate Commission&apos;</description>
+        <inlineHelpText>Switch to show/hide quick save alert message on Quote line editor when user clicks &apos;Estimate Commission&apos;</inlineHelpText>
+        <label>Show Quick Save Alert Message</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Commission App Setting</label>
+    <visibility>Public</visibility>
+</CustomObject>

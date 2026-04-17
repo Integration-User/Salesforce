@@ -433,6 +433,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>maps__FolderPermissions</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>maps__FolderPermissionsTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>maps__Functions</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2119,6 +2127,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>maps__AdvRouteTemplateUser__c.maps__OptimizeFromCurrentTime__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__AdvRouteTemplateUser__c.maps__PreviousJobs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5878,7 +5891,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__AdvRoutingProfile__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__AdvancedRouteJobDownloadPermission__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>maps__SettingsGroup__c.maps__AllowExports__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__AllowTimesheetExports__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6269,6 +6297,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>maps__TPHistory__c.maps__Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__TPUnitAdditionalAssignment__c.maps__Alignment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__TPUnitAdditionalAssignment__c.maps__Area__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__TPUnitAdditionalAssignment__c.maps__UnitAssignment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7490,6 +7533,16 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>maps__TPHistory__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>maps__TPUnitAdditionalAssignment__c</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>

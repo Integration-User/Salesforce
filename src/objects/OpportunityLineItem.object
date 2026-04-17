@@ -126,6 +126,91 @@
         <label>GSA Opportunity Product</label>
     </compactLayouts>
     <enableFeeds>false</enableFeeds>
+    <fieldSets>
+        <fullName>Spiff_Opportunity_Line_Commission_Fields</fullName>
+        <description>Spiff Commission-related fields</description>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CurrencyIsoCode</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OpportunityId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Product2Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ProductCode</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Upsell_Cross_sell__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Quantity</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ARR_Formula__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsDeleted</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SystemModstamp</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TotalPrice</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UnitPrice</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Spiff Opportunity Line Commission Fields</label>
+    </fieldSets>
     <fields>
         <fullName>ARR_Formula__c</fullName>
         <formula>IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), 0,
@@ -1188,7 +1273,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     </validationRules>
     <validationRules>
         <fullName>Prevent_OLI_Update_Closed_Opp</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Prevent OLI updates for Closed opportunity.
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(

@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
-        <article>Indefinite</article>
-        <plural>false</plural>
-        <value>Maps Advanced Route-skabelon</value>
-    </caseValues>
-    <caseValues>
-        <article>None</article>
-        <plural>false</plural>
-        <value>Maps Advanced Route-skabelon</value>
-    </caseValues>
-    <caseValues>
         <article>Definite</article>
         <plural>false</plural>
         <value>Maps Advanced Route-skabelonen</value>
     </caseValues>
     <caseValues>
         <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Maps Advanced Route-skabelon</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Maps Advanced Route-skabelon</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Maps Advanced Route-skabelonerne</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
         <plural>true</plural>
         <value>Maps Advanced Route-skabeloner</value>
     </caseValues>
@@ -25,59 +30,54 @@
         <plural>true</plural>
         <value>Maps Advanced Route-skabeloner</value>
     </caseValues>
-    <caseValues>
-        <article>Definite</article>
-        <plural>true</plural>
-        <value>Maps Advanced Route-skabelonerne</value>
-    </caseValues>
     <fields>
-        <label></label>
+        <label><!-- Active --></label>
         <name>maps__Active__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Activity Date Field on Completed Visit --></label>
         <name>maps__ActivityDateFieldOnCompletedVisit__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Activity Date Field on Future Visit --></label>
         <name>maps__ActivityDateFieldOnFutureVisit__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Activity End Date Field on Future Visit --></label>
         <name>maps__ActivityEndDateFieldOnFutureVisit__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Maps Advanced Route Routable Object --></label>
         <name>maps__AdvRouteRoutableObject__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Maps Advanced Route Templates --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Maps Advanced Route Template --></label>
         <name>maps__AdvRouteTemplate__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Maps Advanced Route Templates --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Base Filter Filters --></label>
         <name>maps__BaseFilterFilters__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Base Filter Includes All Records --></label>
         <name>maps__BaseFilterIncludesAllRecords__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Base Filter Logic Order --></label>
         <name>maps__BaseFilterLogicOrder__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Base Filter Where Clause --></label>
         <name>maps__BaseFilterWhereClause__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Base Url --></label>
         <name>maps__BaseUrl__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Completed Tabs Picklist --></label>
         <name>maps__CompletedTabsPicklist__c</name>
         <picklistValues>
             <masterLabel>PlanInformation</masterLabel>
@@ -85,35 +85,35 @@
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Completed Tabs --></label>
         <name>maps__CompletedTabs__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Completed Visit Filters --></label>
         <name>maps__CompletedVisitFilters__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Completed Visit Object --></label>
         <name>maps__CompletedVisitObject__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Completed Visit Order of Operations --></label>
         <name>maps__CompletedVisitOrderOfOperations__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Completed Visits Query --></label>
         <name>maps__CompletedVisitsQuery__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Core Base Object Id --></label>
         <name>maps__CoreBaseObjectId__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Day(s) To Optimize On --></label>
         <name>maps__DayToOptimizeOn__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Days Between Optimizations Factor --></label>
         <name>maps__DaysBetweenOptimizationsFactor__c</name>
         <picklistValues>
             <masterLabel>Daily</masterLabel>
@@ -125,15 +125,15 @@
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Days Between Optimizations --></label>
         <name>maps__DaysBetweenOptimizations__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Day(s) of Week to Route for --></label>
         <name>maps__DaysOfWeekToRouteFor__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Days to Insert Unit --></label>
         <name>maps__DaysToInsertUnit__c</name>
         <picklistValues>
             <masterLabel>Months</masterLabel>
@@ -145,66 +145,66 @@
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Days to Insert --></label>
         <name>maps__DaysToInsert__c</name>
     </fields>
     <fields>
         <help>En kort beskrivelse af skabelonen
 Maks. længde: 255</help>
-        <label></label>
+        <label><!-- Description --></label>
         <name>maps__Description__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- End Date --></label>
         <name>maps__EndDate__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Frequency Start Date --></label>
         <name>maps__FrequencyStartDate__c</name>
     </fields>
     <fields>
         <help>fjern markeringen, hvis din effektivitetsperiode ikke svarer til din skabelonstart</help>
-        <label></label>
+        <label><!-- Frequency Starts on Template Start --></label>
         <name>maps__FrequencyStartsOnTemplateStart__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Future Visit Filters --></label>
         <name>maps__FutureVisitFilters__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Future Visit Logic Order of Operations --></label>
         <name>maps__FutureVisitLogicOrderOfOperations__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Future Visit Object --></label>
         <name>maps__FutureVisitObject__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Future Visits Query --></label>
         <name>maps__FutureVisitsQuery__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Repeating --></label>
         <name>maps__IsRepeating__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Max Segment Travel Time --></label>
         <name>maps__MaxSegmentTravelTime__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Max Total Distance --></label>
         <name>maps__MaxTotalDistance__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Max Working Hours --></label>
         <name>maps__MaxWorkingHours__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Needs Deleting --></label>
         <name>maps__NeedsDeleting__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Optimization Speed Preference --></label>
         <name>maps__OptimizationSpeedPreference__c</name>
         <picklistValues>
             <masterLabel>15</masterLabel>
@@ -228,11 +228,11 @@ Maks. længde: 255</help>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Prevent Same Shift Visits --></label>
         <name>maps__PreventSameShiftVisits__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Prioritization Strictness --></label>
         <name>maps__PrioritizationStrictness__c</name>
         <picklistValues>
             <masterLabel>1</masterLabel>
@@ -264,15 +264,15 @@ Maks. længde: 255</help>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Repeat Until Date --></label>
         <name>maps__RepeatUntilDate__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Routable Object Order Number --></label>
         <name>maps__RoutableObjectOrderNumber__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Route Duration Interval Type --></label>
         <name>maps__RouteDurationIntervalType__c</name>
         <picklistValues>
             <masterLabel>Months</masterLabel>
@@ -284,32 +284,32 @@ Maks. længde: 255</help>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Route Duration Interval --></label>
         <name>maps__RouteDurationInterval__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Route Duration Type --></label>
         <name>maps__RouteDurationType__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Route Order Buffer --></label>
         <name>maps__RouteOrderBuffer__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Routes and Schedule Config --></label>
         <name>maps__RoutesAndScheduleConfig__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Maps Advanced Route Templates --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Run Auto Reoptimization --></label>
         <name>maps__RunAutoOptimization__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Saved Query Id --></label>
         <name>maps__SavedQueryId__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Selected Output Types --></label>
         <name>maps__SelectedOutputTypes__c</name>
         <picklistValues>
             <masterLabel>Event</masterLabel>
@@ -317,7 +317,7 @@ Maks. længde: 255</help>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Selected Promo Windows --></label>
         <name>maps__SelectedPromoWindows__c</name>
         <picklistValues>
             <masterLabel>Event</masterLabel>
@@ -325,31 +325,31 @@ Maks. længde: 255</help>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Start Date --></label>
         <name>maps__StartDate__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Template Object Field on Completed Visit --></label>
         <name>maps__TemplateObjectFieldOnCompletedVisit__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Template Object Field on Future Visit --></label>
         <name>maps__TemplateObjectFieldOnFutureVisit__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Template Object Latitude Field --></label>
         <name>maps__TemplateObjectLatitudeField__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Template Object Longitude Field --></label>
         <name>maps__TemplateObjectLongitudeField__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Template Object --></label>
         <name>maps__TemplateObject__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Time to Reoptimize --></label>
         <name>maps__TimeToOptimize__c</name>
         <picklistValues>
             <masterLabel>10:00 AM</masterLabel>
@@ -737,15 +737,15 @@ Maks. længde: 255</help>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Tooltip Field Apis --></label>
         <name>maps__TooltipFieldApis__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- User Field --></label>
         <name>maps__UserField__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Visit Type --></label>
         <name>maps__VisitType__c</name>
     </fields>
     <gender>Feminine</gender>

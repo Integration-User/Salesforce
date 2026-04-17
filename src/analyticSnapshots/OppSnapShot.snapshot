@@ -31,6 +31,11 @@
         <targetField>OppSnap__c.Stage__c</targetField>
     </mappings>
     <mappings>
+        <sourceField>Opportunity.Rep_Forecast_Category__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>OppSnap__c.Rep_Forecast_Category__c</targetField>
+    </mappings>
+    <mappings>
         <sourceField>OPPORTUNITY_ID</sourceField>
         <sourceType>tabular</sourceType>
         <targetField>OppSnap__c.Opportunity__c</targetField>
@@ -39,6 +44,16 @@
         <sourceField>Opportunity.Total_ARR__c.CONVERT</sourceField>
         <sourceType>tabular</sourceType>
         <targetField>OppSnap__c.Total_ARR__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>Opportunity.Sales_Leader_Forecast_Category__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>OppSnap__c.Sales_Leader_Forecast_Category__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>FORECAST_CATEGORY</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>OppSnap__c.Forecast_Category__c</targetField>
     </mappings>
     <name>OppSnapShot</name>
     <runningUser>atran@greenstreet.com</runningUser>

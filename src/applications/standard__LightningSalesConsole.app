@@ -3266,6 +3266,7 @@
     <tabs>Compliance__c</tabs>
     <tabs>Product_Feedback__c</tabs>
     <tabs>asknicely__NPS__c</tabs>
+    <tabs>Spiff_Commissions</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -3276,6 +3277,9 @@
         <mappings>
             <fieldName>Account__c</fieldName>
             <tab>Product_Feedback__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Spiff_Commissions</tab>
         </mappings>
         <mappings>
             <tab>asknicely__NPS__c</tab>

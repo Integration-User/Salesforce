@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Maps-livehändelseassociationen</value>
+    </caseValues>
+    <caseValues>
         <article>Indefinite</article>
         <plural>false</plural>
         <value>En Maps-livehändelseassociation</value>
@@ -12,8 +17,8 @@
     </caseValues>
     <caseValues>
         <article>Definite</article>
-        <plural>false</plural>
-        <value>Maps-livehändelseassociationen</value>
+        <plural>true</plural>
+        <value>Maps-livehändelserassociationerna</value>
     </caseValues>
     <caseValues>
         <article>Indefinite</article>
@@ -25,50 +30,45 @@
         <plural>true</plural>
         <value>Maps-livehändelserassociationer</value>
     </caseValues>
-    <caseValues>
-        <article>Definite</article>
-        <plural>true</plural>
-        <value>Maps-livehändelserassociationerna</value>
-    </caseValues>
     <fields>
-        <label></label>
+        <label><!-- Associated Account --></label>
         <name>maps__AssociatedAccount__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Live Event Associations --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Associated Contact --></label>
         <name>maps__AssociatedContact__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Live Event Associations --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Associated Lead --></label>
         <name>maps__AssociatedLead__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Live Event Associations --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Associated Opportunity --></label>
         <name>maps__AssociatedOpportunity__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Live Event Associations --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Distance To Stop (ft) --></label>
         <name>maps__DistanceToStopFeet__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Distance To Stop (km) --></label>
         <name>maps__DistanceToStopKilos__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Distance To Stop (m) --></label>
         <name>maps__DistanceToStopMeters__c</name>
     </fields>
     <fields>
         <help>Avstånd till stoppet i amerikanska mil</help>
-        <label></label>
+        <label><!-- Distance To Stop (mi) --></label>
         <name>maps__DistanceToStopMiles__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Distance Units --></label>
         <name>maps__DistanceUnits__c</name>
         <picklistValues>
             <masterLabel>feet</masterLabel>
@@ -88,26 +88,26 @@
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Event Date --></label>
         <name>maps__EventDate__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Event Start Time --></label>
         <name>maps__EventStartTime__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Event Stop Time --></label>
         <name>maps__EventStopTime__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Live Asset Daily Summary Event --></label>
         <name>maps__LiveAssetDailySummaryEvent__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Live Event Associations --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Live Summary Stop Relationship Config --></label>
         <name>maps__LiveSummaryStopRelationshipConfig__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Live Event Associations --></relationshipLabel>
     </fields>
     <gender>Feminine</gender>
     <nameFieldLabel>Namn på livehändelseassociation för Maps</nameFieldLabel>

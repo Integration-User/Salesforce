@@ -462,6 +462,16 @@ This object holds information needed to route the user</description>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>maps__PreviousJobs__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is a JSON object of Job ids created through Advanced Routing</description>
+        <label>Previous Jobs</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>maps__ProcessRoutingNeeded__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -604,7 +614,7 @@ This object holds information needed to route the user</description>
         <type>Text</type>
     </nameField>
     <pluralLabel>Maps Advanced Route Template Users</pluralLabel>
-    <searchLayouts />
+    <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

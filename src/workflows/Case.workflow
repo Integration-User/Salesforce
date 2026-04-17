@@ -502,7 +502,7 @@
         <description>case closed</description>
         <endpointUrl>https://salesforce.asknice.ly/salesforce/caseclosed</endpointUrl>
         <fields>Id</fields>
-        <includeSessionId>true</includeSessionId>
+        <includeSessionId>false</includeSessionId>
         <integrationUser>ksantos@greenstreet.com</integrationUser>
         <name>CaseClosedOutbound</name>
         <protected>false</protected>

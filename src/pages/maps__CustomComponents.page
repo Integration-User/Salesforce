@@ -1,5 +1,5 @@
 <apex:page title="Custom Components" controller="maps.ComponentCon" extensions="maps.RemoteFunctions,maps.AdminAJAXResources">
-    <apex:slds />
+    <apex:slds lightningStyleMode="SLDS1" />
     <script type='text/javascript'>
         var MARemoting = {
             processAJAXRequest : '{!$RemoteAction.RemoteFunctions.processAJAXRequest}',

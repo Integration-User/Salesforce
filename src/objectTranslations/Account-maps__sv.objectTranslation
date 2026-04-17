@@ -7,6 +7,11 @@
         <relationshipLabel><!-- Accounts (AM Manager) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- APAC Named Account Owner --></label>
+        <name>APAC_Named_Account_Owner__c</name>
+        <relationshipLabel><!-- Accounts (APAC Named Account Owner) --></relationshipLabel>
+    </fields>
+    <fields>
         <help><!-- Check if client is actively using the API. --></help>
         <label><!-- API --></label>
         <name>API__c</name>
@@ -69,7 +74,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- The date when an Event of type "Account Handoff" was marked "Completed" --></help>
+        <help><!-- The date when an Event of type &quot;Account Handoff&quot; was marked &quot;Completed&quot; --></help>
         <label><!-- Account Handoff Date --></label>
         <name>Account_Handoff_Date__c</name>
     </fields>
@@ -77,6 +82,10 @@
         <help><!-- This should be the same for all Accounts in a hierarchy. For consistency, either check the parent account OR use the first 5 letters of the top level parent. --></help>
         <label><!-- Account Hierarchy Ext Id --></label>
         <name>Account_Hierarchy_Ext_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prospect Notes --></label>
+        <name>Account_Notes__c</name>
     </fields>
     <fields>
         <label><!-- Account Source --></label>
@@ -102,6 +111,11 @@
         <help><!-- Select the appropriate Tier for this Account - to be used in pricing calculations --></help>
         <label><!-- Account Tier --></label>
         <name>Account_Tier__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the Account was from an Acquisition, this field calculates the name of the Acquisition based on the IDs entered on those accounts. --></help>
+        <label><!-- Acquisition --></label>
+        <name>Acquisition__c</name>
     </fields>
     <fields>
         <label><!-- Activate Account --></label>
@@ -153,6 +167,10 @@
         <name>Agency__c</name>
     </fields>
     <fields>
+        <label><!-- Altis Account Id --></label>
+        <name>Altis_Account_Id__c</name>
+    </fields>
+    <fields>
         <label><!-- Analyst Access --></label>
         <name>Analyst_Access__c</name>
     </fields>
@@ -176,6 +194,10 @@
     <fields>
         <label><!-- Approved Tiering --></label>
         <name>Approved_Tiering__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignment Cohort --></label>
+        <name>Assignment_Cohort__c</name>
     </fields>
     <fields>
         <help><!-- Reduced pricing, different service level, additional users, etc --></help>
@@ -464,6 +486,10 @@
         <name>Cost_Per_Click__c</name>
     </fields>
     <fields>
+        <label><!-- Count of Contacts --></label>
+        <name>Count_of_Contacts__c</name>
+    </fields>
+    <fields>
         <label><!-- Count of open SDO --></label>
         <name>Count_of_open_SDO__c</name>
     </fields>
@@ -707,8 +733,8 @@
             <translation><!-- Costa Rica --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Cote D'Ivoire</masterLabel>
-            <translation><!-- Cote D'Ivoire --></translation>
+            <masterLabel>Cote D&apos;Ivoire</masterLabel>
+            <translation><!-- Cote D&apos;Ivoire --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Croatia</masterLabel>
@@ -1755,6 +1781,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Fintrx Dataset --></label>
+        <name>Fintrx_Dataset__c</name>
+    </fields>
+    <fields>
         <help><!-- This field can be used to store the synced entity CRD ID from Fintrx --></help>
         <label><!-- Fintrx Firm CRD ID --></label>
         <name>Fintrx_Firm_CRD_ID__c</name>
@@ -1806,12 +1836,328 @@
         <name>GSA_ID__c</name>
     </fields>
     <fields>
+        <help><!-- Count of distinct users active this quarter where any condition is met: (1) URL = greenstreetnews.com/onboarding/us/, (2) URL = greenstreetnews.com/us/, (3) Event = Viewed where Post_type = us_article, (4) Event = PDF Download where Post_type = us_article --></help>
+        <label><!-- GSN: Active Users Current Quarter --></label>
+        <name>GSN_Active_Users_Current_Quarter__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of distinct users on the account who were active over the trailing 12 months --></help>
+        <label><!-- GSN: Active Users TTM --></label>
+        <name>GSN_Active_Users_TTM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of distinct users on the account who were active in the trailing 12-24 month prior period --></help>
+        <label><!-- GSN Active Users Trailing 12-24M --></label>
+        <name>GSN_Active_Users_Trailing_12_24M__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total count of &apos;Viewed&apos; events across all users on the account over the trailing 12 months --></help>
+        <label><!-- GSN: L12M Event Totals --></label>
+        <name>GSN_L12M_Event_Totals__c</name>
+    </fields>
+    <fields>
+        <label><!-- GSN: L3M Event Totals --></label>
+        <name>GSN_L3M_Event_Totals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total count of &apos;Viewed&apos; events across all users on the account over the trailing 6 months --></help>
+        <label><!-- GSN: L6M Event Totals --></label>
+        <name>GSN_L6M_Event_Totals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total count of &apos;Viewed&apos; events across all users on the account in the trailing 12-24 month prior period --></help>
+        <label><!-- GSN: Trailing 12-24M Event Totals --></label>
+        <name>GSN_Trailing_12_24M_Event_Totals__c</name>
+    </fields>
+    <fields>
         <label><!-- GS News: Canada Client --></label>
         <name>GS_News_Canada_Client__c</name>
     </fields>
     <fields>
+        <help><!-- This is calculated based on the ZoomInfo Industry and Sub-Industry fields --></help>
+        <label><!-- GS Taxonomy Type --></label>
+        <name>GS_Taxonomy_Type__c</name>
+        <picklistValues>
+            <masterLabel>Academia/Media</masterLabel>
+            <translation><!-- Academia/Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brokers</masterLabel>
+            <translation><!-- Brokers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting</masterLabel>
+            <translation><!-- Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developers</masterLabel>
+            <translation><!-- Developers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equity</masterLabel>
+            <translation><!-- Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hedge Funds</masterLabel>
+            <translation><!-- Hedge Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation><!-- Hospitality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure</masterLabel>
+            <translation><!-- Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insufficient Data</masterLabel>
+            <translation><!-- Insufficient Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance</masterLabel>
+            <translation><!-- Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lenders</masterLabel>
+            <translation><!-- Lenders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate</masterLabel>
+            <translation><!-- Real Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail-Oriented</masterLabel>
+            <translation><!-- Retail-Oriented --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Services</masterLabel>
+            <translation><!-- Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is calculated based on the ZoomInfo Industry and Sub-Industry fields --></help>
+        <label><!-- GS Taxonomy --></label>
+        <name>GS_Taxonomy__c</name>
+        <picklistValues>
+            <masterLabel>Academia</masterLabel>
+            <translation><!-- Academia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accountants</masterLabel>
+            <translation><!-- Accountants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agriculture Location Strategy</masterLabel>
+            <translation><!-- Agriculture Location Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appraisers</masterLabel>
+            <translation><!-- Appraisers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Boutique Investment Banks</masterLabel>
+            <translation><!-- Boutique Investment Banks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Developers</masterLabel>
+            <translation><!-- Commercial Developers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Property Insurance Carriers</masterLabel>
+            <translation><!-- Commercial Property Insurance Carriers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Real Estate Lenders (Banks &amp; Credit Unions)</masterLabel>
+            <translation><!-- Commercial Real Estate Lenders (Banks &amp; Credit Unions) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Services</masterLabel>
+            <translation><!-- Commercial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate M&amp;A Teams</masterLabel>
+            <translation><!-- Corporate M&amp;A Teams --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Countyl Tax Assessment Offices</masterLabel>
+            <translation><!-- Countyl Tax Assessment Offices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Rating Agencies</masterLabel>
+            <translation><!-- Credit Rating Agencies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Center Developers &amp; Investors</masterLabel>
+            <translation><!-- Data Center Developers &amp; Investors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debt / Alternative CRE Lenders</masterLabel>
+            <translation><!-- Debt / Alternative CRE Lenders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economic Development Agencies</masterLabel>
+            <translation><!-- Economic Development Agencies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Offices w/ CRE Holdings</masterLabel>
+            <translation><!-- Family Offices w/ CRE Holdings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global &amp; Regional CRE Brokerage Firms</masterLabel>
+            <translation><!-- Global &amp; Regional CRE Brokerage Firms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government Housing Authority</masterLabel>
+            <translation><!-- Government Housing Authority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hedge Funds (REITs &amp; Real Assets)</masterLabel>
+            <translation><!-- Hedge Funds (REITs &amp; Real Assets) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality Management Groups / Franchisors</masterLabel>
+            <translation><!-- Hospitality Management Groups / Franchisors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial &amp; Logistics Operators</masterLabel>
+            <translation><!-- Industrial &amp; Logistics Operators --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure Developers</masterLabel>
+            <translation><!-- Infrastructure Developers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure Funds &amp; Investors</masterLabel>
+            <translation><!-- Infrastructure Funds &amp; Investors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure Services</masterLabel>
+            <translation><!-- Infrastructure Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional Real Estate Investors</masterLabel>
+            <translation><!-- Institutional Real Estate Investors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insufficient Data</masterLabel>
+            <translation><!-- Insufficient Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance-Linked Securities (ILS)</masterLabel>
+            <translation><!-- Insurance-Linked Securities (ILS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investor Platforms &amp; Marketplaces</masterLabel>
+            <translation><!-- Investor Platforms &amp; Marketplaces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Large Corporate Occupiers</masterLabel>
+            <translation><!-- Large Corporate Occupiers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Law Firms (Real Estate &amp; Infrastructure)</masterLabel>
+            <translation><!-- Law Firms (Real Estate &amp; Infrastructure) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media/Journalist</masterLabel>
+            <translation><!-- Media/Journalist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Profit</masterLabel>
+            <translation><!-- Non-Profit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private Equity Real Estate Funds</masterLabel>
+            <translation><!-- Private Equity Real Estate Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PropTech</masterLabel>
+            <translation><!-- PropTech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Management</masterLabel>
+            <translation><!-- Property Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Pension Funds</masterLabel>
+            <translation><!-- Public Pension Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Publicly Traded REITs</masterLabel>
+            <translation><!-- Publicly Traded REITs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REIT-Focused Equity Asset Managers</masterLabel>
+            <translation><!-- REIT-Focused Equity Asset Managers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Advisory &amp; Consulting Firms</masterLabel>
+            <translation><!-- Real Estate Advisory &amp; Consulting Firms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reinsurance Firms</masterLabel>
+            <translation><!-- Reinsurance Firms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Chains / National Brands</masterLabel>
+            <translation><!-- Retail Chains / National Brands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Investment Funds</masterLabel>
+            <translation><!-- Retail Investment Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail-Focused Developers &amp; Landlords</masterLabel>
+            <translation><!-- Retail-Focused Developers &amp; Landlords --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk Analytics Providers</masterLabel>
+            <translation><!-- Risk Analytics Providers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self-Storage Operators &amp; Investors</masterLabel>
+            <translation><!-- Self-Storage Operators &amp; Investors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sell-Side Equity Research Teams</masterLabel>
+            <translation><!-- Sell-Side Equity Research Teams --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sovereign Wealth Fund</masterLabel>
+            <translation><!-- Sovereign Wealth Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialty Use Asset Owners</masterLabel>
+            <translation><!-- Specialty Use Asset Owners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turnaround &amp; Restructuring Advisors</masterLabel>
+            <translation><!-- Turnaround &amp; Restructuring Advisors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities &amp; Energy Companies (Real Assets)</masterLabel>
+            <translation><!-- Utilities &amp; Energy Companies (Real Assets) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Geographic Exposure --></label>
         <name>Geographic_Exposure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gong Count --></label>
+        <name>Gong__Gong_Count__c</name>
     </fields>
     <fields>
         <label><!-- Group Number --></label>
@@ -1834,6 +2180,42 @@
     <fields>
         <label><!-- High Value Target --></label>
         <name>High_Value_Target__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICP Score - CRE GP Investors --></label>
+        <name>ICP_Score_CRE_GP_Investors__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICP Score - CRE LP --></label>
+        <name>ICP_Score_CRE_LP__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICP Score - CRE Platform --></label>
+        <name>ICP_Score_CRE_Platform__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICP Score - CRE Service Providers --></label>
+        <name>ICP_Score_CRE_Service_Providers__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICP Score - INFRA LP --></label>
+        <name>ICP_Score_INFRA_LP__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICP Score - Infra GP Investors --></label>
+        <name>ICP_Score_Infra_GP_Investors__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICP Score - Infra Investors --></label>
+        <name>ICP_Score_Infra_Investors__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICP Score - Infra Service Providers --></label>
+        <name>ICP_Score_Infra_Service_Providers__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICP Score - Retail --></label>
+        <name>ICP_Score_Retail__c</name>
     </fields>
     <fields>
         <label><!-- ICP --></label>
@@ -2000,8 +2382,23 @@
         <name>IJ_Global_Events_UID__c</name>
     </fields>
     <fields>
+        <help><!-- Count of distinct users on the account who were active over the past 12 months --></help>
+        <label><!-- IJ: L12M Active Users --></label>
+        <name>IJ_L12M_Active_Users__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total clicks from all users on the account across all tracked events over the last 12 months --></help>
+        <label><!-- IJ  L12M Event Totals --></label>
+        <name>IJ_L12M_Event_Totals__c</name>
+    </fields>
+    <fields>
         <label><!-- IJ Relationship --></label>
         <name>IJ_Relationship__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total clicks from all users on the account in the prior year (months 13-24), used for year-over-year engagement comparison --></help>
+        <label><!-- IJ: Trailing 12-24M Event Totals --></label>
+        <name>IJ_Trailing_12_24M_Event_Totals__c</name>
     </fields>
     <fields>
         <label><!-- In Office --></label>
@@ -2200,7 +2597,7 @@
         <name>L6M_Research_Usage__c</name>
     </fields>
     <fields>
-        <help><!-- migrated from LDC's Hubsppot --></help>
+        <help><!-- migrated from LDC&apos;s Hubsppot --></help>
         <label><!-- LDC Industry --></label>
         <name>LDC_Industry__c</name>
     </fields>
@@ -2277,6 +2674,10 @@
             <translation><!-- Internal Referral --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>News - Advertisement</masterLabel>
+            <translation><!-- News - Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Preqin</masterLabel>
             <translation><!-- Preqin --></translation>
         </picklistValues>
@@ -2302,7 +2703,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- ie "hot prospect" --></help>
+        <help><!-- ie &quot;hot prospect&quot; --></help>
         <label><!-- List Membership --></label>
         <name>List_Membership_Account__c</name>
     </fields>
@@ -2375,6 +2776,11 @@
         <name>Market_Data_Deals_L60D_Usage__c</name>
     </fields>
     <fields>
+        <help><!-- What markets does the client invest in / cover? --></help>
+        <label><!-- Markets Covered --></label>
+        <name>Markets_Covered__c</name>
+    </fields>
+    <fields>
         <help><!-- % of unique monthly active users (from Amplitude) divided by the # of activated users within SFDC --></help>
         <label><!-- % Monthly Active Users --></label>
         <name>Monthly_Active_Users__c</name>
@@ -2431,6 +2837,18 @@
         <name>Next_Steps_Account__c</name>
     </fields>
     <fields>
+        <label><!-- Number of Closed Lost Sales Opps --></label>
+        <name>Number_of_Closed_Lost_Sales_Opps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Closed Won Renewals --></label>
+        <name>Number_of_Closed_Won_Renewals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Closed Won Sales Opportunities --></label>
+        <name>Number_of_Closed_Won_Sales_Opportunities__c</name>
+    </fields>
+    <fields>
         <label><!-- Number of Open Opportunities --></label>
         <name>Number_of_Open_Opportunities__c</name>
     </fields>
@@ -2461,6 +2879,10 @@
         <name>Original_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Other PB IDs --></label>
+        <name>Other_PB_IDs__c</name>
+    </fields>
+    <fields>
         <label><!-- Other Vendors --></label>
         <name>Other_Vendors__c</name>
     </fields>
@@ -2479,6 +2901,647 @@
     <fields>
         <label><!-- Owner is Active --></label>
         <name>Owner_is_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pitchbook ID --></help>
+        <label><!-- PB ID --></label>
+        <name>PB_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP Asset Class --></label>
+        <name>PQ_GP_Asset_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP HF Assets Under Management --></label>
+        <name>PQ_GP_HF_Assets_Under_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP HF Fund Types Managed --></label>
+        <name>PQ_GP_HF_Fund_Types_Managed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP HF Geographic Focus --></label>
+        <name>PQ_GP_HF_Geographic_Focus__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP HF Industries --></label>
+        <name>PQ_GP_HF_Industries__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP HF Industry Verticals --></label>
+        <name>PQ_GP_HF_Industry_Verticals__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP HF Number Of Active Funds --></label>
+        <name>PQ_GP_HF_Number_Of_Active_Funds__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP HF Other Geographies --></label>
+        <name>PQ_GP_HF_Other_Geographies__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF Assets Under Management --></label>
+        <name>PQ_GP_INF_Assets_Under_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF Estimated Dry Powder --></label>
+        <name>PQ_GP_INF_Estimated_Dry_Powder__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF Fund Types --></label>
+        <name>PQ_GP_INF_Fund_Types__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF Geographic Exposure --></label>
+        <name>PQ_GP_INF_Geographic_Exposure__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF Infrastructure Industries --></label>
+        <name>PQ_GP_INF_Infrastructure_Industries__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF Number Of Funds In Market --></label>
+        <name>PQ_GP_INF_Number_Of_Funds_In_Market__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF  Strategies --></label>
+        <name>PQ_GP_INF_Strategies__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF Total Funds Raised Last 10 YR --></label>
+        <name>PQ_GP_INF_Total_Funds_Raised_10YR__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF Total No Of Funds Closed --></label>
+        <name>PQ_GP_INF_Total_No_Of_Funds_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP INF Total No Of Funds In Market --></label>
+        <name>PQ_GP_INF_Total_No_Of_Funds_In_Market__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP Investment Team Staff --></label>
+        <name>PQ_GP_Investment_Team_Staff__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP Local Language Firm Name --></label>
+        <name>PQ_GP_Local_Language_Firm_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP Management Team Staff --></label>
+        <name>PQ_GP_Management_Team_Staff__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP No Of Active Portfolio Companies --></label>
+        <name>PQ_GP_No_Of_Active_Portfolio_Companies__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Assets Under Management --></label>
+        <name>PQ_GP_PE_Assets_Under_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Estimated Dry Powder --></label>
+        <name>PQ_GP_PE_Estimated_Dry_Powder__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Geographic Exposure --></label>
+        <name>PQ_GP_PE_Geographic_Exposure__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Industries --></label>
+        <name>PQ_GP_PE_Industries__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Industry Verticals --></label>
+        <name>PQ_GP_PE_Industry_Verticals__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Main Firm Strategy --></label>
+        <name>PQ_GP_PE_Main_Firm_Strategy__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Strategies --></label>
+        <name>PQ_GP_PE_Strategies__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Total Funds Raised Last 10 Year --></label>
+        <name>PQ_GP_PE_Total_Funds_Raised_10YR__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Total No Of Funds Closed --></label>
+        <name>PQ_GP_PE_Total_No_Of_Funds_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP PE Total No Of Funds In Market --></label>
+        <name>PQ_GP_PE_Total_No_Of_Funds_In_Market__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP RE Assets Under Management --></label>
+        <name>PQ_GP_RE_Assets_Under_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP RE Estimated Dry Powder --></label>
+        <name>PQ_GP_RE_Estimated_Dry_Powder__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP RE Geographic Exposure --></label>
+        <name>PQ_GP_RE_Geographic_Exposure__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP RE Property Focus --></label>
+        <name>PQ_GP_RE_Property_Focus__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP RE Property Situations Markets --></label>
+        <name>PQ_GP_RE_Property_Situations_Markets__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP RE Strategies --></label>
+        <name>PQ_GP_RE_Strategies__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP RE Total Funds Raised Last 10 Year --></label>
+        <name>PQ_GP_RE_Total_Funds_Raised_10YR__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP RE Total No Of Funds Closed --></label>
+        <name>PQ_GP_RE_Total_No_Of_Funds_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP RE Total No Of Funds In Market --></label>
+        <name>PQ_GP_RE_Total_No_Of_Funds_In_Market__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP Total Staff --></label>
+        <name>PQ_GP_Total_Staff__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ GP Year Est --></label>
+        <name>PQ_GP_Year_Est__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Alternative AUA --></label>
+        <name>PQ_IC_Alternative_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Asset Class Coverage --></label>
+        <name>PQ_IC_Asset_Class_Coverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Client Locations --></label>
+        <name>PQ_IC_Client_Locations__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Client Types --></label>
+        <name>PQ_IC_Client_Types__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Discretionary AUA --></label>
+        <name>PQ_IC_Discretionary_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC General Consultant AUA --></label>
+        <name>PQ_IC_General_Consultant_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Hedge Funds AUA --></label>
+        <name>PQ_IC_Hedge_Funds_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Infrastructure AUA --></label>
+        <name>PQ_IC_Infrastructure_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC No Of Alternative Clients --></label>
+        <name>PQ_IC_No_Of_Alternative_Clients__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Non Discretionary AUA --></label>
+        <name>PQ_IC_Non_Discretionary_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Private Debt AUA --></label>
+        <name>PQ_IC_Private_Debt_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Private Equity AUA --></label>
+        <name>PQ_IC_Private_Equity_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Real Estate AUA --></label>
+        <name>PQ_IC_Real_Estate_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Service Coverage --></label>
+        <name>PQ_IC_Service_Coverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Total AUA --></label>
+        <name>PQ_IC_Total_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Total No Of Clients --></label>
+        <name>PQ_IC_Total_No_Of_Clients__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ IC Venture Capital AUA --></label>
+        <name>PQ_IC_Venture_Capital_AUA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Allocation Alternatives --></label>
+        <name>PQ_LP_Allocation_Alternatives__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Asset Class --></label>
+        <name>PQ_LP_Asset_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP General Consultant --></label>
+        <name>PQ_LP_General_Consultant__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP HF Last Updated Date --></label>
+        <name>PQ_LP_HF_Last_Updated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Allocation Direct --></label>
+        <name>PQ_LP_INF_Allocation_Direct__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Allocation Listed --></label>
+        <name>PQ_LP_INF_Allocation_Listed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Allocation Unlisted --></label>
+        <name>PQ_LP_INF_Allocation_Unlisted__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Allocation --></label>
+        <name>PQ_LP_INF_Allocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Consultants --></label>
+        <name>PQ_LP_INF_Consultants__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Geographic Preferences --></label>
+        <name>PQ_LP_INF_Geographic_Preferences__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Industry Preferences --></label>
+        <name>PQ_LP_INF_Industry_Preferences__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Next 12 Mths Industries --></label>
+        <name>PQ_LP_INF_Next_12_Mths_Industries__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Next 12 Mths Plans --></label>
+        <name>PQ_LP_INF_Next_12_Mths_Plans__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Next 12 Mths Regions --></label>
+        <name>PQ_LP_INF_Next_12_Mths_Regions__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Next 12 Mths Strategies --></label>
+        <name>PQ_LP_INF_Next_12_Mths_Strategies__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Preferred Method Initial Con --></label>
+        <name>PQ_LP_INF_Preferred_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Preferred Initial Contact Emai --></label>
+        <name>PQ_LP_INF_Preferred_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Priority Contact Email --></label>
+        <name>PQ_LP_INF_Priority_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Priority Contact Job Title --></label>
+        <name>PQ_LP_INF_Priority_Contact_Job_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Priority Contact Name --></label>
+        <name>PQ_LP_INF_Priority_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Priority Contact Phone --></label>
+        <name>PQ_LP_INF_Priority_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Strategy Preferences --></label>
+        <name>PQ_LP_INF_Strategy_Preferences__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP INF Target Allocation --></label>
+        <name>PQ_LP_INF_Target_Allocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Investing In Direct INF --></label>
+        <name>PQ_LP_Investing_In_Direct_INF__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Investing In HF --></label>
+        <name>PQ_LP_Investing_In_HF__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Investing In INF --></label>
+        <name>PQ_LP_Investing_In_INF__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Investing In Listed INF --></label>
+        <name>PQ_LP_Investing_In_Listed_INF__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Investing In PE --></label>
+        <name>PQ_LP_Investing_In_PE__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Investing In RE --></label>
+        <name>PQ_LP_Investing_In_RE__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Investing In Unlisted INF --></label>
+        <name>PQ_LP_Investing_In_Unlisted_INF__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Local Language Firm Name --></label>
+        <name>PQ_LP_Local_Language_Firm_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Matching Funds --></label>
+        <name>PQ_LP_Matching_Funds__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP PE Allocation --></label>
+        <name>PQ_LP_PE_Allocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP PE Geographic Preferences --></label>
+        <name>PQ_LP_PE_Geographic_Preferences__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP PE Industries --></label>
+        <name>PQ_LP_PE_Industries__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP PE Industry Verticals --></label>
+        <name>PQ_LP_PE_Industry_Verticals__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP PE Next 12 Mths Plans --></label>
+        <name>PQ_LP_PE_Next_12_Mths_Plans__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP PE Next 12 Mths Strategies --></label>
+        <name>PQ_LP_PE_Next_12_Mths_Strategies__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP PE Strategy Preferences --></label>
+        <name>PQ_LP_PE_Strategy_Preferences__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP PE Target Allocation --></label>
+        <name>PQ_LP_PE_Target_Allocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Allocation Direct --></label>
+        <name>PQ_LP_RE_Allocation_Direct__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Allocation Listed --></label>
+        <name>PQ_LP_RE_Allocation_Listed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Allocation Private Funds --></label>
+        <name>PQ_LP_RE_Allocation_Private_Funds__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Allocation --></label>
+        <name>PQ_LP_RE_Allocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Consultant --></label>
+        <name>PQ_LP_RE_Consultant__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Date Added --></label>
+        <name>PQ_LP_RE_Date_Added__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Geographic Preferences --></label>
+        <name>PQ_LP_RE_Geographic_Preferences__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Investing In Direct --></label>
+        <name>PQ_LP_RE_Investing_In_Direct__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Investing In Listed --></label>
+        <name>PQ_LP_RE_Investing_In_Listed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Investing In Private --></label>
+        <name>PQ_LP_RE_Investing_In_Private__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Last Updated Date --></label>
+        <name>PQ_LP_RE_Last_Updated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Next 12 Mths Plans --></label>
+        <name>PQ_LP_RE_Next_12_Mths_Plans__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Next 12 Mths Regions --></label>
+        <name>PQ_LP_RE_Next_12_Mths_Regions__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Next 12 Mths Strategies --></label>
+        <name>PQ_LP_RE_Next_12_Mths_Strategies__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Preferred Method Of Initial Con --></label>
+        <name>PQ_LP_RE_Preferred_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Preferred Initial Contact Email --></label>
+        <name>PQ_LP_RE_Preferred_Initial_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Priority Contact Email --></label>
+        <name>PQ_LP_RE_Priority_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Priority Contact Job Title --></label>
+        <name>PQ_LP_RE_Priority_Contact_Job_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Priority Contact Name --></label>
+        <name>PQ_LP_RE_Priority_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Priority Contact Phone --></label>
+        <name>PQ_LP_RE_Priority_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Strategy Preferences --></label>
+        <name>PQ_LP_RE_Strategy_Preferences__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP RE Target Allocation --></label>
+        <name>PQ_LP_RE_Target_Allocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Target Allocation Alternatives Max --></label>
+        <name>PQ_LP_Target_Allocation_Alternatives_Max__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Target Allocation Alternatives Min --></label>
+        <name>PQ_LP_Target_Allocation_Alternatives_Min__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ LP Year Est --></label>
+        <name>PQ_LP_Year_Est__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE About --></label>
+        <name>PQ_MERGE_About__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Address --></label>
+        <name>PQ_MERGE_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Aum --></label>
+        <name>PQ_MERGE_Aum__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE City --></label>
+        <name>PQ_MERGE_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Country --></label>
+        <name>PQ_MERGE_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Email --></label>
+        <name>PQ_MERGE_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Fax --></label>
+        <name>PQ_MERGE_Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Firm ID --></label>
+        <name>PQ_MERGE_Firm_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Local Language Firm Name --></label>
+        <name>PQ_MERGE_Local_Language_Firm_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Preqin Account Name --></label>
+        <name>PQ_MERGE_Preqin_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Preqin Account Type --></label>
+        <name>PQ_MERGE_Preqin_Account_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Region --></label>
+        <name>PQ_MERGE_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Secondary Locations --></label>
+        <name>PQ_MERGE_Secondary_Locations__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE State County --></label>
+        <name>PQ_MERGE_State_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Tel --></label>
+        <name>PQ_MERGE_Tel__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Website --></label>
+        <name>PQ_MERGE_Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE Zip Code --></label>
+        <name>PQ_MERGE_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ MERGE --></label>
+        <name>PQ_MERGE__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP Asset Types --></label>
+        <name>PQ_SP_Asset_Types__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP Domiciles --></label>
+        <name>PQ_SP_Domiciles__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP Fund Admin Services Provided --></label>
+        <name>PQ_SP_Fund_Admin_Services__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP Fund Type Advised --></label>
+        <name>PQ_SP_Fund_Type_Advised__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP Investment Type --></label>
+        <name>PQ_SP_Investment_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP Known Funds Closed In Last 3 Years --></label>
+        <name>PQ_SP_Known_Funds_Closed_In_Last_3_Years__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP No Of Debt Provider Deals Serviced --></label>
+        <name>PQ_SP_No_Of_Debt_Provider_Deals_Serviced__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP No Of Financial Advisor Deals --></label>
+        <name>PQ_SP_No_Of_Financial_Advisor_Deals__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP No Of Funds Closed --></label>
+        <name>PQ_SP_No_Of_Funds_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP No Of Funds Raised --></label>
+        <name>PQ_SP_No_Of_Funds_Raised__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP No Of Funds Serviced --></label>
+        <name>PQ_SP_No_Of_Funds_Serviced__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP No Of Legal Advisor Deals Serviced --></label>
+        <name>PQ_SP_No_Of_Legal_Advisor_Deals_Serviced__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP No Of Re Broker Deals Serviced --></label>
+        <name>PQ_SP_No_Of_Re_Broker_Deals_Serviced__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP Primary Asset Type --></label>
+        <name>PQ_SP_Primary_Asset_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP Total Value Of Funds Closed --></label>
+        <name>PQ_SP_Total_Value_Of_Funds_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQ SP Total Value Of Funds Raised --></label>
+        <name>PQ_SP_Total_Value_Of_Funds_Raised__c</name>
     </fields>
     <fields>
         <label><!-- Partner Type --></label>
@@ -2752,7 +3815,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- This field is used for "Pre-opportunity" prospecting --></help>
+        <help><!-- This field is used for &quot;Pre-opportunity&quot; prospecting --></help>
         <label><!-- Prospect Category --></label>
         <name>Prospect_Category__c</name>
         <picklistValues>
@@ -2938,6 +4001,30 @@
         <name>Region_Global_Value__c</name>
     </fields>
     <fields>
+        <label><!-- Region(Standardized) --></label>
+        <name>Region_Standardized__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATAM</masterLabel>
+            <translation><!-- LATAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NAMER</masterLabel>
+            <translation><!-- NAMER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Region Data</masterLabel>
+            <translation><!-- No Region Data --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Region --></label>
         <name>Region__c</name>
         <picklistValues>
@@ -2987,8 +4074,44 @@
         <name>Restrict_Download__c</name>
     </fields>
     <fields>
+        <label><!-- RevOps Assigned Date History --></label>
+        <name>RevOps_Assigned_Date_History__c</name>
+    </fields>
+    <fields>
+        <label><!-- RevOps Assignment Notes --></label>
+        <name>RevOps_Assignment_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- RevOps ICP Parent(Text) --></label>
+        <name>RevOps_ICP_Parent_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- RevOps ICP Parent --></label>
+        <name>RevOps_ICP_Parent__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- RevOps ICP Score (cumulative) --></label>
+        <name>RevOps_ICP_Score_cumulative__c</name>
+    </fields>
+    <fields>
+        <label><!-- RevOps Last Assigned --></label>
+        <name>RevOps_Last_Assigned__c</name>
+    </fields>
+    <fields>
+        <help><!-- When was the Account last assigned to a rep --></help>
+        <label><!-- RevOps Last Assignment Date --></label>
+        <name>RevOps_Last_Assignment_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Revenue Size --></label>
         <name>Revenue_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- What was the last rep this Account was assigned to? --></help>
+        <label><!-- RevOps Last Assigned To --></label>
+        <name>Revops_Last_Assigned_To__c</name>
+        <relationshipLabel><!-- Accounts (RevOps Last Assigned To) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Attrition Probability --></label>
@@ -3332,7 +4455,7 @@
         <name>User_Count__c</name>
     </fields>
     <fields>
-        <help><!-- Enter the Account's VAT number. Mandatory for UK, EU, Switzerland, UAE, Canada, Russia, S.Africa. --></help>
+        <help><!-- Enter the Account&apos;s VAT number. Mandatory for UK, EU, Switzerland, UAE, Canada, Russia, S.Africa. --></help>
         <label><!-- VAT Number --></label>
         <name>VAT_Number__c</name>
     </fields>
@@ -3626,6 +4749,10 @@
         <name>Subsidiary_Account</name>
     </recordTypes>
     <validationRules>
+        <errorMessage><!-- Users in department Sales cannot create Accounts --></errorMessage>
+        <name>AE_Account_Creation</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- You cannot modify the Priority. --></errorMessage>
         <name>Change_Account_Priority</name>
     </validationRules>
@@ -3650,6 +4777,10 @@
         <name>Phone_Number_must_be_Number_format</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Sales users cannot transfer the account owner if it&apos;s owned by Integration User. --></errorMessage>
+        <name>Prevent_Account_Owner_Transfer</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- You cannot change the name of this Account. --></errorMessage>
         <name>Prevent_Renaming_Unassigned_Accounts</name>
     </validationRules>
@@ -3666,7 +4797,7 @@
         <name>Require_Entitlement_Guidance</name>
     </validationRules>
     <validationRules>
-        <errorMessage><!-- Please provide Prospect Notes when Prospect Category "Not Viable" is selected --></errorMessage>
+        <errorMessage><!-- Please provide Prospect Notes when Prospect Category &quot;Not Viable&quot; is selected --></errorMessage>
         <name>Require_Prospect_Not_Viable</name>
     </validationRules>
     <validationRules>
@@ -3700,6 +4831,10 @@
     <webLinks>
         <label><!-- Email_Distribution --></label>
         <name>Email_Distribution</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_Account_in_Gong --></label>
+        <name>Gong__View_Account_in_Gong</name>
     </webLinks>
     <webLinks>
         <label><!-- GoogleMaps --></label>

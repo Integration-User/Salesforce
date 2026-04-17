@@ -146,6 +146,7 @@
                 PostFeedItem: '{!$RemoteAction.TPRemoteActions.PostFeedItem}',
                 UpdateLastViewed: '{!$RemoteAction.TPRemoteActions.UpdateLastViewed}',
                 // create data sets and alignments
+                DeleteAdditionalAssignments: '{!$RemoteAction.TPRemoteActions.DeleteAdditionalAssignments}',
                 InsertObjectBatch: '{!$RemoteAction.TPRemoteActions.InsertObjectBatch}',
                 UpdateObjectBatch: '{!$RemoteAction.TPRemoteActions.UpdateObjectBatch}',
                 CloneAlignment: '{!$RemoteAction.TPRemoteActions.CloneAlignment}',
@@ -170,7 +171,7 @@
                 GetUnitData: '{!$RemoteAction.TPRemoteActions.GetUnitData}',
                 GetAccessibleAlignments: '{!$RemoteAction.TPRemoteActions.GetAccessibleAlignments}',
                 GetTerritoryRoles: '{!$RemoteAction.TPRemoteActions.GetTerritoryRoles}',
-                GetTerritoryModel: '{!$RemoteAction.TPRemoteActions.GetTerritoryModel}',
+                GetTerritoryModelBatched: '{!$RemoteAction.TPRemoteActions.GetTerritoryModelBatched}',
                 GetManualAssignments: '{!$RemoteAction.TPRemoteActions.GetManualAssignments}',
 
                 // query builder
@@ -179,6 +180,12 @@
 
                 // Area Roles
                 GetTerritoryPlanningRoles: '{!$RemoteAction.TPRemoteActions.GetTerritoryPlanningRoles}',
+
+                // Area Types
+                GetTerritoryPlanningAreaTypes: '{!$RemoteAction.TPRemoteActions.GetTerritoryPlanningAreaTypes}',
+
+                // Territory Types
+                GetTerritoryTypes: '{!$RemoteAction.TPRemoteActions.GetTerritoryTypes}',
 
                 //reports and queries
                 GetReports: '{!$RemoteAction.TPRemoteActions.GetReports}',
@@ -491,6 +498,7 @@
                 CloneModal_Body_LegendLabel: '{!JSENCODE($Label.CloneModal_Body_LegendLabel)}',
                 CloneModal_Body_ShareCheckboxLabel: '{!JSENCODE($Label.CloneModal_Body_ShareCheckboxLabel)}',
                 CloneModal_Body_RefreshCheckboxLabel: '{!JSENCODE($Label.CloneModal_Body_RefreshCheckboxLabel)}',
+                CloneModal_Body_RefreshDisabledMessage: '{!JSENCODE($Label.CloneModal_Body_RefreshDisabledMessage)}',
                 CloneModal_Body_CloneSpecificAlignmentsCheckboxLabel: '{!JSENCODE($Label.CloneModal_Body_CloneSpecificAlignmentsCheckboxLabel)}',
                 CloneModal_Footer_CancelButton: '{!JSENCODE($Label.CloneModal_Footer_CancelButton)}',
                 CloneModal_Footer_CloneButton: '{!JSENCODE($Label.CloneModal_Footer_CloneButton)}',
@@ -815,6 +823,7 @@
                 CreateAlignmentModal_ImportTerritoryModelPopover_LockManualAssignments: '{!JSENCODE($Label.CreateAlignmentModal_ImportTerritoryModelPopover_LockManualAssignments)}',
                 CreateAlignmentModal_AlignmentHierarchyTree_MissingRuleCriteriaFields: '{!JSENCODE($Label.CreateAlignmentModal_AlignmentHierarchyTree_MissingRuleCriteriaFields)}',
                 CreateAlignmentModal_AlignmentHierarchyTree_NoRulesToImport: '{!JSENCODE($Label.CreateAlignmentModal_AlignmentHierarchyTree_NoRulesToImport)}',
+                CreateAlignmentModal_AlignmentHierarchyTree_ETMTypeMappingError: '{!JSENCODE($Label.CreateAlignmentModal_AlignmentHierarchyTree_ETMTypeMappingError)}',
                 BrowserModal_DeleteDataSetPopover_PopoverHeader: '{!JSENCODE($Label.BrowserModal_DeleteDataSetPopover_PopoverHeader)}',
                 BrowserModal_DeleteDataSetPopover_ConfirmationText: '{!JSENCODE($Label.BrowserModal_DeleteDataSetPopover_ConfirmationText)}',
                 BrowserModal_DeleteDataSetPopover_CancelButton: '{!JSENCODE($Label.BrowserModal_DeleteDataSetPopover_CancelButton)}',
@@ -846,6 +855,7 @@
                 AlignmentBuilder_AddChildAreasPopover_NumberOfAreasDecrement: '{!JSENCODE($Label.AlignmentBuilder_AddChildAreasPopover_NumberOfAreasDecrement)}',
                 AlignmentBuilder_AddChildAreasPopover_NumberOfAreasIncrement: '{!JSENCODE($Label.AlignmentBuilder_AddChildAreasPopover_NumberOfAreasIncrement)}',
                 AlignmentBuilder_Map_HardLimitErrorMessage: '{!JSENCODE($Label.AlignmentBuilder_Map_HardLimitErrorMessage)}',
+                AlignmentBuilder_Clone_OverlapBoundaries: '{!JSENCODE($Label.AlignmentBuilder_Clone_OverlapBoundaries)}',
 
                 // Create Alignment Assignment Modal
                 CreateAlignmentAssignmentModal_Body_AssignmentHeader: '{!JSENCODE($Label.CreateAlignmentAssignmentModal_Body_AssignmentHeader)}',
@@ -1109,6 +1119,7 @@
             MATA.RemoteActions['GetRangeChunkUnitCounts'] = '{!$RemoteAction.TPRemoteActionsSecured.GetRangeChunkUnitCounts}';
             MATA.RemoteActions['GetPkChunkingMetadata'] = '{!$RemoteAction.TPRemoteActionsSecured.GetPkChunkingMetadata}';
             MATA.RemoteActions['InsertObjectBatch'] = '{!$RemoteAction.TPRemoteActionsSecured.InsertObjectBatch}',
+            MATA.RemoteActions['DeleteAdditionalAssignments'] = '{!$RemoteAction.TPRemoteActionsSecured.DeleteAdditionalAssignments}',
             MATA.RemoteActions['UpdateObjectBatch'] = '{!$RemoteAction.TPRemoteActionsSecured.UpdateObjectBatch}',
             MATA.RemoteActions['DeleteObjects'] = '{!$RemoteAction.TPRemoteActionsSecured.DeleteObjects}'
             MATA.RemoteActions['UpdatePreferences'] = '{!$RemoteAction.TPRemoteActionsSecured.UpdatePreferences}',            

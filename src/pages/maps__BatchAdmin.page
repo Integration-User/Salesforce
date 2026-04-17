@@ -1,5 +1,5 @@
 <apex:page standardstylesheets="false" sidebar="false" title="Maps Automation" controller="maps.BatchAdmin" setup="false" extensions="maps.RemoteFunctions,maps.AdminAJAXResources">
-    <apex:slds />
+    <apex:slds lightningStyleMode="SLDS1" />
     <script>
         var MARemoting = {
             processAJAXRequest : '{!$RemoteAction.RemoteFunctions.processAJAXRequest}',

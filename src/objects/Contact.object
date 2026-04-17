@@ -2039,6 +2039,234 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Gong__Active_Engage_Flow_Names__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Active Engage Flow Names</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Gong__Actively_Being_in_a_Flow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Currently in Engage Flow</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Added_to_Flow_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Date Added to Engage Flow</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Flow ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Flow Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_Step_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Step Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_Step_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Step Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_Task_Due_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Engage Step Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Current_Flow_User_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Added to Engage Flow By</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Flow_Owner__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Flow Owner</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Engage_Last_Step_Completed_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Engage Last Step Completed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Gong__Flow_Execution_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engage Step Attempt ID</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gong__Flow_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Engage Flow Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In progress</fullName>
+                    <default>false</default>
+                    <label>In progress</label>
+                </value>
+                <value>
+                    <fullName>Finished (replied)</fullName>
+                    <default>false</default>
+                    <label>Finished (replied)</label>
+                </value>
+                <value>
+                    <fullName>Finished (no reply)</fullName>
+                    <default>false</default>
+                    <label>Finished (no reply)</label>
+                </value>
+                <value>
+                    <fullName>Finished (meeting booked)</fullName>
+                    <default>false</default>
+                    <label>Finished (meeting booked)</label>
+                </value>
+                <value>
+                    <fullName>Finished (removed manually)</fullName>
+                    <default>false</default>
+                    <label>Finished (removed manually)</label>
+                </value>
+                <value>
+                    <fullName>Finished (CRM change)</fullName>
+                    <default>false</default>
+                    <label>Finished (CRM change)</label>
+                </value>
+                <value>
+                    <fullName>Finished (account reply)</fullName>
+                    <default>false</default>
+                    <label>Finished (account reply)</label>
+                </value>
+                <value>
+                    <fullName>Finished (account meeting booked)</fullName>
+                    <default>false</default>
+                    <label>Finished (account meeting booked)</label>
+                </value>
+                <value>
+                    <fullName>Finished (account CRM change)</fullName>
+                    <default>false</default>
+                    <label>Finished (account CRM change)</label>
+                </value>
+                <value>
+                    <fullName>Bounced</fullName>
+                    <default>false</default>
+                    <label>Bounced</label>
+                </value>
+                <value>
+                    <fullName>Removed (other)</fullName>
+                    <default>false</default>
+                    <label>Removed (other)</label>
+                </value>
+                <value>
+                    <fullName>To-do expired</fullName>
+                    <default>false</default>
+                    <label>To-do expired</label>
+                </value>
+                <value>
+                    <fullName>No license</fullName>
+                    <default>false</default>
+                    <label>No license</label>
+                </value>
+                <value>
+                    <fullName>Person deleted</fullName>
+                    <default>false</default>
+                    <label>Person deleted</label>
+                </value>
+                <value>
+                    <fullName>Flow deleted</fullName>
+                    <default>false</default>
+                    <label>Flow deleted</label>
+                </value>
+                <value>
+                    <fullName>Paused</fullName>
+                    <default>false</default>
+                    <label>Paused</label>
+                </value>
+                <value>
+                    <fullName>Opted Out</fullName>
+                    <default>false</default>
+                    <label>Opted Out</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Gong__Number_of_Active_Engage_Flows__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Active Engage Flows</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Green_Street_User_Department__c</fullName>
         <externalId>false</externalId>
         <label>Green Street User: Department</label>
@@ -2745,6 +2973,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Event</controllingFieldValue>
                 <controllingFieldValue>Other Campaigns</controllingFieldValue>
                 <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
                 <controllingFieldValue>Inbound Email</controllingFieldValue>
@@ -2763,6 +2992,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Event</controllingFieldValue>
                 <controllingFieldValue>Other Campaigns</controllingFieldValue>
                 <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
                 <controllingFieldValue>Inbound Email</controllingFieldValue>
@@ -2781,6 +3011,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Event</controllingFieldValue>
                 <controllingFieldValue>Other Campaigns</controllingFieldValue>
                 <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
                 <controllingFieldValue>Inbound Email</controllingFieldValue>
@@ -2799,6 +3030,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Event</controllingFieldValue>
                 <controllingFieldValue>Other Campaigns</controllingFieldValue>
                 <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
                 <controllingFieldValue>Inbound Email</controllingFieldValue>
@@ -2817,6 +3049,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Event</controllingFieldValue>
                 <controllingFieldValue>Other Campaigns</controllingFieldValue>
                 <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
                 <controllingFieldValue>Inbound Email</controllingFieldValue>
@@ -2835,6 +3068,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Event</controllingFieldValue>
                 <controllingFieldValue>Other Campaigns</controllingFieldValue>
                 <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
                 <controllingFieldValue>Inbound Email</controllingFieldValue>
@@ -2853,6 +3087,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Event</controllingFieldValue>
                 <controllingFieldValue>Other Campaigns</controllingFieldValue>
                 <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
                 <controllingFieldValue>Inbound Email</controllingFieldValue>
@@ -2871,6 +3106,7 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                 <controllingFieldValue>Event</controllingFieldValue>
                 <controllingFieldValue>Other Campaigns</controllingFieldValue>
                 <controllingFieldValue>Display</controllingFieldValue>
+                <controllingFieldValue>Backlink Referral</controllingFieldValue>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Derived Intent</controllingFieldValue>
                 <controllingFieldValue>Inbound Email</controllingFieldValue>
@@ -10324,13 +10560,13 @@ Stored as Long on Solr.</description>
     </listViews>
     <listViews>
         <fullName>Mass_Deactivate_Contacts</fullName>
+        <columns>Activate_Contact__c</columns>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
         <columns>CONTACT.EMAIL</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <columns>Mass_Deactivate__c</columns>
         <columns>Contact_Status__c</columns>
-        <columns>Activate_Contact__c</columns>
         <columns>Account.GSA_ID__c</columns>
         <columns>GSA_ID__c</columns>
         <columns>LID__No_longer_at_Company__c</columns>

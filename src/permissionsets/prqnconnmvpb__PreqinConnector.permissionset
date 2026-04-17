@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
+        <apexClass>prqnconnmvpb__AccountSelector</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__BulkContactUpdate2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__BulkContactUpdate2_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__Constants</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__ContactSelector</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__DataUpdateBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__DataUpdateBatch_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__DataUpdateSchedulable</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__HeapApi</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__HeapApiTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__Logger</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__Logger_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__OpportunitySelector</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__PostInstallHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>prqnconnmvpb__PreqinAPI</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__PreqinAPI_Test</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -9,7 +69,23 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>prqnconnmvpb__PreqinConnectorService_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>prqnconnmvpb__PreqinDTO</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__PreqinDTO_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__PreqinDataSelector</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>prqnconnmvpb__PreqinException</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <customPermissions>
@@ -172,7 +248,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_dateOfAumHF__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_dateOfAumINF2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_dateOfAumINF__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -182,7 +268,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_dateOfAumNR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_dateOfAumPD2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_dateOfAumPD__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -192,7 +288,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_dateOfAumPE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_dateOfAumRE2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_dateOfAumRE__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -208,6 +314,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_hfStrategies2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_hfStrategies__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -228,6 +339,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_infStrategies2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_infStrategies__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -282,6 +398,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_nrStrategies__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_nrTotalFundsRaisedLast10YearsUSDMn__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -298,6 +419,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_pdStrategies2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_pdStrategies__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -322,6 +448,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_peStrategies__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_peTotalFundsRaisedLast10YearsUSDMn__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -338,6 +469,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_reStrategies2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__FM_reStrategies__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -473,6 +609,81 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__INFTypicalInvestmentInFundsMinUSDMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcAlternativeAuaUsdMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcAssetClassCoverage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcAssetsUnderAdvisementUsdMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcClientLocations__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcClientTypes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcDiscretionaryAuaUSDMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcGeneralConsultantAuaUsdMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcHedgeFundsAuaUsdMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcInfrastructureAuaUsdMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcNonDiscretionaryAuaUsdMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcPrivateDebtAuaUsdMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcPrivateEquityAuaUsdMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcRealEstateAuaUsdMn__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcServiceCoverage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__IcVentureCapitalUsdMn__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -828,6 +1039,141 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__ServiceProviderCategory__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__ServiceProviderGroup__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__ServiceProviderType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpAssetCity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpAssetCountry__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpAssetRegion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpAssetState__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpAssetTypes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpDealStage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpDomiciles__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpFundAdministrationServicesProvided__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpFundTypeAdvised__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpInvestmentType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpKnownFundsClosedInLast2Years__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpKnownFundsClosedInLast3Years__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpKnownFundsClosedInLastYear__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpKnownNumberOfFundsClosed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpKnownNumberOfFundsRaising__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpKnownNumberOfFundsServiced__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpNoOfDebtProviderDealsServiced__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpNoOfFinancialAdvisorDealsServiced__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpNoOfLegalAdvisorDealsServiced__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpNoOfREBrokerDealsServiced__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpPrimaryAssetType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpProjectStage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpTotalValueOfKnownFundsClosed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>prqnconnmvpb__PreqinData__c.prqnconnmvpb__SpTotalValueOfKnownFundsRaising__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

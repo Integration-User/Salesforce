@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Områdeplanlægningsdatasættet</value>
+    </caseValues>
+    <caseValues>
         <article>Indefinite</article>
         <plural>false</plural>
         <value>Områdeplanlægningsdatasæt</value>
@@ -8,16 +13,6 @@
     <caseValues>
         <article>None</article>
         <plural>false</plural>
-        <value>Områdeplanlægningsdatasæt</value>
-    </caseValues>
-    <caseValues>
-        <article>Indefinite</article>
-        <plural>true</plural>
-        <value>Områdeplanlægningsdatasæt</value>
-    </caseValues>
-    <caseValues>
-        <article>None</article>
-        <plural>true</plural>
         <value>Områdeplanlægningsdatasæt</value>
     </caseValues>
     <caseValues>
@@ -26,24 +21,29 @@
         <value>Områdeplanlægningsdatasættene</value>
     </caseValues>
     <caseValues>
-        <article>Definite</article>
-        <plural>false</plural>
-        <value>Områdeplanlægningsdatasættet</value>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Områdeplanlægningsdatasæt</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Områdeplanlægningsdatasæt</value>
     </caseValues>
     <fields>
-        <label></label>
+        <label><!-- Config --></label>
         <name>maps__Config__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Description --></label>
         <name>maps__Description__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Last Error --></label>
         <name>maps__LastError__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Sharing Access Level --></label>
         <name>maps__SharingAccessLevel__c</name>
         <picklistValues>
             <masterLabel>Commenter</masterLabel>
@@ -59,7 +59,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Status --></label>
         <name>maps__Status__c</name>
         <picklistValues>
             <masterLabel>Active</masterLabel>

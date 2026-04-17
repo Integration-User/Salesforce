@@ -3172,6 +3172,7 @@
     <tabs>Compliance__c</tabs>
     <tabs>Product_Feedback__c</tabs>
     <tabs>asknicely__NPS__c</tabs>
+    <tabs>Spiff_Commissions</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Sales_UtilityBar</utilityBar>
 </CustomApplication>

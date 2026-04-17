@@ -143,6 +143,15 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>AvailabilityDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>BasedOnId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Billing_Contact_Category__c</fullName>
         <label>Billing Contact Category</label>
         <required>false</required>
@@ -178,6 +187,10 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ConfigureDuringSale</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>CurrencyIsoCode</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -197,7 +210,15 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>DiscontinuedDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>DisplayUrl</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EndOfLifeDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -234,7 +255,19 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>HelpText</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>IsActive</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsAssetizable</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsSoldOnlyWithOtherProds</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -364,6 +397,9 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>SpecificationType</fullName>
+    </fields>
+    <fields>
         <fullName>StockKeepingUnit</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -389,11 +425,24 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Type</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>UnitOfMeasureId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Use_in_Referrals__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Use in Referrals</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UsedFor</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Website_Product__c</fullName>

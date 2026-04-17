@@ -1,0 +1,10 @@
+<apex:page showHeader="false" sidebar="false" lightningStyleSheets="true" standardStylesheets="false" >
+<apex:slds />
+<apex:includeLightning />    
+<apex:stylesheet value="{!URLFOR($Resource.SpiffCE__CommissionResources,'/css/commission-style.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SpiffCE__CommissionResources,'/js/commission-editor-script.js')}"/>
+<body class="slds-scope" onload="userCommissionScript.loadCommission('{JSENCODE(Opportunity.LastModifiedDate)}',{!JSINHTMLENCODE(IF($Setup.SpiffCE__Commission_App_Setting__c.SpiffCE__Show_Quick_Save_Alert_Message__c, "true", "false"))})">
+<div id="lwc"/>   
+</body>
+<div class="fix-spacer"></div>
+</apex:page>

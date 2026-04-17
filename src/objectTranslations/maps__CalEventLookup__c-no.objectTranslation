@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Hendelsesoppslaget for Maps-kalender</value>
+    </caseValues>
+    <caseValues>
         <article>Indefinite</article>
         <plural>false</plural>
         <value>Hendelsesoppslag for Maps-kalender</value>
@@ -8,16 +13,6 @@
     <caseValues>
         <article>None</article>
         <plural>false</plural>
-        <value>Hendelsesoppslag for Maps-kalender</value>
-    </caseValues>
-    <caseValues>
-        <article>Indefinite</article>
-        <plural>true</plural>
-        <value>Hendelsesoppslag for Maps-kalender</value>
-    </caseValues>
-    <caseValues>
-        <article>None</article>
-        <plural>true</plural>
         <value>Hendelsesoppslag for Maps-kalender</value>
     </caseValues>
     <caseValues>
@@ -26,45 +21,50 @@
         <value>Hendelsesoppslagene for Maps-kalender</value>
     </caseValues>
     <caseValues>
-        <article>Definite</article>
-        <plural>false</plural>
-        <value>Hendelsesoppslaget for Maps-kalender</value>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Hendelsesoppslag for Maps-kalender</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Hendelsesoppslag for Maps-kalender</value>
     </caseValues>
     <fields>
-        <label></label>
+        <label><!-- Base Object Id --></label>
         <name>maps__BaseObjectId__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Maps Calendar Event Base Object --></label>
         <name>maps__CalEventBaseObj__c</name>
-        <relationshipLabel></relationshipLabel>
+        <relationshipLabel><!-- Maps Calendar Event Lookups --></relationshipLabel>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Enabled --></label>
         <name>maps__Enabled__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Location Source --></label>
         <name>maps__LocationSource__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Lookup Field API --></label>
         <name>maps__LookupFieldAPI__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Object API --></label>
         <name>maps__ObjectAPI__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- TypeAPI --></label>
         <name>maps__TypeAPI__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- TypeDefaultValue --></label>
         <name>maps__TypeDefaultValue__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Type --></label>
         <name>maps__Type__c</name>
         <picklistValues>
             <masterLabel>Custom</masterLabel>
