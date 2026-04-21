@@ -10066,6 +10066,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <operation>equals</operation>
             <value>Opportunity.Sales_Opportunity</value>
         </filters>
+		<filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>CFety</value>
+        </filters>
         <label>Commitments</label>
         <sharedTo>
             <role>Sales</role>
