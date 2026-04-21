@@ -10071,6 +10071,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <operation>equals</operation>
             <value>Opportunity.Sales_Opportunity</value>
         </filters>
+		
         <label>Commitments</label>
         <sharedTo>
             <role>Sales</role>
@@ -66124,6 +66125,27 @@ TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
 )</errorConditionFormula>
         <errorDisplayField>This_Year_Increase__c</errorDisplayField>
         <errorMessage>If Risk Type is Low, Medium, or High then This Year % Increase must be greater than -100%.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Opportunity_Restriction_For_AM</fullName>
+        <active>true</active>
+        <description>Sales Opportunity Restriction Account Management User</description>
+        <errorConditionFormula>AND(
+   ISNEW(),
+   RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+   $User.Department = &quot;Account Management&quot;,
+   NOT(
+      OR(
+         AND(
+            $User.FirstName = &quot;Betsy&quot;,
+            $User.LastName = &quot;Zimmerman&quot;
+         ),
+         ISPICKVAL(LeadSource, &quot;Referral&quot;),
+         ISPICKVAL(LeadSource, &quot;Internal Referral&quot;)
+      )
+   )
+)</errorConditionFormula>
+        <errorMessage>Account Managers may not create Sales Opportunities. Please reach out to your Salesforce Administrator if you need support.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Tracking_Consolidated_Opportunities</fullName>
