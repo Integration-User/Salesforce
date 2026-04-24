@@ -4,7 +4,7 @@
         <name>Referral_Lead_Reassignment</name>
         <label>Referral Lead Reassignment</label>
         <locationX>1106</locationX>
-        <locationY>431</locationY>
+        <locationY>731</locationY>
         <actionName>Lead.Referral_Assigned_to_User</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -50,10 +50,42 @@
         </value>
     </constants>
     <decisions>
+        <name>Converted_Referral</name>
+        <label>Converted Referral</label>
+        <locationX>776</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Update_Lead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Sales_Qualified_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referrals</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Qualified</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Converted_Date</targetReference>
+            </connector>
+            <label>Sales Qualified Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Lead_Conversion</name>
         <label>Lead Conversion</label>
         <locationX>182</locationX>
-        <locationY>539</locationY>
+        <locationY>839</locationY>
         <defaultConnector>
             <targetReference>Get_Account</targetReference>
         </defaultConnector>
@@ -78,7 +110,7 @@
         <name>Update_Lead</name>
         <label>Update Lead</label>
         <locationX>776</locationX>
-        <locationY>323</locationY>
+        <locationY>623</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_Lead_Converted</name>
@@ -234,7 +266,7 @@ GS Client ID mapping</description>
         <name>Get_Account</name>
         <label>Get Account</label>
         <locationX>314</locationX>
-        <locationY>647</locationY>
+        <locationY>947</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Lead_GS_Relationship</targetReference>
@@ -255,7 +287,7 @@ GS Client ID mapping</description>
         <name>Update_Assigned_Team_and_Date</name>
         <label>Update Assigned Team and Date</label>
         <locationX>842</locationX>
-        <locationY>431</locationY>
+        <locationY>731</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -279,10 +311,34 @@ GS Client ID mapping</description>
         <object>Lead</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Converted_Date</name>
+        <label>Update Converted Date</label>
+        <locationX>644</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ConvertedOpportunityId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Referral_Conversion_Date__c</field>
+            <value>
+                <elementReference>$Record.ConvertedDate</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_GSA_Relationship</name>
         <label>Update GSA Relationship</label>
         <locationX>50</locationX>
-        <locationY>647</locationY>
+        <locationY>947</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -303,7 +359,7 @@ GS Client ID mapping</description>
         <name>Update_Lead_GS_Relationship</name>
         <label>Update Lead GS Relationship</label>
         <locationX>314</locationX>
-        <locationY>755</locationY>
+        <locationY>1055</locationY>
         <inputAssignments>
             <field>GS_Relationship__c</field>
             <value>
@@ -316,7 +372,7 @@ GS Client ID mapping</description>
         <name>Update_Qualified_Date_and_Qualifying_Team</name>
         <label>Update Qualified Date and Qualifying Team</label>
         <locationX>578</locationX>
-        <locationY>431</locationY>
+        <locationY>731</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -343,7 +399,7 @@ GS Client ID mapping</description>
         <name>Update_Qualifying_Status</name>
         <label>Update Qualifying Status</label>
         <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationY>731</locationY>
         <connector>
             <targetReference>Lead_Conversion</targetReference>
         </connector>
@@ -373,7 +429,7 @@ GS Client ID mapping</description>
         <locationX>650</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Lead</targetReference>
+            <targetReference>Converted_Referral</targetReference>
         </connector>
         <object>Lead</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
