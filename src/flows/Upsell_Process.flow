@@ -2,12 +2,28 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Update_Inbound_Flag</name>
+        <label>Update Inbound Flag</label>
+        <locationX>182</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Inbound__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <description>Whenever a product is listed on an Sale opportunity RT and the “upsell/cross-sell” checkbox is checked, ensure the opportunity is Sales Type = Upsell.</description>
         <name>Check_upsell_cross_Sell_Condition</name>
         <label>Check upsell/cross Sell Condition</label>
         <locationX>314</locationX>
-        <locationY>1187</locationY>
+        <locationY>1487</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_Upsells_value_for_Opp</name>
@@ -101,12 +117,44 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Admin_Created_SDO_Opportunity</name>
+        <label>Is Admin Created SDO Opportunity?</label>
+        <locationX>314</locationX>
+        <locationY>1187</locationY>
+        <defaultConnector>
+            <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_SDO_Opp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>System Administrator</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Inbound_Flag</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>SAO_Date_Check</name>
         <label>SAO Date Check</label>
         <locationX>314</locationX>
         <locationY>887</locationY>
         <defaultConnector>
-            <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
+            <targetReference>Is_Admin_Created_SDO_Opportunity</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -212,7 +260,7 @@
         <name>New_Sales_Type_Update_on_Opp</name>
         <label>New Sales Type Update on Opp</label>
         <locationX>314</locationX>
-        <locationY>1295</locationY>
+        <locationY>1595</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -235,7 +283,7 @@
         <locationX>182</locationX>
         <locationY>995</locationY>
         <connector>
-            <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
+            <targetReference>Is_Admin_Created_SDO_Opportunity</targetReference>
         </connector>
         <inputAssignments>
             <field>SAO_Date__c</field>
@@ -281,7 +329,7 @@
         <name>Upsell_Update_Opp_Process</name>
         <label>Upsell Update Opp Process</label>
         <locationX>50</locationX>
-        <locationY>1295</locationY>
+        <locationY>1595</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
