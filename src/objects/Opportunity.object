@@ -6439,6 +6439,14 @@ TODAY() - DATEVALUE(CreatedDate))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Opportunity_Source_Reporting_Override__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Opportunity Source Reporting (Override)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Opportunity_Source_Reporting__c</fullName>
         <externalId>false</externalId>
         <label>Opportunity Source Reporting</label>
@@ -7479,6 +7487,14 @@ NULL))))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Referral_Conversion_Date__c</fullName>
+        <label>Referral Conversion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Referral_Type__c</fullName>
@@ -66124,6 +66140,27 @@ TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
 )</errorConditionFormula>
         <errorDisplayField>This_Year_Increase__c</errorDisplayField>
         <errorMessage>If Risk Type is Low, Medium, or High then This Year % Increase must be greater than -100%.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Opportunity_Restriction_For_AM</fullName>
+        <active>true</active>
+        <description>Sales Opportunity Restriction Account Management User</description>
+        <errorConditionFormula>AND(
+   ISNEW(),
+   RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+   $User.Department = &quot;Account Management&quot;,
+   NOT(
+      OR(
+         AND(
+            $User.FirstName = &quot;Betsy&quot;,
+            $User.LastName = &quot;Zimmerman&quot;
+         ),
+         ISPICKVAL(LeadSource, &quot;Referral&quot;),
+         ISPICKVAL(LeadSource, &quot;Internal Referral&quot;)
+      )
+   )
+)</errorConditionFormula>
+        <errorMessage>Account Managers may not create Sales Opportunities. Please reach out to your Salesforce Administrator if you need support.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Tracking_Consolidated_Opportunities</fullName>
