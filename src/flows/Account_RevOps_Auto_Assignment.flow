@@ -2,48 +2,36 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>65.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <assignments>
-        <name>Add_RevOps_History_Date</name>
-        <label>Add RevOps History Date</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.RevOps_Assigned_Date_History__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>RevOpsDateHistory</elementReference>
-            </value>
-        </assignmentItems>
-    </assignments>
     <decisions>
-        <name>Last_Assignment_Date_Change</name>
-        <label>Last Assignment Date Change?</label>
+        <name>RevOps_Last_Assigned_Change</name>
+        <label>RevOps Last Assigned Change</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Yes</name>
+            <name>RevOps_Not_Blank</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.RevOps_Last_Assignment_Date__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>$Record__Prior.RevOps_Last_Assignment_Date__c</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record__Prior.RevOps_Last_Assignment_Date__c</leftValueReference>
-                <operator>IsBlank</operator>
+                <leftValueReference>$Record.RevOps_Last_Assigned__c</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RevOps_Last_Assigned__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Add_RevOps_History_Date</targetReference>
+                <targetReference>RevOps_Last_Assignment_Date</targetReference>
             </connector>
-            <label>Yes</label>
+            <label>RevOps Not Blank</label>
         </rules>
     </decisions>
+    <description>SF-2087</description>
     <environments>Default</environments>
     <formulas>
         <name>ConcatDateHistory</name>
@@ -94,19 +82,10 @@
         <label>RevOps Last Assignment Date</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>Last_Assignment_Date_Change</targetReference>
-        </connector>
         <inputAssignments>
             <field>RevOps_Last_Assignment_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Revops_Last_Assigned_To__c</field>
-            <value>
-                <elementReference>$Record.OwnerId</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -115,14 +94,14 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>RevOps_Last_Assignment_Date</targetReference>
+            <targetReference>RevOps_Last_Assigned_Change</targetReference>
         </connector>
-        <filterFormula>{!$User.Department} != &apos;Sales&apos; &amp;&amp; ISCHANGED({!$Record.OwnerId})</filterFormula>
+        <filterFormula>{!$Record.RevOps_Last_Assigned__c} !=&apos;&apos;</filterFormula>
         <object>Account</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
     <variables>
         <name>varDateHistory</name>
         <dataType>String</dataType>
