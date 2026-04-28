@@ -4600,6 +4600,16 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Infra_Named_Account_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Infra Named Account Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>InfraNamedAccount</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Interests__c</fullName>
         <label>Sector Interests</label>
         <required>false</required>
