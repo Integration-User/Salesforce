@@ -65814,7 +65814,6 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
         <active>true</active>
         <errorConditionFormula>AND(
 ISNEW(),
-NOT($Profile.Name = &quot;System Administrator&quot;),
 RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
 NOT(ISPICKVAL(StageName, &quot;1 - Introducing&quot;))
 )</errorConditionFormula>
