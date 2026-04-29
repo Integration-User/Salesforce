@@ -342,7 +342,7 @@
         </rules>
     </decisions>
     <decisions>
-        <description>SF-2118</description>
+        <description>SF-2118 + Fix</description>
         <name>Source_Reporting_Decision</name>
         <label>Source Reporting Decision</label>
         <locationX>1106</locationX>
@@ -577,7 +577,7 @@
         </rules>
         <rules>
             <name>AE_Outbound</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
                 <operator>EqualTo</operator>
@@ -611,6 +611,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>$Record.CreatedDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Referral_Conversion_Date__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
