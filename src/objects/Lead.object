@@ -13291,6 +13291,13 @@ CONTAINS($UserRole.Name,&quot;BDR&quot;)
         <errorMessage>You Must Associate this lead with an Opportunity or Create a new one</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Opp_Creation_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IsConverted &amp;&amp; ConvertedOpportunityId == null</errorConditionFormula>
+        <errorMessage>You must create an opportunity when you convert a lead
+(uncheck the box for &quot;Do not Create an Opportunity&quot;)</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Advisory_Minimum</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
