@@ -65596,8 +65596,8 @@ $User.Department = &apos;Account Management&apos;)
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
- OR(
-  RecordType.DeveloperName = &quot;Sales Opportunity&quot; ,
+OR(
+RecordType.DeveloperName = &quot;Sales_Opportunity&quot; ,
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ),
 Product_Count__c =0
