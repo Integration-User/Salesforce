@@ -47,6 +47,13 @@
                     <elementReference>Get_OppRecord.OwnerId</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_OppRecord.Record_Type_for_Query__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales Opportunity</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Clear_Account_Id</targetReference>
             </connector>
