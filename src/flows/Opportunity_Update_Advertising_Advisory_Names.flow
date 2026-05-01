@@ -476,7 +476,7 @@
         </rules>
         <rules>
             <name>Inbound_Oppty</name>
-            <conditionLogic>(1 OR 2) AND (3 OR 4)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 5) AND (3 OR 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
                 <operator>EqualTo</operator>
@@ -505,46 +505,17 @@
                     <stringValue>Inbound Email</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Management</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_to_Inbound_Opp</targetReference>
             </connector>
             <label>Inbound Oppty</label>
-        </rules>
-        <rules>
-            <name>Other_Referral</name>
-            <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Account Management</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Sales</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Referred_By__r.Department</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Account Management</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Referral_Conversion_Date__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>$Record.CreatedDate</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_to_Other_Referral</targetReference>
-            </connector>
-            <label>Other Referral</label>
         </rules>
         <rules>
             <name>AM_Referral</name>
@@ -567,7 +538,7 @@
                 <leftValueReference>$Record.Referral_Conversion_Date__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>$Record.CreatedDate</elementReference>
+                    <elementReference>$Record.Created_Date_short__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -610,7 +581,7 @@
                 <leftValueReference>$Record.Referral_Conversion_Date__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>$Record.CreatedDate</elementReference>
+                    <elementReference>$Record.Created_Date_short__c</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -624,6 +595,42 @@
                 <targetReference>Update_to_AE_Outbound</targetReference>
             </connector>
             <label>AE Outbound</label>
+        </rules>
+        <rules>
+            <name>Other_Referral</name>
+            <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Management</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Referred_By__r.Department</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Management</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Referral_Conversion_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Created_Date_short__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_to_Other_Referral</targetReference>
+            </connector>
+            <label>Other Referral</label>
         </rules>
     </decisions>
     <description>Added Opportunity Source Reporting Logic</description>
@@ -763,7 +770,7 @@
     <recordUpdates>
         <name>Update_to_AE_Outbound</name>
         <label>Update to AE Outbound</label>
-        <locationX>1898</locationX>
+        <locationX>1634</locationX>
         <locationY>2147</locationY>
         <inputAssignments>
             <field>Opportunity_Source_Reporting__c</field>
@@ -776,7 +783,7 @@
     <recordUpdates>
         <name>Update_to_AM_Referral</name>
         <label>Update to AM Referral</label>
-        <locationX>1634</locationX>
+        <locationX>1370</locationX>
         <locationY>2147</locationY>
         <inputAssignments>
             <field>Opportunity_Source_Reporting__c</field>
@@ -841,7 +848,7 @@
     <recordUpdates>
         <name>Update_to_Other_Referral</name>
         <label>Update to Other Referral</label>
-        <locationX>1370</locationX>
+        <locationX>1898</locationX>
         <locationY>2147</locationY>
         <inputAssignments>
             <field>Opportunity_Source_Reporting__c</field>
