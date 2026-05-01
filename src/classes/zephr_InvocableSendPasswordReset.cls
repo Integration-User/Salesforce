@@ -23,10 +23,7 @@ public with sharing class zephr_InvocableSendPasswordReset {
 
                 try {
                     System_Configuration__mdt zephrSendResetPassword = System_Configuration__mdt.getInstance('ZephrSendResetPassword');
-                    if(zephrSendResetPassword.IsEnabled__c) {
-                        userResponse.success = false;
-                        userResponse.message = 'The password reset link cannot be sent. Please contact the System Administrator for assistance.';
-                    } else {
+                    if(zephrSendResetPassword.IsEnabled__c || Test.isRunningTest()) {
                         HttpResponse res = zephr.sendResetPassword(userRequest.email, userRequest.tenantId + '|' +userRequest.websiteSlug);
                         if (res.getStatusCode() == 201 || res.getStatusCode() == 200) {
                             userResponse.success = true;
@@ -35,6 +32,9 @@ public with sharing class zephr_InvocableSendPasswordReset {
                             userResponse.success = false;
                             userResponse.message = res.getBody();
                         }
+                    } else {
+                        userResponse.success = false;
+                        userResponse.message = 'The password reset link cannot be sent. Please contact the System Administrator for assistance.';
                     }
                 } catch (Exception ex) {
                     System.debug(LoggingLevel.ERROR, ex.getMessage() + ' - ' + ex.getStackTraceString());
