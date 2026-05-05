@@ -64724,6 +64724,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <fullName>AP_Email_Blank_on_Closed_Won</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
 RecordType.Name &lt;&gt; &quot;Favour - Closed&quot;,
@@ -64737,6 +64738,7 @@ ISBLANK(AP_Email__c))</errorConditionFormula>
         <fullName>Acct_Company_Type_Is_Required</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
   $UserRole.DeveloperName &lt;&gt; &quot;System_Administrator&quot;,
   $UserRole.DeveloperName &lt;&gt; &quot;Subscription_Manager&quot;,
   $UserRole.DeveloperName &lt;&gt; &quot;Subscription_Operations&quot;,
@@ -64774,6 +64776,7 @@ ISBLANK(AP_Email__c))</errorConditionFormula>
         <active>true</active>
         <description>You must fill out the activation/deactivations needs prior to submitting for review or closing as lost</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Renewal&quot;,
 ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
@@ -64792,6 +64795,7 @@ ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;)
         <fullName>ActivationDeactivation_Needs_ClosedLost</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
@@ -64806,6 +64810,7 @@ NOT(ISBLANK(Trial_End_Date__c )))</errorConditionFormula>
         <active>true</active>
         <description>You must fill out the activation/deactivations needs prior to submitting for review or closing as lost</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISPICKVAL(Activation_Deactivation_Needs__c , &quot;&quot;),
@@ -64818,6 +64823,7 @@ ISPICKVAL(Win_Validation__c, &quot;Pending Review&quot;))</errorConditionFormula
         <active>true</active>
         <description>In order to save the Opportunity at a stage 4 or higher, you must include a website on the account.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
 OR(
@@ -64835,6 +64841,7 @@ ISBLANK(Account.Website))</errorConditionFormula>
         <fullName>BDR_Cannot_Stage_To_Qualified</fullName>
         <active>false</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 ISCHANGED(StageName) ,
 ISPICKVAL(StageName, &quot;Qualified&quot;),
 RecordType.DeveloperName = &quot;Sales_Development&quot;,
@@ -64846,6 +64853,7 @@ $UserRole.DeveloperName = &apos;BDR&apos;
         <fullName>Cannot_Change_Lead_Source</fullName>
         <active>false</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 DATEVALUE(CreatedDate)&gt;=DATE(2021,12,15),
 RecordType.Name&lt;&gt;&quot;Advisory&quot;,
 RecordType.Name&lt;&gt;&quot;Advisory - Closed&quot;,
@@ -64870,6 +64878,7 @@ TEXT(Default_Contact__r.LeadSource)&lt;&gt;TEXT(LeadSource))
         <fullName>Cannot_Create_Duplicate_Renewal</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 Current_Contract_Year__c =1,
 ISCHANGED(StageName),
@@ -64888,6 +64897,7 @@ Create_New_Renewal_Opportunity__c=TRUE))</errorConditionFormula>
         <fullName>Cannot_Create_Renewal_Opp_Mid_Year</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name=&quot;Renewal&quot;,
 ISCHANGED(StageName),
@@ -64906,6 +64916,7 @@ Current_Contract_Year__c&lt;&gt;1,
         <active>true</active>
         <description>Close date and stage cannot be edited once closed.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $User.Id &lt;&gt; &quot;0055G000008CkSh&quot;,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 OR(
@@ -64922,6 +64933,7 @@ ISCHANGED( StageName )))</errorConditionFormula>
         <description>Discovery Scheduled date cannot be edited on Sales Opps.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Permission.Skip_Validation_Rule= False,
 RecordType.DeveloperName = &apos;Sales_Opportunity&apos;,
 ISCHANGED(Discovery_Meeting_Scheduled_Date__c),
 NOT(ISBLANK(PRIORVALUE(Discovery_Meeting_Scheduled_Date__c)))
@@ -64933,6 +64945,7 @@ NOT(ISBLANK(PRIORVALUE(Discovery_Meeting_Scheduled_Date__c)))
         <fullName>Check_New_Sales_Opportunity</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
 ISPICKVAL(StageName, &quot;Qualified&quot;),
@@ -64949,6 +64962,7 @@ ISBLANK(Existing_Renewal_Opportunity__c)
         <active>true</active>
         <description>$UserRole.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $UserRole.DeveloperName &lt;&gt; &quot;System_Administrator&quot;,
 $UserRole.DeveloperName &lt;&gt; &quot;Subscription_Manager&quot;,
 $UserRole.DeveloperName &lt;&gt; &quot;Subscription_Operations&quot;,
@@ -64979,6 +64993,7 @@ NOT(ISPICKVAL(LeadSource, &quot;IJGlobal&quot;))))</errorConditionFormula>
         <fullName>Check_SDO_Missing_Account_Fields</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISPICKVAL( StageName , &quot;In Review&quot;),
@@ -64999,6 +65014,7 @@ Subsidiary, Main Phone, Website, Company Type, Address.</errorMessage>
         <active>true</active>
         <description>Closed Opportunity Notes are required in order to move to Pending Review.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL( Win_Validation__c , &quot;Pending Review&quot;),
 RecordType.Name = &quot;Sales Opportunity&quot;,
@@ -65014,6 +65030,7 @@ ISBLANK ( Closed_Opportunity_Notes__c)
         <fullName>Close_Reason_Blank_Closed_Opportunities</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Events&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
@@ -65028,6 +65045,7 @@ ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
         <fullName>Closed_Lost_Bad_Opp_Interest</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISCHANGED(StageName),
     ISPICKVAL(StageName, &quot;Closed Lost&quot;),
@@ -65076,6 +65094,7 @@ ISPICKVAL(StageName, &quot;Closed Won&quot;)
         <fullName>Closed_Won_Blank_Billing_Schedule</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
 OR(
@@ -65095,6 +65114,7 @@ ISPICKVAL(StageName,&quot;Closed Won&quot;))</errorConditionFormula>
         <fullName>Closed_Won_By_Sale_AM</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 OR(
 $UserRole.Name = &quot;CAM Manager&quot;,
@@ -65117,7 +65137,10 @@ ISPICKVAL( StageName , &quot;Closed Won&quot;))</errorConditionFormula>
         <fullName>Contract_Start_and_End_date</fullName>
         <active>true</active>
         <description>contract start date must be before contract end date</description>
-        <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,Contract_Start_Date__c &gt; Contract_End_Date__c)</errorConditionFormula>
+        <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+Contract_Start_Date__c &gt; Contract_End_Date__c)</errorConditionFormula>
         <errorMessage>The Contract End Date cannot be prior to the Contract Start Date.</errorMessage>
     </validationRules>
     <validationRules>
@@ -65125,6 +65148,7 @@ ISPICKVAL( StageName , &quot;Closed Won&quot;))</errorConditionFormula>
         <active>true</active>
         <description>Prevents change the status and Win Validation from Conducting Needs Analysis (3) or Qualified Prospect (2) to any following open stages, including Closed Won, if the approved score or its ARR has changed.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 	OR( 
 		RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
@@ -65185,6 +65209,7 @@ NOT(ISPICKVAL(LeadSource ,&quot;News Subscription Request&quot;))))</errorCondit
         <active>true</active>
         <description>Prevents change the status from Conducting Needs Analysis (3) or Qualified Prospect (2) to any following open stages, including Closed Won.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 	OR( 
 		RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
@@ -65214,6 +65239,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
         <fullName>Do_Not_Skip_SDO_Review</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISCHANGED(StageName),
@@ -65227,6 +65253,7 @@ NOT(ISPICKVAL(PRIORVALUE(StageName), &quot;In Review&quot;))
         <active>true</active>
         <description>To mark a Favor Opportunity as Active, the end date is required.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Favor&quot;, 
 ISPICKVAL( StageName ,  &quot;Active&quot;),
@@ -65241,6 +65268,7 @@ ISBLANK(Favor_End_Date__c)
         <active>true</active>
         <description>Sales Opportunity Stage 5 Requirements</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISPICKVAL( Sales_Type__c , &quot;New&quot; ),
@@ -65261,6 +65289,7 @@ Opportunity: PPD Sent</errorMessage>
         <active>true</active>
         <description>Requires user to add the Account field - Shipping Address - on the Opportunity in order to save the Opportunity at a stage 6  or higher.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Events&quot;,
 ISCHANGED(StageName),
@@ -65283,6 +65312,7 @@ ISCHANGED(StageName),
         <active>true</active>
         <description>Requires user to add Account fields - Company Type, Account Description, Account Phone, and Opportunity Lead Source - on the Opportunity in order to save the Opportunity at a stage 3 or higher.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Advisory&quot;,
 ISCHANGED(StageName),
@@ -65309,6 +65339,7 @@ ISBLANK(TEXT(Real_Estate_Capital_Markets_Public__c))
         <active>true</active>
         <description>Requires user to add Account fields - Company Type, Subsidiary, Description, and Account Phone on the Opportunity in order to save the Opportunity at a stage 3 or higher.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Renewal&quot;,
 ISCHANGED(StageName),
@@ -65331,6 +65362,7 @@ ISBLANK(TEXT( Account.Subsidiary__c ))
         <active>true</active>
         <description>Requires user to add Account fields - Company Type, Account Description, Account Phone, and Opportunity Lead Source - on the Opportunity in order to save the Opportunity at a stage 3 or higher.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
  RecordType.Name = &quot;Sales Opportunity&quot;,
  ISCHANGED(StageName),
@@ -65354,6 +65386,7 @@ ISBLANK(TEXT(Lead_Type__c))
         <active>true</active>
         <description>Opportunity Stage 3 Requirements</description>
         <errorConditionFormula>AND (
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 OR (
 RecordType.DeveloperName = &quot;Existing_Business&quot;,
@@ -65397,6 +65430,7 @@ ISPICKVAL(Account.Company_Type__c, &quot;Non-Contracted Long Only-generalist&quo
         <active>true</active>
         <description>You cannot close the final year of a contract without &quot;Create New Renewal&quot; = TRUE.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 Current_Contract_Year__c &lt;&gt; 1,
 ISCHANGED(StageName),
@@ -65414,6 +65448,7 @@ Create_New_Renewal_Opportunity__c = FALSE,
         <fullName>Force_Create_Renewal_Opportunity</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
 OR(
@@ -65432,6 +65467,7 @@ Create_New_Renewal_Opportunity__c=FALSE))</errorConditionFormula>
         <fullName>Force_Renewal_Creation_or_Reason_Why_Not</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Events&quot;,
 Current_Contract_Year__c=1,
@@ -65488,6 +65524,7 @@ Create_New_Renewal_Opportunity__c=TRUE)
         <fullName>InfraSector_Sectors_Covered</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
 OR(
@@ -65543,6 +65580,7 @@ INCLUDES(Sectors_Covered__c, &quot;Towers&quot;)
         <fullName>Invalid_Current_Contract_Year</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Events&quot;,
 Current_Contract_Year__c &gt; 10)</errorConditionFormula>
@@ -65553,6 +65591,7 @@ Current_Contract_Year__c &gt; 10)</errorConditionFormula>
         <fullName>Invalid_Sales_Opportunity</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 New_Sales_Opportunity__c != NULL,
 RecordType.DeveloperName = &apos;Sales_Development&apos;,
@@ -65587,6 +65626,7 @@ New_Sales_Opportunity__r.Account.Id &lt;&gt; Account.Id
         <active>false</active>
         <description>Lead Source field is required for Sales Record type Opportunities</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
     RecordTypeId = &quot;012f4000001Dq7r&quot;,
     ISBLANK(TEXT(LeadSource)),
     CreatedDate &gt; DATETIMEVALUE(&quot;2025-05-12 00:00:00&quot;),
@@ -65600,6 +65640,7 @@ New_Sales_Opportunity__r.Account.Id &lt;&gt; Account.Id
         <active>true</active>
         <description>Initial Meeting Organizer should not be edited.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 NOT(ISNEW()),
 PRIORVALUE(Initial_Meeting_Organizer__c ) != &apos;&apos;,
@@ -65616,6 +65657,7 @@ RecordType.DeveloperName =&apos;Sales_Opportunity_Closed&apos;)
         <active>true</active>
         <description>Lock fields for Inbound SDO generated by Marketing. Still allow for editing to select for following picklist values: Inbound Call, Inbound Email, Outbound Prospecting, Referral, Partner Referral</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISCHANGED(LeadSource),
@@ -65656,6 +65698,7 @@ ISCHANGED(UTM_Campaign__c)
         <fullName>Locked_Opportunities</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 Account.Lock_Opportunities__c=TRUE,
 IsClosed=TRUE)</errorConditionFormula>
@@ -65666,6 +65709,7 @@ IsClosed=TRUE)</errorConditionFormula>
         <fullName>Missing_Discovery_Meeting_Dates</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISCHANGED(StageName),
@@ -65680,6 +65724,7 @@ ISBLANK(Discovery_Meeting_Scheduled_Date__c)
         <fullName>More_than_30_Days_Schedule_Date</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 Discovery_Meeting_Scheduled_Date__c &gt; (TODAY() + 30),
 OR(
@@ -65703,6 +65748,7 @@ ISBLANK(Discovery_Meeting_Completed_Date__c)
         <fullName>No_Opps_under_IJ_Placeholder</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     RecordTypeId = &quot;012f4000001Dq7rAAC&quot;,
     AccountId = &quot;001Vy00000HXRHRIA5&quot;
@@ -65713,6 +65759,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
         <fullName>Only_BDR_Can_Own_SDOs</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.DeveloperName = &apos;Sales_Development&apos;,
 NOT($Permission.Bypass_BDR_Ownership_Rule),
@@ -65723,6 +65770,7 @@ ISCHANGED(OwnerId))</errorConditionFormula>
         <fullName>Other_Billing_Frequency</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Events&quot;,
 IF(ISPICKVAL(Billing_Schedule__c , &quot;Other&quot;) &amp;&amp; ISBLANK(  Other_Invoice_Frequency__c  ), true, false)
@@ -65746,6 +65794,7 @@ RecordType.Name=&quot;Renewal&quot;))</errorConditionFormula>
         <fullName>Owner_Cannot_Be_Integration_User</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 CONTAINS(Owner.Username,&quot;crmintegration&quot;),
@@ -65796,6 +65845,7 @@ NOT($Profile.Name = &quot;System Administrator&quot;),
         <fullName>Prevent_Skipping_Stage</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 NOT($Profile.Name = &quot;System Administrator&quot;),
   NOT(ISNEW()),
   RecordType.DeveloperName = &apos;Sales_Opportunity&apos;,
@@ -65839,6 +65889,7 @@ NOT($Profile.Name = &quot;System Administrator&quot;),
         <active>true</active>
         <description>Do not allow Sales and AM team members or leaders to edit closed won opportunities except Commercial Operations and System Admins.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $UserRole.Name &lt;&gt; &quot;System Administrator&quot;,
 $UserRole.Name &lt;&gt; &quot;Commercial Operations&quot;,
 $User.LastName &lt;&gt; &quot;Fernandez&quot;,
@@ -65855,6 +65906,7 @@ $User.Department = &apos;Account Management&apos;)
         <active>true</active>
         <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 4 or higher.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
  OR(
@@ -65870,6 +65922,7 @@ Product_Count__c =0
         <active>true</active>
         <description>Require other competition when &quot;Other&quot; competition is selected.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.DeveloperName =&apos;Sales_Development&apos;,
 ISBLANK(Other_Competition__c),
@@ -65882,6 +65935,7 @@ INCLUDES(Competition__c, &quot;Other&quot;)
         <fullName>Require_ACH_AutoDebit</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
 ISPICKVAL(StageName, &quot;Closed Won&quot;),
@@ -65899,6 +65953,7 @@ RecordType.Name = &quot;Sales Opportunity - Closed&quot;)
         <fullName>Require_Awards</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(LeadSource, &quot;Awards&quot;),
 ISBLANK(Awards__c)
@@ -65911,6 +65966,7 @@ ISBLANK(Awards__c)
         <active>true</active>
         <description>Require “Buying Process” field be filled out.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISBLANK(TEXT(Buying_Process__c)),
 ISCHANGED(StageName),
@@ -65934,6 +65990,7 @@ ISPICKVAL(StageName, &quot;Closed Won&quot;))
         <fullName>Require_Close_Opportunity_Notes</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK( Closed_Opportunity_Notes__c ),
@@ -65947,6 +66004,7 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
         <fullName>Require_Close_Reason_Notes</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK(Closed_Opportunity_Notes__c),
@@ -65961,6 +66019,7 @@ ISPICKVAL( Close_Reason__c, &quot;Product Fit&quot;)
         <fullName>Require_Closed_Notes_Sales</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL( StageName , &quot;Closed Lost&quot;),
 ISCHANGED(StageName),
@@ -65979,6 +66038,7 @@ $RecordType.DeveloperName = &quot;Renewal_Closed&quot;
         <active>true</active>
         <description>Require competition for SDO when moving to In Review.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.DeveloperName =&apos;Sales_Development&apos;,
 ISCHANGED(StageName),
@@ -65992,6 +66052,7 @@ ISBLANK(Competition__c)
         <fullName>Require_Customer_Handoff</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
     OR(
@@ -66042,6 +66103,7 @@ ISBLANK(Competition__c),
         <active>true</active>
         <errorConditionFormula>AND(
 ISNEW(),
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $UserRole.Name &lt;&gt;&quot;Outbound BDR&quot;,
 $UserRole.Name &lt;&gt;&quot;Inbound BDR&quot;,
@@ -66056,6 +66118,7 @@ ISBLANK( Discovery_Meeting_Scheduled_Date__c )
         <fullName>Require_Event</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(LeadSource, &quot;Event&quot;),
 ISBLANK(Marketing_Event__c)
@@ -66068,6 +66131,7 @@ ISBLANK(Marketing_Event__c)
         <active>true</active>
         <description>Require IJ Global Events - Related Event at Opportunity Creation.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISNEW(),
 RecordType.DeveloperName = &apos;Events&apos;,
@@ -66080,6 +66144,7 @@ IJ_Global_Events_Related_Event__c = NULL
         <active>true</active>
         <description>Require Lead Type during Open Stage.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $UserRole.DeveloperName &lt;&gt; &apos;System_Administrator&apos;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISCHANGED(StageName),
@@ -66096,6 +66161,7 @@ ISPICKVAL( StageName , &quot;In Review&quot;)
         <active>true</active>
         <errorConditionFormula>AND(
 ISNEW(),
+$Permission.Skip_Validation_Rule= False,
 NOT($Profile.Name = &quot;System Administrator&quot;),
 RecordType.DeveloperName =&apos;Sales_Opportunity&apos;,
 NOT(ISPICKVAL(StageName, &quot;1 - Introducing&quot;))
@@ -66108,6 +66174,7 @@ NOT(ISPICKVAL(StageName, &quot;1 - Introducing&quot;))
         <active>true</active>
         <description>Require Product of Interest for SDO when moving to In Review.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.DeveloperName =&apos;Sales_Development&apos;,
 ISCHANGED(StageName),
@@ -66121,6 +66188,7 @@ ISBLANK(Product_of_Interest__c)
         <fullName>Require_Rep_Forecast_Category_Change</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Sales Opportunity&quot;,
 ISCHANGED(StageName),
@@ -66136,6 +66204,7 @@ CloseDate &lt; TODAY() + 89)</errorConditionFormula>
         <fullName>Require_Revisit_Date</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISBLANK(Revisit_Date__c),
@@ -66147,6 +66216,7 @@ ISPICKVAL( Close_Reason__c, &quot;Timing&quot;)
         <fullName>Require_Risk_Type</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 RecordType.DeveloperName = &apos;Existing_Business&apos;,
 ISCHANGED(StageName),
 ISBLANK(TEXT(Risk_Type__c))
@@ -66158,6 +66228,7 @@ ISBLANK(TEXT(Risk_Type__c))
         <fullName>Require_SDO_Close_Reason</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 $RecordType.DeveloperName = &quot;Sales_Development&quot;,
 ISCHANGED(StageName),
@@ -66170,6 +66241,7 @@ ISPICKVAL(Close_Reason__c, &quot;&quot;)
         <fullName>Require_Sales_Owner_Upon_Review</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(StageName, &quot;In Review&quot;),
 ISCHANGED(StageName),
@@ -66304,6 +66376,7 @@ ISPICKVAL( Lead_Type__c, &quot;Other&quot;)
         <fullName>Require_Webinar</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(LeadSource, &quot;Webinar&quot;),
 ISBLANK(Webinar__c)
@@ -66316,6 +66389,7 @@ ISBLANK(Webinar__c)
         <active>true</active>
         <description>To move to Stage 6, Contract Start/End Date, Billing Schedule and Billing Contact are required.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
 ISPICKVAL( StageName , &quot;6 - Verbal Win and Finalizing Contract&quot;),
@@ -66335,6 +66409,7 @@ OR(
         <active>true</active>
         <description>Ask Price is required to save at ss4 or higher.</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
 OR(
@@ -66356,6 +66431,7 @@ ISBLANK(Initial_Asking_Price__c ))</errorConditionFormula>
         <active>true</active>
         <description>Prevent editing of Inbound field</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 NOT(ISNEW()),
 ISCHANGED(Inbound__c)
@@ -66366,6 +66442,7 @@ ISCHANGED(Inbound__c)
         <fullName>Risk_Reason_Blank</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Renewal&quot;,
  ISBLANK( Risk_Reason__c ) ,
@@ -66377,6 +66454,7 @@ RecordType.Name = &quot;Renewal&quot;,
         <fullName>Risk_Type_Blank</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name = &quot;Renewal&quot;,
 ISBLANK(TEXT(Risk_Type__c)),
@@ -66392,6 +66470,7 @@ ISPICKVAL(Renewal_Risk__c,&quot;Power User / VIP left the Firm&quot;)))</errorCo
         <fullName>Risk_Type_Percentage</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 RecordType.DeveloperName = &apos;Existing_Business&apos;,
 This_Year_Increase__c &lt;= -1.00,
 OR(
@@ -66427,6 +66506,7 @@ TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
         <fullName>Tracking_Consolidated_Opportunities</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name &lt;&gt; &quot;Events&quot;,
 ISBLANK( Consolidated_To__c ) ,
@@ -66439,6 +66519,7 @@ ISPICKVAL( StageName , &quot;Consolidated&quot;) )</errorConditionFormula>
         <active>true</active>
         <description>Win Validation Required for renewals and sales ops</description>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
 OR(
@@ -66453,6 +66534,7 @@ ISPICKVAL ( StageName , &quot;Closed Won&quot;)
         <fullName>Win_Validation_SS5_Below</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 NOT(ISNEW()),
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name&lt;&gt;&quot;Events&quot;,
@@ -66474,6 +66556,7 @@ NOT(ISBLANK(TEXT(Win_Validation__c))))</errorConditionFormula>
         <fullName>Year_2_Amount_Populated</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name&lt;&gt;&quot;Events&quot;,
 Length_of_Contract__c&lt;=1,
@@ -66484,6 +66567,7 @@ NOT(ISBLANK(X2nd_Year_Amount_in_USD__c)))</errorConditionFormula>
         <fullName>Year_3_Amount_Populated</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name&lt;&gt;&quot;Events&quot;,
 Length_of_Contract__c&lt;=2,
@@ -66494,6 +66578,7 @@ NOT(ISBLANK(X3rd_Year_Amount_in_USD__c)))</errorConditionFormula>
         <fullName>Year_4_Amount_Populated</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name&lt;&gt;&quot;Events&quot;,
 Length_of_Contract__c&lt;=3,
@@ -66504,6 +66589,7 @@ NOT(ISBLANK(Year_4_Amount__c)))</errorConditionFormula>
         <fullName>Year_5_Amount_Populated</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 RecordType.Name&lt;&gt;&quot;Events&quot;,
 Length_of_Contract__c =4,
