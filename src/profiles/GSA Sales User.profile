@@ -17353,6 +17353,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Infra_Named_Account_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Interests__c</field>
         <readable>true</readable>
@@ -17580,6 +17585,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Number_of_Open_Opportunities__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Number_of_Open_Renewals__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -18831,6 +18841,11 @@
         <editable>false</editable>
         <field>Account.Tax_Status__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Test_Account__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -22280,6 +22295,26 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Gong__Number_of_Active_Engage_Flows__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Green_Street_News_Australia__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Green_Street_News_Canada__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Green_Street_News_Europe__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Green_Street_News_United_States__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -31909,6 +31944,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Opportunity_Source_Reporting_Override__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.Opportunity_Source_Reporting__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -32160,6 +32200,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Recurring_Revenue_Snapshot__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Referral_Conversion_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -17580,6 +17580,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Number_of_Open_Renewals__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Number_of_Open_Sales_Opportunities__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -22276,6 +22281,26 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Gong__Number_of_Active_Engage_Flows__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Green_Street_News_Australia__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Green_Street_News_Canada__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Green_Street_News_Europe__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Green_Street_News_United_States__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

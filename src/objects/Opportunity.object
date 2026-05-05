@@ -6439,6 +6439,14 @@ TODAY() - DATEVALUE(CreatedDate))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Opportunity_Source_Reporting_Override__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Opportunity Source Reporting (Override)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Opportunity_Source_Reporting__c</fullName>
         <externalId>false</externalId>
         <label>Opportunity Source Reporting</label>
@@ -7479,6 +7487,14 @@ NULL))))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Referral_Conversion_Date__c</fullName>
+        <label>Referral Conversion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Referral_Type__c</fullName>
@@ -9749,6 +9765,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <field>OPPORTUNITY.RECORDTYPE</field>
             <operation>equals</operation>
             <value>Opportunity.Sales_Opportunity</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>CFety</value>
         </filters>
         <label>All Opportunities</label>
     </listViews>
@@ -13736,6 +13757,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -13861,6 +13894,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17840,6 +17881,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -17965,6 +18018,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21888,6 +21949,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -22005,6 +22078,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25872,6 +25953,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -25989,6 +26082,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -30116,6 +30217,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -30309,6 +30422,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -34512,6 +34633,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -34665,6 +34798,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -38608,6 +38749,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -38653,6 +38806,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -42448,6 +42609,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CH Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -42489,6 +42662,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -46090,6 +46271,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CAN Sales Comps API</fullName>
                 <default>false</default>
             </values>
@@ -46127,6 +46320,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>EURO Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -50010,6 +50211,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -50163,6 +50376,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -54367,6 +54588,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -54540,6 +54773,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -58807,6 +59048,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -58960,6 +59213,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -63059,6 +63320,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Basic - Additional Users</fullName>
                 <default>false</default>
             </values>
@@ -63216,6 +63489,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Enhanced Reporting - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -65575,8 +65856,8 @@ $User.Department = &apos;Account Management&apos;)
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
- OR(
-  RecordType.DeveloperName = &quot;Sales Opportunity&quot; ,
+OR(
+RecordType.DeveloperName = &quot;Sales_Opportunity&quot; ,
 ISPICKVAL(StageName, &quot;Closed Won&quot;)
 ),
 Product_Count__c =0
