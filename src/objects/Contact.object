@@ -11195,6 +11195,17 @@ ISBLANK(Awards__c)
         <errorMessage>Please provide the awards details.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_Email</fullName>
+        <active>true</active>
+        <description>Require Email upon creation.</description>
+        <errorConditionFormula>AND(
+ISNEW(),
+ISBLANK(Email)
+)</errorConditionFormula>
+        <errorDisplayField>Email</errorDisplayField>
+        <errorMessage>You need to provide an email address when creating a contact.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Event</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
