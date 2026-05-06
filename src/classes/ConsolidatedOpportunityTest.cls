@@ -194,7 +194,7 @@ public class ConsolidatedOpportunityTest {
     @isTest static void createEnrolmentsTest4() {
         Test.startTest();
         List<Opportunity> opps = [Select Id from Opportunity LIMIT 2];
-        Opportunity upOpp = new Opportunity(Id=opps[0].Id, Consolidated_To__c=opps[1].Id, stageName = 'Consolidated');
+        Opportunity upOpp = new Opportunity(Id=opps[0].Id, Consolidated_To__c=opps[1].Id, stageName = 'Consolidated', Risk_Type__c = 'Low Attrition Risk');
         update upOpp;
         ConsolidatedOpportunity.ConsolidatedOppInfo oppInfo = new ConsolidatedOpportunity.ConsolidatedOppInfo();
         oppInfo.consolidatedOppId = upOpp.Id;
