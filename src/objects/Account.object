@@ -1053,6 +1053,17 @@ IF (LEN( BillingCountry) = 0, 0,1)</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>CRE_Keyword_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>CRE Keyword Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Change_in_Usage_QoQ__c</fullName>
         <inlineHelpText>Percent change in clicks over trailing three months relative to prior three months</inlineHelpText>
         <label>Change in Usage QoQ</label>
@@ -4598,6 +4609,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <fullName>Industry</fullName>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Infra_Keyword_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Infra Keyword Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Infra_Named_Account_Owner__c</fullName>
