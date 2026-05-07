@@ -11,7 +11,7 @@ public class ConsolidatedOpportunity {
                 oppResult.isError = 'true';
             } 
             Set<Id> oppIds = new Set<Id>{consolidatedOpp[0].consolidatedOppId, consolidatedOpp[0].targetOpp};
-                Map<Id, Opportunity> oppAndLineItems = New Map<Id, Opportunity>([Select Id, AccountId, Consolidated_To__c, StageName, 
+                Map<Id, Opportunity> oppAndLineItems = New Map<Id, Opportunity>([Select Id, AccountId, Consolidated_To__c, StageName, Referred_By__c, AM_Referrer__c,
                                                                                  (Select Id, Start_Date__c,End_Date__c,Allocated__c,Billing_Schedule__c,Subtotal,
                                                                                   OpportunityId,Percentage_of_Total_Amount__c,CDB_ID__c,Color__c,News_ID__c,
                                                                                   Product2Id,Quantity,PricebookEntryId,Trial_Start_Date__c, MRR__c,ProductCode,
@@ -50,6 +50,15 @@ public class ConsolidatedOpportunity {
                 Opportunity opp = new Opportunity(Consolidated_To__c = consolidatedOpp[0].targetOpp, 
                                                   Id = consolidatedOpp[0].consolidatedOppId,stageName = 'Consolidated');
                 updateOppList.add(opp);
+                //SF-2149 : Consolidation- Referred By fields
+                if(oppAndLineItems.containskey(consolidatedOpp[0].targetOpp)) {
+                    Opportunity consolidatedOppData = new Opportunity(Id = consolidatedOpp[0].targetOpp);
+                    Opportunity TargetOppUpdate = oppAndLineItems.get(consolidatedOpp[0].consolidatedOppId);
+                    if(TargetOppUpdate.Referred_By__c !=  null) consolidatedOppData.Referred_By__c = TargetOppUpdate.Referred_By__c;
+                    if(TargetOppUpdate.AM_Referrer__c !=  null) consolidatedOppData.AM_Referrer__c = TargetOppUpdate.AM_Referrer__c;
+                    updateOppList.add(consolidatedOppData);
+                }
+                // END SF-2149 
                 // SF-824 - Consolidation Data Management for SDO process
                 For(Opportunity sdoOpp : [Select Id, New_Sales_Opportunity__c FROM Opportunity WHERE New_Sales_Opportunity__c =: consolidatedOpp[0].consolidatedOppId]) {
                     sdoOpp.New_Sales_Opportunity__c = consolidatedOpp[0].targetOpp;
