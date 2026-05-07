@@ -16758,6 +16758,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.CRE_Keyword_Score__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Change_in_Usage_QoQ__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -17294,6 +17299,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Industry</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Infra_Keyword_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
