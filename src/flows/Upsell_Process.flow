@@ -3,10 +3,79 @@
     <apiVersion>56.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <name>Assign_Default_ContactId</name>
+        <label>Assign Default ContactId</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>DefaultContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Lead_Contact__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Sales_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Campaign_Touchpoint_Details</name>
+        <label>Update Campaign Touchpoint Details</label>
+        <locationX>50</locationX>
+        <locationY>1019</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Campaign_Touchpoint__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Contact_Record.First_Campaign_Touchpoint__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.First_Campaign_Touchpoint_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Contact_Record.First_Campaign_Touchpoint_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Last_Campaign_Touchpoint__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Contact_Record.Last_Campaign_Touchpoint__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Last_Campaign_Touchpoint_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Contact_Record.Last_Campaign_Touchpoint_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Description_History</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Default_Contact_Id</name>
+        <label>Update Default Contact Id</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>DefaultContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Default_Contact__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Default_Contact_Not_Empty</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Update_Inbound_Flag</name>
         <label>Update Inbound Flag</label>
-        <locationX>182</locationX>
-        <locationY>1295</locationY>
+        <locationX>204</locationX>
+        <locationY>2303</locationY>
         <assignmentItems>
             <assignToReference>$Record.Inbound__c</assignToReference>
             <operator>Assign</operator>
@@ -22,8 +91,8 @@
         <description>Whenever a product is listed on an Sale opportunity RT and the “upsell/cross-sell” checkbox is checked, ensure the opportunity is Sales Type = Upsell.</description>
         <name>Check_upsell_cross_Sell_Condition</name>
         <label>Check upsell/cross Sell Condition</label>
-        <locationX>314</locationX>
-        <locationY>1487</locationY>
+        <locationX>336</locationX>
+        <locationY>2495</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_Upsells_value_for_Opp</name>
@@ -80,8 +149,8 @@
     <decisions>
         <name>Description_History</name>
         <label>Description History</label>
-        <locationX>314</locationX>
-        <locationY>287</locationY>
+        <locationX>336</locationX>
+        <locationY>1295</locationY>
         <defaultConnector>
             <targetReference>SAO_Owner_Check</targetReference>
         </defaultConnector>
@@ -119,8 +188,8 @@
     <decisions>
         <name>Is_Admin_Created_SDO_Opportunity</name>
         <label>Is Admin Created SDO Opportunity?</label>
-        <locationX>314</locationX>
-        <locationY>1187</locationY>
+        <locationX>336</locationX>
+        <locationY>2195</locationY>
         <defaultConnector>
             <targetReference>Check_upsell_cross_Sell_Condition</targetReference>
         </defaultConnector>
@@ -149,10 +218,113 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Default_Contact_Not_Empty</name>
+        <label>Is Default Contact Not Empty?</label>
+        <locationX>182</locationX>
+        <locationY>803</locationY>
+        <defaultConnector>
+            <targetReference>Description_History</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Not_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DefaultContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Contact_Record</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Sales_Opportunity</name>
+        <label>Is Sales Opportunity?</label>
+        <locationX>182</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Is_Default_Contact_Not_Empty</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Sales_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Default_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Default_Contact__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>DefaultContactId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Default_Contact_Id</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Sales_Or_SDO_Opportunity</name>
+        <label>Is Sales Or SDO Opportunity</label>
+        <locationX>336</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Description_History</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Sales_Or_SDO_Opportunity</name>
+            <conditionLogic>(1 OR 2) AND  3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Default_ContactId</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>SAO_Date_Check</name>
         <label>SAO Date Check</label>
-        <locationX>314</locationX>
-        <locationY>887</locationY>
+        <locationX>336</locationX>
+        <locationY>1895</locationY>
         <defaultConnector>
             <targetReference>Is_Admin_Created_SDO_Opportunity</targetReference>
         </defaultConnector>
@@ -197,8 +369,8 @@
     <decisions>
         <name>SAO_Owner_Check</name>
         <label>SAO Owner Check</label>
-        <locationX>314</locationX>
-        <locationY>587</locationY>
+        <locationX>336</locationX>
+        <locationY>1595</locationY>
         <defaultConnector>
             <targetReference>SAO_Date_Check</targetReference>
         </defaultConnector>
@@ -256,11 +428,32 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Contact_Record</name>
+        <label>Contact Record</label>
+        <locationX>50</locationX>
+        <locationY>911</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Campaign_Touchpoint_Details</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>DefaultContactId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>New_Sales_Type_Update_on_Opp</name>
         <label>New Sales Type Update on Opp</label>
-        <locationX>314</locationX>
-        <locationY>1595</locationY>
+        <locationX>336</locationX>
+        <locationY>2603</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -280,8 +473,8 @@
     <recordUpdates>
         <name>SAO_Date_On_Opportunity</name>
         <label>SAO Date On Opportunity</label>
-        <locationX>182</locationX>
-        <locationY>995</locationY>
+        <locationX>204</locationX>
+        <locationY>2003</locationY>
         <connector>
             <targetReference>Is_Admin_Created_SDO_Opportunity</targetReference>
         </connector>
@@ -296,8 +489,8 @@
     <recordUpdates>
         <name>SAO_Tracking_On_Opportunity</name>
         <label>SAO Tracking On Opportunity</label>
-        <locationX>182</locationX>
-        <locationY>695</locationY>
+        <locationX>204</locationX>
+        <locationY>1703</locationY>
         <connector>
             <targetReference>SAO_Date_Check</targetReference>
         </connector>
@@ -312,8 +505,8 @@
     <recordUpdates>
         <name>Update_Description_History</name>
         <label>Update Description History</label>
-        <locationX>182</locationX>
-        <locationY>395</locationY>
+        <locationX>204</locationX>
+        <locationY>1403</locationY>
         <connector>
             <targetReference>SAO_Owner_Check</targetReference>
         </connector>
@@ -328,8 +521,8 @@
     <recordUpdates>
         <name>Upsell_Update_Opp_Process</name>
         <label>Upsell Update Opp Process</label>
-        <locationX>50</locationX>
-        <locationY>1595</locationY>
+        <locationX>72</locationX>
+        <locationY>2603</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -347,14 +540,21 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>188</locationX>
+        <locationX>210</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Description_History</targetReference>
+            <targetReference>Is_Sales_Or_SDO_Opportunity</targetReference>
         </connector>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>DefaultContactId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
