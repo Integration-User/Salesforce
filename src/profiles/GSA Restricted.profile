@@ -48426,6 +48426,10 @@
         <recordType>Opportunity.Advisory_Closed</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Opportunity-Events</layout>
+        <recordType>Opportunity.Events</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Opportunity-Favors - Closed</layout>
         <recordType>Opportunity.Favour_Closed</recordType>
     </layoutAssignments>
@@ -48435,10 +48439,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-New Business</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Opportunity-New Business</layout>
-        <recordType>Opportunity.Events</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-New Business</layout>
