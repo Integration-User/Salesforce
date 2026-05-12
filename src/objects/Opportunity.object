@@ -1636,6 +1636,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Current Client - CS Request</label>
                 </value>
+                <value>
+                    <fullName>Trial-Specific</fullName>
+                    <default>false</default>
+                    <label>Trial-Specific</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1674,6 +1679,10 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Current Client - CS Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Disqualified</controllingFieldValue>
+                <valueName>Trial-Specific</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
@@ -9026,6 +9035,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                     <fullName>Limited Access</fullName>
                     <default>false</default>
                     <label>Limited Access</label>
+                </value>
+                <value>
+                    <fullName>Web News Trial</fullName>
+                    <default>false</default>
+                    <label>Web News Trial</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -52000,6 +52014,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Trial-Specific</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Unreachable</fullName>
                 <default>false</default>
             </values>
@@ -56039,11 +56057,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Trial_Type__c</picklist>
             <values>
-                <fullName>Full Access</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Limited Access</fullName>
+                <fullName>Web News Trial</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

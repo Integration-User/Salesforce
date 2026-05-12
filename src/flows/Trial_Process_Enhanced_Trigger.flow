@@ -12,9 +12,46 @@
     <decisions>
         <name>Trial_Start_Or_Deactivation_Decision_On_Oppty</name>
         <label>Trial Start Or Deactivation Decision On Oppty</label>
-        <locationX>578</locationX>
+        <locationX>710</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SDO_Full_Access_Trial</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_Start_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_End_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Web News Trial</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SDO_Opportunity_Review_Case</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>SDO - Full Access Trial</label>
+        </rules>
         <rules>
             <name>Review_Trial</name>
             <conditionLogic>and</conditionLogic>
@@ -53,6 +90,13 @@
                     <stringValue>Green Street News: Europe</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Opportunity_Review_Case</targetReference>
             </connector>
@@ -88,6 +132,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>React News</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -195,7 +246,7 @@
     <recordCreates>
         <name>Create_Limited_Case_Trial</name>
         <label>Create Limited Case Trial</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>431</locationY>
         <inputAssignments>
             <field>AccountId</field>
@@ -269,7 +320,7 @@
     <recordCreates>
         <name>Create_Transaction_Case</name>
         <label>Create Transaction Case</label>
-        <locationX>842</locationX>
+        <locationX>1106</locationX>
         <locationY>539</locationY>
         <inputAssignments>
             <field>AP_Email__c</field>
@@ -331,6 +382,68 @@
     <recordCreates>
         <name>Opportunity_Review_Case</name>
         <label>Opportunity Review Case</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>Please review this trial opportunity</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <stringValue>00G5G000004kjjW</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>$Label.Opportunity_Review</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>{!$Record.Name} - Trial</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Trial</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>SDO_Opportunity_Review_Case</name>
+        <label>SDO Opportunity Review Case</label>
         <locationX>50</locationX>
         <locationY>431</locationY>
         <inputAssignments>
@@ -393,7 +506,7 @@
     <recordLookups>
         <name>Get_Transaction_Support_RT</name>
         <label>Get Transaction Support RT</label>
-        <locationX>842</locationX>
+        <locationX>1106</locationX>
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -414,7 +527,7 @@
     <recordUpdates>
         <name>Case_Due_Date_Update</name>
         <label>Case Due Date Update</label>
-        <locationX>578</locationX>
+        <locationX>842</locationX>
         <locationY>431</locationY>
         <filterLogic>(1 OR 2) AND (3 AND 4)</filterLogic>
         <filters>
@@ -454,7 +567,7 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>452</locationX>
+        <locationX>584</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Trial_Start_Or_Deactivation_Decision_On_Oppty</targetReference>
