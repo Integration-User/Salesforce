@@ -17030,6 +17030,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Domain_Cleaned__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.EU_Expansion_Owner__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -18591,6 +18596,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.React_id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Reason_for_Account_Creation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -52501,10 +52511,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ImportPersonal</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>IntegrationIntelligenceUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

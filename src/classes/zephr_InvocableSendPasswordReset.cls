@@ -15,17 +15,19 @@ public with sharing class zephr_InvocableSendPasswordReset {
                 userResponse.message = 'ERROR';
                 userResponse.success = false;
 
-                if(!zephrIntegrationsByTenantMap.containsKey(userRequest.tenantId)) {
+               /* if(!zephrIntegrationsByTenantMap.containsKey(userRequest.tenantId)) {
                     zephrIntegrationsByTenantMap.put(userRequest.tenantId, new ZephrIntegrationNG(userRequest.tenantId));
                 }
 
-                ZephrIntegrationNG zephr = zephrIntegrationsByTenantMap.get(userRequest.tenantId);
+                ZephrIntegrationNG zephr = zephrIntegrationsByTenantMap.get(userRequest.tenantId);*/
 
                 try {
-                    System_Configuration__mdt zephrSendResetPassword = System_Configuration__mdt.getInstance('ZephrSendResetPassword');
+                    System_Configuration__mdt zephrSendResetPassword = System_Configuration__mdt.getInstance('ResetWebsitePasswordEnable');
                     if(zephrSendResetPassword.IsEnabled__c || Test.isRunningTest()) {
-                        HttpResponse res = zephr.sendResetPassword(userRequest.email, userRequest.tenantId + '|' +userRequest.websiteSlug);
-                        if (res.getStatusCode() == 201 || res.getStatusCode() == 200) {
+                        //SF-2146 Wrong email being sent via 'reset password' on Sf and now it not working at all
+                       // HttpResponse res = zephr.sendResetPassword(userRequest.email, userRequest.tenantId + '|' +userRequest.websiteSlug);
+                        HttpResponse res = ZephrIntegrationNG.sendResetPasswordForMantis(userRequest.email);
+                        if (res != null && res.getStatusCode() == 204 || res.getStatusCode() == 200) {
                             userResponse.success = true;
                             userResponse.message = 'Password reset link sent.';
                         } else {
