@@ -508,7 +508,7 @@ public with sharing class ZephrIntegrationNG {
             String responseBody = response.getBody();
              system.debug('Token Response Body: ' + responseBody);
             ZephrIntegrationNG.SendPasswordApiResponseWrapper parsedResponse = (ZephrIntegrationNG.SendPasswordApiResponseWrapper) JSON.deserialize(responseBody, ZephrIntegrationNG.SendPasswordApiResponseWrapper.class);
-            return parsedResponse.data[0].id;
+            if(parsedResponse.data != null && parsedResponse.data.size() > 0) return parsedResponse.data[0].id;
         } else if(Test.isRunningTest()) return 'test';
        
         return null;
@@ -517,7 +517,7 @@ public with sharing class ZephrIntegrationNG {
         GSA_Platform__c platform = GSA_Platform__c.getOrgDefaults();  
         String token = mantisResetPasswordToken(email, platform);
         System.debug('token: ' + token);
-        HttpResponse response = null;
+        HttpResponse response = new HttpResponse();
          if (token != null || Test.isRunningTest()) {
              HTTP http = new HTTP();
              String endpoint = platform.Website_Password_Reset_Info__c.replace('{!token}',token);
