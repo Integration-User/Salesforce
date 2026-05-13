@@ -280,7 +280,7 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Full_Access</name>
+            <name>Web_News_Trial</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Trial_Type__c</leftValueReference>
@@ -289,17 +289,10 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.Trial_Type__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>UpdateTrial_Dates</targetReference>
             </connector>
-            <label>Full Access</label>
+            <label>Web News Trial</label>
         </rules>
     </decisions>
     <description>SF-2095</description>
