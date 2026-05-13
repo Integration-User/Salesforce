@@ -7451,6 +7451,17 @@ NULL))))</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Reason_for_Opportunity_Creation__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Opportunity Creation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Record_Type_for_Query__c</fullName>
         <externalId>false</externalId>
         <formula>RecordType.Name</formula>
@@ -66154,6 +66165,25 @@ IJ_Global_Events_Related_Event__c = NULL
         <errorMessage>Please provide the IJGlobal Related Event field upon creation.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_InfraSectors_Covered</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    ISPICKVAL(Account.Subsidiary__c, &quot;18.1 LDC&quot;),
+    OR(
+        $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+        $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
+    ),
+    OR(
+        ISBLANK(Infra_Sectors_Covered__c ),
+        ISBLANK(Account.Infra_Sectors_Covered__c )
+    )
+)</errorConditionFormula>
+        <errorDisplayField>Infra_Sectors_Covered__c</errorDisplayField>
+        <errorMessage>Infra Sectors Covered is required for LDC accounts.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Lead_Type</fullName>
         <active>true</active>
         <description>Require Lead Type during Open Stage.</description>
@@ -66267,7 +66297,7 @@ ISBLANK(Sales_Owner__c)
     </validationRules>
     <validationRules>
         <fullName>Require_Sector_Markets_Covered</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>AND(
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISPICKVAL(StageName, &quot;Closed Won&quot;),
@@ -66276,16 +66306,12 @@ ISBLANK(Sales_Owner__c)
         $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
     ),
     OR(
-        ISBLANK(Account.Interests__c),
-        ISBLANK(Account.Markets_Covered__c)
-    ),
-    OR(
-        LEN(TRIM(Markets_Covered__c)) = 0,
-        ISBLANK(Sectors_Covered__c)
+        ISBLANK(Sectors_Covered__c),
+        ISBLANK(Account.Sectors_Covered__c)
     )
 )</errorConditionFormula>
         <errorDisplayField>Sectors_Covered__c</errorDisplayField>
-        <errorMessage>Sectors / Markets Covered are required if the fields from the account level are blank.</errorMessage>
+        <errorMessage>Sectors Covered must be filled out as they are missing on the related account.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_This_Yr_Percent</fullName>
