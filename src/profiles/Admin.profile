@@ -55727,10 +55727,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AcceptInboundBundling</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>AccessOrchestrationObjects</name>
     </userPermissions>
     <userPermissions>
