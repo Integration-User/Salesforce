@@ -324,6 +324,28 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Owned_by_Data_Operations</name>
+        <label>Owned by Data Operations?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Data_Ops_Department</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner.Department</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Data Operations</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X7_Days_Notification</targetReference>
+            </connector>
+            <label>Yes - Data Ops Department</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>Notify Owners After 3 days of Discovery Scheduled Date</description>
         <name>X3_Days_Notification</name>
         <label>3 Days Notification</label>
@@ -526,7 +548,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>X7_Days_Notification</targetReference>
+            <targetReference>Owned_by_Data_Operations</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
