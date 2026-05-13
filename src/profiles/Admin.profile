@@ -17554,6 +17554,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Infra_Sectors_Covered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Interests__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -18910,6 +18915,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Secondary_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Sectors_Covered__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -23030,6 +23040,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.React_id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Reason_for_Contact_Creation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -32390,6 +32405,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Reason_For_No_Renewal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Reason_for_Opportunity_Creation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -55707,6 +55727,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>AcceptInboundBundling</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>AccessOrchestrationObjects</name>
     </userPermissions>
     <userPermissions>
@@ -56031,6 +56055,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>GrantOutboundBundling</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ImportCustomObjects</name>
     </userPermissions>
     <userPermissions>
@@ -56048,6 +56076,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>InstallPackaging</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>IntegrationIntelligenceUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -56304,6 +56336,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>MarketingActionableListUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
