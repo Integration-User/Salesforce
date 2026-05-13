@@ -330,7 +330,7 @@
         <locationY>0</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Yes_Data_Ops_Department</name>
+            <name>Not_Data_Ops_Department</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Owner.Department</leftValueReference>
@@ -342,7 +342,7 @@
             <connector>
                 <targetReference>X7_Days_Notification</targetReference>
             </connector>
-            <label>Yes - Data Ops Department</label>
+            <label>Not Data Ops Department</label>
         </rules>
     </decisions>
     <decisions>
