@@ -56051,10 +56051,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>GrantOutboundBundling</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ImportCustomObjects</name>
     </userPermissions>
     <userPermissions>
