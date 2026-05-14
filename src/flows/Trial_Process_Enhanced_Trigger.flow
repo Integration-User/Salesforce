@@ -16,27 +16,13 @@
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>SDO_Full_Access_Trial</name>
+            <name>SDO_Web_News_Trial</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Sales_Development</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Trial_Start_Date__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Trial_End_Date__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -50,7 +36,7 @@
                 <targetReference>SDO_Opportunity_Review_Case</targetReference>
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-            <label>SDO - Full Access Trial</label>
+            <label>SDO - Web News Trial</label>
         </rules>
         <rules>
             <name>Review_Trial</name>
@@ -206,6 +192,7 @@
             <label>Create Transaction Support Case</label>
         </rules>
     </decisions>
+    <description>Added SF-2095</description>
     <environments>Default</environments>
     <formulas>
         <name>ADayAfterTrialEndDate</name>
