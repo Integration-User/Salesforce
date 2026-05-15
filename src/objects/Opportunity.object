@@ -994,7 +994,7 @@
     </fields>
     <fields>
         <fullName>At_RIsk_Revenue__c</fullName>
-        <formula>IF( AND(NOT(ISBLANK((TEXT(Renewal_Risk__c)))), IsClosed = FALSE), Starting_Price_Opp__c , 0)</formula>
+        <formula>IF( AND(NOT(ISBLANK((TEXT(Risk_Type__c)))), IsClosed = FALSE), Starting_Price_Opp__c , 0)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>At RIsk Revenue</label>
         <precision>18</precision>
