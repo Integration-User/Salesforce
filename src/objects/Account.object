@@ -2923,6 +2923,7 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     </fields>
     <fields>
         <fullName>Current_Products_Text__c</fullName>
+        <inlineHelpText>As of 5/13/26 this data is being pulled in from Snowflake, our data warehouse, and is the most accurate data regarding current product usage</inlineHelpText>
         <label>Current Products(Text)</label>
         <length>1000</length>
         <trackHistory>false</trackHistory>
@@ -4640,6 +4641,50 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Infra_Sectors_Covered__c</fullName>
+        <label>Infra Sectors Covered</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Renewables</fullName>
+                    <default>false</default>
+                    <label>Renewables</label>
+                </value>
+                <value>
+                    <fullName>Telecom</fullName>
+                    <default>false</default>
+                    <label>Telecom</label>
+                </value>
+                <value>
+                    <fullName>Transport</fullName>
+                    <default>false</default>
+                    <label>Transport</label>
+                </value>
+                <value>
+                    <fullName>Oil and Gas</fullName>
+                    <default>false</default>
+                    <label>Oil and Gas</label>
+                </value>
+                <value>
+                    <fullName>Social and Defense</fullName>
+                    <default>false</default>
+                    <label>Social and Defense</label>
+                </value>
+                <value>
+                    <fullName>Data Center</fullName>
+                    <default>false</default>
+                    <label>Data Center</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
     </fields>
     <fields>
         <fullName>Interests__c</fullName>
@@ -8552,6 +8597,166 @@ Owner.Id = $User.Id)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Sectors_Covered__c</fullName>
+        <inlineHelpText>What sector(s) does the client invest in / cover?</inlineHelpText>
+        <label>Sectors Covered</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Apartment</fullName>
+                    <default>false</default>
+                    <label>Apartment</label>
+                </value>
+                <value>
+                    <fullName>Cold Storage</fullName>
+                    <default>false</default>
+                    <label>Cold Storage</label>
+                </value>
+                <value>
+                    <fullName>Data Center</fullName>
+                    <default>false</default>
+                    <label>Data Center</label>
+                </value>
+                <value>
+                    <fullName>Debt</fullName>
+                    <default>false</default>
+                    <label>Debt</label>
+                </value>
+                <value>
+                    <fullName>Gaming</fullName>
+                    <default>false</default>
+                    <label>Gaming</label>
+                </value>
+                <value>
+                    <fullName>Ground Lease</fullName>
+                    <default>false</default>
+                    <label>Ground Lease</label>
+                </value>
+                <value>
+                    <fullName>Health Care</fullName>
+                    <default>false</default>
+                    <label>Health Care</label>
+                </value>
+                <value>
+                    <fullName>Industrial</fullName>
+                    <default>false</default>
+                    <label>Industrial</label>
+                </value>
+                <value>
+                    <fullName>Land</fullName>
+                    <default>false</default>
+                    <label>Land</label>
+                </value>
+                <value>
+                    <fullName>Life Science</fullName>
+                    <default>false</default>
+                    <label>Life Science</label>
+                </value>
+                <value>
+                    <fullName>Lodging</fullName>
+                    <default>false</default>
+                    <label>Lodging</label>
+                </value>
+                <value>
+                    <fullName>Mall</fullName>
+                    <default>false</default>
+                    <label>Mall</label>
+                </value>
+                <value>
+                    <fullName>Manufactured Housing</fullName>
+                    <default>false</default>
+                    <label>Manufactured Housing</label>
+                </value>
+                <value>
+                    <fullName>Medical Office Building</fullName>
+                    <default>false</default>
+                    <label>Medical Office Building</label>
+                </value>
+                <value>
+                    <fullName>Mortgage Reit</fullName>
+                    <default>false</default>
+                    <label>Mortgage Reit</label>
+                </value>
+                <value>
+                    <fullName>Multi-Sector</fullName>
+                    <default>false</default>
+                    <label>Multi-Sector</label>
+                </value>
+                <value>
+                    <fullName>Net Lease</fullName>
+                    <default>false</default>
+                    <label>Net Lease</label>
+                </value>
+                <value>
+                    <fullName>Niche</fullName>
+                    <default>false</default>
+                    <label>Niche</label>
+                </value>
+                <value>
+                    <fullName>Office</fullName>
+                    <default>false</default>
+                    <label>Office</label>
+                </value>
+                <value>
+                    <fullName>Real Assets</fullName>
+                    <default>false</default>
+                    <label>Real Assets</label>
+                </value>
+                <value>
+                    <fullName>Residential</fullName>
+                    <default>false</default>
+                    <label>Residential</label>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                    <label>Retail</label>
+                </value>
+                <value>
+                    <fullName>Self-Storage</fullName>
+                    <default>false</default>
+                    <label>Self-Storage</label>
+                </value>
+                <value>
+                    <fullName>Senior Housing</fullName>
+                    <default>false</default>
+                    <label>Senior Housing</label>
+                </value>
+                <value>
+                    <fullName>Single Family Rentals</fullName>
+                    <default>false</default>
+                    <label>Single Family Rentals</label>
+                </value>
+                <value>
+                    <fullName>Skilled Nursing Facility</fullName>
+                    <default>false</default>
+                    <label>Skilled Nursing Facility</label>
+                </value>
+                <value>
+                    <fullName>Strip Center</fullName>
+                    <default>false</default>
+                    <label>Strip Center</label>
+                </value>
+                <value>
+                    <fullName>Student Housing</fullName>
+                    <default>false</default>
+                    <label>Student Housing</label>
+                </value>
+                <value>
+                    <fullName>Towers</fullName>
+                    <default>false</default>
+                    <label>Towers</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>ShippingAddress</fullName>
         <trackHistory>true</trackHistory>
     </fields>
@@ -12344,6 +12549,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Locatus%3A Retail Risk Index</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCP Server</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16565,6 +16774,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Locatus%3A Retail Risk Index</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCP Server</fullName>
                 <default>false</default>
             </values>
             <values>

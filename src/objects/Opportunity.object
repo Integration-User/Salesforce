@@ -994,7 +994,7 @@
     </fields>
     <fields>
         <fullName>At_RIsk_Revenue__c</fullName>
-        <formula>IF( AND(NOT(ISBLANK((TEXT(Renewal_Risk__c)))), IsClosed = FALSE), Starting_Price_Opp__c , 0)</formula>
+        <formula>IF( AND(NOT(ISBLANK((TEXT(Risk_Type__c)))), IsClosed = FALSE), Starting_Price_Opp__c , 0)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>At RIsk Revenue</label>
         <precision>18</precision>
@@ -1636,6 +1636,11 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
                     <default>false</default>
                     <label>Current Client - CS Request</label>
                 </value>
+                <value>
+                    <fullName>Trial-Specific</fullName>
+                    <default>false</default>
+                    <label>Trial-Specific</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
@@ -1674,6 +1679,10 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
             <valueSettings>
                 <controllingFieldValue>Disqualified</controllingFieldValue>
                 <valueName>Current Client - CS Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Disqualified</controllingFieldValue>
+                <valueName>Trial-Specific</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
@@ -7442,6 +7451,17 @@ NULL))))</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Reason_for_Opportunity_Creation__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Opportunity Creation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Record_Type_for_Query__c</fullName>
         <externalId>false</externalId>
         <formula>RecordType.Name</formula>
@@ -9026,6 +9046,11 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                     <fullName>Limited Access</fullName>
                     <default>false</default>
                     <label>Limited Access</label>
+                </value>
+                <value>
+                    <fullName>Web News Trial</fullName>
+                    <default>false</default>
+                    <label>Web News Trial</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -14041,6 +14066,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>MCP Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -18165,6 +18194,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>MCP Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -22225,6 +22258,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>MCP Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -26226,6 +26263,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Locatus%3A Retail Risk Index</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCP Server</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -30574,6 +30615,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Locatus%3A Retail Risk Index</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCP Server</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -34945,6 +34990,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>MCP Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -38889,6 +38938,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>MCP Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -42721,6 +42774,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>MCP Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -46372,6 +46429,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCP Server</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -50523,6 +50584,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>MCP Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -51996,6 +52061,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Timing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trial-Specific</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -54928,6 +54997,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>MCP Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D</fullName>
                 <default>false</default>
             </values>
@@ -56038,11 +56111,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Trial_Type__c</picklist>
             <values>
-                <fullName>Full Access</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Limited Access</fullName>
+                <fullName>Web News Trial</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -59357,6 +59426,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Locatus%3A Retail Risk Index</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCP Server</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -63636,6 +63709,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>MCP Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>MD%26D - Rent Comps</fullName>
                 <default>false</default>
             </values>
@@ -66139,6 +66216,25 @@ IJ_Global_Events_Related_Event__c = NULL
         <errorMessage>Please provide the IJGlobal Related Event field upon creation.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_InfraSectors_Covered</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    ISPICKVAL(Account.Subsidiary__c, &quot;18.1 LDC&quot;),
+    OR(
+        $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+        $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
+    ),
+    OR(
+        ISBLANK(Infra_Sectors_Covered__c ),
+        ISBLANK(Account.Infra_Sectors_Covered__c )
+    )
+)</errorConditionFormula>
+        <errorDisplayField>Infra_Sectors_Covered__c</errorDisplayField>
+        <errorMessage>Infra Sectors Covered is required for LDC accounts.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Lead_Type</fullName>
         <active>true</active>
         <description>Require Lead Type during Open Stage.</description>
@@ -66252,7 +66348,7 @@ ISBLANK(Sales_Owner__c)
     </validationRules>
     <validationRules>
         <fullName>Require_Sector_Markets_Covered</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>AND(
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISPICKVAL(StageName, &quot;Closed Won&quot;),
@@ -66261,16 +66357,12 @@ ISBLANK(Sales_Owner__c)
         $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
     ),
     OR(
-        ISBLANK(Account.Interests__c),
-        ISBLANK(Account.Markets_Covered__c)
-    ),
-    OR(
-        LEN(TRIM(Markets_Covered__c)) = 0,
-        ISBLANK(Sectors_Covered__c)
+        ISBLANK(Sectors_Covered__c),
+        ISBLANK(Account.Sectors_Covered__c)
     )
 )</errorConditionFormula>
         <errorDisplayField>Sectors_Covered__c</errorDisplayField>
-        <errorMessage>Sectors / Markets Covered are required if the fields from the account level are blank.</errorMessage>
+        <errorMessage>Sectors Covered must be filled out as they are missing on the related account.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_This_Yr_Percent</fullName>
