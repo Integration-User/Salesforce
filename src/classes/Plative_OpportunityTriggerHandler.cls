@@ -12,6 +12,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
     public static Boolean beforeUpdateRun = false;
     public static Boolean beforeInsertRun = false;
     public static Boolean afterInsertRun = false;
+    public static Boolean hasSkipValidationPermission = false;
     public static Boolean skipValidationForBatch = false;
 	public static Id renewalRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Renewal').getRecordTypeId();
    	public static Id salesRecordTypeId = Schema.getGlobalDescribe().get('Opportunity').getDescribe().getRecordTypeInfosByName().get('Sales Opportunity').getRecordTypeId();
@@ -129,6 +130,13 @@ public without sharing class Plative_OpportunityTriggerHandler {
     * Description : Before update DML event
     **/
     public static void beforeUpdate(Map<Id, Opportunity> triggerNewMap, Map<Id, Opportunity> triggerOldMap) {
+        
+        hasSkipValidationPermission = false;
+        List<PermissionSetAssignment> psaList = [ SELECT Id FROM PermissionSetAssignment WHERE AssigneeId = :UserInfo.getUserId() AND PermissionSet.Name = 'Skip_Validation_Rule' LIMIT 1];
+        if (psaList != null & psaList.size() > 0) {
+            hasSkipValidationPermission = true;
+        }
+
         if (!Plative_OpportunityTriggerHandler.beforeUpdateRun) { 
             //SF-1064 Add Validation to Update Product: SKU Detail before moving to Stage 6 - Verbal Win and Finalizing Contract
             beforeUpdateValidations(triggerNewMap, triggerOldMap); 
@@ -188,7 +196,8 @@ public without sharing class Plative_OpportunityTriggerHandler {
 
             for (Opportunity oppty : triggerNewMap.values()) {
                 Opportunity oldOppty = triggerOldMap.get(oppty.Id);
-                if (!skipValidationForBatch && (oppty.recordTypeId == renewalRecordTypeId || oppty.recordTypeId == salesRecordTypeId)
+                if (!skipValidationForBatch && !hasSkipValidationPermission 
+                    && (oppty.recordTypeId == renewalRecordTypeId || oppty.recordTypeId == salesRecordTypeId)
                     && oppty.StageName != null && oldOppty.StageName != oppty.StageName 
                     && !stageNames.contains(oppty.StageName) && !x3x3opportunities.contains(oppty.Id)) {
                         oppty.addError('One contact must have a 3x3 Level designated before moving to Stage 4.');

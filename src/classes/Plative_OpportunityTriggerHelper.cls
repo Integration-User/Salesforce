@@ -259,7 +259,7 @@ public without sharing class Plative_OpportunityTriggerHelper {
             setContactIds = getBillingContactIds(setOpptyIds);
         }
 
-        if(hasOpptyinVerbalWin && setContactIds.isEmpty()){
+        if(hasOpptyinVerbalWin && setContactIds.isEmpty() && !Plative_OpportunityTriggerHandler.hasSkipValidationPermission){
             mapNewOppty.values()[0].addError('Please make sure Billing Contact is added before moving Opportunity to Verbal Win');
             return;
         }
