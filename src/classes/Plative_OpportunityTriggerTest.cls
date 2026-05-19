@@ -216,6 +216,7 @@ public class Plative_OpportunityTriggerTest {
         //lastRenewalOpportunity.Win_Validation__c = 'Opportunity Reviewed';
         lastRenewalOpportunity.Products__c = 'Data License Directory;Locatus: Housing Plans Data;IJGlobal: News';
         Plative_OpportunityTriggerHandler.afterUpdateRun = false;
+        lastRenewalOpportunity.Risk_Type__c = 'High Attrition Risk';
         update lastRenewalOpportunity;
         Plative_OpportunityTriggerHelper.getOppLineIteamsIds(new set<Id>{oppty.Id});
         Test.stopTest();
