@@ -65598,6 +65598,19 @@ Create_New_Renewal_Opportunity__c=TRUE)
         <errorMessage>To ensure a renewal is created, please check &quot;Create New Renewal Opportunity&quot; OR add a Year 2 Amount. If you do not want to create a renewal from this opp, please enter reason why in &quot;Reason for No Renewal&quot;.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Future_Discovery_Completed_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    NOT($Permission.Skip_Validation_Rule),
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+    Discovery_Meeting_Completed_Date__c &gt; TODAY()
+  
+)</errorConditionFormula>
+        <errorDisplayField>Discovery_Meeting_Completed_Date__c</errorDisplayField>
+        <errorMessage>Discovery completed date cannot be in the future.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>InfraSector_Sectors_Covered</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -65711,6 +65724,23 @@ $Permission.Skip_Validation_Rule= False,
 )</errorConditionFormula>
         <errorDisplayField>LeadSource</errorDisplayField>
         <errorMessage>Please fill out the Lead Source field for this Opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Less_14_Days_Discovery_Meeting</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ RecordType.DeveloperName = &apos;Sales_Opportunity&apos;,
+ Sales_Development_Opportunity__c =&apos;&apos;,
+    NOT(ISBLANK(Discovery_Meeting_Scheduled_Date__c)),
+    Discovery_Meeting_Scheduled_Date__c &lt;
+        IF(
+            ISNEW(),
+            TODAY(),
+            DATEVALUE(CreatedDate)
+        ) - 14
+)</errorConditionFormula>
+        <errorMessage>Discovery Scheduled meeting date cannot be less than 14 days.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Lock_Initial_Meeting_Organizer</fullName>
