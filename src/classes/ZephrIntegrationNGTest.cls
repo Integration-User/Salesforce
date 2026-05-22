@@ -153,4 +153,150 @@ public class ZephrIntegrationNGTest {
 
         System.assertEquals(true, sr.isSuccess());
     }
+    // Mock for token call
+    private class TokenHttpMock implements HttpCalloutMock {
+        public HttpResponse respond(HttpRequest req) {
+            HttpResponse res = new HttpResponse();
+            res.setStatusCode(200);
+            res.setBody('{"data":[{"id":"dummyToken123","email":"test@example.com","gstProdTosSignOff":"2024-01-01"}]}');
+            return res;
+        }
+    }
+
+    // Mock for reset call
+    private class ResetHttpMock implements HttpCalloutMock {
+        public HttpResponse respond(HttpRequest req) {
+            HttpResponse res = new HttpResponse();
+            res.setStatusCode(200);
+            res.setBody('{"message":"Password reset successful"}');
+            return res;
+        }
+    }
+
+    @isTest
+    static void testMantisResetPasswordToken() {
+        // Insert platform record BEFORE starting test
+        GSA_Platform__c platform = new GSA_Platform__c(
+            User_Change_Password_Reset_Token_Info__c = 'https://dummy.endpoint/token',
+            Reset_Password_API_Key__c = 'dummyApiKey'
+        );
+        insert platform;
+
+        Test.startTest();
+        Test.setMock(HttpCalloutMock.class, new TokenHttpMock());
+        String token = ZephrIntegrationNG.mantisResetPasswordToken('test@example.com', platform);
+        Test.stopTest();
+
+        System.assertEquals('dummyToken123', token);
+    }
+
+    @isTest
+    static void testSendResetPasswordForMantis() {
+        // Insert platform record BEFORE starting test
+        GSA_Platform__c platform = new GSA_Platform__c(
+            User_Change_Password_Reset_Token_Info__c = 'https://dummy.endpoint/token',
+            Website_Password_Reset_Info__c = 'https://dummy.endpoint/reset/{!token}',
+            Reset_Password_API_Key__c = 'dummyApiKey'
+        );
+        insert platform;
+
+        Test.startTest();
+        // First mock for token call
+        Test.setMock(HttpCalloutMock.class, new TokenHttpMock());
+        // Second mock for reset call
+        //Test.setMock(HttpCalloutMock.class, new ResetHttpMock());
+
+        HttpResponse response = ZephrIntegrationNG.sendResetPasswordForMantis('test@example.com');
+        Test.stopTest();
+
+        System.assertEquals(200, response.getStatusCode());
+    }
+    // Generic mock that can handle different endpoints
+    private class GenericHttpMock implements HttpCalloutMock {
+        public HttpResponse respond(HttpRequest req) {
+            HttpResponse res = new HttpResponse();
+            res.setStatusCode(200);
+
+            if (req.getEndpoint().contains('/v3/users')) {
+                res.setBody('{"message":"User created successfully"}');
+            } else if (req.getEndpoint().contains('/v4/users/reset')) {
+                res.setBody('{"message":"Password reset link sent"}');
+            } else if (req.getEndpoint().contains('/update-email')) {
+                res.setBody('{"message":"Email updated successfully"}');
+            } else if (req.getEndpoint().contains('/v3/accounts/')) {
+                // Return account JSON with number_of_seats so updateAccount can work
+                res.setBody('{"account_id":"acc123","number_of_seats":5}');
+            } else {
+                res.setBody('{"message":"Generic response"}');
+            }
+            return res;
+        }
+    }
+
+    @isTest
+    static void testCreateUser() {
+        Test.setMock(HttpCalloutMock.class, new GenericHttpMock());
+
+        ZephrIntegrationNG integration = new ZephrIntegrationNG(null);
+
+
+        zephr_WebhookAPI.UserDetails userDetails = new zephr_WebhookAPI.UserDetails();
+        userDetails.identifiers = new zephr_WebhookAPI.Identifiers();
+        userDetails.identifiers.email_address = 'test@example.com';
+
+        Test.startTest();
+        HttpResponse res = integration.createUser(userDetails);
+        Test.stopTest();
+
+        System.assertEquals(200, res.getStatusCode());
+        System.assert(res.getBody().contains('User created successfully'));
+    }
+
+    @isTest
+    static void testSendResetPassword() {
+        Test.setMock(HttpCalloutMock.class, new GenericHttpMock());
+
+        ZephrIntegrationNG integration = new ZephrIntegrationNG(null);
+
+
+        Test.startTest();
+        HttpResponse res = integration.sendResetPassword('test@example.com', 'mysite');
+        Test.stopTest();
+
+        System.assertEquals(200, res.getStatusCode());
+        System.assert(res.getBody().contains('Password reset link sent'));
+    }
+
+    @isTest
+    static void testUpdateUserEmail() {
+        Test.setMock(HttpCalloutMock.class, new GenericHttpMock());
+
+        ZephrIntegrationNG integration = new ZephrIntegrationNG(null);
+
+        Test.startTest();
+        HttpResponse res = integration.updateUserEmail('user123', 'new@example.com', 'mysite');
+        Test.stopTest();
+
+        System.assertEquals(200, res.getStatusCode());
+
+    }
+
+    @isTest
+    static void testUpdateAccount() {
+        Test.setMock(HttpCalloutMock.class, new GenericHttpMock());
+
+        ZephrIntegrationNG integration = new ZephrIntegrationNG(null);
+
+
+        ZephrApiRequestsResponses.Account acc = new ZephrApiRequestsResponses.Account();
+        acc.account_id = 'acc123';
+        acc.number_of_seats = 10;
+
+        Test.startTest();
+        HttpResponse res = integration.updateAccount(acc);
+        Test.stopTest();
+
+        System.assertEquals(200, res.getStatusCode());
+
+    }
 }

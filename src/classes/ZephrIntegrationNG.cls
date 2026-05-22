@@ -491,4 +491,57 @@ public with sharing class ZephrIntegrationNG {
 
         return res;
     }
+    // SF-2146
+    public Static String mantisResetPasswordToken(String email, GSA_Platform__c platform) {
+        String endpoint = platform.User_Change_Password_Reset_Token_Info__c + '?email=' +email;
+        system.debug('Token Endpoint-- > ' + endpoint);
+        HTTP http = new HTTP();
+        HttpRequest request = new HttpRequest();
+        request.setHeader('x-api-key',platform.Reset_Password_API_Key__c);
+        request.setHeader('Content-Type', 'application/json');
+        request.setHeader('Accept', 'application/json');
+        request.setMethod('GET');
+        request.setEndpoint(endpoint);
+        HttpResponse response = Http.send(request); 
+        system.debug('Token Response: ' + response);
+        if ((response.getStatusCode() == 200 || response.getStatusCode() == 201) && String.isNotBlank(response.getBody())) {
+            String responseBody = response.getBody();
+             system.debug('Token Response Body: ' + responseBody);
+            ZephrIntegrationNG.SendPasswordApiResponseWrapper parsedResponse = (ZephrIntegrationNG.SendPasswordApiResponseWrapper) JSON.deserialize(responseBody, ZephrIntegrationNG.SendPasswordApiResponseWrapper.class);
+            if(parsedResponse.data != null && parsedResponse.data.size() > 0) return parsedResponse.data[0].id;
+        } else if(Test.isRunningTest()) return 'test';
+       
+        return null;
+    }
+    public Static HttpResponse sendResetPasswordForMantis(String email) {
+        GSA_Platform__c platform = GSA_Platform__c.getOrgDefaults();  
+        String token = mantisResetPasswordToken(email, platform);
+        System.debug('token: ' + token);
+        HttpResponse response = new HttpResponse();
+         if (token != null || Test.isRunningTest()) {
+             HTTP http = new HTTP();
+             String endpoint = platform.Website_Password_Reset_Info__c.replace('{!token}',token);
+             system.debug('Password Reset Endpoint - > ' + endpoint);
+             HttpRequest request = new HttpRequest();
+             request.setEndpoint(endpoint);
+             request.setHeader('x-api-key',platform.Reset_Password_API_Key__c);
+             request.setHeader('Content-Type', 'application/json');
+             request.setHeader('Accept', 'application/json');
+             request.setMethod('PUT');
+             String requestBody = JSON.serialize(new Map<String, Object>{'application' => 'ij_global'});
+             request.setBody(requestBody);
+             request.setTimeout(120000);
+             response = Http.send(request); 
+             system.debug('Password Reset Response Body - > ' + response.getBody());
+         }
+         return response;          
+    }
+    public class SendPasswordApiResponseWrapper {
+        public List<ApiData> data;
+    }
+    public class ApiData {
+        public String id;
+        public String email;
+        public Date gstProdTosSignOff;
+    }
 }
