@@ -5001,6 +5001,26 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
+        <fullName>Latest_Contract_End_Date__c</fullName>
+        <inlineHelpText>Latest Contract end date - i.e. furthest into the future from any open renewal on this Account</inlineHelpText>
+        <label>Latest Contract End Date</label>
+        <summarizedField>Opportunity.Contract_End_Date__c</summarizedField>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Renewal</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Lead_Type__c</fullName>
         <label>Lead Type</label>
         <required>false</required>
