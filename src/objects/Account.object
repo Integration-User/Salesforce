@@ -5001,6 +5001,26 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
+        <fullName>Latest_Contract_End_Date__c</fullName>
+        <inlineHelpText>Latest Contract end date - i.e. furthest into the future from any open renewal on this Account</inlineHelpText>
+        <label>Latest Contract End Date</label>
+        <summarizedField>Opportunity.Contract_End_Date__c</summarizedField>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Renewal</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Lead_Type__c</fullName>
         <label>Lead Type</label>
         <required>false</required>
@@ -5601,6 +5621,42 @@ Owner.Id = $User.Id)</formula>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Number_of_Closed_Advertising__c</fullName>
+        <label>Number of Closed Advertising</label>
+        <summaryFilterItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Advertising, Advertising - Closed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Closed_Event__c</fullName>
+        <label>Number of Closed Event</label>
+        <summaryFilterItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Events</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Number_of_Closed_Lost_Sales_Opps__c</fullName>
         <label>Number of Closed Lost Sales Opps</label>
         <summaryFilterItems>
@@ -5648,6 +5704,42 @@ Owner.Id = $User.Id)</formula>
             <field>Opportunity.StageName</field>
             <operation>equals</operation>
             <value>Closed Won</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Open_Advertising__c</fullName>
+        <label>Number of Open Advertising</label>
+        <summaryFilterItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Advertising, Advertising - Closed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Open_Event__c</fullName>
+        <label>Number of Open Event</label>
+        <summaryFilterItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>notEqual</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Events</value>
         </summaryFilterItems>
         <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
         <summaryOperation>count</summaryOperation>
