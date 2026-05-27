@@ -65874,6 +65874,17 @@ ISCHANGED(OwnerId))</errorConditionFormula>
         <errorMessage>Only SDRs can own and transfer an SDO.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Oppty_Non_Subsidiary_Account</fullName>
+        <active>true</active>
+        <description>Throws an error when creating a new opportunity under an organizational account.</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISNEW(),
+Account.RecordTypeId !=&apos;012f4000000fYQK&apos;
+)</errorConditionFormula>
+        <errorMessage>You cannot add an Opportunity to this Account. If you want to engage them, please create records on a related subsidiary Account.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Other_Billing_Frequency</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
