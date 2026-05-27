@@ -154,7 +154,7 @@
         <locationX>534</locationX>
         <locationY>1331</locationY>
         <defaultConnector>
-            <targetReference>Renewal_No_Became_Client</targetReference>
+            <targetReference>Protected_By_field_update</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -191,7 +191,7 @@
         <name>Protected_By_field_update</name>
         <label>Protected By field update</label>
         <locationX>534</locationX>
-        <locationY>2147</locationY>
+        <locationY>1739</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Protected_By_field_is_changed</name>
@@ -207,52 +207,6 @@
                 <targetReference>Update_Protected_By_Last_Change</targetReference>
             </connector>
             <label>Protected By field is changed</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Renewal_No_Became_Client</name>
-        <label>Renewal No Became Client</label>
-        <locationX>534</locationX>
-        <locationY>1739</locationY>
-        <defaultConnector>
-            <targetReference>Protected_By_field_update</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Copy_2_of_Search_for_Became_Client_Date</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Became_Client__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Client</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Number_of_Closed_Won_Sales_Opportunities__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <numberValue>0.0</numberValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Number_of_Closed_Won_Renewals__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <numberValue>1.0</numberValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Renewal_Latest_Contract_Start_Date</targetReference>
-            </connector>
-            <label>Copy 2 of Search for Became Client Date</label>
         </rules>
     </decisions>
     <description>SF-546: Flow to time stamp Protected By Last Change
@@ -333,15 +287,15 @@ SF-775: PB Migration</description>
             </value>
         </filters>
         <filters>
-            <field>Contract_Start_Date__c</field>
-            <operator>IsNull</operator>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
             <value>
-                <booleanValue>false</booleanValue>
+                <stringValue>Closed Won</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Opportunity</object>
-        <sortField>Contract_Start_Date__c</sortField>
+        <sortField>CloseDate</sortField>
         <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
@@ -380,50 +334,6 @@ SF-775: PB Migration</description>
         <object>Opportunity</object>
         <sortField>Contract_Start_Date__c</sortField>
         <sortOrder>Asc</sortOrder>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Renewal_Latest_Contract_Start_Date</name>
-        <label>Get Renewal Latest Contract Start Date</label>
-        <locationX>402</locationX>
-        <locationY>1847</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Update_Renewal_Became_Client</targetReference>
-        </connector>
-        <filterLogic>1 AND (2 OR 3) AND 4</filterLogic>
-        <filters>
-            <field>AccountId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Record_Type_for_Query__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Renewal</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Record_Type_for_Query__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Renewal - Closed</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Contract_Start_Date__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Opportunity</object>
-        <sortField>Contract_Start_Date__c</sortField>
-        <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -478,7 +388,7 @@ SF-775: PB Migration</description>
         <name>Update_Protected_By_Last_Change</name>
         <label>Update Protected By Last Change</label>
         <locationX>402</locationX>
-        <locationY>2255</locationY>
+        <locationY>1847</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -494,22 +404,6 @@ SF-775: PB Migration</description>
             </value>
         </inputAssignments>
         <object>Account</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Renewal_Became_Client</name>
-        <label>Update Renewal Became Client</label>
-        <locationX>402</locationX>
-        <locationY>1955</locationY>
-        <connector>
-            <targetReference>Protected_By_field_update</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Became_Client__c</field>
-            <value>
-                <elementReference>Get_Renewal_Latest_Contract_Start_Date.Contract_Start_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Research_to_Default</name>
@@ -533,12 +427,12 @@ SF-775: PB Migration</description>
         <locationX>402</locationX>
         <locationY>1547</locationY>
         <connector>
-            <targetReference>Renewal_No_Became_Client</targetReference>
+            <targetReference>Protected_By_field_update</targetReference>
         </connector>
         <inputAssignments>
             <field>Became_Client__c</field>
             <value>
-                <elementReference>Get_Opp_Latest_Contract_Start_Date.Contract_Start_Date__c</elementReference>
+                <elementReference>Get_Opp_Latest_Contract_Start_Date.CloseDate</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
