@@ -1,5 +1,6 @@
-public class ActiveSubscriptionCountBatch implements Schedulable, Database.Batchable<AggregateResult> {
+public class ActiveSubscriptionCountBatch implements Schedulable, Database.Batchable<AggregateResult>, Database.Stateful {
     public static final Integer SCOPE_SIZE = 20;
+    Set<Id> processedAccountIds = new Set<Id>();
 
     // Use custom AggregateResultIterable to return aggregate results from start
     public Iterable<AggregateResult> start(Database.BatchableContext bc) {
@@ -15,6 +16,7 @@ public class ActiveSubscriptionCountBatch implements Schedulable, Database.Batch
             Id accId = (Id)ar.get('accId');
             Decimal count = (Decimal)ar.get('cnt');
             accIdToNewCount.put(accId, count);
+            processedAccountIds.add(accId); 
         }
         if (!accIdToNewCount.isEmpty()) {
             List<Account> accsToUpdate = prepareAccountsToUpdate(accIdToNewCount);
@@ -56,6 +58,19 @@ public class ActiveSubscriptionCountBatch implements Schedulable, Database.Batch
     }
 
     public void finish(Database.BatchableContext bc) {
+        
+        List<Account> accountsToZero = [SELECT Id, Active_Subscription_Count__c FROM Account WHERE Active_Subscription_Count__c > 0 AND Id NOT IN :processedAccountIds
+        ];
+        
+        for (Account acc : accountsToZero) {
+            acc.Active_Subscription_Count__c = 0;
+        }
+        
+        if (!accountsToZero.isEmpty()) {
+            Plative_AccountTriggerHandler.isAccountTriggerSkip = true;
+            update accountsToZero;
+        }
+        
         System.debug('ActiveSubscriptionCountBatch finished.');
     }
 
