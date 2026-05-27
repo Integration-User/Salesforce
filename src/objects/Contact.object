@@ -11123,6 +11123,17 @@ $User.Username !=&apos;sworsham@greenstreet.com&apos;
         <errorMessage>You cannot uncheck the &quot;Do Not Call&quot; field. If a Contact is requesting to opt-in again, please reach out to the Compliance team for assistance</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Contact_Non_Subsidiary_Account</fullName>
+        <active>true</active>
+        <description>Throws an error when creating a new contact under an organizational account</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISNEW(),
+Account.RecordType.DeveloperName!= &apos;Subsidiary_Account&apos;
+)</errorConditionFormula>
+        <errorMessage>You cannot add a Contact to this Account. If you want to engage them, please create records on a related subsidiary Account.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Contacts_must_have_an_Account</fullName>
         <active>true</active>
         <description>Every contact must be tied to an Account.</description>
