@@ -234,6 +234,27 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 26, 26); font-size: 18px;&quot;&gt;Please do not conduct activity/create opportunities under this Account.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 26, 26); font-size: 18px;&quot;&gt;It is a placeholder we use to organize our Account hierarchy.&lt;/strong&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText6</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>1 Organization Account</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
                     <value>&lt;p class=&quot;ql-indent-1&quot; style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;font-size: 16px; color: rgb(195, 10, 10);&quot;&gt;This prospect is in a &lt;u&gt;Foreign Jurisdiction&lt;/u&gt;. Please contact compliance for approval to do business in this country. &lt;/b&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>

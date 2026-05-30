@@ -13,7 +13,7 @@
         <name>Check_Qualification</name>
         <label>Check Qualification</label>
         <locationX>1040</locationX>
-        <locationY>1439</locationY>
+        <locationY>1139</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Checkbox_is_True</name>
@@ -49,7 +49,7 @@
         <name>News_Trial_Products</name>
         <label>News Trial Products?</label>
         <locationX>710</locationX>
-        <locationY>731</locationY>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Removed_from_Integration_User</targetReference>
         </defaultConnector>
@@ -134,7 +134,7 @@
         <name>Qualification</name>
         <label>Qualification</label>
         <locationX>1040</locationX>
-        <locationY>1139</locationY>
+        <locationY>839</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Moved_to_Disqualified</name>
@@ -228,7 +228,7 @@
         <name>Removed_from_Integration_User</name>
         <label>Removed from Integration User</label>
         <locationX>710</locationX>
-        <locationY>1031</locationY>
+        <locationY>731</locationY>
         <defaultConnector>
             <targetReference>Qualification</targetReference>
         </defaultConnector>
@@ -270,47 +270,12 @@
             <label>Mover from IUser</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>SDO_Trial_Product</name>
-        <label>SDO Trial Product?</label>
-        <locationX>710</locationX>
-        <locationY>431</locationY>
-        <defaultConnector>
-            <targetReference>News_Trial_Products</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Web_News_Trial</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Trial_Type__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>UpdateTrial_Dates</targetReference>
-            </connector>
-            <label>Web News Trial</label>
-        </rules>
-    </decisions>
     <description>SF-2095</description>
     <environments>Default</environments>
     <formulas>
         <name>Add_90_Days</name>
         <dataType>Date</dataType>
         <expression>TODAY() + 90</expression>
-    </formulas>
-    <formulas>
-        <name>f_Trial_End_Date</name>
-        <dataType>Date</dataType>
-        <expression>{!$Record.CreatedDate} + 15</expression>
-    </formulas>
-    <formulas>
-        <name>f_Trial_Start_Date</name>
-        <dataType>Date</dataType>
-        <expression>{!$Record.CreatedDate} + 1</expression>
     </formulas>
     <formulas>
         <name>Get_Month_Text</name>
@@ -335,7 +300,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     <formulas>
         <name>SDO_Oppty_Name_Formula</name>
         <dataType>String</dataType>
-        <expression>TEXT({!$Record.LeadSource}) + &quot; &quot; + &quot;-&quot; + &quot; &quot; + {!$Record.Account.Name} + &quot;:&quot; + &quot; &quot; + {!$Record.Lead_Contact__r.FirstName} + &quot; &quot; + {!$Record.Lead_Contact__r.LastName} + &quot; &quot; + {!Get_Month_Text} + &quot; &quot; + TEXT(YEAR(DATEVALUE({!$Record.CreatedDate})))</expression>
+        <expression>TEXT({!$Record.Lead_Type__c}) + &quot; &quot; + &quot;-&quot; + &quot; &quot; + {!$Record.Account.Name} + &quot;:&quot; + &quot; &quot; + {!$Record.Lead_Contact__r.FirstName} + &quot; &quot; + {!$Record.Lead_Contact__r.LastName} + &quot; &quot; + {!Get_Month_Text} + &quot; &quot; + TEXT(YEAR(DATEVALUE({!$Record.CreatedDate})))</expression>
     </formulas>
     <interviewLabel>SDO SLA Tracking {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SDO SLA Tracking on Opportunity</label>
@@ -362,7 +327,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>AUS_Product_Update</name>
         <label>AUS - Product Update</label>
         <locationX>314</locationX>
-        <locationY>839</locationY>
+        <locationY>539</locationY>
         <connector>
             <targetReference>Removed_from_Integration_User</targetReference>
         </connector>
@@ -378,7 +343,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>CAN_Product_Update</name>
         <label>CAN - Product Update</label>
         <locationX>50</locationX>
-        <locationY>839</locationY>
+        <locationY>539</locationY>
         <connector>
             <targetReference>Removed_from_Integration_User</targetReference>
         </connector>
@@ -394,7 +359,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>EUR_Product_Update</name>
         <label>EUR - Product Update</label>
         <locationX>578</locationX>
-        <locationY>839</locationY>
+        <locationY>539</locationY>
         <connector>
             <targetReference>Removed_from_Integration_User</targetReference>
         </connector>
@@ -410,7 +375,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Global_News_Product_Update</name>
         <label>Global News - Product Update</label>
         <locationX>842</locationX>
-        <locationY>839</locationY>
+        <locationY>539</locationY>
         <connector>
             <targetReference>Removed_from_Integration_User</targetReference>
         </connector>
@@ -426,7 +391,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_Assigned_Date</name>
         <label>Time Stamp Assigned Date</label>
         <locationX>380</locationX>
-        <locationY>1139</locationY>
+        <locationY>839</locationY>
         <inputAssignments>
             <field>Assigned_Date__c</field>
             <value>
@@ -445,7 +410,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_Disqualification</name>
         <label>Time Stamp Disqualification</label>
         <locationX>644</locationX>
-        <locationY>1247</locationY>
+        <locationY>947</locationY>
         <connector>
             <targetReference>Check_Qualification</targetReference>
         </connector>
@@ -473,7 +438,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_In_Review</name>
         <label>Time Stamp In Review</label>
         <locationX>908</locationX>
-        <locationY>1247</locationY>
+        <locationY>947</locationY>
         <connector>
             <targetReference>Check_Qualification</targetReference>
         </connector>
@@ -513,7 +478,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_Qualification</name>
         <label>Time Stamp Qualification</label>
         <locationX>1172</locationX>
-        <locationY>1247</locationY>
+        <locationY>947</locationY>
         <connector>
             <targetReference>Check_Qualification</targetReference>
         </connector>
@@ -541,7 +506,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Update_Related_Contact</name>
         <label>Update Related Contact</label>
         <locationX>908</locationX>
-        <locationY>1547</locationY>
+        <locationY>1247</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -612,7 +577,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>710</locationX>
         <locationY>323</locationY>
         <connector>
-            <targetReference>SDO_Trial_Product</targetReference>
+            <targetReference>News_Trial_Products</targetReference>
         </connector>
         <inputAssignments>
             <field>Name</field>
@@ -623,32 +588,10 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>UpdateTrial_Dates</name>
-        <label>UpdateTrial Dates</label>
-        <locationX>578</locationX>
-        <locationY>539</locationY>
-        <connector>
-            <targetReference>News_Trial_Products</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Trial_End_Date__c</field>
-            <value>
-                <elementReference>f_Trial_End_Date</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Trial_Start_Date__c</field>
-            <value>
-                <elementReference>f_Trial_Start_Date</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>US_News_Product_Update</name>
         <label>US News - Product Update</label>
         <locationX>1106</locationX>
-        <locationY>839</locationY>
+        <locationY>539</locationY>
         <connector>
             <targetReference>Removed_from_Integration_User</targetReference>
         </connector>
