@@ -114,6 +114,16 @@
     </actionOverrides>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Activity_Owner_Department__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Department</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Activity Owner Department</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Activity_Type_Events__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>This reads from the Type field on the related Event record. Autofilled via Flow</inlineHelpText>
