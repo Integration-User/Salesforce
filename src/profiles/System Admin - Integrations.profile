@@ -17618,6 +17618,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Next_Renewal_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Next_Steps_Account__c</field>
         <readable>true</readable>
@@ -17640,6 +17645,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Number_of_Closed_Lost_Sales_Opps__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Number_of_Closed_Won_Event_Opportunities__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
