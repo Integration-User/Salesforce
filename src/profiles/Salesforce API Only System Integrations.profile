@@ -27258,6 +27258,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Event.Activity_Owner_Department__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Event.Activity_Type_Events__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -30904,6 +30909,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.CRS_Sent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.CSO_Forecast_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -35689,6 +35699,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.ActivityDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Task.Activity_Owner_Department__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
