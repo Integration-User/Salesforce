@@ -46,6 +46,13 @@
                     <stringValue>Sales_Development</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Is_Opp_Created_4_24</targetReference>
             </connector>
@@ -633,7 +640,7 @@
             <label>Other Referral</label>
         </rules>
     </decisions>
-    <description>Added Opportunity Source Reporting Logic</description>
+    <description>Added Opportunity Source Reporting Logic - only upon Insert</description>
     <environments>Default</environments>
     <formulas>
         <name>Advertising_Opp_Name</name>
