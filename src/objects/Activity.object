@@ -114,6 +114,16 @@
     </actionOverrides>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Activity_Owner_Department__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Department</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Activity Owner Department</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Activity_Type_Events__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>This reads from the Type field on the related Event record. Autofilled via Flow</inlineHelpText>
@@ -2321,31 +2331,6 @@ Owner:User.Id =  $User.Id)</formula>
                     <fullName>User Management Tool</fullName>
                     <default>false</default>
                     <label>User Management Tool</label>
-                </value>
-                <value>
-                    <fullName>Award Add-on</fullName>
-                    <default>false</default>
-                    <label>Award Add-on</label>
-                </value>
-                <value>
-                    <fullName>Award Sponsorship</fullName>
-                    <default>false</default>
-                    <label>Award Sponsorship</label>
-                </value>
-                <value>
-                    <fullName>Award Table</fullName>
-                    <default>false</default>
-                    <label>Award Table</label>
-                </value>
-                <value>
-                    <fullName>Event Sponsorship</fullName>
-                    <default>false</default>
-                    <label>Event Sponsorship</label>
-                </value>
-                <value>
-                    <fullName>Events Registration</fullName>
-                    <default>false</default>
-                    <label>Events Registration</label>
                 </value>
                 <value>
                     <fullName>MCP Server</fullName>
