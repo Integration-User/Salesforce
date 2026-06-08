@@ -25,6 +25,7 @@ public class Plative_ContactTriggerHandler {
             if(isUpdateBillingContact(mapOldCon,mapNewCon))
                 AddOrRemoveBillingContact.AddBillingContact(mapNewCon.keyset(),null);
             Plative_ContactTriggerHelper.updateExcelAddUsersOnAccount(mapNewCon.values(), mapOldCon); // SF-918
+            Plative_ContactTriggerHelper.syncDuplicateContactDNCFields(mapNewCon.values(), mapOldCon); // SF-2012 - Sync DNC/DNCall fields
         }
     }
     
