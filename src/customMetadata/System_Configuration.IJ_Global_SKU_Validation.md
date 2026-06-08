@@ -12,6 +12,6 @@
     </values>
     <values>
         <field>Value__c</field>
-        <value xsi:type="xsd:string">IJ Global: Award Table;IJ Global: Award Add-on;IJ Global: Award Sponsorship;IJ Global: Event Sponsorship;IJ Global: Events Registration</value>
+        <value xsi:type="xsd:string">Award Table;Award Add-on;Award Sponsorship;Event Sponsorship;Events Registration</value>
     </values>
 </CustomMetadata>
