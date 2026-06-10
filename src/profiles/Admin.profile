@@ -55777,10 +55777,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AcceptInboundBundling</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>AccessOrchestrationObjects</name>
     </userPermissions>
     <userPermissions>
@@ -56105,10 +56101,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>GrantOutboundBundling</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ImportCustomObjects</name>
     </userPermissions>
     <userPermissions>
@@ -56126,10 +56118,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>InstallPackaging</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>IntegrationIntelligenceUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -56386,10 +56374,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageUsers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>MarketingActionableListUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
