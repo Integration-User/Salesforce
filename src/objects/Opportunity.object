@@ -66673,6 +66673,22 @@ TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
         <errorMessage>Account Managers may not create Sales Opportunities. Please reach out to your Salesforce Administrator if you need support.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Stg4_Total_ARR_Greater_0</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    NOT($Permission.Skip_Validation_Rule),
+    RecordType.Name = &quot;Sales Opportunity&quot;,
+    ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+    ISCHANGED(StageName),
+    OR(
+        Amount = 0,
+        ISBLANK(Amount)
+    )
+)</errorConditionFormula>
+        <errorMessage>Your opportunity must have products with a sales price by stage 4</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Tracking_Consolidated_Opportunities</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
