@@ -12,8 +12,8 @@
     <decisions>
         <name>Check_Qualification</name>
         <label>Check Qualification</label>
-        <locationX>1040</locationX>
-        <locationY>1139</locationY>
+        <locationX>710</locationX>
+        <locationY>839</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Checkbox_is_True</name>
@@ -46,95 +46,10 @@
         </rules>
     </decisions>
     <decisions>
-        <name>News_Trial_Products</name>
-        <label>News Trial Products?</label>
-        <locationX>710</locationX>
-        <locationY>431</locationY>
-        <defaultConnector>
-            <targetReference>Removed_from_Integration_User</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Canada_News</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.News_Trial_Product__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Canada News</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>CAN_Product_Update</targetReference>
-            </connector>
-            <label>Canada News</label>
-        </rules>
-        <rules>
-            <name>Australia_News</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.News_Trial_Product__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Australia News</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>AUS_Product_Update</targetReference>
-            </connector>
-            <label>Australia News</label>
-        </rules>
-        <rules>
-            <name>Europe_News</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.News_Trial_Product__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Europe, U.K. &amp; Ireland News</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>EUR_Product_Update</targetReference>
-            </connector>
-            <label>Europe News</label>
-        </rules>
-        <rules>
-            <name>Global_News</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.News_Trial_Product__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Global News</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Global_News_Product_Update</targetReference>
-            </connector>
-            <label>Global News</label>
-        </rules>
-        <rules>
-            <name>US_News</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.News_Trial_Product__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>U.S. News</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>US_News_Product_Update</targetReference>
-            </connector>
-            <label>US News</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Qualification</name>
         <label>Qualification</label>
-        <locationX>1040</locationX>
-        <locationY>839</locationY>
+        <locationX>710</locationX>
+        <locationY>539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Moved_to_Disqualified</name>
@@ -227,8 +142,8 @@
     <decisions>
         <name>Removed_from_Integration_User</name>
         <label>Removed from Integration User</label>
-        <locationX>710</locationX>
-        <locationY>731</locationY>
+        <locationX>380</locationX>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Qualification</targetReference>
         </defaultConnector>
@@ -324,74 +239,10 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>AUS_Product_Update</name>
-        <label>AUS - Product Update</label>
-        <locationX>314</locationX>
-        <locationY>539</locationY>
-        <connector>
-            <targetReference>Removed_from_Integration_User</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Products__c</field>
-            <value>
-                <stringValue>Green Street News: Australia</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>CAN_Product_Update</name>
-        <label>CAN - Product Update</label>
-        <locationX>50</locationX>
-        <locationY>539</locationY>
-        <connector>
-            <targetReference>Removed_from_Integration_User</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Products__c</field>
-            <value>
-                <stringValue>Green Street News: Canada</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>EUR_Product_Update</name>
-        <label>EUR - Product Update</label>
-        <locationX>578</locationX>
-        <locationY>539</locationY>
-        <connector>
-            <targetReference>Removed_from_Integration_User</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Products__c</field>
-            <value>
-                <stringValue>Green Street News: Europe</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Global_News_Product_Update</name>
-        <label>Global News - Product Update</label>
-        <locationX>842</locationX>
-        <locationY>539</locationY>
-        <connector>
-            <targetReference>Removed_from_Integration_User</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Products__c</field>
-            <value>
-                <stringValue>Asset-Backed Alert;Commercial Mortgage Alert;Real Estate Alert;Green Street News: Europe;Green Street News: Canada;Green Street News: Australia</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>Time_Stamp_Assigned_Date</name>
         <label>Time Stamp Assigned Date</label>
-        <locationX>380</locationX>
-        <locationY>839</locationY>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <inputAssignments>
             <field>Assigned_Date__c</field>
             <value>
@@ -409,8 +260,8 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     <recordUpdates>
         <name>Time_Stamp_Disqualification</name>
         <label>Time Stamp Disqualification</label>
-        <locationX>644</locationX>
-        <locationY>947</locationY>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Check_Qualification</targetReference>
         </connector>
@@ -437,8 +288,8 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     <recordUpdates>
         <name>Time_Stamp_In_Review</name>
         <label>Time Stamp In Review</label>
-        <locationX>908</locationX>
-        <locationY>947</locationY>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Check_Qualification</targetReference>
         </connector>
@@ -477,8 +328,8 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     <recordUpdates>
         <name>Time_Stamp_Qualification</name>
         <label>Time Stamp Qualification</label>
-        <locationX>1172</locationX>
-        <locationY>947</locationY>
+        <locationX>842</locationX>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Check_Qualification</targetReference>
         </connector>
@@ -505,8 +356,8 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     <recordUpdates>
         <name>Update_Related_Contact</name>
         <label>Update Related Contact</label>
-        <locationX>908</locationX>
-        <locationY>1247</locationY>
+        <locationX>578</locationX>
+        <locationY>947</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -574,10 +425,10 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
     <recordUpdates>
         <name>Update_SDO_Name</name>
         <label>Update SDO Name</label>
-        <locationX>710</locationX>
+        <locationX>380</locationX>
         <locationY>323</locationY>
         <connector>
-            <targetReference>News_Trial_Products</targetReference>
+            <targetReference>Removed_from_Integration_User</targetReference>
         </connector>
         <inputAssignments>
             <field>Name</field>
@@ -587,24 +438,8 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <recordUpdates>
-        <name>US_News_Product_Update</name>
-        <label>US News - Product Update</label>
-        <locationX>1106</locationX>
-        <locationY>539</locationY>
-        <connector>
-            <targetReference>Removed_from_Integration_User</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Products__c</field>
-            <value>
-                <stringValue>Asset-Backed Alert;Commercial Mortgage Alert;Real Estate Alert</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
-        <locationX>584</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Update_SDO_Name</targetReference>
