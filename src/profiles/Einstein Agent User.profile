@@ -3455,6 +3455,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Plative_UpdateActivatedUserBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Plative_UpdateActivatedUserBatch_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Plative_UpdateActivatedUserQueueable</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -30886,6 +30894,11 @@
         <editable>false</editable>
         <field>Opportunity.Competitive__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Consolidated_From__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
