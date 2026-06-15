@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>CreatedDate_4_24</name>
+        <label>CreatedDate &gt; 4/24?</label>
+        <locationX>1766</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Date_4_24</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <dateTimeValue>2026-04-22T07:00:00.000Z</dateTimeValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_Source_Reporting_Override__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Source_Reporting_Decision</targetReference>
+            </connector>
+            <label>Date &gt; 4/24</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Source_Reporting_Decision</name>
+        <label>Source Reporting Decision</label>
+        <locationX>1106</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_to_Uncategorized</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Ignore_Opp</name>
+            <conditionLogic>1 OR 2 OR (3 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Test_Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Data Operations</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Revenue Operations</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Close_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Bad Opp - Never Connected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_IGNORE_Opp</targetReference>
+            </connector>
+            <label>Ignore Opp</label>
+        </rules>
+        <rules>
+            <name>Offline_Upload</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Revenue Operations</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Offline Upload</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Offline_Upload</targetReference>
+            </connector>
+            <label>Offline Upload</label>
+        </rules>
+        <rules>
+            <name>Inbound_Opp</name>
+            <conditionLogic>1 OR (2 AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Inbound__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Finance</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Close_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Online Order</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Inbound_Opp</targetReference>
+            </connector>
+            <label>Inbound Opp</label>
+        </rules>
+        <rules>
+            <name>SDR_Outbound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Inbound__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inbound Call</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inbound Email</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_SDR_Outbound</targetReference>
+            </connector>
+            <label>SDR Outbound</label>
+        </rules>
+        <rules>
+            <name>Inbound_Oppty</name>
+            <conditionLogic>(1 OR 2 OR 5) AND (3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales Development</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inbound Call</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inbound Email</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Management</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_to_Inbound_Opp</targetReference>
+            </connector>
+            <label>Inbound Oppty</label>
+        </rules>
+        <rules>
+            <name>AM_Referral</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Referred_By__r.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Management</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Referral_Conversion_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Created_Date_short__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_AM_Referral</targetReference>
+            </connector>
+            <label>AM Referral</label>
+        </rules>
+        <rules>
+            <name>AE_Outbound</name>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND (5 OR 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Inbound__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Inbound Call</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Inbound Email</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Referral_Conversion_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Created_Date_short__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Referral_Conversion_Date__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_AE_Outbound</targetReference>
+            </connector>
+            <label>AE Outbound</label>
+        </rules>
+        <rules>
+            <name>Other_Referral</name>
+            <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Management</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Referred_By__r.Department</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Management</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Referral_Conversion_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Created_Date_short__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_to_Other_Referral</targetReference>
+            </connector>
+            <label>Other Referral</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Opportunity - Source Reporting Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Source Reporting Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_AE_Outbound</name>
+        <label>Update AE Outbound</label>
+        <locationX>1634</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Opportunity_Source_Reporting__c</field>
+            <value>
+                <stringValue>AE Outbound</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_AM_Referral</name>
+        <label>Update AM Referral</label>
+        <locationX>1370</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Opportunity_Source_Reporting__c</field>
+            <value>
+                <stringValue>AM Referral</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_IGNORE_Opp</name>
+        <label>Update IGNORE Opp</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Opportunity_Source_Reporting__c</field>
+            <value>
+                <stringValue>IGNORE</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Inbound_Opp</name>
+        <label>Update Inbound Opp</label>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Opportunity_Source_Reporting__c</field>
+            <value>
+                <stringValue>Inbound</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Offline_Upload</name>
+        <label>Update Offline Upload</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Opportunity_Source_Reporting__c</field>
+            <value>
+                <stringValue>Offline Upload</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_SDR_Outbound</name>
+        <label>Update SDR Outbound</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Opportunity_Source_Reporting__c</field>
+            <value>
+                <stringValue>SDR Outbound</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_to_Inbound_Opp</name>
+        <label>Update to Inbound Opp</label>
+        <locationX>1106</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Opportunity_Source_Reporting__c</field>
+            <value>
+                <stringValue>Inbound</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_to_Other_Referral</name>
+        <label>Update to Other Referral</label>
+        <locationX>1898</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Opportunity_Source_Reporting__c</field>
+            <value>
+                <stringValue>Other Referral</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_to_Uncategorized</name>
+        <label>Update to Uncategorized</label>
+        <locationX>2162</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Opportunity_Source_Reporting__c</field>
+            <value>
+                <stringValue>UNCATEGORIZED</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1640</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CreatedDate_4_24</targetReference>
+        </connector>
+        <filterFormula>OR(
+{!$Record.RecordType.DeveloperName} = &apos;Sales_Opportunity&apos; ,
+{!$Record.RecordType.DeveloperName} = &apos;Existing_Business&apos;,
+{!$Record.RecordType.DeveloperName} = &apos;Sales_Development&apos;
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -8,7 +8,7 @@
         <locationX>534</locationX>
         <locationY>1031</locationY>
         <defaultConnector>
-            <targetReference>Protected_By_field_update</targetReference>
+            <targetReference>No_Became_Client_Date</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -149,10 +149,49 @@
         </rules>
     </decisions>
     <decisions>
+        <name>No_Became_Client_Date</name>
+        <label>No Became Client Date</label>
+        <locationX>534</locationX>
+        <locationY>1331</locationY>
+        <defaultConnector>
+            <targetReference>Protected_By_field_update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Search_for_Became_Client_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Became_Client__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Number_of_Closed_Won_Sales_Opportunities__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Opp_Latest_Contract_Start_Date</targetReference>
+            </connector>
+            <label>Search for Became Client Date</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Protected_By_field_update</name>
         <label>Protected By field update</label>
         <locationX>534</locationX>
-        <locationY>1331</locationY>
+        <locationY>1739</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Protected_By_field_is_changed</name>
@@ -217,6 +256,50 @@ SF-775: PB Migration</description>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <name>Get_Opp_Latest_Contract_Start_Date</name>
+        <label>Get Sales Latest Contract Start Date</label>
+        <locationX>402</locationX>
+        <locationY>1439</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Sales_Became_Client</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3) AND 4</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_for_Query__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Sales Opportunity</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_for_Query__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Sales Opportunity - Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>CloseDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Opportunity</name>
         <label>Get Opportunity</label>
         <locationX>534</locationX>
@@ -259,7 +342,7 @@ SF-775: PB Migration</description>
         <locationX>402</locationX>
         <locationY>1139</locationY>
         <connector>
-            <targetReference>Protected_By_field_update</targetReference>
+            <targetReference>No_Became_Client_Date</targetReference>
         </connector>
         <inputAssignments>
             <field>Became_Client_Research__c</field>
@@ -305,7 +388,7 @@ SF-775: PB Migration</description>
         <name>Update_Protected_By_Last_Change</name>
         <label>Update Protected By Last Change</label>
         <locationX>402</locationX>
-        <locationY>1439</locationY>
+        <locationY>1847</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -334,6 +417,22 @@ SF-775: PB Migration</description>
             <field>First_Renewal_Year_Research__c</field>
             <value>
                 <stringValue>See Opportunities</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Sales_Became_Client</name>
+        <label>Update Sales Became Client</label>
+        <locationX>402</locationX>
+        <locationY>1547</locationY>
+        <connector>
+            <targetReference>Protected_By_field_update</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Became_Client__c</field>
+            <value>
+                <elementReference>Get_Opp_Latest_Contract_Start_Date.CloseDate</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
