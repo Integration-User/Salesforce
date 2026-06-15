@@ -3455,6 +3455,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Plative_UpdateActivatedUserBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Plative_UpdateActivatedUserQueueable</apexClass>
         <enabled>true</enabled>
     </classAccesses>
