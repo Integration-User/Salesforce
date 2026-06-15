@@ -12,6 +12,10 @@
         <apexClass>Plative_UpdateActivatedUserBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>Plative_UpdateActivatedUserBatch_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -26,6 +30,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Current_Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Consolidated_From__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

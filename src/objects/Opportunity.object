@@ -1986,6 +1986,18 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         </valueSet>
     </fields>
     <fields>
+        <fullName>Consolidated_From__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Consolidated From</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Consolidated)</relationshipLabel>
+        <relationshipName>OpportunityFrom</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Consolidated_To__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>Consolidated To</label>
