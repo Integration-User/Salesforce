@@ -1986,6 +1986,18 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         </valueSet>
     </fields>
     <fields>
+        <fullName>Consolidated_From__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Consolidated From</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities (Consolidated)</relationshipLabel>
+        <relationshipName>OpportunityFrom</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Consolidated_To__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>Consolidated To</label>
@@ -13797,6 +13809,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -17944,6 +17960,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -22035,6 +22055,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -26061,6 +26085,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Products__c</picklist>
+            <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
@@ -30344,6 +30372,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Products__c</picklist>
+            <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
@@ -34788,6 +34820,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -38931,6 +38967,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -42814,6 +42854,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -46510,6 +46554,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Products__c</picklist>
+            <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
@@ -50457,6 +50505,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Products__c</picklist>
+            <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
@@ -54857,6 +54909,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Products__c</picklist>
+            <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
@@ -59341,6 +59397,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Products__c</picklist>
             <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -63639,6 +63699,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </picklistValues>
         <picklistValues>
             <picklist>Products__c</picklist>
+            <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
