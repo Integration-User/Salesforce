@@ -14,6 +14,7 @@ public class Plative_DeActivateUserQueueableTest {
         platform.User_Password_Reset__c = 'http://gsa-website-salesforce-api-dev.us-west-2.elasticbeanstalk.com/v1/users/';
         platform.Clear_Token__c = 'http://gsa-website-salesforce-api-dev.us-west-2.elasticbeanstalk.com/v1/users/datalink/';
         platform.Update_Token__c = 'http://gsa-website-salesforce-api-dev.us-west-2.elasticbeanstalk.com/v1/users/datalink/';
+        Platform.Update_Name__c = 'https://mantis-ext.greenstreet.com/v2/users/{gsContactID}/update_name';
         //API Key
         platform.API_Key__c = 'SAL3sf0rc3_AP1';
         insert platform;
