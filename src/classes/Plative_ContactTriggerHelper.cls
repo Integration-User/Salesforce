@@ -96,14 +96,12 @@ public class Plative_ContactTriggerHelper  {
         for(Contact cont: triggerNew){
             if(String.isNotBlank(cont.Username__c) && triggerOldMap.get(cont.Id).Username__c != cont.Username__c && cont.Contact_Status__c == 'Active'){
                 contactIdToProcess.add(cont.Id);
-            } /*SF-2209 - else if(( (String.isNotBlank(cont.FirstName) && triggerOldMap.get(cont.Id).FirstName != cont.FirstName) || (String.isNotBlank(cont.LastName) && triggerOldMap.get(cont.Id).LastName != cont.LastName)) && cont.Contact_Status__c == 'Active'){
+            } else if(( (String.isNotBlank(cont.FirstName) && triggerOldMap.get(cont.Id).FirstName != cont.FirstName) || (String.isNotBlank(cont.LastName) && triggerOldMap.get(cont.Id).LastName != cont.LastName)) && cont.Contact_Status__c == 'Active'){
                 contactIdToProcess.add(cont.Id);
-            }*/
+            }
         }        
-        if(!contactIdToProcess.isEmpty() && !System.isBatch() && !System.isFuture()) {
-            //SF-2186
-            Database.executeBatch(new Plative_UpdateActivatedUserBatch(contactIdToProcess), 1);
-            //System.enqueueJob(new Plative_UpdateActivatedUserQueueable(contactIdToProcess));
+        if(!contactIdToProcess.isEmpty()){
+            System.enqueueJob(new Plative_UpdateActivatedUserQueueable(contactIdToProcess));
         }
     }
     
@@ -112,9 +110,9 @@ public class Plative_ContactTriggerHelper  {
         for(Contact cont: triggerNew){
             if(triggerOldMap == null && cont.Activate_Contact__c == true && cont.Contact_Status__c != 'Active'){
                 contactIdToProcess.add(cont.Id);
-            } else if(triggerOldMap != null && triggerOldMap.get(cont.Id).Activate_Contact__c == false && cont.Activate_Contact__c == true && cont.Contact_Status__c != 'Active'){
+            } /*SF-2209 - else if(triggerOldMap != null && triggerOldMap.get(cont.Id).Activate_Contact__c == false && cont.Activate_Contact__c == true && cont.Contact_Status__c != 'Active'){
                 contactIdToProcess.add(cont.Id);
-            }
+            } */
         }
         if(!contactIdToProcess.isEmpty()){
             System.enqueueJob(new Plative_UpdateActivatedUserQueueable(contactIdToProcess));
