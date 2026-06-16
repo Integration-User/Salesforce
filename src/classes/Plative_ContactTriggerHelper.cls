@@ -96,12 +96,14 @@ public class Plative_ContactTriggerHelper  {
         for(Contact cont: triggerNew){
             if(String.isNotBlank(cont.Username__c) && triggerOldMap.get(cont.Id).Username__c != cont.Username__c && cont.Contact_Status__c == 'Active'){
                 contactIdToProcess.add(cont.Id);
-            } else if(( (String.isNotBlank(cont.FirstName) && triggerOldMap.get(cont.Id).FirstName != cont.FirstName) || (String.isNotBlank(cont.LastName) && triggerOldMap.get(cont.Id).LastName != cont.LastName)) && cont.Contact_Status__c == 'Active'){
+            } /*SF-2209 - else if(( (String.isNotBlank(cont.FirstName) && triggerOldMap.get(cont.Id).FirstName != cont.FirstName) || (String.isNotBlank(cont.LastName) && triggerOldMap.get(cont.Id).LastName != cont.LastName)) && cont.Contact_Status__c == 'Active'){
                 contactIdToProcess.add(cont.Id);
-            }
+            }*/
         }        
-        if(!contactIdToProcess.isEmpty()){
-            System.enqueueJob(new Plative_UpdateActivatedUserQueueable(contactIdToProcess));
+        if(!contactIdToProcess.isEmpty() && !System.isBatch() && !System.isFuture()) {
+            //SF-2186
+            Database.executeBatch(new Plative_UpdateActivatedUserBatch(contactIdToProcess), 1);
+            //System.enqueueJob(new Plative_UpdateActivatedUserQueueable(contactIdToProcess));
         }
     }
     
@@ -285,6 +287,43 @@ public class Plative_ContactTriggerHelper  {
         // Single DML update
         if(!accUpdates.isEmpty()) {
             update accUpdates;
+        }
+    }
+	/**
+    * Description : Synchronize Do Not Contact and Do Not Call fields across duplicate email contacts
+    * This method enqueues a Queueable job to handle the sync in an async context
+    **/
+    public static void syncDuplicateContactDNCFields(List<Contact> newContacts, Map<Id, Contact> oldContactMap) {
+        List<Id> contactsToSync = new List<Id>();
+        
+        // Check if Email, DoNotCall, or HasOptedOutOfEmail fields changed
+        for (Contact newContact : newContacts) {
+            Contact oldContact = oldContactMap != null ? oldContactMap.get(newContact.Id) : null;
+            
+            // For insert, check if contact has email
+            if (oldContact == null && String.isNotBlank(newContact.Email)) {
+                contactsToSync.add(newContact.Id);
+                continue;
+            }
+            
+            // For update, check if email or DNC/DNCall flags changed
+            if (oldContact != null) {
+                if (newContact.Email != oldContact.Email || 
+                    newContact.DoNotCall != oldContact.DoNotCall || 
+                    newContact.HasOptedOutOfEmail != oldContact.HasOptedOutOfEmail) {
+                        contactsToSync.add(newContact.Id);
+                    }
+            }
+        }
+        
+        // If there are contacts to sync, enqueue the queueable job
+        if (!contactsToSync.isEmpty() && !System.isBatch() && !Plative_ContactTriggerHandler.isDNCcheck) {
+            try {
+                Plative_ContactTriggerHandler.isDNCcheck = true;
+                System.enqueueJob(new SyncDuplicateContactDNCQueueable(contactsToSync));
+            } catch (Exception ex) {
+                System.debug('Error enqueuing SyncDuplicateContactDNCQueueable: ' + ex.getMessage());
+            }
         }
     }
 }
