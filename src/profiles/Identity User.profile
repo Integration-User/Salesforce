@@ -3455,6 +3455,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Plative_UpdateActivatedUserBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Plative_UpdateActivatedUserBatch_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Plative_UpdateActivatedUserQueueable</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -31059,6 +31067,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Consolidated_From__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Consolidated_To__c</field>
         <readable>false</readable>
@@ -48450,10 +48463,6 @@
         <recordType>Opportunity.Advisory_Closed</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Opportunity-Events</layout>
-        <recordType>Opportunity.Events</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Opportunity-Favors - Closed</layout>
         <recordType>Opportunity.Favour_Closed</recordType>
     </layoutAssignments>
@@ -48471,6 +48480,10 @@
     <layoutAssignments>
         <layout>Opportunity-New Business</layout>
         <recordType>Opportunity.Advertising_Closed</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-New Business</layout>
+        <recordType>Opportunity.Events</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-New Business</layout>
