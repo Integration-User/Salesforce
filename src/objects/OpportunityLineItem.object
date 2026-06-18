@@ -1213,6 +1213,7 @@ IF start date is blank, allow edits. if not is blank prevent edits</description>
     Opportunity.RecordType.DeveloperName = &quot;Existing_Business&quot;,
     ISCHANGED(Start_Date__c),
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Megan Kerbs&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;,
  $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Paul Eager&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Joyce Blanden&quot;
@@ -1294,6 +1295,7 @@ Opportunity.Record_Type_for_Query__c = &quot;Sales Opportunity - Closed&quot;)
     NOT(ISBLANK(PRIORVALUE(Starting_Price__c))), 
     PRIORVALUE(Starting_Price__c) &gt; 0,
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Megan Kerbs&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;,
 $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Paul Eager&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Joyce Blanden&quot;
