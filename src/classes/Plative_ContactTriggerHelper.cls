@@ -100,8 +100,10 @@ public class Plative_ContactTriggerHelper  {
                 contactIdToProcess.add(cont.Id);
             } */
         }        
-        if(!contactIdToProcess.isEmpty()){
-            System.enqueueJob(new Plative_UpdateActivatedUserQueueable(contactIdToProcess));
+        if(!contactIdToProcess.isEmpty() && !System.isBatch() && !System.isFuture()) {
+            //SF-2186
+            Database.executeBatch(new Plative_UpdateActivatedUserBatch(contactIdToProcess), 1);
+            //System.enqueueJob(new Plative_UpdateActivatedUserQueueable(contactIdToProcess));
         }
     }
     
