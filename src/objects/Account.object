@@ -3243,6 +3243,20 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Days_Until_Next_Renewal__c</fullName>
+        <description>Formula field that counts the number of business days from the “Next Renewal Date” to today.</description>
+        <externalId>false</externalId>
+        <formula>Next_Renewal_Date__c - TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Until Next Renewal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Deactivate_Account__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Deactivate Account</label>
