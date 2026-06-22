@@ -16998,6 +16998,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Days_Until_Next_Renewal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Deactivate_Account__c</field>
         <readable>false</readable>
     </fieldPermissions>
