@@ -5,8 +5,8 @@
     <decisions>
         <name>Case_Conversion_Decision</name>
         <label>Case Conversion Decision</label>
-        <locationX>770</locationX>
-        <locationY>424</locationY>
+        <locationX>440</locationX>
+        <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Update_Limited_Deactivation_to_Conversion</name>
@@ -79,7 +79,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -92,8 +92,8 @@
     <recordUpdates>
         <name>Update_Full_Activation_to_Closed</name>
         <label>Update Full Activation to Closed</label>
-        <locationX>482</locationX>
-        <locationY>620</locationY>
+        <locationX>440</locationX>
+        <locationY>492</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>ActivationDeactivation_Needs__c</field>
@@ -127,8 +127,8 @@
     <recordUpdates>
         <name>Update_Limited_Activation_to_Closed</name>
         <label>Update Limited Activation to Closed</label>
-        <locationX>1058</locationX>
-        <locationY>622</locationY>
+        <locationX>176</locationX>
+        <locationY>492</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>ActivationDeactivation_Needs__c</field>
@@ -162,8 +162,8 @@
     <recordUpdates>
         <name>Update_to_Full_Conversion</name>
         <label>Update to Full Conversion</label>
-        <locationX>483</locationX>
-        <locationY>423</locationY>
+        <locationX>440</locationX>
+        <locationY>384</locationY>
         <connector>
             <targetReference>Update_Full_Activation_to_Closed</targetReference>
         </connector>
@@ -199,8 +199,8 @@
     <recordUpdates>
         <name>Update_to_Limited_Conversion</name>
         <label>Update to Limited Conversion</label>
-        <locationX>1058</locationX>
-        <locationY>418</locationY>
+        <locationX>176</locationX>
+        <locationY>384</locationY>
         <connector>
             <targetReference>Update_Limited_Activation_to_Closed</targetReference>
         </connector>
@@ -234,8 +234,23 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>650</locationX>
-        <locationY>48</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Trial_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Limited Access</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Trial_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Full Access</stringValue>
+            </value>
+        </filters>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <scheduledPaths>
