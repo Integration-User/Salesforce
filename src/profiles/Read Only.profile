@@ -17720,6 +17720,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.PB_All_Entity_Types__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.PB_Also_Known_As__c</field>
         <readable>true</readable>
     </fieldPermissions>
