@@ -42,7 +42,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Ignore_Opp</name>
-            <conditionLogic>1 OR 2 OR (3 AND 4)</conditionLogic>
+            <conditionLogic>1 OR 2 OR 5 OR 6 OR 7 OR (3 AND 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Account.Test_Account__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -69,6 +69,27 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Bad Opp - Never Connected</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Green Street</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Favor</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Favor</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -228,6 +249,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>$Record.Created_Date_short__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referral</stringValue>
                 </rightValue>
             </conditions>
             <connector>
