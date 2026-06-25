@@ -150,7 +150,7 @@
         </rules>
         <rules>
             <name>SDR_Outbound</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND (3 OR 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
                 <operator>EqualTo</operator>
