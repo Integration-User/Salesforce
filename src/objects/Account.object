@@ -5980,6 +5980,39 @@ Owner.Id = $User.Id)</formula>
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>PB_All_Entity_Types__c</fullName>
+        <label>PB All Entity Types</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Company</fullName>
+                    <default>false</default>
+                    <label>Company</label>
+                </value>
+                <value>
+                    <fullName>Investor</fullName>
+                    <default>false</default>
+                    <label>Investor</label>
+                </value>
+                <value>
+                    <fullName>Limited Partner</fullName>
+                    <default>false</default>
+                    <label>Limited Partner</label>
+                </value>
+                <value>
+                    <fullName>Service Provider</fullName>
+                    <default>false</default>
+                    <label>Service Provider</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>PB_ID__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Pitchbook ID</inlineHelpText>
@@ -14146,6 +14179,25 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>PB_All_Entity_Types__c</picklist>
+            <values>
+                <fullName>Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Limited Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Provider</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Partner_Type__c</picklist>
             <values>
                 <fullName>AI</fullName>
@@ -18339,6 +18391,25 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PB_All_Entity_Types__c</picklist>
+            <values>
+                <fullName>Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Limited Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Provider</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
