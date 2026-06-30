@@ -6,7 +6,10 @@
 */
 
 public class Plative_AddProductLineCtrl {
-    
+    private static final List<String> sdrProductList = new List<String>{'Green Street News: Europe', 'Green Street News: Canada', 'Green Street News: Australia'};
+    private static final String SALES_DEVELOPMENT_DEPARTMENT = 'Sales Development';
+    public static User user = null;
+    Public static Map<Id, Product2> gsnProductList = null;
     //Get DataLink & Website access details
     @AuraEnabled
     public static Account getAccountDetails(String recordId){
@@ -28,14 +31,20 @@ public class Plative_AddProductLineCtrl {
         
         return response;
     }
-    
     //Method to get Product records
     @AuraEnabled
     public static List<Product2> getProducts(String recordId){
-        List<Product2> productList = [Select Id,Name,Description from Product2 where IsActive=true AND Product_Line__c=true];
+        Account acc = [Select Id, Type from Account Where id =: recordId];
+        List<Product2> productList = new List<Product2>();
+        if(isSalesDevelopmentUser()) {
+            if(acc.Type == 'Client') return productList;
+            productList = [Select Id,Name,Description from Product2 where IsActive=true AND Product_Line__c=true AND Name IN :sdrProductList];
+        } else {
+            productList = [Select Id,Name,Description from Product2 where IsActive=true AND Product_Line__c=true];
+        }
         return productList;
     }
-    
+
     //Method to get Product Line records related to Account Id
     @AuraEnabled
     public static List<Account_Product_Line__c> getProductLines(String recordId){
@@ -76,7 +85,8 @@ public class Plative_AddProductLineCtrl {
                         newProductLine.Start_Date__c = productLine.Start_Date__c;
                         newProductLine.End_Date__c = productLine.End_Date__c;
                         newProductLine.Account__c = recordId;
-                        newProductLine.Trial__c  = productLine.Trial__c;
+                        newProductLine.Trial__c  = shouldForceTrial(productLine);
+                        newProductLine.GSN_Trial__c  = shouldForceTrial(productLine);
                         productLinesToUpsert.add(newProductLine);
                     }
                 }                 
@@ -89,7 +99,8 @@ public class Plative_AddProductLineCtrl {
                         newProductLine.Start_Date__c = productLine.Start_Date__c;
                         newProductLine.End_Date__c = productLine.End_Date__c;
                         newProductLine.Account__c = recordId;
-                        newProductLine.Trial__c  = productLine.Trial__c;
+                        newProductLine.Trial__c  = shouldForceTrial(productLine);
+                        newProductLine.GSN_Trial__c  = shouldForceTrial(productLine);
                         productLinesToUpsert.add(newProductLine);
                     }
                     
@@ -130,5 +141,28 @@ public class Plative_AddProductLineCtrl {
         }
         return response;
     }
-    
+    //SF-2225 : GSN Trial for SDR
+    @AuraEnabled
+    public static String getCurrentUserDepartment(){
+        if(user == null) user = [Select Id, Department From User where Id =: UserInfo.getUserId()];
+        return user.Department;
+    }
+    private static Boolean isSalesDevelopmentUser() {
+        if(user == null) {
+            user = [Select Id, Department From User where Id =: UserInfo.getUserId()];
+        }
+        return user.Department == SALES_DEVELOPMENT_DEPARTMENT;
+    }
+    private static Map<Id, Product2> getGSNProductList() {
+        if(gsnProductList == null) {
+            gsnProductList = new Map<ID, Product2>([SELECT Id, Name FROM Product2 Where Name IN :sdrProductList]);
+        }
+        return gsnProductList;
+    }
+    private static Boolean shouldForceTrial(Account_Product_Line__c productLine){
+        gsnProductList = getGSNProductList();
+        if(isSalesDevelopmentUser() && gsnProductList != null && gsnProductList.containsKey(productLine.Product__c)) return true;
+        return productLine.Trial__c;
+    }
+    // END SF-2225 : GSN Trial for SDR
 }
