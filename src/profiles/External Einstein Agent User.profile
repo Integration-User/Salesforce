@@ -9,6 +9,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Plative_AddProductLineCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Plative_AddProductLineCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Plative_UpdateActivatedUserBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -20,6 +28,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Current_Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Product_Line__c.GSN_Trial__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
