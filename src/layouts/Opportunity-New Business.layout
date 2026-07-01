@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
@@ -100,10 +101,6 @@
                 <field>Consolidated_To__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Consolidated_From__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Close_Reason__c</field>
             </layoutItems>
@@ -191,10 +188,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>AM_Referrer__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Q4_Promo_Co_seller__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
