@@ -29628,6 +29628,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Company_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Company_Segment__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29913,6 +29918,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Inbound__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Industry</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29963,6 +29973,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Lead_Contact_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Lead_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29974,6 +29989,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Lead.Lead_Priority__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Lead_Type_New__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -29993,12 +30013,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Marketing_Identified_Country__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Marketing_Identified_Country_lead__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Marketing_Identified_State_lead__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Marketing_Product_of_Interest__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -30203,6 +30233,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Referrer_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Renewal_Month__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -30267,6 +30302,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Submission_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Submission_Page_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Lead.Subscribe_to_Competitors_Mktg_Identified__c</field>
         <readable>true</readable>
@@ -30279,6 +30324,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Team__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Tell_Us_About_Your_Needs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -30324,6 +30374,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.U_S_Webinars_and_Featured_Insights__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Web_Form_Comments_Questions__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
