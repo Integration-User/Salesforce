@@ -1273,6 +1273,30 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
         <errorMessage>&quot;Delivery method&quot; is required for data delivery products</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>IJGlobal_Event_Products_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    ISNEW(),
+    Opportunity.RecordType.DeveloperName = &quot;Events&quot;,
+    
+    $Profile.Name = &quot;IJGlobal Events User&quot;,
+
+    OR(
+        Product2.Name = &quot;Award Table&quot;,
+        Product2.Name = &quot;Award Add-on&quot;,
+        Product2.Name = &quot;Award Sponsorship&quot;,
+        Product2.Name = &quot;Event Sponsorship&quot;,
+        Product2.Name = &quot;Events Registration&quot;
+    ),
+
+    OR(
+        ISPICKVAL(SKU_Product__c, &quot;&quot;),
+        ISPICKVAL(Product_SKU_Detail__c, &quot;&quot;)
+    )
+)</errorConditionFormula>
+        <errorMessage>SKU Product and Product SKU Detail are required for the selected product.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Prevent_OLI_Update_Closed_Opp</fullName>
         <active>false</active>
         <description>Prevent OLI updates for Closed opportunity.
