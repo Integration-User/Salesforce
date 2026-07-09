@@ -5726,6 +5726,20 @@ Owner.Id = $User.Id)</formula>
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>Number_of_Closed_Won_Opportunities__c</fullName>
+        <description>Number of any Closed Won Opportunities</description>
+        <label>Number of Closed Won Opportunities</label>
+        <summaryFilterItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Number_of_Closed_Won_Renewals__c</fullName>
         <label>Number of Closed Won Renewals</label>
         <summaryFilterItems>
@@ -5841,7 +5855,7 @@ Owner.Id = $User.Id)</formula>
         <summaryFilterItems>
             <field>Opportunity.StageName</field>
             <operation>notEqual</operation>
-            <value>Closed Won, Closed Lost</value>
+            <value>Closed Won, Closed Lost, Consolidated</value>
         </summaryFilterItems>
         <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
         <summaryOperation>count</summaryOperation>
