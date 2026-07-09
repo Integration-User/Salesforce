@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
@@ -99,10 +100,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Consolidated_To__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Consolidated_From__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -639,6 +636,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Locatus_ID__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Opportunity_Source_Reporting__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
