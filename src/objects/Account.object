@@ -4877,6 +4877,20 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Keyword_Score_cumulative__c</fullName>
+        <description>Sum of the CRE Keyword Score and the Infra Keyword Score</description>
+        <externalId>false</externalId>
+        <formula>CRE_Keyword_Score__c + Infra_Keyword_Score__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Keyword Score (cumulative)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>L6M_MD_Ds_Usage__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>MD&amp;Ds platform clicks for this account over the last 6 months</inlineHelpText>
@@ -9715,7 +9729,7 @@ Owner.Id = $User.Id)</formula>
         <externalId>false</externalId>
         <formula>ICP_Score_CRE_GP_Investors__c + ICP_Score_CRE_Platform__c + ICP_Score_CRE_Service_Providers__c + ICP_Score_Infra_GP_Investors__c + ICP_Score_Infra_Investors__c + ICP_Score_Infra_Service_Providers__c + ICP_Score_Retail__c +  ICP_Score_CRE_LP__c + ICP_Score_INFRA_LP__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>RevOps ICP Score (cumulative)</label>
+        <label>Cap Markets ICP Score (cumulative)</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
