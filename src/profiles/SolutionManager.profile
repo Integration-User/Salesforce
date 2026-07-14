@@ -17403,6 +17403,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Keyword_Score_cumulative__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.L6M_MD_Ds_Usage__c</field>
         <readable>true</readable>
     </fieldPermissions>
