@@ -6,7 +6,7 @@
 */
 
 public class Plative_AddProductLineCtrl {
-    private static final List<String> sdrProductList = new List<String>{'Green Street News: Europe', 'Green Street News: Canada', 'Green Street News: Australia'};
+    private static final List<String> sdrProductList = new List<String>{'Green Street News: Europe', 'Green Street News: Canada', 'Green Street News: Australia', 'Real Estate Alert', 'Commercial Mortgage Alert', 'Asset-Backed Alert'};
     private static final String SALES_DEVELOPMENT_DEPARTMENT = 'Sales Development';
     public static User user = null;
     Public static Map<Id, Product2> gsnProductList = null;
