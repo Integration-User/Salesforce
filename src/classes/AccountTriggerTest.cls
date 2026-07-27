@@ -1,6 +1,6 @@
-@isTest
+@IsTest
 public class AccountTriggerTest {
-    @testSetup static void loadData() {
+    @TestSetup static void loadData() {
         insert new Trigger_Control_Setting__c(SetupOwnerId=UserInfo.getOrganizationId(), Account__c=true);
 
         Id accRecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('Organization_Account').getRecordTypeId();
@@ -28,7 +28,29 @@ public class AccountTriggerTest {
         opp.Class__c = 'Corporate';
         Insert opp;
     }
-    @isTest static void testAccountOwner() {
+    @IsTest static void testClientsInHierarchyRollup() {
+        Id orgRecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('Organization_Account').getRecordTypeId();
+
+        Account parentAccount = new Account(Name='Parent Organization', RecordTypeId = orgRecordTypeId, Type = 'Client');
+        insert parentAccount;
+
+        Account childAccount = new Account(Name='Child Organization', RecordTypeId = orgRecordTypeId, ParentId = parentAccount.Id, Type = 'Client');
+        insert childAccount;
+
+        Account grandChildAccount = new Account(Name='Grandchild Organization', RecordTypeId = orgRecordTypeId, ParentId = childAccount.Id, Type = 'Client');
+        insert grandChildAccount;
+
+        parentAccount = [SELECT Id, Clients_In_Hierarchy__c FROM Account WHERE Id = :parentAccount.Id];
+        System.assertEquals(2, parentAccount.Clients_In_Hierarchy__c, 'Parent should count both client descendants.');
+
+        childAccount.Type = 'Prospect';
+        update childAccount;
+
+        parentAccount = [SELECT Id, Clients_In_Hierarchy__c FROM Account WHERE Id = :parentAccount.Id];
+        System.assertEquals(1, parentAccount.Clients_In_Hierarchy__c, 'Parent should recalculate after child relationship changes.');
+    }
+
+    @IsTest static void testAccountOwner() {
         Profile p2 = [SELECT Id FROM Profile WHERE Name='Standard User'];
         user userRecord1 = new user();
         userRecord1.LastName ='AccOwner' ;
@@ -58,7 +80,9 @@ public class AccountTriggerTest {
         Plative_AccountTriggerHelper.checkIfAddressChanged(acc, acc);
         Test.stopTest();
         Opportunity opp = [Select Id, OwnerId From Opportunity Where AccountId = :acc.Id]; 
-        if (!isError) System.assertEquals(acc.OwnerId, opp.OwnerId);
+        if (!isError) {
+            System.assertEquals(acc.OwnerId, opp.OwnerId, 'Owner change should propagate to renewal opportunities.');
+        }
     }
 
 }
