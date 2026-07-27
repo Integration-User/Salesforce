@@ -213,6 +213,108 @@ public class Plative_AccountTriggerHelper  {
 			}
 		}
 	}
+    //SF-2247 : Rollup Number of Clients in Hierarchy
+    public static void rollupClientsInHierarchy(List<Account> newAccounts, List<Account> oldAccounts) {
+        if (Plative_AccountTriggerHandler.isClientHierarchyRollupRunning) {
+            return;
+        }
+
+        Set<Id> affectedAccountIds = new Set<Id>();
+        if (newAccounts != null) {
+            for (Account acc : newAccounts) {
+                if (acc != null && acc.Id != null) {
+                    affectedAccountIds.add(acc.Id);
+                }
+            }
+        }
+        if (oldAccounts != null) {
+            for (Account acc : oldAccounts) {
+                if (acc != null && acc.Id != null) {
+                    affectedAccountIds.add(acc.Id);
+                }
+            }
+        }
+
+        if (affectedAccountIds.isEmpty()) {
+            return;
+        }
+
+        Set<Id> relatedAccountIds = new Set<Id>(affectedAccountIds);
+        Set<Id> pendingParentIds = new Set<Id>(affectedAccountIds);
+        while (!pendingParentIds.isEmpty()) {
+            List<Account> accountsInPath = [SELECT Id, ParentId FROM Account WHERE Id IN :pendingParentIds AND ParentId != null];
+            pendingParentIds.clear();
+            for (Account accountRecord : accountsInPath) {
+                relatedAccountIds.add(accountRecord.Id);
+                if (accountRecord.ParentId != null) {
+                    relatedAccountIds.add(accountRecord.ParentId);
+                    pendingParentIds.add(accountRecord.ParentId);
+                }
+            }
+        }
+
+        List<Account> accountsToEvaluate = [ SELECT Id, ParentId, Type, RecordType.DeveloperName FROM Account WHERE Id IN :relatedAccountIds OR ParentId IN :relatedAccountIds];
+
+        Map<Id, List<Id>> childrenByParentId = new Map<Id, List<Id>>();
+        Map<Id, Account> accountById = new Map<Id, Account>();
+        Set<Id> organizationAccountIds = new Set<Id>();
+        for (Account accountRecord : accountsToEvaluate) {
+            accountById.put(accountRecord.Id, accountRecord);
+            if (accountRecord.RecordType != null && accountRecord.RecordType.DeveloperName == 'Organization_Account') {
+                organizationAccountIds.add(accountRecord.Id);
+            }
+            if (!childrenByParentId.containsKey(accountRecord.ParentId)) {
+                childrenByParentId.put(accountRecord.ParentId, new List<Id>());
+            }
+            if (accountRecord.ParentId != null) {
+                childrenByParentId.get(accountRecord.ParentId).add(accountRecord.Id);
+            }
+        }
+
+        Map<Id, Integer> clientCountByParent = new Map<Id, Integer>();
+        for (Id accountId : organizationAccountIds) {
+            clientCountByParent.put(accountId, 0);
+        }
+
+        for (Id organizationAccountId : organizationAccountIds) {
+            Integer totalClients = 0;
+            Set<Id> visitedAccountIds = new Set<Id>();
+            List<Id> stack = new List<Id>{organizationAccountId};
+            while (!stack.isEmpty()) {
+                Id currentAccountId = stack.remove(0);
+                if (visitedAccountIds.contains(currentAccountId)) {
+                    continue;
+                }
+                visitedAccountIds.add(currentAccountId);
+
+                Account currentAccount = accountById.get(currentAccountId);
+                if (currentAccount != null && currentAccount.Id != organizationAccountId && currentAccount.Type == 'Client') {
+                    totalClients++;
+                }
+
+                List<Id> childIds = childrenByParentId.get(currentAccountId);
+                if (childIds != null) {
+                    for (Id childId : childIds) {
+                        if (!visitedAccountIds.contains(childId)) {
+                            stack.add(childId);
+                        }
+                    }
+                }
+            }
+            clientCountByParent.put(organizationAccountId, totalClients);
+        }
+
+        List<Account> accountsToUpdateList = new List<Account>();
+        for (Id accountId : clientCountByParent.keySet()) {
+            accountsToUpdateList.add(new Account(Id = accountId, Clients_In_Hierarchy__c = clientCountByParent.get(accountId)));
+        }
+
+        if (!accountsToUpdateList.isEmpty()) {
+            Plative_AccountTriggerHandler.isClientHierarchyRollupRunning = true;
+            update accountsToUpdateList;
+            Plative_AccountTriggerHandler.isClientHierarchyRollupRunning = false;
+        }
+    }
     /*SF-343 - Update Account Product Include value when Account is created/updated with current product*/
     public static void updateProductIncludeValueOnAccount(List<Account> newList, Map<Id, Account> mapOldAcc) {
         for (Account acc : newList) {
@@ -226,11 +328,11 @@ public class Plative_AccountTriggerHelper  {
                 system.debug('-acc.CategoryName->'+CategoryName);
                 if (CategoryName!= null && !CategoryName.isEmpty() && CategoryName.size() > 0) acc.Products_Include__c = CategoryName[0];
                 // SF-1339
-                acc.Current_Products_Text__c = acc.Current_Products__c.replace(';', ',');
+                // SF-2160 - acc.Current_Products_Text__c = acc.Current_Products__c.replace(';', ',');
                     
             } else if (acc.Is_Contact_Update__c && String.isBlank(acc.Current_Products__c)) {
                 acc.Products_Include__c = null;
-                acc.Current_Products_Text__c = acc.Current_Products__c;
+                // SF-2160 - acc.Current_Products_Text__c = acc.Current_Products__c;
             }
         }
         
