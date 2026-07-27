@@ -797,6 +797,7 @@ public class Plative_SFToNSSyncUtility {
 		return '';
 	}
     
+    /* SF-2269
     public static void updateProductFamily(Map<Id, Contact> mapOldCon, Map<Id, Contact> mapNewCon){
         List<String> allProducts = new List<String>();
         Set<Id> setProductChangedCons = new Set<Id>();
@@ -806,14 +807,6 @@ public class Plative_SFToNSSyncUtility {
         for (Product_Category_Family_Mapping__mdt productFamily : Product_Category_Family_Mapping__mdt.getAll().values()) {
             mapProductWithCategory.put(productFamily.MasterLabel, productFamily.Product_Category__c);
         }
-        /* mapProductWithCategory.put('US Portfolio Tools','Research');
-        mapProductWithCategory.put('US REIT','Research');
-        mapProductWithCategory.put('EUR REIT','Research');
-        mapProductWithCategory.put('US REA','Research');
-        mapProductWithCategory.put('EUR REA','Research');
-        mapProductWithCategory.put('NEWS - ABAlert','News');
-        mapProductWithCategory.put('NEWS - CMAlert','News');
-        mapProductWithCategory.put('NEWS - REAlert','News');*/
         
         for(Contact con : mapNewCon.values()){
             Contact oldCon = mapOldCon.get(con.id);
@@ -846,7 +839,7 @@ public class Plative_SFToNSSyncUtility {
             }
         }
         update mapAccToUpdate.values();
-    }
+    } */
     /*SF-281 - Products Included field update*/
     @InvocableMethod(label='Get Product Category' description='Product Vs Category')
     public static List<String> getProductCategoryName(List<String> productNames) {

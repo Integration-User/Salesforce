@@ -13,11 +13,13 @@ public class Plative_AccountTriggerHandler{
     public static Boolean isOwnerChanged = false;
     public static Boolean isAccountTriggerSkip = false;
     public static Boolean isCurrentProductUpdated = false;
+    public static Boolean isClientHierarchyRollupRunning = false;
 
 	/**
 	* Description : after update DML
 	**/	
 	public static void afterUpdate(Map<Id, Account> mapOldAcc, Map<Id, Account> mapNewAcc){
+        Plative_AccountTriggerHelper.rollupClientsInHierarchy(mapNewAcc.values(), mapOldAcc.values()); //SF-2247 : Rollup Number of Clients in Hierarchy
         List<Id> deactivatedAccountIds = new List<Id>();
         Set<Id> accountIdsToProcess = new Set<Id>();
 		if (!Plative_AccountTriggerHandler.afterUpdateRun) {
@@ -81,7 +83,7 @@ public class Plative_AccountTriggerHandler{
 			Plative_AccountTriggerHelper.setOwnerChangeCheckbox(mapNewAcc,mapOldAcc);
         } 
         /*SF-343*/
-        Plative_AccountTriggerHelper.updateProductIncludeValueOnAccount(Trigger.New, mapOldAcc);
+        // SF-2269 Plative_AccountTriggerHelper.updateProductIncludeValueOnAccount(Trigger.New, mapOldAcc);
         
 	}
 
@@ -94,4 +96,12 @@ public class Plative_AccountTriggerHandler{
             Plative_AccountTriggerHandler.beforeInsertRun = true;
         } 
      }
+
+    public static void afterInsert(List<Account> lstAccounts) {
+        Plative_AccountTriggerHelper.rollupClientsInHierarchy(lstAccounts, null); //SF-2247 : Rollup Number of Clients in Hierarchy
+    }
+
+    public static void afterDelete(List<Account> lstAccounts) {
+        Plative_AccountTriggerHelper.rollupClientsInHierarchy(null, lstAccounts); //SF-2247 : Rollup Number of Clients in Hierarchy
+    }
 }
