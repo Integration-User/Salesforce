@@ -4934,6 +4934,25 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Manager_Notes_Last_Updated__c</fullName>
+        <label>Manager Notes Last Updated</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Manager_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Manager Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Market_Focus__c</fullName>
         <inlineHelpText>What Markets are they focused on?</inlineHelpText>
         <label>Market Focus</label>
@@ -35470,11 +35489,47 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Qualified_Team__c</picklist>
             <values>
+                <fullName>AM%3A Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Non-Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Strategic</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>College House</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion US Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Sales%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -35487,6 +35542,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -35507,6 +35566,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A West</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -51228,11 +51295,47 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Qualified_Team__c</picklist>
             <values>
+                <fullName>AM%3A Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Non-Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Strategic</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>College House</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion US Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Sales%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -51245,6 +51348,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -51265,6 +51372,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A West</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -64506,11 +64621,47 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <picklistValues>
             <picklist>Qualified_Team__c</picklist>
             <values>
+                <fullName>AM%3A Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Non-Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM%3A Strategic</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>College House</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>EU SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>European Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion React</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion US Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Sales%3A News</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -64523,6 +64674,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>React News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -64543,6 +64698,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>US SDR Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Sales%3A West</fullName>
                 <default>false</default>
             </values>
             <values>

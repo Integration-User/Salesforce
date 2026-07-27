@@ -1298,11 +1298,11 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     </validationRules>
     <validationRules>
         <fullName>Prevent_OLI_Update_Closed_Opp</fullName>
-        <active>false</active>
-        <description>Prevent OLI updates for Closed opportunity.
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
+        <active>true</active>
+        <description>Prevent OLI updates for Closed opportunity.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$UserRole.Name &lt;&gt; &quot;Commercial Operations&quot;,
 Opportunity.IsClosed = TRUE,
 OR(
 Opportunity.Record_Type_for_Query__c = &quot;Renewal - Closed&quot;,

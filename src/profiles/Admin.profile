@@ -17022,6 +17022,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Clients_In_Hierarchy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.College_House_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17591,6 +17596,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Keyword_Score_cumulative__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.L6M_MD_Ds_Usage__c</field>
         <readable>true</readable>
@@ -17808,6 +17818,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Number_of_Closed_Won_Event_Opportunities__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Number_of_Closed_Won_Opportunities__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -32228,6 +32243,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Made_Active_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Manager_Notes_Last_Updated__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Manager_Notes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -56849,6 +56874,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewPlatformEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewProductLimits</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

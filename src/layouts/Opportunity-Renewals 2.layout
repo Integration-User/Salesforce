@@ -144,6 +144,14 @@
                 <behavior>Required</behavior>
                 <field>CloseDate</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Manager_Notes__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Manager_Notes_Last_Updated__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -639,6 +647,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Locatus_ID__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Opportunity_Source_Reporting__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

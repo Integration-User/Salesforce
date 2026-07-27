@@ -3,10 +3,35 @@
     <apiVersion>59.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
+        <name>Change_Manager_Notes</name>
+        <label>Change Manager Notes</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Stage_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Manager_Notes_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Manager_Notes__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Manager_Notes_Last_Update</targetReference>
+            </connector>
+            <label>Manager Notes Update</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Stage_Closed</name>
         <label>Is Stage Closed?</label>
         <locationX>182</locationX>
-        <locationY>995</locationY>
+        <locationY>1295</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -56,7 +81,7 @@
         <name>Stage_Update</name>
         <label>Stage Update</label>
         <locationX>182</locationX>
-        <locationY>287</locationY>
+        <locationY>587</locationY>
         <defaultConnector>
             <targetReference>Winback_Condition</targetReference>
         </defaultConnector>
@@ -82,7 +107,7 @@
         <name>Winback_Condition</name>
         <label>Winback Condition</label>
         <locationX>182</locationX>
-        <locationY>695</locationY>
+        <locationY>995</locationY>
         <defaultConnector>
             <targetReference>Is_Stage_Closed</targetReference>
         </defaultConnector>
@@ -134,7 +159,7 @@
         <name>Set_Close_Date_to_Today</name>
         <label>Set Close Date to Today</label>
         <locationX>50</locationX>
-        <locationY>1103</locationY>
+        <locationY>1403</locationY>
         <inputAssignments>
             <field>CloseDate</field>
             <value>
@@ -147,7 +172,7 @@
         <name>Update_Exclude_from_deal_scoring_model_On_Opportunity</name>
         <label>Update Exclude from deal scoring model On Opportunity</label>
         <locationX>50</locationX>
-        <locationY>803</locationY>
+        <locationY>1103</locationY>
         <connector>
             <targetReference>Is_Stage_Closed</targetReference>
         </connector>
@@ -163,7 +188,7 @@
         <name>Update_Last_Change_Date</name>
         <label>Update Last Change Date</label>
         <locationX>50</locationX>
-        <locationY>395</locationY>
+        <locationY>695</locationY>
         <connector>
             <targetReference>Update_Static_Role</targetReference>
         </connector>
@@ -176,10 +201,26 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Manager_Notes_Last_Update</name>
+        <label>Update Manager Notes Last Update</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>Stage_Update</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Manager_Notes_Last_Updated__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Static_Role</name>
         <label>Update Static Role</label>
         <locationX>50</locationX>
-        <locationY>503</locationY>
+        <locationY>803</locationY>
         <connector>
             <targetReference>Winback_Condition</targetReference>
         </connector>
@@ -216,7 +257,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Stage_Update</targetReference>
+            <targetReference>Change_Manager_Notes</targetReference>
         </connector>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>

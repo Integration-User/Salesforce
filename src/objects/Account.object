@@ -1237,6 +1237,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         </valueSet>
     </fields>
     <fields>
+        <fullName>Clients_In_Hierarchy__c</fullName>
+        <externalId>false</externalId>
+        <label>Clients In Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>College_House_Id__c</fullName>
         <caseSensitive>true</caseSensitive>
         <externalId>true</externalId>
@@ -4877,6 +4888,20 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Keyword_Score_cumulative__c</fullName>
+        <description>Sum of the CRE Keyword Score and the Infra Keyword Score</description>
+        <externalId>false</externalId>
+        <formula>CRE_Keyword_Score__c + Infra_Keyword_Score__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Keyword Score (cumulative)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>L6M_MD_Ds_Usage__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>MD&amp;Ds platform clicks for this account over the last 6 months</inlineHelpText>
@@ -5726,6 +5751,20 @@ Owner.Id = $User.Id)</formula>
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>Number_of_Closed_Won_Opportunities__c</fullName>
+        <description>Number of any Closed Won Opportunities</description>
+        <label>Number of Closed Won Opportunities</label>
+        <summaryFilterItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Number_of_Closed_Won_Renewals__c</fullName>
         <label>Number of Closed Won Renewals</label>
         <summaryFilterItems>
@@ -5841,7 +5880,7 @@ Owner.Id = $User.Id)</formula>
         <summaryFilterItems>
             <field>Opportunity.StageName</field>
             <operation>notEqual</operation>
-            <value>Closed Won, Closed Lost</value>
+            <value>Closed Won, Closed Lost, Consolidated</value>
         </summaryFilterItems>
         <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
         <summaryOperation>count</summaryOperation>
@@ -9701,7 +9740,7 @@ Owner.Id = $User.Id)</formula>
         <externalId>false</externalId>
         <formula>ICP_Score_CRE_GP_Investors__c + ICP_Score_CRE_Platform__c + ICP_Score_CRE_Service_Providers__c + ICP_Score_Infra_GP_Investors__c + ICP_Score_Infra_Investors__c + ICP_Score_Infra_Service_Providers__c + ICP_Score_Retail__c +  ICP_Score_CRE_LP__c + ICP_Score_INFRA_LP__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>RevOps ICP Score (cumulative)</label>
+        <label>Cap Markets ICP Score (cumulative)</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
