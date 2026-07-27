@@ -36,7 +36,7 @@ public class Plative_ContactTriggerHandler {
         if (!Plative_ContactTriggerHandler.beforeUpdateRun) {
             Boolean isSuccess = Plative_SFToNSSyncUtility.updateSyncToNSField(mapOldCon,mapNewCon,
                                                                               'Contact', 'Update');
-            Plative_SFToNSSyncUtility.updateProductFamily(mapOldCon, mapNewCon);
+            // SF-2269 - Plative_SFToNSSyncUtility.updateProductFamily(mapOldCon, mapNewCon);
             Plative_ContactTriggerHandler.beforeUpdateRun = true;
         }
     }
