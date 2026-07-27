@@ -648,6 +648,15 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Annual_Recognized_Revenue__c</fullName>
+        <label>Annual Recognized Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Annual_Revenue_Range__c</fullName>
         <externalId>false</externalId>
         <formula>IF(
@@ -9147,6 +9156,46 @@ Owner.Id = $User.Id)</formula>
                     <default>false</default>
                     <label>News Only</label>
                 </value>
+                <value>
+                    <fullName>Data Only</fullName>
+                    <default>false</default>
+                    <label>Data Only</label>
+                </value>
+                <value>
+                    <fullName>Advertising Only</fullName>
+                    <default>false</default>
+                    <label>Advertising Only</label>
+                </value>
+                <value>
+                    <fullName>News &amp; Data</fullName>
+                    <default>false</default>
+                    <label>News &amp; Data</label>
+                </value>
+                <value>
+                    <fullName>News &amp; Advertising</fullName>
+                    <default>false</default>
+                    <label>News &amp; Advertising</label>
+                </value>
+                <value>
+                    <fullName>News &amp; Research</fullName>
+                    <default>false</default>
+                    <label>News &amp; Research</label>
+                </value>
+                <value>
+                    <fullName>News, Research, and Data</fullName>
+                    <default>false</default>
+                    <label>News, Research, and Data</label>
+                </value>
+                <value>
+                    <fullName>News, Research, Data, and Advertising</fullName>
+                    <default>false</default>
+                    <label>News, Research, Data, and Advertising</label>
+                </value>
+                <value>
+                    <fullName>Research &amp; Data</fullName>
+                    <default>false</default>
+                    <label>Research &amp; Data</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -16113,7 +16162,39 @@ Stored as Long on Solr.</description>
         <picklistValues>
             <picklist>Products_Include__c</picklist>
             <values>
+                <fullName>Advertising Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News %26 Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News %26 Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News %26 Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>News Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News%2C Research%2C Data%2C and Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News%2C Research%2C and Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research %26 Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21051,7 +21132,39 @@ Stored as Long on Solr.</description>
         <picklistValues>
             <picklist>Products_Include__c</picklist>
             <values>
+                <fullName>Advertising Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News %26 Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News %26 Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News %26 Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>News Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News%2C Research%2C Data%2C and Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News%2C Research%2C and Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research %26 Data</fullName>
                 <default>false</default>
             </values>
             <values>

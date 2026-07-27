@@ -83,7 +83,7 @@ public class Plative_AccountTriggerHandler{
 			Plative_AccountTriggerHelper.setOwnerChangeCheckbox(mapNewAcc,mapOldAcc);
         } 
         /*SF-343*/
-        Plative_AccountTriggerHelper.updateProductIncludeValueOnAccount(Trigger.New, mapOldAcc);
+        // SF-2269 Plative_AccountTriggerHelper.updateProductIncludeValueOnAccount(Trigger.New, mapOldAcc);
         
 	}
 

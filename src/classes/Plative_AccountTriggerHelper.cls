@@ -315,7 +315,7 @@ public class Plative_AccountTriggerHelper  {
             Plative_AccountTriggerHandler.isClientHierarchyRollupRunning = false;
         }
     }
-    /*SF-343 - Update Account Product Include value when Account is created/updated with current product*/
+    /*SF-2269 - Code Commented - SF-343 - Update Account Product Include value when Account is created/updated with current product
     public static void updateProductIncludeValueOnAccount(List<Account> newList, Map<Id, Account> mapOldAcc) {
         for (Account acc : newList) {
             Account oldAccount = (mapOldAcc != null && !mapOldAcc.isEmpty()) ? mapOldAcc.get(acc.Id) : null;
@@ -323,7 +323,7 @@ public class Plative_AccountTriggerHelper  {
             system.debug('-acc.Is_Contact_Update__c->'+acc.Is_Contact_Update__c);
             if (String.isNotBlank(acc.Current_Products__c) && acc.Is_Contact_Update__c 
                 	&& (oldAccount == null || oldAccount.Current_Products__c != acc.Current_Products__c)) {
-                acc.Products_Include__c = null;
+                // acc.Products_Include__c = null;
                 List<String> CategoryName = Plative_SFToNSSyncUtility.getProductCategoryName(New List<String>{acc.Current_Products__c});
                 system.debug('-acc.CategoryName->'+CategoryName);
                 if (CategoryName!= null && !CategoryName.isEmpty() && CategoryName.size() > 0) acc.Products_Include__c = CategoryName[0];
@@ -337,7 +337,7 @@ public class Plative_AccountTriggerHelper  {
         }
         
         
-    }
+    } */
     @future
     public static void updateRenewalOppOwner(Set<Id> accIds, List<String> oldAccount){
         Map<Id, Id> oldOwners = new Map<Id, Id>();
