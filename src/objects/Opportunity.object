@@ -66753,7 +66753,7 @@ $User.Department = &apos;Account Management&apos;)
     </validationRules>
     <validationRules>
         <fullName>Products_Required_to_Save_at_Stage_2</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 2 or higher.
 
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
@@ -66770,15 +66770,15 @@ Product_Count__c =0
     <validationRules>
         <fullName>Products_Required_to_Save_at_Stage_4</fullName>
         <active>true</active>
-        <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 4 or higher.</description>
+        <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 4 or higher.
+
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-ISCHANGED(StageName),
-OR(
 RecordType.DeveloperName = &quot;Sales_Opportunity&quot; ,
-ISPICKVAL(StageName, &quot;Closed Won&quot;)
-),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
 Product_Count__c =0
 )</errorConditionFormula>
         <errorMessage>You must add Products to the Opportunity before Closing.</errorMessage>
@@ -66917,9 +66917,19 @@ ISBLANK(Competition__c)
     <validationRules>
         <fullName>Require_Customer_Handoff</fullName>
         <active>true</active>
+        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
-    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+
+    NOT(
+        AND(
+            ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+            OR(
+                ISPICKVAL(PRIORVALUE(StageName), &quot;1 - Introducing&quot;),
+                ISPICKVAL(PRIORVALUE(StageName), &quot;2 - Conducting Needs Analysis&quot;)
+            )
+        )
+    ),
     ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
     OR(
         $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
