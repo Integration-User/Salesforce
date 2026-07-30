@@ -66006,10 +66006,9 @@ Contract_Start_Date__c &gt; Contract_End_Date__c)</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>DDScore_ApprovedScoreChanges</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Prevents change the status and Win Validation from Conducting Needs Analysis (3) or Qualified Prospect (2) to any following open stages, including Closed Won, if the approved score or its ARR has changed.</description>
         <errorConditionFormula>AND(
-$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 	OR( 
 		RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
@@ -66036,7 +66035,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     </validationRules>
     <validationRules>
         <fullName>DDScore_MissingApproval</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Prevents change the status from Conducting Needs Analysis (3) or Qualified Prospect (2) to any following open stages, including Closed Won when the score has not been approved. Allow changes w/o approval when &quot;Lead Source&quot; is &quot;News Subscription Request&quot;</description>
         <errorConditionFormula>AND(
 OR(
@@ -66067,10 +66066,9 @@ NOT(ISPICKVAL(LeadSource ,&quot;News Subscription Request&quot;))))</errorCondit
     </validationRules>
     <validationRules>
         <fullName>DDScore_NoScore</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Prevents change the status from Conducting Needs Analysis (3) or Qualified Prospect (2) to any following open stages, including Closed Won.</description>
         <errorConditionFormula>AND(
-$Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 	OR( 
 		RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,

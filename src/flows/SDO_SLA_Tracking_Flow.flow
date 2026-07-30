@@ -13,7 +13,7 @@
         <name>Check_Qualification</name>
         <label>Check Qualification</label>
         <locationX>710</locationX>
-        <locationY>839</locationY>
+        <locationY>947</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Checkbox_is_True</name>
@@ -49,7 +49,7 @@
         <name>Qualification</name>
         <label>Qualification</label>
         <locationX>710</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Moved_to_Disqualified</name>
@@ -143,7 +143,7 @@
         <name>Removed_from_Integration_User</name>
         <label>Removed from Integration User</label>
         <locationX>380</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <defaultConnector>
             <targetReference>Qualification</targetReference>
         </defaultConnector>
@@ -242,7 +242,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_Assigned_Date</name>
         <label>Time Stamp Assigned Date</label>
         <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <inputAssignments>
             <field>Assigned_Date__c</field>
             <value>
@@ -261,7 +261,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_Disqualification</name>
         <label>Time Stamp Disqualification</label>
         <locationX>314</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <connector>
             <targetReference>Check_Qualification</targetReference>
         </connector>
@@ -289,7 +289,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_In_Review</name>
         <label>Time Stamp In Review</label>
         <locationX>578</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <connector>
             <targetReference>Check_Qualification</targetReference>
         </connector>
@@ -329,7 +329,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <name>Time_Stamp_Qualification</name>
         <label>Time Stamp Qualification</label>
         <locationX>842</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <connector>
             <targetReference>Check_Qualification</targetReference>
         </connector>
@@ -354,10 +354,41 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Inbound_Checkbox</name>
+        <label>Update Inbound Checkbox</label>
+        <locationX>380</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Removed_from_Integration_User</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>LeadSource</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Inbound Call</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>LeadSource</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Inbound Email</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Inbound__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Related_Contact</name>
         <label>Update Related Contact</label>
         <locationX>578</locationX>
-        <locationY>947</locationY>
+        <locationY>1055</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -428,7 +459,7 @@ MONTH(DATEVALUE({!$Record.CreatedDate})),
         <locationX>380</locationX>
         <locationY>323</locationY>
         <connector>
-            <targetReference>Removed_from_Integration_User</targetReference>
+            <targetReference>Update_Inbound_Checkbox</targetReference>
         </connector>
         <inputAssignments>
             <field>Name</field>

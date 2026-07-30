@@ -3409,9 +3409,10 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     <fields>
         <fullName>Entitlement_Guidance_Notes__c</fullName>
         <label>Entitlement Guidance Notes</label>
-        <required>false</required>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
-        <type>TextArea</type>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Entitlement_Guidance__c</fullName>
