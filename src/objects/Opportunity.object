@@ -66781,7 +66781,7 @@ ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
 NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
 Product_Count__c =0
 )</errorConditionFormula>
-        <errorMessage>You must add Products to the Opportunity before Closing.</errorMessage>
+        <errorMessage>Please add products to this opportunity before moving to Stage 4</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Provide_Other_Competition</fullName>
@@ -67405,7 +67405,7 @@ TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
         ISBLANK(Amount)
     )
 )</errorConditionFormula>
-        <errorMessage>Your opportunity must have products with a sales price by stage 2.</errorMessage>
+        <errorMessage>Please fill out the Amount field with an estimated deal value by Stage 2</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Stg4_Total_ARR_Greater_0</fullName>
