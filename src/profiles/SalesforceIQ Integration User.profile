@@ -16715,6 +16715,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Annual_Recognized_Revenue__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Annual_Recurring_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
