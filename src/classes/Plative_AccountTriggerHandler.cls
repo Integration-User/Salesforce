@@ -13,7 +13,6 @@ public class Plative_AccountTriggerHandler{
     public static Boolean isOwnerChanged = false;
     public static Boolean isAccountTriggerSkip = false;
     public static Boolean isCurrentProductUpdated = false;
-    public static Boolean isClientHierarchyRollupRunning = false;
 
 	/**
 	* Description : after update DML
@@ -97,11 +96,4 @@ public class Plative_AccountTriggerHandler{
         } 
      }
 
-    public static void afterInsert(List<Account> lstAccounts) {
-        //Plative_AccountTriggerHelper.rollupClientsInHierarchy(lstAccounts, null); //SF-2247 : Rollup Number of Clients in Hierarchy
-    }
-
-    public static void afterDelete(List<Account> lstAccounts) {
-       // Plative_AccountTriggerHelper.rollupClientsInHierarchy(null, lstAccounts); //SF-2247 : Rollup Number of Clients in Hierarchy
-    }
 }
