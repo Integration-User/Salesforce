@@ -648,13 +648,21 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>Annual_Recognized_Revenue__c</fullName>
-        <label>Annual Recognized Revenue</label>
+        <fullName>Annual_Recurring_Revenue__c</fullName>
+        <inlineHelpText>The ARR for the customer as of the most recently available period.</inlineHelpText>
+        <label>Annual Recurring Revenue</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Annual_Recurring_Revenue_last_updated__c</fullName>
+        <label>Annual Recurring Revenue last updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Annual_Revenue_Range__c</fullName>
@@ -13552,6 +13560,10 @@ Stored as Long on Solr.</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -18519,6 +18531,10 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>AI Research Summaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>

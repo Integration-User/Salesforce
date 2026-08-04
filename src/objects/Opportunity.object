@@ -13835,6 +13835,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -17998,6 +18002,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -22105,6 +22113,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -26145,6 +26157,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>AI Research Summaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -30444,6 +30460,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>AI Research Summaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -34930,6 +34950,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -39161,6 +39185,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -43060,6 +43088,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -46770,6 +46802,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>AI Research Summaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -50733,6 +50769,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>AI Research Summaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55221,6 +55261,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>AI Research Summaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -59723,6 +59767,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -64062,6 +64110,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>APAC Research %2B Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -66124,7 +66176,7 @@ ISBLANK(Favor_End_Date__c)
     </validationRules>
     <validationRules>
         <fullName>Fields_Reqd_to_Save_Stage_5</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Sales Opportunity Stage 5 Requirements</description>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
@@ -66803,7 +66855,7 @@ $User.Department = &apos;Account Management&apos;)
     </validationRules>
     <validationRules>
         <fullName>Products_Required_to_Save_at_Stage_2</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 2 or higher.
 
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
@@ -66820,18 +66872,18 @@ Product_Count__c =0
     <validationRules>
         <fullName>Products_Required_to_Save_at_Stage_4</fullName>
         <active>true</active>
-        <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 4 or higher.</description>
+        <description>Requires user to add products to the Opportunity in order to save the Opportunity at a stage 4 or higher.
+
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-ISCHANGED(StageName),
-OR(
 RecordType.DeveloperName = &quot;Sales_Opportunity&quot; ,
-ISPICKVAL(StageName, &quot;Closed Won&quot;)
-),
+ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
+NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
 Product_Count__c =0
 )</errorConditionFormula>
-        <errorMessage>You must add Products to the Opportunity before Closing.</errorMessage>
+        <errorMessage>Please add products to this opportunity before moving to Stage 4</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Provide_Other_Competition</fullName>
@@ -66879,7 +66931,7 @@ ISBLANK(Awards__c)
     </validationRules>
     <validationRules>
         <fullName>Require_Buying_Process</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Require “Buying Process” field be filled out.</description>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
@@ -66967,9 +67019,19 @@ ISBLANK(Competition__c)
     <validationRules>
         <fullName>Require_Customer_Handoff</fullName>
         <active>true</active>
+        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
-    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+
+    NOT(
+        AND(
+            ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+            OR(
+                ISPICKVAL(PRIORVALUE(StageName), &quot;1 - Introducing&quot;),
+                ISPICKVAL(PRIORVALUE(StageName), &quot;2 - Conducting Needs Analysis&quot;)
+            )
+        )
+    ),
     ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
     OR(
         $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
@@ -67342,10 +67404,8 @@ OR(
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.Name = &quot;Renewal&quot;,
 ISCHANGED(StageName),
-OR(
-RecordType.Name = &quot;Sales Opportunity&quot;,
-RecordType.Name = &quot;Renewal&quot;),
 OR(
 ISPICKVAL(StageName, &quot;4 - Recommending&quot;),
 ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;),
@@ -67432,6 +67492,22 @@ TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
    )
 )</errorConditionFormula>
         <errorMessage>Account Managers may not create Sales Opportunities. Please reach out to your Salesforce Administrator if you need support.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Stg2_Total_ARR_Greater_0</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    NOT($Permission.Skip_Validation_Rule),
+    RecordType.Name = &quot;Sales Opportunity&quot;,
+    ISPICKVAL(StageName, &quot;2 - Conducting Needs Analysis&quot;),
+    ISCHANGED(StageName),
+    OR(
+        Amount = 0,
+        ISBLANK(Amount)
+    )
+)</errorConditionFormula>
+        <errorMessage>Please fill out the Amount field with an estimated deal value by Stage 2</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Stg4_Total_ARR_Greater_0</fullName>
@@ -67578,7 +67654,9 @@ StageName=1 - Introducing,
 CloseDate={!TEXT(TODAY()+90)},
 AccountId={!Account.Id},
 ContactId={!Contact.Id},
+ForecastCategoryName=Pipeline,
 Lead_Type__c={!Contact.Lead_Type__c},
+Lead_Contact__c={!Contact.Id},
 Default_Contact__c={!Contact.Id},
 LeadSource={!Contact.LeadSource}&amp;
 backgroundContext=%2Flightning%2Fr%2FContact%2F{!Contact.Id}%2Fview</url>
