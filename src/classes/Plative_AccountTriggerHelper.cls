@@ -213,7 +213,7 @@ public class Plative_AccountTriggerHelper  {
 			}
 		}
 	}
-    //SF-2247 : Rollup Number of Clients in Hierarchy
+    /*SF-2247 : Rollup Number of Clients in Hierarchy
     public static void rollupClientsInHierarchy(List<Account> newAccounts, List<Account> oldAccounts) {
         if (Plative_AccountTriggerHandler.isClientHierarchyRollupRunning) {
             return;
@@ -314,7 +314,7 @@ public class Plative_AccountTriggerHelper  {
             update accountsToUpdateList;
             Plative_AccountTriggerHandler.isClientHierarchyRollupRunning = false;
         }
-    }
+    }*/
     /*SF-2269 - Code Commented - SF-343 - Update Account Product Include value when Account is created/updated with current product
     public static void updateProductIncludeValueOnAccount(List<Account> newList, Map<Id, Account> mapOldAcc) {
         for (Account acc : newList) {
