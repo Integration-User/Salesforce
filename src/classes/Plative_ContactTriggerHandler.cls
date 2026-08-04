@@ -25,6 +25,7 @@ public class Plative_ContactTriggerHandler {
             if(isUpdateBillingContact(mapOldCon,mapNewCon))
                 AddOrRemoveBillingContact.AddBillingContact(mapNewCon.keyset(),null);
             Plative_ContactTriggerHelper.updateExcelAddUsersOnAccount(mapNewCon.values(), mapOldCon); // SF-918
+            //Plative_ContactTriggerHelper.syncDuplicateContactDNCFields(mapNewCon.values(), mapOldCon); // SF-2012 - Sync DNC/DNCall fields
         }
     }
     
@@ -35,7 +36,7 @@ public class Plative_ContactTriggerHandler {
         if (!Plative_ContactTriggerHandler.beforeUpdateRun) {
             Boolean isSuccess = Plative_SFToNSSyncUtility.updateSyncToNSField(mapOldCon,mapNewCon,
                                                                               'Contact', 'Update');
-            Plative_SFToNSSyncUtility.updateProductFamily(mapOldCon, mapNewCon);
+            // SF-2269 - Plative_SFToNSSyncUtility.updateProductFamily(mapOldCon, mapNewCon);
             Plative_ContactTriggerHandler.beforeUpdateRun = true;
         }
     }

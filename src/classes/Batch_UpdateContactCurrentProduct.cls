@@ -36,12 +36,12 @@ public class Batch_UpdateContactCurrentProduct implements Database.Batchable<sOb
             con.Products_Include__c = null;
             if (String.isNotBlank(con.Current_Products__c)) {
                 List<String> CategoryName = Plative_SFToNSSyncUtility.getProductCategoryName(New List<String>{con.Current_Products__c});
-                if (CategoryName!= null && !CategoryName.isEmpty() && CategoryName.size() > 0) con.Products_Include__c = CategoryName[0];
+               // if (CategoryName!= null && !CategoryName.isEmpty() && CategoryName.size() > 0) con.Products_Include__c = CategoryName[0]; // SF-2269 Products Include(Account)
             }
             // End SF-281
 
             if(!mapAccounts.containskey(con.AccountId))
-                mapAccounts.put(con.AccountId,new Account(id=con.AccountId,Is_Contact_Update__c = false, Products_Include__c = con.Products_Include__c));
+                mapAccounts.put(con.AccountId,new Account(id=con.AccountId,Is_Contact_Update__c = false)); // SF-2269 Products Include(Account) Products_Include__c = con.Products_Include__c));
         }
         database.update(listContacts, false);
     }
