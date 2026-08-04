@@ -265,7 +265,7 @@
         </rules>
         <rules>
             <name>AE_Outbound</name>
-            <conditionLogic>1 AND 2 AND 3 AND 4 AND (5 OR 6)</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND 7 AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
                 <operator>EqualTo</operator>
@@ -308,6 +308,13 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Referral</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_AE_Outbound</targetReference>
             </connector>
@@ -315,7 +322,7 @@
         </rules>
         <rules>
             <name>Other_Referral</name>
-            <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
+            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CreatedBy.Department</leftValueReference>
                 <operator>EqualTo</operator>
@@ -342,6 +349,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>$Record.Created_Date_short__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referral</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -501,7 +515,7 @@
 {!$Record.RecordType.DeveloperName} = &apos;Sales_Development&apos;
 )</filterFormula>
         <object>Opportunity</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
