@@ -4934,6 +4934,17 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Mailing_City_Account__c</fullName>
+        <description>References the Billing City from Account</description>
+        <externalId>false</externalId>
+        <formula>Account.BillingCity</formula>
+        <label>Mailing City(Account)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Manager_Notes_Last_Updated__c</fullName>
         <label>Manager Notes Last Updated</label>
         <required>false</required>

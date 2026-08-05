@@ -31998,6 +31998,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Mailing_City_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.Manager_Notes_Last_Updated__c</field>
         <readable>true</readable>
     </fieldPermissions>
