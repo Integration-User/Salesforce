@@ -288,7 +288,7 @@ public class Plative_AccountTriggerHelper  {
                 visitedAccountIds.add(currentAccountId);
 
                 Account currentAccount = accountById.get(currentAccountId);
-                if (currentAccount != null && currentAccount.Id != organizationAccountId && currentAccount.Type == 'Client') {
+                if (currentAccount != null && currentAccount.Id != organizationAccountId && (currentAccount.Type == 'Client' || currentAccount.Type == 'Client + Trial')) {
                     totalClients++;
                 }
 
