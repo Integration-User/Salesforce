@@ -649,13 +649,15 @@
     </fields>
     <fields>
         <fullName>Annual_Recurring_Revenue__c</fullName>
-        <inlineHelpText>The ARR for the customer as of the most recently available period.</inlineHelpText>
+        <externalId>false</externalId>
+        <inlineHelpText>The ARR for the customer as of the most recently available period. This value is always in USD.</inlineHelpText>
         <label>Annual Recurring Revenue</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
-        <type>Currency</type>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Annual_Recurring_Revenue_last_updated__c</fullName>
@@ -6027,12 +6029,15 @@ Owner.Id = $User.Id)</formula>
     </fields>
     <fields>
         <fullName>PB_AUM__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Always in USD</inlineHelpText>
         <label>PB AUM (USD Millions)</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
-        <type>Currency</type>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>PB_All_Entity_Types__c</fullName>
@@ -6142,12 +6147,15 @@ Owner.Id = $User.Id)</formula>
     </fields>
     <fields>
         <fullName>PB_DryPowder__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Always in USD</inlineHelpText>
         <label>PB Dry Powder (USD Millions)</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
-        <type>Currency</type>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>PB_Employees__c</fullName>
