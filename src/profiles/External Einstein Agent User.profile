@@ -109,6 +109,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Link_to_Existing_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Must_Convert_into_Existing_Opp__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Consolidated_From__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -124,6 +134,10 @@
     </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lead-Referral Lead Layout</layout>
+        <recordType>Lead.Referrals</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lead-Referral Lead Layout</layout>
