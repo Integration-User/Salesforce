@@ -16666,6 +16666,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Annual_Recognized_Revenue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Annual_Recurring_Revenue__c</field>
         <readable>true</readable>
@@ -16674,11 +16679,6 @@
         <editable>false</editable>
         <field>Account.Annual_Recurring_Revenue_last_updated__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Annual_Recognized_Revenue__c</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -31738,6 +31738,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Made_Active_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Mailing_City_Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
