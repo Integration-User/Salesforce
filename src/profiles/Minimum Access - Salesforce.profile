@@ -30074,6 +30074,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Link_to_Existing_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Lead.LinkedIn_URL__c</field>
         <readable>false</readable>
@@ -30117,6 +30122,11 @@
         <editable>false</editable>
         <field>Lead.Most_Recent_Marketing_Activity__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Must_Convert_into_Existing_Opp__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>

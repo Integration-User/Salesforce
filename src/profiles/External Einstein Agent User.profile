@@ -64,12 +64,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Link_to_Existing_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Marketing_Identified_Country__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Marketing_Product_of_Interest__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Must_Convert_into_Existing_Opp__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -114,6 +124,10 @@
     </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lead-Referral Lead Layout</layout>
+        <recordType>Lead.Referrals</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-New Business</layout>
