@@ -1879,6 +1879,33 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         </valueSet>
     </fields>
     <fields>
+        <fullName>Link_to_Existing_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <inlineHelpText>Please link to the opportunity you would like this referral converted into</inlineHelpText>
+        <label>Link to Existing Opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Opportunity.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.StageName</field>
+                <operation>notEqual</operation>
+                <value>Closed Won, Closed Lost</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Leads</relationshipLabel>
+        <relationshipName>LeadOpportunity</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>LinkedIn_URL__c</fullName>
         <label>LinkedIn URL</label>
         <required>false</required>
@@ -3511,6 +3538,31 @@ IF(ISPICKVAL(LeadSource, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</formu
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Must_Convert_into_Existing_Opp__c</fullName>
+        <inlineHelpText>If you are expecting this referral to convert to an existing opportunity mark &quot;Yes&quot;, and fill out the link below</inlineHelpText>
+        <label>Must Convert into Existing Opp?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>My_Referral__c</fullName>
@@ -9769,6 +9821,17 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Must_Convert_into_Existing_Opp__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Name</picklist>
             <values>
                 <fullName>Dr%2E</fullName>
@@ -14390,6 +14453,17 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Must_Convert_into_Existing_Opp__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Name</picklist>
             <values>
                 <fullName>Dr%2E</fullName>
@@ -15667,6 +15741,17 @@ CONTAINS($UserRole.Name,&quot;BDR&quot;)
         <errorMessage>You Must Associate this lead with an Opportunity or Create a new one</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Match_Converted_Opp</fullName>
+        <active>true</active>
+        <description>Matches the converted opp id to existing opp id</description>
+        <errorConditionFormula>AND(
+ISPICKVAL(Status, &quot;Sales_Qualified&quot;),
+ConvertedOpportunityId !=  Link_to_Existing_Opportunity__c,
+NOT(ISBLANK(Link_to_Existing_Opportunity__c ))
+)</errorConditionFormula>
+        <errorMessage>The Opportunity that you want to convert does not match the Link to Existing Opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Opp_Creation_required</fullName>
         <active>true</active>
         <errorConditionFormula>IsConverted &amp;&amp; ConvertedOpportunityId == null</errorConditionFormula>
@@ -15731,6 +15816,16 @@ ISPICKVAL( Status , &quot;Disqualified&quot;)
 )</errorConditionFormula>
         <errorDisplayField>GS_Relationship__c</errorDisplayField>
         <errorMessage>Please provide GS Relationship before disqualifying this lead</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Link_to_Existing_Opp</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( Must_Convert_into_Existing_Opp__c, &quot;Yes&quot;),
+ISBLANK( Link_to_Existing_Opportunity__c )
+)</errorConditionFormula>
+        <errorDisplayField>Link_to_Existing_Opportunity__c</errorDisplayField>
+        <errorMessage>Please provide the link to existing opportunity.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Reason_Disqualified</fullName>
