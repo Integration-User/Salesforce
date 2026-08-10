@@ -5857,6 +5857,14 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Salesloft_All_Cadences__c</fullName>
+        <label>Salesloft All Cadences</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Sanction_Status__c</fullName>
         <externalId>false</externalId>
         <formula>IF(CONTAINS(LOWER(MailingCountry), &quot;iran&quot;), &quot;Black List&quot;, 
