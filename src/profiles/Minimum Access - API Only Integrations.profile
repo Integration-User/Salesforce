@@ -23093,6 +23093,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Contact.Salesloft_All_Cadences__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.Sanction_Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
