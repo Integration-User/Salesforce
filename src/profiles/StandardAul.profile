@@ -22473,6 +22473,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Gong_All_Flows__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Gong__Active_Engage_Flow_Names__c</field>
         <readable>true</readable>
     </fieldPermissions>
