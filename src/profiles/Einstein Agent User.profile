@@ -22187,6 +22187,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Gong_All_Flows__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Gong__Active_Engage_Flow_Names__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29752,6 +29757,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Link_to_Existing_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.LinkedIn_URL__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -29783,6 +29793,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Most_Recent_Marketing_Activity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Must_Convert_into_Existing_Opp__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
