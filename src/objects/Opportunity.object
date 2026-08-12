@@ -4954,6 +4954,18 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Manager_Forecast_Value_USD__c</fullName>
+        <externalId>false</externalId>
+        <label>Manager Forecast Value (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Manager_Notes_Last_Updated__c</fullName>
         <label>Manager Notes Last Updated</label>
         <required>false</required>
@@ -6466,6 +6478,15 @@ OwnerId  = $User.Id)</formula>
     <fields>
         <fullName>Next_Outreach_Date__c</fullName>
         <label>Next Outreach Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step_Last_Updated__c</fullName>
+        <description>Just a time stamp every time Next Step was edited</description>
+        <label>Next Step Last Updated</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -8282,6 +8303,18 @@ NULL))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sales_Leader_Forecast_Value_USD__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Leader Forecast Value (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Sales_Opportunity__c</fullName>
