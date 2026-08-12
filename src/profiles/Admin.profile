@@ -32342,6 +32342,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Manager_Forecast_Value_USD__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Manager_Notes_Last_Updated__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -32468,6 +32473,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Next_Outreach_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Next_Step_Last_Updated__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -32938,6 +32948,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Leader_Forecast_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sales_Leader_Forecast_Value_USD__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
