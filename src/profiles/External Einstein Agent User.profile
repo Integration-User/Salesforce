@@ -65,6 +65,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Clients_In_Hierarchy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Current_Products__c</field>
         <readable>true</readable>
@@ -82,6 +87,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Current_Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Gong_All_Flows__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

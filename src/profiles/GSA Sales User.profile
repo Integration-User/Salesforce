@@ -16856,6 +16856,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Clients_In_Hierarchy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.College_House_Id__c</field>
         <readable>true</readable>
@@ -22468,6 +22473,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Geographies_of_Interest_Mktg_Identified__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Gong_All_Flows__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
