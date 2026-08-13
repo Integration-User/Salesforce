@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>SmartFillEnrich</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
@@ -40,6 +41,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>NextStep</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Next_Step_Last_Updated__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

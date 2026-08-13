@@ -6,7 +6,7 @@
         <name>Update_Gong_All_Flows</name>
         <label>Update Gong All Flows</label>
         <locationX>50</locationX>
-        <locationY>395</locationY>
+        <locationY>695</locationY>
         <assignmentItems>
             <assignToReference>$Record.Gong_All_Flows__c</assignToReference>
             <operator>Add</operator>
@@ -18,11 +18,27 @@
             <targetReference>Contact_Decision</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Update_Salesloft_All_Cadences_Value</name>
+        <label>Update Salesloft All Cadences Value</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Salesloft_All_Cadences__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Update_Salesloft_All_Cadences</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Check_Engage_Flow_Name_Changes</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Contact_Decision</name>
         <label>Contact Decision</label>
         <locationX>182</locationX>
-        <locationY>587</locationY>
+        <locationY>887</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Current_Product_Change</name>
@@ -58,7 +74,7 @@
         <name>Is_Check_Engage_Flow_Name_Changes</name>
         <label>Is Check Engage Flow Name Changes</label>
         <locationX>182</locationX>
-        <locationY>287</locationY>
+        <locationY>587</locationY>
         <defaultConnector>
             <targetReference>Contact_Decision</targetReference>
         </defaultConnector>
@@ -107,6 +123,52 @@
             <label>Yes</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Is_Most_Recent_Cadence_Cadence_Name_Updated</name>
+        <label>Is Most Recent Cadence - Cadence Name Updated?</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Is_Check_Engage_Flow_Name_Changes</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Cadence_Name_Updated</name>
+            <conditionLogic>1 AND (2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SalesLoft1__Most_Recent_Cadence_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SalesLoft1__Most_Recent_Cadence_Name__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Salesloft_All_Cadences_Contains</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Salesloft_All_Cadences_Value</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
     <description>Migrated from the Update Products for Active Contacts Process Builder</description>
     <environments>Default</environments>
     <formulas>
@@ -119,6 +181,27 @@
         {!$Record.Gong_All_Flows__c},
         {!$Record.Gong__Current_Flow_Name__c}
     )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Salesloft_All_Cadences_Contains</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+    ISBLANK({!$Record.Salesloft_All_Cadences__c}),
+    FALSE,
+    CONTAINS(
+        {!$Record.Salesloft_All_Cadences__c},
+        {!$Record.SalesLoft1__Most_Recent_Cadence_Name__c}
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Update_Salesloft_All_Cadences</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    ISBLANK({!$Record.Salesloft_All_Cadences__c}),
+    {!$Record.SalesLoft1__Most_Recent_Cadence_Name__c},
+    &quot;,&quot; &amp; {!$Record.SalesLoft1__Most_Recent_Cadence_Name__c}
 )</expression>
     </formulas>
     <formulas>
@@ -155,7 +238,7 @@
         <name>Update_Current_Products</name>
         <label>Update Current Products</label>
         <locationX>50</locationX>
-        <locationY>695</locationY>
+        <locationY>995</locationY>
         <inputAssignments>
             <field>Current_Products__c</field>
             <value>
@@ -168,7 +251,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Is_Check_Engage_Flow_Name_Changes</targetReference>
+            <targetReference>Is_Most_Recent_Cadence_Cadence_Name_Updated</targetReference>
         </connector>
         <object>Contact</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>

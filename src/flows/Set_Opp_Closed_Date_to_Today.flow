@@ -5,10 +5,10 @@
     <decisions>
         <name>Change_Manager_Notes</name>
         <label>Change Manager Notes</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>287</locationY>
         <defaultConnector>
-            <targetReference>Stage_Update</targetReference>
+            <targetReference>Change_Next_Step</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -28,10 +28,64 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Change_Next_Step</name>
+        <label>Change Next Step</label>
+        <locationX>336</locationX>
+        <locationY>587</locationY>
+        <defaultConnector>
+            <targetReference>Stage_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Next_Step_Was_Modified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.NextStep</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Next_Step_Last_Updated</targetReference>
+            </connector>
+            <label>Next Step Was Modified</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Opp_Closed_Won</name>
+        <label>Is Opp Closed Won?</label>
+        <locationX>182</locationX>
+        <locationY>1811</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Manager_Forecast_Value</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Stage_Closed</name>
         <label>Is Stage Closed?</label>
-        <locationX>182</locationX>
-        <locationY>1295</locationY>
+        <locationX>336</locationX>
+        <locationY>1595</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -80,8 +134,8 @@
     <decisions>
         <name>Stage_Update</name>
         <label>Stage Update</label>
-        <locationX>182</locationX>
-        <locationY>587</locationY>
+        <locationX>336</locationX>
+        <locationY>887</locationY>
         <defaultConnector>
             <targetReference>Winback_Condition</targetReference>
         </defaultConnector>
@@ -106,8 +160,8 @@
         <description>Winback is checked - automatically select the “exclude from deal scoring model” checkbox</description>
         <name>Winback_Condition</name>
         <label>Winback Condition</label>
-        <locationX>182</locationX>
-        <locationY>995</locationY>
+        <locationX>336</locationX>
+        <locationY>1295</locationY>
         <defaultConnector>
             <targetReference>Is_Stage_Closed</targetReference>
         </defaultConnector>
@@ -158,8 +212,11 @@
     <recordUpdates>
         <name>Set_Close_Date_to_Today</name>
         <label>Set Close Date to Today</label>
-        <locationX>50</locationX>
-        <locationY>1403</locationY>
+        <locationX>182</locationX>
+        <locationY>1703</locationY>
+        <connector>
+            <targetReference>Is_Opp_Closed_Won</targetReference>
+        </connector>
         <inputAssignments>
             <field>CloseDate</field>
             <value>
@@ -171,8 +228,8 @@
     <recordUpdates>
         <name>Update_Exclude_from_deal_scoring_model_On_Opportunity</name>
         <label>Update Exclude from deal scoring model On Opportunity</label>
-        <locationX>50</locationX>
-        <locationY>1103</locationY>
+        <locationX>204</locationX>
+        <locationY>1403</locationY>
         <connector>
             <targetReference>Is_Stage_Closed</targetReference>
         </connector>
@@ -187,8 +244,8 @@
     <recordUpdates>
         <name>Update_Last_Change_Date</name>
         <label>Update Last Change Date</label>
-        <locationX>50</locationX>
-        <locationY>695</locationY>
+        <locationX>204</locationX>
+        <locationY>995</locationY>
         <connector>
             <targetReference>Update_Static_Role</targetReference>
         </connector>
@@ -201,12 +258,31 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Manager_Forecast_Value</name>
+        <label>Update Manager Forecast Value</label>
+        <locationX>50</locationX>
+        <locationY>1919</locationY>
+        <inputAssignments>
+            <field>Manager_Forecast_Value_USD__c</field>
+            <value>
+                <elementReference>$Record.Total_ARR__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Leader_Forecast_Value_USD__c</field>
+            <value>
+                <elementReference>$Record.Total_ARR__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Manager_Notes_Last_Update</name>
         <label>Update Manager Notes Last Update</label>
-        <locationX>50</locationX>
+        <locationX>204</locationX>
         <locationY>395</locationY>
         <connector>
-            <targetReference>Stage_Update</targetReference>
+            <targetReference>Change_Next_Step</targetReference>
         </connector>
         <inputAssignments>
             <field>Manager_Notes_Last_Updated__c</field>
@@ -217,10 +293,26 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Next_Step_Last_Updated</name>
+        <label>Update Next Step Last Updated</label>
+        <locationX>204</locationX>
+        <locationY>695</locationY>
+        <connector>
+            <targetReference>Stage_Update</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Next_Step_Last_Updated__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Static_Role</name>
         <label>Update Static Role</label>
-        <locationX>50</locationX>
-        <locationY>803</locationY>
+        <locationX>204</locationX>
+        <locationY>1103</locationY>
         <connector>
             <targetReference>Winback_Condition</targetReference>
         </connector>
@@ -254,7 +346,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>210</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Change_Manager_Notes</targetReference>
