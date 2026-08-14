@@ -2,11 +2,27 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Update_Gong_All_Flows</name>
+        <label>Update Gong All Flows</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Gong_All_Flows__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Updated_Gong_All_Flows</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Contact_Decision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Contact_Decision</name>
         <label>Contact Decision</label>
         <locationX>182</locationX>
-        <locationY>287</locationY>
+        <locationY>587</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Current_Product_Change</name>
@@ -38,8 +54,82 @@
             <label>Current Product Change</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Is_Check_Engage_Flow_Name_Changes</name>
+        <label>Is Check Engage Flow Name Changes</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Contact_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Engage_Flow_Name</name>
+            <conditionLogic>(1 OR (2 AND 3)) AND 4 AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Gong__Current_Flow_Name__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Gong__Current_Flow_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Gong_All_Flows_Contains</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Gong_All_Flows</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
     <description>Migrated from the Update Products for Active Contacts Process Builder</description>
     <environments>Default</environments>
+    <formulas>
+        <name>Gong_All_Flows_Contains</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+    ISBLANK({!$Record.Gong_All_Flows__c}),
+    FALSE,
+    CONTAINS(
+        {!$Record.Gong_All_Flows__c},
+        {!$Record.Gong__Current_Flow_Name__c}
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Updated_Gong_All_Flows</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    ISBLANK({!$Record.Gong_All_Flows__c}),
+    {!$Record.Gong__Current_Flow_Name__c},
+    &quot;,&quot; &amp; {!$Record.Gong__Current_Flow_Name__c}
+)</expression>
+    </formulas>
     <interviewLabel>Update Products for Active Contacts Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Products for Active Contacts Flow</label>
     <processMetadataValues>
@@ -65,7 +155,7 @@
         <name>Update_Current_Products</name>
         <label>Update Current Products</label>
         <locationX>50</locationX>
-        <locationY>395</locationY>
+        <locationY>695</locationY>
         <inputAssignments>
             <field>Current_Products__c</field>
             <value>
@@ -78,7 +168,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Contact_Decision</targetReference>
+            <targetReference>Is_Check_Engage_Flow_Name_Changes</targetReference>
         </connector>
         <object>Contact</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
