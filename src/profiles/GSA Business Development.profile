@@ -27921,11 +27921,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Event.Description_History_Event__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Event.Diagnostic_Discussion__c</field>
         <readable>true</readable>
@@ -30616,11 +30611,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Lead.Referral_Conversion_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Referral_Lead_Type__c</field>
         <readable>true</readable>
@@ -32421,11 +32411,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Link_to_Existing_Opportunity__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Location__c</field>
         <readable>false</readable>
@@ -32514,11 +32499,6 @@
         <editable>false</editable>
         <field>Opportunity.Monthly_Recurring_Revenue__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Must_Convert_into_Existing_Opp__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -33243,11 +33223,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Terms__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Test_Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -36588,11 +36563,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.Description</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Task.Description_History_Event__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -54415,9 +54385,6 @@
         <layout>Account_Snapshot__c-Account Snapshot Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ActionCadence-Cadence Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>ActionPlan-Action Plan Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -54946,12 +54913,6 @@
         <layout>NAICS_US_Code_And_Titles__mdt-NAICS US Code And Titles Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>OperatingHours-Operating Hours Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>OperatingHoursHoliday-Operating Hours Holiday Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>OppSnap__c-OppSnap Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -55038,9 +54999,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>PaymentLineInvoice-Payment Line Invoice Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>PersonalOrgInfo-Personal Org Info Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Pricebook2-Price Book Layout</layout>
@@ -67404,15 +67362,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
-        <name>AgentforceScaleAccess</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
         <name>AgentforceServiceAgentUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>AgentforceVibes</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
