@@ -76,7 +76,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.MCP_agent_assistant_used__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Products_Include__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Tools_queried_L6M__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -102,6 +112,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Salesloft_All_Cadences__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Tools_queried_L6M__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

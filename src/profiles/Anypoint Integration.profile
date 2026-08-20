@@ -17468,6 +17468,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.MCP_agent_assistant_used__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Mailing_Street_1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -19029,6 +19034,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.TickerSymbol</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Tools_queried_L6M__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -23274,6 +23284,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Tokens__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Tools_queried_L6M__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
