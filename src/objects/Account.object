@@ -5491,13 +5491,11 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
     </fields>
     <fields>
         <fullName>MCP_agent_assistant_used__c</fullName>
-        <externalId>false</externalId>
         <label>MCP agent/assistant used</label>
-        <length>255</length>
-        <required>false</required>
+        <length>5000</length>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Mailing_Street_1__c</fullName>
@@ -10611,13 +10609,11 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
     </fields>
     <fields>
         <fullName>Tools_queried_L6M__c</fullName>
-        <externalId>false</externalId>
         <label>Tools queried L6M</label>
-        <length>255</length>
-        <required>false</required>
+        <length>5000</length>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Top_40__c</fullName>
