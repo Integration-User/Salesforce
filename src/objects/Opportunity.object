@@ -2812,7 +2812,6 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
     <fields>
         <fullName>Days_Until_Next_Renewal_From_Account__c</fullName>
         <formula>Account.Next_Renewal_Date__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Days Until Next Renewal(From Account)</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
