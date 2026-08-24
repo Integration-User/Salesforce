@@ -5,7 +5,7 @@
     <decisions>
         <name>Map_Opp_to_Static_Role</name>
         <label>Map Opp to Static Role</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>323</locationY>
         <defaultConnector>
             <targetReference>New_Opp_from_Client_Account</targetReference>
@@ -30,7 +30,7 @@
     <decisions>
         <name>New_Opp_from_Client_Account</name>
         <label>New Opp from Client Account</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>623</locationY>
         <defaultConnector>
             <targetReference>New_Sales_Opp</targetReference>
@@ -62,7 +62,7 @@
     <decisions>
         <name>New_Sales_Opp</name>
         <label>New Sales Opp</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>923</locationY>
         <defaultConnector>
             <targetReference>Referral_Opp</targetReference>
@@ -108,7 +108,7 @@
     <decisions>
         <name>Opportunity_Record_Type_Decision</name>
         <label>Opportunity Record Type Decision</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>1523</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -169,9 +169,17 @@
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Sales_Opportunity</stringValue>
+                    <stringValue>Sales_Opportunity_Closed</stringValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>Update_Sales_Opportunity_Name</targetReference>
+            </connector>
+            <label>Sales Oppty</label>
+        </rules>
+        <rules>
+            <name>Renewal_Other_Oppty</name>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -208,15 +216,15 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Sales_Opportunity_Name</targetReference>
+                <targetReference>Update_Renewal_Names</targetReference>
             </connector>
-            <label>Sales Oppty</label>
+            <label>Renewal + Other Oppty</label>
         </rules>
     </decisions>
     <decisions>
         <name>Referral_Opp</name>
         <label>Referral Opp</label>
-        <locationX>446</locationX>
+        <locationX>578</locationX>
         <locationY>1223</locationY>
         <defaultConnector>
             <targetReference>Opportunity_Record_Type_Decision</targetReference>
@@ -259,7 +267,7 @@
             <label>Map Referred By</label>
         </rules>
     </decisions>
-    <description>Added Opportunity Source Reporting Logic - only upon Insert</description>
+    <description>New Opp Naming Convention</description>
     <environments>Default</environments>
     <formulas>
         <name>Advertising_Opp_Name</name>
@@ -272,9 +280,23 @@
         <expression>&quot;Advisory&quot; &amp; &quot; &quot;&amp; &quot;-&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name} &amp; &quot; &quot; &amp; {!$Record.Renewal_Month__c} &amp; &quot; &quot; &amp; {!$Record.Renewal_Year__c}</expression>
     </formulas>
     <formulas>
-        <name>Sales_Opp_Name</name>
+        <name>f_Formula_Month</name>
+        <dataType>String</dataType>
+        <expression>CASE(MONTH(DATEVALUE({!$Record.CreatedDate})),
+  1, &quot;January&quot;, 2, &quot;February&quot;, 3, &quot;March&quot;, 4, &quot;April&quot;,
+  5, &quot;May&quot;, 6, &quot;June&quot;, 7, &quot;July&quot;, 8, &quot;August&quot;,
+  9, &quot;September&quot;, 10, &quot;October&quot;, 11, &quot;November&quot;, 12, &quot;December&quot;, &quot;N/A&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Renewal_Oppty</name>
         <dataType>String</dataType>
         <expression>TEXT({!$Record.Sales_Type__c}) &amp; &quot; &quot;&amp; &quot;-&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name} &amp; &quot; &quot; &amp; {!$Record.Renewal_Month__c} &amp; &quot; &quot; &amp; {!$Record.Renewal_Year__c}</expression>
+    </formulas>
+    <formulas>
+        <name>Sales_Opp_Name</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.Sales_Type__c}) &amp; &quot; &quot;&amp; &quot;-&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name} &amp; &quot; &quot;&amp; {!f_Formula_Month} &amp; &apos; &apos; &amp; TEXT(YEAR(DATEVALUE({!$Record.CreatedDate})))</expression>
     </formulas>
     <interviewLabel>Opportunity - Update Advertising / Advisory Names {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity - Update Advertising / Advisory Names</label>
@@ -326,7 +348,7 @@
     <recordUpdates>
         <name>Update_Created_by_Role</name>
         <label>Update Created by Role</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>New_Opp_from_Client_Account</targetReference>
@@ -342,7 +364,7 @@
     <recordUpdates>
         <name>Update_Initial_Organizer</name>
         <label>Update Initial Organizer</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>1031</locationY>
         <connector>
             <targetReference>Referral_Opp</targetReference>
@@ -358,7 +380,7 @@
     <recordUpdates>
         <name>Update_Referral_Initial_Organizer</name>
         <label>Update Referral Initial Organizer</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>1331</locationY>
         <connector>
             <targetReference>Opportunity_Record_Type_Decision</targetReference>
@@ -367,6 +389,19 @@
             <field>Initial_Meeting_Organizer__c</field>
             <value>
                 <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Renewal_Names</name>
+        <label>Update Renewal Names</label>
+        <locationX>842</locationX>
+        <locationY>1631</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Renewal_Oppty</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -387,7 +422,7 @@
     <recordUpdates>
         <name>Update_to_Upsell</name>
         <label>Update to Upsell</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>731</locationY>
         <connector>
             <targetReference>New_Sales_Opp</targetReference>
@@ -401,7 +436,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>320</locationX>
+        <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Map_Opp_to_Static_Role</targetReference>
