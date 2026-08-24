@@ -2646,6 +2646,13 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Last_MCP_usage_date__c</fullName>
+        <label>Last MCP usage date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Last_Seen__c</fullName>
         <inlineHelpText>Indicates the date of the most recent event recorded in Amplitude for the Green Street Platform (excluding GSN), covering activity such as email interactions, platform usage, and data delivery clicks.</inlineHelpText>
         <label>Last Seen</label>
@@ -8662,6 +8669,14 @@ IF(CONTAINS(Title, &quot;Analyst&quot;), &quot;Analyst&quot;,&quot;&quot;)))))</
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Tools_queried_L6M__c</fullName>
+        <label>Tools queried L6M</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Top_Tier_Prospect__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Near term opportunities that should be contacted on a regular basis.</description>
@@ -8669,6 +8684,17 @@ IF(CONTAINS(Title, &quot;Analyst&quot;), &quot;Analyst&quot;,&quot;&quot;)))))</
         <label>Top Tier Prospect</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_MCP_usage_events_L6M__c</fullName>
+        <externalId>false</externalId>
+        <label>Total MCP usage/events L6M</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Trigger_Real_time_Sync__c</fullName>
