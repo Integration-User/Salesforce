@@ -18,7 +18,6 @@ public class Plative_AccountTriggerHandler{
 	* Description : after update DML
 	**/	
 	public static void afterUpdate(Map<Id, Account> mapOldAcc, Map<Id, Account> mapNewAcc){
-        //Plative_AccountTriggerHelper.rollupClientsInHierarchy(mapNewAcc.values(), mapOldAcc.values()); //SF-2247 : Rollup Number of Clients in Hierarchy
         List<Id> deactivatedAccountIds = new List<Id>();
         Set<Id> accountIdsToProcess = new Set<Id>();
 		if (!Plative_AccountTriggerHandler.afterUpdateRun) {
