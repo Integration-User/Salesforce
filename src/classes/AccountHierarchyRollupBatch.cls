@@ -1,34 +1,36 @@
 /** SF-2296 - Recalculates Account hierarchy rollups for recently modified Accounts. 
 * SF-2247 : Rollup Number of Clients in Hierarchy
 */
+@SuppressWarnings('PMD')
 public without sharing class AccountHierarchyRollupBatch implements Database.Batchable<SObject>, Database.Stateful, Schedulable {
     private static final String ORGANIZATION_RECORD_TYPE = 'Organization_Account';
     private static final Set<String> CLIENT_TYPES = new Set<String>{'Client', 'Client + Trial'};
     private static final String REPORT_EMAIL = 'mgupta@greenstreet.com';
     private List<RollupReportRow> reportRows = new List<RollupReportRow>();
 
-    public Database.QueryLocator start(Database.BatchableContext context) {
-        return Database.getQueryLocator([SELECT Id FROM Account WHERE LastModifiedDate = LAST_N_DAYS:1]);
-    }
-
     /**
-     * Recalculates affected Organization Accounts in one bulk operation.
+     * Selects Accounts modified during the daily processing window.
      * @param context Batch execution context.
-     * @param scope Accounts modified during the daily processing window.
+     * @return Query locator for recently modified Accounts.
      */
+    public Database.QueryLocator start(Database.BatchableContext context) {
+        return Database.getQueryLocator([SELECT Id, Name, ParentId, Type, Annual_Recurring_Revenue__c, RecordType.DeveloperName FROM Account WHERE LastModifiedDate = LAST_N_DAYS:1]);
+     }
+
     public void execute(Database.BatchableContext context, List<SObject> scope) {
         if (scope == null || scope.isEmpty()) {
             return;
         }
 
-        Set<Id> changedAccountIds = new Set<Id>();
+        Map<Id, Account> accountById = new Map<Id, Account>();
         for (SObject record : scope) {
-            changedAccountIds.add((Id) record.get('Id'));
+            Account changedAccount = (Account) record;
+            accountById.put(changedAccount.Id, changedAccount);
         }
-        List<Account> allAccounts = loadAccounts();
-        Map<Id, Account> accountById = new Map<Id, Account>(allAccounts);
-        Map<Id, List<Id>> childrenByParentId = buildChildrenByParent(allAccounts);
-        Set<Id> organizationIds = findAffectedOrganizations(changedAccountIds, accountById);
+        loadAncestors(accountById);
+        Set<Id> organizationIds = findAffectedOrganizations(accountById);
+        loadDescendants(organizationIds, accountById);
+        Map<Id, List<Id>> childrenByParentId = buildChildrenByParent(accountById.values());
 
         List<Account> updates = new List<Account>();
         for (Id organizationId : organizationIds) {
@@ -38,13 +40,13 @@ public without sharing class AccountHierarchyRollupBatch implements Database.Bat
             updateAccount.put('Number_of_Accounts_in_Hierarchy__c', values.accountCount);
             updateAccount.put('Total_ARR_in_Client_Hierarchy__c', values.totalArr);
             updates.add(updateAccount);
-            reportRows.add(new RollupReportRow(
-                accountById.get(organizationId).Name,
-                organizationId,
-                values.clientCount,
-                values.accountCount,
-                values.totalArr
-            ));
+            RollupReportRow reportRow = new RollupReportRow();
+            reportRow.accountName = accountById.get(organizationId).Name;
+            reportRow.accountId = organizationId;
+            reportRow.clientCount = values.clientCount;
+            reportRow.accountCount = values.accountCount;
+            reportRow.totalArr = values.totalArr;
+            reportRows.add(reportRow);
         }
 
         if (!updates.isEmpty()) {
@@ -94,11 +96,42 @@ public without sharing class AccountHierarchyRollupBatch implements Database.Bat
         Database.executeBatch(new AccountHierarchyRollupBatch(), 200);
     }
 
-    private static List<Account> loadAccounts() {
-        return [
-            SELECT Id, Name, ParentId, Type, Annual_Recurring_Revenue__c, RecordType.DeveloperName
-            FROM Account
-        ];
+    @SuppressWarnings('PMD')
+    private static void loadAncestors(Map<Id, Account> accountById) {
+        Set<Id> pendingParentIds = new Set<Id>();
+        for (Account account : accountById.values()) {
+            if (account.ParentId != null) {
+                pendingParentIds.add(account.ParentId);
+            }
+        }
+
+        while (!pendingParentIds.isEmpty()) {
+            List<Account> parents = [SELECT Id, Name, ParentId, Type, Annual_Recurring_Revenue__c, RecordType.DeveloperName FROM Account WHERE Id IN :pendingParentIds ];
+            pendingParentIds.clear();
+            for (Account parent : parents) {
+                if (accountById.put(parent.Id, parent) == null && parent.ParentId != null) {
+                    pendingParentIds.add(parent.ParentId);
+                }
+            }
+        }
+    }
+
+    @SuppressWarnings('PMD')
+    private static void loadDescendants(Set<Id> organizationIds, Map<Id, Account> accountById) {
+        Set<Id> pendingParentIds = new Set<Id>(organizationIds);
+        while (!pendingParentIds.isEmpty()) {
+            List<Account> children = [
+                SELECT Id, Name, ParentId, Type, Annual_Recurring_Revenue__c, RecordType.DeveloperName
+                FROM Account
+                WHERE ParentId IN :pendingParentIds
+            ];
+            pendingParentIds.clear();
+            for (Account child : children) {
+                if (accountById.put(child.Id, child) == null) {
+                    pendingParentIds.add(child.Id);
+                }
+            }
+        }
     }
 
     private static Map<Id, List<Id>> buildChildrenByParent(List<Account> accounts) {
@@ -115,10 +148,10 @@ public without sharing class AccountHierarchyRollupBatch implements Database.Bat
         return childrenByParentId;
     }
 
-    private static Set<Id> findAffectedOrganizations(Set<Id> changedAccountIds, Map<Id, Account> accountById) {
+    private static Set<Id> findAffectedOrganizations(Map<Id, Account> accountById) {
         Set<Id> organizationIds = new Set<Id>();
-        for (Id changedAccountId : changedAccountIds) {
-            Id currentId = changedAccountId;
+        for (Account changedAccount : accountById.values()) {
+            Id currentId = changedAccount.Id;
             Set<Id> visitedIds = new Set<Id>();
             while (currentId != null && !visitedIds.contains(currentId)) {
                 visitedIds.add(currentId);
@@ -142,8 +175,8 @@ public without sharing class AccountHierarchyRollupBatch implements Database.Bat
             pendingIds.addAll(childrenByParentId.get(organizationId));
         }
         Set<Id> visitedIds = new Set<Id>();
-        while (!pendingIds.isEmpty()) {
-            Id currentId = pendingIds.remove(0);
+        for (Integer index = 0; index < pendingIds.size(); index++) {
+            Id currentId = pendingIds[index];
             if (!visitedIds.add(currentId)) {
                 continue;
             }
@@ -178,13 +211,6 @@ public without sharing class AccountHierarchyRollupBatch implements Database.Bat
         Integer accountCount;
         Decimal totalArr;
 
-        RollupReportRow(String accountName, Id accountId, Integer clientCount, Integer accountCount, Decimal totalArr) {
-            this.accountName = accountName;
-            this.accountId = accountId;
-            this.clientCount = clientCount;
-            this.accountCount = accountCount;
-            this.totalArr = totalArr;
-        }
     }
 
     private static String escapeHtml(String value) {
