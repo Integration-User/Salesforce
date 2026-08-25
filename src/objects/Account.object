@@ -649,15 +649,12 @@
     </fields>
     <fields>
         <fullName>Annual_Recurring_Revenue__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>The ARR for the customer as of the most recently available period. This value is always in USD.</inlineHelpText>
         <label>Annual Recurring Revenue</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Annual_Recurring_Revenue_last_updated__c</fullName>
@@ -5481,6 +5478,14 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>MCP_agent_assistant_used__c</fullName>
+        <label>MCP agent/assistant used</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Mailing_Street_1__c</fullName>
         <description>Used to capture Mailing street information parts used for reporting.</description>
         <externalId>false</externalId>
@@ -5697,6 +5702,17 @@ Owner.Id = $User.Id)</formula>
     <fields>
         <fullName>NumberOfEmployees</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Number_of_Accounts_in_Hierarchy__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Accounts in Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Number_of_Closed_Advertising__c</fullName>
@@ -10591,6 +10607,14 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <fullName>Tier</fullName>
     </fields>
     <fields>
+        <fullName>Tools_queried_L6M__c</fullName>
+        <label>Tools queried L6M</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Top_40__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Is this client considered to be Top 40? This is for CAM&apos;s relationship with Advisory</description>
@@ -10611,6 +10635,26 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_ARR_in_Client_Hierarchy__c</fullName>
+        <label>Total ARR in Client Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_MCP_events_L6M__c</fullName>
+        <externalId>false</externalId>
+        <label>Total MCP events L6M</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Total_Products__c</fullName>
@@ -10684,6 +10728,17 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <required>false</required>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unique_MCP_users_L6M__c</fullName>
+        <externalId>false</externalId>
+        <label>Unique MCP users L6M</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Upsell__c</fullName>
