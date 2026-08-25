@@ -93,7 +93,7 @@ public without sharing class AccountHierarchyRollupBatch implements Database.Bat
      * @param context Scheduling context.
      */
     public void execute(SchedulableContext context) {
-        Database.executeBatch(new AccountHierarchyRollupBatch(), 200);
+        Database.executeBatch(new AccountHierarchyRollupBatch(), 20);
     }
 
     @SuppressWarnings('PMD')
