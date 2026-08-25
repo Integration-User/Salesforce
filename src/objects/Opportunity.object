@@ -2811,11 +2811,15 @@ TEXT(MIN(ROUND(MOD(Starting_Price_Opp__c , 1), 2) * 100, 99))
     </fields>
     <fields>
         <fullName>Days_Until_Next_Renewal_From_Account__c</fullName>
-        <formula>Account.Next_Renewal_Date__c</formula>
+        <externalId>false</externalId>
+        <formula>Account.Days_Until_Next_Renewal__c</formula>
         <label>Days Until Next Renewal(From Account)</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>0</scale>
         <trackHistory>false</trackHistory>
-        <type>Date</type>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Days_at_SS2__c</fullName>
@@ -67269,6 +67273,7 @@ ISBLANK(Initial_Asking_Price__c ))</errorConditionFormula>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+PRIORVALUE(Inbound__c) = TRUE, 
 NOT(ISNEW()),
 ISCHANGED(Inbound__c)
 )</errorConditionFormula>
