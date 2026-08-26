@@ -65742,6 +65742,7 @@ ISBLANK ( Closed_Opportunity_Notes__c)
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISPICKVAL(StageName, &quot;Consolidated&quot;)),
 RecordType.Name &lt;&gt; &quot;Events&quot;,
 RecordType.Name &lt;&gt; &quot;Favor&quot;,
 RecordType.Name &lt;&gt; &quot;Favor - Closed&quot;,
