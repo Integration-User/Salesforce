@@ -32286,6 +32286,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Next_Step_All_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.Next_Step_Last_Updated__c</field>
         <readable>true</readable>
     </fieldPermissions>
