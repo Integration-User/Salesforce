@@ -23,7 +23,7 @@ public without sharing class AccountHierarchyRollupBatch implements Database.Bat
     }
 
     /**
-    * Selects each Organization Account that is a parent of another Account.
+    * Selects each Organization or Subsidiary Account that is a parent of another Account.
      * @param context Batch execution context.
      * @return Unique parent Account groups.
      */
@@ -33,9 +33,9 @@ public without sharing class AccountHierarchyRollupBatch implements Database.Bat
             SELECT ParentId parentId, COUNT(Id) childCount
             FROM Account
             WHERE ParentId != null
-            AND Parent.RecordType.DeveloperName = 'Organization_Account'
+            AND Parent.RecordType.DeveloperName IN ('Organization_Account', 'Subsidiary_Account')
             AND LastModifiedDate >= :modifiedSince
-            GROUP BY ParentId
+            GROUP BY ParentId LIMIT 2000
         ];
     }
 
@@ -60,24 +60,16 @@ public without sharing class AccountHierarchyRollupBatch implements Database.Bat
         List<Account> updates = new List<Account>();
         for (Id rootId : parentIds) {
             Account rootAccount = parentById.get(rootId);
-            if (rootAccount == null || rootAccount.RecordType == null
-                || rootAccount.RecordType.DeveloperName != 'Organization_Account') {
-                continue;
-            }
+            
             List<Account> parentChildren = childrenByParentId.get(rootId);
             RollupValues values = calculateRollup(parentChildren);
             Account updateAccount = new Account(Id = rootId);
-            updateAccount.Clients_In_Hierarchy__c = values.clientCount;
-            updateAccount.put('Number_of_Accounts_in_Hierarchy__c', values.accountCount);
-            updateAccount.put('Total_ARR_in_Client_Hierarchy__c', values.totalArr);
-            updates.add(updateAccount);
-            for (Account child : parentChildren) {
-                if (CLIENT_RELATIONSHIPS.contains(child.Type)) {
-                    Account childUpdate = new Account(Id = child.Id);
-                    childUpdate.put('Number_of_Accounts_in_Hierarchy__c', values.accountCount);
-                    updates.add(childUpdate);
-                }
+            updateAccount.Total_ARR_in_Client_Hierarchy__c = values.totalArr;
+            updateAccount.Number_of_Accounts_in_Hierarchy__c = values.accountCount;
+            if (rootAccount.RecordType.DeveloperName == 'Organization_Account') {
+                updateAccount.Clients_In_Hierarchy__c = values.clientCount;
             }
+            updates.add(updateAccount);
             RollupReportRow reportRow = new RollupReportRow();
             reportRow.accountName = rootAccount.Name;
             reportRow.accountId = rootId;
