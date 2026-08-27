@@ -13324,6 +13324,31 @@ BEGINS (OwnerId, &quot;00G&quot;)
         <errorMessage>Please assign this lead to a user before moving the status.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Cannot_Edit_Convert_Into_Existing_Opp</fullName>
+        <active>true</active>
+        <description>Prevent &quot;Must Convert Existing Opp&quot; from being marked “NO” when previously marked “Yes”</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISNEW()),
+ISPICKVAL(PRIORVALUE(Must_Convert_into_Existing_Opp__c), &quot;Yes&quot;),
+ISCHANGED(Must_Convert_into_Existing_Opp__c)
+)</errorConditionFormula>
+        <errorDisplayField>Must_Convert_into_Existing_Opp__c</errorDisplayField>
+        <errorMessage>You cannot change the Must Convert into Existing Opp once marked as &quot;Yes&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_Edit_Link_To_Opp</fullName>
+        <active>true</active>
+        <description>Cannot edit “Link to Existing Opportunity”</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISNEW()),
+ISCHANGED(Link_to_Existing_Opportunity__c)
+)</errorConditionFormula>
+        <errorDisplayField>Link_to_Existing_Opportunity__c</errorDisplayField>
+        <errorMessage>You cannot edit the Link to Existing Opportunity once added.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Comments_Required_to_Close_Referral</fullName>
         <active>true</active>
         <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,

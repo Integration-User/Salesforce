@@ -23115,6 +23115,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Most_Recent_Cadence_Cadence_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Most_Recent_Cadence_Next_Step_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Most_Recent_Cadence_Next_Step_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.NA_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -32476,6 +32491,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Next_Outreach_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Next_Step_All_Time__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
