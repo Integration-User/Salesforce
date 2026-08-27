@@ -157,7 +157,7 @@
         </rules>
         <rules>
             <name>Sales_Oppty</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
@@ -166,10 +166,17 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <leftValueReference>$Record.Sales_Type__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Sales_Opportunity_Closed</stringValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sales_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal</stringValue>
                 </rightValue>
             </conditions>
             <connector>
