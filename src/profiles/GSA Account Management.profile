@@ -251,11 +251,6 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__EasyAutomation</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>standard__EasyConsole</application>
         <default>false</default>
         <visible>false</visible>
@@ -27971,11 +27966,6 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Event.Description_History_Event__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Event.Diagnostic_Discussion__c</field>
         <readable>false</readable>
@@ -30666,11 +30656,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Lead.Referral_Conversion_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Referral_Lead_Type__c</field>
         <readable>true</readable>
@@ -32476,11 +32461,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Link_to_Existing_Opportunity__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Location__c</field>
         <readable>false</readable>
@@ -32569,11 +32549,6 @@
         <editable>false</editable>
         <field>Opportunity.Monthly_Recurring_Revenue__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Must_Convert_into_Existing_Opp__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -33303,11 +33278,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Terms__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Test_Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -36649,11 +36619,6 @@
         <editable>false</editable>
         <field>Task.Description</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Task.Description_History_Event__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -56796,15 +56761,6 @@
         <allowEdit>false</allowEdit>
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>CBAnalyticsJobStatusEvent</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
         <object>CMTD__EnhancedRelatedList__mdt</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -57134,15 +57090,6 @@
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>ContentVersion</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>ContextAgent</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -63940,10 +63887,6 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>Spiff_Commission_Estimator</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
         <apexPage>StdExceptionTemplate</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -69518,10 +69461,6 @@
     <userPermissions>
         <enabled>false</enabled>
         <name>UserCanDeployStore</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>UserHasALMSimpleDeployAccess</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
