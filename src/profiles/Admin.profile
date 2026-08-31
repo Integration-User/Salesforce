@@ -423,6 +423,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccountHierarchyRollupBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AccountHierarchyRollupBatchTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AccountTriggerTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -17821,6 +17829,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Number_of_Accounts_in_Hierarchy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Number_of_Closed_Advertising__c</field>
         <readable>true</readable>
@@ -19298,6 +19311,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Total_ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Total_ARR_in_Client_Hierarchy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

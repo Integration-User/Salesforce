@@ -413,6 +413,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccountHierarchyRollupBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AccountHierarchyRollupBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AccountTriggerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16736,9 +16744,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Account.Annual_Recurring_Revenue__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -17634,6 +17642,11 @@
         <editable>false</editable>
         <field>Account.NumberOfEmployees</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Number_of_Accounts_in_Hierarchy__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -19108,6 +19121,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Total_ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Total_ARR_in_Client_Hierarchy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
