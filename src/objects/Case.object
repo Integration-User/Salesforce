@@ -655,6 +655,31 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Click_to_Pay__c</fullName>
+        <label>Click-to-Pay</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>ClosedDate</fullName>
         <trackTrending>false</trackTrending>
     </fields>
@@ -5579,9 +5604,6 @@ FALSE))))))))))))))</formula>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
                 <default>false</default>
             </values>
-
-
-
             <values>
                 <fullName>Locatus%3A DISC data</fullName>
                 <default>false</default>
@@ -16635,6 +16657,17 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

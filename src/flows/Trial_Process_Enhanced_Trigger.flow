@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_OTC_Click_To_Pay_Alert</name>
+        <label>Send OTC Click To Pay Alert</label>
+        <locationX>1370</locationX>
+        <locationY>539</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <stringValue>ordersupport@greenstreet.com</stringValue>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>CurrentUser</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>t_ClicktoPay_Subject</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>{!t_ClicktoPay_Email_Body}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>3.0.1</versionString>
+    </actionCalls>
     <apiVersion>57.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <constants>
@@ -12,7 +62,7 @@
     <decisions>
         <name>Trial_Start_Or_Deactivation_Decision_On_Oppty</name>
         <label>Trial Start Or Deactivation Decision On Oppty</label>
-        <locationX>710</locationX>
+        <locationX>842</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -67,13 +117,6 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>React News</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Products__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Green Street News: Europe</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -191,8 +234,51 @@
             </connector>
             <label>Create Transaction Support Case</label>
         </rules>
+        <rules>
+            <name>Click_To_Pay</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Click_to_Pay__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Click_to_Pay__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Record_Type_for_Query__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_Count__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_Types__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>News</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Opp_Owner</targetReference>
+            </connector>
+            <label>Click To Pay?</label>
+        </rules>
     </decisions>
-    <description>Added SF-2095</description>
+    <description>Added OTC Click to Pay Alert</description>
     <environments>Default</environments>
     <formulas>
         <name>ADayAfterTrialEndDate</name>
@@ -203,6 +289,11 @@
         <name>ADayAfterTrialEnds</name>
         <dataType>Date</dataType>
         <expression>TODAY() + 1</expression>
+    </formulas>
+    <formulas>
+        <name>f_OwnerName</name>
+        <dataType>String</dataType>
+        <expression>{!Get_Opp_Owner.Name}</expression>
     </formulas>
     <formulas>
         <name>TrialEndDate</name>
@@ -491,6 +582,27 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>Get_Opp_Owner</name>
+        <label>Get Opp Owner</label>
+        <locationX>1370</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_OTC_Click_To_Pay_Alert</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Transaction_Support_RT</name>
         <label>Get Transaction Support RT</label>
         <locationX>1106</locationX>
@@ -554,7 +666,7 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>584</locationX>
+        <locationX>716</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Trial_Start_Or_Deactivation_Decision_On_Oppty</targetReference>
@@ -564,6 +676,18 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>t_ClicktoPay_Email_Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello OTC Team
+Please note that {!f_OwnerName} has requested Click to Pay on Opportunity: {!$Label.Opportunity_Link}/{!$Record.Id} under this Account: {!$Label.Opportunity_Link}/{!$Record.AccountId}.
+Please ensure we get payment on this opportunity at your earliest convenience.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>t_ClicktoPay_Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>New Click to Pay request for {!$Record.Account.Name}</text>
+    </textTemplates>
     <textTemplates>
         <name>TransactionCaseDescription</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
