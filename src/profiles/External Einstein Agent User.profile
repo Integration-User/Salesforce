@@ -132,6 +132,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Click_to_Pay__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Products_Discussed__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -252,6 +257,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Click_to_Pay__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Consolidated_From__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -305,6 +315,10 @@
     <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
         <recordType>Account.Subsidiary_Account</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-OTC Case Layout</layout>
+        <recordType>Case.Order_Support</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Contact-Contact Layout</layout>
