@@ -21274,6 +21274,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Click_to_Pay__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Case.ClosedDate</field>
         <readable>true</readable>
@@ -31461,6 +31466,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Class__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Click_to_Pay__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
