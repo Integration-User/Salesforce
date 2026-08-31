@@ -656,8 +656,7 @@
         <required>false</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Annual_Recurring_Revenue_last_updated__c</fullName>
@@ -5696,6 +5695,17 @@ Owner.Id = $User.Id)</formula>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Number_of_Accounts_in_Hierarchy__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Accounts in Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Number_of_Closed_Advertising__c</fullName>
         <label>Number of Closed Advertising</label>
         <summaryFilterItems>
@@ -10616,6 +10626,15 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_ARR_in_Client_Hierarchy__c</fullName>
+        <label>Total ARR in Client Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Total_MCP_events_L6M__c</fullName>

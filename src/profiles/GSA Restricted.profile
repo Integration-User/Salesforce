@@ -423,6 +423,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccountHierarchyRollupBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AccountHierarchyRollupBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AccountTriggerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -17637,6 +17645,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Number_of_Accounts_in_Hierarchy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Number_of_Closed_Advertising__c</field>
         <readable>true</readable>
@@ -19114,6 +19127,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Total_ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Total_ARR_in_Client_Hierarchy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -21069,6 +21087,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.Case_Owner_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Click_to_Pay__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -31315,6 +31338,11 @@
         <editable>false</editable>
         <field>Opportunity.Class__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Click_to_Pay__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
