@@ -67322,6 +67322,17 @@ ISBLANK(Initial_Asking_Price__c ))</errorConditionFormula>
         <errorMessage>In order to move to Stage 4, please fill in the opportunity &quot;Initial Asking Price&quot;</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Restrict_Consolidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Permission.Allow_Consolidate_Opportunities = False,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &quot;Consolidated&quot;)
+)</errorConditionFormula>
+        <errorMessage>You do not have permission to move the stage to Consolidated.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Restrict_Inbound</fullName>
         <active>true</active>
         <description>Prevent editing of Inbound field</description>
