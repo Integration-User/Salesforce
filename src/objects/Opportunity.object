@@ -67426,6 +67426,17 @@ ISBLANK(Initial_Asking_Price__c ))</errorConditionFormula>
         <errorMessage>In order to move to Stage 4, please fill in the opportunity &quot;Initial Asking Price&quot;</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Restrict_Consolidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Permission.Allow_Consolidate_Opportunities = False,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &quot;Consolidated&quot;)
+)</errorConditionFormula>
+        <errorMessage>Only AM Managers can process consolidations</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Restrict_Inbound</fullName>
         <active>true</active>
         <description>Prevent editing of Inbound field</description>
@@ -67536,7 +67547,7 @@ TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
     </validationRules>
     <validationRules>
         <fullName>Tracking_Consolidated_Opportunities</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
