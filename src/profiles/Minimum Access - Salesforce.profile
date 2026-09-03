@@ -31332,7 +31332,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Opportunity.Consolidated_To__c</field>
         <readable>true</readable>
     </fieldPermissions>
