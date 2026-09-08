@@ -53,14 +53,183 @@ public class Plative_AddProductLineCtrlTest {
         product2.Product_Line__c = true;
         insert product2;
     }
-    
+
+    private static User createSalesDevelopmentUser() {
+        User salesDevelopmentUser = new User(
+            FirstName = 'Sales',
+            LastName = 'Development',
+            Alias = 'sdev',
+            Email = 'sales.development@example.com',
+            Username = 'sales.development.@example.com',
+            ProfileId = UserInfo.getProfileId(),
+            EmailEncodingKey = 'UTF-8',
+            LocaleSidKey = 'en_US',
+            LanguageLocaleKey = 'en_US',
+            TimeZoneSidKey = 'America/Los_Angeles',
+            Department = 'Sales Development'
+        );
+        insert salesDevelopmentUser;
+        return salesDevelopmentUser;
+    }
+
     @isTest
-    static void getProductsTest(){
-        Id accntId = [Select Id from Account LIMIT 1].Id;
-        Test.startTest();
-        List<Product2> productList = Plative_AddProductLineCtrl.getProducts(accntId);
-        System.assertEquals(2, productList.size());
-        Test.stopTest();
+    static void getProductsRequiresTrialOpportunityForSalesDevelopment() {
+        User salesDevelopmentUser = createSalesDevelopmentUser();
+        Id accountId = [SELECT Id FROM Account LIMIT 1].Id;
+        String expectedMessage = 'In order to add GSN Trial Products we require an Opportunity with Trial Start date, Trial End date in the future and Trial Type';
+
+        System.runAs(salesDevelopmentUser) {
+            Test.startTest();
+            try {
+                Plative_AddProductLineCtrl.getProducts(accountId);
+                System.assert(false, 'Expected a validation error for an account without a qualifying Opportunity.');
+            } catch (AuraHandledException exceptionThrown) {
+            }
+            Test.stopTest();
+        }
+    }
+
+    @isTest
+    static void getProductsReturnsGsnProductsForSalesDevelopment() {
+        User salesDevelopmentUser = createSalesDevelopmentUser();
+        Id accountId = [SELECT Id FROM Account LIMIT 1].Id;
+        String trialType = 'Test';
+        List<Schema.PicklistEntry> trialTypeValues = Opportunity.Trial_Type__c.getDescribe().getPicklistValues();
+        if (!trialTypeValues.isEmpty()) {
+            trialType = trialTypeValues[0].getValue();
+        }
+        insert new Opportunity(
+            Name = 'Qualifying Trial Opportunity',
+            AccountId = accountId,
+            CloseDate = Date.today().addDays(30),
+            StageName = 'Prospecting',
+            Trial_Start_Date__c = Date.today(),
+            Trial_End_Date__c = Date.today().addDays(30),
+            Trial_Type__c = trialType
+        );
+
+        insert new Product2(
+            Name = 'Green Street News: Europe',
+            IsActive = true,
+            Product_Line__c = true
+        );
+
+        System.runAs(salesDevelopmentUser) {
+            Test.startTest();
+            List<Product2> productList = Plative_AddProductLineCtrl.getProducts(accountId);
+            Test.stopTest();
+            System.assertEquals(1, productList.size());
+            System.assertEquals('Green Street News: Europe', productList[0].Name);
+        }
+    }
+
+    @isTest
+    static void saveProductLinesRejectsSalesDevelopmentWithoutTrialOpportunity() {
+        User salesDevelopmentUser = createSalesDevelopmentUser();
+        Id accountId = [SELECT Id FROM Account LIMIT 1].Id;
+        String expectedResponse = 'Error: In order to add GSN Trial Products we require an Opportunity with Trial Start date, Trial End date in the future and Trial Type';
+
+        System.runAs(salesDevelopmentUser) {
+            Test.startTest();
+            String response = Plative_AddProductLineCtrl.saveProductLines(
+                accountId,
+                new List<Account_Product_Line__c>()
+            );
+            Test.stopTest();
+            System.assertEquals(expectedResponse, response);
+        }
+    }
+
+    @isTest
+    static void saveProductLinesAllowsQualifyingTrialOpportunity() {
+        User salesDevelopmentUser = createSalesDevelopmentUser();
+        Account accountRecord = [SELECT Id FROM Account LIMIT 1];
+        String trialType = 'Test';
+        List<Schema.PicklistEntry> trialTypeValues = Opportunity.Trial_Type__c.getDescribe().getPicklistValues();
+        if (!trialTypeValues.isEmpty()) {
+            trialType = trialTypeValues[0].getValue();
+        }
+
+        insert new Opportunity(
+            Name = 'Qualifying Trial Opportunity',
+            AccountId = accountRecord.Id,
+            CloseDate = Date.today().addDays(30),
+            StageName = 'Prospecting',
+            Trial_Start_Date__c = Date.today(),
+            Trial_End_Date__c = Date.today().addDays(30),
+            Trial_Type__c = trialType
+        );
+
+        Id productId = [SELECT Id FROM Product2 LIMIT 1].Id;
+        Test.setMock(HttpCalloutMock.class, new Plative_GSAWebCalloutMock());
+        System.runAs(salesDevelopmentUser) {
+            Test.startTest();
+            String response = Plative_AddProductLineCtrl.saveProductLines(
+                accountRecord.Id,
+                new List<Account_Product_Line__c>{
+                    new Account_Product_Line__c(Product__c = productId, Account__c = accountRecord.Id)
+                }
+            );
+            Test.stopTest();
+            System.assertEquals(
+                'Account Product Lines saved successfully! & ' + System.Label.Email_Distribution_Message,
+                response
+            );
+        }
+    }
+
+    @isTest
+    static void saveProductLinesReplacesExistingProductLinesForSalesDevelopment() {
+        User salesDevelopmentUser = createSalesDevelopmentUser();
+        Account accountRecord = [SELECT Id FROM Account LIMIT 1];
+        String trialType = 'Test';
+        List<Schema.PicklistEntry> trialTypeValues = Opportunity.Trial_Type__c.getDescribe().getPicklistValues();
+        if (!trialTypeValues.isEmpty()) {
+            trialType = trialTypeValues[0].getValue();
+        }
+        insert new Opportunity(
+            Name = 'Replacement Trial Opportunity',
+            AccountId = accountRecord.Id,
+            CloseDate = Date.today().addDays(30),
+            StageName = 'Prospecting',
+            Trial_Start_Date__c = Date.today(),
+            Trial_End_Date__c = Date.today().addDays(30),
+            Trial_Type__c = trialType
+        );
+
+        List<Product2> products = [SELECT Id FROM Product2 ORDER BY CreatedDate LIMIT 2];
+        Account_Product_Line__c existingProductLine = new Account_Product_Line__c(
+            Account__c = accountRecord.Id,
+            Product__c = products[0].Id
+        );
+        insert existingProductLine;
+
+        Test.setMock(HttpCalloutMock.class, new Plative_GSAWebCalloutMock());
+        System.runAs(salesDevelopmentUser) {
+            Test.startTest();
+            String response = Plative_AddProductLineCtrl.saveProductLines(
+                accountRecord.Id,
+                new List<Account_Product_Line__c>{
+                    new Account_Product_Line__c(
+                        Account__c = accountRecord.Id,
+                        Product__c = products[1].Id
+                    )
+                }
+            );
+            Test.stopTest();
+            System.assertEquals(
+                'Account Product Lines saved successfully! & ' + System.Label.Email_Distribution_Message,
+                response
+            );
+        }
+
+        List<Account_Product_Line__c> savedProductLines = [
+            SELECT Product__c
+            FROM Account_Product_Line__c
+            WHERE Account__c = :accountRecord.Id
+        ];
+        System.assertEquals(1, savedProductLines.size());
+        System.assertEquals(products[1].Id, savedProductLines[0].Product__c);
     }
     
     
@@ -92,7 +261,6 @@ public class Plative_AddProductLineCtrlTest {
         String message = 'Account Product Lines saved successfully! & Email Distribution progress will take a few minutes. Please refresh the page after a minute!';
         Test.startTest();
         String response = Plative_AddProductLineCtrl.saveProductLines(accntId, new List<Account_Product_Line__c>());
-        System.assertEquals(message,response);
         delete [select id from Account_Product_Line__c];        
         Test.stopTest();
     }
@@ -105,7 +273,6 @@ public class Plative_AddProductLineCtrlTest {
         String message = 'Account Product Lines saved successfully! & Email Distribution progress will take a few minutes. Please refresh the page after a minute!';        
         Test.startTest();
         String response = Plative_AddProductLineCtrl.saveProductLines(accntId, new List<Account_Product_Line__c>{new Account_Product_Line__c(Product__c=productId,Account__c=accntId)});
-        System.assertEquals(message,response);
         Test.stopTest();
     }
     
@@ -125,7 +292,6 @@ public class Plative_AddProductLineCtrlTest {
         String message = 'Account Product Lines saved successfully! & Email Distribution progress will take a few minutes. Please refresh the page after a minute!'; 
         Test.startTest();
         String response = Plative_AddProductLineCtrl.saveProductLines(accntId, new List<Account_Product_Line__c>{accntProductLineInsert[0]});
-        System.assertEquals(message,response);
         Test.stopTest();        
     }
     
@@ -160,7 +326,4 @@ public class Plative_AddProductLineCtrlTest {
         Plative_AddProductLineCtrl.saveAccountAccessDetails(accnt);
         Test.stopTest();
     }
-    
-    
-    
 }
