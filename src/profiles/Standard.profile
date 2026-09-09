@@ -53074,10 +53074,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ViewSetupAuditTrail</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ViewTrustMeasures</name>
     </userPermissions>
 </Profile>
