@@ -66900,29 +66900,20 @@ ISBLANK(Competition__c)
     <validationRules>
         <fullName>Require_Customer_Handoff</fullName>
         <active>true</active>
-        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
-$Permission.Skip_Validation_Rule= False,
-
-    NOT(
-        AND(
-            ISPICKVAL(StageName, &quot;Closed Lost&quot;),
-            OR(
-                ISPICKVAL(PRIORVALUE(StageName), &quot;1 - Introducing&quot;),
-                ISPICKVAL(PRIORVALUE(StageName), &quot;2 - Conducting Needs Analysis&quot;)
-            )
-        )
-    ),
+$Permission.Skip_Validation_Rule = FALSE,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISCHANGED(StageName),
     ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
     OR(
         $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
         $RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
     ),
     OR(
-LEN(TRIM(Use_Case__c)) = 0,
-LEN(TRIM(How_did_we_win__c)) = 0,
-INCLUDES(Regions_Covered__c, &quot;None&quot;),
-ISBLANK(Competition__c),
+        LEN(TRIM(Use_Case__c)) = 0,
+        LEN(TRIM(How_did_we_win__c)) = 0,
+        INCLUDES(Regions_Covered__c, &quot;None&quot;),
+        ISBLANK(Competition__c),
         NOT(
             OR(
                 INCLUDES(Competition__c, &quot;CoStar&quot;),
@@ -66955,7 +66946,7 @@ ISBLANK(Competition__c),
         )
     )
 )</errorConditionFormula>
-        <errorMessage>Please fill out the Customer Handoff section before closing the opportunity.</errorMessage>
+        <errorMessage>Please fill out the Customer Handoff section when moving to Stage 6</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Discovery_Scheduled_Date</fullName>
