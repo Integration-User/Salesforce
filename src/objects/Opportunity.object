@@ -1441,6 +1441,30 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         </valueSet>
     </fields>
     <fields>
+        <fullName>Click_to_Pay__c</fullName>
+        <label>Click-to-Pay</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>CloseDate</fullName>
         <inlineHelpText>On creation, pick any date &amp; click save. This date will default to 6 months from today.</inlineHelpText>
         <trackFeedHistory>true</trackFeedHistory>
@@ -13925,11 +13949,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13974,6 +14018,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18076,11 +18128,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18125,6 +18197,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22171,11 +22251,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22220,6 +22320,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26202,11 +26310,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26251,6 +26379,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -30489,6 +30625,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AVM</fullName>
                 <default>false</default>
             </values>
@@ -30498,6 +30642,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -30542,6 +30698,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -32408,10 +32572,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Economic Impact %28e%2Eg%2E COVID%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Initial Meeting Not Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -34960,11 +35120,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -35009,6 +35189,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -39179,11 +39367,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -39212,6 +39420,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -43066,11 +43282,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -43099,6 +43335,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -46783,11 +47027,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -46808,6 +47072,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Award Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -48210,10 +48482,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Economic Impact %28e%2Eg%2E COVID%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Initial Meeting Not Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -50758,11 +51026,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -50807,6 +51095,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55238,6 +55534,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AVM</fullName>
                 <default>false</default>
             </values>
@@ -55247,6 +55551,18 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55291,6 +55607,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -57126,13 +57450,20 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Close_Reason__c</picklist>
+            <picklist>Click_to_Pay__c</picklist>
             <values>
-                <fullName>Advisory Involvement</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Bad Opp - Never Connected</fullName>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Reason__c</picklist>
+            <values>
+                <fullName>Advisory Involvement</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -57169,10 +57500,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Favor Access Expired</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Initial Meeting Not Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -59725,11 +60052,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -59774,6 +60121,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -61473,13 +61828,20 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Close_Reason__c</picklist>
+            <picklist>Click_to_Pay__c</picklist>
             <values>
-                <fullName>Advisory Involvement</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Bad Opp - Never Connected</fullName>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Reason__c</picklist>
+            <values>
+                <fullName>Advisory Involvement</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -61516,10 +61878,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Favor Access Expired</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Initial Meeting Not Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -64052,11 +64410,31 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>AUS Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Data Delivery - REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Activist Situations</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising CMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -64097,6 +64475,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
             <values>
                 <fullName>Basic - Single Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - Market Data %26 Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAN Data Delivery - REIT Data</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -65833,6 +66219,21 @@ ISBLANK(Account.Phone)
 Subsidiary, Main Phone, Website, Company Type, Address.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>ClicktoPay_Reqd_to_Save_Stage_5</fullName>
+        <active>true</active>
+        <description>Triggers when Click to Pay is marked as Yes upon Stage 5</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Permission.Skip_Validation_Rule= False,
+RecordType.Name = &quot;Sales Opportunity&quot;,
+ISPICKVAL(Click_to_Pay__c , &quot;&quot; ),
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Click_to_Pay__c</errorDisplayField>
+        <errorMessage>Click-to-Pay is required when moving to Stage 5</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Close_Notes_Required</fullName>
         <active>true</active>
         <description>Closed Opportunity Notes are required in order to move to Pending Review.</description>
@@ -66811,6 +67212,19 @@ INCLUDES(Competition__c, &quot;Other&quot;)
         <errorMessage>Please provide the other competition.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_1_Click_to_Pay_Product</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    $Permission.Skip_Validation_Rule = False,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+    Product_Count__c &gt; 1,
+    ISPICKVAL(Click_to_Pay__c, &quot;Yes&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Click_to_Pay__c</errorDisplayField>
+        <errorMessage>You can only select one Click-To-Pay product.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_ACH_AutoDebit</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -66930,19 +67344,10 @@ ISBLANK(Competition__c)
     <validationRules>
         <fullName>Require_Customer_Handoff</fullName>
         <active>true</active>
-        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
         <errorConditionFormula>AND(
-$Permission.Skip_Validation_Rule= False,
-
-    NOT(
-        AND(
-            ISPICKVAL(StageName, &quot;Closed Lost&quot;),
-            OR(
-                ISPICKVAL(PRIORVALUE(StageName), &quot;1 - Introducing&quot;),
-                ISPICKVAL(PRIORVALUE(StageName), &quot;2 - Conducting Needs Analysis&quot;)
-            )
-        )
-    ),
+$Permission.Skip_Validation_Rule = FALSE,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISCHANGED(StageName),
     ISPICKVAL(StageName, &quot;6 - Verbal Win and Finalizing Contract&quot;),
     OR(
         $RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
@@ -66985,7 +67390,7 @@ ISBLANK(Competition__c),
         )
     )
 )</errorConditionFormula>
-        <errorMessage>Please fill out the Customer Handoff section before closing the opportunity.</errorMessage>
+        <errorMessage>Please fill out the Customer Handoff section when moving to Stage 6</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Discovery_Scheduled_Date</fullName>
@@ -67076,6 +67481,29 @@ NOT(ISPICKVAL(StageName, &quot;1 - Introducing&quot;))
 )</errorConditionFormula>
         <errorDisplayField>StageName</errorDisplayField>
         <errorMessage>New Sales Opportunities must begin at Stage 1.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_News_Click_to_Pay_Products</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    $Permission.Skip_Validation_Rule = False,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+    Product_Count__c = 1,
+    ISPICKVAL(Click_to_Pay__c, &quot;Yes&quot;),
+ISCHANGED(Click_to_Pay__c),
+    NOT(
+OR(
+        INCLUDES(Products__c, &quot;Asset-Backed Alert&quot;),
+        INCLUDES(Products__c, &quot;Commercial Mortgage Alert&quot;),
+        INCLUDES(Products__c, &quot;Real Estate Alert&quot;),
+        INCLUDES(Products__c, &quot;Green Street News: Australia&quot;),
+        INCLUDES(Products__c, &quot;Green Street News: Canada&quot;),
+        INCLUDES(Products__c, &quot;Green Street News: Europe&quot;)
+    ))
+)</errorConditionFormula>
+        <errorDisplayField>Click_to_Pay__c</errorDisplayField>
+        <errorMessage>You can only select News products when Click-to-Pay is marked Yes</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Require_Product_of_Interest</fullName>
@@ -67329,6 +67757,17 @@ ISBLANK(Initial_Asking_Price__c ))</errorConditionFormula>
         <errorMessage>In order to move to Stage 4, please fill in the opportunity &quot;Initial Asking Price&quot;</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Restrict_Consolidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Permission.Allow_Consolidate_Opportunities = False,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &quot;Consolidated&quot;)
+)</errorConditionFormula>
+        <errorMessage>Only AM Managers can process consolidations</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Restrict_Inbound</fullName>
         <active>true</active>
         <description>Prevent editing of Inbound field</description>
@@ -67439,7 +67878,7 @@ TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
     </validationRules>
     <validationRules>
         <fullName>Tracking_Consolidated_Opportunities</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
