@@ -58,6 +58,11 @@
     </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Acquisition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Annual_Recognized_Revenue__c</field>
         <readable>true</readable>
@@ -95,6 +100,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Products_Include__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.StorTrack_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Subsidiary__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -168,6 +183,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.StorTrack_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Tools_queried_L6M__c</field>
         <readable>true</readable>
@@ -235,6 +255,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Leader_Forecast_Value_USD__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.StorTrack_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
