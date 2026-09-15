@@ -504,6 +504,9 @@
             NOT(ISBLANK(Locatus_ID__c)),
             &quot;Locatus&quot;,
  IF(
+            NOT(ISBLANK(StorTrack_Id__c )),
+            &quot;StorTrack&quot;,
+ IF(
             NOT(ISBLANK( React_id__c )),
             &quot;React/GS News&quot;,
             IF(
@@ -513,6 +516,7 @@
             )
         )
     )
+)
 )
 )</formula>
         <inlineHelpText>If the Account was from an Acquisition, this field calculates the name of the Acquisition based on the IDs entered on those accounts.</inlineHelpText>
@@ -10166,6 +10170,17 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>StorTrack_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>StorTrack Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>Strategic_Account_Action_Items__c</fullName>
         <label>US Strategic Account Action Items</label>
         <length>32768</length>
@@ -10404,6 +10419,16 @@ IF (LEN( ShippingCountry) = 0, 0,1)</formula>
                     <fullName>27 College House</fullName>
                     <default>false</default>
                     <label>27 College House</label>
+                </value>
+                <value>
+                    <fullName>28 StorTrack</fullName>
+                    <default>false</default>
+                    <label>28 StorTrack</label>
+                </value>
+                <value>
+                    <fullName>28.3 StorTrack Limited (UK)</fullName>
+                    <default>false</default>
+                    <label>28.3 StorTrack Limited (UK)</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -16599,6 +16624,14 @@ Stored as Long on Solr.</description>
                 <fullName>27 College House</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>28 StorTrack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28%2E3 StorTrack Limited %28UK%29</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>TA_Vertical__c</picklist>
@@ -21563,6 +21596,14 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>27 College House</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28 StorTrack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28%2E3 StorTrack Limited %28UK%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

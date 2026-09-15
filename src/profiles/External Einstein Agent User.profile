@@ -18,6 +18,11 @@
     </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Acquisition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Annual_Recurring_Revenue__c</field>
         <readable>true</readable>
@@ -40,6 +45,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.MCP_agent_assistant_used__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.StorTrack_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Subsidiary__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -100,6 +115,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Salesloft_All_Cadences__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.StorTrack_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -235,6 +255,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Sales_Leader_Forecast_Value_USD__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.StorTrack_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
