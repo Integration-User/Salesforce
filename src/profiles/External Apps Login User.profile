@@ -21890,6 +21890,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Contact.Created_by_Role__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.Current_Products_Text__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -31996,6 +32001,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Opportunity_Age__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Opportunity_Owner_Manager__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

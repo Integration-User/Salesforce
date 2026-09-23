@@ -6578,6 +6578,15 @@ OwnerId  = $User.Id)</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Notes_from_SDO_Conversion__c</fullName>
+        <label>Notes from SDO Conversion</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>OCR_Marketing_Lead_Source__c</fullName>
         <defaultValue>false</defaultValue>
         <label>OCR Marketing Lead Source</label>
@@ -6597,6 +6606,16 @@ TODAY() - DATEVALUE(CreatedDate))</formula>
         <scale>0</scale>
         <trackHistory>false</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Owner_Manager__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner.Manager.FirstName  + &quot; &quot; + Owner.Manager.LastName</formula>
+        <label>Opportunity Owner Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
