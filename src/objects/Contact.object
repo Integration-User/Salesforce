@@ -1276,6 +1276,16 @@ NOT(ISBLANK(AccountId))
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Created_by_Role__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.UserRole.Name</formula>
+        <label>Created by Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CurrencyIsoCode</fullName>
         <trackHistory>false</trackHistory>
     </fields>
