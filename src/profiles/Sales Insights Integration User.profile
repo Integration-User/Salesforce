@@ -56346,10 +56346,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ViewSetupAuditTrail</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ViewUserPII</name>
     </userPermissions>
 </Profile>
