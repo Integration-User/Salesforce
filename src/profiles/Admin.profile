@@ -32590,6 +32590,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Notes_from_SDO_Conversion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.OCR_Marketing_Lead_Source__c</field>
         <readable>true</readable>
     </fieldPermissions>
