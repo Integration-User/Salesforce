@@ -67647,6 +67647,19 @@ TEXT(Risk_Type__c)=&apos;High Attrition Risk&apos;)
         <errorMessage>If Risk Type is Low, Medium, or High then This Year % Increase must be greater than -100%.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>SDO_Unreachable_Disqualified</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Permission.Skip_Validation_Rule= False,
+$RecordType.DeveloperName = &quot;Sales_Development&quot;,
+ISBLANK(LastActivityDate),
+ISPICKVAL(Close_Reason__c, &quot;Unreachable&quot;),
+ISPICKVAL(StageName, &quot;Disqualified&quot;)
+)</errorConditionFormula>
+        <errorMessage>You cannot disqualify this SDO as &quot;Unreachable&quot; without having any activity on this opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Sales_Opportunity_Restriction_For_AM</fullName>
         <active>true</active>
         <description>Sales Opportunity Restriction Account Management User</description>
