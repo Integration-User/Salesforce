@@ -3,10 +3,42 @@
     <apiVersion>63.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
+        <name>Check_Event_Type</name>
+        <label>Check Event Type</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Update_Activity_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>In_Person_Analyst_Visits</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Analyst Visit</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.In_Person_or_Virtual_Meeting__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In-Person</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Event</targetReference>
+            </connector>
+            <label>In-Person Analyst Visits</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Description_Changed</name>
         <label>Description Changed?</label>
         <locationX>182</locationX>
-        <locationY>395</locationY>
+        <locationY>695</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -65,7 +97,7 @@
         <name>Update_Activity_Type</name>
         <label>Update Activity Type</label>
         <locationX>182</locationX>
-        <locationY>287</locationY>
+        <locationY>587</locationY>
         <connector>
             <targetReference>Description_Changed</targetReference>
         </connector>
@@ -81,7 +113,7 @@
         <name>Update_Description_History</name>
         <label>Update Description History</label>
         <locationX>50</locationX>
-        <locationY>503</locationY>
+        <locationY>803</locationY>
         <inputAssignments>
             <field>Description</field>
             <value>
@@ -90,11 +122,27 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Event</name>
+        <label>Update Event</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>Update_Activity_Type</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Minutes_Spent__c</field>
+            <value>
+                <numberValue>120.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Activity_Type</targetReference>
+            <targetReference>Check_Event_Type</targetReference>
         </connector>
         <object>Event</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
