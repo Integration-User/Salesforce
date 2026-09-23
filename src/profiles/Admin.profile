@@ -32520,6 +32520,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Notes_from_SDO_Conversion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.OCR_Marketing_Lead_Source__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -56775,6 +56780,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>PlatformWebIdeUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>PrivacyDataAccess</name>
     </userPermissions>
     <userPermissions>
@@ -57036,6 +57045,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewSetupAuditTrail</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
