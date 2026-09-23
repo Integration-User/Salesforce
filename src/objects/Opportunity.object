@@ -6600,6 +6600,16 @@ TODAY() - DATEVALUE(CreatedDate))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Opportunity_Owner_Manager__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner.Manager.FirstName  + &quot; &quot; + Owner.Manager.LastName</formula>
+        <label>Opportunity Owner Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Opportunity_Source_Reporting_Override__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Opportunity Source Reporting (Override)</label>
