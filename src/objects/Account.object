@@ -790,6 +790,13 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>BBFTD_Last_2_Years__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>BBFTD (Last 2 Years)</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Became_Client_Research__c</fullName>
         <label>Became Client (Research)</label>
         <required>false</required>
@@ -3633,6 +3640,13 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>First_Renewal_Date_Research__c</fullName>
+        <label>First Renewal Date Research</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>First_Renewal_Year_Research__c</fullName>
         <externalId>false</externalId>
         <label>First Renewal Year (Research)</label>
@@ -4916,6 +4930,13 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Is_First_Year_Research__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is First Year Research</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Jigsaw</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -5672,6 +5693,13 @@ Owner.Id = $User.Id)</formula>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>News_Only_to_Research_Upsell_Last_2_Yrs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>News-Only to Research Upsell(Last 2 Yrs)</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>News_Usage_L60D__c</fullName>
