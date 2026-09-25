@@ -16725,6 +16725,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.BBFTD_Last_2_Years__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Became_Client_Research__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17104,6 +17109,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.First_Renewal_Date_Research__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.First_Renewal_Year_Research__c</field>
         <readable>true</readable>
@@ -17345,6 +17355,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Is_First_Year_Research__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Jigsaw</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17526,6 +17541,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.News_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.News_Only_to_Research_Upsell_Last_2_Yrs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
