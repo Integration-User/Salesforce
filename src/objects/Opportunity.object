@@ -66042,6 +66042,31 @@ ISBLANK(Account.Phone)
 Subsidiary, Main Phone, Website, Company Type, Address.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>ClicktoPay_Billing_Terms</fullName>
+        <active>true</active>
+        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
+        <errorConditionFormula>AND(
+    NOT($Permission.Skip_Validation_Rule),
+    RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+    ISPICKVAL(Click_to_Pay__c, &quot;Yes&quot;),
+    OR(
+        AND(
+            ISCHANGED(Billing_Schedule__c),
+            NOT(ISPICKVAL(Billing_Schedule__c, &quot;In Advance - Annual&quot;))
+        ),
+        AND(
+            ISCHANGED(Terms__c),
+            NOT(ISPICKVAL(Terms__c, &quot;Prepaid&quot;))
+        ),
+        AND(
+            ISCHANGED(Evergreen_Contract__c),
+            NOT(Evergreen_Contract__c)
+        )
+    )
+)</errorConditionFormula>
+        <errorMessage>Evergreen Contract, Billing Schedule &amp; Terms cannot be edited.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>ClicktoPay_Reqd_to_Save_Stage_5</fullName>
         <active>true</active>
         <description>Triggers when Click to Pay is marked as Yes upon Stage 5</description>
@@ -66055,6 +66080,20 @@ ISPICKVAL(StageName, &quot;5 - Negotiation and Agreement Sent&quot;)
 )</errorConditionFormula>
         <errorDisplayField>Click_to_Pay__c</errorDisplayField>
         <errorMessage>Click-to-Pay is required when moving to Stage 5</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ClicktoPay_USD_Amount</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Permission.Skip_Validation_Rule = False,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+Amount/CURRENCYRATE(TEXT( CurrencyIsoCode )) &lt; 3500,
+ISCHANGED(Click_to_Pay__c ),
+ISPICKVAL( Click_to_Pay__c , &quot;Yes&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Amount</errorDisplayField>
+        <errorMessage>Amount must be greater than 3500 USD.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Close_Notes_Required</fullName>
