@@ -3,10 +3,13 @@
     <actionCalls>
         <name>Send_OTC_Click_To_Pay_Alert</name>
         <label>Send OTC Click To Pay Alert</label>
-        <locationX>1370</locationX>
+        <locationX>1898</locationX>
         <locationY>539</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Billing_Schedule</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>recipientAddresses</name>
@@ -62,7 +65,7 @@
     <decisions>
         <name>Trial_Start_Or_Deactivation_Decision_On_Oppty</name>
         <label>Trial Start Or Deactivation Decision On Oppty</label>
-        <locationX>842</locationX>
+        <locationX>1106</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -87,6 +90,49 @@
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>SDO - Web News Trial</label>
+        </rules>
+        <rules>
+            <name>Extend_Full_Trial_Dates</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Trial_Start_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_End_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Full Access</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_Extension_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Full_Extension_Case_Trial</targetReference>
+            </connector>
+            <label>Extend Full Trial Dates</label>
         </rules>
         <rules>
             <name>Review_Trial</name>
@@ -131,6 +177,49 @@
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Review Trial</label>
+        </rules>
+        <rules>
+            <name>Extend_Trial_Dates</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Trial_Start_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_End_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Limited Access</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trial_Extension_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Development</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Limited_Extension_Case_Trial</targetReference>
+            </connector>
+            <label>Extend Limited Trial Dates</label>
         </rules>
         <rules>
             <name>Limited_Access_Oppty_Trial</name>
@@ -322,9 +411,83 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
+        <name>Create_Full_Extension_Case_Trial</name>
+        <label>Create Full Extension Case Trial</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ActivationDeactivation_Needs__c</field>
+            <value>
+                <stringValue>Full Trial Activation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>Full Trial Extension Activation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Due_Date__c</field>
+            <value>
+                <elementReference>$Record.Trial_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Label.Client_Access_Queue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>$Label.Client_Access</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Full Trial Extension Activation - {!$Record.Name}</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Limited_Case_Trial</name>
         <label>Create Limited Case Trial</label>
-        <locationX>578</locationX>
+        <locationX>1106</locationX>
         <locationY>431</locationY>
         <inputAssignments>
             <field>AccountId</field>
@@ -396,9 +559,83 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
+        <name>Create_Limited_Extension_Case_Trial</name>
+        <label>Create Limited Extension Case Trial</label>
+        <locationX>842</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ActivationDeactivation_Needs__c</field>
+            <value>
+                <stringValue>Limited Trial Activation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>Limited Trial Extension Activation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Due_Date__c</field>
+            <value>
+                <elementReference>$Record.Trial_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Label.Client_Access_Queue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>$Label.Client_Access</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Limited Trial Extension Activation - {!$Record.Name}</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Transaction_Case</name>
         <label>Create Transaction Case</label>
-        <locationX>1106</locationX>
+        <locationX>1634</locationX>
         <locationY>539</locationY>
         <inputAssignments>
             <field>AP_Email__c</field>
@@ -460,7 +697,7 @@
     <recordCreates>
         <name>Opportunity_Review_Case</name>
         <label>Opportunity Review Case</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>431</locationY>
         <inputAssignments>
             <field>AccountId</field>
@@ -584,7 +821,7 @@
     <recordLookups>
         <name>Get_Opp_Owner</name>
         <label>Get Opp Owner</label>
-        <locationX>1370</locationX>
+        <locationX>1898</locationX>
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -605,7 +842,7 @@
     <recordLookups>
         <name>Get_Transaction_Support_RT</name>
         <label>Get Transaction Support RT</label>
-        <locationX>1106</locationX>
+        <locationX>1634</locationX>
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -626,7 +863,7 @@
     <recordUpdates>
         <name>Case_Due_Date_Update</name>
         <label>Case Due Date Update</label>
-        <locationX>842</locationX>
+        <locationX>1370</locationX>
         <locationY>431</locationY>
         <filterLogic>(1 OR 2) AND (3 AND 4)</filterLogic>
         <filters>
@@ -665,8 +902,41 @@
         </inputAssignments>
         <object>Case</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Billing_Schedule</name>
+        <label>Update Billing Schedule + Evergreen</label>
+        <locationX>1898</locationX>
+        <locationY>647</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Click_to_Pay__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Billing_Schedule__c</field>
+            <value>
+                <stringValue>In Advance - Annual</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Evergreen_Contract__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Terms__c</field>
+            <value>
+                <stringValue>Prepaid</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>716</locationX>
+        <locationX>980</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Trial_Start_Or_Deactivation_Decision_On_Oppty</targetReference>
