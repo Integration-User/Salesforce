@@ -22181,6 +22181,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Contact.Created_by_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.Current_Products_Text__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -31346,7 +31351,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Consolidat_Referred_by_Department_Static__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Consolidate_Created_by_Department_Static__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Consolidate_Opportunity_Source_Reporting__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Consolidated_From__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Consolidated_Referral_Conversion_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -32335,6 +32360,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Notes_from_SDO_Conversion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.OCR_Marketing_Lead_Source__c</field>
         <readable>true</readable>
@@ -32342,6 +32372,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Opportunity_Age__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Opportunity_Owner_Manager__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -53016,6 +53051,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewSetupAuditTrail</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
