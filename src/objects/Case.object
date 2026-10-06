@@ -655,6 +655,31 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Click_to_Pay__c</fullName>
+        <label>Click-to-Pay</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>ClosedDate</fullName>
         <trackTrending>false</trackTrending>
     </fields>
@@ -5370,18 +5395,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -7315,18 +7328,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -9171,18 +9172,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -10593,18 +10582,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12240,18 +12217,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -13822,18 +13787,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15714,18 +15667,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -16954,6 +16895,17 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Error_Reason__c</picklist>
             <values>
                 <fullName>Account Email Distro was not removed</fullName>
@@ -17532,18 +17484,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18798,6 +18738,10 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Payment Link Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Trial Extension%2FRevision</fullName>
                 <default>false</default>
             </values>
@@ -19592,18 +19536,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21372,18 +21304,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23444,18 +23364,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Advertising</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
                 <default>false</default>
             </values>
             <values>
