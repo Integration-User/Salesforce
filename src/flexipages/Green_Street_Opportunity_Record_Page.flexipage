@@ -117,6 +117,16 @@
                         <valueListItems>
                             <value>Opportunity.Create_Subscription</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.Request_Advertising_Changes</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Record_Type_for_Query__c}</leftValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>Advertising</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
