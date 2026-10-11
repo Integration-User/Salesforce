@@ -177,7 +177,7 @@ public class Plative_AddProductLineCtrl {
         return [SELECT Id FROM Opportunity
                 WHERE AccountId = :accountId
                 AND Trial_Start_Date__c != NULL
-                AND Trial_End_Date__c > :Date.today()
+                AND (Trial_End_Date__c > :Date.today() OR Trial_Extension_Date__c > :Date.today())
                 AND Trial_Type__c != NULL
                 LIMIT 1].size() > 0;
     }
