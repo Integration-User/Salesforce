@@ -66810,6 +66810,44 @@ ISCHANGED(UTM_Campaign__c)
         <errorMessage>You cannot edit any lead attribution and UTM fields.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Lock_Trial_End_Date</fullName>
+        <active>true</active>
+        <description>Trial End Date should not be edited.
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
+        <errorConditionFormula>AND(
+    NOT($Permission.Skip_Validation_Rule),
+    
+    NOT(ISNEW()),
+    NOT(ISBLANK(PRIORVALUE(Trial_End_Date__c))),
+    ISCHANGED(Trial_End_Date__c),
+    OR(
+        RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+        RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
+    )
+)</errorConditionFormula>
+        <errorDisplayField>Trial_End_Date__c</errorDisplayField>
+        <errorMessage>You cannot edit the Trial End Date once filled out.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Trial_Extension_Date</fullName>
+        <active>true</active>
+        <description>Trial Extension Date should not be edited.
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
+        <errorConditionFormula>AND(
+    NOT($Permission.Skip_Validation_Rule),
+    
+    NOT(ISNEW()),
+    NOT(ISBLANK(PRIORVALUE(Trial_Extension_Date__c))),
+    ISCHANGED(Trial_Extension_Date__c),
+    OR(
+        RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+        RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
+    )
+)</errorConditionFormula>
+        <errorDisplayField>Trial_Extension_Date__c</errorDisplayField>
+        <errorMessage>You cannot edit the Trial Extension Date once filled out.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Locked_Opportunities</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -67479,6 +67517,26 @@ ISBLANK(Sales_Owner__c)
         <errorMessage>You need to provide This Year % Increase.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Require_Trial_Extension_Date</fullName>
+        <active>true</active>
+        <description>Require Trial Extension Date when Trial Dates are populated
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
+        <errorConditionFormula>AND(
+    NOT($Permission.Skip_Validation_Rule),
+    NOT(ISNEW()),
+ISBLANK(Trial_Start_Date__c),
+ISBLANK(Trial_End_Date__c),
+ISBLANK(PRIORVALUE(Trial_Extension_Date__c)),
+    ISCHANGED(Trial_Extension_Date__c),
+    OR(
+        RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+        RecordType.DeveloperName = &quot;Sales_Opportunity_Closed&quot;
+    )
+)</errorConditionFormula>
+        <errorDisplayField>Trial_Extension_Date__c</errorDisplayField>
+        <errorMessage>You cannot add Trial Extension Date if Trial start and End date are not filled out</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_Trial_Type</fullName>
         <active>false</active>
         <errorConditionFormula>AND(
@@ -67762,6 +67820,44 @@ ISBLANK( Consolidated_To__c ) ,
 ISCHANGED(StageName),
 ISPICKVAL( StageName , &quot;Consolidated&quot;) )</errorConditionFormula>
         <errorMessage>Please make sure that &quot;Consolidated To&quot; is filled in before setting the Stage to &quot;Consolidated&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Trial_Dates_Max_14_Days</fullName>
+        <active>true</active>
+        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
+        <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+    NOT(ISBLANK(Trial_Start_Date__c)),
+    NOT(ISBLANK(Trial_End_Date__c)),
+    OR(
+        Trial_End_Date__c &lt; Trial_Start_Date__c,
+        (Trial_End_Date__c - Trial_Start_Date__c) &gt; 14
+    ),
+    OR(
+        ISCHANGED(Trial_Start_Date__c),
+        ISCHANGED(Trial_End_Date__c)
+    )
+)</errorConditionFormula>
+        <errorMessage>14 Days is the max period between Trial Start and Trial End Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Trial_Extension_Date_Max_10_Days</fullName>
+        <active>true</active>
+        <description>$Profile.Name &lt;&gt; &quot;System Administrator&quot;,</description>
+        <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;Sales_Opportunity&quot;,
+    NOT(ISBLANK(Trial_Extension_Date__c)),
+    NOT(ISBLANK(Trial_End_Date__c)),
+    OR(
+        Trial_Extension_Date__c &lt; Trial_End_Date__c,
+        (Trial_Extension_Date__c- Trial_End_Date__c) &gt; 10
+    ),
+    OR(
+        ISCHANGED(Trial_Extension_Date__c),
+        ISCHANGED(Trial_End_Date__c)
+    )
+)</errorConditionFormula>
+        <errorMessage>Trial Extension Date must be on or after the Trial End Date and cannot be more than 10 days after the Trial End Date.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Win_Validation</fullName>
