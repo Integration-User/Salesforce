@@ -67,6 +67,9 @@
         <label>Trial Start Or Deactivation Decision On Oppty</label>
         <locationX>1106</locationX>
         <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>END_ELEMENT_9</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>SDO_Web_News_Trial</name>
@@ -367,7 +370,53 @@
             <label>Click To Pay?</label>
         </rules>
     </decisions>
-    <description>Added OTC Click to Pay Alert</description>
+    <description>Added OTC Click to Pay Alert
+Added Trial Extension Logic</description>
+    <ends>
+        <name>END_ELEMENT_10</name>
+        <locationX>1106</locationX>
+        <locationY>539</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_11</name>
+        <locationX>1634</locationX>
+        <locationY>647</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_12</name>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_13</name>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_14</name>
+        <locationX>1370</locationX>
+        <locationY>539</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_2</name>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_4</name>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_8</name>
+        <locationX>1898</locationX>
+        <locationY>755</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_9</name>
+        <locationX>2162</locationX>
+        <locationY>431</locationY>
+    </ends>
     <environments>Default</environments>
     <formulas>
         <name>ADayAfterTrialEndDate</name>
@@ -415,6 +464,9 @@
         <label>Create Full Extension Case Trial</label>
         <locationX>314</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_4</targetReference>
+        </connector>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -489,6 +541,9 @@
         <label>Create Limited Case Trial</label>
         <locationX>1106</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_10</targetReference>
+        </connector>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -563,6 +618,9 @@
         <label>Create Limited Extension Case Trial</label>
         <locationX>842</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_2</targetReference>
+        </connector>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -637,6 +695,9 @@
         <label>Create Transaction Case</label>
         <locationX>1634</locationX>
         <locationY>539</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_11</targetReference>
+        </connector>
         <inputAssignments>
             <field>AP_Email__c</field>
             <value>
@@ -699,6 +760,9 @@
         <label>Opportunity Review Case</label>
         <locationX>578</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_12</targetReference>
+        </connector>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -761,6 +825,9 @@
         <label>SDO Opportunity Review Case</label>
         <locationX>50</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_13</targetReference>
+        </connector>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -865,6 +932,9 @@
         <label>Case Due Date Update</label>
         <locationX>1370</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_14</targetReference>
+        </connector>
         <filterLogic>(1 OR 2) AND (3 AND 4)</filterLogic>
         <filters>
             <field>ActivationDeactivation_Needs__c</field>
@@ -907,6 +977,9 @@
         <label>Update Billing Schedule + Evergreen</label>
         <locationX>1898</locationX>
         <locationY>647</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_8</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Click_to_Pay__c</field>
