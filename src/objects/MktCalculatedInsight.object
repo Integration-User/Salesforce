@@ -72,6 +72,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>CalculatedInsightStatus</fullName>
         <trackHistory>false</trackHistory>
@@ -94,9 +95,22 @@
         <trackHistory>false</trackHistory>
     </fields>
     <listViews>
-        <fullName>All_MktCalculatedInsights</fullName>
+        <fullName>Active_Calculated_Insights</fullName>
+        <columns>Name</columns>
+        <columns>DataSpace</columns>
+        <columns>Status</columns>
+        <columns>LastRunTime</columns>
+        <columns>LastRunStatus</columns>
+        <columns>CreatedBy</columns>
+        <columns>CreatedDate</columns>
+        <columns>LastModifiedDate</columns>
         <filterScope>Everything</filterScope>
-        <label>All Calculated Insights</label>
+        <filters>
+            <field>Status</field>
+            <operation>equals</operation>
+            <value>ACTIVE</value>
+        </filters>
+        <label>Active Calculated Insights</label>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>DataSpace</customTabListAdditionalFields>

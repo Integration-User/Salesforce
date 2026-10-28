@@ -268,6 +268,7 @@
     </businessProcesses>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>true</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>AP_Email__c</fullName>
         <externalId>false</externalId>
@@ -653,6 +654,31 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Click_to_Pay__c</fullName>
+        <label>Click-to-Pay</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>ClosedDate</fullName>
@@ -2232,11 +2258,6 @@
                     <fullName>MCP Server</fullName>
                     <default>false</default>
                     <label>MCP Server</label>
-                </value>
-                <value>
-                    <fullName>Infrastructure Investor - Trial</fullName>
-                    <default>false</default>
-                    <label>Infrastructure Investor - Trial</label>
                 </value>
                 <value>
                     <fullName>Infrastructure News and Data</fullName>
@@ -3913,7 +3934,7 @@ FALSE))))))))))))))</formula>
         <filters>
             <field>Support_Type__c</field>
             <operation>equals</operation>
-            <value>Client Support,US Data Support,EU Data Support,User List Request</value>
+            <value>Client Support,US Data Support,EU Data Support,User List Request,IJGlobal Client Support</value>
         </filters>
         <filters>
             <field>OWNER_NAME</field>
@@ -3933,7 +3954,7 @@ FALSE))))))))))))))</formula>
         <filters>
             <field>Support_Type__c</field>
             <operation>notEqual</operation>
-            <value>React News,Green Street News Client Support,IJGlobal Client Support</value>
+            <value>React News,Green Street News Client Support</value>
         </filters>
         <label>All Open Help Desk Cases</label>
     </listViews>
@@ -4165,8 +4186,31 @@ FALSE))))))))))))))</formula>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>Click_to_Pay_OTC_Support</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Click_to_Pay__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Order_Support</value>
+        </filters>
+        <label>Click-to-Pay OTC Support</label>
+        <queue>OTC_Support</queue>
+    </listViews>
+    <listViews>
         <fullName>Client_Deactivation_Case</fullName>
-        <booleanFilter>(1 AND 2 AND 3 AND 5) OR (1 AND 2 AND 4 AND 6)</booleanFilter>
+        <booleanFilter>(1 AND 2 AND 3 AND 5 AND 7) OR (1 AND 2 AND 4 AND 6 AND 7)</booleanFilter>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.SUBJECT</columns>
@@ -4200,14 +4244,22 @@ FALSE))))))))))))))</formula>
         <filters>
             <field>ActivationDeactivation_Needs__c</field>
             <operation>equals</operation>
-            <value>Full Account Deactivation,Remove Lost Products,Suspend,Full Trial Deactivation,Limited Trial Deactivation</value>
+            <value>Full Account Deactivation,Remove Lost Products,Remove Lost Product(s),Suspend,Full Trial Deactivation,Limited Trial Deactivation</value>
         </filters>
         <filters>
             <field>ActivationDeactivation_Needs__c</field>
             <operation>equals</operation>
             <value>Full Account Activation,Add Upsold Products,Full Trial Activation,Full Trial Conversion,Limited Trial Activation,Limited Trial Conversion</value>
         </filters>
+        <filters>
+            <field>Opportunity_Record_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Sales Development</value>
+        </filters>
         <label>Open Client Access Requests</label>
+        <sharedTo>
+            <role>Commercial_Operations</role>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Daily_Training</fullName>
@@ -4638,10 +4690,96 @@ FALSE))))))))))))))</formula>
             <operation>notEqual</operation>
             <value>Closed,Merged,Cancelled</value>
         </filters>
+        <filters>
+            <field>Opportunity_Record_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Sales Development</value>
+        </filters>
         <label>Opportunity Review</label>
         <sharedTo>
-            <allInternalUsers></allInternalUsers>
+            <role>Commercial_Operations</role>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SDO_Trials_Open_Client_Access_Requests</fullName>
+        <booleanFilter>(1 AND 2 AND 3 AND 5 AND 7) OR (1 AND 2 AND 4 AND 6 AND 7 )</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Opportunity_Record_Type__c</columns>
+        <columns>ActivationDeactivation_Needs__c</columns>
+        <columns>Due_Date__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CASES.RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Client_Access</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>New,On Hold,Escalated,Working</value>
+        </filters>
+        <filters>
+            <field>Due_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <filters>
+            <field>Due_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>ActivationDeactivation_Needs__c</field>
+            <operation>equals</operation>
+            <value>Full Account Deactivation,Remove Lost Products,Remove Lost Product(s),Suspend,Full Trial Deactivation,Limited Trial Deactivation</value>
+        </filters>
+        <filters>
+            <field>ActivationDeactivation_Needs__c</field>
+            <operation>equals</operation>
+            <value>Full Account Activation,Add Upsold Products,Full Trial Activation,Full Trial Conversion,Limited Trial Activation,Limited Trial Conversion</value>
+        </filters>
+        <filters>
+            <field>Opportunity_Record_Type__c</field>
+            <operation>equals</operation>
+            <value>Sales Development</value>
+        </filters>
+        <label>SDO Trials - Open Client Access Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>SDO_Trials_Opportunity_Review</fullName>
+        <columns>CASES.ORIGIN</columns>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Opportunity__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CASES.RECORDTYPE</columns>
+        <columns>Opportunity_Record_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Opportunity_Review</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed,Merged,Cancelled</value>
+        </filters>
+        <filters>
+            <field>Opportunity_Record_Type__c</field>
+            <operation>equals</operation>
+            <value>Sales Development</value>
+        </filters>
+        <label>SDO Trials Opportunity Review</label>
     </listViews>
     <listViews>
         <fullName>Scott_s_Duplicate_Requests</fullName>
@@ -4793,6 +4931,17 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5370,18 +5519,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -5615,10 +5752,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5910,10 +6043,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6778,6 +6907,17 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Error_Reason__c</picklist>
             <values>
                 <fullName>Account Email Distro was not removed</fullName>
@@ -7315,18 +7455,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -7564,10 +7692,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IJGlobal%3A One-Time</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7883,10 +8007,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8618,6 +8738,17 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Error_Reason__c</picklist>
             <values>
                 <fullName>Account Email Distro was not removed</fullName>
@@ -9171,18 +9302,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Award Add-on</fullName>
                 <default>false</default>
             </values>
@@ -9296,10 +9415,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IJGlobal%3A One-Time</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9431,10 +9546,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10023,6 +10134,17 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Error_Reason__c</picklist>
             <values>
                 <fullName>Account Email Distro was not removed</fullName>
@@ -10596,18 +10718,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -10849,10 +10959,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11124,10 +11230,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11719,6 +11821,17 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Error_Reason__c</picklist>
             <values>
                 <fullName>Contact Merge Error</fullName>
@@ -12240,18 +12353,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -12488,10 +12589,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Infrastructure News and Data</fullName>
                 <default>false</default>
             </values>
@@ -12644,10 +12741,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13228,6 +13321,17 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13825,18 +13929,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -14066,10 +14158,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IJGlobal%3A One-Time</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14353,10 +14441,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15185,6 +15269,17 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Error_Reason__c</picklist>
             <values>
                 <fullName>Billing Schedule Error</fullName>
@@ -15714,18 +15809,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -15958,10 +16041,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Infrastructure News and Data</fullName>
                 <default>false</default>
             </values>
@@ -16190,10 +16269,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16954,6 +17029,17 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Error_Reason__c</picklist>
             <values>
                 <fullName>Account Email Distro was not removed</fullName>
@@ -17535,18 +17621,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -17796,10 +17870,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18235,10 +18305,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18798,6 +18864,10 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Payment Link Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Trial Extension%2FRevision</fullName>
                 <default>false</default>
             </values>
@@ -19022,6 +19092,17 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19595,18 +19676,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -19855,10 +19924,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Infrastructure News and Data</fullName>
                 <default>false</default>
             </values>
@@ -20035,10 +20100,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20762,6 +20823,17 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Error_Reason__c</picklist>
             <values>
                 <fullName>Account Email Distro was not removed</fullName>
@@ -21375,18 +21447,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -21712,10 +21772,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IPOs%2C M%26A%2C Privatizations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22155,10 +22211,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>IJ Global%3A News</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22886,6 +22938,17 @@ FALSE))))))))))))))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Error_Reason__c</picklist>
             <values>
                 <fullName>Account Email Distro was not removed</fullName>
@@ -23447,18 +23510,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Advertising ABA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising CMA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Advertising REA</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Advisory</fullName>
                 <default>false</default>
             </values>
@@ -23687,10 +23738,6 @@ FALSE))))))))))))))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Infrastructure News and Data</fullName>
                 <default>false</default>
             </values>
@@ -23819,10 +23866,6 @@ FALSE))))))))))))))</formula>
             </values>
             <values>
                 <fullName>Green Street News%3A Canada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Infrastructure Investor - Trial</fullName>
                 <default>false</default>
             </values>
             <values>

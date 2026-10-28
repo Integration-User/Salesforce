@@ -1,0 +1,90 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "GS banner",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:brandSource" : {
+      "defaultBrandOption" : "sfdcBrand"
+    },
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "786c7f67-edf2-4603-bc46-331c83753d37",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : "{!$brand.colorScheme}",
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.xSmall}",
+          "stackOnMobile" : true,
+          "lightning:backgroundImage" : {
+            "repeat" : "no-repeat",
+            "position" : "center center",
+            "size" : "cover"
+          },
+          "reverseOrderOnMobile" : false
+        },
+        "definition" : "lightning/section",
+        "id" : "7feb7ac9-60d7-4faf-a1be-452393287be6",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.xSmall}",
+            "lightning:verticalAlignment" : "top",
+            "lightning:backgroundImage" : {
+              "repeat" : "no-repeat",
+              "position" : "center center",
+              "size" : "cover"
+            }
+          },
+          "definition" : "lightning/column",
+          "id" : "18941af8-8475-4545-a90e-845379a16879",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "rawHtml" : "\n<div id=\"section_176255796094862\" class=\"hse-section\" style=\"padding-left:10px; padding-right:10px\">\n\n    \n      <div class=\"hse-column-container\" style=\"min-width:280px; max-width:600px; margin:0 auto; background-color:#FFFFFF; padding-bottom:5px; padding-top:5px\">\n\n    \n\n<div id=\"column-1762557960948-0\" class=\"hse-column hse-size-12\">\n  <div id=\"hs_cos_wrapper_module_176255796094861\" class=\"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module\" style=\"color: inherit; font-size: inherit; line-height: inherit;\"><table class=\"hse-image-wrapper\" role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tbody><tr><td class=\"hs_padded\" align=\"left\" valign=\"top\" style=\"font-family:Arial, sans-serif; color:#23496d; word-break:break-word; text-align:left; padding:10px 15px; font-size:0px\">\n        <a href=\"https://www.greenstreet.com/\" target=\"_blank\" style=\"color:#00a4bd\" rel=\"noopener noreferrer\">\n        <img alt=\"Logo\" src=\"https://info.greenstreet.com/hs-fs/hubfs/0_green.street.logo_PRIMARY.png?width&#61;350&amp;upscale&#61;true&amp;name&#61;0_green.street.logo_PRIMARY.png\" style=\"outline:none; text-decoration:none; border:none; max-width:100%; font-size:16px\" width=\"175\" align=\"middle\" />\n        </a>\n      </td></tr></tbody></table></div>\n</div>\n\n    \n\n    </div>\n   \n  </div>\n"
+            },
+            "definition" : "lightning/html",
+            "id" : "2436f865-236b-4cec-a35f-2f714f8a27ba",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:title" : "GS banner",
+    "lightning:expressions" : [ ],
+    "lightning:backgroundImage" : {
+      "repeat" : "no-repeat",
+      "position" : "center center",
+      "size" : "cover"
+    },
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "gs-banner"
+}

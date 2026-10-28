@@ -329,6 +329,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>maps__ContentRestTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>maps__CustomDispositionForm</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -894,6 +898,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>maps__RouteCalendarAJAXResourcesTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>maps__RoutingProfileRemoteActions</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>maps__RoutingProfileRemoteActionsTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -2979,6 +2991,46 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>maps__AdvRoute__c.maps__ViolatedConstraints__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__MaxSegmentTime__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__Priority__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__StandardId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__TravelTime__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__Urgency__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__VisitGap__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__VisitRange__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5852,7 +5904,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>maps__SettingsGroup__c.maps__AdvRoutingProfile__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5873,6 +5925,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__AutoCheckOut__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>maps__SettingsGroup__c.maps__ButtonSet__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5883,7 +5940,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__DataRegion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>maps__SettingsGroup__c.maps__DefaultMapTile__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__DefaultValues__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5943,12 +6010,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__MaxQuerySizeExternal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>maps__SettingsGroup__c.maps__MaxQuerySize__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>maps__SettingsGroup__c.maps__MobileQuerySize__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__SettingsGroup__c.maps__ObjectSearchLanguage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6722,6 +6799,16 @@
         <object>maps__AdvRoute__c</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>maps__AdvRoutingProfile__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>

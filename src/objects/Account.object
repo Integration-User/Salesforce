@@ -214,7 +214,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Account_Record_Page</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -222,7 +222,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Green_Street_Account_Record_Page</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -274,6 +274,7 @@
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>AM_Manager__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -383,6 +384,33 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Account_Fit_Raw__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT(GS_Taxonomy__c),
+&quot;REIT&quot;,20, &quot;Pension Fund&quot;,20, &quot;Sovereign Wealth Fund&quot;,20, &quot;Large PE&quot;,20,
+&quot;Investment Bank&quot;,12, &quot;Insurance&quot;,12, &quot;Mid-Size PE&quot;,12,
+&quot;Broker&quot;,6, &quot;Family Office&quot;,6, &quot;Regional Bank&quot;,6,
+0)
++ IF(ISBLANK(DDS_AUMValue__c), 0,
+  IF(DDS_AUMValue__c &gt;= 10000000000, 10,
+  IF(DDS_AUMValue__c &gt;= 1000000000, 6,
+  IF(DDS_AUMValue__c &gt; 0, 2, 0))))
++ IF(ISBLANK(NumberOfEmployees), 0,
+  IF(NumberOfEmployees &gt;= 200, 8, IF(NumberOfEmployees &gt;= 25, 4, 1)))
++ IF(CONTAINS(TEXT(Type), &quot;Former&quot;) || CONTAINS(TEXT(Type), &quot;Trial&quot;), 5, 0)
++ CASE(BillingCountry,
+&quot;United States&quot;,5, &quot;United Kingdom&quot;,5, &quot;Canada&quot;,3, &quot;Australia&quot;,3,
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Fit Raw</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Account_Groupings__c</fullName>
         <label>Account Groupings</label>
         <required>false</required>
@@ -438,6 +466,48 @@
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Score_Fit_Boosters__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account_Fit_Raw__c
++ IF(Engaged_Contacts_Campaign_30d__c &gt;= 3, 15, IF(Engaged_Contacts_Campaign_30d__c &gt;= 2, 8, 0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Score Fit Boosters</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Score_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account_Fit_Raw__c
++ Contact_Score_Rollup__c
++ IF(Engaged_Contacts_Campaign_30d__c &gt;= 3, 15, IF(Engaged_Contacts_Campaign_30d__c &gt;= 2, 8, 0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Score Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Score__c</fullName>
+        <description>Net-new account-level fit/engagement score, written back from the Data Cloud scoring model. Combined with Contact Score in the routing flow to set follow-up SLA and route to SDR/AE. Distinct from the legacy ICP score fields (RevOps_ICP_Score_cumulative__c, ICP_Score_* series).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account&apos;s overall score, set automatically from the scoring model. Combined with the contact&apos;s score to determine routing and SLA. Do not edit manually.</inlineHelpText>
+        <label>Account Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -649,7 +719,6 @@
     </fields>
     <fields>
         <fullName>Annual_Recurring_Revenue__c</fullName>
-        <externalId>false</externalId>
         <inlineHelpText>The ARR for the customer as of the most recently available period. This value is always in USD.</inlineHelpText>
         <label>Annual Recurring Revenue</label>
         <precision>18</precision>
@@ -1310,6 +1379,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
             <restricted>true</restricted>
             <valueSetName>Company_Type</valueSetName>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contact_Score_Rollup__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Score Rollup</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Cost_Per_Click__c</fullName>
@@ -3416,6 +3496,17 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Engaged_Contacts_Campaign_30d__c</fullName>
+        <externalId>false</externalId>
+        <label>Engaged Contacts Campaign 30d</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Entitlement_Guidance_Notes__c</fullName>
         <label>Entitlement Guidance Notes</label>
         <length>1000</length>
@@ -4887,6 +4978,9 @@ IF(ISPICKVAL(Company_Type__c, &quot;Non-Contracted Long Only-generalist&quot;), 
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IsCustomerPortal</fullName>
     </fields>
     <fields>
         <fullName>Is_Contact_Update__c</fullName>
@@ -11504,21 +11598,18 @@ Stored as Long on Solr.</description>
     <listViews>
         <fullName>All_Accounts</fullName>
         <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
         <columns>ACCOUNT.ADDRESS1_CITY</columns>
-        <columns>ACCOUNT.PHONE1</columns>
-        <columns>ACCOUNT.TYPE</columns>
         <columns>CORE.USERS.ALIAS</columns>
-        <columns>Client_Segment__c</columns>
-        <columns>Company_Type__c</columns>
         <columns>ACCOUNT.LAST_ACTIVITY</columns>
         <columns>Analyst_Access__c</columns>
         <columns>Detailed_NAV_Models__c</columns>
         <columns>High_Value_Data_Sets__c</columns>
         <columns>X18_digit_Account_ID__c</columns>
+        <columns>RevOps_Last_Assigned__c</columns>
+        <columns>Revops_Last_Assigned_To__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Delinian_Id__c</field>
+            <field>Owner_ID__c</field>
             <operation>notEqual</operation>
         </filters>
         <label>All Accounts</label>
@@ -11727,6 +11818,17 @@ Stored as Long on Solr.</description>
             <value>TX</value>
         </filters>
         <label>JC-Edison New accounts play</label>
+    </listViews>
+    <listViews>
+        <fullName>Org_Account_Hierarchy</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Clients_In_Hierarchy__c</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>Org_Account_Hierarchy</label>
     </listViews>
     <listViews>
         <fullName>Phase_1_Target</fullName>
@@ -14832,6 +14934,33 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Interests__c</picklist>
             <values>
                 <fullName>Apartment</fullName>
@@ -16499,6 +16628,125 @@ Stored as Long on Solr.</description>
             </values>
             <values>
                 <fullName>United Kingdom</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19722,6 +19970,33 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Infra_Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oil and Gas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social and Defense</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transport</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Interests__c</picklist>
             <values>
                 <fullName>Apartment</fullName>
@@ -21473,6 +21748,125 @@ Stored as Long on Solr.</description>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Sectors_Covered__c</picklist>
+            <values>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ground Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Land</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage Reit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Sector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niche</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Assets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senior Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Family Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strip Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Strategic_Segment__c</picklist>
             <values>
                 <fullName>Asia</fullName>
@@ -21840,7 +22234,7 @@ ISCHANGED(Name))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Require_Billing_Address</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>AND(
     CreatedDate &gt; DATETIMEVALUE(&quot;2025-07-12 00:00:00&quot;),
      Count_of_open_SDO__c &lt;1,
@@ -21861,7 +22255,7 @@ ISCHANGED(Name))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Require_Billing_Country</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>AND(
     CreatedDate &gt; DATETIMEVALUE(&quot;2025-07-17 00:00:00&quot;),
     Count_of_open_SDO__c &lt;1,

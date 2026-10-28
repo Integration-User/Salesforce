@@ -274,6 +274,16 @@
             <field>Event_Cost_Centre__c</field>
             <table>Campaign</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Form_Page_URL__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Tell_Us_About_Your_Needs_Default__c</field>
+            <table>Campaign</table>
+        </columns>
         <masterLabel>Campaigns</masterLabel>
     </sections>
     <sections>
@@ -1378,6 +1388,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Disposition__c</field>
+            <table>Campaign.LeadCampaignMembers.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Activity_Owner_Department__c</field>
             <table>Campaign.LeadCampaignMembers.Activities</table>
         </columns>
         <masterLabel>Activities</masterLabel>

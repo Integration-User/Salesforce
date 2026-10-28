@@ -343,6 +343,7 @@
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>APJ_Company_Name__c</fullName>
         <externalId>false</externalId>
@@ -1009,6 +1010,19 @@ NOT(ISBLANK(AccountId))
         <formula>1</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Contact Record Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Score__c</fullName>
+        <description>Net-new marketing lead score for the contact, written back from the Data Cloud Einstein scoring model (engagement + fit). Drives lifecycle stage and SDR/AE routing via the lead routing flow. Replaces the HubSpot contact score; not related to legacy fields (Lead_Score__c, Hubspot_Score__c, AskNicely scores).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The contact&apos;s marketing score (0–100), set automatically from the scoring model. Higher = more engaged/qualified. Used to route the lead — do not edit manually.</inlineHelpText>
+        <label>Contact Score</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -1845,12 +1859,31 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>First_Content_Fill_Date__c</fullName>
+        <label>First Content Fill Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>First_Training_Date__c</fullName>
         <inlineHelpText>The first &quot;Attended Training Date&quot;</inlineHelpText>
         <label>First Training Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Form_Key__c</fullName>
+        <description>Stable identifier stamped by the Gravity Forms feed to route a submission to its campaign. Matched against Campaign.Form_Page_URL__c (relabeled &quot;Form Key&quot;) by the GF - Contact Campaign Enrollment flow. Replaces URL-based matching so multi-page and shared-page forms route reliably.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set automatically by the form feed (e.g. demo-request-us). Determines which campaign the contact is enrolled in.</inlineHelpText>
+        <label>Form Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Former_Client__c</fullName>
@@ -2611,6 +2644,13 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>LastCUUpdateDate</fullName>
     </fields>
     <fields>
+        <fullName>Last_Activity_Date__c</fullName>
+        <label>Last Activity Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Last_Campaign_Associated_Time__c</fullName>
         <description>The time that this Lead or Contact was associated to their most recent Campaign (based on “Member First Associated Date” field)</description>
         <inlineHelpText>The time that this Lead or Contact was associated to their most recent Campaign</inlineHelpText>
@@ -3279,6 +3319,51 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
                     <fullName>LinkedIn</fullName>
                     <default>false</default>
                     <label>LinkedIn</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lifecycle_Stage__c</fullName>
+        <description>Lead lifecycle stage set automatically by the Contact Lead Routing flow based on Contact Score (and later Account Score). Drives SDR/AE routing and SLA. Replaces HubSpot lifecycle stage.</description>
+        <inlineHelpText>Set automatically from the contact&apos;s score. Cold → Warm → MQL → SQL → High Priority, or Disqualified. Do not edit manually.</inlineHelpText>
+        <label>Lifecycle Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cold</fullName>
+                    <default>false</default>
+                    <label>Cold</label>
+                </value>
+                <value>
+                    <fullName>Warm</fullName>
+                    <default>false</default>
+                    <label>Warm</label>
+                </value>
+                <value>
+                    <fullName>MQL</fullName>
+                    <default>false</default>
+                    <label>MQL</label>
+                </value>
+                <value>
+                    <fullName>SQL</fullName>
+                    <default>false</default>
+                    <label>SQL</label>
+                </value>
+                <value>
+                    <fullName>High Priority</fullName>
+                    <default>false</default>
+                    <label>High Priority</label>
+                </value>
+                <value>
+                    <fullName>Disqualified</fullName>
+                    <default>false</default>
+                    <label>Disqualified</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -4984,6 +5069,14 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Need_a_hand__c</fullName>
+        <label>Need a hand?</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>New_User_Date__c</fullName>
         <label>New User Date</label>
         <required>false</required>
@@ -5680,6 +5773,13 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <fullName>Pronouns</fullName>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Re_Engaged_Date__c</fullName>
+        <label>Re Engaged Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Re_engaged_Lead__c</fullName>
@@ -10308,21 +10408,18 @@ Stored as Long on Solr.</description>
         <columns>ACCOUNT.NAME</columns>
         <columns>CONTACT.TITLE</columns>
         <columns>CONTACT.EMAIL</columns>
-        <columns>Account_Type__c</columns>
-        <columns>CONTACT.PHONE1</columns>
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
-        <columns>CONTACT.DEPARTMENT</columns>
         <columns>Activate_Contact__c</columns>
         <columns>Activation_Date__c</columns>
         <columns>SalesLoft1__Active_Contact__c</columns>
         <columns>GSA_Analyst__c</columns>
         <columns>List_Membership__c</columns>
+        <columns>Contact_Score__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>CONTACT.LAST_NAME</field>
-            <operation>contains</operation>
-            <value>DO NOT CALL</value>
+            <field>Lifecycle_Stage__c</field>
+            <operation>notEqual</operation>
         </filters>
         <label>All Contacts</label>
     </listViews>

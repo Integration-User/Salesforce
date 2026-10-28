@@ -22,7 +22,7 @@
     </alerts>
     <rules>
         <fullName>Opportunity Product Name</fullName>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.StageName</field>
             <operation>equals</operation>

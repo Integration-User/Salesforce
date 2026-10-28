@@ -1,4 +1,19 @@
-<apex:page controller="maps.Checkin" extensions="maps.RemoteFunctions">
+<!-- remove extensions once v1 mobile is eol -->
+<apex:page showheader="{!showHeader}" standardstylesheets="{!standardStyleSheets}" sidebar="{!sidebar}" controller="maps.MapsLegacyCheck" title="Salesforce Maps" docType="{!docType}" extensions="maps.Checkin,maps.RemoteFunctions">
+
+    <c:MapsV2 rendered="{!useMapsV2Page}"/>
+    <c:Oops rendered="{!useMapsOopsPage}" />
+    <!-- enable this once mobile v1 is eol -->
+    <!-- <c:MapsMobile rendered="{!useMapsMobilePage}" /> -->
+    <apex:outputPanel rendered="{!useSiteBuilderSpashScreen}">
+        <div style="overflow: hidden; background-color:white; display: block;">
+            <img src ="{!URLFOR($Resource.MapsStyles, 'sf_maps_logo_RGB.svg')}" alt="S{!$Label.Salesforce_Maps_Logo}" height="100%" width="100%"/>
+        </div>
+    </apex:outputPanel>
+
+    <!-- for mobile v1, use the old flow -->
+    <!-- remove this once mobile v1 is eol -->
+    <apex:outputPanel rendered="{!useMapsMobilePage}">
         <script type='text/javascript' src="{!URLFOR($Resource.Maps3rdPartyPlugins, 'jquery/jquery-3.6.0.min.js')}"></script> 
         <apex:slds lightningStyleMode="SLDS1" />
         <script type='text/javascript' src="{!URLFOR($Resource.Maps3rdPartyPlugins, 'jquery/jquery-ui.min.js')}"></script>
@@ -49,10 +64,10 @@
                     },{buffer:false,escape:false}
                 );
             });
-            
+
 
             function checkIn() {
-                
+
                 var requestData = {
                     action      : 'check_in',
                     SavedQueryId: '',
@@ -68,7 +83,7 @@
                     fieldSet: fieldsetName,
                     ajaxResource : 'TooltipAJAXResources'
                 };
-                
+
                 if(autoCheckout) {
                     var inputFields = $('.fieldInput');
                     var fields = [];
@@ -86,7 +101,7 @@
                     });
                     requestData.fields = JSON.stringify(fields);
                 }
-                
+
 
                 Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.RemoteFunctions.processAJAXRequest}',requestData,
                 function(json, event) {
@@ -112,7 +127,7 @@
                             ToggleShowErrors(JSON.stringify(displayProps));
                         }
                     }
-                    
+
                 });
 
 
@@ -120,7 +135,7 @@
             }
 
             function checkOut() {
-                
+
                 recordData.forEach(function(field) {
                     // if the field is a checkbox, get the checked value
                     // otherwise, get the value of the field
@@ -167,8 +182,7 @@
                 });
             }
         </script>
-    
-  
+
         <apex:form >
             <apex:actionFunction action="{!ToggleShowMe}" name="toggleShowMe" reRender="actionWindow, Errors">
                 <apex:param name="displayProperties" value="" />
@@ -179,7 +193,7 @@
         </apex:form>
         <apex:outputPanel id="Errors" > 
         <apex:form rendered="{!hasError}">
-            
+
             <!-- Error Message -->
             <apex:pageBlock >
                 <div class="slds-card slds-p-around_large has-error">
@@ -204,7 +218,7 @@
                         $('.' + field.name).val(field.value);
                     }
                 });
-                
+
                 updateFields = false;
             }
 
@@ -317,4 +331,5 @@
                 $('.dateInput .dateFormat').addClass('slds-align-middle');
             });
         </script>
+    </apex:outputPanel>
 </apex:page>

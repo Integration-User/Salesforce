@@ -1,0 +1,36 @@
+{
+  "type" : "sfdc_cms__email",
+  "title" : "2026 October EU Breakfast- Debt Email",
+  "contentBody" : {
+    "lightning:brandSource" : {
+      "defaultBrandOption" : "sfdcBrand"
+    },
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "sfdc_cms:block" : {
+      "type" : "block",
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "3e91fb5f-b1a2-4f17-922c-71fcfee42ef1",
+      "children" : [ ]
+    },
+    "messagePurpose" : "promotional",
+    "subjectLine" : "(No Subject)",
+    "backgroundColor" : "{!$brand.colorScheme.root}",
+    "preheader" : "Customize this draft with your own content.",
+    "sfdc_cms:title" : "2026 October EU Breakfast- Debt Email",
+    "lightning:expressions" : [ ],
+    "lightning:backgroundImage" : {
+      "repeat" : "no-repeat",
+      "position" : "center center",
+      "size" : "cover"
+    },
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "2026-october-eu-breakfast--debt-email"
+}
