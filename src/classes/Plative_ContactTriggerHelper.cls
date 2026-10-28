@@ -98,7 +98,7 @@ public class Plative_ContactTriggerHelper  {
                 contactIdToProcess.add(cont.Id);
             } /*SF-2209 - else if(( (String.isNotBlank(cont.FirstName) && triggerOldMap.get(cont.Id).FirstName != cont.FirstName) || (String.isNotBlank(cont.LastName) && triggerOldMap.get(cont.Id).LastName != cont.LastName)) && cont.Contact_Status__c == 'Active'){
                 contactIdToProcess.add(cont.Id);
-            } */
+            }*/
         }        
         if(!contactIdToProcess.isEmpty() && !System.isBatch() && !System.isFuture()) {
             //SF-2186

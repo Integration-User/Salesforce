@@ -40,6 +40,18 @@
 
     },
 
+    getCurrentUserDepartmentH: function(component, event, helper) {
+        var action = component.get('c.getCurrentUserDepartment');
+        action.setCallback(this, function(response) {
+            var state = response.getState();
+            if (state === 'SUCCESS') {
+                var department = response.getReturnValue();
+                component.set('v.isSalesDevelopmentUser', department === 'Sales Development');
+            }
+            helper.getProductsH(component, event, helper);
+        });
+        $A.enqueueAction(action);
+    },
 
     getProductsH: function(component, event, helper) {
         component.set('v.displaySpinner', true);

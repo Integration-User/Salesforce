@@ -37,6 +37,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Plative_AddProductLineCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Plative_AddProductLineCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Plative_ContactTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -63,14 +71,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Annual_Recurring_Revenue__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
-        <field>Account.Annual_Recurring_Revenue_last_updated__c</field>
-        <readable>true</readable>
+        <field>Account.Annual_Recurring_Revenue__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -80,11 +83,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Current_Products__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.MCP_agent_assistant_used__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -98,38 +96,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Tools_queried_L6M__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Total_ARR_in_Client_Hierarchy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Total_MCP_events_L6M__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Unique_MCP_users_L6M__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
-        <field>Case.Click_to_Pay__c</field>
+        <field>Account_Product_Line__c.GSN_Trial__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Products_Discussed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact.Created_by_Role__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -143,26 +121,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact.Last_MCP_usage_date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact.Most_Recent_Cadence_Cadence_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact.Most_Recent_Cadence_Next_Step_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact.Most_Recent_Cadence_Next_Step_Number__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Products_Include__c</field>
         <readable>true</readable>
@@ -170,16 +128,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Salesloft_All_Cadences__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact.Tools_queried_L6M__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact.Total_MCP_usage_events_L6M__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -194,22 +142,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.Click_to_Pay__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Opportunity.Consolidated_From__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Consolidated_To__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Days_Until_Next_Renewal_From_Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -219,37 +152,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.Manager_Forecast_Value_USD__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Next_Step_All_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Next_Step_Last_Updated__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Opportunity_Owner_Manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Notes_from_SDO_Conversion__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Opportunity.Products__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Sales_Leader_Forecast_Value_USD__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -267,13 +170,6 @@
     <layoutAssignments>
         <layout>Account-Subsidiary Account</layout>
         <recordType>Account.Subsidiary_Account</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Case-OTC Case Layout</layout>
-        <recordType>Case.Order_Support</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Contact-Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lead-Referral Lead Layout</layout>
