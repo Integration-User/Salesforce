@@ -2,11 +2,48 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Update_Consolidated_Fields</name>
+        <label>Update Consolidated Fields</label>
+        <locationX>248</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Opportunity_Source_Reporting__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Consolidated_From__r.Opportunity_Source_Reporting__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Created_by_Department_Static__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Consolidated_From__r.Created_by_Department_Static__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ReferredbyDepartmentStatic__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Consolidated_From__r.ReferredbyDepartmentStatic__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Referral_Conversion_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Consolidated_From__r.Referral_Conversion_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Next_Step_Decision</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Change_Manager_Notes</name>
         <label>Change Manager Notes</label>
         <locationX>380</locationX>
-        <locationY>587</locationY>
+        <locationY>887</locationY>
         <defaultConnector>
             <targetReference>Change_Next_Step</targetReference>
         </defaultConnector>
@@ -31,7 +68,7 @@
         <name>Change_Next_Step</name>
         <label>Change Next Step</label>
         <locationX>380</locationX>
-        <locationY>887</locationY>
+        <locationY>1187</locationY>
         <defaultConnector>
             <targetReference>Stage_Update</targetReference>
         </defaultConnector>
@@ -56,7 +93,7 @@
         <name>Is_Opp_Closed_Won</name>
         <label>Is Opp Closed Won?</label>
         <locationX>182</locationX>
-        <locationY>2111</locationY>
+        <locationY>2411</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Copy_1_of_Yes</name>
@@ -85,7 +122,7 @@
         <name>Is_Stage_Closed</name>
         <label>Is Stage Closed?</label>
         <locationX>380</locationX>
-        <locationY>1895</locationY>
+        <locationY>2195</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -132,10 +169,36 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Update_Consolidated_Fields_Empty</name>
+        <label>Is Update Consolidated Fields Empty?</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Next_Step_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Consolidated_Field</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Consolidated_From__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Consolidated_Fields</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Consolidated Field</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Next_Step_Decision</name>
         <label>Next Step Decision</label>
         <locationX>380</locationX>
-        <locationY>287</locationY>
+        <locationY>587</locationY>
         <defaultConnector>
             <targetReference>Change_Manager_Notes</targetReference>
         </defaultConnector>
@@ -182,7 +245,7 @@
         <name>Stage_Update</name>
         <label>Stage Update</label>
         <locationX>380</locationX>
-        <locationY>1187</locationY>
+        <locationY>1487</locationY>
         <defaultConnector>
             <targetReference>Winback_Condition</targetReference>
         </defaultConnector>
@@ -208,7 +271,7 @@
         <name>Winback_Condition</name>
         <label>Winback Condition</label>
         <locationX>380</locationX>
-        <locationY>1595</locationY>
+        <locationY>1895</locationY>
         <defaultConnector>
             <targetReference>Is_Stage_Closed</targetReference>
         </defaultConnector>
@@ -265,7 +328,7 @@
         <name>Set_Close_Date_to_Today</name>
         <label>Set Close Date to Today</label>
         <locationX>182</locationX>
-        <locationY>2003</locationY>
+        <locationY>2303</locationY>
         <connector>
             <targetReference>Is_Opp_Closed_Won</targetReference>
         </connector>
@@ -281,7 +344,7 @@
         <name>Update_Exclude_from_deal_scoring_model_On_Opportunity</name>
         <label>Update Exclude from deal scoring model On Opportunity</label>
         <locationX>248</locationX>
-        <locationY>1703</locationY>
+        <locationY>2003</locationY>
         <connector>
             <targetReference>Is_Stage_Closed</targetReference>
         </connector>
@@ -297,7 +360,7 @@
         <name>Update_Last_Change_Date</name>
         <label>Update Last Change Date</label>
         <locationX>248</locationX>
-        <locationY>1295</locationY>
+        <locationY>1595</locationY>
         <connector>
             <targetReference>Update_Static_Role</targetReference>
         </connector>
@@ -313,7 +376,7 @@
         <name>Update_Manager_Forecast_Value</name>
         <label>Update Manager Forecast Value</label>
         <locationX>50</locationX>
-        <locationY>2219</locationY>
+        <locationY>2519</locationY>
         <inputAssignments>
             <field>Manager_Forecast_Value_USD__c</field>
             <value>
@@ -332,7 +395,7 @@
         <name>Update_Manager_Notes_Last_Update</name>
         <label>Update Manager Notes Last Update</label>
         <locationX>248</locationX>
-        <locationY>695</locationY>
+        <locationY>995</locationY>
         <connector>
             <targetReference>Change_Next_Step</targetReference>
         </connector>
@@ -348,7 +411,7 @@
         <name>Update_Next_Step_All_Time</name>
         <label>Update Next Step All Time</label>
         <locationX>160</locationX>
-        <locationY>395</locationY>
+        <locationY>695</locationY>
         <connector>
             <targetReference>Change_Manager_Notes</targetReference>
         </connector>
@@ -364,7 +427,7 @@
         <name>Update_Next_Step_Last_Updated</name>
         <label>Update Next Step Last Updated</label>
         <locationX>248</locationX>
-        <locationY>995</locationY>
+        <locationY>1295</locationY>
         <connector>
             <targetReference>Stage_Update</targetReference>
         </connector>
@@ -380,7 +443,7 @@
         <name>Update_Static_Role</name>
         <label>Update Static Role</label>
         <locationX>248</locationX>
-        <locationY>1403</locationY>
+        <locationY>1703</locationY>
         <connector>
             <targetReference>Winback_Condition</targetReference>
         </connector>
@@ -417,7 +480,7 @@
         <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Next_Step_Decision</targetReference>
+            <targetReference>Is_Update_Consolidated_Fields_Empty</targetReference>
         </connector>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>
