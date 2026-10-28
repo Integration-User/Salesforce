@@ -213,7 +213,7 @@ public class Plative_AccountTriggerHelper  {
 			}
 		}
 	}
-    /* SF-2247 : Rollup Number of Clients in Hierarchy
+    /*SF-2247 : Rollup Number of Clients in Hierarchy
     public static void rollupClientsInHierarchy(List<Account> newAccounts, List<Account> oldAccounts) {
         if (Plative_AccountTriggerHandler.isClientHierarchyRollupRunning) {
             return;
