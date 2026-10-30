@@ -434,6 +434,27 @@
         </picklistValues>
     </fields>
     <fields>
+        <help><!-- For head of Sales only --></help>
+        <label><!-- CSO Forecast Category --></label>
+        <name>CSO_Forecast_Category__c</name>
+        <picklistValues>
+            <masterLabel>Best Case</masterLabel>
+            <translation><!-- Best Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commit</masterLabel>
+            <translation><!-- Commit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pipeline</masterLabel>
+            <translation><!-- Pipeline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Projected</masterLabel>
+            <translation><!-- Projected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- CS Request --></label>
         <name>CS_Request__c</name>
     </fields>
@@ -455,6 +476,18 @@
         <picklistValues>
             <masterLabel>Corporate</masterLabel>
             <translation><!-- Corporate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Click-to-Pay --></label>
+        <name>Click_to_Pay__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -507,6 +540,10 @@
         <picklistValues>
             <masterLabel>Current Client - CS Request</masterLabel>
             <translation><!-- Current Client - CS Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Current Open Opp</masterLabel>
+            <translation><!-- Current Open Opp --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Due Diligence</masterLabel>
@@ -613,6 +650,10 @@
             <translation><!-- Timing --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Trial-Specific</masterLabel>
+            <translation><!-- Trial-Specific --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Unreachable</masterLabel>
             <translation><!-- Unreachable --></translation>
         </picklistValues>
@@ -687,6 +728,11 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Consolidated From --></label>
+        <name>Consolidated_From__c</name>
+        <relationshipLabel><!-- Opportunities (Consolidated) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Consolidated To --></label>
@@ -989,6 +1035,10 @@
         <name>Days_Stalled__c</name>
     </fields>
     <fields>
+        <label><!-- Days Until Next Renewal(From Account) --></label>
+        <name>Days_Until_Next_Renewal_From_Account__c</name>
+    </fields>
+    <fields>
         <label><!-- Days at SS2 --></label>
         <name>Days_at_SS2__c</name>
     </fields>
@@ -1199,6 +1249,10 @@
     <fields>
         <label><!-- Goals --></label>
         <name>Goals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gong Automation Trigger Date (Renewal) --></label>
+        <name>Gong_Automation_Trigger_Date__c</name>
     </fields>
     <fields>
         <help><!-- Auto computed field that is used in reports for aggregations. --></help>
@@ -1540,6 +1594,10 @@
         <label><!-- Lead Contact --></label>
         <name>Lead_Contact__c</name>
         <relationshipLabel><!-- Opportunities (Lead Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead Lifecycle Stage --></label>
+        <name>Lead_Lifecycle_Stage__c</name>
     </fields>
     <fields>
         <label><!-- Lead Timestamp​ --></label>
@@ -1956,6 +2014,22 @@
         <help><!-- User who created the Opportunity in CDB or Salesforce --></help>
         <label><!-- Made Active By --></label>
         <name>Made_Active_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mailing City(Account) --></label>
+        <name>Mailing_City_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager Forecast Value (USD) --></label>
+        <name>Manager_Forecast_Value_USD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager Notes Last Updated --></label>
+        <name>Manager_Notes_Last_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager Notes --></label>
+        <name>Manager_Notes__c</name>
     </fields>
     <fields>
         <help><!-- What Markets are they focused on? --></help>
@@ -3043,6 +3117,14 @@
         <name>Next_Outreach_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Next Step (All Time) --></label>
+        <name>Next_Step_All_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Step Last Updated --></label>
+        <name>Next_Step_Last_Updated__c</name>
+    </fields>
+    <fields>
         <label><!-- Next Year % Increase --></label>
         <name>Next_Year_Increase__c</name>
     </fields>
@@ -3063,12 +3145,28 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Notes from SDO Conversion --></label>
+        <name>Notes_from_SDO_Conversion__c</name>
+    </fields>
+    <fields>
         <label><!-- OCR Marketing Lead Source --></label>
         <name>OCR_Marketing_Lead_Source__c</name>
     </fields>
     <fields>
+        <label><!-- Opp Total Score --></label>
+        <name>Opp_Total_Score__c</name>
+    </fields>
+    <fields>
         <label><!-- Opportunity Age --></label>
         <name>Opportunity_Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Owner Manager --></label>
+        <name>Opportunity_Owner_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Source Reporting (Override) --></label>
+        <name>Opportunity_Source_Reporting_Override__c</name>
     </fields>
     <fields>
         <label><!-- Opportunity Source Reporting --></label>
@@ -3528,6 +3626,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Reason for Opportunity Creation --></label>
+        <name>Reason_for_Opportunity_Creation__c</name>
+    </fields>
+    <fields>
         <label><!-- Record Type for Query --></label>
         <name>Record_Type_for_Query__c</name>
     </fields>
@@ -3547,6 +3649,10 @@
         <label><!-- Recurring Revenue Snapshot --></label>
         <name>Recurring_Revenue_Snapshot__c</name>
         <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Referral Conversion Date --></label>
+        <name>Referral_Conversion_Date__c</name>
     </fields>
     <fields>
         <label><!-- Referral Type --></label>
@@ -3912,6 +4018,10 @@
             <masterLabel>Projected</masterLabel>
             <translation><!-- Projected --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Leader Forecast Value (USD) --></label>
+        <name>Sales_Leader_Forecast_Value_USD__c</name>
     </fields>
     <fields>
         <label><!-- Sales Opportunity --></label>
@@ -4353,6 +4463,10 @@
             <masterLabel>Limited Access</masterLabel>
             <translation><!-- Limited Access --></translation>
         </picklistValues>
+        <picklistValues>
+            <masterLabel>Web News Trial</masterLabel>
+            <translation><!-- Web News Trial --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Trial --></label>
@@ -4740,6 +4854,18 @@ Subsidiary, Main Phone, Website, Company Type, Address. --></errorMessage>
         <name>Check_SDO_Missing_Account_Fields</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Evergreen Contract, Billing Schedule &amp; Terms cannot be edited. --></errorMessage>
+        <name>ClicktoPay_Billing_Terms</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Click-to-Pay is required when moving to Stage 5 --></errorMessage>
+        <name>ClicktoPay_Reqd_to_Save_Stage_5</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Amount must be greater than 3500 USD. --></errorMessage>
+        <name>ClicktoPay_USD_Amount</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Closed Opportunity Notes, AP Email, Billing Schedule and Terms are required in order to move to Pending Review. --></errorMessage>
         <name>Close_Notes_Required</name>
     </validationRules>
@@ -4825,6 +4951,10 @@ Opportunity: PPD Sent --></errorMessage>
         <name>Force_Renewal_Creation_or_Reason_Why_Not</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Discovery completed date cannot be in the future. --></errorMessage>
+        <name>Future_Discovery_Completed_Date</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- You need to provide the Infra Sectors Covered &amp; Sectors Covered fields. --></errorMessage>
         <name>InfraSector_Sectors_Covered</name>
     </validationRules>
@@ -4847,6 +4977,10 @@ Opportunity: PPD Sent --></errorMessage>
     <validationRules>
         <errorMessage><!-- Please fill out the Lead Source field for this Opportunity. --></errorMessage>
         <name>Lead_Source_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Discovery Scheduled meeting date cannot be less than 14 days. --></errorMessage>
+        <name>Less_14_Days_Discovery_Meeting</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- You cannot edit the Initial Meeting Organizer once filled out. --></errorMessage>
@@ -4885,6 +5019,10 @@ Opportunity: PPD Sent --></errorMessage>
         <name>Only_BDR_Can_Own_SDOs</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- You cannot add an Opportunity to this Account. If you want to engage them, please create records on a related subsidiary Account. --></errorMessage>
+        <name>Oppty_Non_Subsidiary_Account</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Please specify the Billing Frequency --></errorMessage>
         <name>Other_Billing_Frequency</name>
     </validationRules>
@@ -4910,11 +5048,19 @@ Opportunity: PPD Sent --></errorMessage>
     </validationRules>
     <validationRules>
         <errorMessage><!-- You must add Products to the Opportunity before Closing. --></errorMessage>
+        <name>Products_Required_to_Save_at_Stage_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please add products to this opportunity before moving to Stage 4 --></errorMessage>
         <name>Products_Required_to_Save_at_Stage_4</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Please provide the other competition. --></errorMessage>
         <name>Provide_Other_Competition</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can only select one Click-To-Pay product. --></errorMessage>
+        <name>Require_1_Click_to_Pay_Product</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- ACH Auto-debit is required upon closing an opportunity. --></errorMessage>
@@ -4945,7 +5091,7 @@ Opportunity: PPD Sent --></errorMessage>
         <name>Require_Competition</name>
     </validationRules>
     <validationRules>
-        <errorMessage><!-- Please fill out the Customer Handoff section before closing the opportunity. --></errorMessage>
+        <errorMessage><!-- Please fill out the Customer Handoff section when moving to Stage 6 --></errorMessage>
         <name>Require_Customer_Handoff</name>
     </validationRules>
     <validationRules>
@@ -4961,12 +5107,20 @@ Opportunity: PPD Sent --></errorMessage>
         <name>Require_IJGlobal_Related_Events</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Infra Sectors Covered is required for LDC accounts. --></errorMessage>
+        <name>Require_InfraSectors_Covered</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Lead Type cannot be blank. --></errorMessage>
         <name>Require_Lead_Type</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- New Sales Opportunities must begin at Stage 1. --></errorMessage>
         <name>Require_New_Opps_Stage_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can only select News products when Click-to-Pay is marked Yes --></errorMessage>
+        <name>Require_News_Click_to_Pay_Products</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Fill out the Product of Interest before moving to In Review. --></errorMessage>
@@ -4993,7 +5147,7 @@ Opportunity: PPD Sent --></errorMessage>
         <name>Require_Sales_Owner_Upon_Review</name>
     </validationRules>
     <validationRules>
-        <errorMessage><!-- Sectors / Markets Covered are required if the fields from the account level are blank. --></errorMessage>
+        <errorMessage><!-- Sectors Covered must be filled out as they are missing on the related account. --></errorMessage>
         <name>Require_Sector_Markets_Covered</name>
     </validationRules>
     <validationRules>
@@ -5021,6 +5175,10 @@ Opportunity: PPD Sent --></errorMessage>
         <name>Required_Stage4_AskPrice</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Only AM Managers can process consolidations --></errorMessage>
+        <name>Restrict_Consolidation</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- You cannot modify the Inbound checkbox. --></errorMessage>
         <name>Restrict_Inbound</name>
     </validationRules>
@@ -5035,6 +5193,22 @@ Opportunity: PPD Sent --></errorMessage>
     <validationRules>
         <errorMessage><!-- If Risk Type is Low, Medium, or High then This Year % Increase must be greater than -100%. --></errorMessage>
         <name>Risk_Type_Percentage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot disqualify this SDO as &quot;Unreachable&quot; without having any activity on this opportunity --></errorMessage>
+        <name>SDO_Unreachable_Disqualified</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Account Managers may not create Sales Opportunities. Please reach out to your Salesforce Administrator if you need support. --></errorMessage>
+        <name>Sales_Opportunity_Restriction_For_AM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill out the Amount field with an estimated deal value by Stage 2 --></errorMessage>
+        <name>Stg2_Total_ARR_Greater_0</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your opportunity must have products with a sales price by stage 4 --></errorMessage>
+        <name>Stg4_Total_ARR_Greater_0</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Please make sure that &quot;Consolidated To&quot; is filled in before setting the Stage to &quot;Consolidated&quot;. --></errorMessage>

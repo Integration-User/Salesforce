@@ -72,38 +72,41 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>Activity</fullName>
     </fields>
     <fields>
         <fullName>ActivityDate</fullName>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>ActivityType</fullName>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Description</fullName>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>DevopsRequestInfoId</fullName>
-        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Name</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>ParentActivityId</fullName>
-        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>PerformedById</fullName>
-        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PipelineId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PipelineStageId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProjectId</fullName>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -111,7 +114,14 @@
     </fields>
     <fields>
         <fullName>Status</fullName>
-        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TestSuiteGroupExecId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WorkItemId</fullName>
+        <type>Lookup</type>
     </fields>
     <sharingModel>Private</sharingModel>
 </CustomObject>

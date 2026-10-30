@@ -1,0 +1,270 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "Content Block: Testimonial - Dark",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:backgroundImage" : {
+      "position" : "center center",
+      "repeat" : "no-repeat",
+      "size" : "cover"
+    },
+    "lightning:brandSource" : "MCUQIXYI74CNAYTK7HSG6BEHV4SA",
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "71a6daa3-af82-4135-9ca2-14a3797455b1",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : {
+            "bottom" : {
+              "unit" : "px",
+              "value" : 16.0
+            },
+            "left" : {
+              "unit" : "px",
+              "value" : 20.0
+            },
+            "right" : {
+              "unit" : "px",
+              "value" : 20.0
+            },
+            "top" : {
+              "unit" : "px",
+              "value" : 16.0
+            }
+          },
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "04ee06d9-5d87-41da-9f24-954b72dd4329",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : {
+              "contrast" : "#162331",
+              "neutral" : "#0d4041",
+              "primaryAccent" : "#49b065",
+              "primaryAccentContrast" : "#ffffff",
+              "primaryAccentContrastDerived" : "#FFFFFF",
+              "primaryAccentDerived" : "#2d974f",
+              "root" : "#162431"
+            },
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.large}",
+            "lightning:verticalAlignment" : "top"
+          },
+          "definition" : "lightning/column",
+          "id" : "3b9f0fc2-91d0-4739-814c-b768c1f9feea",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "imageFitConfig" : {
+                "width" : {
+                  "unit" : "%",
+                  "value" : 12.0
+                }
+              },
+              "imageInfo" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : null,
+                  "ref" : "Icon_Quotes_Green",
+                  "type" : "imageReference"
+                },
+                "url" : "https://info.greenstreet.com/hs-fs/hubfs/2026%20Iconography/quote%20green.png?width=120&height=60&upscale=true&name=quote%20green.png"
+              },
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}"
+            },
+            "definition" : "lightning/image",
+            "id" : "8f0200be-560a-478b-becd-ddec29dbd3f0",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#ffffff"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:typography" : {
+                "fontFamily" : "{!$brand.baseFontFamily}",
+                "fontSize" : "{!$brand.fontSize.small}",
+                "fontStyle" : "italic",
+                "fontWeight" : "{!$brand.fontWeight.normal}",
+                "letterSpacing" : "normal",
+                "lineHeight" : 1.5,
+                "textTransform" : "none"
+              },
+              "text" : "“Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />Ut enim ad minim veniam, quis nostrud exercitation ullamco.”"
+            },
+            "definition" : "lightning/paragraph",
+            "id" : "050f6bbc-c2ad-4b53-99ed-fcc4ce98f748",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#ffffff"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                }
+              },
+              "lightning:typography" : {
+                "fontFamily" : "{!$brand.baseFontFamily}",
+                "fontSize" : "{!$brand.fontSize.small}",
+                "fontWeight" : "{!$brand.fontWeight.bold}",
+                "letterSpacing" : "normal",
+                "lineHeight" : 1.5,
+                "textTransform" : "none"
+              },
+              "text" : "Name, Title – Company"
+            },
+            "definition" : "lightning/paragraph",
+            "id" : "8bcba8f4-732c-4154-8d64-d0ec983631cc",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.borderRadius.round}",
+              "lightning:borderWidth" : "{!$brand.buttonStyleGroup.secondary.lightning:borderWidth}",
+              "lightning:buttonColorGroup" : "{!$brand.buttonStyleGroup.secondary.lightning:buttonColorGroup}",
+              "lightning:click" : {
+                "actions" : [ {
+                  "attributes" : {
+                    "openInNewTab" : true,
+                    "url" : "https://www.greenstreet.com/resources/outcomes"
+                  },
+                  "definition" : "sfdc_cms__navigateToUrlAction",
+                  "generatedUrl" : "https://www.greenstreet.com/resources/outcomes"
+                } ]
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:padding" : "{!$brand.buttonStyleGroup.secondary.lightning:padding}",
+              "lightning:typography" : "{!$brand.buttonStyleGroup.secondary.lightning:typography}",
+              "sfdc_cms:styleGroup" : "{!$brand.buttonStyleGroup.secondary}",
+              "text" : "Hear From Our Clients →",
+              "width" : "auto"
+            },
+            "definition" : "lightning/actionButton",
+            "id" : "726a3a2a-3592-488f-95de-3647c4bdb40b",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:description" : "Client testimonial with quote, attribution, and CTA on a dark background",
+    "sfdc_cms:title" : "Content Block: Testimonial - Dark",
+    "sfdc_cms:urlName" : "content-block-testimonial---dark",
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "content-block-testimonial---dark"
+}

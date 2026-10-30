@@ -1,0 +1,461 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "Content Block: Feature Cards - Data & Research",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:backgroundImage" : {
+      "position" : "center center",
+      "repeat" : "no-repeat",
+      "size" : "cover"
+    },
+    "lightning:brandSource" : "MCUQIXYI74CNAYTK7HSG6BEHV4SA",
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "103206fe-7443-4129-86c7-bb09332c001b",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.medium}",
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "f109d245-12bb-419e-8d47-624d28eb7401",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 6.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : {
+              "bottom" : {
+                "unit" : "px",
+                "value" : 16.0
+              },
+              "left" : {
+                "unit" : "px",
+                "value" : 16.0
+              },
+              "right" : {
+                "unit" : "px",
+                "value" : 16.0
+              },
+              "top" : {
+                "unit" : "px",
+                "value" : 16.0
+              }
+            },
+            "lightning:verticalAlignment" : "middle"
+          },
+          "definition" : "lightning/column",
+          "id" : "ebbf17e2-d5e5-4d9e-a8ab-18b4bf85b19d",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "imageFitConfig" : {
+                "width" : {
+                  "unit" : "%",
+                  "value" : 15.0
+                }
+              },
+              "imageInfo" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : null,
+                  "ref" : "Icon_Products_Data_Analytics",
+                  "type" : "imageReference"
+                },
+                "url" : "https://info.greenstreet.com/hs-fs/hubfs/icn-products-data-analytics-1.png?width=74&height=74&upscale=true&name=icn-products-data-analytics-1.png"
+              },
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}"
+            },
+            "definition" : "lightning/image",
+            "id" : "a75fed29-6eeb-4432-8f47-0fcc76b48087",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "level" : 3.0,
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#04504f"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.heading.heading2}",
+              "text" : "Data &amp; Analytics"
+            },
+            "definition" : "lightning/heading",
+            "id" : "520f6f5d-de09-4cd5-b0dd-a08a60ca1644",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "text" : "Trusted data, powerful analytics, and expert insights across public and private markets."
+            },
+            "definition" : "lightning/paragraph",
+            "id" : "178ddd7f-65e1-4378-850e-1bfdce1e7144",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.buttonStyleGroup.tertiary.lightning:borderRadius}",
+              "lightning:borderWidth" : "{!$brand.buttonStyleGroup.tertiary.lightning:borderWidth}",
+              "lightning:buttonColorGroup" : {
+                "backgroundColor" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup.backgroundColor}",
+                "borderColor" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup.borderColor}",
+                "borderHoverColor" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup.borderHoverColor}",
+                "textColor" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup.textColor}"
+              },
+              "lightning:click" : {
+                "actions" : [ {
+                  "attributes" : {
+                    "openInNewTab" : true,
+                    "url" : "https://www.greenstreet.com/products/data-analytics/"
+                  },
+                  "definition" : "sfdc_cms__navigateToUrlAction",
+                  "generatedUrl" : "https://www.greenstreet.com/products/data-analytics/"
+                } ]
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 8.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 8.0
+                }
+              },
+              "lightning:typography" : "{!$brand.buttonStyleGroup.tertiary.lightning:typography}",
+              "sfdc_cms:styleGroup" : "{!$brand.buttonStyleGroup.tertiary}",
+              "text" : "Learn More →",
+              "width" : "auto"
+            },
+            "definition" : "lightning/actionButton",
+            "id" : "ccde0d42-a501-4107-8d37-9a428a5a2879",
+            "type" : "block"
+          } ]
+        }, {
+          "attributes" : {
+            "columnWidth" : 6.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "contain"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : {
+              "contrast" : "#162331",
+              "neutral" : "#0d4041",
+              "primaryAccent" : "#49b065",
+              "primaryAccentContrast" : "#ffffff",
+              "primaryAccentContrastDerived" : "#FFFFFF",
+              "primaryAccentDerived" : "#2d974f",
+              "root" : "#ffffff"
+            },
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.medium}",
+            "lightning:verticalAlignment" : "middle"
+          },
+          "definition" : "lightning/column",
+          "id" : "845bea27-bea9-48b8-b6eb-06b17476c02d",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "imageFitConfig" : {
+                "width" : {
+                  "unit" : "%",
+                  "value" : 15.0
+                }
+              },
+              "imageInfo" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : null,
+                  "ref" : "Icon_Products_Research",
+                  "type" : "imageReference"
+                },
+                "url" : "https://info.greenstreet.com/hs-fs/hubfs/icn-products-research-1.png?width=74&height=74&upscale=true&name=icn-products-research-1.png"
+              },
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}"
+            },
+            "definition" : "lightning/image",
+            "id" : "a1223902-9411-464a-81fb-77ceb578595a",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "level" : 3.0,
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#04504f"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.heading.heading2}",
+              "text" : "Research"
+            },
+            "definition" : "lightning/heading",
+            "id" : "432f2f51-cec6-4420-a8e2-3ea3388a7ee6",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "text" : "Independent, conviction-led insights that fuel smarter decisions for CRE professionals."
+            },
+            "definition" : "lightning/paragraph",
+            "id" : "32804278-6977-448b-b4eb-095731b2e00c",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.buttonStyleGroup.tertiary.lightning:borderRadius}",
+              "lightning:borderWidth" : "{!$brand.buttonStyleGroup.tertiary.lightning:borderWidth}",
+              "lightning:buttonColorGroup" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup}",
+              "lightning:click" : {
+                "actions" : [ {
+                  "attributes" : {
+                    "openInNewTab" : true,
+                    "url" : "https://www.greenstreet.com/products/research/"
+                  },
+                  "definition" : "sfdc_cms__navigateToUrlAction",
+                  "generatedUrl" : "https://www.greenstreet.com/products/research/"
+                } ]
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 8.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 8.0
+                }
+              },
+              "lightning:typography" : "{!$brand.buttonStyleGroup.tertiary.lightning:typography}",
+              "sfdc_cms:styleGroup" : "{!$brand.buttonStyleGroup.tertiary}",
+              "text" : "Learn More →",
+              "width" : "auto"
+            },
+            "definition" : "lightning/actionButton",
+            "id" : "e5b3665a-fd5f-47d7-99d2-d505d251409d",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:description" : "Two side-by-side feature/value cards with icons, supporting copy, and CTA links",
+    "sfdc_cms:title" : "Content Block: Feature Cards - Data & Research",
+    "sfdc_cms:urlName" : "content-block-feature---image-right",
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "content-block-feature---image-right"
+}

@@ -1,0 +1,126 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "Logo - Green Street formerly IJGlobal",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:backgroundImage" : {
+      "position" : "center center",
+      "repeat" : "no-repeat",
+      "size" : "cover"
+    },
+    "lightning:brandSource" : {
+      "defaultBrandOption" : "sfdcBrand"
+    },
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "98062134-d9df-4688-a1d3-2c0866a0e271",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#000000",
+            "neutral" : "#747474",
+            "primaryAccent" : "#0176d3",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#ffffff",
+            "primaryAccentDerived" : "#004ba1",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.none}",
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "aecd5a62-abc9-41d9-bdd8-ed9cc9b9abe7",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : {
+              "contrast" : "#000000",
+              "neutral" : "#747474",
+              "primaryAccent" : "#0176d3",
+              "primaryAccentContrast" : "#ffffff",
+              "primaryAccentContrastDerived" : "#ffffff",
+              "primaryAccentDerived" : "#004ba1",
+              "root" : "#ffffff"
+            },
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.medium}",
+            "lightning:verticalAlignment" : "top"
+          },
+          "definition" : "lightning/column",
+          "id" : "c13e3cd7-857f-41f2-b126-c5da81004e6f",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "imageFitConfig" : {
+                "width" : {
+                  "unit" : "%",
+                  "value" : 52.0
+                }
+              },
+              "imageInfo" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : "image/svg+xml",
+                  "ref" : "MCITRNITV2LVEXVFBLGJ2XEP4GQ4",
+                  "size" : 9503.0,
+                  "type" : "imageReference"
+                },
+                "url" : "/cms/media/MCITRNITV2LVEXVFBLGJ2XEP4GQ4?fileName=GS_Formerly+IJGlobal+Logo+%28Color%29.svg&fileHash=972aada62ab409ba7e84a976c1fe890d"
+              },
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:horizontalAlignment" : "left",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "linkUrlMergeField" : "https://eu.greenstreet.com/products/infrastructure"
+            },
+            "definition" : "lightning/image",
+            "id" : "9e09202a-9761-4dbd-9f55-e3c35a1cba54",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:description" : "Email Header content block with the Green Street Formerly IJ Global Logo",
+    "sfdc_cms:title" : "Logo - Green Street formerly IJGlobal",
+    "sfdc_cms:urlName" : "header-with-green-street-formerly-ij-global-logo",
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "header-with-green-street-formerly-ij-global-logo"
+}

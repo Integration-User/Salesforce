@@ -58,6 +58,10 @@
         <name>Account_Category__c</name>
     </fields>
     <fields>
+        <label><!-- Account Fit Raw --></label>
+        <name>Account_Fit_Raw__c</name>
+    </fields>
+    <fields>
         <label><!-- Account Groupings --></label>
         <name>Account_Groupings__c</name>
         <picklistValues>
@@ -86,6 +90,19 @@
     <fields>
         <label><!-- Prospect Notes --></label>
         <name>Account_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Score Fit Boosters --></label>
+        <name>Account_Score_Fit_Boosters__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Score Total --></label>
+        <name>Account_Score_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- The account&apos;s overall score, set automatically from the scoring model. Combined with the contact&apos;s score to determine routing and SLA. Do not edit manually. --></help>
+        <label><!-- Account Score --></label>
+        <name>Account_Score__c</name>
     </fields>
     <fields>
         <label><!-- Account Source --></label>
@@ -177,6 +194,15 @@
     <fields>
         <label><!-- Analyst Hours --></label>
         <name>Analyst_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ARR for the customer as of the most recently available period. This value is always in USD. --></help>
+        <label><!-- Annual Recurring Revenue --></label>
+        <name>Annual_Recurring_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Recurring Revenue last updated --></label>
+        <name>Annual_Recurring_Revenue_last_updated__c</name>
     </fields>
     <fields>
         <label><!-- Annual Revenue Range --></label>
@@ -377,6 +403,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- CRE Keyword Score --></label>
+        <name>CRE_Keyword_Score__c</name>
+    </fields>
+    <fields>
         <help><!-- Percent change in clicks over trailing three months relative to prior three months --></help>
         <label><!-- Change in Usage QoQ --></label>
         <name>Change_in_Usage_QoQ__c</name>
@@ -466,6 +496,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Clients In Hierarchy --></label>
+        <name>Clients_In_Hierarchy__c</name>
+    </fields>
+    <fields>
         <label><!-- College House Id --></label>
         <name>College_House_Id__c</name>
     </fields>
@@ -480,6 +514,10 @@
     <fields>
         <label><!-- Company Type --></label>
         <name>Company_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Score Rollup --></label>
+        <name>Contact_Score_Rollup__c</name>
     </fields>
     <fields>
         <label><!-- Cost Per Click --></label>
@@ -1578,6 +1616,7 @@
         <name>Currency_NS_Internal_Id__c</name>
     </fields>
     <fields>
+        <help><!-- As of 5/13/26 this data is being pulled in from Snowflake, our data warehouse, and is the most accurate data regarding current product usage --></help>
         <label><!-- Current Products(Text) --></label>
         <name>Current_Products_Text__c</name>
     </fields>
@@ -1677,6 +1716,10 @@
         <name>Data_Support__c</name>
     </fields>
     <fields>
+        <label><!-- Days Until Next Renewal --></label>
+        <name>Days_Until_Next_Renewal__c</name>
+    </fields>
+    <fields>
         <label><!-- Deactivate Account --></label>
         <name>Deactivate_Account__c</name>
     </fields>
@@ -1706,6 +1749,10 @@
         <name>Distant_Leads__c</name>
     </fields>
     <fields>
+        <label><!-- Domain (Cleaned) --></label>
+        <name>Domain_Cleaned__c</name>
+    </fields>
+    <fields>
         <label><!-- EU Named Account Owner --></label>
         <name>EU_Expansion_Owner__c</name>
         <relationshipLabel><!-- Accounts (EU Named Account Owner) --></relationshipLabel>
@@ -1714,6 +1761,10 @@
         <help><!-- Based on ZoomInfo Employee Count --></help>
         <label><!-- Employee Count Range --></label>
         <name>Employee_Count_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engaged Contacts Campaign 30d --></label>
+        <name>Engaged_Contacts_Campaign_30d__c</name>
     </fields>
     <fields>
         <label><!-- Entitlement Guidance Notes --></label>
@@ -2449,6 +2500,43 @@
         <name>Individual_Users__c</name>
     </fields>
     <fields>
+        <label><!-- Infra Keyword Score --></label>
+        <name>Infra_Keyword_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infra Named Account Owner --></label>
+        <name>Infra_Named_Account_Owner__c</name>
+        <relationshipLabel><!-- Accounts (Infra Named Account Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Infra Sectors Covered --></label>
+        <name>Infra_Sectors_Covered__c</name>
+        <picklistValues>
+            <masterLabel>Data Center</masterLabel>
+            <translation><!-- Data Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oil and Gas</masterLabel>
+            <translation><!-- Oil and Gas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewables</masterLabel>
+            <translation><!-- Renewables --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social and Defense</masterLabel>
+            <translation><!-- Social and Defense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecom</masterLabel>
+            <translation><!-- Telecom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transport</masterLabel>
+            <translation><!-- Transport --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Sector Interests --></label>
         <name>Interests__c</name>
         <picklistValues>
@@ -2577,6 +2665,10 @@
         <name>Is_Customer_Rep_Changed__c</name>
     </fields>
     <fields>
+        <label><!-- Keyword Score (cumulative) --></label>
+        <name>Keyword_Score_cumulative__c</name>
+    </fields>
+    <fields>
         <help><!-- MD&amp;Ds platform clicks for this account over the last 6 months --></help>
         <label><!-- L6M MD&amp;Ds Usage --></label>
         <name>L6M_MD_Ds_Usage__c</name>
@@ -2629,6 +2721,11 @@
     <fields>
         <label><!-- Last Upsell Source --></label>
         <name>Last_Upsell_Source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Latest Contract end date - i.e. furthest into the future from any open renewal on this Account --></help>
+        <label><!-- Latest Contract End Date --></label>
+        <name>Latest_Contract_End_Date__c</name>
     </fields>
     <fields>
         <label><!-- Lead Type --></label>
@@ -2756,6 +2853,10 @@
         <name>Lost_Client__c</name>
     </fields>
     <fields>
+        <label><!-- MCP agent/assistant used --></label>
+        <name>MCP_agent_assistant_used__c</name>
+    </fields>
+    <fields>
         <help><!-- Used to capture Mailing street information parts used for reporting. --></help>
         <label><!-- Mailing Street 1 --></label>
         <name>Mailing_Street_1__c</name>
@@ -2833,12 +2934,36 @@
         <name>News_Usage_L60D__c</name>
     </fields>
     <fields>
+        <label><!-- Next Renewal Date --></label>
+        <name>Next_Renewal_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Next Steps --></label>
         <name>Next_Steps_Account__c</name>
     </fields>
     <fields>
+        <label><!-- Number of Accounts in Hierarchy --></label>
+        <name>Number_of_Accounts_in_Hierarchy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Closed Advertising --></label>
+        <name>Number_of_Closed_Advertising__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Closed Event --></label>
+        <name>Number_of_Closed_Event__c</name>
+    </fields>
+    <fields>
         <label><!-- Number of Closed Lost Sales Opps --></label>
         <name>Number_of_Closed_Lost_Sales_Opps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Closed Won Event Opportunities --></label>
+        <name>Number_of_Closed_Won_Event_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Closed Won Opportunities --></label>
+        <name>Number_of_Closed_Won_Opportunities__c</name>
     </fields>
     <fields>
         <label><!-- Number of Closed Won Renewals --></label>
@@ -2849,8 +2974,20 @@
         <name>Number_of_Closed_Won_Sales_Opportunities__c</name>
     </fields>
     <fields>
+        <label><!-- Number of Open Advertising --></label>
+        <name>Number_of_Open_Advertising__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Open Event --></label>
+        <name>Number_of_Open_Event__c</name>
+    </fields>
+    <fields>
         <label><!-- Number of Open Opportunities --></label>
         <name>Number_of_Open_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Open Renewals --></label>
+        <name>Number_of_Open_Renewals__c</name>
     </fields>
     <fields>
         <label><!-- Number of Open Sales Opportunities --></label>
@@ -2903,9 +3040,767 @@
         <name>Owner_is_Active__c</name>
     </fields>
     <fields>
+        <help><!-- Always in USD --></help>
+        <label><!-- PB AUM (USD Millions) --></label>
+        <name>PB_AUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB All Entity Types --></label>
+        <name>PB_All_Entity_Types__c</name>
+        <picklistValues>
+            <masterLabel>Company</masterLabel>
+            <translation><!-- Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investor</masterLabel>
+            <translation><!-- Investor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limited Partner</masterLabel>
+            <translation><!-- Limited Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Provider</masterLabel>
+            <translation><!-- Service Provider --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PB Also Known As --></label>
+        <name>PB_Also_Known_As__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Billing City --></label>
+        <name>PB_BillingCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Billing Country --></label>
+        <name>PB_BillingCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Billing Postal Code --></label>
+        <name>PB_BillingPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Billing State --></label>
+        <name>PB_BillingState__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Business Status Date --></label>
+        <name>PB_BusinessStatusDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Business Status --></label>
+        <name>PB_BusinessStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Description --></label>
+        <name>PB_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Always in USD --></help>
+        <label><!-- PB Dry Powder (USD Millions) --></label>
+        <name>PB_DryPowder__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Employees --></label>
+        <name>PB_Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Entity Name --></label>
+        <name>PB_Entity_Name__c</name>
+    </fields>
+    <fields>
         <help><!-- Pitchbook ID --></help>
         <label><!-- PB ID --></label>
         <name>PB_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Investor Status --></label>
+        <name>PB_InvestorStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB LP Type --></label>
+        <name>PB_LP_Type__c</name>
+        <picklistValues>
+            <masterLabel>Banking Institution</masterLabel>
+            <translation><!-- Banking Institution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Pension</masterLabel>
+            <translation><!-- Corporate Pension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporation</masterLabel>
+            <translation><!-- Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Investment</masterLabel>
+            <translation><!-- Direct Investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discretionary Advisor</masterLabel>
+            <translation><!-- Discretionary Advisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economic Development Agency</masterLabel>
+            <translation><!-- Economic Development Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Endowment</masterLabel>
+            <translation><!-- Endowment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Office (Multi)</masterLabel>
+            <translation><!-- Family Office (Multi) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Office (Single)</masterLabel>
+            <translation><!-- Family Office (Single) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation</masterLabel>
+            <translation><!-- Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fund of Funds</masterLabel>
+            <translation><!-- Fund of Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government Agency</masterLabel>
+            <translation><!-- Government Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High-net-worth investor</masterLabel>
+            <translation><!-- High-net-worth investor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance Company</masterLabel>
+            <translation><!-- Insurance Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investment Advisor</masterLabel>
+            <translation><!-- Investment Advisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Money Management Firm</masterLabel>
+            <translation><!-- Money Management Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mutual Fund Company</masterLabel>
+            <translation><!-- Mutual Fund Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Limited Partner</masterLabel>
+            <translation><!-- Other Limited Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private Investment Fund</masterLabel>
+            <translation><!-- Private Investment Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Pension Fund</masterLabel>
+            <translation><!-- Public Pension Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Investment Company</masterLabel>
+            <translation><!-- Real Estate Investment Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary LP</masterLabel>
+            <translation><!-- Secondary LP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sovereign Wealth Fund</masterLabel>
+            <translation><!-- Sovereign Wealth Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union Pension Fund</masterLabel>
+            <translation><!-- Union Pension Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>University (Non-Endowment)</masterLabel>
+            <translation><!-- University (Non-Endowment) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wealth Management Firm</masterLabel>
+            <translation><!-- Wealth Management Firm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PB Data Last Updated --></label>
+        <name>PB_Last_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Other Investor Types --></label>
+        <name>PB_OtherInvestorTypes__c</name>
+        <picklistValues>
+            <masterLabel>Accelerator/Incubator</masterLabel>
+            <translation><!-- Accelerator/Incubator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angel (individual)</masterLabel>
+            <translation><!-- Angel (individual) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angel Group</masterLabel>
+            <translation><!-- Angel Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Manager</masterLabel>
+            <translation><!-- Asset Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Development Company</masterLabel>
+            <translation><!-- Business Development Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Development</masterLabel>
+            <translation><!-- Corporate Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Venture Capital</masterLabel>
+            <translation><!-- Corporate Venture Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporation</masterLabel>
+            <translation><!-- Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Office</masterLabel>
+            <translation><!-- Family Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fund of Funds</masterLabel>
+            <translation><!-- Fund of Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fundless Sponsor</masterLabel>
+            <translation><!-- Fundless Sponsor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth/Expansion</masterLabel>
+            <translation><!-- Growth/Expansion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hedge Fund</masterLabel>
+            <translation><!-- Hedge Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holding Company</masterLabel>
+            <translation><!-- Holding Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Impact Investing</masterLabel>
+            <translation><!-- Impact Investing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure</masterLabel>
+            <translation><!-- Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investment Bank</masterLabel>
+            <translation><!-- Investment Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leasing</masterLabel>
+            <translation><!-- Leasing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lender/Debt Provider</masterLabel>
+            <translation><!-- Lender/Debt Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limited Partner</masterLabel>
+            <translation><!-- Limited Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merchant Banking Firm</masterLabel>
+            <translation><!-- Merchant Banking Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mezzanine</masterLabel>
+            <translation><!-- Mezzanine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mutual Fund</masterLabel>
+            <translation><!-- Mutual Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not-For-Profit Venture Capital</masterLabel>
+            <translation><!-- Not-For-Profit Venture Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Private Equity</masterLabel>
+            <translation><!-- Other Private Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE-Backed Company</masterLabel>
+            <translation><!-- PE-Backed Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE/Buyout</masterLabel>
+            <translation><!-- PE/Buyout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate</masterLabel>
+            <translation><!-- Real Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBIC</masterLabel>
+            <translation><!-- SBIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary Buyer</masterLabel>
+            <translation><!-- Secondary Buyer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sovereign Wealth Fund</masterLabel>
+            <translation><!-- Sovereign Wealth Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Purpose Acquisition Company</masterLabel>
+            <translation><!-- Special Purpose Acquisition Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>University</masterLabel>
+            <translation><!-- University --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VC-Backed Company</masterLabel>
+            <translation><!-- VC-Backed Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venture Capital</masterLabel>
+            <translation><!-- Venture Capital --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PB Other Service Provider Types --></label>
+        <name>PB_OtherServiceProviderTypes__c</name>
+        <picklistValues>
+            <masterLabel>Accounting/Auditor</masterLabel>
+            <translation><!-- Accounting/Auditor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advertising Agency</masterLabel>
+            <translation><!-- Advertising Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Development Company</masterLabel>
+            <translation><!-- Business Development Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Intermediary</masterLabel>
+            <translation><!-- Business Intermediary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Bank</masterLabel>
+            <translation><!-- Commercial Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financing Advisory</masterLabel>
+            <translation><!-- Financing Advisory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fund Administrator</masterLabel>
+            <translation><!-- Fund Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fund Custodian</masterLabel>
+            <translation><!-- Fund Custodian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funding/Crowdfunding Platform</masterLabel>
+            <translation><!-- Funding/Crowdfunding Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance Firm</masterLabel>
+            <translation><!-- Insurance Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investment Bank</masterLabel>
+            <translation><!-- Investment Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LP Consultants</masterLabel>
+            <translation><!-- LP Consultants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Law Firm</masterLabel>
+            <translation><!-- Law Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lender</masterLabel>
+            <translation><!-- Lender --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Consultants</masterLabel>
+            <translation><!-- Management Consultants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merchant Bank</masterLabel>
+            <translation><!-- Merchant Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mezzanine</masterLabel>
+            <translation><!-- Mezzanine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Consultant Type</masterLabel>
+            <translation><!-- Other Consultant Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Service Provider Type</masterLabel>
+            <translation><!-- Other Service Provider Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Vendor Type</masterLabel>
+            <translation><!-- Other Vendor Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR Firm</masterLabel>
+            <translation><!-- PR Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Placement Agent (Financing)</masterLabel>
+            <translation><!-- Placement Agent (Financing) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Placement Agent (Fundraising)</masterLabel>
+            <translation><!-- Placement Agent (Fundraising) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prime Broker</masterLabel>
+            <translation><!-- Prime Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recruiting Firm</masterLabel>
+            <translation><!-- Recruiting Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software Provider</masterLabel>
+            <translation><!-- Software Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valuation Firm</masterLabel>
+            <translation><!-- Valuation Firm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PB Primary Entity Type --></label>
+        <name>PB_Primary_Entity_Type__c</name>
+        <picklistValues>
+            <masterLabel>Company</masterLabel>
+            <translation><!-- Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investor</masterLabel>
+            <translation><!-- Investor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limited Partner</masterLabel>
+            <translation><!-- Limited Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Provider</masterLabel>
+            <translation><!-- Service Provider --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PB Industry --></label>
+        <name>PB_Primary_Industry_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Primary Industry Group --></label>
+        <name>PB_Primary_Industry_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Investor Type --></label>
+        <name>PB_Primary_Investor_Type__c</name>
+        <picklistValues>
+            <masterLabel>Accelerator/Incubator</masterLabel>
+            <translation><!-- Accelerator/Incubator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angel (individual)</masterLabel>
+            <translation><!-- Angel (individual) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angel Group</masterLabel>
+            <translation><!-- Angel Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Manager</masterLabel>
+            <translation><!-- Asset Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Development Company</masterLabel>
+            <translation><!-- Business Development Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Development</masterLabel>
+            <translation><!-- Corporate Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Venture Capital</masterLabel>
+            <translation><!-- Corporate Venture Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporation</masterLabel>
+            <translation><!-- Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Office</masterLabel>
+            <translation><!-- Family Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fund of Funds</masterLabel>
+            <translation><!-- Fund of Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fundless Sponsor</masterLabel>
+            <translation><!-- Fundless Sponsor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth/Expansion</masterLabel>
+            <translation><!-- Growth/Expansion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hedge Fund</masterLabel>
+            <translation><!-- Hedge Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holding Company</masterLabel>
+            <translation><!-- Holding Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Impact Investing</masterLabel>
+            <translation><!-- Impact Investing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure</masterLabel>
+            <translation><!-- Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investment Bank</masterLabel>
+            <translation><!-- Investment Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leasing</masterLabel>
+            <translation><!-- Leasing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lender/Debt Provider</masterLabel>
+            <translation><!-- Lender/Debt Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limited Partner</masterLabel>
+            <translation><!-- Limited Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merchant Banking Firm</masterLabel>
+            <translation><!-- Merchant Banking Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mezzanine</masterLabel>
+            <translation><!-- Mezzanine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mutual Fund</masterLabel>
+            <translation><!-- Mutual Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not-For-Profit Venture Capital</masterLabel>
+            <translation><!-- Not-For-Profit Venture Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Private Equity</masterLabel>
+            <translation><!-- Other Private Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE-Backed Company</masterLabel>
+            <translation><!-- PE-Backed Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE/Buyout</masterLabel>
+            <translation><!-- PE/Buyout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate</masterLabel>
+            <translation><!-- Real Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBIC</masterLabel>
+            <translation><!-- SBIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary Buyer</masterLabel>
+            <translation><!-- Secondary Buyer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sovereign Wealth Fund</masterLabel>
+            <translation><!-- Sovereign Wealth Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Purpose Acquisition Company</masterLabel>
+            <translation><!-- Special Purpose Acquisition Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>University</masterLabel>
+            <translation><!-- University --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VC-Backed Company</masterLabel>
+            <translation><!-- VC-Backed Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venture Capital</masterLabel>
+            <translation><!-- Venture Capital --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PB Service Provider Type --></label>
+        <name>PB_Primary_SP_Type__c</name>
+        <picklistValues>
+            <masterLabel>Accounting/Auditor</masterLabel>
+            <translation><!-- Accounting/Auditor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advertising Agency</masterLabel>
+            <translation><!-- Advertising Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Development Company</masterLabel>
+            <translation><!-- Business Development Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Intermediary</masterLabel>
+            <translation><!-- Business Intermediary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Bank</masterLabel>
+            <translation><!-- Commercial Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financing Advisory</masterLabel>
+            <translation><!-- Financing Advisory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fund Administrator</masterLabel>
+            <translation><!-- Fund Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fund Custodian</masterLabel>
+            <translation><!-- Fund Custodian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funding/Crowdfunding Platform</masterLabel>
+            <translation><!-- Funding/Crowdfunding Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance Firm</masterLabel>
+            <translation><!-- Insurance Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investment Bank</masterLabel>
+            <translation><!-- Investment Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LP Consultants</masterLabel>
+            <translation><!-- LP Consultants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Law Firm</masterLabel>
+            <translation><!-- Law Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lender</masterLabel>
+            <translation><!-- Lender --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Consultants</masterLabel>
+            <translation><!-- Management Consultants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merchant Bank</masterLabel>
+            <translation><!-- Merchant Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mezzanine</masterLabel>
+            <translation><!-- Mezzanine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Consultant Type</masterLabel>
+            <translation><!-- Other Consultant Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Service Provider Type</masterLabel>
+            <translation><!-- Other Service Provider Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Vendor Type</masterLabel>
+            <translation><!-- Other Vendor Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR Firm</masterLabel>
+            <translation><!-- PR Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Placement Agent (Financing)</masterLabel>
+            <translation><!-- Placement Agent (Financing) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Placement Agent (Fundraising)</masterLabel>
+            <translation><!-- Placement Agent (Fundraising) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prime Broker</masterLabel>
+            <translation><!-- Prime Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recruiting Firm</masterLabel>
+            <translation><!-- Recruiting Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software Provider</masterLabel>
+            <translation><!-- Software Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valuation Firm</masterLabel>
+            <translation><!-- Valuation Firm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PB Top-Level Parent PB ID --></label>
+        <name>PB_Top_Level_Parent_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Top-Level Parent Name --></label>
+        <name>PB_Top_Level_Parent__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Verticals --></label>
+        <name>PB_Verticals__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Website --></label>
+        <name>PB_Website__c</name>
     </fields>
     <fields>
         <label><!-- PQ GP Asset Class --></label>
@@ -3799,11 +4694,47 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Products(All Time) --></label>
+        <name>Products_All_Time__c</name>
+    </fields>
+    <fields>
         <label><!-- Products Include --></label>
         <name>Products_Include__c</name>
         <picklistValues>
+            <masterLabel>Advertising Only</masterLabel>
+            <translation><!-- Advertising Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Only</masterLabel>
+            <translation><!-- Data Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News &amp; Advertising</masterLabel>
+            <translation><!-- News &amp; Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News &amp; Data</masterLabel>
+            <translation><!-- News &amp; Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News &amp; Research</masterLabel>
+            <translation><!-- News &amp; Research --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>News Only</masterLabel>
             <translation><!-- News Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News, Research, Data, and Advertising</masterLabel>
+            <translation><!-- News, Research, Data, and Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News, Research, and Data</masterLabel>
+            <translation><!-- News, Research, and Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research &amp; Data</masterLabel>
+            <translation><!-- Research &amp; Data --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Research &amp; News</masterLabel>
@@ -3997,6 +4928,10 @@
         <name>React_id__c</name>
     </fields>
     <fields>
+        <label><!-- Reason for Account Creation --></label>
+        <name>Reason_for_Account_Creation__c</name>
+    </fields>
+    <fields>
         <label><!-- Region --></label>
         <name>Region_Global_Value__c</name>
     </fields>
@@ -4091,7 +5026,7 @@
         <relationshipLabel><!-- Accounts --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- RevOps ICP Score (cumulative) --></label>
+        <label><!-- Cap Markets ICP Score (cumulative) --></label>
         <name>RevOps_ICP_Score_cumulative__c</name>
     </fields>
     <fields>
@@ -4145,6 +5080,127 @@
     <fields>
         <label><!-- Secondary Name --></label>
         <name>Secondary_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- What sector(s) does the client invest in / cover? --></help>
+        <label><!-- Sectors Covered --></label>
+        <name>Sectors_Covered__c</name>
+        <picklistValues>
+            <masterLabel>Apartment</masterLabel>
+            <translation><!-- Apartment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cold Storage</masterLabel>
+            <translation><!-- Cold Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Center</masterLabel>
+            <translation><!-- Data Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debt</masterLabel>
+            <translation><!-- Debt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaming</masterLabel>
+            <translation><!-- Gaming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ground Lease</masterLabel>
+            <translation><!-- Ground Lease --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Care</masterLabel>
+            <translation><!-- Health Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial</masterLabel>
+            <translation><!-- Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Land</masterLabel>
+            <translation><!-- Land --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Science</masterLabel>
+            <translation><!-- Life Science --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lodging</masterLabel>
+            <translation><!-- Lodging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mall</masterLabel>
+            <translation><!-- Mall --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufactured Housing</masterLabel>
+            <translation><!-- Manufactured Housing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Office Building</masterLabel>
+            <translation><!-- Medical Office Building --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Reit</masterLabel>
+            <translation><!-- Mortgage Reit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Sector</masterLabel>
+            <translation><!-- Multi-Sector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net Lease</masterLabel>
+            <translation><!-- Net Lease --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niche</masterLabel>
+            <translation><!-- Niche --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office</masterLabel>
+            <translation><!-- Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Assets</masterLabel>
+            <translation><!-- Real Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential</masterLabel>
+            <translation><!-- Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self-Storage</masterLabel>
+            <translation><!-- Self-Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Senior Housing</masterLabel>
+            <translation><!-- Senior Housing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Family Rentals</masterLabel>
+            <translation><!-- Single Family Rentals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skilled Nursing Facility</masterLabel>
+            <translation><!-- Skilled Nursing Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strip Center</masterLabel>
+            <translation><!-- Strip Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student Housing</masterLabel>
+            <translation><!-- Student Housing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Towers</masterLabel>
+            <translation><!-- Towers --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Shipping Address Score --></label>
@@ -4398,12 +5454,28 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Test Account --></label>
+        <name>Test_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tools queried L6M --></label>
+        <name>Tools_queried_L6M__c</name>
+    </fields>
+    <fields>
         <label><!-- Top 40 --></label>
         <name>Top_40__c</name>
     </fields>
     <fields>
         <label><!-- Total ARR --></label>
         <name>Total_ARR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total ARR in Client Hierarchy --></label>
+        <name>Total_ARR_in_Client_Hierarchy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total MCP events L6M --></label>
+        <name>Total_MCP_events_L6M__c</name>
     </fields>
     <fields>
         <label><!-- Total Products --></label>
@@ -4439,6 +5511,10 @@
         <label><!-- US Named Account Owner --></label>
         <name>US_Expansion_Owner__c</name>
         <relationshipLabel><!-- Accounts (US Named Account Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unique MCP users L6M --></label>
+        <name>Unique_MCP_users_L6M__c</name>
     </fields>
     <fields>
         <label><!-- Upsell --></label>
