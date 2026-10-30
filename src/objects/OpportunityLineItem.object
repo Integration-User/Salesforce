@@ -475,6 +475,9 @@ TEXT(YEAR(Start_Date__c))</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>LastSyncTime</fullName>
+    </fields>
+    <fields>
         <fullName>Licenses__c</fullName>
         <defaultValue>1</defaultValue>
         <externalId>false</externalId>
@@ -744,12 +747,41 @@ IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
                 </value>
             </valueSetDefinition>
             <valueSettings>
+                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
+                <controllingFieldValue>Award Sponsorship</controllingFieldValue>
+                <valueName>Sponsorship Add-on</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
+                <valueName>Exhibitor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
+                <valueName>Gold</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
+                <valueName>Platinum</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
+                <valueName>Silver</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
+                <valueName>Events</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Locatus: Footfall Data</controllingFieldValue>
                 <valueName>Custom report</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Locatus: Footfall Data</controllingFieldValue>
                 <valueName>Standard report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events Registration</controllingFieldValue>
+                <valueName>Registration</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Locatus: Other</controllingFieldValue>
@@ -810,35 +842,6 @@ IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
             <valueSettings>
                 <controllingFieldValue>Award Sponsorship</controllingFieldValue>
                 <valueName>Drinks Reception Partner</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Award Sponsorship</controllingFieldValue>
-                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
-                <valueName>Sponsorship Add-on</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
-                <valueName>Exhibitor</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
-                <valueName>Gold</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
-                <valueName>Platinum</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
-                <valueName>Silver</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Event Sponsorship</controllingFieldValue>
-                <valueName>Events</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Events Registration</controllingFieldValue>
-                <valueName>Registration</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -1005,6 +1008,36 @@ ARR_Formula__c ))))))</formula>
                     <default>false</default>
                     <label>Events Registration</label>
                 </value>
+                <value>
+                    <fullName>IJ Global: Award Add-on</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>IJ Global: Award Add-on</label>
+                </value>
+                <value>
+                    <fullName>IJ Global: Award Sponsorship</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>IJ Global: Award Sponsorship</label>
+                </value>
+                <value>
+                    <fullName>IJ Global: Award Table</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>IJ Global: Award Table</label>
+                </value>
+                <value>
+                    <fullName>IJ Global: Event Sponsorship</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>IJ Global: Event Sponsorship</label>
+                </value>
+                <value>
+                    <fullName>IJ Global: Events Registration</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>IJ Global: Events Registration</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1085,6 +1118,11 @@ ARR_Formula__c ))))))</formula>
                     <fullName>N/A</fullName>
                     <default>false</default>
                     <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>Belli-Wrap</fullName>
+                    <default>false</default>
+                    <label>Belli-Wrap</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1215,7 +1253,7 @@ IF start date is blank, allow edits. if not is blank prevent edits</description>
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Megan Kerbs&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;,
- $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Paul Eager&quot;,
+    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Paul Eager&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Joyce Blanden&quot;
 )</errorConditionFormula>
         <errorDisplayField>Start_Date__c</errorDisplayField>
@@ -1298,7 +1336,7 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     </validationRules>
     <validationRules>
         <fullName>Prevent_OLI_Update_Closed_Opp</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Prevent OLI updates for Closed opportunity.</description>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
@@ -1321,7 +1359,7 @@ Opportunity.Record_Type_for_Query__c = &quot;Sales Opportunity - Closed&quot;)
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Megan Kerbs&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Michelle Fernandez&quot;,
-$User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Paul Eager&quot;,
+    $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Paul Eager&quot;,
     $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &lt;&gt; &quot;Joyce Blanden&quot;
 )</errorConditionFormula>
         <errorDisplayField>Starting_Price__c</errorDisplayField>

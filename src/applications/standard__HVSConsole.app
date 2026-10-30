@@ -25,6 +25,7 @@
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
     <tabs>standard-HvsWaveLightning</tabs>
+    <tabs>standard-SalesCoachHome</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>HVSConsole_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -69,6 +70,9 @@
         </mappings>
         <mappings>
             <tab>standard-Opportunity</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-SalesCoachHome</tab>
         </mappings>
         <mappings>
             <tab>standard-Task</tab>

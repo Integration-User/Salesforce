@@ -72,6 +72,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>ConnectionType</fullName>
         <trackHistory>false</trackHistory>
@@ -120,46 +121,6 @@
         <fullName>TargetType</fullName>
         <trackHistory>false</trackHistory>
     </fields>
-    <listViews>
-        <fullName>All_ActivationTargets</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Activation Targets</label>
-    </listViews>
-    <listViews>
-        <fullName>My_ActivationTargets</fullName>
-        <filterScope>Mine</filterScope>
-        <label>My Activation Targets</label>
-    </listViews>
-    <listViews>
-        <fullName>My_MCIS_ActivationTargets</fullName>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>ConnectionType</field>
-            <operation>equals</operation>
-            <value>SFIS</value>
-        </filters>
-        <label>Marketing Cloud Personalization</label>
-    </listViews>
-    <listViews>
-        <fullName>My_S3_ActivationTargets</fullName>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>ConnectionType</field>
-            <operation>equals</operation>
-            <value>S3</value>
-        </filters>
-        <label>S3</label>
-    </listViews>
-    <listViews>
-        <fullName>My_SFMC_ActivationTargets</fullName>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>ConnectionType</field>
-            <operation>equals</operation>
-            <value>SFMC</value>
-        </filters>
-        <label>Marketing Cloud</label>
-    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>PlatformName</customTabListAdditionalFields>
         <customTabListAdditionalFields>DataSpace</customTabListAdditionalFields>

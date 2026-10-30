@@ -331,6 +331,7 @@
     </compactLayouts>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
+    <externalSharingModel>ReadWriteTransfer</externalSharingModel>
     <fields>
         <fullName>AM_Referrer__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -15752,7 +15753,7 @@ ISPICKVAL( Status , &quot;Sales Qualified&quot;))
     </validationRules>
     <validationRules>
         <fullName>Mandatory_Opportunity_Creation</fullName>
-        <active>false</active>
+        <active>true</active>
         <description>Blocks leads from being converted without creating or associating to an opportunity</description>
         <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 AND (

@@ -1,0 +1,90 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "GS Global Footer",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:brandSource" : {
+      "defaultBrandOption" : "sfdcBrand"
+    },
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "29a699b1-3116-476c-ade5-581172d6d540",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : "{!$brand.colorScheme}",
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.xSmall}",
+          "stackOnMobile" : true,
+          "lightning:backgroundImage" : {
+            "repeat" : "no-repeat",
+            "position" : "center center",
+            "size" : "cover"
+          },
+          "reverseOrderOnMobile" : false
+        },
+        "definition" : "lightning/section",
+        "id" : "8cf3dbaa-b0cf-4e6e-a0a6-b08aa784f422",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.xSmall}",
+            "lightning:verticalAlignment" : "top",
+            "lightning:backgroundImage" : {
+              "repeat" : "no-repeat",
+              "position" : "center center",
+              "size" : "cover"
+            }
+          },
+          "definition" : "lightning/column",
+          "id" : "5b5b4793-4b8c-4deb-981c-0f6a9275e685",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "rawHtml" : "<div style=\"width:100%; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif;\">\n\n  <div style=\"background-color:#6fa650; color:#ffffff; padding:28px 34px;\">\n\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width:100%; border-collapse:collapse; color:#ffffff;\"><tbody><tr><td valign=\"top\" width=\"40%\" style=\"width:40%; font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:1.9; color:#ffffff;\">\n\n            <a href=\"https://www.greenstreet.com/disclosures/\" target=\"_blank\" style=\"color:#ffffff; text-decoration:underline;\" rel=\"noopener noreferrer noopener noreferrer\">\n              Modern Slavery Policy\n            </a>\n            <br />\n\n            <a href=\"https://www.greenstreet.com/disclosures/\" target=\"_blank\" style=\"color:#ffffff; text-decoration:underline;\" rel=\"noopener noreferrer noopener noreferrer\">\n              Terms of Use\n            </a>\n            <br />\n\n            <a href=\"https://www.greenstreet.com/disclosures/\" target=\"_blank\" style=\"color:#ffffff; text-decoration:underline;\" rel=\"noopener noreferrer noopener noreferrer\">\n              Disclosures\n            </a>,\n            and\n            <a href=\"https://3821121.fs1.hubspotusercontent-na1.net/hubfs/3821121/Green%20Street%20ESG%20Disclosure.pdf\" target=\"_blank\" style=\"color:#ffffff; text-decoration:underline;\" rel=\"noopener noreferrer noopener noreferrer\">\n              ESG Disclosure\n            </a>\n\n          </td><td valign=\"middle\" align=\"center\" width=\"30%\" style=\"width:30%; padding:0 20px; text-align:center;\">\n\n            <a href=\"https://www.greenstreet.com/\" target=\"_blank\" style=\"display:inline-block; min-width:190px; padding:13px 24px; border:1px solid #ffffff; border-radius:4px; color:#ffffff; font-family:Arial, Helvetica, sans-serif; font-size:17px; font-weight:bold; line-height:1.2; text-align:center; text-decoration:none;\" rel=\"noopener noreferrer noopener noreferrer\">\n              View Site Map ▼\n            </a>\n\n          </td><td valign=\"top\" align=\"right\" width=\"30%\" style=\"width:30%; font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:1.7; color:#ffffff; text-align:right;\">\n\n            © 2026 Green Street<br />\n            Advisors, LLC\n\n          </td></tr></tbody></table>\n\n  </div>\n\n  <div style=\"background-color:#33373d; color:#ffffff; padding:42px 36px 34px; font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:1.65;\">\n\n    <p style=\"margin:0 0 22px; color:#ffffff;\">\n      Green Street Advisors, LLC is a U.S. limited liability company doing business as Green Street.\n      The US Advisory business unit at Green Street is a state registered investment adviser and only\n      offers US Advisory services through our California location. While Green Street offers some\n      regulated products and services, global Research, Data and Analytics products along with\n      Green Street’s global News publications are not provided as an investment advisor nor in the\n      capacity of a fiduciary.\n    </p>\n\n    <p style=\"margin:0 0 22px; color:#ffffff;\">\n      We do not SELL or SHARE consumers' information per the California Consumer Privacy Act (CCPA),\n      the California Privacy Rights Act (CPRA), or the General Data Protection Regulation (GDPR),\n      but may collect personal information from you for specified business purposes. For more\n      information regarding your data privacy and how we process your personal information, please\n      read our\n      <a href=\"https://www.greenstreet.com/about/privacy-policy/\" target=\"_blank\" style=\"color:#ffffff; text-decoration:underline;\" rel=\"noopener noreferrer noopener noreferrer\">\n        Global Privacy Policy\n      </a>\n      and\n      <a href=\"https://www.greenstreet.com/disclosures/\" target=\"_blank\" style=\"color:#ffffff; text-decoration:underline;\" rel=\"noopener noreferrer noopener noreferrer\">\n        Disclosures\n      </a>.\n    </p>\n\n    <p style=\"margin:0 0 22px; color:#ffffff;\">\n      Green Street processes the personal data of individuals in the European Union and European\n      Economic Area and appoints our Locatus B.V. Netherlands office as our Data Protection\n      Representative for the purposes of GDPR. If you would like to raise a question or exercise\n      your rights in respect to your personal data, please refer to Green Street’s Privacy Policy\n      for instructions.\n    </p>\n\n    <p style=\"margin:0 0 22px; color:#ffffff;\">\n      All verified transactions in the Sales Comp database have been comprehensively reviewed by a\n      trained Data Associate who consults and vets all available sources to construct an accurate\n      record of each sale. The Green Street Forecasting tool is an estimation of future events based\n      on market trends in historical data that have proved to provide actionable insights during past\n      market cycles. Green Street makes no representations or warranties as to any future performance\n      of such metrics under any market cycles.\n    </p>\n\n    <p style=\"margin:0 0 24px; color:#ffffff;\">\n      <a href=\"https://www.greenstreet.com/what-we-do/green-street-difference/\" target=\"_blank\" style=\"color:#ffffff; text-decoration:underline; font-weight:bold;\" rel=\"noopener noreferrer noopener noreferrer\">\n        More about Green Street Advisors Distinguished Results\n      </a>\n    </p>\n\n    <hr style=\"border:0; border-top:1px solid #666666; margin:24px 0;\" />\n\n    <p style=\"margin:0; text-align:center; font-size:15px; line-height:24px;\">\n\n      <a href=\"https://www.greenstreet.com/email-preferences/#email-alert-block\" target=\"_blank\" style=\"color:#ffffff; text-decoration:underline;\" rel=\"noopener noreferrer noopener noreferrer\">\n        Unsubscribe\n      </a>\n\n    </p>\n\n  </div>\n\n</div>"
+            },
+            "definition" : "lightning/html",
+            "id" : "037eb599-7e97-461e-8e0c-1329bdceb2a7",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:title" : "GS Global Footer",
+    "lightning:expressions" : [ ],
+    "lightning:backgroundImage" : {
+      "repeat" : "no-repeat",
+      "position" : "center center",
+      "size" : "cover"
+    },
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "gs-global-footer"
+}

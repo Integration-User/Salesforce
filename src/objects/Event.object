@@ -228,7 +228,17 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Location</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>MeetingUrl</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
     </fields>
@@ -272,96 +282,6 @@
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
-    <listViews>
-        <fullName>MyRecentEvents</fullName>
-        <columns>START_DATE_TIME</columns>
-        <columns>END_DATE_TIME</columns>
-        <columns>SUBJECT</columns>
-        <columns>WHO_NAME</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>ALL_DAY</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>DUE_DATE</field>
-            <operation>equals</operation>
-            <value>LAST_N_DAYS:60</value>
-        </filters>
-        <label>My Recent Events</label>
-    </listViews>
-    <listViews>
-        <fullName>MyTeamsRecentEvents</fullName>
-        <columns>START_DATE_TIME</columns>
-        <columns>END_DATE_TIME</columns>
-        <columns>SUBJECT</columns>
-        <columns>WHO_NAME</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>ALL_DAY</columns>
-        <filterScope>Team</filterScope>
-        <filters>
-            <field>DUE_DATE</field>
-            <operation>equals</operation>
-            <value>LAST_N_DAYS:30</value>
-        </filters>
-        <label>My Team&apos;s Recent Events</label>
-    </listViews>
-    <listViews>
-        <fullName>MyTeamsUpcomingEvents</fullName>
-        <columns>START_DATE_TIME</columns>
-        <columns>END_DATE_TIME</columns>
-        <columns>SUBJECT</columns>
-        <columns>WHO_NAME</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>ALL_DAY</columns>
-        <filterScope>Team</filterScope>
-        <filters>
-            <field>DUE_DATE</field>
-            <operation>equals</operation>
-            <value>TODAY,NEXT_N_DAYS:30</value>
-        </filters>
-        <label>My Team&apos;s Upcoming Events</label>
-    </listViews>
-    <listViews>
-        <fullName>MyUpcomingEvents</fullName>
-        <columns>START_DATE_TIME</columns>
-        <columns>END_DATE_TIME</columns>
-        <columns>SUBJECT</columns>
-        <columns>WHO_NAME</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>ALL_DAY</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>DUE_DATE</field>
-            <operation>equals</operation>
-            <value>TODAY,NEXT_N_DAYS:60</value>
-        </filters>
-        <label>My Upcoming Events</label>
-    </listViews>
-    <listViews>
-        <fullName>TodaysAgenda</fullName>
-        <columns>START_DATE_TIME</columns>
-        <columns>END_DATE_TIME</columns>
-        <columns>SUBJECT</columns>
-        <columns>WHO_NAME</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>ALL_DAY</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>DUE_DATE</field>
-            <operation>lessOrEqual</operation>
-            <value>TODAY</value>
-        </filters>
-        <filters>
-            <field>END_DATE</field>
-            <operation>greaterOrEqual</operation>
-            <value>TODAY</value>
-        </filters>
-        <label>Today&apos;s Agenda</label>
-    </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
@@ -1046,6 +966,14 @@
         <picklistValues>
             <picklist>Products_Discussed__c</picklist>
             <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AI Research Summaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -1055,6 +983,10 @@
             </values>
             <values>
                 <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1087,6 +1019,18 @@
             </values>
             <values>
                 <fullName>Australia Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1302,6 +1246,14 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Excel Add-In</fullName>
                 <default>false</default>
             </values>
@@ -1347,26 +1299,6 @@
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Award Add-on</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Award Sponsorship</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Award Table</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Event Sponsorship</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1650,6 +1582,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>StorTrack Explorer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Student Market Reports</fullName>
                 <default>false</default>
             </values>
@@ -1854,7 +1790,7 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts />
+    <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>Fields_Required_Status_Completed</fullName>

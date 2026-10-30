@@ -508,6 +508,18 @@
         <protected>false</protected>
         <useDeadLetterQueue>false</useDeadLetterQueue>
     </outboundMessages>
+    <outboundMessages>
+        <fullName>asknicely__CaseClosedOutboundV2</fullName>
+        <apiVersion>65.0</apiVersion>
+        <description>case closed</description>
+        <endpointUrl>https://salesforce.asknice.ly/salesforce/caseclosed</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>crmintegration@greenstreet.com</integrationUser>
+        <name>CaseClosedOutboundV2</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
     <rules>
         <fullName>Case Closed Notification</fullName>
         <actions>
@@ -857,7 +869,7 @@
     <rules>
         <fullName>asknicely__AskNicelyCaseClosedWebhook</fullName>
         <actions>
-            <name>asknicely__CaseClosedOutbound</name>
+            <name>asknicely__CaseClosedOutboundV2</name>
             <type>OutboundMessage</type>
         </actions>
         <active>false</active>
