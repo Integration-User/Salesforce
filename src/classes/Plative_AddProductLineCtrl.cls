@@ -35,7 +35,7 @@ public class Plative_AddProductLineCtrl {
         List<Product2> productList = [Select Id,Name,Description from Product2 where IsActive=true AND Product_Line__c=true];
         return productList;
     }
-    
+
     //Method to get Product Line records related to Account Id
     @AuraEnabled
     public static List<Account_Product_Line__c> getProductLines(String recordId){
@@ -55,7 +55,7 @@ public class Plative_AddProductLineCtrl {
         if(!Test.isRunningTest()) { sp = Database.setSavepoint(); }
         List<Account_Product_Line__c> productLinesToUpsert = new List<Account_Product_Line__c>();
         List<Account_Product_Line__c> productLinesToDelete = new List<Account_Product_Line__c>();
-        
+
         //Get existing Product Lines
         List<Account_Product_Line__c> existingProductLines = [Select Id,Account__c,Product__c,Product__r.Name,Start_Date__c,End_Date__c 
                                                               from Account_Product_Line__c
@@ -130,5 +130,14 @@ public class Plative_AddProductLineCtrl {
         }
         return response;
     }
-    
+
+    private static Boolean hasValidTrialOpportunity(Id accountId) {
+        return [SELECT Id FROM Opportunity
+                WHERE AccountId = :accountId
+                AND Trial_Start_Date__c != NULL
+                AND (Trial_End_Date__c > :Date.today() OR Trial_Extension_Date__c > :Date.today())
+                AND Trial_Type__c != NULL
+                LIMIT 1].size() > 0;
+    }
+    // END SF-2225 : GSN Trial for SDR
 }
