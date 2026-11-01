@@ -1,7 +1,8 @@
 ({
     doInit: function(component, event, helper) {
         helper.setColumns(component, event, helper);
-        helper.getProductsH(component, event, helper);
+        //helper.getProductsH(component, event, helper);
+        helper.getCurrentUserDepartmentH(component, event, helper);
         helper.getAccountDetailH(component, event, helper);
     },
 
@@ -23,7 +24,8 @@
             var newProductLine = {
                 'Account__c': recordId,
                 'Product__c': selectedProducts[i].Id,
-                'productName': selectedProducts[i].Name
+                'productName': selectedProducts[i].Name,
+                'Trial__c': component.get('v.isSalesDevelopmentUser')
             };
             allProductLines.unshift(newProductLine);
         }
