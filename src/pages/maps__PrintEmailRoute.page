@@ -1,24 +1,7 @@
 <apex:page standardstylesheets="false" sidebar="false" showChat="false" showHeader="false" controller="maps.PrintEmailRoute" title="Print/Email Interface" docType="html-5.0" extensions="maps.RemoteFunctions" cache="false">
     <apex:slds lightningStyleMode="SLDS1" />
 
-    <script>
-        window.assetsFailedToLoad = false;
-    </script>
-    
-    <script
-        type="module"
-        src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js">
-    </script>
-
-    <!-- Load the JavaScript Maps SDK core API -->
-    <link rel="stylesheet" href="https://js.arcgis.com/4.34/esri/themes/light/main.css" />
-    <script src="https://js.arcgis.com/4.34/"></script>
-
-    <!-- Load the JavaScript Maps SDK Map components or other component packages -->
-    <script
-        type="module"
-        src="https://js.arcgis.com/4.34/map-components/">
-    </script>
+    <script type="module" src="https://js.arcgis.com/5.0/"></script>
 
     <script>
         const MAPS = Object.assign({

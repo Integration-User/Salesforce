@@ -1,0 +1,193 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "Content Block: Media Contact and Boilerplate",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:backgroundImage" : {
+      "position" : "center center",
+      "repeat" : "no-repeat",
+      "size" : "cover"
+    },
+    "lightning:brandSource" : "MCUQIXYI74CNAYTK7HSG6BEHV4SA",
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "ce7241a1-8cc6-4ef7-9491-06d9b40cc177",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.none}",
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "c73308da-38ef-4b0e-9dda-35ba517a074e",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.xLarge}",
+            "lightning:verticalAlignment" : "top"
+          },
+          "definition" : "lightning/column",
+          "id" : "952a1152-ee92-4d30-9f1d-5a6b37b3a54d",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "align" : "left",
+              "level" : 3.0,
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#02756e"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.heading.heading3}",
+              "text" : "Media Inquiries"
+            },
+            "definition" : "lightning/heading",
+            "id" : "f050ee73-0e06-42ce-85f9-665e8b7c9774",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "left",
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 20.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "text" : "For inquiries, please contact us at <a href=\"mailto:media&#64;greenstreet.com\" target=\"_blank\" part=\"link\" rel=\"noopener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer\"><strong>media&#64;greenstreet.com</strong></a>."
+            },
+            "definition" : "lightning/paragraph",
+            "id" : "424ec3b3-ebad-4b45-874b-f4220c79e0c1",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "left",
+              "level" : 3.0,
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#02756e"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.heading.heading3}",
+              "text" : "About Green Street"
+            },
+            "definition" : "lightning/heading",
+            "id" : "c275e341-869b-4f13-852f-9bf9dc7bee50",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "left",
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "text" : "Green Street is the leading global provider of actionable commercial Real Assets research, news, data, analytics, and advisory services. For over 40 years, Green Street has delivered unparalleled intelligence and trusted data on public and private markets, helping investors, banks, lenders, and other industry participants optimize investment and strategic decisions. Green Street delivers exclusive market information, conclusion-driven insights, and predictive analytics. Today, Green Street’s integrated platform serves more than 4,000 companies across North America, Europe, Australia, and Asia. For more information, please visit <strong><a href=\"https://greenstreet.com/\" target=\"_blank\" part=\"link\" rel=\"noopener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer\">greenstreet.com</a></strong>."
+            },
+            "definition" : "lightning/paragraph",
+            "id" : "8e32c57a-bae5-4640-a644-b11082360e29",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:description" : "Press release intro with date/location, summary text, and CTA",
+    "sfdc_cms:title" : "Content Block: Media Contact and Boilerplate",
+    "sfdc_cms:urlName" : "content-block-press-release-summary",
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "content-block-press-release-summary"
+}

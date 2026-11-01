@@ -172,6 +172,7 @@
     </compactLayouts>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <externalSharingModel>FullAccess</externalSharingModel>
     <fields>
         <fullName>ActualCost</fullName>
     </fields>
@@ -322,6 +323,17 @@
     </fields>
     <fields>
         <fullName>ExpectedRevenue</fullName>
+    </fields>
+    <fields>
+        <fullName>Form_Page_URL__c</fullName>
+        <description>Stable form identifier this campaign matches on (e.g. demo-request-us). Compared against Contact.Form_Key__c by the GF - Contact Campaign Enrollment flow to enroll form submissions. API name remains Form_Page_URL__c for historical reasons; it holds a form key, not a URL.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the form key for this campaign (e.g. demo-request-us), matching the value the Gravity Forms feed stamps on the contact. Not a URL.</inlineHelpText>
+        <label>Form Key</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>HierarchyActualCost</fullName>
@@ -496,6 +508,17 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Tell_Us_About_Your_Needs_Default__c</fullName>
+        <description>This Tell Us About Your Needs field has a different use then the form fill field. This is the master field for a campaig flow</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Tell Us About Your Needs field has a different use then the form fill field. This is the master field for a campaig flow</inlineHelpText>
+        <label>Tell Us About Your Needs Default</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <type>Picklist</type>
     </fields>
@@ -506,6 +529,7 @@
         <columns>CAMPAIGN.START_DATE</columns>
         <columns>CAMPAIGN.END_DATE</columns>
         <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.NUM_CONTACTS</columns>
         <columns>CAMPAIGN.STATUS</columns>
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>

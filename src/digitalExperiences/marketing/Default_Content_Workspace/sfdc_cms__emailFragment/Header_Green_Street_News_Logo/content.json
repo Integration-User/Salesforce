@@ -1,0 +1,116 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "Logo - Green Street News",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:backgroundImage" : {
+      "position" : "center center",
+      "repeat" : "no-repeat",
+      "size" : "cover"
+    },
+    "lightning:brandSource" : "MCUQIXYI74CNAYTK7HSG6BEHV4SA",
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "8fdeed60-e6b4-4aed-b43e-4b0ee0bbf877",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.none}",
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "7a962906-c007-4f46-9b9f-9e3b5934213a",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.medium}",
+            "lightning:verticalAlignment" : "top"
+          },
+          "definition" : "lightning/column",
+          "id" : "9f7559ed-4a71-4796-a68d-d22efe00defe",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "imageFitConfig" : {
+                "width" : {
+                  "unit" : "%",
+                  "value" : 45.0
+                }
+              },
+              "imageInfo" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : "image/svg+xml",
+                  "ref" : "MCXJ2XORXVCZHPFMSJ3UVZR7IGPE",
+                  "size" : 5996.0,
+                  "type" : "imageReference"
+                },
+                "url" : "/cms/media/MCXJ2XORXVCZHPFMSJ3UVZR7IGPE?fileName=green.street.news.logo_color.svg&fileHash=98a4dd9029bb184cd76f3c94bc9988be"
+              },
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:horizontalAlignment" : "left",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "linkUrlMergeField" : "https://greenstreetnews.com/"
+            },
+            "definition" : "lightning/image",
+            "id" : "253055c7-3fcb-4fda-b5d4-751cd9131aa5",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:description" : "Email Header content block with the Green Street News logo",
+    "sfdc_cms:title" : "Logo - Green Street News",
+    "sfdc_cms:urlName" : "header-with-green-street-news-logo",
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "header-with-green-street-news-logo"
+}

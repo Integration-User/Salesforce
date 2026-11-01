@@ -1,0 +1,441 @@
+{
+  "type" : "sfdc_cms__email",
+  "title" : "GSCollegeHouse_ContentDownloadOct2.5",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:brandSource" : {
+      "defaultBrandOption" : "sfdcBrand"
+    },
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "messagePurpose" : "promotional",
+    "preheader" : "Two measures show where your property stands against what the market still has to sign.",
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "2a2bc3ca-5812-458f-ab5a-97a7c276e2ce",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "content" : {
+            "attributes" : { },
+            "definition" : "@cms/MCMJENBZPKJNFJ3BKWRYJDMEBISU",
+            "type" : "block"
+          }
+        },
+        "definition" : "sfdc_cms/reusableContentBlock",
+        "id" : "4c57e7b0-4999-4869-9e85-e5d6118cc3d5",
+        "type" : "block"
+      }, {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.none}",
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "7ff2d786-270e-4bbb-b19b-b3f0ffca61a2",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "image" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : null,
+                  "ref" : "Wave_Background_Greyscale",
+                  "type" : "imageReference"
+                },
+                "url" : "https://info.greenstreet.com/hubfs/wave-pattern.png"
+              },
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : {
+              "contrast" : "#162331",
+              "neutral" : "#0d4041",
+              "primaryAccent" : "#49b065",
+              "primaryAccentContrast" : "#ffffff",
+              "primaryAccentContrastDerived" : "#FFFFFF",
+              "primaryAccentDerived" : "#2d974f",
+              "root" : "#26b5c6"
+            },
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : {
+              "bottom" : {
+                "unit" : "px",
+                "value" : 16.0
+              },
+              "left" : {
+                "unit" : "px",
+                "value" : 16.0
+              },
+              "right" : {
+                "unit" : "px",
+                "value" : 16.0
+              },
+              "top" : {
+                "unit" : "px",
+                "value" : 16.0
+              }
+            },
+            "lightning:verticalAlignment" : "middle"
+          },
+          "definition" : "lightning/column",
+          "id" : "af738081-1560-4089-9821-0502e3496e6d",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "align" : "center",
+              "level" : 3.0,
+              "lightning:borderRadius" : {
+                "unit" : "px",
+                "value" : 0.0
+              },
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#162331"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 20.0
+                }
+              },
+              "lightning:typography" : {
+                "fontFamily" : "{!$brand.baseFontFamily}",
+                "fontSize" : "{!$brand.fontSize.medium}",
+                "fontWeight" : "{!$brand.fontWeight.bold}",
+                "letterSpacing" : "normal",
+                "lineHeight" : 1.15,
+                "textTransform" : "none"
+              }
+            },
+            "definition" : "lightning/heading",
+            "id" : "a4784a06-63af-4117-be02-c1a0fe1635e2",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "level" : 1.0,
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#FFFFFF"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 20.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.heading.heading1}"
+            },
+            "definition" : "lightning/heading",
+            "id" : "af0963b0-de0f-4657-a555-31da017c4f78",
+            "type" : "block"
+          } ]
+        } ]
+      }, {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.none}",
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "239d27ef-3313-443b-a6d6-a10f4f5b31fa",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.xLarge}",
+            "lightning:verticalAlignment" : "top"
+          },
+          "definition" : "lightning/column",
+          "id" : "f5dd55e9-2450-4c08-9ea4-ed6b235001c7",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "align" : "start",
+              "level" : 4.0,
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#49b065"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                }
+              },
+              "lightning:typography" : {
+                "fontFamily" : "{!$brand.baseFontFamily}",
+                "fontSize" : "{!$brand.fontSize.small}",
+                "fontWeight" : "{!$brand.fontWeight.normal}",
+                "letterSpacing" : "normal",
+                "lineHeight" : 1.15,
+                "textTransform" : "none"
+              },
+              "text" : "PURPOSE BUILT STUDENT HOUSING PLATFORM"
+            },
+            "definition" : "lightning/heading",
+            "id" : "dd339dfd-2687-4d8e-a357-5b87e50eebc5",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "start",
+              "level" : 2.0,
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#04504f"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:typography" : {
+                "fontFamily" : "{!$brand.baseFontFamily}",
+                "fontSize" : "{!$brand.fontSize.xxLarge}",
+                "fontWeight" : "{!$brand.fontWeight.bold}",
+                "letterSpacing" : "normal",
+                "lineHeight" : 1.25,
+                "textTransform" : "none"
+              },
+              "text" : "<span style=\"font-size: 28px;\">College House shows how much demand a market has left to lease.</span>"
+            },
+            "definition" : "lightning/heading",
+            "id" : "6f7848d7-7192-4cc5-867f-04373951c4d0",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "start",
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "text" : "Market Availability starts with occupied beds as a proxy for market demand, then burns down as beds are pre-leased through the cycle. Capture Rate shows the share of the market’s remaining available beds your property would need to sign to reach 100% pre-lease. Both run against prior cycles, so you can see whether you’re leasing faster or slower than the market.<br />For developers, the pipeline view puts beds in lease-up, under construction, and planned next to performance in the same market. <br /><br /><strong><em>If your team relies on broker calls and a general CRE data subscription today, College House fits alongside both. It adds weekly, floor plan-level student housing data that neither provides. </em></strong>"
+            },
+            "definition" : "lightning/paragraph",
+            "id" : "946101f6-b34d-4e5d-a86c-ae8ce67b4b91",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.buttonStyleGroup.primary.lightning:borderRadius}",
+              "lightning:borderWidth" : "{!$brand.buttonStyleGroup.primary.lightning:borderWidth}",
+              "lightning:buttonColorGroup" : "{!$brand.buttonStyleGroup.primary.lightning:buttonColorGroup}",
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 10.0
+                }
+              },
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 12.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 24.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 24.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 12.0
+                }
+              },
+              "lightning:typography" : "{!$brand.buttonStyleGroup.primary.lightning:typography}",
+              "sfdc_cms:styleGroup" : "{!$brand.buttonStyleGroup.primary}",
+              "text" : "Request A Demo",
+              "width" : "auto"
+            },
+            "definition" : "lightning/actionButton",
+            "id" : "5f6555c3-51cd-4818-8a53-c90ea32147f1",
+            "type" : "block"
+          } ]
+        } ]
+      }, {
+        "attributes" : {
+          "content" : {
+            "attributes" : { },
+            "definition" : "@cms/MCVALSUZ7SIFDANMKXCTBKAPRVZA",
+            "type" : "block"
+          }
+        },
+        "definition" : "sfdc_cms/reusableContentBlock",
+        "id" : "af3d4c3e-3656-4a6f-9711-ed16bd2fd24c",
+        "type" : "block"
+      } ]
+    },
+    "sfdc_cms:title" : "GSCollegeHouse_ContentDownloadOct2.5",
+    "subjectLine" : "Market Availability and Capture Rate, explained",
+    "lightning:backgroundImage" : {
+      "repeat" : "no-repeat",
+      "position" : "center center",
+      "size" : "cover"
+    },
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "gscollegehouse-contentdownloadoct2-5"
+}

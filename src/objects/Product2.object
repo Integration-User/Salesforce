@@ -142,6 +142,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>AvailabilityDate</fullName>
         <trackHistory>false</trackHistory>
@@ -539,6 +540,20 @@
         <columns>PRODUCT2.CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All Products</label>
+    </listViews>
+    <listViews>
+        <fullName>College_House</fullName>
+        <columns>PRODUCT2.NAME</columns>
+        <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+        <columns>PRODUCT2.DESCRIPTION</columns>
+        <columns>PRODUCT2.FAMILY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PRODUCT2.FAMILY</field>
+            <operation>equals</operation>
+            <value>College House</value>
+        </filters>
+        <label>College House</label>
     </listViews>
     <listViews>
         <fullName>Copy_of_All_Products</fullName>

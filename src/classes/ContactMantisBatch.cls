@@ -18,12 +18,12 @@ global class ContactMantisBatch implements Database.Batchable<SObject>, Database
             contactIds = config.List_Of_Value__c.split(',');
         }
         system.debug('contactIds->' + contactIds);
-        if(Test.isRunningTest()) return Database.getQueryLocator([SELECT Id FROM Contact LIMIT 1]);
-        else return Database.getQueryLocator([SELECT Id FROM Contact WHERE Id IN :contactIds]);
+        if(Test.isRunningTest()) return Database.getQueryLocator([SELECT Id FROM Account LIMIT 1]);
+        else return Database.getQueryLocator([SELECT Id FROM Account WHERE Id IN :contactIds]);
     }
 
-    global void execute(Database.BatchableContext BC, List<Contact> scope) {
-        for (Contact c : scope) {
+    global void execute(Database.BatchableContext BC, List<Account> scope) {
+        for (Account c : scope) {
             system.debug('c->' + c);
             try {
                 String message = Plative_GSAWebCalloutUtility.makeCallout(c.Id, sObjectApiName, actionType);

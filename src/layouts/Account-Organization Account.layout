@@ -113,6 +113,10 @@
                 <behavior>Readonly</behavior>
                 <field>Number_of_Accounts_in_Hierarchy__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Account_Score_Total__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -480,6 +484,10 @@
         <fields>Seats_Remaining__c</fields>
         <fields>Status__c</fields>
         <relatedList>Subscription__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>OBJECT_ID</fields>
+        <relatedList>ssot__Account__dlm.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

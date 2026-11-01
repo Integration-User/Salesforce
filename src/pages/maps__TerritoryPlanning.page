@@ -141,6 +141,7 @@
                 GetScreenshotLocations: '{!$RemoteAction.TPRemoteActions.GetScreenshotLocations}',
                 GetContainerSets: '{!$RemoteAction.TPRemoteActions.GetContainerSets}',
                 GetContainers: '{!$RemoteAction.TPRemoteActions.GetContainers}',
+                GetBoundarySets: '{!$RemoteAction.TPRemoteActions.GetBoundarySets}',
                 GetSettings: '{!$RemoteAction.TPRemoteActions.GetSettings}',
                 UpdateUserAccess: '{!$RemoteAction.TPRemoteActions.UpdateUserAccess}',
                 PostFeedItem: '{!$RemoteAction.TPRemoteActions.PostFeedItem}',
@@ -151,6 +152,7 @@
                 UpdateObjectBatch: '{!$RemoteAction.TPRemoteActions.UpdateObjectBatch}',
                 CloneAlignment: '{!$RemoteAction.TPRemoteActions.CloneAlignment}',
                 CloneDataSet: '{!$RemoteAction.TPRemoteActions.CloneDataSet}',
+                ConfirmOAuth: '{!$RemoteAction.TPRemoteActions.ConfirmOAuth}',
                 StartJob: '{!$RemoteAction.TPRemoteActions.StartJob}',
                 CancelJob: '{!$RemoteAction.TPRemoteActions.CancelJob}',
                 RunDataSetSOQLBatch: '{!$RemoteAction.TPRemoteActions.RunDataSetSOQLBatch}',
@@ -172,6 +174,11 @@
                 GetAccessibleAlignments: '{!$RemoteAction.TPRemoteActions.GetAccessibleAlignments}',
                 GetTerritoryRoles: '{!$RemoteAction.TPRemoteActions.GetTerritoryRoles}',
                 GetTerritoryModelBatched: '{!$RemoteAction.TPRemoteActions.GetTerritoryModelBatched}',
+                GetTerritoryModel: '{!$RemoteAction.TPRemoteActions.GetTerritoryModel}',
+		GetTerritoryModelRangeByPod: '{!$RemoteAction.TPRemoteActions.GetTerritoryModelRangeByPod}',
+                GetTerritoryModelTerritories: '{!$RemoteAction.TPRemoteActions.GetTerritoryModelTerritories}',
+                GetTerritoryModelRules: '{!$RemoteAction.TPRemoteActions.GetTerritoryModelRules}',
+                GetRangeChunkTerritoryModelCounts: '{!$RemoteAction.TPRemoteActions.GetRangeChunkTerritoryModelCounts}',
                 GetManualAssignments: '{!$RemoteAction.TPRemoteActions.GetManualAssignments}',
 
                 // query builder
@@ -237,6 +244,7 @@
                 Homepage_LearningCenterCard_Title: '{!JSENCODE($Label.Homepage_LearningCenterCard_Title)}',
                 Homepage_LearningCenterCard_Description: '{!JSENCODE($Label.Homepage_LearningCenterCard_Description)}',
                 Homepage_SessionExpired_ErrorToast_Message: '{!JSENCODE($Label.Homepage_SessionExpired_ErrorToast_Message)}',
+                TP_OAuth_Not_Confirmed_Error: '{!JSENCODE($Label.TP_OAuth_Not_Confirmed_Error)}',
                 Homepage_ContainerSet_ErrorToast_Message: '{!JSENCODE($Label.Homepage_ContainerSet_ErrorToast_Message)}',
                 Homepage_ActivityCard_HistoryTabLabel: '{!JSENCODE($Label.Homepage_ActivityCard_HistoryTabLabel)}',
                 Homepage_ActivityCard_CommentsTabLabel: '{!JSENCODE($Label.Homepage_ActivityCard_CommentsTabLabel)}',
@@ -294,6 +302,23 @@
                 Homepage_HistoryTab_UserRestoreSnapshot: '{!JSENCODE($Label.Homepage_HistoryTab_UserRestoreSnapshot)}',
                 Homepage_HistoryTab_BulkRunRules: '{!JSENCODE($Label.Homepage_HistoryTab_BulkRunRules)}',
                 Homepage_HistoryTab_UpdateAreaRules: '{!JSENCODE($Label.Homepage_HistoryTab_UpdateAreaRules)}',
+                Homepage_HistoryTab_PicklistAreaRuleCreated: '{!JSENCODE($Label.Homepage_HistoryTab_PicklistAreaRuleCreated)}',
+                Homepage_HistoryTab_AreaRuleCreated: '{!JSENCODE($Label.Homepage_HistoryTab_AreaRuleCreated)}',
+                Homepage_HistoryTab_PicklistAreaRuleModified: '{!JSENCODE($Label.Homepage_HistoryTab_PicklistAreaRuleModified)}',
+                Homepage_HistoryTab_AreaRuleModified: '{!JSENCODE($Label.Homepage_HistoryTab_AreaRuleModified)}',
+                Homepage_HistoryTab_PicklistAreaRuleDeleted: '{!JSENCODE($Label.Homepage_HistoryTab_PicklistAreaRuleDeleted)}',
+                Homepage_HistoryTab_AreaRuleDeleted: '{!JSENCODE($Label.Homepage_HistoryTab_AreaRuleDeleted)}',
+                Homepage_HistoryTab_UnitsLocked_Title: '{!JSENCODE($Label.Homepage_HistoryTab_UnitsLocked_Title)}',
+                Homepage_HistoryTab_UnitsLocked_Activity: '{!JSENCODE($Label.Homepage_HistoryTab_UnitsLocked_Activity)}',
+                Homepage_HistoryTab_UnitsUnlocked_Title: '{!JSENCODE($Label.Homepage_HistoryTab_UnitsUnlocked_Title)}',
+                Homepage_HistoryTab_UnitsUnlocked_Activity: '{!JSENCODE($Label.Homepage_HistoryTab_UnitsUnlocked_Activity)}',
+                History_UnitsLocked_Name: '{!JSENCODE($Label.History_UnitsLocked_Name)}',
+                History_UnitsUnlocked_Name: '{!JSENCODE($Label.History_UnitsUnlocked_Name)}',
+                History_UnitsLocked_Legend: '{!JSENCODE($Label.History_UnitsLocked_Legend)}',
+                History_UnitsUnlocked_Legend: '{!JSENCODE($Label.History_UnitsUnlocked_Legend)}',
+                History_UnitsLocked_CSV: '{!JSENCODE($Label.History_UnitsLocked_CSV)}',
+                History_UnitsUnlocked_CSV: '{!JSENCODE($Label.History_UnitsUnlocked_CSV)}',
+                History_UnitsLocked_AndMore: '{!JSENCODE($Label.History_UnitsLocked_AndMore)}',
                 Homepage_HistoryTab_LoadingText: '{!JSENCODE($Label.Homepage_HistoryTab_LoadingText)}',
                 Homepage_HistoryTab_EmptyStateHeading: '{!JSENCODE($Label.Homepage_HistoryTab_EmptyStateHeading)}',
                 Homepage_HistoryTab_EmptyStateBody: '{!JSENCODE($Label.Homepage_HistoryTab_EmptyStateBody)}',
@@ -309,6 +334,10 @@
                 Homepage_LearningCenter_Summer23Link: '{!JSENCODE($Label.Homepage_LearningCenter_Summer23Link)}',
                 Homepage_LearningCenter_Winter24Link: '{!JSENCODE($Label.Homepage_LearningCenter_Winter24Link)}',
                 Homepage_LearningCenter_Spring23Link: '{!JSENCODE($Label.Homepage_LearningCenter_Spring23Link)}',
+                Homepage_DatasetType_Live: '{!JSENCODE($Label.Homepage_DatasetType_Live)}',
+                Homepage_DatasetType_Copied: '{!JSENCODE($Label.Homepage_DatasetType_Copied)}',
+                
+                
 
                 // alignment data set component
                 AlignmentDataSetView_Alignment_Name: '{!JSENCODE($Label.AlignmentDataSetView_Alignment_Name)}',
@@ -332,6 +361,7 @@
                 AlignmentDataSetView_Alignment_SharedWith: '{!JSENCODE($Label.AlignmentDataSetView_Alignment_SharedWith)}',
                 AlignmentDataSetView_Alignment_Status: '{!JSENCODE($Label.AlignmentDataSetView_Alignment_Status)}',
                 AlignmentDataSetView_DataSet_Name: '{!JSENCODE($Label.AlignmentDataSetView_DataSet_Name)}',
+                AlignmentDataSetView_DataSet_Type: '{!JSENCODE($Label.AlignmentDataSetView_DataSet_Type)}',
                 AlignmentDataSetView_DataSet_CreatedDate: '{!JSENCODE($Label.AlignmentDataSetView_DataSet_CreatedDate)}',
                 AlignmentDataSetView_DataSet_CreatedBy: '{!JSENCODE($Label.AlignmentDataSetView_DataSet_CreatedBy)}',
                 AlignmentDataSetView_DataSet_LastModified: '{!JSENCODE($Label.AlignmentDataSetView_DataSet_LastModified)}',
@@ -439,6 +469,7 @@
                 DataSetDetails_Tabs_DetailsLabel: '{!JSENCODE($Label.DataSetDetails_Tabs_DetailsLabel)}',
                 DataSetDetails_Tabs_AlignmentLabel: '{!JSENCODE($Label.DataSetDetails_Tabs_AlignmentLabel)}',
                 DataSetDetails_DetailFields_Name: '{!JSENCODE($Label.DataSetDetails_DetailFields_Name)}',
+                DataSetDetails_DetailFields_Type: '{!JSENCODE($Label.DataSetDetails_DetailFields_Type)}',
                 DataSetDetails_DetailFields_Description: '{!JSENCODE($Label.DataSetDetails_DetailFields_Description)}',
                 DataSetDetails_DetailFields_CreatedDate: '{!JSENCODE($Label.DataSetDetails_DetailFields_CreatedDate)}',
                 DataSetDetails_DetailFields_CreatedBy: '{!JSENCODE($Label.DataSetDetails_DetailFields_CreatedBy)}',
@@ -551,6 +582,7 @@
                 CreateDataSetDetailsModal_FilterBoundariesPopover_CancelButton: '{!JSENCODE($Label.CreateDataSetDetailsModal_FilterBoundariesPopover_CancelButton)}',
                 CreateDataSetDetailsModal_FilterBoundariesPopover_ApplyButton: '{!JSENCODE($Label.CreateDataSetDetailsModal_FilterBoundariesPopover_ApplyButton)}',
                 CreateDataSetDetailsModal_ContainerSetSelector_Points: '{!JSENCODE($Label.CreateDataSetDetailsModal_ContainerSetSelector_Points)}',
+                CreateDataSetDetailsModal_ContainerSetSelector_CustomSuffix: '{!JSENCODE($Label.CreateDataSetDetailsModal_ContainerSetSelector_CustomSuffix)}',
                 CreateDataSetDetailsModal_RequiredInputErrorPopover_PopoverHeader: '{!JSENCODE($Label.CreateDataSetDetailsModal_RequiredInputErrorPopover_PopoverHeader)}',
                 CreateDataSetDetailsModal_RequiredInputErrorPopover_ProvideNameErrorText: '{!JSENCODE($Label.CreateDataSetDetailsModal_RequiredInputErrorPopover_ProvideNameErrorText)}',
                 CreateDataSetDetailsModal_RequiredInputErrorPopover_MaxCharactersErrorText: '{!JSENCODE($Label.CreateDataSetDetailsModal_RequiredInputErrorPopover_MaxCharactersErrorText)}',
@@ -659,7 +691,8 @@
                 BuildTerritoryModelQueryModal_Body_TerritorySearchIcon: '{!JSENCODE($Label.BuildTerritoryModelQueryModal_Body_TerritorySearchIcon)}',
                 BuildTerritoryModelQueryModal_Body_TerritoryClearIcon: '{!JSENCODE($Label.BuildTerritoryModelQueryModal_Body_TerritoryClearIcon)}',
                 BuildTerritoryModelQueryModal_Body_TerritorySearchPlaceholderText: '{!JSENCODE($Label.BuildTerritoryModelQueryModal_Body_TerritorySearchPlaceholderText)}',
-
+                BuildTerritoryModelQueryModal_Body_TreeTruncatedToast: '{!JSENCODE($Label.BuildTerritoryModelQueryModal_Body_TreeTruncatedToast)}',
+                
                 // Create Data Set Unit Configuration Modal
                 CreateDataSetUnitConfigurationModal_Header_ModalHeader: '{!JSENCODE($Label.CreateDataSetUnitConfigurationModal_Header_ModalHeader)}',
                 CreateDataSetUnitConfigurationModal_Header_InstructionScopedNotificationHeader: '{!JSENCODE($Label.CreateDataSetUnitConfigurationModal_Header_InstructionScopedNotificationHeader)}',
@@ -1104,7 +1137,10 @@
                     Modal: {
                         close: "{!JSENCODE($Label.slds_modal_close)}"
                     }
-                }
+                },
+
+                // cross application shared labels
+                SetFocusModal_Body_UserAccess_ErrorMessage: "{!JSENCODE($Label.SetFocusModal_Body_UserAccess_ErrorMessage)}"
             },
             SessionId: "{!$Api.Session_ID}"
         }, JSON.parse("{!JSENCODE(viewData)}"));

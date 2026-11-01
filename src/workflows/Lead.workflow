@@ -40,6 +40,10 @@
             <type>role</type>
         </recipients>
         <recipients>
+            <recipient>Customer_Success_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
             <recipient>adillard@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
@@ -95,8 +99,16 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>mrichardson@greenstreet.com</recipient>
+            <recipient>plee@greenstreet.com</recipient>
             <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Referred_By_Lead__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Referred_By__c</field>
+            <type>userLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>Referral_Templates/New_Referral</template>
@@ -106,11 +118,15 @@
         <description>IJGlobal Referral Email Alert</description>
         <protected>false</protected>
         <recipients>
+            <recipient>Global_Sales_Manager_A</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
             <recipient>fberry@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>kbrzezinska@greenstreet.com</recipient>
+            <recipient>plee@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -120,6 +136,14 @@
         <recipients>
             <recipient>vtaylor@greenstreet.com</recipient>
             <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Referred_By_Lead__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Referred_By__c</field>
+            <type>userLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>Referral_Templates/New_Referral</template>
@@ -132,7 +156,15 @@
             <type>owner</type>
         </recipients>
         <recipients>
-            <recipient>mrichardson@greenstreet.com</recipient>
+            <recipient>ali@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>cfreeman@greenstreet.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>plee@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -174,7 +206,15 @@
             <type>role</type>
         </recipients>
         <recipients>
+            <recipient>Customer_Success_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
             <recipient>Global_Sales_Manager_A</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Head_of_Account_Management</recipient>
             <type>role</type>
         </recipients>
         <recipients>
@@ -202,11 +242,11 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>mrichardson@greenstreet.com</recipient>
+            <recipient>msouter@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>msouter@greenstreet.com</recipient>
+            <recipient>plee@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -236,7 +276,7 @@
             <type>owner</type>
         </recipients>
         <recipients>
-            <recipient>mrichardson@greenstreet.com</recipient>
+            <recipient>plee@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -276,7 +316,7 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>mrichardson@greenstreet.com</recipient>
+            <recipient>plee@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -287,7 +327,7 @@
         <description>Referral Lead Converted</description>
         <protected>false</protected>
         <recipients>
-            <recipient>mrichardson@greenstreet.com</recipient>
+            <recipient>plee@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -302,7 +342,7 @@
         <description>Referral Lead Rejected</description>
         <protected>false</protected>
         <recipients>
-            <recipient>mrichardson@greenstreet.com</recipient>
+            <recipient>plee@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>

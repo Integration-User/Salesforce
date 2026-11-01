@@ -1,0 +1,533 @@
+{
+  "type" : "sfdc_cms__email",
+  "title" : "LS TEST: GSP_Test_Email_Components [Clients]",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:brandSource" : {
+      "defaultBrandOption" : "sfdcBrand"
+    },
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "messagePurpose" : "promotional",
+    "preheader" : "YAY this is a test!",
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "618bd7f3-0abb-42a8-a3f9-b9d855449d60",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "content" : {
+            "attributes" : { },
+            "definition" : "@cms/MCJWIOOHDKAVGDRDDEAPULHOUFPQ",
+            "type" : "block"
+          }
+        },
+        "definition" : "sfdc_cms/reusableContentBlock",
+        "id" : "58176dc4-70f6-4b34-8b13-81d7adde4905",
+        "type" : "block"
+      }, {
+        "attributes" : {
+          "content" : {
+            "attributes" : { },
+            "definition" : "@cms/MCFNVYP7CJQJCPVKJ3WFE3WYMUWE",
+            "type" : "block"
+          }
+        },
+        "definition" : "sfdc_cms/reusableContentBlock",
+        "id" : "c5c6b56f-f888-495c-8787-1b5eae68ffef",
+        "type" : "block"
+      }, {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : {
+            "bottom" : {
+              "unit" : "px",
+              "value" : 8.0
+            },
+            "left" : {
+              "unit" : "px",
+              "value" : 16.0
+            },
+            "right" : {
+              "unit" : "px",
+              "value" : 16.0
+            },
+            "top" : {
+              "unit" : "px",
+              "value" : 16.0
+            }
+          },
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "17572b06-5385-4255-b3b3-1efbb17a8f78",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.round}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.thin}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.small}",
+            "lightning:verticalAlignment" : "middle"
+          },
+          "definition" : "lightning/column",
+          "id" : "88d38503-fedb-4130-bace-a8427670270f",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "imageFitConfig" : {
+                "width" : {
+                  "unit" : "%",
+                  "value" : 7.0
+                }
+              },
+              "imageInfo" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : null,
+                  "ref" : "Icon_Adv_Serv",
+                  "type" : "imageReference"
+                },
+                "url" : "https://info.greenstreet.com/hs-fs/hubfs/icn-adv-serv-3.png?width=74&height=74&upscale=true&name=icn-adv-serv-3.png"
+              },
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}"
+            },
+            "definition" : "lightning/image",
+            "id" : "5091018d-4f2a-4960-86e3-5a7fb1a5dce3",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "level" : 3.0,
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#04504f"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.heading.heading2}",
+              "text" : "This is a great Feature"
+            },
+            "definition" : "lightning/heading",
+            "id" : "d2019c89-d89e-47a8-856b-3ab1c3da1606",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "backgroundColor" : "{!$brand.colorScheme.root}",
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+            },
+            "definition" : "lightning/paragraph",
+            "id" : "c30d4a3b-dcae-4c95-8925-3495973b3d01",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.buttonStyleGroup.tertiary.lightning:borderRadius}",
+              "lightning:borderWidth" : "{!$brand.buttonStyleGroup.tertiary.lightning:borderWidth}",
+              "lightning:buttonColorGroup" : {
+                "backgroundColor" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup.backgroundColor}",
+                "borderColor" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup.borderColor}",
+                "borderHoverColor" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup.borderHoverColor}",
+                "textColor" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup.textColor}"
+              },
+              "lightning:click" : {
+                "actions" : [ {
+                  "attributes" : {
+                    "openInNewTab" : true,
+                    "url" : "https://www.greenstreet.com/products/advisory-services/"
+                  },
+                  "definition" : "sfdc_cms__navigateToUrlAction",
+                  "generatedUrl" : "https://www.greenstreet.com/products/advisory-services/"
+                } ]
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:typography" : "{!$brand.buttonStyleGroup.tertiary.lightning:typography}",
+              "sfdc_cms:styleGroup" : "{!$brand.buttonStyleGroup.tertiary}",
+              "text" : "Learn More →",
+              "width" : "auto"
+            },
+            "definition" : "lightning/actionButton",
+            "id" : "7bb9c9ce-332d-429c-952d-5b4c45f49412",
+            "type" : "block"
+          } ]
+        } ]
+      }, {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : {
+            "bottom" : {
+              "unit" : "px",
+              "value" : 16.0
+            },
+            "left" : {
+              "unit" : "px",
+              "value" : 16.0
+            },
+            "right" : {
+              "unit" : "px",
+              "value" : 16.0
+            },
+            "top" : {
+              "unit" : "px",
+              "value" : 8.0
+            }
+          },
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "d80d7ea4-9b1c-4827-897f-4a7353efa3fb",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.round}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.thin}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.small}",
+            "lightning:verticalAlignment" : "middle"
+          },
+          "definition" : "lightning/column",
+          "id" : "2472b635-b980-40fe-8ab5-a8c96043da7c",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "imageFitConfig" : {
+                "width" : {
+                  "unit" : "%",
+                  "value" : 7.0
+                }
+              },
+              "imageInfo" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : null,
+                  "ref" : "Icon_Alert_Mkt_Influence",
+                  "type" : "imageReference"
+                },
+                "url" : "https://info.greenstreet.com/hs-fs/hubfs/icn-alert-mkt-influence.png?width=74&height=74&upscale=true&name=icn-alert-mkt-influence.png"
+              },
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}"
+            },
+            "definition" : "lightning/image",
+            "id" : "47835fbc-9fe7-46de-a6a3-76719b26a8c2",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "level" : 3.0,
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "#04504f"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.heading.heading2}",
+              "text" : "Another great feature"
+            },
+            "definition" : "lightning/heading",
+            "id" : "d0ff9f4f-fdbc-415b-88d9-d450d875e8c3",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "align" : "center",
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+            },
+            "definition" : "lightning/paragraph",
+            "id" : "2eea1426-80ed-4273-ba8b-c3cf1d371376",
+            "type" : "block"
+          }, {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.buttonStyleGroup.tertiary.lightning:borderRadius}",
+              "lightning:borderWidth" : "{!$brand.buttonStyleGroup.tertiary.lightning:borderWidth}",
+              "lightning:buttonColorGroup" : "{!$brand.buttonStyleGroup.tertiary.lightning:buttonColorGroup}",
+              "lightning:click" : {
+                "actions" : [ {
+                  "attributes" : {
+                    "openInNewTab" : true,
+                    "url" : "https://www.greenstreet.com/products/news/"
+                  },
+                  "definition" : "sfdc_cms__navigateToUrlAction",
+                  "generatedUrl" : "https://www.greenstreet.com/products/news/"
+                } ]
+              },
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : {
+                "bottom" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                },
+                "left" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "right" : {
+                  "unit" : "px",
+                  "value" : 0.0
+                },
+                "top" : {
+                  "unit" : "px",
+                  "value" : 5.0
+                }
+              },
+              "lightning:typography" : "{!$brand.buttonStyleGroup.tertiary.lightning:typography}",
+              "sfdc_cms:styleGroup" : "{!$brand.buttonStyleGroup.tertiary}",
+              "text" : "Learn More →",
+              "width" : "auto"
+            },
+            "definition" : "lightning/actionButton",
+            "id" : "8ac33f52-21df-4bea-b490-072e957fa669",
+            "type" : "block"
+          } ]
+        } ]
+      }, {
+        "attributes" : {
+          "content" : {
+            "attributes" : { },
+            "definition" : "@cms/MC3NKV2I3FN5BD3K6RT64QVLQBYQ",
+            "type" : "block"
+          }
+        },
+        "definition" : "sfdc_cms/reusableContentBlock",
+        "id" : "0bc42613-0f89-48a9-ba15-82204a7856c4",
+        "type" : "block"
+      } ]
+    },
+    "sfdc_cms:title" : "LS TEST: GSP_Test_Email_Components [Clients]",
+    "subjectLine" : "LS Test: This is a Components Block Email",
+    "lightning:backgroundImage" : {
+      "repeat" : "no-repeat",
+      "position" : "center center",
+      "size" : "cover"
+    },
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "ls-test-gsp-test-email-components-clients"
+}

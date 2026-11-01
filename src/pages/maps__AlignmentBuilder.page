@@ -1,4 +1,5 @@
 <apex:page controller="maps.TerritoryPlanning" action="{!checkPermissions}" extensions="maps.TPRemoteActions,maps.TPRemoteActionsSecured" title="Salesforce Maps Territory Planning" sidebar="false" showHeader="false" standardStyleSheets="false">
+    <apex:includeLightning />
     <style>
         #maRoot {
             min-width: 1150px;
@@ -154,6 +155,7 @@
 
                 //tp
                 GetDataSet: '{!$RemoteAction.TPRemoteActions.GetDataSet}',
+                GetBoundarySets: '{!$RemoteAction.TPRemoteActions.GetBoundarySets}',
                 GetAlignment: '{!$RemoteAction.TPRemoteActions.GetAlignment}',
                 GetAccessibleAlignments: '{!$RemoteAction.TPRemoteActions.GetAccessibleAlignments}',               
                 GetAlignmentApprovalSettings: '{!$RemoteAction.TPRemoteActions.GetAlignmentApprovalSettings}',
@@ -161,6 +163,9 @@
                 GetApprovers: '{!$RemoteAction.TPRemoteActions.GetApprovers}',
                 GetUserRoles: '{!$RemoteAction.TPRemoteActions.GetUserRoles}',
                 GetPublishOptionsSettings: '{!$RemoteAction.TPRemoteActions.GetPublishOptionsSettings}',
+                GetTPCustomActions: '{!$RemoteAction.TPRemoteActions.GetTPCustomActions}',
+                GetLightningComponents: '{!$RemoteAction.TPRemoteActions.GetLightningComponents}',
+                GetSettings: '{!$RemoteAction.TPRemoteActions.GetSettings}',
                 GetAccessibleAlignments: '{!$RemoteAction.TPRemoteActions.GetAccessibleAlignments}',
                 GetTerritoryPlanningRoles: '{!$RemoteAction.TPRemoteActions.GetTerritoryPlanningRoles}',
                 GetUsersWithAccess: '{!$RemoteAction.TPRemoteActions.GetUsersWithAccess}',
@@ -187,6 +192,7 @@
                 DeleteObjectBatch: '{!$RemoteAction.TPRemoteActions.DeleteObjectBatch}',
                 GetObjectIdsByMatchField: '{!$RemoteAction.TPRemoteActions.GetObjectIdsByMatchField}',
                 DeleteObjects: '{!$RemoteAction.TPRemoteActions.DeleteObjects}',
+                ConfirmOAuth: '{!$RemoteAction.TPRemoteActions.ConfirmOAuth}',
                 StartBalance: '{!$RemoteAction.TPRemoteActions.StartBalance}',
                 StartJob: '{!$RemoteAction.TPRemoteActions.StartJob}',
                 GetRequestStatus: '{!$RemoteAction.TPRemoteActions.GetRequestStatus}',
@@ -212,12 +218,18 @@
                 GetTerritoryRoles: '{!$RemoteAction.TPRemoteActions.GetTerritoryRoles}',
                 GetTerritoryModels: '{!$RemoteAction.TPRemoteActions.GetTerritoryModels}',
                 GetTerritoryModelBatched: '{!$RemoteAction.TPRemoteActions.GetTerritoryModelBatched}',
+                GetTerritoryModel: '{!$RemoteAction.TPRemoteActions.GetTerritoryModel}',
+                GetTerritoryModelRangeByPod: '{!$RemoteAction.TPRemoteActions.GetTerritoryModelRangeByPod}',
+		GetTerritoryModelTerritories: '{!$RemoteAction.TPRemoteActions.GetTerritoryModelTerritories}',
+                GetTerritoryModelRules: '{!$RemoteAction.TPRemoteActions.GetTerritoryModelRules}',
+                GetRangeChunkTerritoryModelCounts: '{!$RemoteAction.TPRemoteActions.GetRangeChunkTerritoryModelCounts}',
                 GetTerritoryPlanningAreaTypes: '{!$RemoteAction.TPRemoteActions.GetTerritoryPlanningAreaTypes}',
                 GetAreaTypes: '{!$RemoteAction.TPRemoteActions.GetAreaTypes}',
                 PublishToETM: '{!$RemoteAction.TPRemoteActions.PublishToETM}',
                 CreateAssignmentRule: '{!$RemoteAction.TPRemoteActions.CreateAssignmentRule}',
                 CreateBoundaryAssignmentRule: '{!$RemoteAction.TPRemoteActions.CreateBoundaryAssignmentRule}',
                 RemoveManuallyAssignedAccounts: '{!$RemoteAction.TPRemoteActions.RemoveManuallyAssignedAccounts}',
+                SyncManualAssignments: '{!$RemoteAction.TPRemoteActions.SyncManualAssignments}',
                 GetManualAssignments: '{!$RemoteAction.TPRemoteActions.GetManualAssignments}',
                 GetRuleAssociations: '{!$RemoteAction.TPRemoteActions.GetRuleAssociations}',
 
@@ -287,6 +299,7 @@
             Labels: {
                 // Global Labels
                 TerritoryPlanning_RequiredInputLabel: '{!JSENCODE($Label.TerritoryPlanning_RequiredInputLabel)}',
+                TP_OAuth_Not_Confirmed_Error: '{!JSENCODE($Label.TP_OAuth_Not_Confirmed_Error)}',
 
                 // Share Data Set / Alignment Modal
                 ShareDataSetModal_Header_ModalHeaderandInstruction: '{!JSENCODE($Label.ShareDataSetModal_Header_ModalHeaderandInstruction)}',
@@ -437,6 +450,8 @@
                 SetFocusModal_Body_LoadAlignmentHierarchy: '{!JSENCODE($Label.SetFocusModal_Body_LoadAlignmentHierarchy)}',
                 SetFocusModal_Body_BuildingMapData: '{!JSENCODE($Label.SetFocusModal_Body_BuildingMapData)}',
                 SetFocusModal_Body_PreparingMap: '{!JSENCODE($Label.SetFocusModal_Body_PreparingMap)}',
+                SetFocusModal_Body_UserAccess_ErrorTitle: '{!JSENCODE($Label.SetFocusModal_Body_UserAccess_ErrorTitle)}',
+                SetFocusModal_Body_UserAccess_ErrorMessage: '{!JSENCODE($Label.SetFocusModal_Body_UserAccess_ErrorMessage)}',
                 SetFocusModal_Body_UnitTypesExpandableSection: '{!JSENCODE($Label.SetFocusModal_Body_UnitTypesExpandableSection)}',
                 SetFocusModal_Footer_UnassignedUnitsCheckbox: '{!JSENCODE($Label.SetFocusModal_Footer_UnassignedUnitsCheckbox)}',
                 SetFocusModal_Footer_RefreshSession_Button: '{!JSENCODE($Label.SetFocusModal_Footer_RefreshSession_Button)}',
@@ -465,9 +480,12 @@
 
                 // Alignment Builder
                 AlignmentBuilder_Header_SalesforceMapsProductName: '{!JSENCODE($Label.AlignmentBuilder_Header_SalesforceMapsProductName)}',
+                AlignmentBuilder_Header_SalesPlanningProductName: '{!JSENCODE($Label.AlignmentBuilder_Header_SalesPlanningProductName)}',
                 AlignmentBuilder_Header_TerritoryPlanningProductName: '{!JSENCODE($Label.AlignmentBuilder_Header_TerritoryPlanningProductName)}',
                 AlignmentBuilder_Header_AlignmentDropdownButton: '{!JSENCODE($Label.AlignmentBuilder_Header_AlignmentDropdownButton)}',
                 AlignmentBuilder_Header_AlignmentDropdownDataSet: '{!JSENCODE($Label.AlignmentBuilder_Header_AlignmentDropdownDataSet)}',
+                AlignmentBuilder_Header_DatasetType_Live: '{!JSENCODE($Label.AlignmentBuilder_Header_DatasetType_Live)}',
+                AlignmentBuilder_Header_DatasetType_Copied: '{!JSENCODE($Label.AlignmentBuilder_Header_DatasetType_Copied)}',
                 AlignmentBuilder_Header_AlignmentDropdownAlignment: '{!JSENCODE($Label.AlignmentBuilder_Header_AlignmentDropdownAlignment)}',
                 AlignmentBuilder_Header_OptimizeOverflowMenu_PlanScenarios_Tooltip: '{!JSENCODE($Label.AlignmentBuilder_Header_OptimizeOverflowMenu_PlanScenarios_Tooltip)}',
                 AlignmentBuilder_Header_OptimizeButtons_Tooltip: '{!JSENCODE($Label.AlignmentBuilder_Header_OptimizeButtons_Tooltip)}',
@@ -489,6 +507,14 @@
                 AlignmentBuilder_Header_Toast_NoAlignment: '{!JSENCODE($Label.AlignmentBuilder_Header_Toast_NoAlignment)}',
                 AlignmentBuilder_Header_Toast_ReportNotAvailable: '{!JSENCODE($Label.AlignmentBuilder_Header_Toast_ReportNotAvailable)}',
                 AlignmentBuilder_Header_Toast_OptimizationWithPlaceholders: '{!JSENCODE($Label.AlignmentBuilder_Header_Toast_OptimizationWithPlaceholders)}',
+                AlignmentBuilder_TPCustomActionModal_NoCustomActionSpecified: '{!JSENCODE($Label.AlignmentBuilder_TPCustomActionModal_NoCustomActionSpecified)}',
+                AlignmentBuilder_TPCustomActionModal_NoAreasSpecified: '{!JSENCODE($Label.AlignmentBuilder_TPCustomActionModal_NoAreasSpecified)}',
+                AlignmentBuilder_TPCustomActionModal_CustomActionNotFound: '{!JSENCODE($Label.AlignmentBuilder_TPCustomActionModal_CustomActionNotFound)}',
+                AlignmentBuilder_TPCustomActionModal_ErrorInitializingLightning: '{!JSENCODE($Label.AlignmentBuilder_TPCustomActionModal_ErrorInitializingLightning)}',
+                AlignmentBuilder_TPCustomActionModal_ComponentNotFoundForId: '{!JSENCODE($Label.AlignmentBuilder_TPCustomActionModal_ComponentNotFoundForId)}',
+                AlignmentBuilder_TPCustomActionModal_ErrorLoadingComponentOrFlow: '{!JSENCODE($Label.AlignmentBuilder_TPCustomActionModal_ErrorLoadingComponentOrFlow)}',
+                AlignmentBuilder_TPCustomActionModal_CloseButton: '{!JSENCODE($Label.AlignmentBuilder_TPCustomActionModal_CloseButton)}',
+                AlignmentBuilder_TPCustomActionModal_DefaultTitle: '{!JSENCODE($Label.AlignmentBuilder_TPCustomActionModal_DefaultTitle)}',
                 AlignmentBuilder_Header_OptimizeButton: '{!JSENCODE($Label.AlignmentBuilder_Header_OptimizeButton)}',
                 AlignmentBuilder_Header_OptimizeOverflowMenuToggle: '{!JSENCODE($Label.AlignmentBuilder_Header_OptimizeOverflowMenuToggle)}',
                 AlignmentBuilder_Header_OptimizeOverflowMenu_EstimateTravelTime: '{!JSENCODE($Label.AlignmentBuilder_Header_OptimizeOverflowMenu_EstimateTravelTime)}',
@@ -497,6 +523,7 @@
                 AlignmentBuilder_Header_OptimizeOverflowMenu_RunAssignmentRules: '{!JSENCODE($Label.AlignmentBuilder_Header_OptimizeOverflowMenu_RunAssignmentRules)}',
                 AlignmentBuilder_Header_PublishButton: '{!JSENCODE($Label.AlignmentBuilder_Header_PublishButton)}',
                 AlignmentBuilder_Header_ShareButtonIcon: '{!JSENCODE($Label.AlignmentBuilder_Header_ShareButtonIcon)}',
+                AlignmentBuilder_Header_MoreActionsButton: '{!JSENCODE($Label.AlignmentBuilder_Header_MoreActionsButton)}',
                 AlignmentBuilder_Header_AnalyzeCompareButtonIcon: '{!JSENCODE($Label.AlignmentBuilder_Header_AnalyzeCompareButtonIcon)}',
                 AlignmentBuilder_Header_TargetAllocationButton: '{!JSENCODE($Label.AlignmentBuilder_Header_TargetAllocationButton)}',
                 AlignmentBuilder_Header_SettingsButtonIcon: '{!JSENCODE($Label.AlignmentBuilder_Header_SettingsButtonIcon)}',
@@ -518,6 +545,8 @@
                 AlignmentBuilder_StandardApproval_ErrorNoProcess: '{!JSENCODE($Label.AlignmentBuilder_StandardApproval_ErrorNoProcess)}',
                 AlignmentBuilder_StandardApproval_ErrorNextApprover: '{!JSENCODE($Label.AlignmentBuilder_StandardApproval_ErrorNextApprover)}',
                 AlignmentBuilder_Header_ApproversNotFound: '{!JSENCODE($Label.AlignmentBuilder_Header_ApproversNotFound)}',
+                AlignmentBuilder_Header_MultipleConflicts: '{!JSENCODE($Label.AlignmentBuilder_Header_MultipleConflicts)}',
+                AlignmentBuilder_Header_ViewConflicts: '{!JSENCODE($Label.AlignmentBuilder_Header_ViewConflicts)}',
                 AlignmentBuilder_StandardApproval_InfoRecall: '{!JSENCODE($Label.AlignmentBuilder_StandardApproval_InfoRecall)}',
                 AlignmentBuilder_Header_SubmitforApprovalButton: '{!JSENCODE($Label.AlignmentBuilder_Header_SubmitforApprovalButton)}',
                 AlignmentBuilder_Header_RejectButton: '{!JSENCODE($Label.AlignmentBuilder_Header_RejectButton)}',
@@ -628,9 +657,14 @@
                 AlignmentBuilder_PanelHeader_PanelTabs_Comments: '{!JSENCODE($Label.AlignmentBuilder_PanelHeader_PanelTabs_Comments)}',
                 AlignmentBuilder_PanelHeader_PanelTabs_History: '{!JSENCODE($Label.AlignmentBuilder_PanelHeader_PanelTabs_History)}',
                 AlignmentBuilder_Legend_LegendTypeCombobox: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendTypeCombobox)}',
+                AlignmentBuilder_Legend_LegendTypeLabel: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendTypeLabel)}',
                 AlignmentBuilder_Legend_SearchButtonIcon: '{!JSENCODE($Label.AlignmentBuilder_Legend_SearchButtonIcon)}',
+                AlignmentBuilder_Legend_LegendSearch_Input: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendSearch_Input)}',
+                AnalyzeCompareSetFocusModal_Body_TreeClear: '{!JSENCODE($Label.AnalyzeCompareSetFocusModal_Body_TreeClear)}',
+                AlignmentBuilder_Legend_LegendActionsCombobox_Label: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsCombobox_Label)}',
                 AlignmentBuilder_Legend_SearchTextInput: '{!JSENCODE($Label.AlignmentBuilder_Legend_SearchTextInput)}',
                 AlignmentBuilder_Legend_SearchCancelButton: '{!JSENCODE($Label.AlignmentBuilder_Legend_SearchCancelButton)}',
+                AlignmentBuilder_Legend_ActionCancel: '{!JSENCODE($Label.AlignmentBuilder_Legend_ActionCancel)}',
                 AlignmentBuilder_Legend_FilterButtonIcon: '{!JSENCODE($Label.AlignmentBuilder_Legend_FilterButtonIcon)}',
                 AlignmentBuilder_Legend_RemoveFiltersButton: '{!JSENCODE($Label.AlignmentBuilder_Legend_RemoveFiltersButton)}',
                 AlignmentBuilder_Legend_TerritoryModelButtonIcon: '{!JSENCODE($Label.AlignmentBuilder_Legend_TerritoryModelButtonIcon)}',
@@ -685,6 +719,12 @@
                 AlignmentBuilder_Legend_LegendActionsSelectedMessageCount: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsSelectedMessageCount)}',
                 AlignmentBuilder_Legend_LegendActionsSelectedMessageLocked: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsSelectedMessageLocked)}',
                 AlignmentBuilder_Legend_LegendActionsSelectedMessagePlaceholder: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsSelectedMessagePlaceholder)}',
+                AlignmentBuilder_Legend_LegendActionsSelectedMessageCountArea: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsSelectedMessageCountArea)}',
+                AlignmentBuilder_Legend_LegendActionsSelectedMessageCountAreaSingular: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsSelectedMessageCountAreaSingular)}',
+                AlignmentBuilder_Legend_LegendActionsSelectedMessageCountSingular: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsSelectedMessageCountSingular)}',
+                AlignmentBuilder_Legend_LegendActionsSelectedMessagePlaceholderArea: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsSelectedMessagePlaceholderArea)}',
+                AlignmentBuilder_Legend_LegendActionsSelectedMessagePlaceholderAreaSingular: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsSelectedMessagePlaceholderAreaSingular)}',
+                AlignmentBuilder_Legend_LegendActionsSelectedMessagePlaceholderSingular: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsSelectedMessagePlaceholderSingular)}',
                 AlignmentBuilder_Legend_LegendActionsComboboxScopedMessageIcon: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsComboboxScopedMessageIcon)}',
                 AlignmentBuilder_Legend_LegendActionsComboboxScopedMessageUnitLockedPlaceholders: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsComboboxScopedMessageUnitLockedPlaceholders)}',
                 AlignmentBuilder_Legend_LegendActionsComboboxScopedMessageUnitLocked: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsComboboxScopedMessageUnitLocked)}',
@@ -712,6 +752,8 @@
                 AlignmentBuilder_Legend_LegendActionsApplyButton: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsApplyButton)}',
                 AlignmentBuilder_Legend_LegendActionsLookup_Placeholder: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsLookup_Placeholder)}',
                 AlignmentBuilder_Legend_LegendActionsNextButton: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsNextButton)}',
+                AlignmentBuilder_Legend_LegendActionsPreviewButton: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsPreviewButton)}',
+                AlignmentBuilder_Legend_LegendActionsApplyButton: '{!JSENCODE($Label.AlignmentBuilder_Legend_LegendActionsApplyButton)}',
                 AlignmentBuilder_Legend_RefineSelectionButton: '{!JSENCODE($Label.AlignmentBuilder_Legend_RefineSelectionButton)}',
                 AlignmentBuilder_Legend_NameTooLongInputError: '{!JSENCODE($Label.AlignmentBuilder_Legend_NameTooLongInputError)}',
                 AlignmentBuilder_Legend_UpdateError: '{!JSENCODE($Label.AlignmentBuilder_Legend_UpdateError)}',
@@ -728,6 +770,7 @@
                 AlignmentBuilder_Legend_EditFormula: '{!JSENCODE($Label.AlignmentBuilder_Legend_EditFormula)}',
                 AlignmentBuilder_Legend_CreateFormulaPopoverHeader: '{!JSENCODE($Label.AlignmentBuilder_Legend_CreateFormulaPopoverHeader)}',
                 AlignmentBuilder_Legend_CreateFormulaPopoverDescription: '{!JSENCODE($Label.AlignmentBuilder_Legend_CreateFormulaPopoverDescription)}',
+                AlignmentBuilder_Legend_SelectRowMessage: '{!JSENCODE($Label.AlignmentBuilder_Legend_SelectRowMessage)}',
                 AlignmentBuilder_Legend_FormulaAssist: '{!JSENCODE($Label.AlignmentBuilder_Legend_FormulaAssist)}',
                 AlignmentBuilder_Legend_BulkActionsTargetAssistiveText: '{!JSENCODE($Label.AlignmentBuilder_Legend_BulkActionsTargetAssistiveText)}',
                 AlignmentBuilder_Legend_NoBoundaryTitle: '{!JSENCODE($Label.AlignmentBuilder_Legend_NoBoundaryTitle)}',
@@ -820,6 +863,18 @@
                 AlignmentBuilder_RefineSelection_RefineSelectionCancelButton: '{!JSENCODE($Label.AlignmentBuilder_RefineSelection_RefineSelectionCancelButton)}',
                 AlignmentBuilder_RefineSelection_RefineSelectionDoneButton: '{!JSENCODE($Label.AlignmentBuilder_RefineSelection_RefineSelectionDoneButton)}',
 
+                // Rule Conflicts Modal
+                AlignmentBuilder_RuleConflictsModal_Header: '{!JSENCODE($Label.AlignmentBuilder_RuleConflictsModal_Header)}',
+                RuleConflictsModal_Body_NotificationMessage: '{!JSENCODE($Label.RuleConflictsModal_Body_NotificationMessage)}',
+                RuleConflictsModal_Body_TableHeader_UnitID: '{!JSENCODE($Label.RuleConflictsModal_Body_TableHeader_UnitID)}',
+                RuleConflictsModal_Body_TableHeader_UnitName: '{!JSENCODE($Label.RuleConflictsModal_Body_TableHeader_UnitName)}',
+                RuleConflictsModal_Body_TableHeader_UnitType: '{!JSENCODE($Label.RuleConflictsModal_Body_TableHeader_UnitType)}',
+                RuleConflictsModal_Body_TableHeader_ProposedAssignment: '{!JSENCODE($Label.RuleConflictsModal_Body_TableHeader_ProposedAssignment)}',
+                RuleConflictsModal_Body_TableHeader_CurrentAssignment: '{!JSENCODE($Label.RuleConflictsModal_Body_TableHeader_CurrentAssignment)}',
+                RuleConflictsModal_Body_TableHeader_Rule: '{!JSENCODE($Label.RuleConflictsModal_Body_TableHeader_Rule)}',
+                RuleConflictsModal_Footer_CancelButton: '{!JSENCODE($Label.RuleConflictsModal_Footer_CancelButton)}',
+                RuleConflictsModal_Footer_ExportButton: '{!JSENCODE($Label.RuleConflictsModal_Footer_ExportButton)}',
+                
                 // Target Allocation Modal
                 TargetAllocationModal_Header_ModalHeader: '{!JSENCODE($Label.TargetAllocationModal_Header_ModalHeader)}',
                 TargetAllocationModal_Body_SearchPlaceholder: '{!JSENCODE($Label.TargetAllocationModal_Body_SearchPlaceholder)}',
@@ -965,6 +1020,7 @@
                 EditTerritoryModelModal_Processing_StatusText_UpdateHierarchyLevelName: '{!JSENCODE($Label.EditTerritoryModelModal_Processing_StatusText_UpdateHierarchyLevelName)}',
                 EditTerritoryModelModal_Processing_StatusText_HierarchyUpdated: '{!JSENCODE($Label.EditTerritoryModelModal_Processing_StatusText_HierarchyUpdated)}',
                 EditTerritoryModelModal_Processing_StatusText_AreaUpdated: '{!JSENCODE($Label.EditTerritoryModelModal_Processing_StatusText_AreaUpdated)}',
+                EditTerritoryModelModal_Import_BoundarySetUnavailable: '{!JSENCODE($Label.EditTerritoryModelModal_Import_BoundarySetUnavailable)}',
                 CreateAlignmentTerritoryModelModal_Body_EditAreaNameButtonIcon: '{!JSENCODE($Label.CreateAlignmentTerritoryModelModal_Body_EditAreaNameButtonIcon)}',
                 CreateAlignmentTerritoryModelModal_Body_AddChildAreasButtonIcon: '{!JSENCODE($Label.CreateAlignmentTerritoryModelModal_Body_AddChildAreasButtonIcon)}',
                 CreateAlignmentTerritoryModelModal_Body_DeleteAreaButtonIcon: '{!JSENCODE($Label.CreateAlignmentTerritoryModelModal_Body_DeleteAreaButtonIcon)}',
@@ -1395,6 +1451,7 @@
                 RestoreSnapshotModal_LoadingScreen_RestoringAccessMessage: '{!JSENCODE($Label.RestoreSnapshotModal_LoadingScreen_RestoringAccessMessage)}',
                 RestoreSnapshotModal_Notification_RestoringSnapshot: '{!JSENCODE($Label.RestoreSnapshotModal_Notification_RestoringSnapshot)}',
                 RestoreSnapshotModal_Notification_ErrorMessage: '{!JSENCODE($Label.RestoreSnapshotModal_Notification_ErrorMessage)}',
+                RestoreSnapshotModal_Notification_Rollback_ErrorMessage: '{!JSENCODE($Label.RestoreSnapshotModal_Notification_Rollback_ErrorMessage)}',                
                 RestoreSnapshotModal_Comment_CommentText: '{!JSENCODE($Label.RestoreSnapshotModal_Comment_CommentText)}',
                 RestoreSnapshotModal_Footer_RestoreButton: '{!JSENCODE($Label.RestoreSnapshotModal_Footer_RestoreButton)}',
 
@@ -1412,6 +1469,28 @@
                 History_Body_TimeNotAvailableMessage: '{!JSENCODE($Label.History_Body_TimeNotAvailableMessage)}',
                 History_Body_EndOfHistory: '{!JSENCODE($Label.History_Body_EndOfHistory)}',
                 History_Body_UnknownUserLabel: '{!JSENCODE($Label.History_Body_UnknownUserLabel)}',
+                History_AreaLabel: '{!JSENCODE($Label.History_AreaLabel)}',
+                History_Yes: '{!JSENCODE($Label.History_Yes)}',
+                History_No: '{!JSENCODE($Label.History_No)}',
+                History_AreaRuleCreated_Name: '{!JSENCODE($Label.History_AreaRuleCreated_Name)}',
+                History_AreaRuleCreated_RuleName: '{!JSENCODE($Label.History_AreaRuleCreated_RuleName)}',
+                History_AreaRuleModified_Name: '{!JSENCODE($Label.History_AreaRuleModified_Name)}',
+                History_AreaRuleModified_PreviousCriteria: '{!JSENCODE($Label.History_AreaRuleModified_PreviousCriteria)}',
+                History_AreaRuleModified_NewCriteria: '{!JSENCODE($Label.History_AreaRuleModified_NewCriteria)}',
+                History_AreaRuleModified_PreviousName: '{!JSENCODE($Label.History_AreaRuleModified_PreviousName)}',
+                History_AreaRuleModified_NewName: '{!JSENCODE($Label.History_AreaRuleModified_NewName)}',
+                History_AreaRuleModified_PreviousChildAreas: '{!JSENCODE($Label.History_AreaRuleModified_PreviousChildAreas)}',
+                History_AreaRuleModified_NewChildAreas: '{!JSENCODE($Label.History_AreaRuleModified_NewChildAreas)}',
+                History_AreaRuleDeleted_Name: '{!JSENCODE($Label.History_AreaRuleDeleted_Name)}',
+                History_AreaRuleDeleted_Criteria: '{!JSENCODE($Label.History_AreaRuleDeleted_Criteria)}',
+                History_AreaRuleDeleted_ApplyToChildAreas: '{!JSENCODE($Label.History_AreaRuleDeleted_ApplyToChildAreas)}',
+                History_UnitsLocked_Name: '{!JSENCODE($Label.History_UnitsLocked_Name)}',
+                History_UnitsUnlocked_Name: '{!JSENCODE($Label.History_UnitsUnlocked_Name)}',
+                History_UnitsLocked_Legend: '{!JSENCODE($Label.History_UnitsLocked_Legend)}',
+                History_UnitsUnlocked_Legend: '{!JSENCODE($Label.History_UnitsUnlocked_Legend)}',
+                History_UnitsLocked_CSV: '{!JSENCODE($Label.History_UnitsLocked_CSV)}',
+                History_UnitsUnlocked_CSV: '{!JSENCODE($Label.History_UnitsUnlocked_CSV)}',
+                History_UnitsLocked_AndMore: '{!JSENCODE($Label.History_UnitsLocked_AndMore)}',
                 RestoreSnapshotModal_LoadingScreen_InitializingSubMessage: '{!JSENCODE($Label.RestoreSnapshotModal_LoadingScreen_InitializingSubMessage)}',
 
                 // Territory Summary
@@ -1485,6 +1564,7 @@
                 // Optimize Modal
                 OptimizeModal_Header_ModalHeader: '{!JSENCODE($Label.OptimizeModal_Header_ModalHeader)}',
                 OptimizeModal_ScopedNotification_DTN_ON: '{!JSENCODE($Label.OptimizeModal_ScopedNotification_DTN_ON)}',
+                OptimizeModal_ScopedNotification_CustomBoundaries_DTN_ON: '{!JSENCODE($Label.OptimizeModal_ScopedNotification_CustomBoundaries_DTN_ON)}',
                 OptimizeModal_ScopedNotification_DTN_OFF: '{!JSENCODE($Label.OptimizeModal_ScopedNotification_DTN_OFF)}',
                 OptimizeModal_BalanceCard_BalanceOnCombobox: '{!JSENCODE($Label.OptimizeModal_BalanceCard_BalanceOnCombobox)}',
                 OptimizeModal_BalanceCard_DriveTimeNetworkCheckbox: '{!JSENCODE($Label.OptimizeModal_BalanceCard_DriveTimeNetworkCheckbox)}',
@@ -1719,6 +1799,9 @@
                 PublishModal_EnterpriseTerritoryManagementBody_RuleSimplificationSkipRules: '{!JSENCODE($Label.PublishModal_EnterpriseTerritoryManagementBody_RuleSimplificationSkipRules)}',
                 PublishModal_EnterpriseTerritoryManagementBody_RuleSimplificationSimplify: '{!JSENCODE($Label.PublishModal_EnterpriseTerritoryManagementBody_RuleSimplificationSimplify)}',
                 PublishModal_EnterpriseTerritoryManagementBody_RuleSimplificationSplittoChildren: '{!JSENCODE($Label.PublishModal_EnterpriseTerritoryManagementBody_RuleSimplificationSplittoChildren)}',
+                PublishModal_EnterpriseTerritoryManagementBody_NonBoundaryRulePublishLabel: '{!JSENCODE($Label.PublishModal_EnterpriseTerritoryManagementBody_NonBoundaryRulePublishLabel)}',
+                PublishModal_EnterpriseTerritoryManagementBody_NonBoundaryRuleParent: '{!JSENCODE($Label.PublishModal_EnterpriseTerritoryManagementBody_NonBoundaryRuleParent)}',
+                PublishModal_EnterpriseTerritoryManagementBody_NonBoundaryRuleChild: '{!JSENCODE($Label.PublishModal_EnterpriseTerritoryManagementBody_NonBoundaryRuleChild)}',
                 PublishModal_EnterpriseTerritoryManagementBody_TerritoryModelLookupLabel: '{!JSENCODE($Label.PublishModal_EnterpriseTerritoryManagementBody_TerritoryModelLookupLabel)}',
                 PublishModal_EnterpriseTerritoryManagementBody_TerritoryModelSearchPlaceholder: '{!JSENCODE($Label.PublishModal_EnterpriseTerritoryManagementBody_TerritoryModelSearchPlaceholder)}',
                 PublishModal_EnterpriseTerritoryManagementBody_NewModelButton: '{!JSENCODE($Label.PublishModal_EnterpriseTerritoryManagementBody_NewModelButton)}',
@@ -1980,6 +2063,7 @@
                 BuildTerritoryModelQueryModal_Body_TerritorySearchIcon: '{!JSENCODE($Label.BuildTerritoryModelQueryModal_Body_TerritorySearchIcon)}',
                 BuildTerritoryModelQueryModal_Body_TerritoryClearIcon: '{!JSENCODE($Label.BuildTerritoryModelQueryModal_Body_TerritoryClearIcon)}',
                 BuildTerritoryModelQueryModal_Body_TerritorySearchPlaceholderText: '{!JSENCODE($Label.BuildTerritoryModelQueryModal_Body_TerritorySearchPlaceholderText)}',
+                BuildTerritoryModelQueryModal_Body_TreeTruncatedToast: '{!JSENCODE($Label.BuildTerritoryModelQueryModal_Body_TreeTruncatedToast)}',
 
                 // Setup Modal
                 SetupModal_Header_ModalHeader: '{!JSENCODE($Label.SetupModal_Header_ModalHeader)}',
@@ -2011,6 +2095,7 @@
                 SetupModal_BoundaryConfigBody_NearbyInstructions: '{!JSENCODE($Label.SetupModal_BoundaryConfigBody_NearbyInstructions)}',
                 SetupModal_BoundaryConfigBody_NearbyLabel: '{!JSENCODE($Label.SetupModal_BoundaryConfigBody_NearbyLabel)}',
                 SetupModal_BoundaryConfigBody_LoadingBoundaryMessage: '{!JSENCODE($Label.SetupModal_BoundaryConfigBody_LoadingBoundaryMessage)}',
+                SetupModal_BoundaryConfigBody_LoadingBoundaryError: '{!JSENCODE($Label.SetupModal_BoundaryConfigBody_LoadingBoundaryError)}',
                 SetupModal_LegendBody_SavingMessage: '{!JSENCODE($Label.SetupModal_LegendBody_SavingMessage)}',
                 SetupModal_AttributesBody_SavingMessage: '{!JSENCODE($Label.SetupModal_AttributesBody_SavingMessage)}',
                 SetupModal_LegendBody_AreasCard: '{!JSENCODE($Label.SetupModal_LegendBody_AreasCard)}',
@@ -2365,6 +2450,7 @@
                 CreateDataSetDetailsModal_FilterBoundariesPopover_CancelButton: '{!JSENCODE($Label.CreateDataSetDetailsModal_FilterBoundariesPopover_CancelButton)}',
                 CreateDataSetDetailsModal_FilterBoundariesPopover_ApplyButton: '{!JSENCODE($Label.CreateDataSetDetailsModal_FilterBoundariesPopover_ApplyButton)}',
                 CreateDataSetDetailsModal_ContainerSetSelector_Points: '{!JSENCODE($Label.CreateDataSetDetailsModal_ContainerSetSelector_Points)}',
+                CreateDataSetDetailsModal_ContainerSetSelector_CustomSuffix: '{!JSENCODE($Label.CreateDataSetDetailsModal_ContainerSetSelector_CustomSuffix)}',
                 CreateDataSetDetailsModal_RequiredInputErrorPopover_PopoverHeader: '{!JSENCODE($Label.CreateDataSetDetailsModal_RequiredInputErrorPopover_PopoverHeader)}',
                 CreateDataSetDetailsModal_RequiredInputErrorPopover_ProvideNameErrorText: '{!JSENCODE($Label.CreateDataSetDetailsModal_RequiredInputErrorPopover_ProvideNameErrorText)}',
                 CreateDataSetDetailsModal_RequiredInputErrorPopover_MaxCharactersErrorText: '{!JSENCODE($Label.CreateDataSetDetailsModal_RequiredInputErrorPopover_MaxCharactersErrorText)}',
@@ -2772,6 +2858,17 @@
                 CreateAlignmentAssignmentModal_Footer_CancelButton: '{!JSENCODE($Label.CreateAlignmentAssignmentModal_Footer_CancelButton)}',
                 CreateAlignmentAssignmentModal_Footer_FinishButton: '{!JSENCODE($Label.CreateAlignmentAssignmentModal_Footer_FinishButton)}',
 
+                // Custom Boundaries
+                CustomBoundaries_ContentVersion_ContentNotFound: '{!JSENCODE($Label.CustomBoundaries_ContentVersion_ContentNotFound)}',
+                CustomBoundaries_ContentVersion_DecompressError: '{!JSENCODE($Label.CustomBoundaries_ContentVersion_DecompressError)}',
+                CustomBoundaries_ContentVersion_EmptyResponse: '{!JSENCODE($Label.CustomBoundaries_ContentVersion_EmptyResponse)}',
+                CustomBoundaries_ContentVersion_InvalidGeoJSON: '{!JSENCODE($Label.CustomBoundaries_ContentVersion_InvalidGeoJSON)}',
+                CustomBoundaries_ContentVersion_InvalidJSON: '{!JSENCODE($Label.CustomBoundaries_ContentVersion_InvalidJSON)}',
+                CustomBoundaries_ContentVersion_NetworkError: '{!JSENCODE($Label.CustomBoundaries_ContentVersion_NetworkError)}',
+                PublishModal_CustomBoundaryWarning: '{!JSENCODE($Label.PublishModal_CustomBoundaryWarning)}',
+                CustomBoundaries_LoadContainers_Error: '{!JSENCODE($Label.CustomBoundaries_LoadContainers_Error)}',
+                TerritoryPlanning_CustomBoundaries_PilotGate_Warning: '{!JSENCODE($Label.TerritoryPlanning_CustomBoundaries_PilotGate_Warning)}',
+
                 // AI
                 AI: {
                     Settings: '{!JSENCODE($Label.AI_Settings)}',
@@ -2804,6 +2901,10 @@
                         CollapsePanel: '{!JSENCODE($Label.AI_Panel_CollapsePanel)}',
                     },
                 },
+
+                // ETM import/publish - Data Cloud errors
+                TP_ETM_Error_SalesTerritoriesCompatNotEnabled: '{!JSENCODE($Label.TP_ETM_Error_SalesTerritoriesCompatNotEnabled)}',
+                TP_ETM_Error_MissingDCFieldMappings: '{!JSENCODE($Label.TP_ETM_Error_MissingDCFieldMappings)}',
 
                 // SLDS Labels
                 SLDS: {

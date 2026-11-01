@@ -384,6 +384,7 @@
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
+    <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
         <fullName>Spiff_Opportunity_Commission_Fields</fullName>
         <description>Spiff Commission-related fields</description>
@@ -2027,7 +2028,7 @@ IF(ISPICKVAL( Billing_Schedule__c , &quot;One-time&quot;), &quot;One-time&quot;,
         <relationshipName>OpportunityFrom</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -3432,6 +3433,14 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Gong_Automation_Trigger_Date__c</fullName>
+        <label>Gong Automation Trigger Date (Renewal)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Gong__Gong_Count__c</fullName>
         <deprecated>false</deprecated>
         <description>Auto computed field that is used in reports for aggregations.</description>
@@ -4003,6 +4012,11 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>LastSyncTime</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Last_Campaign_Touchpoint_Date__c</fullName>
         <label>Last Campaign Touchpoint Date</label>
         <required>false</required>
@@ -4156,6 +4170,17 @@ IF(ISPICKVAL(Lead_Type__c, &quot;&quot;) , &apos;&apos;, &quot;Warm&quot;))</for
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Lifecycle_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Lifecycle Stage</label>
+        <length>62</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Lead_Timestamp__c</fullName>
@@ -6508,7 +6533,7 @@ OwnerId  = $User.Id)</formula>
     <fields>
         <fullName>NextStep</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>true</trackTrending>
     </fields>
     <fields>
@@ -6595,6 +6620,19 @@ OwnerId  = $User.Id)</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Opp_Total_Score__c</fullName>
+        <description>Score of all contacts associated with the opportunity + Account Score</description>
+        <externalId>false</externalId>
+        <label>Opp Total Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Opportunity_Age__c</fullName>
         <description>How long is/was this deal open (SS2-Close)</description>
         <externalId>false</externalId>
@@ -6633,7 +6671,7 @@ TODAY() - DATEVALUE(CreatedDate))</formula>
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -9961,6 +9999,7 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
     </listViews>
     <listViews>
         <fullName>AllOpportunities</fullName>
+        <columns>Gong_Automation_Trigger_Date__c</columns>
         <columns>Account_Owner__c</columns>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>OPPORTUNITY.STAGE_NAME</columns>
@@ -9970,14 +10009,13 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <columns>Total_ARR__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>OPPORTUNITY.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Opportunity.Sales_Opportunity</value>
+            <field>Gong_Automation_Trigger_Date__c</field>
+            <operation>notEqual</operation>
         </filters>
         <filters>
-            <field>CORE.USERS.ALIAS</field>
+            <field>OPPORTUNITY.RECORDTYPE</field>
             <operation>equals</operation>
-            <value>CFety</value>
+            <value>Opportunity.Existing_Business</value>
         </filters>
         <label>All Opportunities</label>
     </listViews>
@@ -10468,11 +10506,6 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <columns>OPPORTUNITY.CLOSE_DATE</columns>
         <columns>Rep_Forecast_Category__c</columns>
         <filterScope>Mine</filterScope>
-        <filters>
-            <field>OPPORTUNITY.STAGE_NAME</field>
-            <operation>notEqual</operation>
-            <value>Closed Lost</value>
-        </filters>
         <label>My Opportunities</label>
     </listViews>
     <listViews>
@@ -10992,6 +11025,49 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>Scored_Open_Inbound_SDO_s</fullName>
+        <columns>Opp_Total_Score__c</columns>
+        <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+        <columns>Lead_Type__c</columns>
+        <columns>Tell_Us_About_Your_Needs__c</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>GSA_Relationship__c</columns>
+        <columns>Lead_Contact__c</columns>
+        <columns>Marketing_Product_of_Interest__c</columns>
+        <columns>Referrer_URL__c</columns>
+        <columns>Submission_Page_URL__c</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Marketing_Identified_Country__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Sales_Development</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.FULL_NAME</field>
+            <operation>equals</operation>
+            <value>Integration User</value>
+        </filters>
+        <filters>
+            <field>Lead_Type__c</field>
+            <operation>notContain</operation>
+            <value>News - Advertisement</value>
+        </filters>
+        <filters>
+            <field>Opp_Total_Score__c</field>
+            <operation>lessThan</operation>
+            <value>60</value>
+        </filters>
+        <label>Scored Open Inbound SDO’s</label>
+    </listViews>
+    <listViews>
         <fullName>US_SDO_s</fullName>
         <columns>OPPORTUNITY.AGE_IN_DAYS</columns>
         <columns>OPPORTUNITY.LEAD_SOURCE</columns>
@@ -11004,10 +11080,8 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
         <columns>Marketing_Product_of_Interest__c</columns>
         <columns>Referrer_URL__c</columns>
         <columns>Submission_Page_URL__c</columns>
-        <columns>Marketing_Identified_Country__c</columns>
-        <columns>Contact_Name_For_Testing__c</columns>
-        <columns>Submission_Notes_New__c</columns>
         <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Marketing_Identified_Country__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>OPPORTUNITY.RECORDTYPE</field>
@@ -11015,9 +11089,19 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <value>Opportunity.Sales_Development</value>
         </filters>
         <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
             <field>CORE.USERS.FULL_NAME</field>
             <operation>equals</operation>
             <value>Integration User</value>
+        </filters>
+        <filters>
+            <field>Lead_Type__c</field>
+            <operation>notContain</operation>
+            <value>News - Advertisement</value>
         </filters>
         <label>All Open Inbound SDO’s</label>
     </listViews>
@@ -11354,6 +11438,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>Corporate</fullName>
                 <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -15596,6 +15691,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Close_Reason__c</picklist>
             <values>
                 <fullName>Competition</fullName>
@@ -19747,6 +19853,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Close_Reason__c</picklist>
             <values>
                 <fullName>CSA Client</fullName>
@@ -23787,6 +23904,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>Corporate</fullName>
                 <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -27886,6 +28014,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>Corporate</fullName>
                 <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -32472,6 +32611,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Close_Reason__c</picklist>
             <values>
                 <fullName>CSA Client</fullName>
@@ -34740,6 +34890,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>RCA</fullName>
                 <default>false</default>
             </values>
@@ -36811,6 +36965,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <picklist>Class__c</picklist>
             <values>
                 <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -40714,6 +40879,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Close_Reason__c</picklist>
             <values>
                 <fullName>Advisory Involvement</fullName>
@@ -44602,6 +44778,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Close_Reason__c</picklist>
             <values>
                 <fullName>Advisory Involvement</fullName>
@@ -48315,6 +48502,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>Corporate</fullName>
                 <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -52779,6 +52977,17 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
             <values>
                 <fullName>Corporate</fullName>
                 <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Click_to_Pay__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -59576,6 +59785,14 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PropertyEU</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>RCA</fullName>
                 <default>false</default>
             </values>
@@ -63918,6 +64135,10 @@ IF(ISPICKVAL(DDS_ScoreAssignment__c, &quot;F&quot;), 1,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Property Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>RCA</fullName>
                 <default>false</default>
             </values>
@@ -66118,7 +66339,7 @@ ISBLANK(TEXT(Close_Reason__c)))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Closed_Lost_Bad_Opp_Interest</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
@@ -66726,15 +66947,11 @@ $Permission.Skip_Validation_Rule= False,
         <active>true</active>
         <errorConditionFormula>AND(
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
- RecordType.DeveloperName = &apos;Sales_Opportunity&apos;,
- Sales_Development_Opportunity__c =&apos;&apos;,
-    NOT(ISBLANK(Discovery_Meeting_Scheduled_Date__c)),
-    Discovery_Meeting_Scheduled_Date__c &lt;
-        IF(
-            ISNEW(),
-            TODAY(),
-            DATEVALUE(CreatedDate)
-        ) - 14
+ISNEW(),
+RecordType.DeveloperName = &apos;Sales_Opportunity&apos;,
+ISBLANK(Sales_Development_Opportunity__c),
+NOT(ISBLANK(Discovery_Meeting_Scheduled_Date__c)),
+Discovery_Meeting_Scheduled_Date__c &lt; (TODAY() - 14)
 )</errorConditionFormula>
         <errorMessage>Discovery Scheduled meeting date cannot be less than 14 days.</errorMessage>
     </validationRules>
@@ -67260,7 +67477,7 @@ ISBLANK( Discovery_Meeting_Scheduled_Date__c )
     </validationRules>
     <validationRules>
         <fullName>Require_Event</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
@@ -67285,7 +67502,7 @@ IJ_Global_Events_Related_Event__c = NULL
     </validationRules>
     <validationRules>
         <fullName>Require_InfraSectors_Covered</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISPICKVAL(StageName, &quot;Closed Won&quot;),
@@ -67439,7 +67656,7 @@ ISBLANK(Sales_Owner__c)
     </validationRules>
     <validationRules>
         <fullName>Require_Sector_Markets_Covered</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     ISPICKVAL(StageName, &quot;Closed Won&quot;),
@@ -67725,7 +67942,7 @@ ISPICKVAL(StageName, &quot;Disqualified&quot;)
     </validationRules>
     <validationRules>
         <fullName>Stg4_Total_ARR_Greater_0</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND(
     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
     NOT($Permission.Skip_Validation_Rule),
@@ -67761,7 +67978,8 @@ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISCHANGED(StageName),
 OR(
 RecordType.Name = &quot;Sales Opportunity&quot;,
-RecordType.Name = &quot;Renewal&quot;),
+RecordType.Name = &quot;Renewal&quot;,
+RecordType.Name = &quot;Advertising&quot;),
 NOT(ISPICKVAL(Win_Validation__c, &quot;Opportunity Reviewed&quot;)),
 ISPICKVAL ( StageName , &quot;Closed Won&quot;)
 )</errorConditionFormula>

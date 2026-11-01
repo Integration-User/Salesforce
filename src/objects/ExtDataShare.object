@@ -72,6 +72,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>DataShareConsentFormStatus</fullName>
         <inlineHelpText>Admins or priviledged users in the receiving organization other than Salesforce Data Cloud can view and query all records of the data lake objects (DLOs) mapped to data model objects (DMOs) in the data share.</inlineHelpText>
@@ -94,41 +95,6 @@
         <fullName>Name</fullName>
         <trackHistory>false</trackHistory>
     </fields>
-    <listViews>
-        <fullName>All_ExtDataShares</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Data Shares</label>
-    </listViews>
-    <listViews>
-        <fullName>InboundDataShares</fullName>
-        <columns>Name</columns>
-        <columns>DataSpace</columns>
-        <columns>ObjectCount</columns>
-        <columns>DataShareStatus</columns>
-        <columns>CreatedDate</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>DataShareType</field>
-            <operation>equals</operation>
-            <value>Inbound</value>
-        </filters>
-        <label>Inbound Data Shares</label>
-    </listViews>
-    <listViews>
-        <fullName>OutboundDataShares</fullName>
-        <columns>Name</columns>
-        <columns>DataSpace</columns>
-        <columns>ObjectCount</columns>
-        <columns>DataShareStatus</columns>
-        <columns>CreatedDate</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>DataShareType</field>
-            <operation>equals</operation>
-            <value>Outbound</value>
-        </filters>
-        <label>Outbound Data Shares</label>
-    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>DataSpace</customTabListAdditionalFields>
         <customTabListAdditionalFields>DataShareStatus</customTabListAdditionalFields>

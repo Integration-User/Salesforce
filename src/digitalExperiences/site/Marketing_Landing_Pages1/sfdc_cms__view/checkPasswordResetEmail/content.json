@@ -1,0 +1,81 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Check Password",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"c4001fdf-e7c5-4f24-9f0f-fd28610c0988\",\"columns\":[{\"UUID\":\"98102465-b900-4ff8-8bdf-9319ab10d145\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "alignment" : "left",
+                "imageInfo" : "",
+                "imageInfoMobile" : "",
+                "logoWidth" : 250
+              },
+              "definition" : "dxp_content_layout:siteLogo",
+              "id" : "cb407836-7ee8-4580-9402-6343b48ae308",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkEmailMessage" : "Check the email account associated with your username for the link to reset your password. If you didn't get an email, check your Spam folder. Or contact your administrator.",
+                "returnButtonLabel" : "Back to login",
+                "titleLabel" : "Now check your email"
+              },
+              "definition" : "community_login:checkEmail",
+              "id" : "dd3a0d3b-c3eb-450b-bf47-89320dd49770",
+              "type" : "component"
+            } ],
+            "id" : "98102465-b900-4ff8-8bdf-9319ab10d145",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "c4001fdf-e7c5-4f24-9f0f-fd28610c0988",
+          "type" : "component"
+        } ],
+        "id" : "bb370aa8-f28b-41d7-b791-916ca4c1ebef",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Check Password",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "56bf932d-6627-4650-a941-502ddd9ec936",
+          "type" : "component"
+        } ],
+        "id" : "6f77b170-9e33-4a8d-a5d3-08b0ccea51ae",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "780c64dd-9b01-42f8-a49d-1d8e934ac819",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "check-password"
+  },
+  "urlName" : "check-password"
+}

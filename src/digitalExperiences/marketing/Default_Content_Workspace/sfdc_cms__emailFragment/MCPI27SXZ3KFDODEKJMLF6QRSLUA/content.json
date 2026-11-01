@@ -1,0 +1,171 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "Content Block: Buttons Side-by-Side",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:backgroundImage" : {
+      "position" : "center center",
+      "repeat" : "no-repeat",
+      "size" : "cover"
+    },
+    "lightning:brandSource" : "MCUQIXYI74CNAYTK7HSG6BEHV4SA",
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "103206fe-7443-4129-86c7-bb09332c001b",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.none}",
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "f109d245-12bb-419e-8d47-624d28eb7401",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 6.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : {
+              "contrast" : "#162331",
+              "neutral" : "#0d4041",
+              "primaryAccent" : "#49b065",
+              "primaryAccentContrast" : "#ffffff",
+              "primaryAccentContrastDerived" : "#FFFFFF",
+              "primaryAccentDerived" : "#2d974f",
+              "root" : "#ffffff"
+            },
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : {
+              "bottom" : {
+                "unit" : "px",
+                "value" : 16.0
+              },
+              "left" : {
+                "unit" : "px",
+                "value" : 16.0
+              },
+              "right" : {
+                "unit" : "px",
+                "value" : 16.0
+              },
+              "top" : {
+                "unit" : "px",
+                "value" : 16.0
+              }
+            },
+            "lightning:verticalAlignment" : "middle"
+          },
+          "definition" : "lightning/column",
+          "id" : "ebbf17e2-d5e5-4d9e-a8ab-18b4bf85b19d",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.buttonStyleGroup.primary.lightning:borderRadius}",
+              "lightning:borderWidth" : "{!$brand.buttonStyleGroup.primary.lightning:borderWidth}",
+              "lightning:buttonColorGroup" : "{!$brand.buttonStyleGroup.primary.lightning:buttonColorGroup}",
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.buttonStyleGroup.primary.lightning:padding}",
+              "lightning:typography" : "{!$brand.buttonStyleGroup.primary.lightning:typography}",
+              "sfdc_cms:styleGroup" : "{!$brand.buttonStyleGroup.primary}",
+              "text" : "Lorem Ipsum Button",
+              "width" : {
+                "unit" : "%",
+                "value" : 100.0
+              }
+            },
+            "definition" : "lightning/actionButton",
+            "id" : "ccde0d42-a501-4107-8d37-9a428a5a2879",
+            "type" : "block"
+          } ]
+        }, {
+          "attributes" : {
+            "columnWidth" : 6.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "contain"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : {
+              "contrast" : "#162331",
+              "neutral" : "#0d4041",
+              "primaryAccent" : "#49b065",
+              "primaryAccentContrast" : "#ffffff",
+              "primaryAccentContrastDerived" : "#FFFFFF",
+              "primaryAccentDerived" : "#2d974f",
+              "root" : "#ffffff"
+            },
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.medium}",
+            "lightning:verticalAlignment" : "middle"
+          },
+          "definition" : "lightning/column",
+          "id" : "845bea27-bea9-48b8-b6eb-06b17476c02d",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "lightning:borderRadius" : "{!$brand.buttonStyleGroup.secondary.lightning:borderRadius}",
+              "lightning:borderWidth" : "{!$brand.buttonStyleGroup.secondary.lightning:borderWidth}",
+              "lightning:buttonColorGroup" : "{!$brand.buttonStyleGroup.secondary.lightning:buttonColorGroup}",
+              "lightning:horizontalAlignment" : "center",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.buttonStyleGroup.secondary.lightning:padding}",
+              "lightning:typography" : "{!$brand.buttonStyleGroup.secondary.lightning:typography}",
+              "sfdc_cms:styleGroup" : "{!$brand.buttonStyleGroup.secondary}",
+              "text" : "Lorem Ipsum Button",
+              "width" : {
+                "unit" : "%",
+                "value" : 100.0
+              }
+            },
+            "definition" : "lightning/actionButton",
+            "id" : "e5b3665a-fd5f-47d7-99d2-d505d251409d",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:description" : "Two side-by-side buttons",
+    "sfdc_cms:title" : "Content Block: Buttons Side-by-Side",
+    "sfdc_cms:urlName" : "content-block-feature---image-right",
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "content-block-feature---image-right"
+}

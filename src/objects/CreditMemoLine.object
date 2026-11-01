@@ -128,6 +128,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>AdjustmentAmount</fullName>
         <trackHistory>false</trackHistory>
@@ -259,13 +260,16 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>TotalAppliedRefundAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TotalUnappliedRefundAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackHistory>false</trackHistory>
     </fields>
-    <searchLayouts>
-        <searchResultsAdditionalFields>Type</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>RelatedLine</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>LineAmount</searchResultsAdditionalFields>
-    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

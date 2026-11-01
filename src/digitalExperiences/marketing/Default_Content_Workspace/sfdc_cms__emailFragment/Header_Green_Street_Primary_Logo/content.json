@@ -1,0 +1,116 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "Logo - Green Street",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:backgroundImage" : {
+      "position" : "center center",
+      "repeat" : "no-repeat",
+      "size" : "cover"
+    },
+    "lightning:brandSource" : "MCUQIXYI74CNAYTK7HSG6BEHV4SA",
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "c86905af-20ec-43a5-bf0a-c0a527c80db4",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.none}",
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "444a072a-d567-4fbd-a44d-99cd4676b853",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.medium}",
+            "lightning:verticalAlignment" : "top"
+          },
+          "definition" : "lightning/column",
+          "id" : "3ada0399-30b8-4a76-8cdb-5c18d966038e",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "imageFitConfig" : {
+                "width" : {
+                  "unit" : "%",
+                  "value" : 35.0
+                }
+              },
+              "imageInfo" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : "image/svg+xml",
+                  "ref" : "MCKV6WPJQMQBBNFMGWLHHOAVMD5M",
+                  "size" : 5294.0,
+                  "type" : "imageReference"
+                },
+                "url" : "/cms/media/MCKV6WPJQMQBBNFMGWLHHOAVMD5M?fileName=0_green.street.logo_PRIMARY.svg&fileHash=da94c18e0de39c473945244a71e6557d"
+              },
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:horizontalAlignment" : "left",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "linkUrlMergeField" : "https://www.greenstreet.com/"
+            },
+            "definition" : "lightning/image",
+            "id" : "898da595-9552-4603-89e0-3e15b87ef5e0",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:description" : "Email Header content block with the Green Street primary logo",
+    "sfdc_cms:title" : "Logo - Green Street",
+    "sfdc_cms:urlName" : "header-with-green-street-primary-logo",
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "header-with-green-street-primary-logo"
+}

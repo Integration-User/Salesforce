@@ -1,0 +1,116 @@
+{
+  "type" : "sfdc_cms__emailFragment",
+  "title" : "Logo - Green Street Infrastructure",
+  "contentBody" : {
+    "backgroundColor" : "#f3f3f3",
+    "lightning:backgroundImage" : {
+      "position" : "center center",
+      "repeat" : "no-repeat",
+      "size" : "cover"
+    },
+    "lightning:brandSource" : "MCUQIXYI74CNAYTK7HSG6BEHV4SA",
+    "lightning:colorScheme" : "{!$brand.colorScheme}",
+    "lightning:dataProviders" : [ {
+      "attributes" : {
+        "objectApiName" : "UnifiedssotIndividual0001__dlm"
+      },
+      "definition" : "sfdc_cms__unifiedIndividualDataProvider",
+      "sfdcExpressionKey" : "$unifiedIndividual"
+    } ],
+    "lightning:expressions" : [ ],
+    "lightning:padding" : "{!$brand.spacing.none}",
+    "sfdc_cms:attachments" : [ ],
+    "sfdc_cms:block" : {
+      "definition" : "sfdc_cms/rootContentBlock",
+      "id" : "660d53d1-33ab-485a-938e-08cc0d6f83bb",
+      "type" : "block",
+      "children" : [ {
+        "attributes" : {
+          "lightning:backgroundImage" : {
+            "position" : "center center",
+            "repeat" : "no-repeat",
+            "size" : "cover"
+          },
+          "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+          "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+          "lightning:colorScheme" : {
+            "contrast" : "#162331",
+            "neutral" : "#0d4041",
+            "primaryAccent" : "#49b065",
+            "primaryAccentContrast" : "#ffffff",
+            "primaryAccentContrastDerived" : "#FFFFFF",
+            "primaryAccentDerived" : "#2d974f",
+            "root" : "#ffffff"
+          },
+          "lightning:margin" : "{!$brand.spacing.none}",
+          "lightning:padding" : "{!$brand.spacing.none}",
+          "reverseOrderOnMobile" : false,
+          "stackOnMobile" : true
+        },
+        "definition" : "lightning/section",
+        "id" : "e2dac163-f217-4900-a83f-01bcfa7c3625",
+        "type" : "block",
+        "children" : [ {
+          "attributes" : {
+            "columnWidth" : 12.0,
+            "lightning:backgroundImage" : {
+              "position" : "center center",
+              "repeat" : "no-repeat",
+              "size" : "cover"
+            },
+            "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+            "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+            "lightning:colorScheme" : "{!$brand.colorScheme}",
+            "lightning:margin" : "{!$brand.spacing.none}",
+            "lightning:padding" : "{!$brand.spacing.medium}",
+            "lightning:verticalAlignment" : "top"
+          },
+          "definition" : "lightning/column",
+          "id" : "19fe0d1b-ba1b-44fd-b792-3ab9e2e571f2",
+          "type" : "block",
+          "children" : [ {
+            "attributes" : {
+              "imageFitConfig" : {
+                "width" : {
+                  "unit" : "%",
+                  "value" : 34.0
+                }
+              },
+              "imageInfo" : {
+                "altText" : "",
+                "overrideAltText" : false,
+                "source" : {
+                  "mimeType" : "image/svg+xml",
+                  "ref" : "MCPAMZINH3DZAS7DVJSSV5CXCXYI",
+                  "size" : 8817.0,
+                  "type" : "imageReference"
+                },
+                "url" : "/cms/media/MCPAMZINH3DZAS7DVJSSV5CXCXYI?fileName=GS+Infrastructure+Logo+%28Final%29_Color.svg&fileHash=4f9aeefcb5b8fdb731af810a8b61b1bb"
+              },
+              "lightning:borderRadius" : "{!$brand.borderRadius.square}",
+              "lightning:borderWidth" : "{!$brand.borderWeight.none}",
+              "lightning:colorGroup" : {
+                "borderColor" : "{!$brand.colorScheme.neutral}",
+                "linkColor" : "{!$brand.colorScheme.primaryAccent}",
+                "textColor" : "{!$brand.colorScheme.contrast}"
+              },
+              "lightning:horizontalAlignment" : "left",
+              "lightning:margin" : "{!$brand.spacing.none}",
+              "lightning:padding" : "{!$brand.spacing.none}",
+              "lightning:typography" : "{!$brand.typography.paragraph.paragraph1}",
+              "linkUrlMergeField" : "https://eu.greenstreet.com/products/infrastructure"
+            },
+            "definition" : "lightning/image",
+            "id" : "afff61f9-018a-47e7-a2ce-0350b88cf7a4",
+            "type" : "block"
+          } ]
+        } ]
+      } ]
+    },
+    "sfdc_cms:description" : "Email Header content block with the Green Street Infrastructure logo",
+    "sfdc_cms:title" : "Logo - Green Street Infrastructure",
+    "sfdc_cms:urlName" : "header-with-green-street-infrastructure-logo",
+    "sfdc_cms:variants" : [ ]
+  },
+  "urlName" : "header-with-green-street-infrastructure-logo"
+}

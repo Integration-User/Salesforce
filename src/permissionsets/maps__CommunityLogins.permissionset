@@ -329,6 +329,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>maps__ContentRestTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>maps__CustomDispositionForm</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -894,6 +898,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>maps__RouteCalendarAJAXResourcesTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>maps__RoutingProfileRemoteActions</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>maps__RoutingProfileRemoteActionsTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -3011,6 +3023,46 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>maps__AdvRoute__c.maps__ViolatedConstraints__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__MaxSegmentTime__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__Priority__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__StandardId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__TravelTime__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__Urgency__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__VisitGap__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>maps__AdvRoutingProfile__c.maps__VisitRange__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5894,7 +5946,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>maps__SettingsGroup__c.maps__AdvRoutingProfile__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6245,6 +6297,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>maps__TPBoundarySet__c.maps__ContentDocumentId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>maps__TPComment__c.maps__Alignment__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6256,6 +6313,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>maps__TPComment__c.maps__Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__TPCustomAction__c.maps__ActionId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>maps__TPCustomAction__c.maps__Options__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7021,6 +7088,16 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>maps__AdvRoutingProfile__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -7516,7 +7593,27 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
+        <object>maps__TPBoundarySet__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>maps__TPComment__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>maps__TPCustomAction__c</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>

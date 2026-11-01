@@ -120,7 +120,8 @@
                 return {
                     mmid: 'minimap',
                     errors: {!errorsJSON},
-                    options: {!optionsJSON}                
+                    options: {!optionsJSON},
+                    siteBaseUrl: '{!JSENCODE(siteBaseUrl)}'
                 };
             });
         </script>

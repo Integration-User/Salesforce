@@ -13,6 +13,10 @@
     <tabs>standard-AbnExperiment</tabs>
     <tabs>standard-EngagementSignal</tabs>
     <tabs>standard-AttribModel</tabs>
+    <tabs>standard-PersnlBatchDecision</tabs>
     <tabs>standard-CalculatedAffinity</tabs>
+    <tabs>standard-PersnlTransformer</tabs>
+    <tabs>standard-PersonalizationCampaign</tabs>
+    <tabs>standard-PersonalizationRecommenderHome</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

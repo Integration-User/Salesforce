@@ -32,7 +32,7 @@
     </alerts>
     <alerts>
         <fullName>Closed_Won_Opportunity_Deleted_Alert</fullName>
-        <ccEmails>mbonyab@greenstreet.com,jecusi@greenstreet.com,mgupta@greenstreet.com</ccEmails>
+        <ccEmails>mbonyab@greenstreet.com,jecusi@greenstreet.com,mgupta@greenstreet.com, jblanden@greenstreet.com</ccEmails>
         <description>Closed Won Opportunity Deleted Alert</description>
         <protected>false</protected>
         <recipients>
@@ -316,6 +316,10 @@
             <type>role</type>
         </recipients>
         <recipients>
+            <recipient>AM_Manager_Enterprise</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
             <recipient>AM_Manager_Strategic</recipient>
             <type>role</type>
         </recipients>
@@ -325,6 +329,18 @@
         </recipients>
         <recipients>
             <recipient>EU_VP_Sales</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Global_Sales_Manager_A</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Head_of_Account_Management</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Manager</recipient>
             <type>role</type>
         </recipients>
         <recipients>
@@ -367,10 +383,6 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>ebowen@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
             <recipient>edaulat@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
@@ -388,10 +400,6 @@
         </recipients>
         <recipients>
             <recipient>mkerbs@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>mlehavi@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -819,10 +827,6 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>jcohen@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
             <recipient>jguilfoy@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
@@ -836,10 +840,6 @@
         </recipients>
         <recipients>
             <recipient>kkappeler@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>mgutter@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -874,10 +874,6 @@
             <recipient>smartin@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
-        <recipients>
-            <recipient>tking@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
         <senderAddress>greenstreet-newbusinesssales@greenstreetadvisors.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>unfiled$public/Closed_Won_Advertising_Email</template>
@@ -886,6 +882,10 @@
         <fullName>Won_Opp_alert</fullName>
         <description>Won Opp alert to New Sales</description>
         <protected>false</protected>
+        <recipients>
+            <recipient>AM_Manager_Core</recipient>
+            <type>role</type>
+        </recipients>
         <recipients>
             <recipient>BDR</recipient>
             <type>role</type>
@@ -1015,10 +1015,6 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>jcohen@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
             <recipient>jguilfoy@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
@@ -1032,14 +1028,6 @@
         </recipients>
         <recipients>
             <recipient>kkappeler@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>mgutter@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>mlehavi@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -1068,10 +1056,6 @@
         </recipients>
         <recipients>
             <recipient>smartin@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>tking@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>greenstreet-newbusinesssales@greenstreetadvisors.com</senderAddress>
@@ -1167,6 +1151,10 @@
             <type>roleSubordinatesInternal</type>
         </recipients>
         <recipients>
+            <recipient>US_Platform_Sales_Manager_B</recipient>
+            <type>roleSubordinatesInternal</type>
+        </recipients>
+        <recipients>
             <recipient>US_Sales_Manager_D</recipient>
             <type>roleSubordinatesInternal</type>
         </recipients>
@@ -1203,10 +1191,6 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>jcohen@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
             <recipient>jguilfoy@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
@@ -1220,10 +1204,6 @@
         </recipients>
         <recipients>
             <recipient>kkappeler@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>mgutter@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -1256,10 +1236,6 @@
         </recipients>
         <recipients>
             <recipient>smartin@greenstreet.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>tking@greenstreet.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>greenstreet-newbusinesssales@greenstreetadvisors.com</senderAddress>

@@ -377,6 +377,11 @@
         <name>Contact_Record_Count__c</name>
     </fields>
     <fields>
+        <help><!-- The contact&apos;s marketing score (0–100), set automatically from the scoring model. Higher = more engaged/qualified. Used to route the lead — do not edit manually. --></help>
+        <label><!-- Contact Score --></label>
+        <name>Contact_Score__c</name>
+    </fields>
+    <fields>
         <label><!-- Status --></label>
         <name>Contact_Status__c</name>
         <picklistValues>
@@ -540,6 +545,10 @@
     <fields>
         <label><!-- Country --></label>
         <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created by Role --></label>
+        <name>Created_by_Role__c</name>
     </fields>
     <fields>
         <label><!-- Current Products (Text) --></label>
@@ -800,9 +809,18 @@
         <relationshipLabel><!-- Contacts (First Campaign Touchpoint) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- First Content Fill Date --></label>
+        <name>First_Content_Fill_Date__c</name>
+    </fields>
+    <fields>
         <help><!-- The first &quot;Attended Training Date&quot; --></help>
         <label><!-- First Training Date --></label>
         <name>First_Training_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set automatically by the form feed (e.g. demo-request-us). Determines which campaign the contact is enrolled in. --></help>
+        <label><!-- Form Key --></label>
+        <name>Form_Key__c</name>
     </fields>
     <fields>
         <label><!-- Former Client? --></label>
@@ -901,6 +919,10 @@
             <masterLabel>United Kingdom/Continental Europe</masterLabel>
             <translation><!-- United Kingdom/Continental Europe --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Gong All Flows --></label>
+        <name>Gong_All_Flows__c</name>
     </fields>
     <fields>
         <label><!-- Active Engage Flow Names --></label>
@@ -1025,6 +1047,26 @@
     <fields>
         <label><!-- Number of Active Engage Flows --></label>
         <name>Gong__Number_of_Active_Engage_Flows__c</name>
+    </fields>
+    <fields>
+        <help><!-- Altis Migration: Does this Contact have access to this product --></help>
+        <label><!-- Green Street News: Australia --></label>
+        <name>Green_Street_News_Australia__c</name>
+    </fields>
+    <fields>
+        <help><!-- Altis Migration: Does this Contact have access to this product --></help>
+        <label><!-- Green Street News: Canada --></label>
+        <name>Green_Street_News_Canada__c</name>
+    </fields>
+    <fields>
+        <help><!-- Altis Migration: Does this Contact have access to this product --></help>
+        <label><!-- Green Street News: Europe --></label>
+        <name>Green_Street_News_Europe__c</name>
+    </fields>
+    <fields>
+        <help><!-- Altis Migration: Does this Contact have access to this product --></help>
+        <label><!-- Green Street News: United States --></label>
+        <name>Green_Street_News_United_States__c</name>
     </fields>
     <fields>
         <label><!-- Green Street User: Department --></label>
@@ -1154,6 +1196,10 @@
         <name>LID__Session_Id__c</name>
     </fields>
     <fields>
+        <label><!-- Last Activity Date --></label>
+        <name>Last_Activity_Date__c</name>
+    </fields>
+    <fields>
         <help><!-- The time that this Lead or Contact was associated to their most recent Campaign --></help>
         <label><!-- Last Campaign Associated Time --></label>
         <name>Last_Campaign_Associated_Time__c</name>
@@ -1175,6 +1221,10 @@
     <fields>
         <label><!-- Last Login Date - standard --></label>
         <name>Last_Login_Date_standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last MCP usage date --></label>
+        <name>Last_MCP_usage_date__c</name>
     </fields>
     <fields>
         <help><!-- Indicates the date of the most recent event recorded in Amplitude for the Green Street Platform (excluding GSN), covering activity such as email interactions, platform usage, and data delivery clicks. --></help>
@@ -1444,6 +1494,35 @@
         <picklistValues>
             <masterLabel>Notified of Departure</masterLabel>
             <translation><!-- Notified of Departure --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Set automatically from the contact&apos;s score. Cold → Warm → MQL → SQL → High Priority, or Disqualified. Do not edit manually. --></help>
+        <label><!-- Lifecycle Stage --></label>
+        <name>Lifecycle_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disqualified</masterLabel>
+            <translation><!-- Disqualified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Priority</masterLabel>
+            <translation><!-- High Priority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MQL</masterLabel>
+            <translation><!-- MQL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SQL</masterLabel>
+            <translation><!-- SQL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm</masterLabel>
+            <translation><!-- Warm --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -2721,8 +2800,24 @@
         <name>Monthly_User__c</name>
     </fields>
     <fields>
+        <label><!-- Most Recent Cadence - Cadence ID --></label>
+        <name>Most_Recent_Cadence_Cadence_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Most Recent Cadence - Next Step Name --></label>
+        <name>Most_Recent_Cadence_Next_Step_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Most Recent Cadence - Next Step Number --></label>
+        <name>Most_Recent_Cadence_Next_Step_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- NA Contact --></label>
         <name>NA_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Need a hand? --></label>
+        <name>Need_a_hand__c</name>
     </fields>
     <fields>
         <label><!-- New User Date --></label>
@@ -3065,8 +3160,40 @@
         <label><!-- Products Include --></label>
         <name>Products_Include__c</name>
         <picklistValues>
+            <masterLabel>Advertising Only</masterLabel>
+            <translation><!-- Advertising Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Only</masterLabel>
+            <translation><!-- Data Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News &amp; Advertising</masterLabel>
+            <translation><!-- News &amp; Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News &amp; Data</masterLabel>
+            <translation><!-- News &amp; Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News &amp; Research</masterLabel>
+            <translation><!-- News &amp; Research --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>News Only</masterLabel>
             <translation><!-- News Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News, Research, Data, and Advertising</masterLabel>
+            <translation><!-- News, Research, Data, and Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News, Research, and Data</masterLabel>
+            <translation><!-- News, Research, and Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research &amp; Data</masterLabel>
+            <translation><!-- Research &amp; Data --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Research &amp; News</masterLabel>
@@ -3098,6 +3225,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Re Engaged Date --></label>
+        <name>Re_Engaged_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Re-engaged Lead --></label>
         <name>Re_engaged_Lead__c</name>
     </fields>
@@ -3108,6 +3239,10 @@
     <fields>
         <label><!-- React id --></label>
         <name>React_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Contact Creation --></label>
+        <name>Reason_for_Contact_Creation__c</name>
     </fields>
     <fields>
         <help><!-- Customer contacts that can be used in marketing references (e.g., for case studies or testimonials) --></help>
@@ -3198,6 +3333,10 @@
     <fields>
         <label><!-- Salesforce User --></label>
         <name>Salesforce_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesloft All Cadences --></label>
+        <name>Salesloft_All_Cadences__c</name>
     </fields>
     <fields>
         <label><!-- Sanction Status --></label>
@@ -5282,9 +5421,17 @@ days --></help>
         <name>Tokens__c</name>
     </fields>
     <fields>
+        <label><!-- Tools queried L6M --></label>
+        <name>Tools_queried_L6M__c</name>
+    </fields>
+    <fields>
         <help><!-- Check this Box for this contact to be added to a list of VIP&apos;s that should be top of mind --></help>
         <label><!-- Top Tier Prospect --></label>
         <name>Top_Tier_Prospect__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total MCP usage/events L6M --></label>
+        <name>Total_MCP_usage_events_L6M__c</name>
     </fields>
     <fields>
         <label><!-- Trigger Real-time Sync --></label>
@@ -5405,10 +5552,6 @@ days --></help>
             <translation><!-- Advisory --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Business Development</masterLabel>
-            <translation><!-- Business Development --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>Client Operations</masterLabel>
             <translation><!-- Client Operations --></translation>
         </picklistValues>
@@ -5475,6 +5618,10 @@ days --></help>
         <picklistValues>
             <masterLabel>Sales</masterLabel>
             <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Development</masterLabel>
+            <translation><!-- Sales Development --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Tech</masterLabel>
@@ -6055,6 +6202,10 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
         <name>Cannot_Modify_DNC</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- You cannot add a Contact to this Account. If you want to engage them, please create records on a related subsidiary Account. --></errorMessage>
+        <name>Contact_Non_Subsidiary_Account</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- All Contacts must be associated with an Account. Please create an Account before you attempt to create a Contact associated with it. --></errorMessage>
         <name>Contacts_must_have_an_Account</name>
     </validationRules>
@@ -6085,6 +6236,10 @@ User: Responsible for the day-to-day work and tasks in support of team and organ
     <validationRules>
         <errorMessage><!-- Please provide the awards details. --></errorMessage>
         <name>Require_Awards</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You need to provide an email address when creating a contact. --></errorMessage>
+        <name>Require_Email</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Please provide the event details. --></errorMessage>

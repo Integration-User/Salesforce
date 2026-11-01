@@ -198,6 +198,10 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -298,35 +302,6 @@
         <label>Recently Completed Tasks</label>
     </listViews>
     <listViews>
-        <fullName>CompletedTasks</fullName>
-        <columns>SUBJECT</columns>
-        <columns>WHO_NAME</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>DUE_DATE</columns>
-        <columns>STATUS</columns>
-        <columns>PRIORITY</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>LAST_UPDATE</columns>
-        <columns>UPDATEDBY_USER.ALIAS</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>IS_CLOSED</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
-            <field>IS_RECURRENCE</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>LAST_UPDATE</field>
-            <operation>equals</operation>
-            <value>TODAY,LAST_N_DAYS:30</value>
-        </filters>
-        <label>ENCODED:{!FilterNames.Task_CompletedTasks}</label>
-    </listViews>
-    <listViews>
         <fullName>Deactivation_Tasks_Task</fullName>
         <filterScope>Queue</filterScope>
         <label>Deactivation Tasks</label>
@@ -334,20 +309,6 @@
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>DelegatedTasks</fullName>
-        <columns>SUBJECT</columns>
-        <columns>WHO_NAME</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>DUE_DATE</columns>
-        <columns>STATUS</columns>
-        <columns>PRIORITY</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>LAST_UPDATE</columns>
-        <columns>UPDATEDBY_USER.ALIAS</columns>
-        <filterScope>Delegated</filterScope>
-        <label>ENCODED:{!FilterNames.Task_DelegatedTasks}</label>
     </listViews>
     <listViews>
         <fullName>Last_Diagnostic_Discussion</fullName>
@@ -465,6 +426,11 @@
             <operation>notEqual</operation>
             <value>Completed</value>
         </filters>
+        <filters>
+            <field>CREATEDBY_USER.ALIAS</field>
+            <operation>notEqual</operation>
+            <value>ginte</value>
+        </filters>
         <label>Overdue Tasks</label>
     </listViews>
     <listViews>
@@ -497,25 +463,6 @@
         <label>Overdue Tasks (excluding unresolved)</label>
     </listViews>
     <listViews>
-        <fullName>RecurringTasks</fullName>
-        <columns>SUBJECT</columns>
-        <columns>WHO_NAME</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>DUE_DATE</columns>
-        <columns>STATUS</columns>
-        <columns>PRIORITY</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>LAST_UPDATE</columns>
-        <columns>UPDATEDBY_USER.ALIAS</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>IS_RECURRENCE</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>ENCODED:{!FilterNames.Task_RecurringTasks}</label>
-    </listViews>
-    <listViews>
         <fullName>TodaysTasks</fullName>
         <columns>SUBJECT</columns>
         <columns>WHO_NAME</columns>
@@ -537,34 +484,6 @@
             <value>TODAY</value>
         </filters>
         <label>Today&apos;s Tasks</label>
-    </listViews>
-    <listViews>
-        <fullName>UnscheduledTasks</fullName>
-        <columns>SUBJECT</columns>
-        <columns>WHO_NAME</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>DUE_DATE</columns>
-        <columns>STATUS</columns>
-        <columns>PRIORITY</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>LAST_UPDATE</columns>
-        <columns>UPDATEDBY_USER.ALIAS</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>IS_CLOSED</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>IS_RECURRENCE</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>DUE_DATE</field>
-            <operation>equals</operation>
-        </filters>
-        <label>ENCODED:{!FilterNames.Task_UnscheduledTasks}</label>
     </listViews>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
@@ -5091,6 +5010,14 @@
         <picklistValues>
             <picklist>Products_Discussed__c</picklist>
             <values>
+                <fullName>AI Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AI Research Summaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>APAC Sales Comps</fullName>
                 <default>false</default>
             </values>
@@ -5100,6 +5027,10 @@
             </values>
             <values>
                 <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUS Research %2B Market Data %26 Deals</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5132,6 +5063,18 @@
             </values>
             <values>
                 <fullName>Australia Research %2B REIT Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Add-on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Table</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5347,6 +5290,14 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events Registration</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Excel Add-In</fullName>
                 <default>false</default>
             </values>
@@ -5392,26 +5343,6 @@
             </values>
             <values>
                 <fullName>Green Street News%3A Europe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Award Add-on</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Award Sponsorship</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Award Table</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Event Sponsorship</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IJ Global%3A Events Registration</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5692,6 +5623,10 @@
             </values>
             <values>
                 <fullName>Special Committees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>StorTrack Explorer</fullName>
                 <default>false</default>
             </values>
             <values>

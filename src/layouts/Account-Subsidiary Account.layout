@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Delete</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -79,6 +79,22 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Entitlement_Guidance_Notes__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Account_Score__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_ARR_in_Client_Hierarchy__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Number_of_Accounts_in_Hierarchy__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Account_Score_Total__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -1129,6 +1145,10 @@
         <fields>Type_Feedback__c</fields>
         <fields>Description_of_Feedback__c</fields>
         <relatedList>Product_Feedback__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>OBJECT_ID</fields>
+        <relatedList>ssot__Account__dlm.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

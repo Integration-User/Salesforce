@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -53,6 +54,10 @@
                 <behavior>Edit</behavior>
                 <field>Status</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Form_Page_URL__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -69,6 +74,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Products_Promoted__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Tell_Us_About_Your_Needs_Default__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>

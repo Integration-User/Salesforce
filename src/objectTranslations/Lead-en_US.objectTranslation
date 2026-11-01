@@ -227,6 +227,10 @@
         <relationshipLabel><!-- Leads --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Company Segment --></label>
         <name>Company_Segment__c</name>
     </fields>
@@ -644,6 +648,10 @@
         <name>Inbound_Lead__c</name>
     </fields>
     <fields>
+        <label><!-- Inbound? --></label>
+        <name>Inbound__c</name>
+    </fields>
+    <fields>
         <label><!-- Inquiry Type --></label>
         <name>Inquiry_Type__c</name>
         <picklistValues>
@@ -673,13 +681,25 @@
         <name>Lead_Classification__c</name>
     </fields>
     <fields>
+        <label><!-- Lead Contact Email --></label>
+        <name>Lead_Contact_Email__c</name>
+    </fields>
+    <fields>
         <label><!-- Lead Contact --></label>
         <name>Lead_Contact__c</name>
         <relationshipLabel><!-- Leads (Lead Contact) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Lead Owner Manager --></label>
+        <name>Lead_Owner_Manager__c</name>
+    </fields>
+    <fields>
         <label><!-- Lead Priority --></label>
         <name>Lead_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Type New --></label>
+        <name>Lead_Type_New__c</name>
     </fields>
     <fields>
         <label><!-- Send Referral To: --></label>
@@ -710,12 +730,22 @@
         </picklistValues>
     </fields>
     <fields>
+        <help><!-- Please link to the opportunity you would like this referral converted into --></help>
+        <label><!-- Link to Existing Opportunity --></label>
+        <name>Link_to_Existing_Opportunity__c</name>
+        <relationshipLabel><!-- Leads --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- LinkedIn URL --></label>
         <name>LinkedIn_URL__c</name>
     </fields>
     <fields>
         <label><!-- List Membership --></label>
         <name>List_Membership_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Identified Country --></label>
+        <name>Marketing_Identified_Country__c</name>
     </fields>
     <fields>
         <label><!-- Marketing Identified Country --></label>
@@ -1930,6 +1960,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Marketing Product of Interest --></label>
+        <name>Marketing_Product_of_Interest__c</name>
+    </fields>
+    <fields>
         <label><!-- Typical Advisory Minimum ($25k) --></label>
         <name>Minimum_Advisory_Fee_50k__c</name>
         <picklistValues>
@@ -1948,6 +1982,19 @@
     <fields>
         <label><!-- Most Recent Marketing Activity --></label>
         <name>Most_Recent_Marketing_Activity__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you are expecting this referral to convert to an existing opportunity mark &quot;Yes&quot;, and fill out the link below --></help>
+        <label><!-- Must Convert into Existing Opp? --></label>
+        <name>Must_Convert_into_Existing_Opp__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- My Referral --></label>
@@ -2557,6 +2604,10 @@
         <name>ReferredbyDepartmentStatic__c</name>
     </fields>
     <fields>
+        <label><!-- Referrer URL --></label>
+        <name>Referrer_URL__c</name>
+    </fields>
+    <fields>
         <label><!-- Renewal Month --></label>
         <name>Renewal_Month__c</name>
     </fields>
@@ -2795,6 +2846,14 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Submission Notes --></label>
+        <name>Submission_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submission Page URL --></label>
+        <name>Submission_Page_URL__c</name>
+    </fields>
+    <fields>
         <label><!-- Subscribe to Competitors Mktg Identifie. --></label>
         <name>Subscribe_to_Competitors_Mktg_Identified__c</name>
         <picklistValues>
@@ -2837,6 +2896,10 @@
             <masterLabel>US</masterLabel>
             <translation><!-- US --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tell Us About Your Needs --></label>
+        <name>Tell_Us_About_Your_Needs__c</name>
     </fields>
     <fields>
         <help><!-- Calculates the (Assigned Date - Created Date) in Minutes --></help>
@@ -2918,6 +2981,10 @@
     <fields>
         <label><!-- U.S. Webinars and Featured Insights --></label>
         <name>U_S_Webinars_and_Featured_Insights__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Form Comments &amp; Questions --></label>
+        <name>Web_Form_Comments_Questions__c</name>
     </fields>
     <fields>
         <help><!-- Where do you feel your current real estate research is lacking? Check all that apply. --></help>
@@ -3228,6 +3295,14 @@
         <name>Assign_Lead_Owner_To_User</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- You cannot change the Must Convert into Existing Opp once marked as &quot;Yes&quot; --></errorMessage>
+        <name>Cannot_Edit_Convert_Into_Existing_Opp</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot edit the Link to Existing Opportunity once added. --></errorMessage>
+        <name>Cannot_Edit_Link_To_Opp</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Please Provide Feedback in the Questions &amp; Comments Section before disqualifying this referral --></errorMessage>
         <name>Comments_Required_to_Close_Referral</name>
     </validationRules>
@@ -3242,6 +3317,15 @@
     <validationRules>
         <errorMessage><!-- You Must Associate this lead with an Opportunity or Create a new one --></errorMessage>
         <name>Mandatory_Opportunity_Creation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Opportunity that you want to convert does not match the Link to Existing Opportunity. --></errorMessage>
+        <name>Match_Converted_Opp</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must create an opportunity when you convert a lead
+(uncheck the box for &quot;Do not Create an Opportunity&quot;) --></errorMessage>
+        <name>Opp_Creation_required</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Please ensure Typical Advisory Minimum (6-figures) is populated before saving this Lead. --></errorMessage>
@@ -3262,6 +3346,10 @@
     <validationRules>
         <errorMessage><!-- Please provide GS Relationship before disqualifying this lead --></errorMessage>
         <name>Require_GS_Relationship</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide the link to existing opportunity. --></errorMessage>
+        <name>Require_Link_to_Existing_Opp</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Provide Lead Source and a Reason for Disqualification. --></errorMessage>

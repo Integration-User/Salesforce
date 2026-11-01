@@ -456,7 +456,7 @@
                     if(event.status) {
                         if (response.success) {
                             //populate base object options
-                            $('#newbatch-baseobject, #manualbatch-baseobject').html('<option value="' + '{!JSENCODE($Label.automationSettings_Please_Choose)}' + '">' + '{!JSENCODE($Label.automationSettings_Please_Choose)}' + '</option>').val('{!JSENCODE($Label.automationSettings_Please_Choose)}').next().find('input').text('{!JSENCODE($Label.automationSettings_Please_Choose)}');
+                            $('#newbatch-baseobject, #manualbatch-baseobject').empty().append($('<option>').val('{!JSENCODE($Label.automationSettings_Please_Choose)}').text('{!JSENCODE($Label.automationSettings_Please_Choose)}')).val('{!JSENCODE($Label.automationSettings_Please_Choose)}').next().find('input').text('{!JSENCODE($Label.automationSettings_Please_Choose)}');
                             $.each(response.baseObjects, function (index, baseObject) {
                                 
                                 //remove namespace
@@ -486,7 +486,7 @@
                             //remove loaders
                             $('.combobox').next().find('.loadmask').remove();
                             $('div.loadmask-wrapper').each(function () {
-                                showSuccess($(this), '{!JSENCODE($Label.automationSettings_Refresh_Complete)}');
+                                showSuccess($(this), htmlEncode('{!JSENCODE($Label.automationSettings_Refresh_Complete)}'));
                             });
                         } else {
                             $('div.loadmask-wrapper').each(function () {

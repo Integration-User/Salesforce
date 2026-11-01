@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>2</activeVersionNumber>
+    <description>Record-triggered flow on Contact. Fires when Contact Score changes and sets Lifecycle Stage based on score thresholds: 85+ High Priority, 75-84 SQL, 50-74 MQL, 20-49 Warm, 0-19 Cold. Contact Score is written back from the Data Cloud engagement scoring model via a Data 360 Copy Field. Disqualified is set manually by Sales, not by this flow. Account Score dimension deferred to a later phase.</description>
+    <masterLabel>Lifecycle Stage Routing</masterLabel>
+</FlowDefinition>
