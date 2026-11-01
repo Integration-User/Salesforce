@@ -295,6 +295,15 @@ IF((End_Date__c - Start_Date__c)&gt;366,(TotalPrice/((End_Date__c - Start_Date__
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>Caption__c</fullName>
+        <externalId>false</externalId>
+        <label>Caption</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Color__c</fullName>
         <label>Color</label>
         <required>false</required>
@@ -589,7 +598,7 @@ IF( ISPICKVAL(Sales_Type__c, &quot;Upsell&quot;), ARR_Formula__c, 0)))</formula>
     <fields>
         <fullName>Product_Description__c</fullName>
         <externalId>false</externalId>
-        <formula>IF(ISBLANK(Product_Type_Description__c) , PricebookEntry.Product2.Description, Product_Type_Description__c)</formula>
+        <formula>IF(OR(PricebookEntry.Product2.Name = &quot;Advertising CMA&quot;, PricebookEntry.Product2.Name = &quot;Advertising ABA&quot;, PricebookEntry.Product2.Name = &quot;Advertising REA&quot;), CASE(PricebookEntry.Product2.Name, &quot;Advertising CMA&quot;, &quot;Advertising - Commercial Real Estate Alert&quot;, &quot;Advertising ABA&quot;, &quot;Advertising - Asset Backed Alert&quot;, &quot;Advertising REA&quot;, &quot;Advertising - Real Estate Alert&quot;, &quot;&quot;) &amp; IF(OR(ISBLANK(TEXT(Size__c)), ISPICKVAL(Size__c, &quot;N/A&quot;)), &quot;&quot;, &quot; - &quot; &amp; TEXT(Size__c)) &amp; CASE(TEXT(Color__c), &quot;Yes&quot;, &quot; - Color&quot;, &quot;No&quot;, &quot; - B/W&quot;, &quot;&quot;) &amp; IF(ISBLANK( Caption__c ), &quot;&quot;, &quot; - &quot;  &amp;  Caption__c ), IF(ISBLANK(Product_Type_Description__c), PricebookEntry.Product2.Description, Product_Type_Description__c))</formula>
         <label>Product Description</label>
         <required>false</required>
         <type>Text</type>
