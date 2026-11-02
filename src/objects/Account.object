@@ -22181,6 +22181,21 @@ OR( ISCHANGED( Name ))))</errorConditionFormula>
         <errorMessage>Please Submit a Client Change CAF &amp; Compliance will handle updating the Account Name in Salesforce.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Invalid_Website</fullName>
+        <active>true</active>
+        <description>Prevents users from creating an account with &quot;N/A&quot; website</description>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    NOT(ISBLANK(Website)),
+    REGEX(
+        UPPER(Website),
+        &quot;.*N/A.*&quot;
+    )
+)</errorConditionFormula>
+        <errorDisplayField>Website</errorDisplayField>
+        <errorMessage>Please enter a valid company website.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>LID__Check_CompanyId_Value</fullName>
         <active>true</active>
         <description>Throws an exception message if the company id contains non-numerics</description>
