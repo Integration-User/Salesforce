@@ -67845,6 +67845,7 @@ ISPICKVAL( Lead_Type__c, &quot;Other&quot;)
         <fullName>Require_Webinar</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+NOT(ISCHANGED(Opp_Total_Score__c)),
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(LeadSource, &quot;Webinar&quot;),

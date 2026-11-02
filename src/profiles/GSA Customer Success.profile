@@ -53942,10 +53942,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>CustomizeApplication</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>DistributeFromPersWksp</name>
     </userPermissions>
     <userPermissions>

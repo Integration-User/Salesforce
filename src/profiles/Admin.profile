@@ -58338,10 +58338,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AgentforceScorerActivation</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>AllowObjectDetectionTraining</name>
     </userPermissions>
     <userPermissions>
@@ -58682,10 +58678,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>InteractionExplorerViewer</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>LightningConsoleAllowedForUser</name>
     </userPermissions>
     <userPermissions>
@@ -58735,10 +58727,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageCertificates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageConsumptionTags</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -58854,10 +58842,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManageMobileAppSecurity</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ManageNetworks</name>
     </userPermissions>
     <userPermissions>
@@ -58867,10 +58851,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManagePackageLicenses</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManagePartners</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -59010,10 +58990,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>Packaging2PromoteVersion</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>PipelineInspectorUser</name>
     </userPermissions>
     <userPermissions>
@@ -59079,10 +59055,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SendSitRequests</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ShareFilesWithNetworks</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -59163,10 +59135,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>UseWebLink</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>UserHasDevOpsCore</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
