@@ -67329,6 +67329,22 @@ INCLUDES(Competition__c, &quot;Other&quot;)
         <errorMessage>Please provide the other competition.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Renewal_Require_Activation_Needs</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+    $Permission.Skip_Validation_Rule= False,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISCHANGED(StageName),
+    ISBLANK(TEXT(Activation_Deactivation_Needs__c)),
+    ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+    OR(
+        $RecordType.DeveloperName = &quot;Existing_Business&quot;,
+        $RecordType.DeveloperName = &quot;Renewal_Closed&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Activation_Deactivation_Needs__c</errorDisplayField>
+        <errorMessage>Please provide the Activation/Deactivation Needs before closing the opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Require_1_Click_to_Pay_Product</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
