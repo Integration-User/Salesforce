@@ -7,6 +7,9 @@
         <locationY>539</locationY>
         <actionName>Opportunity.SDO_Sales_Owner_for_Review_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>END_ELEMENT_8</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -91,6 +94,9 @@
         <label>Convert SDO?</label>
         <locationX>644</locationX>
         <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>END_ELEMENT_9</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -135,6 +141,9 @@
         <label>Is Contact Role Exits</label>
         <locationX>446</locationX>
         <locationY>1679</locationY>
+        <defaultConnector>
+            <targetReference>END_ELEMENT_10</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Contact_Role_Exits</name>
@@ -157,6 +166,9 @@
         <label>Is Oppty an SDO?</label>
         <locationX>990</locationX>
         <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>END_ELEMENT_11</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Sales_Development_RT</name>
@@ -324,6 +336,41 @@
             <label>Move to In Review</label>
         </rules>
     </decisions>
+    <ends>
+        <name>END_ELEMENT_10</name>
+        <locationX>578</locationX>
+        <locationY>1787</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_11</name>
+        <locationX>1634</locationX>
+        <locationY>431</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_12</name>
+        <locationX>314</locationX>
+        <locationY>1895</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_13</name>
+        <locationX>1370</locationX>
+        <locationY>539</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_14</name>
+        <locationX>1106</locationX>
+        <locationY>539</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_8</name>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_9</name>
+        <locationX>842</locationX>
+        <locationY>647</locationY>
+    </ends>
     <environments>Default</environments>
     <formulas>
         <name>Add_90_Days</name>
@@ -370,6 +417,9 @@
         <label>Create Contact Role For New Opp</label>
         <locationX>314</locationX>
         <locationY>1787</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_12</targetReference>
+        </connector>
         <inputReference>ListOfOpportunityContactRole</inputReference>
     </recordCreates>
     <recordCreates>
@@ -415,6 +465,12 @@
             <field>CurrencyIsoCode</field>
             <value>
                 <elementReference>$Record.CurrencyIsoCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Current_Scheduled_Meeting_Date_Optional__c</field>
+            <value>
+                <elementReference>$Record.Discovery_Meeting_Scheduled_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -591,6 +647,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Current_Scheduled_Meeting_Date_Optional__c</field>
+            <value>
+                <elementReference>$Record.Discovery_Meeting_Scheduled_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Discovery_Meeting_Scheduled_Date__c</field>
             <value>
                 <elementReference>$Record.Discovery_Meeting_Scheduled_Date__c</elementReference>
@@ -759,6 +821,9 @@
         <label>Update AM SDO Referral</label>
         <locationX>1370</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_13</targetReference>
+        </connector>
         <filterLogic>1 AND (2 OR 3)</filterLogic>
         <filters>
             <field>Id</field>
@@ -822,6 +887,9 @@
         <label>Update Sales SDO Referral</label>
         <locationX>1106</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_14</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
