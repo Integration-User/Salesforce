@@ -32427,6 +32427,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Current_Scheduled_Meeting_Date_Optional__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Current_Year_Contract_Start_Date__c</field>
         <readable>true</readable>
