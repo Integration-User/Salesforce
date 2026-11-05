@@ -2319,6 +2319,15 @@ TEXT(YEAR(Contract_Start_Date__c))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Current_Scheduled_Meeting_Date_Optional__c</fullName>
+        <inlineHelpText>Optional. Use this field to track if the discovery meeting scheduled date changes. This is solely for Sales and SDRs to track their schedules. Opportunities will still auto-close if the discovery meeting is not completed within 30 days of the initial discovery meeting scheduled date</inlineHelpText>
+        <label>Current Scheduled Meeting Date(Optional)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Current_Year_Contract_Start_Date__c</fullName>
         <formula>IF(
 Current_Contract_Year__c=2,Year_2_Contract_Start_Date__c,
