@@ -3441,6 +3441,15 @@ IF(Amount &gt; 400000,&quot;Large&quot;,
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Gong_Products__c</fullName>
+        <label>Gong Products</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Gong__Gong_Count__c</fullName>
         <deprecated>false</deprecated>
         <description>Auto computed field that is used in reports for aggregations.</description>
@@ -67935,6 +67944,7 @@ ISPICKVAL( Lead_Type__c, &quot;Other&quot;)
         <fullName>Require_Webinar</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
+NOT(ISCHANGED(Opp_Total_Score__c)),
 $Permission.Skip_Validation_Rule= False,
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 ISPICKVAL(LeadSource, &quot;Webinar&quot;),
