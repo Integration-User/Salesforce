@@ -243,6 +243,7 @@ public without sharing class Plative_OpportunityTriggerHandler {
                 List<String> productType = Plative_SFToNSSyncUtility.getProductCategoryNameForOpp(New List<String>{oppty.Products__c});
                 if (productType != null && !productType.isEmpty()) oppty.Product_Types__c = productType[0];
                 else oppty.Product_Types__c = null;
+                oppty.Gong_Products__c = String.isBlank(oppty.Products__c) ? null : oppty.Products__c.replace(';', ',');
             } else if (oppty.Products__c == null) {
                 oppty.Product_Types__c = null;
             }
