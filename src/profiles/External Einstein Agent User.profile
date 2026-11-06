@@ -94,6 +94,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Winback_L2Y__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Click_to_Pay__c</field>
         <readable>true</readable>
     </fieldPermissions>
