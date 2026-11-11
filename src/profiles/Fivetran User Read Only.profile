@@ -17308,6 +17308,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.First_Renewal_Date_Research__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.First_Renewal_Year_Research__c</field>
         <readable>true</readable>
@@ -17564,6 +17569,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Is_First_Year_Research__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Jigsaw</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17755,6 +17765,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.News_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.News_Only_to_Research_Upsell_Last_2_Yrs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -19355,6 +19370,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Website_Access__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Winback_L2Y__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -32235,6 +32255,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Current_Contract_Year__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Current_Scheduled_Meeting_Date_Optional__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
