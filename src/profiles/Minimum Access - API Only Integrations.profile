@@ -23526,6 +23526,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Sector_Outlook_Report_Selection__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Sectors_of_Interest_Marketing_Identified__c</field>
         <readable>false</readable>
