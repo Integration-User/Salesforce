@@ -9200,6 +9200,109 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>User_Location_As_Of__c</fullName>
+        <label>User Location (As Of)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>User_Location_Basis__c</fullName>
+        <label>User Location (Basis)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IP</fullName>
+                    <default>false</default>
+                    <label>IP</label>
+                </value>
+                <value>
+                    <fullName>Phone</fullName>
+                    <default>false</default>
+                    <label>Phone</label>
+                </value>
+                <value>
+                    <fullName>Mailing address</fullName>
+                    <default>false</default>
+                    <label>Mailing address</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User_Location_Region__c</fullName>
+        <label>User Location (Region)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>US</fullName>
+                    <default>false</default>
+                    <label>US</label>
+                </value>
+                <value>
+                    <fullName>CAN</fullName>
+                    <default>false</default>
+                    <label>CAN</label>
+                </value>
+                <value>
+                    <fullName>UK</fullName>
+                    <default>false</default>
+                    <label>UK</label>
+                </value>
+                <value>
+                    <fullName>Europe (ex-UK)</fullName>
+                    <default>false</default>
+                    <label>Europe (ex-UK)</label>
+                </value>
+                <value>
+                    <fullName>AU/NZ</fullName>
+                    <default>false</default>
+                    <label>AU/NZ</label>
+                </value>
+                <value>
+                    <fullName>APAC</fullName>
+                    <default>false</default>
+                    <label>APAC</label>
+                </value>
+                <value>
+                    <fullName>LATAM</fullName>
+                    <default>false</default>
+                    <label>LATAM</label>
+                </value>
+                <value>
+                    <fullName>MEA</fullName>
+                    <default>false</default>
+                    <label>MEA</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>User__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <label>Analyst User</label>
