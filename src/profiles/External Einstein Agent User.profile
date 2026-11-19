@@ -119,6 +119,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Do_Not_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Gong_All_Flows__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -160,6 +165,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Total_MCP_usage_events_L6M__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.User_Location_As_Of__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.User_Location_Basis__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.User_Location_Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

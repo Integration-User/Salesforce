@@ -1685,6 +1685,14 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Do_Not_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Check this box to unsubscribe the contact from marketing emails.</inlineHelpText>
+        <label>Do Not Email - Marketing</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>EU_Contact__c</fullName>
         <defaultValue>false</defaultValue>
         <label>EU Contact</label>
@@ -6224,6 +6232,16 @@ IF(CONTAINS(LOWER(MailingCountry), &quot;venezuela&quot;), &quot;Red List&quot;,
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Sector_Outlook_Report_Selection__c</fullName>
+        <externalId>false</externalId>
+        <label>Sector Outlook Report Selection</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Sectors_of_Interest_Marketing_Identified__c</fullName>
         <inlineHelpText>Which property sectors are of interest to you?  Check all that apply.</inlineHelpText>
         <label>Sectors of Interest Marketing Identified</label>
@@ -9199,6 +9217,109 @@ IF( T30_Clicks__c &gt; 0, &quot;Monthly&quot;,
         <label>User List?</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>User_Location_As_Of__c</fullName>
+        <label>User Location (As Of)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>User_Location_Basis__c</fullName>
+        <label>User Location (Basis)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IP</fullName>
+                    <default>false</default>
+                    <label>IP</label>
+                </value>
+                <value>
+                    <fullName>Phone</fullName>
+                    <default>false</default>
+                    <label>Phone</label>
+                </value>
+                <value>
+                    <fullName>Mailing address</fullName>
+                    <default>false</default>
+                    <label>Mailing address</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User_Location_Region__c</fullName>
+        <label>User Location (Region)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>US</fullName>
+                    <default>false</default>
+                    <label>US</label>
+                </value>
+                <value>
+                    <fullName>CAN</fullName>
+                    <default>false</default>
+                    <label>CAN</label>
+                </value>
+                <value>
+                    <fullName>UK</fullName>
+                    <default>false</default>
+                    <label>UK</label>
+                </value>
+                <value>
+                    <fullName>Europe (ex-UK)</fullName>
+                    <default>false</default>
+                    <label>Europe (ex-UK)</label>
+                </value>
+                <value>
+                    <fullName>AU/NZ</fullName>
+                    <default>false</default>
+                    <label>AU/NZ</label>
+                </value>
+                <value>
+                    <fullName>APAC</fullName>
+                    <default>false</default>
+                    <label>APAC</label>
+                </value>
+                <value>
+                    <fullName>LATAM</fullName>
+                    <default>false</default>
+                    <label>LATAM</label>
+                </value>
+                <value>
+                    <fullName>MEA</fullName>
+                    <default>false</default>
+                    <label>MEA</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>User__c</fullName>
