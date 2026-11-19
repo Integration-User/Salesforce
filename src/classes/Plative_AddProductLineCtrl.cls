@@ -9,6 +9,8 @@ public class Plative_AddProductLineCtrl {
     private static final List<String> sdrProductList = new List<String>{'Green Street News: Europe', 'Green Street News: Canada', 'Green Street News: Australia', 'Real Estate Alert', 'Commercial Mortgage Alert', 'Asset-Backed Alert'};
     private static final String SALES_DEVELOPMENT_DEPARTMENT = 'Sales Development';
     private static final String GSN_TRIAL_OPPORTUNITY_ERROR = 'In order to add GSN Trial Products we require an Opportunity with Trial Start date, Trial End date in the future and Trial Type';
+    private static final String CLIENT_TRIAL_OPPORTUNITY_ERROR = 'Please speak with Account Manager if you’d like to add GSN trial to this Account';
+
     public static User user = null;
     Public static Map<Id, Product2> gsnProductList = null;
     //Get DataLink & Website access details
@@ -38,7 +40,8 @@ public class Plative_AddProductLineCtrl {
         Account acc = [Select Id, Type from Account Where id =: recordId];
         List<Product2> productList = new List<Product2>();
         if(isSalesDevelopmentUser()) {
-            if(acc.Type == 'Client') return productList;
+            if(acc.Type == 'Client' && hasValidTrialOpportunity(acc.Id)) return productList;
+            if(acc.Type == 'Client' && !hasValidTrialOpportunity(acc.Id)) throw new AuraHandledException(CLIENT_TRIAL_OPPORTUNITY_ERROR);
             if(!hasValidTrialOpportunity(acc.Id)) {
                 throw new AuraHandledException(GSN_TRIAL_OPPORTUNITY_ERROR);
             }
