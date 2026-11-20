@@ -8,7 +8,7 @@
         <locationX>176</locationX>
         <locationY>287</locationY>
         <assignmentItems>
-            <assignToReference>$Record.Do_Not_Email__c</assignToReference>
+            <assignToReference>$Record.Do_not_email__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>fSetDoNotEmail</elementReference>
@@ -51,7 +51,13 @@
         <connector>
             <targetReference>Set_Do_Not_Email</targetReference>
         </connector>
-        <filterFormula>AND(BEGINS({!$Record.Form_Key__c}, &apos;email-unsubscribe-&apos;), OR(ISNEW(), ISCHANGED({!$Record.Form_Key__c})), NOT({!$Record.Do_Not_Email__c}))</filterFormula>
+        <filterFormula>AND(
+  OR(ISNEW(), ISCHANGED({!$Record.Form_Key__c}), ISCHANGED({!$Record.Submission_Page_URL__c})),
+  OR(
+    AND(BEGINS({!$Record.Form_Key__c}, &apos;email-unsubscribe-&apos;), NOT({!$Record.Do_not_email__c})),
+    AND(BEGINS({!$Record.Form_Key__c}, &apos;email-subscription-&apos;), {!$Record.Do_not_email__c})
+  )
+)</filterFormula>
         <object>Contact</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
