@@ -1685,6 +1685,14 @@ IF(INCLUDES(Current_Products__c,&quot;US Sales Comps&quot;),&quot;US Sales Comps
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Do_not_email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Check this box to unsubscribe the contact from marketing emails.</inlineHelpText>
+        <label>Do Not Email - Marketing</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>EU_Contact__c</fullName>
         <defaultValue>false</defaultValue>
         <label>EU Contact</label>
@@ -6222,6 +6230,16 @@ IF(CONTAINS(LOWER(MailingCountry), &quot;venezuela&quot;), &quot;Red List&quot;,
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sector_Outlook_Report_Selection__c</fullName>
+        <externalId>false</externalId>
+        <label>Sector Outlook Report Selection</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Sectors_of_Interest_Marketing_Identified__c</fullName>

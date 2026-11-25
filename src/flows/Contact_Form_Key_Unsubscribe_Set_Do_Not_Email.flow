@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Do_Not_Email</name>
+        <label>Set Do Not Email</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Do_not_email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fSetDoNotEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_2</targetReference>
+        </connector>
+    </assignments>
+    <description>Before-save. email-unsubscribe-* Form Key (us/eu/au/ca) sets Do not email = true, feeding the active suppression segment. email-subscription-* Form Key clears Do not email if it was set (re-subscribe). Fires on new, Form Key change, or Submission Page URL change. Subscription consent opt-ins/outs are handled separately in Data Cloud.</description>
+    <ends>
+        <name>END_ELEMENT_2</name>
+        <locationX>176</locationX>
+        <locationY>395</locationY>
+    </ends>
+    <environments>Default</environments>
+    <formulas>
+        <name>fSetDoNotEmail</name>
+        <dataType>Boolean</dataType>
+        <expression>BEGINS({!$Record.Form_Key__c}, &apos;email-unsubscribe-&apos;)</expression>
+    </formulas>
+    <interviewLabel>Contact - Form Key Subscribe/Unsubscribe - Do Not Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact - Form Key Subscribe/Unsubscribe - Do Not Email</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Do_Not_Email</targetReference>
+        </connector>
+        <filterFormula>AND(
+  OR(ISNEW(), ISCHANGED({!$Record.Form_Key__c}), ISCHANGED({!$Record.Submission_Page_URL__c})),
+  OR(
+    AND(BEGINS({!$Record.Form_Key__c}, &apos;email-unsubscribe-&apos;), NOT({!$Record.Do_not_email__c})),
+    AND(BEGINS({!$Record.Form_Key__c}, &apos;email-subscription-&apos;), {!$Record.Do_not_email__c})
+  )
+)</filterFormula>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>InvalidDraft</status>
+</Flow>
